@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 265 89% 12%; /* Deep Purple */
+    --foreground: 0 0% 100%;
+
+    --card: 265 89% 16%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 265 89% 12%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 271 91% 65%; /* Bright Purple */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 265 50% 25%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 265 50% 25%;
+    --muted-foreground: 270 20% 80%;
+
+    --accent: 32 95% 60%; /* Orange/Pink accent from Horizons */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 265 50% 30%;
+    --input: 265 50% 30%;
+    --ring: 271 91% 65%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    /* Hostinger Horizons Gradient Background */
+    background: radial-gradient(circle at 50% 0%, #4c1d95 0%, #1e1b4b 40%, #312e81 60%, #c2410c 100%);
+    background-attachment: fixed;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+}
+
+.glass-card {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl;
+}
+
+.glass-card-hover {
+  @apply hover:bg-white/15 transition-all duration-300;
+}
+
+html {
+  scroll-behavior: smooth;
+}

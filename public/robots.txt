@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and hidden pages from being indexed
+Disallow: /private-free-demo-leads-94f7c1a2d3
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/blogs
+Disallow: /admin/seo
+Disallow: /seo-settings-dashboard-telzon-secret-2024
+
+# Sitemap location
+Sitemap: https://telzonacademy.in/sitemap.xml
