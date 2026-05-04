@@ -1,0 +1,84 @@
+name: Build & Deploy to Hostinger
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Lint (non-blocking)
+        run: npm run lint || true
+
+      - name: Build site
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_META_PIXEL_ID: ${{ secrets.VITE_META_PIXEL_ID }}
+        run: npm run build
+
+      - name: Verify dist exists
+        run: |
+          if [ ! -d dist ]; then
+            echo "::error::Build failed — dist/ not found"
+            exit 1
+          fi
+          ls -la dist | head -50
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 7
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Default Hostinger web root is public_html/. Override with FTP_SERVER_DIR
+          # if your hosting plan uses a different path (eg. domains/yourdomain.com/public_html/).
+          server-dir: ${{ secrets.FTP_SERVER_DIR || 'public_html/' }}
+          local-dir: ./dist/
+          # Skip churn — don't re-upload identical files
+          state-name: .ftp-deploy-sync-state.json
+          # Don't delete files we don't manage (e.g. .htaccess overrides, logs)
+          dangerous-clean-slate: false
+          # Speed: parallel + retry on failure
+          log-level: minimal
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.DS_Store

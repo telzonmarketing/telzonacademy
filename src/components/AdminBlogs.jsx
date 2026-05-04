@@ -11,8 +11,6 @@ import {
   List, Link2, Heading2, Heading3, Minus, CornerDownLeft, Image,
 } from 'lucide-react';
 
-const ADMIN_PASSWORD = '9923022925';
-
 const EMPTY_BLOG = {
   id: null, title: '', slug: '', category: '', excerpt: '', content: '',
   meta_title: '', meta_description: '', og_title: '', og_description: '',
@@ -70,50 +68,6 @@ function calcSeo(form) {
     { label: 'Tags added',                      pass: form.tags.length > 0 },
   ];
   return { score: Math.round(checks.filter(c => c.pass).length / checks.length * 100), checks };
-}
-
-// ─── Lock Screen ─────────────────────────────────────────────────────────────
-function LockScreen({ onUnlock }) {
-  const [pw, setPw] = useState('');
-  const [shake, setShake] = useState(false);
-  const [show, setShow] = useState(false);
-  const attempt = () => {
-    if (pw === ADMIN_PASSWORD) { onUnlock(); }
-    else { setShake(true); setPw(''); setTimeout(() => setShake(false), 600); }
-  };
-  return (
-    <div className="min-h-screen flex items-center justify-center px-4" style={{ background: '#060612' }}>
-      <Helmet>
-        <meta name="robots" content="noindex, nofollow" />
-        <title>Admin Login | Telzon Academy</title>
-      </Helmet>
-      <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-sm">
-        <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-gradient-to-br from-violet-600 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-2xl shadow-violet-500/40">
-            <Lock className="w-8 h-8 text-white" />
-          </div>
-          <h1 className="text-2xl font-black text-white tracking-tight">Blog Admin</h1>
-          <p className="text-gray-500 text-sm mt-1">Telzon Academy — Secure Dashboard</p>
-        </div>
-        <motion.div animate={shake ? { x: [-10, 10, -10, 10, 0] } : {}} transition={{ duration: 0.4 }}
-          className="rounded-2xl p-6 border border-white/10" style={{ background: 'rgba(255,255,255,0.04)', backdropFilter: 'blur(20px)' }}>
-          <div className="relative mb-4">
-            <input type={show ? 'text' : 'password'} value={pw} onChange={e => setPw(e.target.value)}
-              onKeyDown={e => e.key === 'Enter' && attempt()} placeholder="Enter password" autoFocus
-              className="w-full rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-violet-500/50 pr-12 text-sm"
-              style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }} />
-            <button type="button" onClick={() => setShow(s => !s)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300 transition-colors">
-              {show ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-            </button>
-          </div>
-          <button onClick={attempt} className="w-full bg-gradient-to-r from-violet-600 to-orange-500 text-white font-bold py-3.5 rounded-xl hover:opacity-90 transition-all text-sm shadow-lg shadow-violet-500/30">
-            Unlock Dashboard
-          </button>
-        </motion.div>
-      </motion.div>
-    </div>
-  );
 }
 
 // ─── SEO Score Ring ───────────────────────────────────────────────────────────
@@ -219,7 +173,6 @@ function BlogRow({ blog, onEdit, onDelete, onToggle }) {
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 const AdminBlogs = () => {
-  const [unlocked, setUnlocked]       = useState(false);
   const [blogs, setBlogs]             = useState([]);
   const [loading, setLoading]         = useState(true);
   const [saving, setSaving]           = useState(false);
@@ -237,7 +190,7 @@ const AdminBlogs = () => {
 
   const notify = (msg, type = 'success') => { setToast({ msg, type }); setTimeout(() => setToast(null), 3500); };
 
-  useEffect(() => { if (unlocked) fetchBlogs(); }, [unlocked]);
+  useEffect(() => { fetchBlogs(); }, []);
 
   const fetchBlogs = async () => {
     setLoading(true);
@@ -389,8 +342,6 @@ Respond ONLY with raw JSON (no markdown, no explanation):
     avgWords: blogs.length ? Math.round(blogs.reduce((a, b) => a + wordCount(b.content||''), 0) / blogs.length) : 0 };
 
   const inp = { className: "w-full rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-700 focus:outline-none focus:ring-1 focus:ring-violet-500/40 transition-all", style: { background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' } };
-
-  if (!unlocked) return <LockScreen onUnlock={() => setUnlocked(true)} />;
 
   return (
     <div className="min-h-screen text-white" style={{ background: '#060612' }}>

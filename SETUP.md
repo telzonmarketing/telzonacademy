@@ -1,181 +1,136 @@
-# Telzon Academy — Full Setup Guide
+# Telzon Academy — Backend & Admin Setup
 
-## 1. Push to GitHub
+This site uses **Supabase** for data + auth + Edge Functions, **Meta Pixel + CAPI** for ad tracking, **Resend** for lead-notification email, and **GitHub Actions → FTP → Hostinger** for deploys.
+
+Once-only setup is below. After that, every push to `main` rebuilds and uploads `dist/` to Hostinger.
+
+---
+
+## 1. Supabase — already wired
+
+Project: `lcnfnwivodzjjpykihfn` (Tokyo / ap-northeast-1).
+
+**Tables managed by the app:** `leads`, `blogs`, `seoSettings`, `videos`, `hiring_companies`. RLS is on for all of them. Public site-visitors can:
+
+- Read published blogs / SEO settings / videos / hiring companies
+- Insert into `leads`
+
+The admin (email = `telzoncilentsbusiness@gmail.com`) can do everything else.
+
+**Edge Functions deployed:**
+
+| Function | Path | Purpose |
+| --- | --- | --- |
+| `submit-lead` | `POST /functions/v1/submit-lead` | Persists lead → fires Meta CAPI Lead → emails admin via Resend. Public (no JWT). |
+| `meta-stats` | `GET /functions/v1/meta-stats?date_preset=last_30d` | Admin-only Meta Marketing API insights (spend / leads / CPL by campaign). |
+
+### 1a. Create your admin user
+
+In the Supabase dashboard → **Authentication → Users → Add user → email/password**, create:
+
+- email: `telzoncilentsbusiness@gmail.com`
+- password: anything you want (you'll use this on `/admin/login`)
+- ✅ "Auto Confirm User"
+
+Anyone signing in with any other email is rejected by `AdminGuard`.
+
+### 1b. Set Edge Function secrets
+
+In **Supabase → Project settings → Edge Functions → Secrets**, add:
+
+| Key | Required for | Value |
+| --- | --- | --- |
+| `ADMIN_EMAIL` | email + admin gate | `telzoncilentsbusiness@gmail.com` |
+| `META_PIXEL_ID` | Meta CAPI | numeric Pixel ID from Events Manager |
+| `META_CAPI_TOKEN` | Meta CAPI | Conversions API access token (Events Manager → Settings → Generate Access Token) |
+| `META_TEST_EVENT_CODE` | optional | Pastes events into the Test Events tab while testing |
+| `META_AD_ACCOUNT_ID` | Marketing API dashboard | e.g. `1234567890` (or `act_1234567890`) |
+| `META_MARKETING_TOKEN` | Marketing API dashboard | system-user token with `ads_read` scope |
+| `RESEND_API_KEY` | lead emails | Resend API key (re_…) |
+| `RESEND_FROM_EMAIL` | lead emails | `"Telzon Leads <leads@yourdomain.com>"` (verify the domain in Resend, or use `onboarding@resend.dev` while testing) |
+
+`SUPABASE_URL`, `SUPABASE_ANON_KEY`, and `SUPABASE_SERVICE_ROLE_KEY` are pre-populated by Supabase — you don't add them.
+
+Until you fill `META_PIXEL_ID + META_CAPI_TOKEN`, leads still save and emails still send; only CAPI is skipped.
+
+---
+
+## 2. Meta Pixel — client-side
+
+The site reads your full Pixel snippet from `seoSettings.pixel_code` and injects it into `<head>` on every public page (`TrackingScripts.jsx`). Open `/admin/seo` → **Tracking** tab → paste the snippet Meta gives you in **Events Manager → Pixel → Continue Pixel Setup → Install code manually** → **Save**.
+
+Once that's in, every form submission also fires `fbq('track', 'Lead')` client-side, deduped server-side by event_id with the CAPI call.
+
+---
+
+## 3. GitHub repo — `telzon academy`
+
+### 3a. Push the code
 
 ```bash
-# In your project folder (where package.json is):
+cd "final code telzon academy"
 git init
 git add .
-git commit -m "feat: Zomato SEO strategy + AI blog admin + daily indexing automation"
-
-# Create a new repo on github.com called "telzon-academy" then:
-git remote add origin https://github.com/YOUR_USERNAME/telzon-academy.git
+git commit -m "Backend: leads + admin + Meta CAPI + Resend"
 git branch -M main
+git remote add origin git@github.com:<your-username>/telzon-academy.git
 git push -u origin main
 ```
 
----
+### 3b. Add repo secrets
 
-## 2. Supabase — Required Tables
+GitHub → repo → **Settings → Secrets and variables → Actions → New repository secret**:
 
-Go to **Supabase → SQL Editor** and run:
+| Key | Value |
+| --- | --- |
+| `VITE_SUPABASE_URL` | `https://lcnfnwivodzjjpykihfn.supabase.co` |
+| `VITE_SUPABASE_ANON_KEY` | the long anon JWT from Supabase Settings → API |
+| `VITE_META_PIXEL_ID` | optional, your numeric pixel ID (only needed if you bake it in at build time instead of via SEO settings) |
+| `FTP_SERVER` | from Hostinger → **Files → FTP Accounts** (e.g. `ftp.yourdomain.com` or `123.45.67.89`) |
+| `FTP_USERNAME` | full FTP username (looks like `u123456789.yourdomain`) |
+| `FTP_PASSWORD` | the FTP password you set in Hostinger |
+| `FTP_SERVER_DIR` | usually `public_html/` (omit to use default) |
 
-```sql
--- Blogs table (if not already created)
-create table if not exists blogs (
-  id uuid default gen_random_uuid() primary key,
-  title text,
-  slug text unique,
-  category text,
-  excerpt text,
-  content text,
-  meta_title text,
-  meta_description text,
-  og_title text,
-  og_description text,
-  cover_image text,
-  author text default 'Telzon Academy',
-  read_time text,
-  tags text,
-  is_published boolean default false,
-  created_at timestamptz default now(),
-  updated_at timestamptz default now()
-);
-
--- Allow public reads on published blogs
-alter table blogs enable row level security;
-create policy "Public read published blogs"
-  on blogs for select using (is_published = true);
-
--- Allow all operations from anon key (admin uses same key)
-create policy "Admin full access"
-  on blogs for all using (true) with check (true);
-
--- SEO settings table
-create table if not exists "seoSettings" (
-  id uuid default gen_random_uuid() primary key,
-  page_key text unique,
-  meta_title text,
-  meta_description text,
-  meta_keywords text,
-  og_title text,
-  og_description text,
-  google_code text,
-  pixel_code text,
-  retargeting_code text,
-  updated_at timestamptz default now()
-);
-
--- If the seoSettings table already exists, run these once:
-alter table "seoSettings" add column if not exists google_code text;
-alter table "seoSettings" add column if not exists pixel_code text;
-alter table "seoSettings" add column if not exists retargeting_code text;
-
--- Leads table
-create table if not exists leads (
-  id uuid default gen_random_uuid() primary key,
-  full_name text,
-  email text,
-  phone text,
-  source text,
-  created_at timestamptz default now()
-);
-```
+The workflow is `.github/workflows/deploy.yml` — runs on push to `main` and via "Run workflow" in Actions.
 
 ---
 
-## 3. GitHub Secrets — Add these in Settings → Secrets → Actions
+## 4. Hostinger — verify FTP access
 
-| Secret Name       | Value                                                    |
-|-------------------|----------------------------------------------------------|
-| `SUPABASE_URL`    | `https://lcnfnwivodzjjpykihfn.supabase.co`              |
-| `SUPABASE_ANON_KEY` | Your Supabase anon key from Project Settings → API    |
-| `INDEXNOW_KEY`    | Any random 32-char string, e.g. `telzon2025seokey12345` |
+In Hostinger control panel: **Websites → Manage → Files → FTP Accounts**. Note the host, username, and either set or look up the password. Make sure the path you give to `FTP_SERVER_DIR` is the real web root for your domain — usually `public_html/`, sometimes `domains/<yourdomain>/public_html/`.
+
+The `.htaccess` file in `public/` handles SPA routing once it's deployed (it's already correct).
 
 ---
 
-## 4. IndexNow Key File
+## 5. Admin URLs
 
-Create a file at `public/YOUR_INDEXNOW_KEY.txt` containing just the key:
+- `/admin/login` — Supabase email/password login
+- `/admin` — overview (leads + posts)
+- `/admin/leads` — leads inbox, status, notes, CSV export, WhatsApp deep-links
+- `/admin/blogs` — full blog CRUD with AI generator
+- `/admin/seo` — meta tags, OG, **Pixel/Tracking code** (paste your full Meta Pixel snippet here)
+- `/admin/videos` — videos CRUD
+- `/admin/meta-ads` — live Meta Marketing API dashboard
 
-```
-telzon2025seokey12345
-```
-
-This allows Bing/Yandex to verify your site ownership for instant indexing.
-
----
-
-## 5. Google Search Console
-
-1. Go to https://search.google.com/search-console
-2. Add property → `https://telzonacademy.in`
-3. Verify via HTML file or DNS
-4. Submit sitemap → `https://telzonacademy.in/sitemap.xml`
-5. Request indexing for your homepage manually first
+The legacy `/private-free-demo-leads-94f7c1a2d3` and `/seo-settings-dashboard-telzon-secret-2024` URLs now redirect into the proper auth-protected admin.
 
 ---
 
-## 6. Deploy to Hostinger
+## 6. Testing the full lead flow
 
-```bash
-npm run build
-```
-Upload the `dist/` folder contents to Hostinger public_html via File Manager or FTP.
-
----
-
-## 7. Admin Panel URL
-
-- **Blog Admin**: `https://telzonacademy.in/admin/blogs`
-- **Password**: `9923022925`
-- **Leads Admin**: `https://telzonacademy.in/private-free-demo-leads-94f7c1a2d3`
-- **Lead Generation Page**: `https://telzonacademy.in/lead-generation-package`
-- **Free Demo Alias**: `https://telzonacademy.in/free-demo`
+1. Open the homepage in a private window with `?utm_source=test&utm_campaign=qa&fbclid=qa123`
+2. Submit any of: contact form, free-demo registration, lead-gen form
+3. Open `/admin/leads` — your lead is at the top with UTM, page URL, fbclid captured
+4. Check your inbox — you should get the `📥 New Telzon lead: …` Resend email (once `RESEND_API_KEY` is set)
+5. Open Meta Events Manager → **Test Events** tab and watch Lead events arrive (use `META_TEST_EVENT_CODE` while testing)
 
 ---
 
-## 8. Daily SEO Automation
+## Troubleshooting
 
-The GitHub Action at `.github/workflows/daily-seo.yml` runs every day at 6 AM IST and:
-- Builds the site to catch SEO-breaking code errors
-- Runs the advanced SEO Brain audit
-- Crawls every sitemap URL and checks live status, response time and response size
-- Uploads Markdown + JSON reports in GitHub Actions artifacts
-- Adds the SEO report to the GitHub job summary
-- Pings Google + Bing with your sitemap
-- Submits sitemap URLs to IndexNow when `INDEXNOW_KEY` is configured
-- Optionally submits priority URLs to Google Indexing API when `GOOGLE_INDEXING_KEY` is configured
-
-You can also trigger it manually from GitHub → Actions → "Daily SEO Brain — Audit, Crawl & Indexing" → Run workflow.
-
----
-
-## 9. Creating AI Blog Posts (Daily Workflow)
-
-1. Go to `/admin/blogs`
-2. Click **New Post**
-3. Open **AI Blog Generator** panel
-4. Enter a keyword like "digital marketing course in Nagpur 2025"
-5. Click **Generate** — full 1000-word post is written automatically
-6. Review, edit, add cover image from Unsplash
-7. Check SEO score panel (aim for 80+)
-8. Click **Publish Now**
-
-The GitHub Action will automatically ping Google/Bing with the new URL that night.
-
----
-
-## SEO Score Target: 100/100
-
-Each blog post needs:
-- ✅ Title 50–70 characters with keyword
-- ✅ Meta description 150–160 chars with keyword
-- ✅ Content 800+ words
-- ✅ Excerpt 80+ characters  
-- ✅ Cover image URL set
-- ✅ OG Title + OG Description filled
-- ✅ Category selected
-- ✅ Tags added (6–8)
-- ✅ Keyword in title and meta description
-- ✅ Internal link to `/pages/digital-marketing-course-in-nagpur`
+- **`/admin/login` keeps bouncing back** → no admin user yet, see step 1a.
+- **Leads don't save** → check Supabase logs (Functions → submit-lead). The fallback path in `leadSubmit.js` will use direct insert; if RLS blocks it, you'll see "new row violates row-level security" — verify the migration ran.
+- **Meta Ads page says "Meta credentials not configured"** → set `META_AD_ACCOUNT_ID` + `META_MARKETING_TOKEN` Edge Function secrets and refresh.
+- **Resend says "domain not verified"** → use `onboarding@resend.dev` as the From while you're verifying the domain.
+- **GitHub Action fails on FTP** → verify `FTP_SERVER` is the host, not a URL with `https://`. Usually no port. Try the FTP credentials with FileZilla first.

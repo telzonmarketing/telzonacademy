@@ -4,7 +4,7 @@ import { Loader2, CheckCircle, Send, ShieldCheck, Clock, Users } from 'lucide-re
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
-import { supabase } from '@/lib/customSupabaseClient';
+import { submitLead } from '@/lib/leadSubmit';
 
 /**
  * LeadGenForm
@@ -47,40 +47,30 @@ const LeadGenForm = ({
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      const { error } = await supabase.from('leads').insert({
-        full_name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        source: source
-      });
-      if (error) {
-        console.error('Error inserting lead:', error.message);
-        toast({
-          title: 'Submission Failed',
-          description: 'An error occurred while submitting your details. Please try again later.',
-          variant: 'destructive',
-          duration: 5000,
-        });
-      } else {
-        setIsSuccess(true);
-        setFormData({ name: '', email: '', phone: '' });
-        toast({
-          title: 'Thank you! 🎉',
-          description: 'Your details have been submitted successfully. Our team will contact you soon.',
-          duration: 5000,
-        });
-        // Reset success indicator after a delay to allow new submissions
-        setTimeout(() => setIsSuccess(false), 5000);
-      }
-    } catch (err) {
-      console.error('Unexpected error inserting lead:', err);
+    const { ok, error } = await submitLead({
+      full_name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      source,
+    });
+
+    if (!ok) {
+      console.error('Error inserting lead:', error);
       toast({
         title: 'Submission Failed',
-        description: 'An unexpected error occurred. Please try again later.',
+        description: error || 'An error occurred while submitting your details. Please try again later.',
         variant: 'destructive',
         duration: 5000,
       });
+    } else {
+      setIsSuccess(true);
+      setFormData({ name: '', email: '', phone: '' });
+      toast({
+        title: 'Thank you! 🎉',
+        description: 'Your details have been submitted successfully. Our team will contact you soon.',
+        duration: 5000,
+      });
+      setTimeout(() => setIsSuccess(false), 5000);
     }
 
     setIsSubmitting(false);

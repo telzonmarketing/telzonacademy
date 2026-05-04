@@ -4,7 +4,7 @@ import { Loader2, CheckCircle, Calendar, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
-import { supabase } from '@/lib/customSupabaseClient';
+import { submitLead } from '@/lib/leadSubmit';
 
 const FreeDemoRegistration = () => {
   const { toast } = useToast();
@@ -27,18 +27,18 @@ const FreeDemoRegistration = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const { error } = await supabase.from('leads').insert({
+    const { ok, error } = await submitLead({
       full_name: formData.name,
       email: formData.email,
       phone: formData.phone,
-      source: 'homepage-free-demo'
+      source: 'homepage-free-demo',
     });
 
-    if (error) {
+    if (!ok) {
       setIsSubmitting(false);
       toast({
         title: 'Registration Failed',
-        description: error.message || 'Please try again in a few minutes.',
+        description: error || 'Please try again in a few minutes.',
         variant: 'destructive',
         duration: 5000,
       });
