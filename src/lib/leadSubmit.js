@@ -76,7 +76,7 @@ export function firePixelViewContent({ content_name = 'Digital Marketing Course'
   if (typeof window === 'undefined') return;
   try {
     if (typeof window.fbq === 'function') {
-      window.fbq('track', 'ViewContent', { content_name, content_category, currency: 'INR' });
+      window.fbq('track', 'ViewContent', { content_name, content_category, value: 0, currency: 'INR' });
     }
   } catch { /* noop */ }
 }
