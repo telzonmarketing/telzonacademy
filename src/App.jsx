@@ -27,6 +27,7 @@ import GlobalSeo from '@/components/GlobalSeo';
 import LandingPage from '@/pages/LandingPage';
 import TrackingScripts from '@/components/TrackingScripts';
 import LeadGenerationPage from '@/pages/LeadGenerationPage';
+import WatchDemoPage from '@/pages/WatchDemoPage';
 
 // Admin
 import AdminGuard from '@/components/admin/AdminGuard';
@@ -81,6 +82,7 @@ function App() {
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/lead-generation-package" element={<LeadGenerationPage />} />
         <Route path="/free-demo" element={<LeadGenerationPage />} />
+        <Route path="/watch-demo" element={<WatchDemoPage />} />
         {/* Dynamic landing pages for keyword-targeted content */}
         <Route path="/pages/:slug" element={<LandingPage />} />
 
