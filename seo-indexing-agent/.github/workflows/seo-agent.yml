@@ -20,12 +20,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        working-directory: seo-indexing-agent
+        run: npm install
 
       - name: Run SEO audit & submit
+        working-directory: seo-indexing-agent
         env:
           SITE_URL: ${{ secrets.SITE_URL }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
