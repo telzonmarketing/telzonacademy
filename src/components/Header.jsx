@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { firePixelSchedule } from '@/lib/leadSubmit';
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -20,6 +21,7 @@ const Header = () => {
   };
 
   const handleLocationClick = () => {
+    firePixelSchedule();
     window.open('https://share.google/84JWzWeKpyNvvUnG2', '_blank');
   };
 

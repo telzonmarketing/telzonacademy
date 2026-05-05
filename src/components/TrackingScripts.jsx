@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { supabase } from '@/lib/customSupabaseClient';
+import { firePixelViewContent } from '@/lib/leadSubmit';
 
 const TRACKING_FIELDS = ['google_code', 'pixel_code', 'retargeting_code'];
 const ADMIN_PATHS = ['/admin', '/seo-settings-dashboard-telzon-secret-2024', '/private-free-demo-leads'];
@@ -60,6 +61,13 @@ const TrackingScripts = () => {
 
     fetchTrackingSettings();
   }, []);
+
+  // Fire ViewContent on every page visit (for Meta retargeting audiences)
+  useEffect(() => {
+    const isAdminPath = ADMIN_PATHS.some(path => location.pathname.startsWith(path));
+    if (isAdminPath) return;
+    firePixelViewContent({ content_name: document.title || 'Telzon Academy', content_category: 'Education' });
+  }, [location.pathname]);
 
   useEffect(() => {
     const isAdminPath = ADMIN_PATHS.some(path => location.pathname.startsWith(path));
