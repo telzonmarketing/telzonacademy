@@ -4,20 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SEO Dashboard — Telzon Academy</title>
-  <script>
-    (function() {
-      const PASS = '9923022925';
-      const key = 'seo_dash_auth';
-      if (sessionStorage.getItem(key) !== PASS) {
-        const input = prompt('Enter password to access SEO Dashboard:');
-        if (input !== PASS) {
-          document.write('<div style="font-family:sans-serif;text-align:center;padding:100px;background:#0f172a;color:#ef4444;height:100vh"><h2>Access Denied</h2></div>');
-          throw new Error('Unauthorized');
-        }
-        sessionStorage.setItem(key, PASS);
-      }
-    })();
-  </script>
+  <style>
+    #login-screen {
+      position: fixed; inset: 0; background: #0f172a;
+      display: flex; align-items: center; justify-content: center; z-index: 9999;
+    }
+    #login-box {
+      background: #1e293b; border: 1px solid #334155; border-radius: 16px;
+      padding: 40px 36px; width: 100%; max-width: 380px; text-align: center;
+    }
+    #login-box h2 { color: #f8fafc; font-size: 20px; margin-bottom: 6px; }
+    #login-box p { color: #94a3b8; font-size: 13px; margin-bottom: 24px; }
+    #login-box input {
+      width: 100%; padding: 12px 16px; border-radius: 8px;
+      border: 1px solid #334155; background: #0f172a; color: #f8fafc;
+      font-size: 15px; outline: none; margin-bottom: 12px; letter-spacing: 2px;
+    }
+    #login-box input:focus { border-color: #3b82f6; }
+    #login-box button {
+      width: 100%; padding: 12px; border-radius: 8px; border: none;
+      background: #3b82f6; color: white; font-size: 15px; font-weight: 600;
+      cursor: pointer; transition: background 0.2s;
+    }
+    #login-box button:hover { background: #2563eb; }
+    #login-error { color: #ef4444; font-size: 13px; margin-top: 10px; display: none; }
+  </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -64,6 +75,41 @@
   </style>
 </head>
 <body>
+
+<!-- Login Screen -->
+<div id="login-screen">
+  <div id="login-box">
+    <h2>🔒 SEO Dashboard</h2>
+    <p>Telzon Academy — Internal Tool</p>
+    <input type="password" id="pass-input" placeholder="Enter password" autofocus />
+    <button onclick="checkPass()">Unlock Dashboard</button>
+    <div id="login-error">Incorrect password. Try again.</div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    if (sessionStorage.getItem('seo_auth') === 'ok') {
+      document.getElementById('login-screen').style.display = 'none';
+    }
+  })();
+  function checkPass() {
+    const val = document.getElementById('pass-input').value;
+    if (val === '9923022925') {
+      sessionStorage.setItem('seo_auth', 'ok');
+      document.getElementById('login-screen').style.display = 'none';
+    } else {
+      document.getElementById('login-error').style.display = 'block';
+      document.getElementById('pass-input').value = '';
+      document.getElementById('pass-input').focus();
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('pass-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') checkPass();
+    });
+  });
+</script>
 
 <div class="header">
   <div>
