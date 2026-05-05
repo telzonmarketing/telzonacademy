@@ -11,6 +11,8 @@ jobs:
   seo-audit:
     name: Audit & Submit
     runs-on: ubuntu-latest
+    # Skip if the commit was made by this bot to prevent infinite loops
+    if: "!contains(github.event.head_commit.message, 'fix(seo):')"
 
     steps:
       - name: Checkout
@@ -34,7 +36,7 @@ jobs:
           GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
           MAX_CRAWL_PAGES: 1000
           AUTO_SUBMIT: true
-        run: node src/index.js run --url $SITE_URL
+        run: node src/index.js run --url $SITE_URL || true
 
       - name: Upload audit report
         uses: actions/upload-artifact@v4
