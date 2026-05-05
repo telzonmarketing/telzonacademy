@@ -64,10 +64,31 @@ export function firePixelLead(value) {
   try {
     if (typeof window.fbq === 'function') {
       window.fbq('track', 'Lead', value ? { value, currency: 'INR' } : undefined);
+      window.fbq('track', 'CompleteRegistration', { currency: 'INR', status: 'submitted' });
     }
   } catch {
     /* noop */
   }
+}
+
+// Fires when user visits a course/landing page
+export function firePixelViewContent({ content_name = 'Digital Marketing Course', content_category = 'Education' } = {}) {
+  if (typeof window === 'undefined') return;
+  try {
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'ViewContent', { content_name, content_category, currency: 'INR' });
+    }
+  } catch { /* noop */ }
+}
+
+// Fires when user clicks "Book Free Demo" / "Register" button
+export function firePixelSchedule() {
+  if (typeof window === 'undefined') return;
+  try {
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Schedule');
+    }
+  } catch { /* noop */ }
 }
 
 export function fireGtagLead({ source = 'website' } = {}) {

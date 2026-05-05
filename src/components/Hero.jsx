@@ -2,9 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, CheckCircle, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { firePixelSchedule } from '@/lib/leadSubmit';
 
 const Hero = () => {
   const handleCTAClick = () => {
+    firePixelSchedule();
     window.open('https://wa.me/919307189776?text=Hello%20Telzon%20Academy%2C%20I%20want%20to%20book%20a%20free%20demo%20class%20for%20the%20digital%20marketing%20course', '_blank');
   };
 
