@@ -70,6 +70,21 @@ export function firePixelLead(value) {
   }
 }
 
+export function fireGtagLead({ source = 'website' } = {}) {
+  if (typeof window === 'undefined') return;
+  try {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'generate_lead', {
+        event_category: 'Lead Form',
+        event_label: source,
+        currency: 'INR',
+      });
+    }
+  } catch {
+    /* noop */
+  }
+}
+
 /**
  * Submit a lead.
  * @param {{full_name:string,email?:string,phone?:string,message?:string,source?:string,extra?:object}} payload
@@ -96,6 +111,7 @@ export async function submitLead(payload) {
     const data = await res.json().catch(() => ({}));
     if (res.ok && data?.ok) {
       firePixelLead();
+      fireGtagLead({ source: body.source });
       return { ok: true, id: data.id, capi: data.capi, email: data.email };
     }
     // Edge Function reachable but errored — fall through to direct insert
@@ -134,5 +150,6 @@ export async function submitLead(payload) {
     return { ok: false, error: error.message };
   }
   firePixelLead();
+  fireGtagLead({ source: body.source });
   return { ok: true, id: data?.id };
 }
