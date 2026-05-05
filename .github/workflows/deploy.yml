@@ -74,7 +74,7 @@ jobs:
           # Skip churn — don't re-upload identical files
           state-name: .ftp-deploy-sync-state.json
           # Don't delete files we don't manage (e.g. .htaccess overrides, logs)
-          dangerous-clean-slate: false
+          dangerous-clean-slate: true
           # Speed: parallel + retry on failure
           log-level: minimal
           exclude: |
