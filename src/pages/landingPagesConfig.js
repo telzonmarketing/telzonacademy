@@ -483,5 +483,337 @@ export const landingPages = [
       'Self-paced online modules to catch up anytime',
       'Salary hike and promotion-focused curriculum'
     ]
+  },
+
+  // ─── Service/Agency intent (Practo + IndiaMart pattern) ───────────────────
+  {
+    slug: 'digital-marketing-agency-in-nagpur',
+    metaTitle: 'Digital Marketing Agency in Nagpur | Telzon Academy & Studio',
+    metaDescription: 'Telzon Academy is also a full-service digital marketing agency in Nagpur — SEO, Google Ads, Meta Ads, content, and lead generation for Nagpur businesses.',
+    metaKeywords: 'digital marketing agency in Nagpur, digital marketing agency Nagpur, marketing company Nagpur, SEO agency Nagpur',
+    ogTitle: 'Digital Marketing Agency in Nagpur — Telzon',
+    ogDescription: 'Trusted Nagpur agency for SEO, ads, social media and lead generation. Get a quote today.',
+    headline: 'Digital Marketing Agency in Nagpur',
+    subheadline: 'Beyond training — Telzon Academy runs full digital marketing campaigns for Nagpur businesses. SEO, Google Ads, Meta Ads, content and full-funnel lead generation.',
+    bullets: [
+      'SEO + Google Ads + Meta Ads + content under one roof',
+      'Transparent monthly reporting and ROI tracking',
+      'Trained, certified team based right here in Nagpur',
+      'Free 30-minute strategy call before you commit'
+    ]
+  },
+  {
+    slug: 'digital-marketing-services-in-nagpur',
+    metaTitle: 'Digital Marketing Services in Nagpur | Telzon Academy',
+    metaDescription: 'Complete digital marketing services in Nagpur — SEO, social media, Google Ads, content marketing and website development. Affordable plans for local businesses.',
+    metaKeywords: 'digital marketing services in Nagpur, digital marketing services Nagpur, SEO services Nagpur, online marketing services',
+    ogTitle: 'Digital Marketing Services in Nagpur — Telzon',
+    ogDescription: 'End-to-end digital marketing services for Nagpur businesses. SEO, ads, social and content.',
+    headline: 'Digital Marketing Services in Nagpur',
+    subheadline: 'Everything your Nagpur business needs to grow online — under one roof. Choose individual services or full-stack growth packages.',
+    bullets: [
+      'SEO & Google Business Profile optimisation',
+      'Google Ads & Meta Ads campaign management',
+      'Social media management & content production',
+      'Website design + lead generation funnels'
+    ]
+  },
+  {
+    slug: 'seo-services-in-nagpur',
+    metaTitle: 'SEO Services in Nagpur | Rank #1 on Google with Telzon',
+    metaDescription: 'Affordable, white-hat SEO services in Nagpur. Local SEO, Google Business Profile, content and link building. Rank higher and get more leads with Telzon.',
+    metaKeywords: 'SEO services in Nagpur, SEO company Nagpur, local SEO Nagpur, Nagpur SEO agency',
+    ogTitle: 'SEO Services in Nagpur — Telzon Academy',
+    ogDescription: 'Local SEO + content + technical audits to rank Nagpur businesses on Google.',
+    headline: 'SEO Services in Nagpur',
+    subheadline: 'Get found by customers actively searching in Nagpur. Our local SEO process ranks you for the keywords that bring real revenue.',
+    bullets: [
+      'Local SEO & Google Business Profile mastery',
+      'Technical audit, on-page fixes and schema',
+      'Local citation building & competitor outranking',
+      'Monthly reports — every keyword tracked'
+    ]
+  },
+  {
+    slug: 'seo-freelancer-in-nagpur',
+    metaTitle: 'SEO Freelancer in Nagpur | Telzon Certified Experts',
+    metaDescription: 'Hire vetted SEO freelancers in Nagpur trained by Telzon Academy. Affordable rates for local businesses, startups and agencies. Free consultation.',
+    metaKeywords: 'SEO freelancer in Nagpur, SEO freelancer Nagpur, freelance SEO expert Nagpur, hire SEO Nagpur',
+    ogTitle: 'SEO Freelancer in Nagpur — Telzon Certified',
+    ogDescription: 'Hire freelance SEO experts in Nagpur. Telzon-trained, transparent rates, real results.',
+    headline: 'SEO Freelancer in Nagpur',
+    subheadline: 'Need an SEO freelancer in Nagpur without agency overhead? Our network of Telzon-certified freelancers handles audits, on-page, link building and local SEO at fair rates.',
+    bullets: [
+      'All freelancers trained & certified by Telzon Academy',
+      'Transparent monthly pricing — no surprise bills',
+      'Local Nagpur SEO + India-wide service capability',
+      'Free 20-minute audit call before you hire'
+    ]
+  },
+  {
+    slug: 'social-media-marketing-agency-in-nagpur',
+    metaTitle: 'Social Media Marketing Agency in Nagpur | Telzon',
+    metaDescription: 'Top social media marketing agency in Nagpur. Instagram, Facebook, LinkedIn and YouTube growth for Nagpur brands, restaurants, clinics and shops.',
+    metaKeywords: 'social media marketing agency in Nagpur, social media company Nagpur, Instagram marketing Nagpur, Facebook marketing Nagpur',
+    ogTitle: 'Social Media Marketing Agency in Nagpur — Telzon',
+    ogDescription: 'Grow your Nagpur brand on Instagram, Facebook, LinkedIn and YouTube with Telzon.',
+    headline: 'Social Media Marketing Agency in Nagpur',
+    subheadline: 'From restaurant reels to clinic Instagram pages and B2B LinkedIn — we run full social media management for Nagpur brands. Content, ads, growth.',
+    bullets: [
+      'Daily content creation, posting and community management',
+      'Paid ad campaigns on Meta, LinkedIn, YouTube',
+      'Influencer marketing with Nagpur creators',
+      'Monthly analytics dashboard with ROI breakdown'
+    ]
+  },
+
+  // ─── Top/list pages (Practo "Best of" pattern) ────────────────────────────
+  {
+    slug: 'top-10-digital-marketing-institutes-in-nagpur',
+    metaTitle: 'Top 10 Digital Marketing Institutes in Nagpur 2026 | Telzon',
+    metaDescription: 'List of the top 10 digital marketing institutes in Nagpur for 2026. Compare fees, courses, placement records and student reviews. #1 ranked: Telzon Academy.',
+    metaKeywords: 'top 10 digital marketing institute in nagpur, top digital marketing institutes Nagpur, best digital marketing institutes 2026 Nagpur',
+    ogTitle: 'Top 10 Digital Marketing Institutes in Nagpur 2026',
+    ogDescription: 'The definitive list of best digital marketing institutes in Nagpur — fees, placement, reviews compared.',
+    headline: 'Top 10 Digital Marketing Institutes in Nagpur 2026',
+    subheadline: 'A side-by-side comparison of fees, course quality, placement records and student reviews for Nagpur\'s top 10 institutes — with Telzon Academy ranked #1.',
+    bullets: [
+      'Fees, duration and curriculum compared head-to-head',
+      'Placement track record verified for each institute',
+      'Real student reviews from Nagpur',
+      'Updated for 2026 with latest course offerings'
+    ]
+  },
+  {
+    slug: 'top-digital-marketing-courses-in-nagpur-2026',
+    metaTitle: 'Top Digital Marketing Courses in Nagpur 2026 | Compared',
+    metaDescription: 'Top digital marketing courses in Nagpur for 2026 — compare syllabus, fees, placement and reviews. Find the right course for your career goals.',
+    metaKeywords: 'top digital marketing courses in Nagpur, best digital marketing courses 2026, top courses Nagpur',
+    ogTitle: 'Top Digital Marketing Courses in Nagpur 2026',
+    ogDescription: 'Compare the best digital marketing courses in Nagpur — syllabus, fees, placement and reviews side-by-side.',
+    headline: 'Top Digital Marketing Courses in Nagpur 2026',
+    subheadline: 'A practical, no-fluff comparison of every major digital marketing course offered in Nagpur. Fees, modules, projects, placement — everything you need to decide.',
+    bullets: [
+      'Curriculum compared module-by-module',
+      'Total fees including hidden charges revealed',
+      'Placement support & alumni outcomes verified',
+      'Updated monthly — newest courses included'
+    ]
+  },
+  {
+    slug: 'best-digital-marketing-agency-in-nagpur',
+    metaTitle: 'Best Digital Marketing Agency in Nagpur | Telzon Academy',
+    metaDescription: 'Looking for the best digital marketing agency in Nagpur? Telzon Academy runs SEO, Google Ads, Meta Ads and full marketing for Nagpur businesses. ⭐ 4.9/5.',
+    metaKeywords: 'best digital marketing agency in Nagpur, top marketing agency Nagpur, top digital agency Nagpur',
+    ogTitle: 'Best Digital Marketing Agency in Nagpur — Telzon',
+    ogDescription: 'Top-rated digital marketing agency in Nagpur. Real campaigns, real ROI for Nagpur businesses.',
+    headline: 'Best Digital Marketing Agency in Nagpur',
+    subheadline: 'Telzon Academy isn\'t just a training institute — it\'s the agency Nagpur businesses trust for SEO, ads and full digital growth. Run by certified experts.',
+    bullets: [
+      '⭐ 4.9/5 rating from 200+ Nagpur clients',
+      'SEO, Google Ads, Meta Ads, content & web combined',
+      'In-house Nagpur team — no overseas freelancers',
+      'Money-back guarantee on first 30 days'
+    ]
+  },
+
+  // ─── Locality pages (Zomato/IndiaMart hyper-local pattern) ──────────────
+  {
+    slug: 'digital-marketing-course-in-dharampeth-nagpur',
+    metaTitle: 'Digital Marketing Course in Dharampeth, Nagpur | Telzon Academy',
+    metaDescription: 'Best digital marketing course near Dharampeth, Nagpur. Walk in from Variety Square, Wing Square or Dharampeth Metro. Live projects + 95% placement.',
+    metaKeywords: 'digital marketing course in Dharampeth, digital marketing Dharampeth Nagpur, marketing course Dharampeth',
+    ogTitle: 'Digital Marketing Course in Dharampeth, Nagpur — Telzon',
+    ogDescription: 'Easily reachable from Dharampeth, Variety Square and Wing Square. Live projects + placement.',
+    headline: 'Digital Marketing Course in Dharampeth, Nagpur',
+    subheadline: 'Telzon Academy is the closest premium digital marketing institute for students and professionals in Dharampeth — easy walk from Variety Square, Wing Square and Dharampeth Metro.',
+    bullets: [
+      '10-min walk from Variety Square — easy commute',
+      'Convenient batches for Dharampeth working professionals',
+      'Same Telzon curriculum — live projects, placement, Google certification',
+      'Free demo class — drop in any Saturday'
+    ]
+  },
+  {
+    slug: 'digital-marketing-course-in-sitabuldi-nagpur',
+    metaTitle: 'Digital Marketing Course in Sitabuldi, Nagpur | Telzon',
+    metaDescription: 'Top digital marketing course near Sitabuldi market, Nagpur. Easy from Sitabuldi Metro, Munje Square and Zero Mile. AI tools + placement support.',
+    metaKeywords: 'digital marketing course in Sitabuldi, marketing course Sitabuldi Nagpur, digital marketing Sitabuldi',
+    ogTitle: 'Digital Marketing Course in Sitabuldi, Nagpur — Telzon',
+    ogDescription: 'Easy from Sitabuldi Market, Zero Mile and Sitabuldi Metro. Telzon Academy.',
+    headline: 'Digital Marketing Course in Sitabuldi, Nagpur',
+    subheadline: 'Living or working around Sitabuldi market, Munje Square or Zero Mile? Telzon Academy is your closest practical, AI-powered digital marketing institute.',
+    bullets: [
+      'Easy commute from Sitabuldi Metro & Sitabuldi market',
+      'Weekend batches ideal for Sitabuldi shop owners',
+      'Same comprehensive curriculum — SEO, Ads, Social',
+      'Walk in for a free demo before you decide'
+    ]
+  },
+  {
+    slug: 'digital-marketing-course-in-sadar-nagpur',
+    metaTitle: 'Digital Marketing Course in Sadar, Nagpur | Telzon Academy',
+    metaDescription: 'Best digital marketing course near Sadar, Nagpur. Convenient for residents of Sadar, Civil Lines and Mount Road. Live projects, AI tools, placement.',
+    metaKeywords: 'digital marketing course in Sadar, marketing course Sadar Nagpur, digital marketing Sadar',
+    ogTitle: 'Digital Marketing Course in Sadar, Nagpur — Telzon',
+    ogDescription: 'Convenient digital marketing institute for Sadar and Civil Lines residents. Telzon Academy.',
+    headline: 'Digital Marketing Course in Sadar, Nagpur',
+    subheadline: 'For Sadar, Civil Lines and Mount Road residents — Telzon Academy is the closest comprehensive digital marketing institute with weekend and weekday batches.',
+    bullets: [
+      'Quick commute from Sadar, Civil Lines, Mount Road',
+      'AI-powered curriculum — ChatGPT, Canva, SurferSEO',
+      '95% placement record across Nagpur and India',
+      'Free demo class every Saturday'
+    ]
+  },
+  {
+    slug: 'digital-marketing-course-in-pratap-nagar-nagpur',
+    metaTitle: 'Digital Marketing Course in Pratap Nagar, Nagpur | Telzon',
+    metaDescription: 'Practical digital marketing course near Pratap Nagar, Nagpur. Easy from Pratap Nagar Square, Khamla and Trimurti Nagar. Live projects + 95% placement.',
+    metaKeywords: 'digital marketing course in Pratap Nagar, marketing course Pratap Nagar Nagpur',
+    ogTitle: 'Digital Marketing Course in Pratap Nagar, Nagpur — Telzon',
+    ogDescription: 'Convenient for Pratap Nagar, Khamla and Trimurti Nagar residents. Telzon Academy.',
+    headline: 'Digital Marketing Course in Pratap Nagar, Nagpur',
+    subheadline: 'Living in Pratap Nagar, Khamla or Trimurti Nagar? Telzon Academy is the practical choice — live projects, AI tools, weekend & weekday batches.',
+    bullets: [
+      'Easy commute from Pratap Nagar, Khamla, Trimurti Nagar',
+      'Same Telzon curriculum at no extra cost',
+      'Live client projects — not just theory',
+      'Free demo + free roadmap call'
+    ]
+  },
+  {
+    slug: 'digital-marketing-course-in-ramdaspeth-nagpur',
+    metaTitle: 'Digital Marketing Course in Ramdaspeth, Nagpur | Telzon',
+    metaDescription: 'Top digital marketing course near Ramdaspeth, Nagpur. Walk in from West High Court Road or Mount Road. Live projects, Google certification, placement.',
+    metaKeywords: 'digital marketing course in Ramdaspeth, marketing course Ramdaspeth Nagpur',
+    ogTitle: 'Digital Marketing Course in Ramdaspeth, Nagpur — Telzon',
+    ogDescription: 'Easy access for Ramdaspeth and West High Court Road residents. Telzon Academy.',
+    headline: 'Digital Marketing Course in Ramdaspeth, Nagpur',
+    subheadline: 'Ramdaspeth & West High Court Road residents — Telzon Academy is your nearest premium digital marketing institute. Practical training, real projects, 95% placement.',
+    bullets: [
+      'Easy reach from Ramdaspeth, West High Court Road',
+      'Hands-on training with real client campaigns',
+      'Google, Meta, HubSpot certification guidance',
+      'Weekend and evening batch flexibility'
+    ]
+  },
+
+  // ─── Career intent pages ──────────────────────────────────────────────────
+  {
+    slug: 'digital-marketing-jobs-in-nagpur',
+    metaTitle: 'Digital Marketing Jobs in Nagpur | Salary, Companies, Roles',
+    metaDescription: 'Digital marketing jobs in Nagpur — current openings, salary ranges (₹2.5L–₹8L), top hiring companies and how to land your first role. Free placement help.',
+    metaKeywords: 'digital marketing jobs in Nagpur, digital marketing jobs Nagpur, marketing executive jobs Nagpur, SEO jobs Nagpur',
+    ogTitle: 'Digital Marketing Jobs in Nagpur — Salaries & Openings',
+    ogDescription: 'Find digital marketing jobs in Nagpur. Salary ranges, top companies, and placement help from Telzon.',
+    headline: 'Digital Marketing Jobs in Nagpur',
+    subheadline: 'A complete guide to digital marketing jobs in Nagpur in 2026 — salary ranges, top hiring companies, in-demand roles, and how Telzon Academy gets you placed.',
+    bullets: [
+      'Salary ranges: ₹2.5 LPA (entry) to ₹12 LPA (senior)',
+      'Top hiring companies in and around Nagpur listed',
+      'In-demand roles: SEO, Performance Marketer, Social Media',
+      'Free placement assistance for Telzon students'
+    ]
+  },
+  {
+    slug: 'digital-marketing-salary-in-nagpur',
+    metaTitle: 'Digital Marketing Salary in Nagpur 2026 | Complete Guide',
+    metaDescription: 'Digital marketing salary in Nagpur 2026 — fresher (₹2.5L), 1-3 yrs (₹4.5L), 3-5 yrs (₹7L) and senior (₹12L+). Salary by role, skill and certification.',
+    metaKeywords: 'digital marketing salary in Nagpur, digital marketing salary 2026 Nagpur, SEO salary Nagpur, social media salary Nagpur',
+    ogTitle: 'Digital Marketing Salary in Nagpur 2026 — Real Data',
+    ogDescription: 'Real digital marketing salary data for Nagpur in 2026 — by role, experience and skill.',
+    headline: 'Digital Marketing Salary in Nagpur 2026',
+    subheadline: 'Honest, no-fluff salary data for digital marketing roles in Nagpur — fresher to senior — broken down by role, experience and certifications.',
+    bullets: [
+      'Fresher salary: ₹2.5–₹3.5 LPA in 2026',
+      '1-3 years experience: ₹4.5–₹6 LPA',
+      '3-5 years senior roles: ₹7–₹12 LPA',
+      'Freelance: ₹40K–₹1.5L per month'
+    ]
+  },
+  {
+    slug: 'digital-marketing-career-after-12th-nagpur',
+    metaTitle: 'Digital Marketing Career After 12th in Nagpur | Telzon',
+    metaDescription: 'Start your digital marketing career after 12th in Nagpur. Course path, salary, jobs and step-by-step roadmap from Telzon Academy. Free counselling.',
+    metaKeywords: 'digital marketing after 12th, digital marketing career after 12th Nagpur, marketing course after 12th Nagpur',
+    ogTitle: 'Digital Marketing Career After 12th in Nagpur',
+    ogDescription: 'After 12th, start a digital marketing career in 6 months. Roadmap, fees and jobs explained.',
+    headline: 'Digital Marketing Career After 12th in Nagpur',
+    subheadline: 'Just finished 12th and unsure about a career? Digital marketing in Nagpur pays well, hires fast, and only needs 4–6 months of training. Here\'s the complete roadmap.',
+    bullets: [
+      'No degree required — start in 4–6 months',
+      'Starting salary ₹2.5L; reach ₹6L in 2 years',
+      'Telzon offers a special after-12th batch with mentorship',
+      'Free career counselling — book a call today'
+    ]
+  },
+
+  // ─── Audience-targeted pages ──────────────────────────────────────────────
+  {
+    slug: 'digital-marketing-course-for-students-in-nagpur',
+    metaTitle: 'Digital Marketing Course for Students in Nagpur | Telzon',
+    metaDescription: 'Special digital marketing course for college students in Nagpur. Affordable fees, weekend batches, internship + placement. Build a portfolio while you study.',
+    metaKeywords: 'digital marketing course for students in Nagpur, marketing course college students Nagpur, student digital marketing Nagpur',
+    ogTitle: 'Digital Marketing Course for Students in Nagpur — Telzon',
+    ogDescription: 'Affordable, student-friendly digital marketing course in Nagpur. Internship + portfolio.',
+    headline: 'Digital Marketing Course for Students in Nagpur',
+    subheadline: 'Designed for BCom/BBA/BCA/Engineering students in Nagpur — weekend batches, lower fees, internship and a real portfolio you can show in placements.',
+    bullets: [
+      'Special student fee with EMI from ₹2,500/month',
+      'Weekend & evening batches around college timings',
+      'Live internship — real portfolio for placements',
+      'Resume + LinkedIn workshop included'
+    ]
+  },
+  {
+    slug: 'digital-marketing-course-after-graduation-nagpur',
+    metaTitle: 'Digital Marketing Course After Graduation in Nagpur | Telzon',
+    metaDescription: 'Best digital marketing course after graduation in Nagpur. Job-oriented curriculum, placement support and certification. Land your first marketing role in 60 days.',
+    metaKeywords: 'digital marketing after graduation, marketing course after graduation Nagpur, after BCom digital marketing Nagpur',
+    ogTitle: 'Digital Marketing Course After Graduation — Nagpur',
+    ogDescription: 'Job-oriented digital marketing course after graduation. 60-day placement.',
+    headline: 'Digital Marketing Course After Graduation in Nagpur',
+    subheadline: 'Just graduated? Skip the unpaid internship route — Telzon\'s job-oriented digital marketing course gets graduates placed within 60 days, with Google + Meta certifications.',
+    bullets: [
+      'Job-oriented modules built around placement requirements',
+      'Average placement time: 30–60 days',
+      'Google Ads + Meta Blueprint certification included',
+      'Resume + interview prep + mock interviews'
+    ]
+  },
+  {
+    slug: 'weekend-digital-marketing-course-in-nagpur',
+    metaTitle: 'Weekend Digital Marketing Course in Nagpur | Telzon',
+    metaDescription: 'Weekend digital marketing course in Nagpur — Saturday & Sunday batches for working professionals and students. Same syllabus, full placement support.',
+    metaKeywords: 'weekend digital marketing course Nagpur, Saturday Sunday batch Nagpur, weekend marketing course',
+    ogTitle: 'Weekend Digital Marketing Course in Nagpur — Telzon',
+    ogDescription: 'Saturday + Sunday batches in Nagpur for working professionals and college students.',
+    headline: 'Weekend Digital Marketing Course in Nagpur',
+    subheadline: 'Sat–Sun batches at Telzon Academy — built for working professionals and college students who can\'t attend weekday classes. Full curriculum, real projects, real placement.',
+    bullets: [
+      'Saturday + Sunday, 10 AM – 2 PM',
+      'Same modules and live projects as weekday batch',
+      'Recorded sessions for revision',
+      'Same 95% placement support'
+    ]
+  },
+
+  // ─── Hub page for "digital marketing in Nagpur" ────────────────────────
+  {
+    slug: 'digital-marketing-in-nagpur',
+    metaTitle: 'Digital Marketing in Nagpur 2026 | Courses, Jobs, Agencies, Salary',
+    metaDescription: 'Complete guide to digital marketing in Nagpur — best courses, top agencies, job openings, salary trends and career roadmap for 2026.',
+    metaKeywords: 'digital marketing in Nagpur, digital marketing Nagpur, Nagpur digital marketing, digital marketing scope Nagpur',
+    ogTitle: 'Digital Marketing in Nagpur 2026 — Complete Guide',
+    ogDescription: 'Courses, jobs, agencies, salary, scope — everything about digital marketing in Nagpur.',
+    headline: 'Digital Marketing in Nagpur — The 2026 Guide',
+    subheadline: 'Everything you need to know about digital marketing in Nagpur — best courses, top agencies, current jobs, salary trends and a clear career roadmap for 2026.',
+    bullets: [
+      'Best digital marketing courses in Nagpur compared',
+      'Active job market & top hiring companies',
+      '2026 salary trends — fresher to senior level',
+      'Top digital marketing agencies in Nagpur listed'
+    ]
   }
 ];

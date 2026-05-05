@@ -35,4 +35,36 @@
   <url><loc>https://telzonacademy.in/pages/content-marketing-course-nagpur</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
+  <!-- Service / agency pages (commercial intent) -->
+  <url><loc>https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://telzonacademy.in/pages/digital-marketing-services-in-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://telzonacademy.in/pages/seo-services-in-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://telzonacademy.in/pages/seo-freelancer-in-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://telzonacademy.in/pages/social-media-marketing-agency-in-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- Top-ranked / list-style pages (Practo "Best of" pattern) -->
+  <url><loc>https://telzonacademy.in/pages/top-10-digital-marketing-institutes-in-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://telzonacademy.in/pages/top-digital-marketing-courses-in-nagpur-2026</loc><lastmod>2026-05-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Locality pages (Zomato/IndiaMart hyper-local pattern) -->
+  <url><loc>https://telzonacademy.in/pages/digital-marketing-course-in-dharampeth-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://telzonacademy.in/pages/digital-marketing-course-in-sitabuldi-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://telzonacademy.in/pages/digital-marketing-course-in-sadar-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://telzonacademy.in/pages/digital-marketing-course-in-pratap-nagar-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://telzonacademy.in/pages/digital-marketing-course-in-ramdaspeth-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- Career intent pages -->
+  <url><loc>https://telzonacademy.in/pages/digital-marketing-jobs-in-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://telzonacademy.in/pages/digital-marketing-salary-in-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://telzonacademy.in/pages/digital-marketing-career-after-12th-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- Audience-specific pages -->
+  <url><loc>https://telzonacademy.in/pages/digital-marketing-course-for-students-in-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://telzonacademy.in/pages/digital-marketing-course-after-graduation-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://telzonacademy.in/pages/weekend-digital-marketing-course-in-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- Hub page -->
+  <url><loc>https://telzonacademy.in/pages/digital-marketing-in-nagpur</loc><lastmod>2026-05-05</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+
 </urlset>
