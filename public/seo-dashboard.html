@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEO Dashboard — Telzon Academy</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+    .header { background: #1e293b; border-bottom: 1px solid #334155; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .header h1 { font-size: 20px; font-weight: 700; color: #f8fafc; }
+    .header .subtitle { font-size: 13px; color: #94a3b8; margin-top: 2px; }
+    .badge { background: #22c55e20; color: #22c55e; border: 1px solid #22c55e40; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge.error { background: #ef444420; color: #ef4444; border-color: #ef444440; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+    .score-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 32px; }
+    .score-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 20px; text-align: center; }
+    .score-card .value { font-size: 36px; font-weight: 800; margin-bottom: 4px; }
+    .score-card .label { font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
+    .green { color: #22c55e; }
+    .red { color: #ef4444; }
+    .yellow { color: #f59e0b; }
+    .blue { color: #3b82f6; }
+    .purple { color: #a855f7; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+    .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 24px; }
+    .card h2 { font-size: 15px; font-weight: 600; color: #f1f5f9; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .issue-list { list-style: none; }
+    .issue-list li { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid #1e293b; font-size: 13px; }
+    .issue-list li:last-child { border-bottom: none; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 4px; flex-shrink: 0; }
+    .dot.critical { background: #ef4444; }
+    .dot.important { background: #f59e0b; }
+    .dot.low { background: #3b82f6; }
+    .dot.fixed { background: #22c55e; }
+    .history-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .history-table th { text-align: left; padding: 10px 12px; color: #94a3b8; font-weight: 500; border-bottom: 1px solid #334155; }
+    .history-table td { padding: 10px 12px; border-bottom: 1px solid #1e293b; }
+    .history-table tr:hover td { background: #0f172a; }
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+    .pill.critical { background: #ef444420; color: #ef4444; }
+    .pill.fixed { background: #22c55e20; color: #22c55e; }
+    .pill.ok { background: #3b82f620; color: #3b82f6; }
+    .empty { text-align: center; padding: 40px; color: #475569; font-size: 14px; }
+    .chart-wrap { position: relative; height: 200px; }
+    .last-run { font-size: 12px; color: #64748b; }
+    .full-width { grid-column: 1 / -1; }
+    @media (max-width: 768px) { .score-row { grid-template-columns: repeat(2, 1fr); } .grid-2 { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>SEO Indexing Dashboard</h1>
+    <div class="subtitle" id="site-url">telzonacademy.in</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <span class="last-run" id="last-run">Loading...</span>
+    <span class="badge" id="status-badge">Loading</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Score cards -->
+  <div class="score-row">
+    <div class="score-card">
+      <div class="value blue" id="pages-crawled">—</div>
+      <div class="label">Pages Crawled</div>
+    </div>
+    <div class="score-card">
+      <div class="value red" id="critical-count">—</div>
+      <div class="label">Critical Issues</div>
+    </div>
+    <div class="score-card">
+      <div class="value yellow" id="important-count">—</div>
+      <div class="label">Important Issues</div>
+    </div>
+    <div class="score-card">
+      <div class="value green" id="fixed-count">—</div>
+      <div class="label">Auto Fixed</div>
+    </div>
+    <div class="score-card">
+      <div class="value purple" id="submitted-count">—</div>
+      <div class="label">Submitted to Google</div>
+    </div>
+  </div>
+
+  <!-- Charts + Issues -->
+  <div class="grid-2">
+
+    <div class="card">
+      <h2>📈 Issues Over Time</h2>
+      <div class="chart-wrap">
+        <canvas id="trend-chart"></canvas>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🔴 Current Issues</h2>
+      <ul class="issue-list" id="issues-list">
+        <li><span class="dot critical"></span><span>Loading...</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>✅ Auto Fixes Applied</h2>
+      <ul class="issue-list" id="fixes-list">
+        <li><span class="dot fixed"></span><span>Loading...</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>🌐 Pages Submitted to Google</h2>
+      <ul class="issue-list" id="pages-list">
+        <li><span style="color:#64748b;font-size:13px;">Loading...</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- History table -->
+  <div class="card">
+    <h2>📅 Daily Run History</h2>
+    <table class="history-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Pages</th>
+          <th>Critical</th>
+          <th>Important</th>
+          <th>Fixed</th>
+          <th>Submitted</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="history-body">
+        <tr><td colspan="7" class="empty">Loading history...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<script>
+  let trendChart;
+
+  function fmt(d) {
+    return new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  function renderReport(report, history) {
+    const s = report.summary || {};
+
+    // Status badge
+    const badge = document.getElementById('status-badge');
+    if ((s.critical || 0) === 0) {
+      badge.textContent = '✓ Healthy'; badge.className = 'badge';
+    } else {
+      badge.textContent = `⚠ ${s.critical} Critical`; badge.className = 'badge error';
+    }
+
+    document.getElementById('last-run').textContent = 'Last run: ' + fmt(report.timestamp || Date.now());
+    document.getElementById('pages-crawled').textContent = s.pagesFound || 0;
+    document.getElementById('critical-count').textContent = s.critical || 0;
+    document.getElementById('important-count').textContent = s.important || 0;
+    document.getElementById('fixed-count').textContent = s.fixed || 0;
+    document.getElementById('submitted-count').textContent = s.submitted || 0;
+
+    // Issues list
+    const issuesList = document.getElementById('issues-list');
+    const issues = report.issues || [];
+    if (issues.length === 0) {
+      issuesList.innerHTML = '<li><span class="dot fixed"></span><span style="color:#22c55e">No issues found — site is healthy!</span></li>';
+    } else {
+      issuesList.innerHTML = issues.slice(0, 8).map(i => `
+        <li>
+          <span class="dot ${i.severity}"></span>
+          <span>
+            <strong style="color:#f1f5f9">${i.title}</strong><br>
+            <span style="color:#64748b;font-size:12px">${i.description || ''}</span>
+          </span>
+        </li>`).join('');
+    }
+
+    // Fixes list
+    const fixesList = document.getElementById('fixes-list');
+    const fixes = report.fixes || [];
+    if (fixes.length === 0) {
+      fixesList.innerHTML = '<li><span style="color:#64748b;font-size:13px">No fixes applied in this run</span></li>';
+    } else {
+      fixesList.innerHTML = fixes.slice(0, 8).map(f => `
+        <li>
+          <span class="dot fixed"></span>
+          <span>
+            <strong style="color:#f1f5f9">${f.title || f.description}</strong><br>
+            <span style="color:#64748b;font-size:12px">${f.file || ''}</span>
+          </span>
+        </li>`).join('');
+    }
+
+    // Pages submitted
+    const pagesList = document.getElementById('pages-list');
+    const pages = report.submittedUrls || [];
+    if (pages.length === 0) {
+      pagesList.innerHTML = '<li><span style="color:#64748b;font-size:13px">No pages submitted in this run</span></li>';
+    } else {
+      pagesList.innerHTML = pages.slice(0, 8).map(u => `
+        <li>
+          <span class="dot" style="background:#a855f7"></span>
+          <a href="${u}" target="_blank" style="color:#a78bfa;font-size:13px;word-break:break-all">${u}</a>
+        </li>`).join('');
+    }
+
+    // History table
+    const tbody = document.getElementById('history-body');
+    if (!history || history.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="7" class="empty">No history yet — check back after the next run</td></tr>';
+    } else {
+      tbody.innerHTML = history.map(h => `
+        <tr>
+          <td>${fmt(h.timestamp)}</td>
+          <td>${h.pagesFound || 0}</td>
+          <td><span class="pill ${(h.critical||0)>0?'critical':'ok'}">${h.critical || 0}</span></td>
+          <td>${h.important || 0}</td>
+          <td><span class="pill fixed">${h.fixed || 0}</span></td>
+          <td>${h.submitted || 0}</td>
+          <td><span class="pill ${(h.critical||0)===0?'fixed':'critical'}">${(h.critical||0)===0?'✓ Clean':'Issues'}</span></td>
+        </tr>`).join('');
+    }
+
+    // Trend chart
+    if (history && history.length > 0) {
+      const labels = history.map(h => fmt(h.timestamp));
+      const criticalData = history.map(h => h.critical || 0);
+      const fixedData = history.map(h => h.fixed || 0);
+
+      if (trendChart) trendChart.destroy();
+      trendChart = new Chart(document.getElementById('trend-chart'), {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [
+            { label: 'Critical Issues', data: criticalData, borderColor: '#ef4444', backgroundColor: '#ef444420', tension: 0.4, fill: true },
+            { label: 'Auto Fixed', data: fixedData, borderColor: '#22c55e', backgroundColor: '#22c55e20', tension: 0.4, fill: true },
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { labels: { color: '#94a3b8', font: { size: 11 } } } },
+          scales: {
+            x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#1e293b' } },
+            y: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#334155' }, beginAtZero: true }
+          }
+        }
+      });
+    }
+  }
+
+  async function load() {
+    try {
+      const [reportRes, historyRes] = await Promise.all([
+        fetch('/seo-reports/latest.json?t=' + Date.now()),
+        fetch('/seo-reports/history.json?t=' + Date.now()),
+      ]);
+
+      if (!reportRes.ok) throw new Error('No report yet');
+      const report = await reportRes.json();
+      const history = historyRes.ok ? await historyRes.json() : [];
+      renderReport(report, history);
+    } catch (e) {
+      document.getElementById('status-badge').textContent = 'No data yet';
+      document.getElementById('last-run').textContent = 'Run the bot to see results';
+      document.getElementById('issues-list').innerHTML = '<li><span style="color:#64748b;font-size:13px">No report found — the bot will generate one on its next run (daily at 8am UTC)</span></li>';
+      document.getElementById('fixes-list').innerHTML = '<li><span style="color:#64748b;font-size:13px">—</span></li>';
+      document.getElementById('pages-list').innerHTML = '<li><span style="color:#64748b;font-size:13px">—</span></li>';
+      document.getElementById('history-body').innerHTML = '<tr><td colspan="7" class="empty">No history yet — check back after the first scheduled run</td></tr>';
+      document.getElementById('pages-crawled').textContent = '0';
+      document.getElementById('critical-count').textContent = '0';
+      document.getElementById('important-count').textContent = '0';
+      document.getElementById('fixed-count').textContent = '0';
+      document.getElementById('submitted-count').textContent = '0';
+    }
+  }
+
+  load();
+</script>
+</body>
+</html>

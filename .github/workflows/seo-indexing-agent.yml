@@ -38,6 +38,47 @@ jobs:
           AUTO_SUBMIT: true
         run: node src/index.js run --url $SITE_URL || true
 
+      - name: Save report to dashboard
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          script: |
+            const fs = require('fs');
+            try {
+              const reportPath = 'seo-indexing-agent/full-report.json';
+              if (!fs.existsSync(reportPath)) return;
+              const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
+
+              // Save latest.json
+              fs.mkdirSync('public/seo-reports', { recursive: true });
+              fs.writeFileSync('public/seo-reports/latest.json', JSON.stringify(report, null, 2));
+
+              // Append to history.json
+              const histPath = 'public/seo-reports/history.json';
+              const history = fs.existsSync(histPath) ? JSON.parse(fs.readFileSync(histPath, 'utf8')) : [];
+              const entry = {
+                timestamp: report.timestamp || new Date().toISOString(),
+                pagesFound: report.summary?.pagesFound || 0,
+                critical: report.summary?.critical || 0,
+                important: report.summary?.important || 0,
+                fixed: report.summary?.fixed || 0,
+                submitted: report.summary?.submitted || 0,
+              };
+              history.unshift(entry);
+              fs.writeFileSync(histPath, JSON.stringify(history.slice(0, 60), null, 2));
+
+              // Git commit
+              const { execSync } = require('child_process');
+              execSync('git config user.name "SEO Bot"');
+              execSync('git config user.email "seo-bot@telzonacademy.in"');
+              execSync('git add public/seo-reports/');
+              try {
+                execSync('git commit -m "chore(seo): update dashboard report [skip ci]"');
+                execSync('git push');
+              } catch (_) {}
+            } catch (e) { console.log('Report save skipped:', e.message); }
+
       - name: Upload audit report
         uses: actions/upload-artifact@v4
         if: always()
@@ -47,29 +88,3 @@ jobs:
             seo-indexing-agent/full-report.json
             seo-indexing-agent/report.html
           retention-days: 30
-
-      - name: Comment on commit if issues found
-        if: github.event_name == 'push'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs');
-            try {
-              const report = JSON.parse(fs.readFileSync('seo-indexing-agent/full-report.json', 'utf8'));
-              const { critical, important, pagesFound, issuesFound } = report.summary;
-              if (critical > 0 || important > 0) {
-                github.rest.repos.createCommitComment({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  commit_sha: context.sha,
-                  body: [
-                    '## SEO Indexing Agent Report',
-                    `**Pages crawled:** ${pagesFound} | **Issues found:** ${issuesFound}`,
-                    critical > 0 ? `**Critical:** ${critical} (fix immediately)` : '',
-                    important > 0 ? `**Important:** ${important}` : '',
-                    '',
-                    'Check the workflow artifacts for the full report.',
-                  ].filter(Boolean).join('\n')
-                });
-              }
-            } catch (_) {}

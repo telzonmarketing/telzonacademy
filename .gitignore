@@ -28,7 +28,7 @@ yarn-error.log*
 
 # Testing
 coverage/
-seo-reports/
+seo-indexing-agent/seo-reports/
 
 # Misc
 .eslintcache
