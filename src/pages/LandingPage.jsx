@@ -265,6 +265,25 @@ function ReviewSection() {
 }
 
 // ─── IndiaMart-style local area targeting section ─────────────────────────────
+// Maps each Nagpur area to its dedicated landing page slug if one exists.
+const AREA_SLUG_MAP = {
+  'Dharampeth': 'digital-marketing-course-in-dharampeth-nagpur',
+  'Sitabuldi': 'digital-marketing-course-in-sitabuldi-nagpur',
+  'Ramdaspeth': 'digital-marketing-course-in-ramdaspeth-nagpur',
+  'Sadar': 'digital-marketing-course-in-sadar-nagpur',
+  'Civil Lines': 'digital-marketing-course-in-civil-lines-nagpur',
+  'Pratap Nagar': 'digital-marketing-course-in-pratap-nagar-nagpur',
+  'Itwari': 'digital-marketing-course-in-itwari-nagpur',
+  'Gandhibagh': 'digital-marketing-course-in-gandhibagh-nagpur',
+  'Wardhaman Nagar': 'digital-marketing-course-in-wardhaman-nagar-nagpur',
+  'Manewada': 'digital-marketing-course-in-manewada-nagpur',
+  'Hingna': 'digital-marketing-course-in-hingna-nagpur',
+  'Amravati Road': 'digital-marketing-course-in-amravati-road-nagpur',
+  'Wardha Road': 'digital-marketing-course-in-wardha-road-nagpur',
+  'Katol Road': 'digital-marketing-course-in-katol-road-nagpur',
+  'Kamptee Road': 'digital-marketing-course-in-kamptee-road-nagpur',
+};
+
 function LocalAreasSection({ keyword }) {
   return (
     <section className="py-14 px-4">
@@ -273,14 +292,48 @@ function LocalAreasSection({ keyword }) {
           {keyword} Near You in Nagpur
         </h2>
         <p className="text-gray-400 text-center mb-8 text-sm">
-          Easily accessible from every part of Nagpur — online and offline options available
+          Easily accessible from every part of Nagpur — click your area for local details
         </p>
         <div className="flex flex-wrap gap-2 justify-center">
-          {NAGPUR_AREAS.map(area => (
-            <span key={area}
-              className="text-sm text-gray-300 bg-white/5 border border-white/10 px-4 py-2 rounded-full hover:bg-purple-600/20 hover:border-purple-500/40 hover:text-white transition-all cursor-default">
-              {keyword} — {area}
-            </span>
+          {NAGPUR_AREAS.map(area => {
+            const slug = AREA_SLUG_MAP[area];
+            const className = "text-sm text-gray-300 bg-white/5 border border-white/10 px-4 py-2 rounded-full hover:bg-purple-600/20 hover:border-purple-500/40 hover:text-white transition-all";
+            return slug ? (
+              <Link key={area} to={`/pages/${slug}`} className={className}>
+                {keyword} — {area}
+              </Link>
+            ) : (
+              <span key={area} className={`${className} cursor-default`}>
+                {keyword} — {area}
+              </span>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Related courses section (Practo/Zomato pattern: dense internal linking) ─
+function RelatedPagesSection({ currentSlug }) {
+  const related = landingPages
+    .filter(p => p.slug !== currentSlug)
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 9);
+  return (
+    <section className="py-14 px-4 bg-black/20">
+      <div className="container mx-auto max-w-5xl">
+        <h2 className="text-2xl font-bold text-white mb-2 text-center">Related Courses & Services</h2>
+        <p className="text-gray-400 text-center mb-8 text-sm">
+          Explore other digital marketing courses, locality pages and services from Telzon Academy
+        </p>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+          {related.map(p => (
+            <Link key={p.slug} to={`/pages/${p.slug}`}
+              className="group bg-white/5 border border-white/10 rounded-xl px-4 py-3 hover:bg-white/10 hover:border-purple-500/30 transition-all">
+              <p className="text-sm font-semibold text-white group-hover:text-purple-300 line-clamp-2">{p.headline}</p>
+              <p className="text-xs text-gray-500 mt-1 line-clamp-1">/pages/{p.slug}</p>
+            </Link>
           ))}
         </div>
       </div>
@@ -563,8 +616,11 @@ const LandingPage = () => {
           {/* ── FAQ with FAQPage schema (Zomato/Swiggy: unique per page) ── */}
           <FAQSection faqs={faqs} />
 
-          {/* ── LOCAL AREAS (IndiaMart-style) ── */}
+          {/* ── LOCAL AREAS (IndiaMart-style, now real internal links) ── */}
           <LocalAreasSection keyword={keywordShort} />
+
+          {/* ── RELATED PAGES (Practo/Zomato dense internal linking) ── */}
+          <RelatedPagesSection currentSlug={page.slug} />
 
           {/* ── LEAD FORM ── */}
           <LeadGenForm

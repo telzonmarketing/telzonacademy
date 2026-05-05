@@ -799,6 +799,266 @@ export const landingPages = [
     ]
   },
 
+  // ─── More locality pages (full Nagpur coverage — IndiaMart pattern) ───
+  {
+    slug: 'digital-marketing-course-in-civil-lines-nagpur',
+    metaTitle: 'Digital Marketing Course in Civil Lines, Nagpur | Telzon',
+    metaDescription: 'Top digital marketing course near Civil Lines, Nagpur. Easy from Maharaja Square, Mansion Road and Mount Road. AI tools + 95% placement support.',
+    metaKeywords: 'digital marketing course in Civil Lines Nagpur, marketing course Civil Lines',
+    ogTitle: 'Digital Marketing Course in Civil Lines, Nagpur — Telzon',
+    ogDescription: 'Convenient for Civil Lines, Mansion Road and Maharaja Square residents.',
+    headline: 'Digital Marketing Course in Civil Lines, Nagpur',
+    subheadline: 'Living or working in Civil Lines, Mansion Road or near Maharaja Square? Telzon Academy is your closest premium digital marketing institute with weekend, weekday and online options.',
+    bullets: [
+      'Quick commute from Civil Lines and Mansion Road',
+      'Special evening batches for Civil Lines professionals',
+      'Live client projects + Google/Meta certification',
+      'Free demo class every Saturday — walk in any time'
+    ]
+  },
+  {
+    slug: 'digital-marketing-course-in-itwari-nagpur',
+    metaTitle: 'Digital Marketing Course in Itwari, Nagpur | Telzon Academy',
+    metaDescription: 'Best digital marketing course near Itwari, Nagpur. Convenient for Bhandara Road, Mahal and Gandhibagh business owners. Live campaigns + placement.',
+    metaKeywords: 'digital marketing course in Itwari Nagpur, marketing course Itwari',
+    ogTitle: 'Digital Marketing Course in Itwari, Nagpur — Telzon',
+    ogDescription: 'Built for Itwari and Mahal shop owners and traders. Real digital marketing for your business.',
+    headline: 'Digital Marketing Course in Itwari, Nagpur',
+    subheadline: 'Itwari, Mahal, Gandhibagh business owners and traders — learn the same digital marketing that big brands use. Special module on WhatsApp marketing for local shops.',
+    bullets: [
+      'WhatsApp marketing module for Itwari traders',
+      'Local SEO + Google Business Profile training',
+      'Run Meta Ads to drive walk-ins to your shop',
+      'Weekend batch — no impact on weekday business'
+    ]
+  },
+  {
+    slug: 'digital-marketing-course-in-gandhibagh-nagpur',
+    metaTitle: 'Digital Marketing Course in Gandhibagh, Nagpur | Telzon',
+    metaDescription: 'Practical digital marketing course near Gandhibagh, Nagpur. Built for shop owners and entrepreneurs around Mahal and Itwari area. Live, project-based.',
+    metaKeywords: 'digital marketing course in Gandhibagh, marketing course Gandhibagh Nagpur',
+    ogTitle: 'Digital Marketing Course in Gandhibagh, Nagpur — Telzon',
+    ogDescription: 'Practical digital marketing for Gandhibagh business owners and freelancers.',
+    headline: 'Digital Marketing Course in Gandhibagh, Nagpur',
+    subheadline: 'Gandhibagh, Mahal and Bada Tajbagh entrepreneurs — Telzon Academy teaches the digital marketing that brings real customers to your shop or service business.',
+    bullets: [
+      'Designed for Gandhibagh shop owners and freelancers',
+      'Local SEO + Google Maps optimisation included',
+      'Special weekend batch for working professionals',
+      'Free 30-minute strategy call before you enroll'
+    ]
+  },
+  {
+    slug: 'digital-marketing-course-in-wardhaman-nagar-nagpur',
+    metaTitle: 'Digital Marketing Course in Wardhaman Nagar, Nagpur | Telzon',
+    metaDescription: 'Top digital marketing course near Wardhaman Nagar, Nagpur. Convenient for residents of Wardhaman Nagar, Pardi and Manish Nagar. Practical and job-oriented.',
+    metaKeywords: 'digital marketing course in Wardhaman Nagar, marketing course Wardhaman Nagar',
+    ogTitle: 'Digital Marketing Course in Wardhaman Nagar, Nagpur — Telzon',
+    ogDescription: 'Convenient for Wardhaman Nagar, Pardi and Manish Nagar residents. Telzon Academy.',
+    headline: 'Digital Marketing Course in Wardhaman Nagar, Nagpur',
+    subheadline: 'Wardhaman Nagar, Pardi and Manish Nagar residents — Telzon Academy is your nearest practical, AI-powered digital marketing institute. Comprehensive curriculum, live projects, real placement support.',
+    bullets: [
+      'Easy commute from Wardhaman Nagar and Pardi',
+      'Same Telzon curriculum — no compromise',
+      'Live client projects, not just classroom theory',
+      'Weekend + evening batch options available'
+    ]
+  },
+  {
+    slug: 'digital-marketing-course-in-manewada-nagpur',
+    metaTitle: 'Digital Marketing Course in Manewada, Nagpur | Telzon',
+    metaDescription: 'Best digital marketing course near Manewada, Nagpur. Easy reach from Beltarodi, Besa and Manewada Square. Live projects, AI tools, 95% placement.',
+    metaKeywords: 'digital marketing course in Manewada Nagpur, marketing course Manewada',
+    ogTitle: 'Digital Marketing Course in Manewada, Nagpur — Telzon',
+    ogDescription: 'Closest premium institute for Manewada, Beltarodi and Besa residents.',
+    headline: 'Digital Marketing Course in Manewada, Nagpur',
+    subheadline: 'Manewada, Beltarodi and Besa residents — Telzon Academy is the closest comprehensive digital marketing institute. Live projects, AI curriculum, 95% placement.',
+    bullets: [
+      'Easy commute from Manewada, Beltarodi, Besa',
+      'AI-first curriculum — ChatGPT, Canva, SurferSEO',
+      'Real client campaigns with measurable results',
+      'Weekend + evening batches for flexibility'
+    ]
+  },
+  {
+    slug: 'digital-marketing-course-in-hingna-nagpur',
+    metaTitle: 'Digital Marketing Course in Hingna, Nagpur | Telzon',
+    metaDescription: 'Practical digital marketing course near Hingna, Nagpur. Convenient for Hingna MIDC, Wadi and Khapri residents. Online + offline options. Real projects.',
+    metaKeywords: 'digital marketing course in Hingna Nagpur, marketing course Hingna',
+    ogTitle: 'Digital Marketing Course in Hingna, Nagpur — Telzon',
+    ogDescription: 'Online + offline digital marketing course for Hingna, MIDC and Wadi residents.',
+    headline: 'Digital Marketing Course in Hingna, Nagpur',
+    subheadline: 'Hingna, MIDC area, Wadi and Khapri residents — Telzon Academy offers both online live classes and offline batches in central Nagpur. Choose what works for your commute.',
+    bullets: [
+      'Fully online live batches — no commute needed',
+      'Offline central Nagpur option also available',
+      'Same trainers and curriculum across both modes',
+      'Special module for Hingna MIDC business owners'
+    ]
+  },
+  {
+    slug: 'digital-marketing-course-in-amravati-road-nagpur',
+    metaTitle: 'Digital Marketing Course Near Amravati Road, Nagpur | Telzon',
+    metaDescription: 'Top digital marketing course near Amravati Road, Nagpur. Convenient for residents of Subhash Nagar, Boriapura and Pratap Nagar. Live projects + placement.',
+    metaKeywords: 'digital marketing course Amravati Road Nagpur, marketing course near Amravati Road',
+    ogTitle: 'Digital Marketing Course Near Amravati Road, Nagpur — Telzon',
+    ogDescription: 'Convenient for Amravati Road, Subhash Nagar and Boriapura residents.',
+    headline: 'Digital Marketing Course Near Amravati Road, Nagpur',
+    subheadline: 'Amravati Road, Subhash Nagar, Boriapura and Pratap Nagar residents — Telzon Academy is your nearest premium digital marketing institute with weekend, evening and online options.',
+    bullets: [
+      'Easy reach from Amravati Road and Subhash Nagar',
+      'Same comprehensive Telzon curriculum',
+      'Live client projects and placement support',
+      'Free demo class — no commitment required'
+    ]
+  },
+  {
+    slug: 'digital-marketing-course-in-wardha-road-nagpur',
+    metaTitle: 'Digital Marketing Course Near Wardha Road, Nagpur | Telzon',
+    metaDescription: 'Best digital marketing course near Wardha Road, Nagpur. Convenient for Khapri, Manish Nagar, Trimurti Nagar residents. Practical AI-powered curriculum.',
+    metaKeywords: 'digital marketing course Wardha Road Nagpur, marketing course near Wardha Road',
+    ogTitle: 'Digital Marketing Course Near Wardha Road, Nagpur — Telzon',
+    ogDescription: 'Easy access for Wardha Road, Khapri, Manish Nagar and Trimurti Nagar.',
+    headline: 'Digital Marketing Course Near Wardha Road, Nagpur',
+    subheadline: 'Wardha Road, Khapri, Manish Nagar, Trimurti Nagar residents — Telzon Academy is centrally accessible with weekday, weekend and online batch options.',
+    bullets: [
+      'Quick commute from Wardha Road and Khapri',
+      'AI-powered curriculum and live client work',
+      'Google + Meta certification guidance',
+      '95% placement record across India'
+    ]
+  },
+  {
+    slug: 'digital-marketing-course-in-katol-road-nagpur',
+    metaTitle: 'Digital Marketing Course Near Katol Road, Nagpur | Telzon',
+    metaDescription: 'Practical digital marketing course near Katol Road, Nagpur. Convenient for residents of Katol Road, Kalmana and Kalmeshwar. Online + offline batches.',
+    metaKeywords: 'digital marketing course Katol Road Nagpur',
+    ogTitle: 'Digital Marketing Course Near Katol Road, Nagpur — Telzon',
+    ogDescription: 'Online + offline digital marketing for Katol Road, Kalmana and surrounding areas.',
+    headline: 'Digital Marketing Course Near Katol Road, Nagpur',
+    subheadline: 'Katol Road, Kalmana and Kalmeshwar residents — Telzon Academy offers both online live batches and central Nagpur offline classes. Pick what works for you.',
+    bullets: [
+      'Fully online live option — no commute',
+      'Central Nagpur offline option also available',
+      'Same trainers, curriculum and placement support',
+      'Free roadmap call before enrollment'
+    ]
+  },
+  {
+    slug: 'digital-marketing-course-in-kamptee-road-nagpur',
+    metaTitle: 'Digital Marketing Course Near Kamptee Road, Nagpur | Telzon',
+    metaDescription: 'Top digital marketing course near Kamptee Road, Nagpur. Convenient for residents of Kadbi Chowk, Indora and Kamptee. AI tools, live projects, placement.',
+    metaKeywords: 'digital marketing course Kamptee Road Nagpur',
+    ogTitle: 'Digital Marketing Course Near Kamptee Road, Nagpur — Telzon',
+    ogDescription: 'Convenient for Kamptee Road, Kadbi Chowk and Indora residents.',
+    headline: 'Digital Marketing Course Near Kamptee Road, Nagpur',
+    subheadline: 'Kamptee Road, Kadbi Chowk and Indora residents — Telzon Academy is your nearest comprehensive digital marketing institute with practical, AI-powered curriculum.',
+    bullets: [
+      'Easy commute from Kamptee Road and Kadbi Chowk',
+      'AI tools, live projects and Google certification',
+      'Special evening batches for working professionals',
+      'Free demo class every Saturday'
+    ]
+  },
+
+  // ─── Platform-specific course pages ────────────────────────────────────
+  {
+    slug: 'facebook-ads-course-in-nagpur',
+    metaTitle: 'Facebook Ads Course in Nagpur | Master Meta Ads with Telzon',
+    metaDescription: 'Practical Facebook & Meta Ads course in Nagpur. Learn Advantage+, retargeting, audience targeting and Pixel + CAPI setup. Live ad spend + certification.',
+    metaKeywords: 'Facebook ads course in Nagpur, Meta ads course Nagpur, Facebook marketing course Nagpur',
+    ogTitle: 'Facebook Ads Course in Nagpur — Telzon Academy',
+    ogDescription: 'Master Facebook Ads in Nagpur with live campaigns and real ad spend. Telzon Academy.',
+    headline: 'Facebook Ads Course in Nagpur',
+    subheadline: 'Run profitable Facebook and Instagram ad campaigns from day one. Our hands-on course covers Advantage+, retargeting, Pixel + Conversions API and creative strategy.',
+    bullets: [
+      'Advantage+ Shopping & Lead campaigns mastered',
+      'Pixel + CAPI server-side setup walk-through',
+      'Live campaign with real budget during course',
+      'Meta Blueprint certification preparation'
+    ]
+  },
+  {
+    slug: 'instagram-marketing-course-in-nagpur',
+    metaTitle: 'Instagram Marketing Course in Nagpur | Reels, Ads, Growth',
+    metaDescription: 'Practical Instagram marketing course in Nagpur. Reels strategy, organic growth, paid ads and influencer marketing. Real campaigns + portfolio building.',
+    metaKeywords: 'Instagram marketing course Nagpur, Instagram course Nagpur, Reels course Nagpur',
+    ogTitle: 'Instagram Marketing Course in Nagpur — Telzon Academy',
+    ogDescription: 'Master Instagram growth, Reels and ads at Telzon Academy Nagpur.',
+    headline: 'Instagram Marketing Course in Nagpur',
+    subheadline: 'From zero to viral — learn Instagram organic growth, Reels strategy, paid ads and influencer marketing. Build a portfolio you can show clients or employers.',
+    bullets: [
+      'Reels strategy, hooks, edits and hashtags',
+      'Organic growth + Instagram SEO',
+      'Paid ads — Stories, Reels, Feed, Explore',
+      'Influencer marketing & creator partnerships'
+    ]
+  },
+  {
+    slug: 'youtube-marketing-course-in-nagpur',
+    metaTitle: 'YouTube Marketing Course in Nagpur | SEO, Ads, Monetization',
+    metaDescription: 'Complete YouTube marketing course in Nagpur. Channel SEO, video editing basics, Shorts strategy, YouTube Ads and monetization. Real channel growth project.',
+    metaKeywords: 'YouTube marketing course Nagpur, YouTube SEO course Nagpur, YouTube channel course',
+    ogTitle: 'YouTube Marketing Course in Nagpur — Telzon Academy',
+    ogDescription: 'Master YouTube SEO, ads and growth at Telzon Academy Nagpur.',
+    headline: 'YouTube Marketing Course in Nagpur',
+    subheadline: 'YouTube is the second largest search engine — and the best place to build a personal brand. Our course covers channel SEO, Shorts, ads and monetization.',
+    bullets: [
+      'Channel SEO + thumbnail/title optimisation',
+      'Shorts strategy + retention tactics',
+      'YouTube Ads (TrueView, In-stream, Discovery)',
+      'Monetization, Super Chat, brand deals'
+    ]
+  },
+  {
+    slug: 'linkedin-marketing-course-in-nagpur',
+    metaTitle: 'LinkedIn Marketing Course in Nagpur | B2B Lead Generation',
+    metaDescription: 'Practical LinkedIn marketing course in Nagpur. Personal branding, content, LinkedIn Ads and B2B lead generation. Built for professionals and freelancers.',
+    metaKeywords: 'LinkedIn marketing course Nagpur, LinkedIn course Nagpur, B2B marketing course Nagpur',
+    ogTitle: 'LinkedIn Marketing Course in Nagpur — Telzon Academy',
+    ogDescription: 'Master LinkedIn for B2B lead generation and personal branding at Telzon Nagpur.',
+    headline: 'LinkedIn Marketing Course in Nagpur',
+    subheadline: 'LinkedIn is the highest-ROI B2B platform in 2026. Learn personal branding, content strategy, Sales Navigator, LinkedIn Ads and proven lead gen frameworks.',
+    bullets: [
+      'Personal branding + profile optimisation',
+      'Content strategy that drives inbound leads',
+      'Sales Navigator + cold outreach playbooks',
+      'LinkedIn Ads — Sponsored Content & Lead Gen Forms'
+    ]
+  },
+  {
+    slug: 'email-marketing-course-in-nagpur',
+    metaTitle: 'Email Marketing Course in Nagpur | Mailchimp, Klaviyo, Resend',
+    metaDescription: 'Complete email marketing course in Nagpur. Mailchimp, Klaviyo, automation, segmentation, copywriting and deliverability. Real campaign building during course.',
+    metaKeywords: 'email marketing course Nagpur, Mailchimp course Nagpur, Klaviyo course',
+    ogTitle: 'Email Marketing Course in Nagpur — Telzon Academy',
+    ogDescription: 'Master email marketing with Mailchimp, Klaviyo and automation at Telzon Nagpur.',
+    headline: 'Email Marketing Course in Nagpur',
+    subheadline: 'Email still has the highest ROI of any digital channel. Learn list building, automation, segmentation, copy that converts and deliverability best practices.',
+    bullets: [
+      'Mailchimp, Klaviyo and Resend hands-on training',
+      'Welcome, abandoned-cart and re-engagement flows',
+      'Email copywriting + subject line A/B testing',
+      'Deliverability, SPF, DKIM and DMARC setup'
+    ]
+  },
+  {
+    slug: 'whatsapp-marketing-course-in-nagpur',
+    metaTitle: 'WhatsApp Marketing Course in Nagpur | Business API, Catalog',
+    metaDescription: 'Practical WhatsApp marketing course in Nagpur. WhatsApp Business API, broadcasts, automation, catalog and chat funnels for Nagpur shops and service businesses.',
+    metaKeywords: 'WhatsApp marketing course Nagpur, WhatsApp Business course, chat marketing Nagpur',
+    ogTitle: 'WhatsApp Marketing Course in Nagpur — Telzon Academy',
+    ogDescription: 'Built for Nagpur shop owners and service businesses. WhatsApp Business + automation.',
+    headline: 'WhatsApp Marketing Course in Nagpur',
+    subheadline: 'In India, WhatsApp converts better than email. Learn WhatsApp Business API, broadcasts, catalog setup, chat funnels and automation — perfect for Nagpur shops and services.',
+    bullets: [
+      'WhatsApp Business API setup and message templates',
+      'Catalog + product showcase for Nagpur shops',
+      'Broadcast lists vs Status vs paid ads',
+      'Chatbot automation + lead qualification flows'
+    ]
+  },
+
   // ─── Hub page for "digital marketing in Nagpur" ────────────────────────
   {
     slug: 'digital-marketing-in-nagpur',
