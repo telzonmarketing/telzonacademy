@@ -9,9 +9,11 @@
 <IfModule mod_headers.c>
   Header set X-Powered-By "Hostinger Horizons"
 
-  # Never cache HTML — always serve the latest version
+  # Never cache HTML — always serve the latest version (origin + CDN)
   <FilesMatch "\.(html)$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Surrogate-Control "no-store"
+    Header set CDN-Cache-Control "no-cache"
     Header set Pragma "no-cache"
     Header set Expires "0"
   </FilesMatch>
