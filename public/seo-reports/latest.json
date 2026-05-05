@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-05-05T12:37:00.000Z",
+  "summary": {
+    "pagesFound": 1,
+    "issuesFound": 5,
+    "critical": 2,
+    "important": 2,
+    "low": 1,
+    "fixed": 2,
+    "submitted": 1
+  },
+  "issues": [
+    { "severity": "critical", "title": "1 pages have noindex tag", "description": "Pages with noindex are invisible to Google." },
+    { "severity": "critical", "title": "1 Next.js pages fetch data client-side only", "description": "Data loaded in useEffect is not seen by Googlebot." },
+    { "severity": "important", "title": "1 pages missing meta description", "description": "Meta descriptions improve click-through rate from search results." },
+    { "severity": "important", "title": "1 pages missing canonical URL", "description": "Canonical tags prevent duplicate content issues." },
+    { "severity": "low", "title": "1 pages missing H1 heading", "description": "Every page should have exactly one H1 heading." }
+  ],
+  "fixes": [
+    { "title": "Created sitemap.xml", "description": "app/sitemap.ts", "file": "app/sitemap.ts" },
+    { "title": "Updated robots.txt", "description": "public/robots.txt", "file": "public/robots.txt" }
+  ],
+  "submittedUrls": [
+    "https://telzonacademy.in/"
+  ]
+}
