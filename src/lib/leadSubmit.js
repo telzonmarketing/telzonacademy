@@ -64,6 +64,42 @@ export function firePixelLead(value) {
   try {
     if (typeof window.fbq === 'function') {
       window.fbq('track', 'Lead', value ? { value, currency: 'INR' } : undefined);
+      window.fbq('track', 'CompleteRegistration', { value: 500, currency: 'INR', status: 'submitted' });
+    }
+  } catch {
+    /* noop */
+  }
+}
+
+// Fires when user visits a course/landing page
+export function firePixelViewContent({ content_name = 'Digital Marketing Course', content_category = 'Education' } = {}) {
+  if (typeof window === 'undefined') return;
+  try {
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'ViewContent', { content_name, content_category, currency: 'INR' });
+    }
+  } catch { /* noop */ }
+}
+
+// Fires when user clicks "Book Free Demo" / "Register" button
+export function firePixelSchedule() {
+  if (typeof window === 'undefined') return;
+  try {
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Schedule');
+    }
+  } catch { /* noop */ }
+}
+
+export function fireGtagLead({ source = 'website' } = {}) {
+  if (typeof window === 'undefined') return;
+  try {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'generate_lead', {
+        event_category: 'Lead Form',
+        event_label: source,
+        currency: 'INR',
+      });
     }
   } catch {
     /* noop */
@@ -96,6 +132,7 @@ export async function submitLead(payload) {
     const data = await res.json().catch(() => ({}));
     if (res.ok && data?.ok) {
       firePixelLead();
+      fireGtagLead({ source: body.source });
       return { ok: true, id: data.id, capi: data.capi, email: data.email };
     }
     // Edge Function reachable but errored — fall through to direct insert
@@ -134,5 +171,6 @@ export async function submitLead(payload) {
     return { ok: false, error: error.message };
   }
   firePixelLead();
+  fireGtagLead({ source: body.source });
   return { ok: true, id: data?.id };
 }
