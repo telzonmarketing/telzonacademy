@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import PracticalLearning from '@/components/PracticalLearning';
+import ComparisonTable from '@/components/ComparisonTable';
 import FreeDemoRegistration from '@/components/FreeDemoRegistration';
 import AIMarketing from '@/components/AIMarketing';
 import Curriculum from '@/components/Curriculum';
@@ -56,6 +57,7 @@ function HomePage() {
           <WelcomeMessage />
 
           <ScrollReveal><PracticalLearning /></ScrollReveal>
+          <ScrollReveal><ComparisonTable /></ScrollReveal>
           <ScrollReveal><AIMarketing /></ScrollReveal>
           <ScrollReveal><Curriculum /></ScrollReveal>
           <ScrollReveal><LatestBlogsHome /></ScrollReveal>
