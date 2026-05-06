@@ -10,9 +10,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Loader2 } from 'lucide-react';
 
-// ── Replace with your actual YouTube video ID ──────────────────────────────
-const YOUTUBE_VIDEO_ID = 'dQw4w9WgXcQ';
-// ───────────────────────────────────────────────────────────────────────────
+import { supabase } from '@/lib/customSupabaseClient';
+
+const FALLBACK_YT_ID = ''; // leave empty — set via admin dashboard
 
 const CHAT_RESPONSES = [
   {
@@ -263,31 +263,64 @@ const ChatWidget = () => {
   );
 };
 
+function extractYouTubeId(input) {
+  if (!input) return '';
+  if (/^[a-zA-Z0-9_-]{11}$/.test(input.trim())) return input.trim();
+  const m = input.match(/(?:v=|youtu\.be\/|embed\/)([a-zA-Z0-9_-]{11})/);
+  return m ? m[1] : '';
+}
+
 // ── Main Page ──────────────────────────────────────────────────────────────
 const WatchDemoPage = () => {
   const playerRef = useRef(null);
   const playerContainerRef = useRef(null);
+  const videoRef = useRef(null);
   const [videoStarted, setVideoStarted] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '', email: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // Hide external chatbot, fire ViewContent
+  // Video settings from admin
+  const [ytId, setYtId]       = useState(FALLBACK_YT_ID);
+  const [reelUrl, setReelUrl] = useState('');
+  const [autoplay, setAutoplay] = useState(false);
+  const [settingsLoaded, setSettingsLoaded] = useState(false);
+
+  // Hide external chatbot, fire ViewContent, load video settings
   useEffect(() => {
     const style = document.createElement('style');
     style.id = 'hide-ext-chat';
     style.textContent = '#tidio-chat, #crisp-chatbox, .crisp-client, [id*="tidio"], [class*="tidio"], [id*="tawk"], [class*="tawk"], [id*="intercom"], .intercom-lightweight-app { display: none !important; }';
     document.head.appendChild(style);
     firePixelViewContent({ content_name: 'New Batch Registration', content_category: 'Education' });
+
+    // Load video settings
+    supabase.from('seoSettings')
+      .select('google_code, pixel_code, retargeting_code')
+      .eq('page_key', 'new-batch-video')
+      .maybeSingle()
+      .then(({ data }) => {
+        if (data) {
+          setReelUrl(data.retargeting_code || '');
+          setYtId(extractYouTubeId(data.google_code || '') || FALLBACK_YT_ID);
+          setAutoplay(data.pixel_code === 'true');
+        }
+        setSettingsLoaded(true);
+      });
+
     return () => document.getElementById('hide-ext-chat')?.remove();
   }, []);
 
-  // YouTube IFrame API
+  // YouTube IFrame API — only when using YouTube (no reel)
   useEffect(() => {
+    if (!settingsLoaded || reelUrl) return;
+    if (!ytId) return;
+
     const onYTReady = () => {
+      if (!playerContainerRef.current) return;
       playerRef.current = new window.YT.Player(playerContainerRef.current, {
-        videoId: YOUTUBE_VIDEO_ID,
-        playerVars: { rel: 0, modestbranding: 1, playsinline: 1 },
+        videoId: ytId,
+        playerVars: { rel: 0, modestbranding: 1, playsinline: 1, autoplay: autoplay ? 1 : 0, mute: autoplay ? 1 : 0 },
         events: {
           onStateChange: (e) => {
             if (e.data === 1 && !videoStarted) {
@@ -308,7 +341,7 @@ const WatchDemoPage = () => {
       }
     }
     return () => { if (playerRef.current?.destroy) playerRef.current.destroy(); };
-  }, []);
+  }, [settingsLoaded, reelUrl, ytId, autoplay]);
 
   const handleChange = (e) => setFormData((p) => ({ ...p, [e.target.name]: e.target.value }));
 
@@ -384,10 +417,40 @@ const WatchDemoPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(139,92,246,0.2)] mb-10"
-            style={{ paddingTop: '56.25%' }}
+            className="flex justify-center mb-10"
           >
-            <div ref={playerContainerRef} className="absolute inset-0 w-full h-full" />
+            {reelUrl ? (
+              /* ── Reel / vertical video ── */
+              <div
+                className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(139,92,246,0.25)] w-full max-w-xs"
+                style={{ aspectRatio: '9/16' }}
+              >
+                <video
+                  ref={videoRef}
+                  src={reelUrl}
+                  className="w-full h-full object-cover"
+                  playsInline
+                  muted
+                  loop
+                  autoPlay={autoplay}
+                  controls
+                  onPlay={() => { if (!videoStarted) { setVideoStarted(true); firePixelSchedule(); } }}
+                />
+              </div>
+            ) : (
+              /* ── YouTube / landscape ── */
+              <div
+                className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(139,92,246,0.2)] w-full"
+                style={{ paddingTop: '56.25%' }}
+              >
+                <div ref={playerContainerRef} className="absolute inset-0 w-full h-full" />
+                {!settingsLoaded && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                    <Loader2 className="w-8 h-8 animate-spin text-violet-400" />
+                  </div>
+                )}
+              </div>
+            )}
           </motion.div>
 
           {/* ── Transformation strip ── */}
