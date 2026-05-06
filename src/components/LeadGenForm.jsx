@@ -31,7 +31,8 @@ const LeadGenForm = ({
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: ''
+    phone: '',
+    website: '', // honeypot — must stay empty
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -45,6 +46,8 @@ const LeadGenForm = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Honeypot: bots fill hidden fields, real users don't
+    if (formData.website) return;
     setIsSubmitting(true);
 
     const { ok, error } = await submitLead({
@@ -52,6 +55,7 @@ const LeadGenForm = ({
       email: formData.email,
       phone: formData.phone,
       source,
+      website: formData.website,
     });
 
     if (!ok) {
@@ -147,6 +151,10 @@ const LeadGenForm = ({
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Honeypot — hidden from real users, bots fill this */}
+                  <div style={{ position: 'absolute', left: '-9999px', visibility: 'hidden' }} aria-hidden="true">
+                    <input type="text" name="website" tabIndex={-1} autoComplete="off" value={formData.website} onChange={handleChange} />
+                  </div>
                   <div>
                     <label htmlFor={`name-${source}`} className="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
                     <Input

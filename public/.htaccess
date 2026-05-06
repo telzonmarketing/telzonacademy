@@ -1,15 +1,53 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # Block common vulnerability scanners and exploit paths
+  RewriteCond %{REQUEST_URI} ^/(wp-admin|wp-login|xmlrpc|phpmyadmin|\.env|\.git|config\.php|shell\.php|eval-stdin) [NC]
+  RewriteRule ^ - [F,L]
+
+  # Block SQL injection attempts in query strings
+  RewriteCond %{QUERY_STRING} (union.*select|select.*from|insert.*into|drop.*table|--\s|;\s*drop) [NC]
+  RewriteRule ^ - [F,L]
+
+  # SPA fallback — serve index.html for all non-file routes
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^ index.html [L]
 </IfModule>
 
 <IfModule mod_headers.c>
-  Header set X-Powered-By "Hostinger Horizons"
+  # ── Remove server fingerprint headers ──────────────────────────────────────
+  Header unset X-Powered-By
+  Header always unset X-Powered-By
+  Header unset Server
 
-  # Never cache HTML — always serve the latest version (origin + CDN)
+  # ── Security headers ───────────────────────────────────────────────────────
+
+  # Force HTTPS for 1 year (including subdomains)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # Block this site from being embedded in iframes (clickjacking protection)
+  Header always set X-Frame-Options "DENY"
+
+  # Prevent MIME-type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Referrer policy — don't leak full URLs to third parties
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Disable browser features not needed on this site
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), bluetooth=()"
+
+  # Content Security Policy — whitelist trusted sources only
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://connect.facebook.net https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; frame-src https://www.youtube.com https://www.facebook.com; connect-src 'self' https://lcnfnwivodzjjpykihfn.supabase.co https://graph.facebook.com https://www.google-analytics.com https://analytics.google.com; media-src 'self' blob: https://lcnfnwivodzjjpykihfn.supabase.co; object-src 'none'; base-uri 'self';"
+
+  # XSS filter (legacy browsers)
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # ── Caching ────────────────────────────────────────────────────────────────
+
+  # Never cache HTML — always serve the latest version
   <FilesMatch "\.(html)$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Surrogate-Control "no-store"
@@ -23,3 +61,18 @@
     Header set Cache-Control "public, max-age=31536000, immutable"
   </If>
 </IfModule>
+
+# ── Block bad bots by user-agent ─────────────────────────────────────────────
+<IfModule mod_setenvif.c>
+  SetEnvIfNoCase User-Agent "sqlmap|nikto|nmap|masscan|zgrab|dirbuster|nuclei|acunetix|nessus|openvas|w3af|havij" bad_bot
+  Deny from env=bad_bot
+</IfModule>
+
+# ── Disable directory listing ────────────────────────────────────────────────
+Options -Indexes
+
+# ── Protect sensitive files from direct access ───────────────────────────────
+<FilesMatch "\.(env|log|sql|bak|backup|config|htpasswd|DS_Store)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>

@@ -16,6 +16,7 @@ const ContactForm = () => {
     email: '',
     phone: '',
     message: '',
+    website: '', // honeypot — must stay empty
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -26,6 +27,8 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isSubmitting) return;
+    // Honeypot: bots fill hidden fields, real users don't
+    if (formData.website) return;
     setIsSubmitting(true);
 
     const { ok, error } = await submitLead({
@@ -34,6 +37,7 @@ const ContactForm = () => {
       phone: formData.phone,
       message: formData.message,
       source: 'homepage-contact',
+      website: formData.website,
     });
 
     setIsSubmitting(false);
@@ -89,6 +93,10 @@ const ContactForm = () => {
           className="glass-card p-8 rounded-2xl border border-white/20"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Honeypot — hidden from real users, bots fill this */}
+            <div style={{ position: 'absolute', left: '-9999px', visibility: 'hidden' }} aria-hidden="true">
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" value={formData.website} onChange={handleChange} />
+            </div>
             <div className="relative">
               <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <Input
