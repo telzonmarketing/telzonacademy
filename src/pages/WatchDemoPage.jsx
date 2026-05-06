@@ -269,10 +269,46 @@ export default function WatchDemoPage() {
   return (
     <>
       <Helmet>
-        <title>New Batch Starting Soon | Telzon Academy Nagpur</title>
-        <meta name="description" content="Join Telzon Academy's new digital marketing batch. Live projects, placement support, expert mentors. Reserve your free seat now." />
+        <title>Upto 50% Off · New Batch Starting Soon | Telzon Academy Nagpur</title>
+        <meta name="description" content="Limited seats — upto 50% off on digital marketing course. Live projects, 95% placement, expert mentors. Reserve your free seat now." />
         <meta name="robots" content="noindex, nofollow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Open Graph — for WhatsApp / Facebook link previews */}
+        <meta property="og:title"       content="Upto 50% Off — New Batch | Telzon Academy Nagpur" />
+        <meta property="og:description" content="Only 6 seats left. Learn SEO, Google Ads & Meta Ads with live projects. 95% placement rate. Reserve your free seat now." />
+        <meta property="og:image"       content="https://horizons-cdn.hostinger.com/79c8a858-426e-4a5e-be6a-862835a41c7c/e2680f0d45ebb3c1bcf9e8d8f6fa7d69.jpg" />
+        <meta property="og:type"        content="website" />
+        <meta property="og:url"         content="https://telzonacademy.in/new-batch" />
+        <meta name="twitter:card"       content="summary_large_image" />
+        <meta name="twitter:title"      content="Upto 50% Off — New Batch | Telzon Academy" />
+        <meta name="twitter:description" content="Only 6 seats left. Reserve your free seat before the batch fills up." />
+        <meta name="twitter:image"      content="https://horizons-cdn.hostinger.com/79c8a858-426e-4a5e-be6a-862835a41c7c/e2680f0d45ebb3c1bcf9e8d8f6fa7d69.jpg" />
+
+        {/* Google tag (GA4) — GT-5DHFK99D / G-R1JR4H02F1 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5DHFK99D" />
+        <script>{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'GT-5DHFK99D');
+          gtag('config', 'G-R1JR4H02F1');
+        `}</script>
+
+        {/* Meta Pixel — 1920151015239658 */}
+        <script>{`
+          !function(f,b,e,v,n,t,s){
+            if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window,document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init','1920151015239658');
+          fbq('track','PageView');
+        `}</script>
+        <noscript>{`<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1920151015239658&ev=PageView&noscript=1"/>`}</noscript>
       </Helmet>
 
       <div className="min-h-screen text-white overflow-x-hidden" style={{ background: 'linear-gradient(160deg,#0c0620 0%,#120930 45%,#0d0820 75%,#160905 100%)', fontFamily: '-apple-system,"SF Pro Text",Roboto,sans-serif' }}>
@@ -288,10 +324,11 @@ export default function WatchDemoPage() {
         </div>
 
         {/* ── Urgency banner ── */}
-        <div className="bg-gradient-to-r from-orange-600/90 to-red-600/90 text-white text-xs font-bold text-center py-2 px-4 flex items-center justify-center gap-2 flex-wrap">
-          <Flame className="w-3.5 h-3.5 flex-shrink-0" />
-          <span>Only <strong>6 seats</strong> left in this batch · Offer expires in</span>
-          <span className="font-black tabular-nums bg-black/30 px-2 py-0.5 rounded">{m}:{s}</span>
+        <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white text-xs font-bold text-center py-2.5 px-4 flex items-center justify-center gap-2 flex-wrap">
+          <Flame className="w-3.5 h-3.5 flex-shrink-0 animate-pulse" />
+          <span className="bg-white/20 px-2 py-0.5 rounded font-black tracking-wide">UPTO 50% OFF</span>
+          <span>· Only <strong>6 seats</strong> left · Offer expires in</span>
+          <span className="font-black tabular-nums bg-black/30 px-2 py-0.5 rounded tracking-widest">{m}:{s}</span>
         </div>
 
         <main className="max-w-2xl mx-auto px-4 pt-7 pb-28 sm:pb-16">
