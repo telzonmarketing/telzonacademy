@@ -1,24 +1,26 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
+import * as tus from 'tus-js-client';
 import {
   Loader2, Plus, Trash2, Save, RefreshCw,
-  Video as VideoIcon, Settings, ToggleLeft, ToggleRight,
-  Upload, CheckCircle, Film, Eye, EyeOff,
+  Video as VideoIcon, ToggleLeft, ToggleRight,
+  Upload, CheckCircle, Film,
 } from 'lucide-react';
 import { supabase } from '@/lib/customSupabaseClient';
 import AdminShell from '@/components/admin/AdminShell';
 
-const BUCKET = 'reel-videos';
-const EMPTY  = { title: '', url: '', thumbnail: '', description: '', is_published: true };
+const BUCKET     = 'reel-videos';
+const PAGE_KEY   = 'new-batch-video';
+const EMPTY_FORM = { title: '', url: '', thumbnail: '', description: '', is_published: true };
 
 function formatBytes(b) {
   return b < 1048576 ? `${(b / 1024).toFixed(1)} KB` : `${(b / 1048576).toFixed(1)} MB`;
 }
 
-// ── Toggle row ────────────────────────────────────────────────────────────
+/* ── Toggle ─────────────────────────────────────────────────────────────── */
 const Toggle = ({ label, sub, value, onChange }) => (
   <div
     onClick={() => onChange(!value)}
-    className="flex items-center justify-between p-4 rounded-xl border border-white/8 cursor-pointer select-none transition-colors hover:bg-white/[0.03]"
+    className="flex items-center justify-between p-3.5 rounded-xl border border-white/[0.07] cursor-pointer select-none transition-colors hover:bg-white/[0.03]"
     style={{ background: 'rgba(255,255,255,0.02)' }}
   >
     <div>
@@ -26,151 +28,238 @@ const Toggle = ({ label, sub, value, onChange }) => (
       {sub && <p className="text-xs text-gray-500 mt-0.5">{sub}</p>}
     </div>
     {value
-      ? <ToggleRight className="w-8 h-8 text-violet-400 flex-shrink-0" />
-      : <ToggleLeft  className="w-8 h-8 text-gray-600 flex-shrink-0" />}
+      ? <ToggleRight className="w-7 h-7 text-violet-400 flex-shrink-0" />
+      : <ToggleLeft  className="w-7 h-7 text-gray-600 flex-shrink-0" />}
   </div>
 );
 
-// ── New Batch Page Video Settings ─────────────────────────────────────────
-const NewBatchVideoSettings = () => {
-  const [videoUrl,  setVideoUrl]  = useState('');
-  const [videoPath, setVideoPath] = useState('');
-  const [autoplay,  setAutoplay]  = useState(true);
-  const [showVideo, setShowVideo] = useState(true);
-
-  const [loading,      setLoading]      = useState(true);
-  const [saving,       setSaving]       = useState(false);
-  const [saved,        setSaved]        = useState(false);
-  const [error,        setError]        = useState(null);
-  const [uploading,    setUploading]    = useState(false);
-  const [uploadPct,    setUploadPct]    = useState(0);
-  const [uploadError,  setUploadError]  = useState(null);
-  const [deleting,     setDeleting]     = useState(false);
-
+/* ── Single video slot ───────────────────────────────────────────────────── */
+const VideoSlot = ({ slotNum, url, path, show, onUpdate }) => {
+  const [uploading,   setUploading]   = useState(false);
+  const [uploadPct,   setUploadPct]   = useState(0);
+  const [uploadError, setUploadError] = useState(null);
+  const [deleting,    setDeleting]    = useState(false);
   const fileRef = useRef(null);
 
-  // ── Load ──
-  useEffect(() => {
-    supabase
-      .from('seoSettings')
-      .select('google_code, pixel_code, retargeting_code')
-      .eq('page_key', 'new-batch-video')
-      .maybeSingle()
-      .then(({ data }) => {
-        if (data) {
-          setShowVideo(data.google_code !== 'false');           // google_code = show toggle
-          setAutoplay(data.pixel_code !== 'false');             // pixel_code  = autoplay
-          setVideoUrl(data.retargeting_code || '');             // retargeting = video URL
-          if (data.retargeting_code) {
-            const m = data.retargeting_code.match(/reel-videos\/(.+)$/);
-            if (m) setVideoPath(m[1]);
-          }
-        }
-        setLoading(false);
-      });
-  }, []);
-
-  // ── Save toggles only ──
-  const save = async () => {
-    setSaving(true); setError(null); setSaved(false);
-    const payload = {
-      google_code:      showVideo ? 'true' : 'false',
-      pixel_code:       autoplay  ? 'true' : 'false',
-      retargeting_code: videoUrl,
-    };
-    const { data: ex } = await supabase.from('seoSettings').select('id').eq('page_key', 'new-batch-video').maybeSingle();
-    const { error: err } = ex?.id
-      ? await supabase.from('seoSettings').update(payload).eq('page_key', 'new-batch-video')
-      : await supabase.from('seoSettings').insert({ ...payload, page_key: 'new-batch-video' });
-    if (err) setError(err.message);
-    else { setSaved(true); setTimeout(() => setSaved(false), 3000); }
-    setSaving(false);
-  };
-
-  // ── Upload ──
   const handleFile = async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
     setUploadError(null);
 
     if (file.size > 100 * 1024 * 1024) {
-      setUploadError(`File too large (${formatBytes(file.size)}). Max is 100 MB.`);
+      setUploadError(`Too large (${formatBytes(file.size)}). Max 100 MB.`);
       return;
     }
     if (!file.type.startsWith('video/')) {
-      setUploadError('Please select a video file (MP4, MOV, WebM).');
+      setUploadError('Select a video file (MP4, MOV, WebM).');
       return;
     }
 
     setUploading(true); setUploadPct(0);
 
-    // Delete old file from storage
-    if (videoPath) await supabase.storage.from(BUCKET).remove([videoPath]);
+    // Delete old file
+    if (path) await supabase.storage.from(BUCKET).remove([path]);
 
-    const fileName = `reel-${Date.now()}-${file.name.replace(/\s+/g, '_')}`;
+    const fileName = `reel-slot${slotNum}-${Date.now()}-${file.name.replace(/\s+/g, '_')}`;
     const { data: { session } } = await supabase.auth.getSession();
     const token = session?.access_token;
-    const uploadUrl = `https://lcnfnwivodzjjpykihfn.supabase.co/storage/v1/object/${BUCKET}/${fileName}`;
 
     try {
       await new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', uploadUrl);
-        xhr.setRequestHeader('Authorization', `Bearer ${token}`);
-        xhr.setRequestHeader('x-upsert', 'true');
-        xhr.setRequestHeader('Content-Type', file.type);        // ← raw binary, no FormData
-        xhr.setRequestHeader('Cache-Control', 'max-age=3600');
-        xhr.upload.onprogress = (ev) => {
-          if (ev.lengthComputable) setUploadPct(Math.round((ev.loaded / ev.total) * 100));
-        };
-        xhr.onload  = () => xhr.status < 300 ? resolve() : reject(new Error(xhr.responseText));
-        xhr.onerror = () => reject(new Error('Network error during upload'));
-        xhr.send(file);   // ← send file directly, not FormData
+        const upload = new tus.Upload(file, {
+          endpoint:  `https://lcnfnwivodzjjpykihfn.supabase.co/storage/v1/upload/resumable`,
+          retryDelays: [0, 3000, 5000, 10000, 20000],
+          headers:   { authorization: `Bearer ${token}`, 'x-upsert': 'true' },
+          uploadDataDuringCreation: true,
+          removeFingerprintOnSuccess: true,
+          metadata: {
+            bucketName:  BUCKET,
+            objectName:  fileName,
+            contentType: file.type,
+            cacheControl:'3600',
+          },
+          chunkSize: 6 * 1024 * 1024,
+          onError:    (err) => reject(err),
+          onProgress: (loaded, total) => {
+            if (total > 0) setUploadPct(Math.round((loaded / total) * 100));
+          },
+          onSuccess: () => resolve(),
+        });
+        upload.start();
       });
     } catch (err) {
-      setUploadError(err.message);
+      setUploadError(typeof err === 'string' ? err : err?.message || 'Upload failed');
       setUploading(false);
       return;
     }
 
     const { data: { publicUrl } } = supabase.storage.from(BUCKET).getPublicUrl(fileName);
-
-    // Persist URL immediately
-    const payload = {
-      google_code:      showVideo ? 'true' : 'false',
-      pixel_code:       autoplay  ? 'true' : 'false',
-      retargeting_code: publicUrl,
-    };
-    const { data: ex } = await supabase.from('seoSettings').select('id').eq('page_key', 'new-batch-video').maybeSingle();
-    if (ex?.id) await supabase.from('seoSettings').update(payload).eq('page_key', 'new-batch-video');
-    else        await supabase.from('seoSettings').insert({ ...payload, page_key: 'new-batch-video' });
-
-    setVideoUrl(publicUrl);
-    setVideoPath(fileName);
+    onUpdate({ url: publicUrl, path: fileName });
     setUploading(false); setUploadPct(0);
     if (fileRef.current) fileRef.current.value = '';
   };
 
-  // ── Delete ──
   const deleteVideo = async () => {
-    if (!window.confirm('Delete this video? The page will show nothing until you upload a new one.')) return;
+    if (!window.confirm(`Delete Video ${slotNum}? Visitors won't see it until you upload a new one.`)) return;
     setDeleting(true);
-    if (videoPath) await supabase.storage.from(BUCKET).remove([videoPath]);
-    await supabase.from('seoSettings').update({ retargeting_code: '' }).eq('page_key', 'new-batch-video');
-    setVideoUrl(''); setVideoPath('');
+    if (path) await supabase.storage.from(BUCKET).remove([path]);
+    onUpdate({ url: '', path: '' });
     setDeleting(false);
   };
 
   return (
-    <div className="rounded-2xl border border-violet-500/20 mb-8 overflow-hidden" style={{ background: 'rgba(139,92,246,0.04)' }}>
+    <div className="rounded-2xl border border-white/[0.07] overflow-hidden" style={{ background: 'rgba(255,255,255,0.025)' }}>
+      {/* Slot header */}
+      <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.05]">
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-lg bg-violet-500/20 flex items-center justify-center">
+            <span className="text-violet-300 text-xs font-black">{slotNum}</span>
+          </div>
+          <p className="text-sm font-bold text-white">Video {slotNum}</p>
+        </div>
+        <Toggle
+          label={show ? 'Visible' : 'Hidden'}
+          value={show}
+          onChange={(v) => onUpdate({ show: v })}
+        />
+      </div>
 
+      <div className="p-4 space-y-3">
+        {/* Upload / preview */}
+        {uploading ? (
+          <div className="p-4 rounded-xl border border-white/10" style={{ background: 'rgba(255,255,255,0.02)' }}>
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-sm text-white font-semibold">Uploading…</p>
+              <p className="text-sm text-violet-400 font-black">{uploadPct}%</p>
+            </div>
+            <div className="w-full bg-white/10 rounded-full h-2">
+              <div className="h-2 rounded-full bg-gradient-to-r from-violet-500 to-orange-500 transition-all duration-200"
+                style={{ width: `${uploadPct}%` }} />
+            </div>
+            <p className="text-xs text-gray-600 mt-1.5">Do not close this tab</p>
+          </div>
+        ) : url ? (
+          <div className="flex items-start gap-3">
+            <div className="relative rounded-xl overflow-hidden border border-white/10 bg-black flex-shrink-0"
+              style={{ width: 80, aspectRatio: '9/16' }}>
+              <video src={url} className="w-full h-full object-cover" muted playsInline
+                onMouseOver={e => e.target.play()} onMouseOut={e => { e.target.pause(); e.target.currentTime = 0; }} />
+            </div>
+            <div className="flex-1 min-w-0 pt-0.5">
+              <div className="flex items-center gap-1.5 mb-1">
+                <CheckCircle className="w-3.5 h-3.5 text-green-400 flex-shrink-0" />
+                <p className="text-xs text-green-300 font-semibold">Uploaded</p>
+              </div>
+              <p className="text-xs text-gray-600 font-mono break-all mb-3 leading-relaxed">
+                {url.split('/').pop().slice(0, 40)}…
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <label htmlFor={`reel-upload-${slotNum}`}
+                  className="cursor-pointer flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-lg border border-white/10 hover:bg-white/5 text-gray-300">
+                  <Upload className="w-3 h-3" /> Replace
+                </label>
+                <button onClick={deleteVideo} disabled={deleting}
+                  className="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-lg text-red-400 hover:bg-red-500/10 border border-red-500/20">
+                  {deleting ? <Loader2 className="w-3 h-3 animate-spin" /> : <Trash2 className="w-3 h-3" />}
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <label htmlFor={`reel-upload-${slotNum}`}
+            className="flex flex-col items-center justify-center gap-2 p-6 rounded-xl border-2 border-dashed border-white/10 hover:border-violet-500/40 cursor-pointer transition-colors"
+            style={{ background: 'rgba(255,255,255,0.01)' }}>
+            <Upload className="w-5 h-5 text-violet-400" />
+            <p className="text-xs font-semibold text-gray-300">Click to upload video {slotNum}</p>
+            <p className="text-xs text-gray-600">MP4 / MOV / WebM · Max 100 MB</p>
+          </label>
+        )}
+
+        <input ref={fileRef} id={`reel-upload-${slotNum}`} type="file"
+          accept="video/mp4,video/quicktime,video/webm,video/mpeg,video/x-m4v"
+          className="hidden" onChange={handleFile} />
+
+        {uploadError && (
+          <p className="text-xs text-red-400 bg-red-500/10 border border-red-500/20 rounded-xl px-3 py-2">
+            {uploadError}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+/* ── New Batch Video Settings ─────────────────────────────────────────────── */
+const NewBatchVideoSettings = () => {
+  const [slots, setSlots] = useState([
+    { url: '', path: '', show: true },
+    { url: '', path: '', show: true },
+    { url: '', path: '', show: true },
+  ]);
+  const [autoplay, setAutoplay] = useState(true);
+  const [loading,  setLoading]  = useState(true);
+  const [saving,   setSaving]   = useState(false);
+  const [saved,    setSaved]    = useState(false);
+  const [error,    setError]    = useState(null);
+
+  /* Load */
+  useEffect(() => {
+    supabase.from('seoSettings')
+      .select('video1_url,video1_show,video2_url,video2_show,video3_url,video3_show,nb_autoplay')
+      .eq('page_key', PAGE_KEY)
+      .maybeSingle()
+      .then(({ data }) => {
+        if (data) {
+          setSlots([
+            { url: data.video1_url || '', path: extractPath(data.video1_url), show: data.video1_show !== 'false' },
+            { url: data.video2_url || '', path: extractPath(data.video2_url), show: data.video2_show !== 'false' },
+            { url: data.video3_url || '', path: extractPath(data.video3_url), show: data.video3_show !== 'false' },
+          ]);
+          setAutoplay(data.nb_autoplay !== 'false');
+        }
+        setLoading(false);
+      });
+  }, []);
+
+  const extractPath = (url) => {
+    if (!url) return '';
+    const m = url.match(/reel-videos\/(.+)$/);
+    return m ? m[1] : '';
+  };
+
+  /* Update a single slot's fields */
+  const updateSlot = useCallback((idx, patch) => {
+    setSlots(prev => prev.map((s, i) => i === idx ? { ...s, ...patch } : s));
+  }, []);
+
+  /* Save all settings */
+  const save = async () => {
+    setSaving(true); setError(null); setSaved(false);
+    const payload = {
+      video1_url: slots[0].url, video1_show: slots[0].show ? 'true' : 'false',
+      video2_url: slots[1].url, video2_show: slots[1].show ? 'true' : 'false',
+      video3_url: slots[2].url, video3_show: slots[2].show ? 'true' : 'false',
+      nb_autoplay: autoplay ? 'true' : 'false',
+    };
+    const { data: ex } = await supabase.from('seoSettings').select('id').eq('page_key', PAGE_KEY).maybeSingle();
+    const { error: err } = ex?.id
+      ? await supabase.from('seoSettings').update(payload).eq('page_key', PAGE_KEY)
+      : await supabase.from('seoSettings').insert({ ...payload, page_key: PAGE_KEY });
+    if (err) setError(err.message);
+    else { setSaved(true); setTimeout(() => setSaved(false), 3000); }
+    setSaving(false);
+  };
+
+  return (
+    <div className="rounded-2xl border border-violet-500/20 mb-8 overflow-hidden" style={{ background: 'rgba(139,92,246,0.03)' }}>
       {/* Header */}
       <div className="flex items-center gap-3 px-5 py-4 border-b border-white/[0.06]">
         <Film className="w-5 h-5 text-violet-400" />
         <div>
           <p className="text-sm font-bold text-white">New Batch Page — Video Settings</p>
           <p className="text-xs text-gray-500">
-            Upload your video · toggle autoplay &amp; visibility · changes go live instantly
+            Upload up to 3 videos · toggle visibility · only 1 plays at a time on the page
           </p>
         </div>
       </div>
@@ -180,117 +269,37 @@ const NewBatchVideoSettings = () => {
           <Loader2 className="w-5 h-5 animate-spin text-violet-500" />
         </div>
       ) : (
-        <div className="p-5 space-y-5">
+        <div className="p-5 space-y-4">
 
-          {/* ── Video upload / preview ── */}
-          <div>
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-3">
-              Video file · MP4 / MOV / WebM · max 100 MB
-            </p>
-
-            {videoUrl && !uploading ? (
-              /* Preview */
-              <div className="flex items-start gap-4">
-                <div
-                  className="relative rounded-xl overflow-hidden border border-white/10 bg-black flex-shrink-0"
-                  style={{ width: 110, aspectRatio: '9/16' }}
-                >
-                  <video
-                    src={videoUrl}
-                    className="w-full h-full object-cover"
-                    muted playsInline
-                    onMouseOver={(e) => e.target.play()}
-                    onMouseOut={(e) => { e.target.pause(); e.target.currentTime = 0; }}
-                  />
-                </div>
-                <div className="flex-1 min-w-0 pt-1">
-                  <div className="flex items-center gap-1.5 mb-1">
-                    <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                    <p className="text-sm text-green-300 font-semibold">Video uploaded</p>
-                  </div>
-                  <p className="text-xs text-gray-600 font-mono break-all mb-4">
-                    {videoUrl.split('/').pop()}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <label htmlFor="reel-upload"
-                      className="cursor-pointer flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/5 text-gray-300">
-                      <Upload className="w-3.5 h-3.5" /> Replace video
-                    </label>
-                    <button onClick={deleteVideo} disabled={deleting}
-                      className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg text-red-400 hover:bg-red-500/10 border border-red-500/20">
-                      {deleting
-                        ? <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                        : <Trash2 className="w-3.5 h-3.5" />}
-                      Delete
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ) : uploading ? (
-              /* Progress */
-              <div className="p-5 rounded-xl border border-white/10" style={{ background: 'rgba(255,255,255,0.03)' }}>
-                <div className="flex items-center justify-between mb-2">
-                  <p className="text-sm text-white font-semibold">Uploading…</p>
-                  <p className="text-sm text-violet-400 font-black">{uploadPct}%</p>
-                </div>
-                <div className="w-full bg-white/10 rounded-full h-2.5">
-                  <div className="h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-orange-500 transition-all duration-200"
-                    style={{ width: `${uploadPct}%` }} />
-                </div>
-                <p className="text-xs text-gray-600 mt-2">Do not close this tab while uploading</p>
-              </div>
-            ) : (
-              /* Drop zone */
-              <label htmlFor="reel-upload"
-                className="flex flex-col items-center justify-center gap-3 p-10 rounded-xl border-2 border-dashed border-white/10 hover:border-violet-500/40 cursor-pointer transition-colors"
-                style={{ background: 'rgba(255,255,255,0.02)' }}
-              >
-                <div className="w-14 h-14 rounded-full bg-violet-500/10 flex items-center justify-center">
-                  <Upload className="w-6 h-6 text-violet-400" />
-                </div>
-                <div className="text-center">
-                  <p className="text-sm font-semibold text-white">Click to upload your video</p>
-                  <p className="text-xs text-gray-500 mt-1">Vertical 9:16 reel format recommended · Max 100 MB</p>
-                </div>
-              </label>
-            )}
-
-            <input ref={fileRef} id="reel-upload" type="file"
-              accept="video/mp4,video/quicktime,video/webm,video/mpeg,video/x-m4v"
-              className="hidden" onChange={handleFile} />
-
-            {uploadError && (
-              <p className="mt-2 text-xs text-red-400 bg-red-500/10 border border-red-500/20 rounded-xl px-3 py-2">
-                {uploadError}
-              </p>
-            )}
+          {/* 3 slots */}
+          <div className="grid gap-4 sm:grid-cols-3">
+            {slots.map((slot, idx) => (
+              <VideoSlot
+                key={idx}
+                slotNum={idx + 1}
+                url={slot.url}
+                path={slot.path}
+                show={slot.show}
+                onUpdate={(patch) => updateSlot(idx, patch)}
+              />
+            ))}
           </div>
 
-          {/* ── Toggles ── */}
-          <div className="space-y-3">
-            <Toggle
-              label="Show video on page"
-              sub={showVideo ? 'Video section is visible on /new-batch' : 'Video section is hidden — page shows only the form'}
-              value={showVideo}
-              onChange={setShowVideo}
-            />
-            <Toggle
-              label="Autoplay on page open"
-              sub="Video starts automatically (muted) when visitor opens the page"
-              value={autoplay}
-              onChange={setAutoplay}
-            />
-          </div>
+          {/* Global autoplay */}
+          <Toggle
+            label="Autoplay all videos (muted)"
+            sub="Videos start automatically when visitor opens the page"
+            value={autoplay}
+            onChange={setAutoplay}
+          />
 
           {error && (
             <p className="text-xs text-red-400 bg-red-500/10 border border-red-500/20 rounded-xl px-3 py-2">{error}</p>
           )}
 
-          {/* Save */}
-          <button onClick={save} disabled={saving || uploading}
+          <button onClick={save} disabled={saving}
             className="flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold transition-all disabled:opacity-50"
-            style={{ background: saved ? 'linear-gradient(135deg,#22c55e,#16a34a)' : 'linear-gradient(135deg,#7c3aed,#f97316)' }}
-          >
+            style={{ background: saved ? 'linear-gradient(135deg,#22c55e,#16a34a)' : 'linear-gradient(135deg,#7c3aed,#f97316)' }}>
             {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
             {saved ? 'Saved!' : saving ? 'Saving…' : 'Save Settings'}
           </button>
@@ -300,13 +309,13 @@ const NewBatchVideoSettings = () => {
   );
 };
 
-// ── Main AdminVideos ───────────────────────────────────────────────────────
+/* ── Main AdminVideos ─────────────────────────────────────────────────────── */
 const AdminVideos = () => {
   const [videos,  setVideos]  = useState([]);
   const [loading, setLoading] = useState(true);
   const [saving,  setSaving]  = useState(false);
   const [editing, setEditing] = useState(null);
-  const [form,    setForm]    = useState(EMPTY);
+  const [form,    setForm]    = useState(EMPTY_FORM);
   const [error,   setError]   = useState(null);
   const [columns, setColumns] = useState(null);
 
@@ -324,8 +333,8 @@ const AdminVideos = () => {
     setEditing(v.id);
     setForm({ title: v.title || '', url: v.url || v.video_url || '', thumbnail: v.thumbnail || v.thumbnail_url || '', description: v.description || '', is_published: v.is_published ?? true });
   };
-  const startNew = () => { setEditing('new'); setForm(EMPTY); };
-  const cancel   = () => { setEditing(null); setForm(EMPTY); setError(null); };
+  const startNew = () => { setEditing('new'); setForm(EMPTY_FORM); };
+  const cancel   = () => { setEditing(null); setForm(EMPTY_FORM); setError(null); };
 
   const save = async () => {
     setSaving(true); setError(null);

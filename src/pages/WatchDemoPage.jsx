@@ -238,33 +238,84 @@ const RegForm = ({ onSuccess }) => {
 
 /* ─── Main page ─────────────────────────────────────────────────────────── */
 export default function WatchDemoPage() {
-  const videoRef = useRef(null);
-  const formRef  = useRef(null);
-  const [videoStarted, setVideoStarted] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [videoUrl,  setVideoUrl]  = useState('');
-  const [autoplay,  setAutoplay]  = useState(true);
-  const [showVideo, setShowVideo] = useState(true);
-  const [settingsLoaded, setSettingsLoaded] = useState(false);
+  const videoRefs = useRef([null, null, null]);
+  const formRef   = useRef(null);
+  const [success,       setSuccess]       = useState(false);
+  const [settingsLoaded,setSettingsLoaded]= useState(false);
+  const [autoplay,      setAutoplay]      = useState(true);
+  // Each slot: { url, show }
+  const [slots, setSlots] = useState([
+    { url: '', show: true },
+    { url: '', show: true },
+    { url: '', show: true },
+  ]);
+  // Muted state per video
+  const [mutedStates, setMutedStates] = useState([true, true, true]);
+  // Which video index is currently playing (-1 = none)
+  const [playingIdx, setPlayingIdx] = useState(-1);
+  // Has pixel fired for each slot
+  const pixelFired = useRef([false, false, false]);
   const { m, s } = useCountdown(13);
 
-  /* hide ext chatbot + load settings */
+  /* load settings */
   useEffect(() => {
-    const style = document.createElement('style');
-    style.id = 'hide-ext-chat';
-    style.textContent = '#tidio-chat,[id*="tidio"],[class*="tidio"],[id*="tawk"],[class*="tawk"],#crisp-chatbox,.crisp-client,[id*="intercom"],.intercom-lightweight-app{display:none!important}';
-    document.head.appendChild(style);
     firePixelViewContent({ content_name: 'New Batch Registration', content_category: 'Education' });
 
-    supabase.from('seoSettings').select('google_code,pixel_code,retargeting_code').eq('page_key','new-batch-video').maybeSingle()
+    supabase.from('seoSettings')
+      .select('video1_url,video1_show,video2_url,video2_show,video3_url,video3_show,nb_autoplay')
+      .eq('page_key','new-batch-video')
+      .maybeSingle()
       .then(({ data }) => {
-        if (data) { setShowVideo(data.google_code !== 'false'); setAutoplay(data.pixel_code !== 'false'); setVideoUrl(data.retargeting_code || ''); }
+        if (data) {
+          setSlots([
+            { url: data.video1_url || '', show: data.video1_show !== 'false' },
+            { url: data.video2_url || '', show: data.video2_show !== 'false' },
+            { url: data.video3_url || '', show: data.video3_show !== 'false' },
+          ]);
+          setAutoplay(data.nb_autoplay !== 'false');
+        }
         setSettingsLoaded(true);
       });
-    return () => document.getElementById('hide-ext-chat')?.remove();
+  }, []);
+
+  /* Mutual exclusion — pause all other videos when one starts */
+  const handleVideoPlay = useCallback((idx) => {
+    videoRefs.current.forEach((v, i) => {
+      if (v && i !== idx && !v.paused) v.pause();
+    });
+    setPlayingIdx(idx);
+    if (!pixelFired.current[idx]) {
+      pixelFired.current[idx] = true;
+      firePixelSchedule();
+    }
+  }, []);
+
+  const handleVideoPause = useCallback((idx) => {
+    setPlayingIdx(p => p === idx ? -1 : p);
+  }, []);
+
+  const toggleMute = useCallback((idx) => {
+    const v = videoRefs.current[idx];
+    if (!v) return;
+    const next = !mutedStates[idx];
+    v.muted = next;
+    if (v.paused) v.play().catch(() => {});
+    setMutedStates(p => p.map((m, i) => i === idx ? next : m));
+  }, [mutedStates]);
+
+  const tapVideo = useCallback((idx) => {
+    const v = videoRefs.current[idx];
+    if (!v) return;
+    if (v.paused) v.play().catch(() => {});
+    else v.pause();
   }, []);
 
   const scrollToForm = () => formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+  /* Visible slots */
+  const visibleSlots = settingsLoaded
+    ? slots.map((s, i) => ({ ...s, idx: i })).filter(s => s.show && s.url)
+    : [];
 
   return (
     <>
@@ -363,14 +414,80 @@ export default function WatchDemoPage() {
             </button>
           </motion.div>
 
-          {/* ── Video ── */}
-          {settingsLoaded && showVideo && videoUrl && (
-            <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.1 }}
-              className="flex justify-center mb-8">
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 w-full max-w-xs" style={{ aspectRatio: '9/16', boxShadow: '0 0 50px rgba(139,92,246,0.25)' }}>
-                <video ref={videoRef} src={videoUrl} className="w-full h-full object-cover" playsInline muted loop autoPlay={autoplay} controls
-                  onPlay={() => { if (!videoStarted) { setVideoStarted(true); firePixelSchedule(); } }} />
+          {/* ── Videos (up to 3, horizontal scroll on mobile) ── */}
+          {visibleSlots.length > 0 && (
+            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 }} className="mb-8">
+              {/* Horizontal scroll container — snaps on mobile, flex on desktop */}
+              <div
+                className="flex gap-3 overflow-x-auto pb-2"
+                style={{
+                  scrollSnapType: 'x mandatory',
+                  WebkitOverflowScrolling: 'touch',
+                  scrollbarWidth: 'none',
+                }}
+              >
+                {visibleSlots.map(({ url, idx }) => {
+                  const isMuted   = mutedStates[idx];
+                  const isPlaying = playingIdx === idx;
+                  return (
+                    <div
+                      key={idx}
+                      className="flex-shrink-0 relative rounded-2xl overflow-hidden border border-white/10"
+                      style={{
+                        /* On mobile: each card ~78vw so you can peek the next one */
+                        width: visibleSlots.length === 1 ? '100%' : 'calc(78vw)',
+                        maxWidth: 300,
+                        aspectRatio: '9/16',
+                        scrollSnapAlign: 'start',
+                        boxShadow: isPlaying ? '0 0 40px rgba(139,92,246,0.4)' : '0 0 20px rgba(0,0,0,0.3)',
+                        transition: 'box-shadow 0.3s',
+                      }}
+                    >
+                      <video
+                        ref={el => videoRefs.current[idx] = el}
+                        src={url}
+                        className="w-full h-full object-cover"
+                        playsInline
+                        muted={isMuted}
+                        loop
+                        autoPlay={autoplay && idx === slots.findIndex(s => s.show && s.url)}
+                        onPlay={()  => handleVideoPlay(idx)}
+                        onPause={()  => handleVideoPause(idx)}
+                      />
+
+                      {/* Tap to play/pause overlay */}
+                      <div className="absolute inset-0" style={{ cursor: 'pointer' }}
+                        onClick={() => tapVideo(idx)} />
+
+                      {/* Mute button */}
+                      <button
+                        onClick={(e) => { e.stopPropagation(); toggleMute(idx); }}
+                        className="absolute bottom-3 right-3 flex items-center gap-1 text-xs font-bold text-white rounded-full px-2.5 py-1.5 transition-all active:scale-95 z-10"
+                        style={{
+                          background: isMuted ? 'rgba(0,0,0,0.65)' : 'rgba(124,58,237,0.85)',
+                          backdropFilter: 'blur(6px)',
+                          border: '1px solid rgba(255,255,255,0.15)',
+                        }}
+                      >
+                        <span className="text-sm leading-none">{isMuted ? '🔇' : '🔊'}</span>
+                        <span className="hidden sm:inline">{isMuted ? 'Sound' : 'On'}</span>
+                      </button>
+
+                      {/* Video number badge */}
+                      {visibleSlots.length > 1 && (
+                        <div className="absolute top-3 left-3 w-6 h-6 rounded-full bg-black/50 flex items-center justify-center text-white text-xs font-black backdrop-blur-sm border border-white/10">
+                          {idx + 1}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
+
+              {/* Swipe hint (only when multiple videos) */}
+              {visibleSlots.length > 1 && (
+                <p className="text-center text-xs text-gray-600 mt-2">← Swipe to see more →</p>
+              )}
             </motion.div>
           )}
 
@@ -497,9 +614,6 @@ export default function WatchDemoPage() {
             <Play className="w-4 h-4 fill-white" /> Reserve My Free Seat →
           </button>
         </div>
-
-        {/* ── Chat widget ── */}
-        <ChatWidget />
       </div>
     </>
   );
