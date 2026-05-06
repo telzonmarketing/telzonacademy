@@ -61,13 +61,13 @@ jobs:
           name: dist
           path: dist
 
-      - name: Deploy to Hostinger via SCP (SFTP port 22)
+      - name: Deploy to Hostinger via SSH (port 65002)
         uses: appleboy/scp-action@v0.1.7
         with:
           host:             ${{ secrets.FTP_SERVER }}
           username:         ${{ secrets.FTP_USERNAME }}
           password:         ${{ secrets.FTP_PASSWORD }}
-          port:             22
+          port:             65002
           source:           "dist/"
           target:           ${{ secrets.FTP_SERVER_DIR }}
           strip_components: 1
