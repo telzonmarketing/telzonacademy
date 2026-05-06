@@ -71,10 +71,81 @@ const transformations = [
 ];
 
 const reviews = [
-  { name: 'Priya S.', role: 'Freshers → SEO Executive', text: 'I had zero marketing knowledge. 3 months later I got placed at ₹25,000/month. The live projects made all the difference.', stars: 5 },
-  { name: 'Rahul M.', role: 'Business Owner', text: 'I used to spend ₹50,000 on agencies every month. Now I run my own Meta and Google Ads and my ROI has tripled.', stars: 5 },
+  { name: 'Priya S.', role: 'Fresher → SEO Executive', text: 'I had zero marketing knowledge. 3 months later I got placed at ₹25,000/month. The live projects made all the difference.', stars: 5 },
+  { name: 'Rahul M.', role: 'Business Owner · Retail', text: 'I used to spend ₹50,000 on agencies every month. Now I run my own Meta and Google Ads and my ROI has tripled.', stars: 5 },
   { name: 'Sneha K.', role: 'Housewife → Freelancer', text: 'Started taking freelance clients within 2 months of joining. This course changed my life completely.', stars: 5 },
+  { name: 'Amit D.', role: 'BBA Graduate → Digital Marketer', text: 'Got hired at a Pune agency within 45 days of completing the course. The resume and interview prep was excellent.', stars: 5 },
+  { name: 'Pooja R.', role: 'Business Owner · Boutique', text: 'My Instagram sales went from ₹20k to ₹1.2L per month after learning Meta Ads here. Worth every rupee.', stars: 5 },
+  { name: 'Karan T.', role: 'Working Professional → Freelancer', text: 'I was an accountant. After this course I now earn more freelancing on weekends than my full-time job.', stars: 5 },
+  { name: 'Divya N.', role: 'Arts Student → Content Strategist', text: 'The content and SEO module changed how I think. Got placed as a content strategist in Nagpur itself.', stars: 5 },
+  { name: 'Sagar B.', role: 'Business Owner · Restaurant', text: 'Learned Google Ads and my restaurant bookings doubled in the first month. No agency needed anymore.', stars: 5 },
+  { name: 'Meera J.', role: 'Homemaker → Social Media Manager', text: 'Managing 4 client Instagram pages from home. Earning ₹35,000/month working just 4 hours a day.', stars: 5 },
+  { name: 'Rohan P.', role: 'Engineering Graduate → PPC Analyst', text: 'Couldn\'t find a job for 8 months after engineering. 6 weeks into Telzon and I had 2 job offers.', stars: 5 },
+  { name: 'Neha A.', role: 'Business Owner · Coaching Center', text: 'Facebook Ads filled my entire next batch in 3 days. I used to struggle for months to get students.', stars: 5 },
+  { name: 'Vikas C.', role: 'Sales Executive → Marketing Lead', text: 'Used the Google Ads skills to grow my company\'s revenue 3x. Got promoted to marketing head within a year.', stars: 5 },
+  { name: 'Ankita L.', role: 'BA Graduate → SEO Specialist', text: 'Ranking on page 1 of Google for my clients now. The SEO module was incredibly detailed and practical.', stars: 5 },
+  { name: 'Suresh G.', role: 'Business Owner · Hardware Store', text: 'Started getting enquiries from Google within the first month of running my own campaigns. Game changer.', stars: 5 },
+  { name: 'Tanvi M.', role: 'Fresher → Social Media Executive', text: 'Got a job at a digital agency in Mumbai. The portfolio projects from Telzon impressed them immediately.', stars: 5 },
+  { name: 'Deepak S.', role: 'Business Owner · Travel Agency', text: 'My travel bookings increased by 200% using Meta Ads strategies from this course. Best investment ever.', stars: 5 },
+  { name: 'Kavya R.', role: 'Commerce Graduate → Email Marketer', text: 'The email marketing module alone helped me land a ₹30k/month remote job. Highly practical curriculum.', stars: 5 },
+  { name: 'Nikhil B.', role: 'Dropout → Agency Owner', text: 'Dropped out of college, joined Telzon, and now run my own 3-person digital marketing agency at age 21.', stars: 5 },
+  { name: 'Shruti V.', role: 'Teacher → Digital Marketing Trainer', text: 'Used my teaching skills with new digital knowledge. Now conduct my own workshops and earn 4x more.', stars: 5 },
+  { name: 'Aakash W.', role: 'Business Owner · Gym', text: 'My gym went from 40 members to 180 members in 4 months — purely through Meta Ads I learned here.', stars: 5 },
+  { name: 'Pallavi H.', role: 'MBA → Performance Marketer', text: 'MBA didn\'t teach me what Telzon did in 90 days. Real campaigns, real data, real results.', stars: 5 },
+  { name: 'Sanket F.', role: 'Mechanic → Freelancer', text: 'Learned digital marketing in evening batches while working at the garage. Now I earn more from freelancing.', stars: 5 },
+  { name: 'Riya G.', role: 'Fresher → YouTube Ads Specialist', text: 'Specialised in YouTube Ads and got a remote job with a Delhi agency. ₹28k/month from home at 22.', stars: 5 },
+  { name: 'Abhishek K.', role: 'Business Owner · Real Estate', text: 'Real estate leads were costing me ₹800 each from agencies. After Telzon I generate them at ₹120 each.', stars: 5 },
+  { name: 'Simran T.', role: 'PCM Student → Digital Marketer', text: 'Chose digital marketing over engineering after watching this video. Best decision of my life so far.', stars: 5 },
+  { name: 'Yash D.', role: 'Retired Teacher → Blogger', text: 'Retired at 58 and started a blog. Learnt SEO from Telzon and now my blog earns ₹15,000/month.', stars: 5 },
+  { name: 'Ishaan C.', role: 'E-commerce Owner', text: 'My Shopify store was dying. After Meta and Google Ads training, monthly revenue went from ₹30k to ₹2.4L.', stars: 5 },
+  { name: 'Preethi N.', role: 'Nurse → Side-Income Freelancer', text: 'Run social media for 3 clinics as a side income. Earning an extra ₹20k per month working just evenings.', stars: 5 },
 ];
+
+// ── Marquee ────────────────────────────────────────────────────────────────
+const MarqueeRow = ({ items, direction = 'left', speed = 35 }) => {
+  const doubled = [...items, ...items];
+  const duration = items.length * speed;
+  return (
+    <div className="overflow-hidden relative">
+      <div
+        className="flex gap-4"
+        style={{
+          animation: `marquee-${direction} ${duration}s linear infinite`,
+          width: 'max-content',
+        }}
+      >
+        {doubled.map((r, i) => (
+          <div
+            key={i}
+            className="w-72 flex-shrink-0 bg-white/[0.04] border border-white/[0.07] rounded-2xl p-5 hover:border-white/20 transition-colors duration-300"
+          >
+            <div className="flex gap-0.5 mb-3">
+              {[...Array(r.stars)].map((_, si) => (
+                <Star key={si} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+              ))}
+            </div>
+            <p className="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">"{r.text}"</p>
+            <div>
+              <p className="text-white font-semibold text-sm">{r.name}</p>
+              <p className="text-orange-400 text-xs mt-0.5">{r.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// inject keyframes once
+if (typeof document !== 'undefined' && !document.getElementById('marquee-styles')) {
+  const s = document.createElement('style');
+  s.id = 'marquee-styles';
+  s.textContent = `
+    @keyframes marquee-left  { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+    @keyframes marquee-right { from { transform: translateX(-50%) } to { transform: translateX(0) } }
+  `;
+  document.head.appendChild(s);
+}
 
 // ── Chat Widget ────────────────────────────────────────────────────────────
 const ChatWidget = () => {
@@ -478,30 +549,41 @@ const WatchDemoPage = () => {
             </motion.div>
           </div>
 
-          {/* ── Testimonials ── */}
-          <div className="mb-6">
-            <h2 className="text-center text-2xl font-bold text-white mb-6">What our students say</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              {reviews.map((r) => (
-                <motion.div
-                  key={r.name}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="bg-white/4 border border-white/8 rounded-2xl p-5"
-                >
-                  <div className="flex gap-0.5 mb-3">
-                    {[...Array(r.stars)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />)}
-                  </div>
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4">"{r.text}"</p>
-                  <div>
-                    <p className="text-white font-semibold text-sm">{r.name}</p>
-                    <p className="text-orange-400 text-xs">{r.role}</p>
-                  </div>
-                </motion.div>
-              ))}
+          {/* ── Testimonials Marquee ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <div className="text-center mb-8">
+              <span className="inline-block bg-white/5 border border-white/10 text-gray-400 text-xs font-semibold px-4 py-1.5 rounded-full mb-3 uppercase tracking-widest">
+                Real students. Real results.
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold text-white">
+                Join 1,000+ students &amp; business owners
+              </h2>
+              <p className="text-gray-400 text-sm mt-2">who transformed their career and business with Telzon Academy</p>
             </div>
-          </div>
+
+            {/* Marquee rows with fade edges */}
+            <div className="relative">
+              {/* Left fade */}
+              <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 z-10"
+                style={{ background: 'linear-gradient(to right, #0d0720, transparent)' }} />
+              {/* Right fade */}
+              <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 z-10"
+                style={{ background: 'linear-gradient(to left, #0d0720, transparent)' }} />
+
+              {/* Row 1 — scrolls left */}
+              <div className="mb-4">
+                <MarqueeRow items={reviews.slice(0, 14)} direction="left" speed={30} />
+              </div>
+              {/* Row 2 — scrolls right */}
+              <MarqueeRow items={reviews.slice(14)} direction="right" speed={28} />
+            </div>
+          </motion.div>
 
         </main>
 
