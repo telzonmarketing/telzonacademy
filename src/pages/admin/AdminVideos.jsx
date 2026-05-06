@@ -118,14 +118,14 @@ const NewBatchVideoSettings = () => {
         xhr.open('POST', uploadUrl);
         xhr.setRequestHeader('Authorization', `Bearer ${token}`);
         xhr.setRequestHeader('x-upsert', 'true');
+        xhr.setRequestHeader('Content-Type', file.type);        // ← raw binary, no FormData
+        xhr.setRequestHeader('Cache-Control', 'max-age=3600');
         xhr.upload.onprogress = (ev) => {
           if (ev.lengthComputable) setUploadPct(Math.round((ev.loaded / ev.total) * 100));
         };
         xhr.onload  = () => xhr.status < 300 ? resolve() : reject(new Error(xhr.responseText));
         xhr.onerror = () => reject(new Error('Network error during upload'));
-        const fd = new FormData();
-        fd.append('', file, fileName);
-        xhr.send(fd);
+        xhr.send(file);   // ← send file directly, not FormData
       });
     } catch (err) {
       setUploadError(err.message);
