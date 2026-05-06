@@ -61,24 +61,14 @@ jobs:
           name: dist
           path: dist
 
-      - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Deploy to Hostinger via SCP (SFTP port 22)
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          # Default Hostinger web root is public_html/. Override with FTP_SERVER_DIR
-          # if your hosting plan uses a different path (eg. domains/yourdomain.com/public_html/).
-          server-dir: ${{ secrets.FTP_SERVER_DIR || 'public_html/' }}
-          local-dir: ./dist/
-          # Skip churn — don't re-upload identical files
-          state-name: .ftp-deploy-sync-state.json
-          # Don't delete files we don't manage (e.g. .htaccess overrides, logs)
-          dangerous-clean-slate: false
-          # Speed: parallel + retry on failure
-          log-level: minimal
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/.DS_Store
+          host:             ${{ secrets.FTP_SERVER }}
+          username:         ${{ secrets.FTP_USERNAME }}
+          password:         ${{ secrets.FTP_PASSWORD }}
+          port:             22
+          source:           "dist/"
+          target:           ${{ secrets.FTP_SERVER_DIR }}
+          strip_components: 1
+          rm:               false
