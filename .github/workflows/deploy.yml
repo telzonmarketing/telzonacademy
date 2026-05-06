@@ -61,14 +61,15 @@ jobs:
           name: dist
           path: dist
 
-      - name: Deploy to Hostinger via SSH key (port 65002)
+      - name: Deploy to Hostinger via SSH (port 65002, password)
         uses: appleboy/scp-action@v0.1.7
         with:
           host:             ${{ secrets.FTP_SERVER }}
           username:         ${{ secrets.FTP_USERNAME }}
-          key:              ${{ secrets.SSH_PRIVATE_KEY }}
+          password:         ${{ secrets.FTP_PASSWORD }}
           port:             65002
           source:           "dist/"
           target:           ${{ secrets.FTP_SERVER_DIR }}
           strip_components: 1
           rm:               false
+          timeout:          120s
