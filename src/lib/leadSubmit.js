@@ -19,6 +19,23 @@ const SUPABASE_ANON_KEY =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxjbmZud2l2b2R6ampweWtpaGZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU4MTUxNDYsImV4cCI6MjA4MTM5MTE0Nn0.8tcOMzqCHKcfB82rUcTCjeFq0X8-3p2urQL0GQ778dE';
 
 const SUBMIT_LEAD_URL = `${SUPABASE_URL}/functions/v1/submit-lead`;
+const META_CAPI_URL   = `${SUPABASE_URL}/functions/v1/meta-capi`;
+
+/**
+ * Fire a server-side Meta CAPI event (no browser pixel needed).
+ * Safe to call without email/phone — will still match on IP + user agent.
+ */
+export async function fireCapiEvent({ event_name, email = '', phone = '', value = 0, currency = 'INR' } = {}) {
+  try {
+    const url = typeof window !== 'undefined' ? window.location.href : 'https://telzonacademy.in/new-batch';
+    const event_id = `${event_name}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    fetch(META_CAPI_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ event_name, email, phone, url, value, currency, event_id }),
+    }).catch(() => {});  // fire-and-forget, never block the UI
+  } catch { /* noop */ }
+}
 
 function readCookie(name) {
   if (typeof document === 'undefined') return null;
@@ -79,9 +96,11 @@ export function firePixelViewContent({ content_name = 'Digital Marketing Course'
       window.fbq('track', 'ViewContent', { content_name, content_category, value: 0, currency: 'INR' });
     }
   } catch { /* noop */ }
+  // Server-side CAPI (works even if browser pixel is blocked)
+  fireCapiEvent({ event_name: 'ViewContent', value: 0 });
 }
 
-// Fires when user clicks "Book Free Demo" / "Register" button
+// Fires when user plays the video / clicks Register
 export function firePixelSchedule() {
   if (typeof window === 'undefined') return;
   try {
@@ -89,6 +108,8 @@ export function firePixelSchedule() {
       window.fbq('track', 'Schedule');
     }
   } catch { /* noop */ }
+  // Server-side CAPI
+  fireCapiEvent({ event_name: 'Schedule' });
 }
 
 export function fireGtagLead({ source = 'website' } = {}) {
@@ -172,5 +193,8 @@ export async function submitLead(payload) {
   }
   firePixelLead();
   fireGtagLead({ source: body.source });
+  // Server-side CAPI with hashed PII for best match rate
+  fireCapiEvent({ event_name: 'Lead', email: body.email, phone: body.phone, value: 500 });
+  fireCapiEvent({ event_name: 'CompleteRegistration', email: body.email, phone: body.phone, value: 500 });
   return { ok: true, id: data?.id };
 }
