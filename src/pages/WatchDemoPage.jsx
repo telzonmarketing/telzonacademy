@@ -23,6 +23,32 @@ if (typeof document !== 'undefined' && !document.getElementById('nb-styles')) {
       display:none; }
     @media(max-width:767px){ .nb-sticky-cta{ display:block; } }
     .line-clamp-3{overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+
+    /* WhatsApp CTA — pulsing glow + shine sweep + subtle bounce */
+    @keyframes nb-wa-glow {
+      0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.5), 0 0 0 0 rgba(37,211,102,0.7); }
+      50%      { box-shadow: 0 6px 28px rgba(37,211,102,0.8), 0 0 0 12px rgba(37,211,102,0); }
+    }
+    @keyframes nb-wa-bounce {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-2px); }
+    }
+    @keyframes nb-wa-shine-sweep {
+      0%   { transform: translateX(-120%) skewX(-20deg); }
+      60%  { transform: translateX(220%) skewX(-20deg); }
+      100% { transform: translateX(220%) skewX(-20deg); }
+    }
+    .nb-wa-cta {
+      animation: nb-wa-glow 2s ease-in-out infinite, nb-wa-bounce 2.5s ease-in-out infinite;
+    }
+    .nb-wa-cta:hover { animation-play-state: paused; }
+    .nb-wa-shine {
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%);
+      animation: nb-wa-shine-sweep 2.8s ease-in-out infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .nb-wa-cta, .nb-wa-shine { animation: none; }
+    }
   `;
   document.head.appendChild(s);
 }
@@ -418,13 +444,15 @@ export default function WatchDemoPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Get course details on WhatsApp"
-                className="inline-flex items-center gap-2 font-black text-white text-sm px-5 py-3.5 rounded-xl transition-transform active:scale-95 hover:scale-105"
-                style={{ background: '#25D366', boxShadow: '0 6px 24px rgba(37,211,102,0.4)' }}
+                className="nb-wa-cta relative inline-flex items-center gap-2 font-black text-white text-sm px-5 py-3.5 rounded-xl transition-transform active:scale-95 hover:scale-105 overflow-hidden"
+                style={{ background: '#25D366', boxShadow: '0 6px 24px rgba(37,211,102,0.5), 0 0 0 0 rgba(37,211,102,0.7)' }}
               >
-                <svg viewBox="0 0 32 32" className="w-4 h-4 fill-white" aria-hidden="true">
+                {/* Shine sweep effect */}
+                <span className="nb-wa-shine pointer-events-none absolute inset-0" aria-hidden="true" />
+                <svg viewBox="0 0 32 32" className="relative w-4 h-4 fill-white" aria-hidden="true">
                   <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.673.244-1.045 0-.115 0-.244-.043-.345-.103-.215-1.165-.685-1.394-.788-.158-.072-.358-.215-.531-.215zM16.063 0c-8.857 0-16.063 7.205-16.063 16.063 0 2.83.733 5.585 2.137 8.027L0 32l8.135-2.137c2.353 1.32 5.014 2.014 7.928 2.014 8.857 0 16.063-7.206 16.063-16.063C32.125 7.18 24.92 0 16.063 0zm0 28.953c-2.6 0-5.18-.71-7.42-2.054l-.524-.343-5.522 1.45 1.466-5.366-.343-.564a13.16 13.16 0 0 1-2.05-7.026c0-7.288 5.93-13.218 13.218-13.218S29.28 7.762 29.28 15.05 23.35 28.953 16.063 28.953z"/>
                 </svg>
-                Get Course Details
+                <span className="relative">Get Course Details</span>
               </a>
             </div>
           </motion.div>
