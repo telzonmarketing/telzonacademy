@@ -606,6 +606,38 @@ export default function WatchDemoPage() {
 
         </main>
 
+        {/* ── Floating WhatsApp button (always visible) ── */}
+        <a
+          href="https://wa.me/919307189776?text=Hi%20Telzon%20Academy%2C%20I%20want%20to%20know%20more%20about%20the%20new%20batch."
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp"
+          className="fixed z-[60] flex items-center gap-2 group"
+          style={{
+            right: '16px',
+            bottom: 'calc(env(safe-area-inset-bottom, 0px) + 88px)',
+          }}
+        >
+          {/* Pulse ring */}
+          <span className="absolute inset-0 rounded-full bg-green-500 opacity-60 animate-ping pointer-events-none" />
+          {/* Tooltip / label — visible on desktop, hidden on mobile */}
+          <span className="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full bg-white text-green-700 font-bold text-xs shadow-lg whitespace-nowrap mr-1 group-hover:scale-105 transition-transform">
+            Chat with us on WhatsApp
+          </span>
+          {/* Button */}
+          <span
+            className="relative flex items-center justify-center w-14 h-14 rounded-full shadow-2xl transition-transform group-hover:scale-110 active:scale-95"
+            style={{
+              background: '#25D366',
+              boxShadow: '0 8px 24px rgba(37, 211, 102, 0.5), 0 0 0 4px rgba(255,255,255,0.1)',
+            }}
+          >
+            <svg viewBox="0 0 32 32" className="w-7 h-7 text-white" fill="currentColor" aria-hidden="true">
+              <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.673.244-1.045 0-.115 0-.244-.043-.345-.103-.215-1.165-.685-1.394-.788-.158-.072-.358-.215-.531-.215zM16.063 0c-8.857 0-16.063 7.205-16.063 16.063 0 2.83.733 5.585 2.137 8.027L0 32l8.135-2.137c2.353 1.32 5.014 2.014 7.928 2.014 8.857 0 16.063-7.206 16.063-16.063C32.125 7.18 24.92 0 16.063 0zm0 28.953c-2.6 0-5.18-.71-7.42-2.054l-.524-.343-5.522 1.45 1.466-5.366-.343-.564a13.16 13.16 0 0 1-2.05-7.026c0-7.288 5.93-13.218 13.218-13.218S29.28 7.762 29.28 15.05 23.35 28.953 16.063 28.953z"/>
+            </svg>
+          </span>
+        </a>
+
         {/* ── Sticky mobile CTA ── */}
         <div className="nb-sticky-cta">
           <button onClick={scrollToForm}
