@@ -622,7 +622,7 @@ export default function WatchDemoPage() {
           <span className="absolute inset-0 rounded-full bg-green-500 opacity-60 animate-ping pointer-events-none" />
           {/* Tooltip / label — visible on desktop, hidden on mobile */}
           <span className="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full bg-white text-green-700 font-bold text-xs shadow-lg whitespace-nowrap mr-1 group-hover:scale-105 transition-transform">
-            Chat with us on WhatsApp
+            Get Course Details
           </span>
           {/* Button */}
           <span
