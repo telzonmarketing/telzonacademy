@@ -51,6 +51,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_REPO: ${{ github.repository }}
           GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+          BING_API_KEY: ${{ secrets.BING_API_KEY }}
           MAX_CRAWL_PAGES: 1000
           AUTO_SUBMIT: true
         run: node src/index.js run --url $SITE_URL || true
@@ -67,6 +68,7 @@ jobs:
         env:
           SITE_URL: ${{ secrets.SITE_URL }}
           GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+          BING_API_KEY: ${{ secrets.BING_API_KEY }}
         run: node src/index.js submit --url $SITE_URL || true
 
       # ── SAVE REPORTS TO DASHBOARD ──

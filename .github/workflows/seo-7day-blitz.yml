@@ -38,6 +38,7 @@ jobs:
         env:
           SITE_URL: ${{ secrets.SITE_URL }}
           GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+          BING_API_KEY: ${{ secrets.BING_API_KEY }}
         run: node src/index.js submit --url $SITE_URL --force || true
 
       - name: Log to activity feed

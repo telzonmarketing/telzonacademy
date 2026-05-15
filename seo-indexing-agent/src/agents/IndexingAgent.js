@@ -229,6 +229,24 @@ class IndexingAgent {
       console.log(chalk.yellow(`  IndexNow skipped: ${err.message}`));
     }
 
+    // Bing Webmaster direct submission — 10,000/day quota (50x Google's)
+    if (process.env.BING_API_KEY) {
+      console.log(chalk.cyan('\n  Submitting batch to Bing Webmaster API...'));
+      try {
+        const { BingWebmasterSolver } = require('../solvers/BingWebmasterSolver');
+        const bing = new BingWebmasterSolver({ siteUrl: this.config.siteUrl });
+        let bingOk = 0, bingErr = 0;
+        for (const url of pagesToSubmit.slice(0, 100)) { // batch cap for hourly run
+          const r = await bing.attempt({ url }, { siteUrl: this.config.siteUrl });
+          if (r.solved) bingOk++; else bingErr++;
+        }
+        this.results.bingSubmissions = { submitted: bingOk, failed: bingErr };
+        console.log(chalk.green(`  ✓ Bing: ${bingOk} submitted, ${bingErr} failed`));
+      } catch (err) {
+        console.log(chalk.yellow(`  Bing direct submit skipped: ${err.message}`));
+      }
+    }
+
     return results;
   }
 
