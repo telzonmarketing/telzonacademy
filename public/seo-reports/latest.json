@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-15T19:01:08.992Z",
+  "timestamp": "2026-05-15T19:16:40.617Z",
   "summary": {
     "pagesFound": 64,
     "issuesFound": 5,
@@ -698,5 +698,8 @@
     "opportunities": [],
     "total": 0
   },
+  "brokenLinks": [],
+  "contentBriefs": [],
+  "healthCheck": null,
   "errors": []
 }
