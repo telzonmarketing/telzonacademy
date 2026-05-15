@@ -3,6 +3,9 @@ name: Build & Deploy to Hostinger
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'public/seo-reports/**'   # SEO JSON updates are deployed directly via scp-action below
+      - 'seo-indexing-agent/**'
   workflow_dispatch:
 
 concurrency:

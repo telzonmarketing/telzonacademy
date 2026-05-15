@@ -2,18 +2,26 @@ name: SEO Indexing Agent
 
 on:
   schedule:
-    - cron: '0 8 * * *'   # Run daily at 8am UTC
+    - cron: '0 2 * * *'    # 02:00 UTC = 07:30 IST — Full daily audit
+    - cron: '0 6 * * *'    # 06:00 UTC = 11:30 IST — Submit fresh pages
+    - cron: '0 10 * * *'   # 10:00 UTC = 15:30 IST — Submit fresh pages
+    - cron: '0 14 * * *'   # 14:00 UTC = 19:30 IST — Submit fresh pages
+    - cron: '0 18 * * *'   # 18:00 UTC = 23:30 IST — Submit fresh pages
   push:
-    branches: [main]       # Also run on every deploy
-  workflow_dispatch:       # Allow manual trigger from GitHub UI
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode: full (audit+fix+submit+rank) or submit (submit only)'
+        required: false
+        default: 'full'
 
 jobs:
   seo-audit:
-    name: Audit & Submit
+    name: SEO Agent — ${{ github.event_name == 'schedule' && (github.event.schedule == '0 2 * * *' && 'Full Audit' || 'Quick Submit') || inputs.mode || 'Full' }}
     runs-on: ubuntu-latest
     permissions:
-      contents: write      # Allow bot to commit/push report JSON to public/seo-reports/
-    # Skip if the commit was made by this bot to prevent infinite loops
+      contents: write
     if: "!contains(github.event.head_commit.message, 'chore(seo):')"
 
     steps:
@@ -31,7 +39,12 @@ jobs:
         working-directory: seo-indexing-agent
         run: npm install
 
-      - name: Run SEO audit & submit
+      # ── FULL MODE: audit + fix + submit + keyword rank (daily at 02:00 UTC) ──
+      - name: Run full SEO pipeline
+        if: |
+          github.event.schedule == '0 2 * * *' ||
+          github.event_name == 'workflow_dispatch' && inputs.mode != 'submit' ||
+          github.event_name == 'push'
         working-directory: seo-indexing-agent
         env:
           SITE_URL: ${{ secrets.SITE_URL }}
@@ -42,6 +55,21 @@ jobs:
           AUTO_SUBMIT: true
         run: node src/index.js run --url $SITE_URL || true
 
+      # ── SUBMIT MODE: only submit updated pages (every 4h at 06/10/14/18 UTC) ──
+      - name: Run quick page submission
+        if: |
+          github.event.schedule == '0 6 * * *' ||
+          github.event.schedule == '0 10 * * *' ||
+          github.event.schedule == '0 14 * * *' ||
+          github.event.schedule == '0 18 * * *' ||
+          github.event_name == 'workflow_dispatch' && inputs.mode == 'submit'
+        working-directory: seo-indexing-agent
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+          GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+        run: node src/index.js submit --url $SITE_URL || true
+
+      # ── SAVE REPORTS TO DASHBOARD ──
       - name: Save report to dashboard
         if: always()
         uses: actions/github-script@v7
@@ -51,11 +79,15 @@ jobs:
             const fs = require('fs');
             try {
               const reportPath = 'seo-indexing-agent/full-report.json';
-              if (!fs.existsSync(reportPath)) return;
+              if (!fs.existsSync(reportPath)) {
+                console.log('No full-report.json — submit-only run, skipping dashboard update');
+                return;
+              }
               const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
 
-              // Save latest.json
               fs.mkdirSync('public/seo-reports', { recursive: true });
+
+              // Save latest.json
               fs.writeFileSync('public/seo-reports/latest.json', JSON.stringify(report, null, 2));
 
               // Append to history.json
@@ -74,9 +106,11 @@ jobs:
               history.unshift(entry);
               fs.writeFileSync(histPath, JSON.stringify(history.slice(0, 90), null, 2));
 
-              // Save keywords.json (latest rankings + rolling history)
+              // Save keywords.json (latest rankings + rolling 90-day history)
               const kwPath = 'public/seo-reports/keywords.json';
-              const kwData = fs.existsSync(kwPath) ? JSON.parse(fs.readFileSync(kwPath, 'utf8')) : { latest: [], history: [] };
+              const kwData = fs.existsSync(kwPath)
+                ? JSON.parse(fs.readFileSync(kwPath, 'utf8'))
+                : { latest: [], history: [] };
               if (report.keywords && report.keywords.length > 0) {
                 kwData.latest = report.keywords;
                 kwData.summary = report.keywordSummary || {};
@@ -91,19 +125,34 @@ jobs:
                 fs.writeFileSync(kwPath, JSON.stringify(kwData, null, 2));
               }
 
-              // Git commit
+              // Git commit + push (triggers deploy.yml → files reach Hostinger)
               const { execSync } = require('child_process');
               execSync('git config user.name "SEO Bot"');
               execSync('git config user.email "seo-bot@telzonacademy.in"');
               execSync('git add public/seo-reports/');
               try {
-                execSync('git diff --cached --quiet || git commit -m "chore(seo): update dashboard report [skip ci]"');
+                execSync('git diff --cached --quiet || git commit -m "chore(seo): update dashboard report"');
                 execSync('git push');
-                console.log('Dashboard updated successfully!');
+                console.log('✓ Dashboard data committed and pushed — deploy will follow');
               } catch (pushErr) {
                 console.log('Push result:', pushErr.message);
               }
             } catch (e) { console.log('Report save error:', e.message); }
+
+      # ── DEPLOY JSON FILES DIRECTLY TO HOSTINGER (no rebuild needed) ──
+      - name: Deploy SEO reports to Hostinger
+        if: always()
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host:     ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port:     65002
+          source:   "public/seo-reports/"
+          target:   ${{ secrets.FTP_SERVER_DIR }}
+          strip_components: 1
+          timeout:  60s
+        continue-on-error: true
 
       - name: Upload audit report
         uses: actions/upload-artifact@v4
@@ -112,5 +161,4 @@ jobs:
           name: seo-report-${{ github.run_number }}
           path: |
             seo-indexing-agent/full-report.json
-            seo-indexing-agent/report.html
           retention-days: 30
