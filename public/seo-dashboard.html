@@ -29,7 +29,6 @@
     #login-box button:hover { background: #2563eb; }
     #login-error { color: #ef4444; font-size: 13px; margin-top: 10px; display: none; }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
@@ -205,7 +204,17 @@
 </div>
 
 <script>
+  // ─── Chart.js loaded dynamically to avoid CSP issues with external scripts ───
   let trendChart;
+  let ChartLib = null;
+
+  function loadChartJS(cb) {
+    const s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js';
+    s.onload = function() { ChartLib = window.Chart; cb(); };
+    s.onerror = function() { cb(); }; // chart unavailable — data still shows
+    document.head.appendChild(s);
+  }
 
   function fmt(d) {
     return new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
@@ -214,20 +223,28 @@
   function renderReport(report, history) {
     const s = report.summary || {};
 
+    // Fix field-name mapping: Reporter.js uses issuesFixed/pagesSubmitted
+    const fixedCount    = s.issuesFixed    != null ? s.issuesFixed    : (s.fixed    || 0);
+    const submittedCount = s.pagesSubmitted != null ? s.pagesSubmitted : (s.submitted || 0);
+    // submitted URLs live at top-level report.submitted (array) or report.submittedUrls
+    const submittedUrls = Array.isArray(report.submitted)
+      ? report.submitted
+      : (report.submittedUrls || []);
+
     // Status badge
     const badge = document.getElementById('status-badge');
     if ((s.critical || 0) === 0) {
       badge.textContent = '✓ Healthy'; badge.className = 'badge';
     } else {
-      badge.textContent = `⚠ ${s.critical} Critical`; badge.className = 'badge error';
+      badge.textContent = '⚠ ' + s.critical + ' Critical'; badge.className = 'badge error';
     }
 
     document.getElementById('last-run').textContent = 'Last run: ' + fmt(report.timestamp || Date.now());
-    document.getElementById('pages-crawled').textContent = s.pagesFound || 0;
-    document.getElementById('critical-count').textContent = s.critical || 0;
-    document.getElementById('important-count').textContent = s.important || 0;
-    document.getElementById('fixed-count').textContent = s.fixed || 0;
-    document.getElementById('submitted-count').textContent = s.submitted || 0;
+    document.getElementById('pages-crawled').textContent  = s.pagesFound   || 0;
+    document.getElementById('critical-count').textContent = s.critical     || 0;
+    document.getElementById('important-count').textContent = s.important   || 0;
+    document.getElementById('fixed-count').textContent    = fixedCount;
+    document.getElementById('submitted-count').textContent = submittedCount;
 
     // Issues list
     const issuesList = document.getElementById('issues-list');
@@ -235,14 +252,12 @@
     if (issues.length === 0) {
       issuesList.innerHTML = '<li><span class="dot fixed"></span><span style="color:#22c55e">No issues found — site is healthy!</span></li>';
     } else {
-      issuesList.innerHTML = issues.slice(0, 8).map(i => `
-        <li>
-          <span class="dot ${i.severity}"></span>
-          <span>
-            <strong style="color:#f1f5f9">${i.title}</strong><br>
-            <span style="color:#64748b;font-size:12px">${i.description || ''}</span>
-          </span>
-        </li>`).join('');
+      issuesList.innerHTML = issues.slice(0, 8).map(function(i) {
+        return '<li><span class="dot ' + i.severity + '"></span><span>' +
+          '<strong style="color:#f1f5f9">' + i.title + '</strong><br>' +
+          '<span style="color:#64748b;font-size:12px">' + (i.description || '') + '</span>' +
+          '</span></li>';
+      }).join('');
     }
 
     // Fixes list
@@ -251,27 +266,23 @@
     if (fixes.length === 0) {
       fixesList.innerHTML = '<li><span style="color:#64748b;font-size:13px">No fixes applied in this run</span></li>';
     } else {
-      fixesList.innerHTML = fixes.slice(0, 8).map(f => `
-        <li>
-          <span class="dot fixed"></span>
-          <span>
-            <strong style="color:#f1f5f9">${f.title || f.description}</strong><br>
-            <span style="color:#64748b;font-size:12px">${f.file || ''}</span>
-          </span>
-        </li>`).join('');
+      fixesList.innerHTML = fixes.slice(0, 8).map(function(f) {
+        return '<li><span class="dot fixed"></span><span>' +
+          '<strong style="color:#f1f5f9">' + (f.title || f.description) + '</strong><br>' +
+          '<span style="color:#64748b;font-size:12px">' + (f.file || '') + '</span>' +
+          '</span></li>';
+      }).join('');
     }
 
     // Pages submitted
     const pagesList = document.getElementById('pages-list');
-    const pages = report.submittedUrls || [];
-    if (pages.length === 0) {
+    if (submittedUrls.length === 0) {
       pagesList.innerHTML = '<li><span style="color:#64748b;font-size:13px">No pages submitted in this run</span></li>';
     } else {
-      pagesList.innerHTML = pages.slice(0, 8).map(u => `
-        <li>
-          <span class="dot" style="background:#a855f7"></span>
-          <a href="${u}" target="_blank" style="color:#a78bfa;font-size:13px;word-break:break-all">${u}</a>
-        </li>`).join('');
+      pagesList.innerHTML = submittedUrls.slice(0, 8).map(function(u) {
+        return '<li><span class="dot" style="background:#a855f7"></span>' +
+          '<a href="' + u + '" target="_blank" style="color:#a78bfa;font-size:13px;word-break:break-all">' + u + '</a></li>';
+      }).join('');
     }
 
     // History table
@@ -279,43 +290,49 @@
     if (!history || history.length === 0) {
       tbody.innerHTML = '<tr><td colspan="7" class="empty">No history yet — check back after the next run</td></tr>';
     } else {
-      tbody.innerHTML = history.map(h => `
-        <tr>
-          <td>${fmt(h.timestamp)}</td>
-          <td>${h.pagesFound || 0}</td>
-          <td><span class="pill ${(h.critical||0)>0?'critical':'ok'}">${h.critical || 0}</span></td>
-          <td>${h.important || 0}</td>
-          <td><span class="pill fixed">${h.fixed || 0}</span></td>
-          <td>${h.submitted || 0}</td>
-          <td><span class="pill ${(h.critical||0)===0?'fixed':'critical'}">${(h.critical||0)===0?'✓ Clean':'Issues'}</span></td>
-        </tr>`).join('');
+      tbody.innerHTML = history.map(function(h) {
+        return '<tr>' +
+          '<td>' + fmt(h.timestamp) + '</td>' +
+          '<td>' + (h.pagesFound || 0) + '</td>' +
+          '<td><span class="pill ' + ((h.critical||0)>0?'critical':'ok') + '">' + (h.critical||0) + '</span></td>' +
+          '<td>' + (h.important||0) + '</td>' +
+          '<td><span class="pill fixed">' + (h.fixed||0) + '</span></td>' +
+          '<td>' + (h.submitted||0) + '</td>' +
+          '<td><span class="pill ' + ((h.critical||0)===0?'fixed':'critical') + '">' + ((h.critical||0)===0?'✓ Clean':'Issues') + '</span></td>' +
+          '</tr>';
+      }).join('');
     }
 
-    // Trend chart
-    if (history && history.length > 0) {
-      const labels = history.map(h => fmt(h.timestamp));
-      const criticalData = history.map(h => h.critical || 0);
-      const fixedData = history.map(h => h.fixed || 0);
+    // Trend chart — wrapped in try/catch so a missing Chart.js never breaks the page
+    try {
+      if (ChartLib && history && history.length > 0) {
+        const labels      = history.map(function(h) { return fmt(h.timestamp); });
+        const criticalData = history.map(function(h) { return h.critical || 0; });
+        const fixedData    = history.map(function(h) { return h.fixed    || 0; });
 
-      if (trendChart) trendChart.destroy();
-      trendChart = new Chart(document.getElementById('trend-chart'), {
-        type: 'line',
-        data: {
-          labels,
-          datasets: [
-            { label: 'Critical Issues', data: criticalData, borderColor: '#ef4444', backgroundColor: '#ef444420', tension: 0.4, fill: true },
-            { label: 'Auto Fixed', data: fixedData, borderColor: '#22c55e', backgroundColor: '#22c55e20', tension: 0.4, fill: true },
-          ]
-        },
-        options: {
-          responsive: true, maintainAspectRatio: false,
-          plugins: { legend: { labels: { color: '#94a3b8', font: { size: 11 } } } },
-          scales: {
-            x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#1e293b' } },
-            y: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#334155' }, beginAtZero: true }
+        if (trendChart) trendChart.destroy();
+        trendChart = new ChartLib(document.getElementById('trend-chart'), {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [
+              { label: 'Critical Issues', data: criticalData, borderColor: '#ef4444', backgroundColor: '#ef444420', tension: 0.4, fill: true },
+              { label: 'Auto Fixed',      data: fixedData,    borderColor: '#22c55e', backgroundColor: '#22c55e20', tension: 0.4, fill: true },
+            ]
+          },
+          options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: '#94a3b8', font: { size: 11 } } } },
+            scales: {
+              x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#1e293b' } },
+              y: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#334155' }, beginAtZero: true }
+            }
           }
-        }
-      });
+        });
+      }
+    } catch(chartErr) {
+      // Chart rendering failed (CSP or load error) — data cards already populated above
+      console.warn('Chart.js unavailable:', chartErr.message);
     }
   }
 
@@ -326,22 +343,25 @@
         fetch('/seo-reports/history.json?t=' + Date.now()),
       ]);
 
-      if (!reportRes.ok) throw new Error('No report yet');
-      const report = await reportRes.json();
+      if (!reportRes.ok) throw new Error('No report yet (HTTP ' + reportRes.status + ')');
+      const report  = await reportRes.json();
       const history = historyRes.ok ? await historyRes.json() : [];
+
+      // Render data immediately (no chart yet)
       renderReport(report, history);
+
+      // Then load Chart.js and re-render chart once available
+      loadChartJS(function() { renderReport(report, history); });
+
     } catch (e) {
+      console.warn('SEO dashboard load error:', e.message);
       document.getElementById('status-badge').textContent = 'No data yet';
       document.getElementById('last-run').textContent = 'Run the bot to see results';
       document.getElementById('issues-list').innerHTML = '<li><span style="color:#64748b;font-size:13px">No report found — the bot will generate one on its next run (daily at 8am UTC)</span></li>';
-      document.getElementById('fixes-list').innerHTML = '<li><span style="color:#64748b;font-size:13px">—</span></li>';
-      document.getElementById('pages-list').innerHTML = '<li><span style="color:#64748b;font-size:13px">—</span></li>';
+      document.getElementById('fixes-list').innerHTML  = '<li><span style="color:#64748b;font-size:13px">—</span></li>';
+      document.getElementById('pages-list').innerHTML  = '<li><span style="color:#64748b;font-size:13px">—</span></li>';
       document.getElementById('history-body').innerHTML = '<tr><td colspan="7" class="empty">No history yet — check back after the first scheduled run</td></tr>';
-      document.getElementById('pages-crawled').textContent = '0';
-      document.getElementById('critical-count').textContent = '0';
-      document.getElementById('important-count').textContent = '0';
-      document.getElementById('fixed-count').textContent = '0';
-      document.getElementById('submitted-count').textContent = '0';
+      // Leave score cards as — so user can see something went wrong (not fake zeros)
     }
   }
 
