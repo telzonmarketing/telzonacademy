@@ -8,10 +8,15 @@
       "description": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
       "status": "fixing",
       "detectedAt": "2026-05-15T19:28:12.445Z",
-      "lastSeenAt": "2026-05-15T19:28:12.445Z",
+      "lastSeenAt": "2026-05-15T19:37:35.495Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:28:12.445Z",
+          "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
+          "file": null
+        },
+        {
+          "timestamp": "2026-05-15T19:37:35.495Z",
           "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
           "file": null
         }
@@ -26,10 +31,15 @@
       "description": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
       "status": "fixing",
       "detectedAt": "2026-05-15T19:28:12.445Z",
-      "lastSeenAt": "2026-05-15T19:28:12.445Z",
+      "lastSeenAt": "2026-05-15T19:37:35.495Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:28:12.445Z",
+          "strategy": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
+          "file": null
+        },
+        {
+          "timestamp": "2026-05-15T19:37:35.495Z",
           "strategy": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
           "file": null
         }
@@ -44,10 +54,15 @@
       "description": "H1 headings help Google understand the primary topic of each page.",
       "status": "fixing",
       "detectedAt": "2026-05-15T19:28:12.445Z",
-      "lastSeenAt": "2026-05-15T19:28:12.445Z",
+      "lastSeenAt": "2026-05-15T19:37:35.495Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:28:12.445Z",
+          "strategy": "H1 headings help Google understand the primary topic of each page.",
+          "file": null
+        },
+        {
+          "timestamp": "2026-05-15T19:37:35.495Z",
           "strategy": "H1 headings help Google understand the primary topic of each page.",
           "file": null
         }
@@ -62,10 +77,15 @@
       "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
       "status": "fixing",
       "detectedAt": "2026-05-15T19:28:12.445Z",
-      "lastSeenAt": "2026-05-15T19:28:12.445Z",
+      "lastSeenAt": "2026-05-15T19:37:35.495Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:28:12.445Z",
+          "strategy": "Convert client-side rendered pages to Server Components",
+          "file": null
+        },
+        {
+          "timestamp": "2026-05-15T19:37:35.495Z",
           "strategy": "Convert client-side rendered pages to Server Components",
           "file": null
         }
@@ -80,10 +100,15 @@
       "description": "Pages using useEffect+fetch render empty for Googlebot. Convert to getStaticProps, getServerSideProps, or async Server Components.",
       "status": "fixing",
       "detectedAt": "2026-05-15T19:28:12.445Z",
-      "lastSeenAt": "2026-05-15T19:28:12.445Z",
+      "lastSeenAt": "2026-05-15T19:37:35.495Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:28:12.445Z",
+          "strategy": "Convert useEffect data fetching to server-side",
+          "file": null
+        },
+        {
+          "timestamp": "2026-05-15T19:37:35.495Z",
           "strategy": "Convert useEffect data fetching to server-side",
           "file": null
         }
@@ -98,5 +123,5 @@
     "escalated": 0,
     "regressed": 0
   },
-  "lastReconciled": "2026-05-15T19:28:12.445Z"
+  "lastReconciled": "2026-05-15T19:37:35.495Z"
 }

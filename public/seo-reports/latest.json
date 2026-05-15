@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-15T19:28:12.446Z",
+  "timestamp": "2026-05-15T19:37:35.820Z",
   "summary": {
     "pagesFound": 64,
     "issuesFound": 5,
@@ -718,10 +718,15 @@
         "description": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
         "status": "fixing",
         "detectedAt": "2026-05-15T19:28:12.445Z",
-        "lastSeenAt": "2026-05-15T19:28:12.445Z",
+        "lastSeenAt": "2026-05-15T19:37:35.495Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:28:12.445Z",
+            "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
+            "file": null
+          },
+          {
+            "timestamp": "2026-05-15T19:37:35.495Z",
             "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
             "file": null
           }
@@ -736,10 +741,15 @@
         "description": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
         "status": "fixing",
         "detectedAt": "2026-05-15T19:28:12.445Z",
-        "lastSeenAt": "2026-05-15T19:28:12.445Z",
+        "lastSeenAt": "2026-05-15T19:37:35.495Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:28:12.445Z",
+            "strategy": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
+            "file": null
+          },
+          {
+            "timestamp": "2026-05-15T19:37:35.495Z",
             "strategy": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
             "file": null
           }
@@ -754,10 +764,15 @@
         "description": "H1 headings help Google understand the primary topic of each page.",
         "status": "fixing",
         "detectedAt": "2026-05-15T19:28:12.445Z",
-        "lastSeenAt": "2026-05-15T19:28:12.445Z",
+        "lastSeenAt": "2026-05-15T19:37:35.495Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:28:12.445Z",
+            "strategy": "H1 headings help Google understand the primary topic of each page.",
+            "file": null
+          },
+          {
+            "timestamp": "2026-05-15T19:37:35.495Z",
             "strategy": "H1 headings help Google understand the primary topic of each page.",
             "file": null
           }
@@ -772,10 +787,15 @@
         "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
         "status": "fixing",
         "detectedAt": "2026-05-15T19:28:12.445Z",
-        "lastSeenAt": "2026-05-15T19:28:12.445Z",
+        "lastSeenAt": "2026-05-15T19:37:35.495Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:28:12.445Z",
+            "strategy": "Convert client-side rendered pages to Server Components",
+            "file": null
+          },
+          {
+            "timestamp": "2026-05-15T19:37:35.495Z",
             "strategy": "Convert client-side rendered pages to Server Components",
             "file": null
           }
@@ -790,10 +810,15 @@
         "description": "Pages using useEffect+fetch render empty for Googlebot. Convert to getStaticProps, getServerSideProps, or async Server Components.",
         "status": "fixing",
         "detectedAt": "2026-05-15T19:28:12.445Z",
-        "lastSeenAt": "2026-05-15T19:28:12.445Z",
+        "lastSeenAt": "2026-05-15T19:37:35.495Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:28:12.445Z",
+            "strategy": "Convert useEffect data fetching to server-side",
+            "file": null
+          },
+          {
+            "timestamp": "2026-05-15T19:37:35.495Z",
             "strategy": "Convert useEffect data fetching to server-side",
             "file": null
           }
@@ -808,63 +833,94 @@
       "escalated": 0,
       "regressed": 0
     },
-    "lastReconciled": "2026-05-15T19:28:12.445Z"
+    "lastReconciled": "2026-05-15T19:37:35.495Z"
   },
   "issueActions": [
     {
       "id": "c79a5c8cc207",
-      "type": "opened",
-      "title": "1 duplicate title tags found"
-    },
-    {
-      "id": "7b1a0fe7305b",
-      "type": "opened",
-      "title": "63 pages have incorrect canonical URL"
-    },
-    {
-      "id": "791ad617b3ed",
-      "type": "opened",
-      "title": "64 pages missing H1 heading"
-    },
-    {
-      "id": "a924a5969e28",
-      "type": "opened",
-      "title": "64 pages appear to be client-side rendered only"
-    },
-    {
-      "id": "68149022932d",
-      "type": "opened",
-      "title": "1 Next.js pages fetch data client-side only"
-    },
-    {
-      "id": "c79a5c8cc207",
       "type": "fix-attempted",
       "title": "1 duplicate title tags found",
-      "attempt": 1
+      "attempt": 2
     },
     {
       "id": "7b1a0fe7305b",
       "type": "fix-attempted",
       "title": "63 pages have incorrect canonical URL",
-      "attempt": 1
+      "attempt": 2
     },
     {
       "id": "791ad617b3ed",
       "type": "fix-attempted",
       "title": "64 pages missing H1 heading",
-      "attempt": 1
+      "attempt": 2
     },
     {
       "id": "a924a5969e28",
       "type": "fix-attempted",
       "title": "64 pages appear to be client-side rendered only",
-      "attempt": 1
+      "attempt": 2
     },
     {
       "id": "68149022932d",
       "type": "fix-attempted",
       "title": "1 Next.js pages fetch data client-side only",
-      "attempt": 1
+      "attempt": 2
+    }
+  ],
+  "solverEnrichments": [
+    {
+      "issueId": "791ad617b3ed",
+      "title": "64 pages missing H1 heading",
+      "result": {
+        "solved": false,
+        "diagnosis": {
+          "errorCount": 1,
+          "warningCount": 9,
+          "topErrors": [
+            {
+              "message": "An “img” element must have an “alt” attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.",
+              "extract": "<noscript><img height=\"1\" width=\"1\" style=\"display:none\"\n    src=\"https://www.facebook.com/tr?id=1920151015239658&ev=PageView&noscript=1\"\n    /></nosc",
+              "line": 265,
+              "column": 6
+            }
+          ],
+          "summary": "W3C: 1 HTML errors, 9 warnings on https://telzonacademy.in/"
+        },
+        "attempts": [
+          {
+            "solver": "W3C Validator",
+            "solved": false,
+            "diagnosis": {
+              "errorCount": 1,
+              "warningCount": 9,
+              "topErrors": [
+                {
+                  "message": "An “img” element must have an “alt” attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.",
+                  "extract": "<noscript><img height=\"1\" width=\"1\" style=\"display:none\"\n    src=\"https://www.facebook.com/tr?id=1920151015239658&ev=PageView&noscript=1\"\n    /></nosc",
+                  "line": 265,
+                  "column": 6
+                }
+              ],
+              "summary": "W3C: 1 HTML errors, 9 warnings on https://telzonacademy.in/"
+            },
+            "enrichment": {
+              "w3c": {
+                "errorCount": 1,
+                "warningCount": 9,
+                "topErrors": [
+                  {
+                    "message": "An “img” element must have an “alt” attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.",
+                    "extract": "<noscript><img height=\"1\" width=\"1\" style=\"display:none\"\n    src=\"https://www.facebook.com/tr?id=1920151015239658&ev=PageView&noscript=1\"\n    /></nosc",
+                    "line": 265,
+                    "column": 6
+                  }
+                ],
+                "summary": "W3C: 1 HTML errors, 9 warnings on https://telzonacademy.in/"
+              }
+            }
+          }
+        ]
+      }
     }
   ],
   "errors": []
