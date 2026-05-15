@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-15T22:13:16.788Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 255ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-05-15T20:47:25.578Z",
     "type": "submit",
     "icon": "⚡",
