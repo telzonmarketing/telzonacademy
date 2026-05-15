@@ -11,12 +11,16 @@ jobs:
   seo-audit:
     name: Audit & Submit
     runs-on: ubuntu-latest
+    permissions:
+      contents: write      # Allow bot to commit/push report JSON to public/seo-reports/
     # Skip if the commit was made by this bot to prevent infinite loops
-    if: "!contains(github.event.head_commit.message, 'fix(seo):')"
+    if: "!contains(github.event.head_commit.message, 'chore(seo):')"
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN || github.token }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -74,10 +78,13 @@ jobs:
               execSync('git config user.email "seo-bot@telzonacademy.in"');
               execSync('git add public/seo-reports/');
               try {
-                execSync('git commit -m "chore(seo): update dashboard report [skip ci]"');
+                execSync('git diff --cached --quiet || git commit -m "chore(seo): update dashboard report [skip ci]"');
                 execSync('git push');
-              } catch (_) {}
-            } catch (e) { console.log('Report save skipped:', e.message); }
+                console.log('Dashboard updated successfully!');
+              } catch (pushErr) {
+                console.log('Push result:', pushErr.message);
+              }
+            } catch (e) { console.log('Report save error:', e.message); }
 
       - name: Upload audit report
         uses: actions/upload-artifact@v4

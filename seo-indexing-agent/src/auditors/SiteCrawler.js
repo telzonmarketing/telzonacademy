@@ -3,6 +3,7 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const { URL } = require('url');
+const xml2js = require('xml2js');
 
 class SiteCrawler {
   constructor(config = {}) {
@@ -21,7 +22,23 @@ class SiteCrawler {
     this.baseOrigin = base.origin;
     this.baseDomain = base.hostname;
 
+    // Seed queue with startUrl
     this.queue.push(startUrl);
+
+    // Also seed from sitemap.xml so React SPAs get full page coverage
+    try {
+      const sitemapUrls = await this.getSitemapUrls(base.origin);
+      for (const u of sitemapUrls) {
+        if (!this.visited.has(u) && !this.queue.includes(u)) {
+          this.queue.push(u);
+        }
+      }
+      if (sitemapUrls.length > 0) {
+        console.log(`  Seeded ${sitemapUrls.length} URLs from sitemap.xml`);
+      }
+    } catch (_) {
+      // sitemap unavailable — continue with normal crawl
+    }
 
     while (this.queue.length > 0 && this.pages.length < this.maxPages) {
       const url = this.queue.shift();
@@ -47,6 +64,75 @@ class SiteCrawler {
     }
 
     return this.pages;
+  }
+
+  /**
+   * Fetch all <loc> URLs from sitemap.xml (and nested sitemaps).
+   */
+  async getSitemapUrls(baseOrigin) {
+    const urls = [];
+    const sitemapUrl = `${baseOrigin}/sitemap.xml`;
+
+    try {
+      const res = await axios.get(sitemapUrl, {
+        timeout: 8000,
+        headers: { 'User-Agent': 'SEOIndexingAgent/1.0 (compatible; Googlebot/2.1)' },
+        validateStatus: null,
+      });
+      if (res.status !== 200 || !res.data) return urls;
+
+      const parsed = await xml2js.parseStringPromise(res.data, { explicitArray: false });
+
+      // Sitemap index (contains <sitemap> entries)
+      if (parsed.sitemapindex) {
+        const sitemaps = [].concat(parsed.sitemapindex.sitemap || []);
+        for (const sm of sitemaps) {
+          const loc = sm.loc;
+          if (!loc) continue;
+          try {
+            const nested = await this.getSitemapUrlsFromUrl(loc);
+            urls.push(...nested);
+          } catch (_) {}
+        }
+      }
+
+      // Regular urlset
+      if (parsed.urlset) {
+        const urlEntries = [].concat(parsed.urlset.url || []);
+        for (const u of urlEntries) {
+          const loc = typeof u === 'string' ? u : u.loc;
+          if (loc && typeof loc === 'string') {
+            try {
+              const parsed2 = new URL(loc);
+              if (parsed2.origin === baseOrigin) urls.push(loc.split('?')[0]);
+            } catch (_) {}
+          }
+        }
+      }
+    } catch (_) {}
+
+    return [...new Set(urls)];
+  }
+
+  async getSitemapUrlsFromUrl(sitemapUrl) {
+    const urls = [];
+    try {
+      const res = await axios.get(sitemapUrl, {
+        timeout: 8000,
+        headers: { 'User-Agent': 'SEOIndexingAgent/1.0 (compatible; Googlebot/2.1)' },
+        validateStatus: null,
+      });
+      if (res.status !== 200 || !res.data) return urls;
+      const parsed = await xml2js.parseStringPromise(res.data, { explicitArray: false });
+      if (parsed.urlset) {
+        const urlEntries = [].concat(parsed.urlset.url || []);
+        for (const u of urlEntries) {
+          const loc = typeof u === 'string' ? u : u.loc;
+          if (loc && typeof loc === 'string') urls.push(loc.split('?')[0]);
+        }
+      }
+    } catch (_) {}
+    return urls;
   }
 
   async fetchPage(url) {
