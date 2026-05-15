@@ -23,6 +23,9 @@ class Reporter {
       submitted: results.pagesSubmitted,
       keywords: results.keywords || [],
       keywordSummary: results.keywordSummary || {},
+      brokenLinks: results.brokenLinks || [],
+      contentBriefs: results.contentBriefs || [],
+      healthCheck: results.healthCheck || null,
       errors: results.errors,
     };
 

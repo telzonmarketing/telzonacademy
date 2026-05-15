@@ -82,6 +82,21 @@ program
   });
 
 program
+  .command('heartbeat')
+  .description('Hourly health check — fast probe of homepage, sitemap, robots, sample pages')
+  .option('-u, --url <url>', 'Website URL')
+  .option('-o, --output <file>', 'Save heartbeat result to file', 'heartbeat.json')
+  .action(async (opts) => {
+    const agent = new IndexingAgent({
+      siteUrl: opts.url || process.env.SITE_URL,
+    });
+    const result = await agent.heartbeat();
+    if (result) {
+      require('fs').writeFileSync(opts.output, JSON.stringify(result, null, 2));
+    }
+  });
+
+program
   .command('run')
   .description('Run full pipeline: audit → fix → submit (recommended)')
   .option('-u, --url <url>', 'Website URL')

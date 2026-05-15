@@ -13,6 +13,9 @@ const { IndexingAPISubmitter } = require('../submitters/IndexingAPISubmitter');
 const { IssueFixer } = require('../fixers/IssueFixer');
 const { Reporter } = require('../utils/Reporter');
 const { KeywordTracker } = require('../trackers/KeywordTracker');
+const { HealthChecker } = require('../auditors/HealthChecker');
+const { BrokenLinkChecker } = require('../auditors/BrokenLinkChecker');
+const { ContentBriefGenerator } = require('../auditors/ContentBriefGenerator');
 
 class IndexingAgent {
   constructor(config = {}) {
@@ -37,8 +40,32 @@ class IndexingAgent {
       pagesSubmitted: [],
       keywords: [],
       keywordSummary: {},
+      brokenLinks: [],
+      contentBriefs: [],
+      healthCheck: null,
       errors: [],
     };
+  }
+
+  /**
+   * Heartbeat: hourly lightweight check — homepage, sitemap, robots, sample
+   * pages. Fast (<30s), used to fill the activity feed with "still alive"
+   * pings between heavy daily audits.
+   */
+  async heartbeat() {
+    if (!this.config.siteUrl) return null;
+    const checker = new HealthChecker(this.config);
+    const result = await checker.check(this.config.siteUrl);
+    this.results.healthCheck = result;
+    console.log(chalk.bold(`\n[ HEARTBEAT ] ${result.healthy ? '✓ Healthy' : '⚠ Issues detected'}`));
+    console.log(`  ${result.passed}/${result.totalChecks} checks passed · avg ${result.avgResponseMs}ms`);
+    if (result.failed > 0) {
+      console.log(chalk.yellow(`  Failed:`));
+      for (const r of result.results.filter(x => !x.ok)) {
+        console.log(chalk.yellow(`    ${r.status || 'ERR'}  ${r.name}`));
+      }
+    }
+    return result;
   }
 
   async audit(outputFile = 'report.json') {
@@ -83,6 +110,18 @@ class IndexingAgent {
         ...metaIssues,
         ...indexingIssues,
       ];
+
+      // Step 3b: Broken link detection (runs only on deep / full audits)
+      spinner.start('Scanning internal & external links for 4xx/5xx...');
+      try {
+        const linkChecker = new BrokenLinkChecker(this.config);
+        const { broken, summaries } = await linkChecker.check(pages);
+        this.results.brokenLinks = broken;
+        this.results.issuesFound.push(...summaries);
+        spinner.succeed(`Link check complete — ${chalk.bold(broken.length)} broken link${broken.length === 1 ? '' : 's'} found`);
+      } catch (err) {
+        spinner.warn(`Link check skipped: ${err.message}`);
+      }
 
       spinner.succeed(`Audit complete — ${chalk.bold(this.results.issuesFound.length)} issues found`);
 
@@ -233,6 +272,18 @@ class IndexingAgent {
       }
     } catch (_) {}
     await this.rankKeywords(previousKeywords);
+
+    // Phase 5: Content briefs — turn keyword opportunities into action items
+    if (this.results.keywords.length > 0) {
+      console.log(chalk.bold('\n[ PHASE 5 ] Generating content optimisation briefs\n'));
+      const generator = new ContentBriefGenerator(this.config);
+      const { briefs, total } = generator.generate(this.results.keywords);
+      this.results.contentBriefs = briefs;
+      console.log(chalk.green(`  ✓ Generated ${briefs.length} content briefs (${total} keywords eligible)`));
+      if (briefs.length > 0) {
+        console.log(chalk.cyan(`  Top opportunity: "${briefs[0].query}" at #${briefs[0].currentPosition} — +${briefs[0].estimatedTrafficGain} clicks/mo potential`));
+      }
+    }
 
     // Save new keyword snapshot for next run's change detection
     if (this.results.keywords.length > 0) {

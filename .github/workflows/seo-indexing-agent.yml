@@ -208,7 +208,30 @@ jobs:
                 });
               }
 
-              // 6) Errors if any
+              // 6) Broken links
+              if (report.brokenLinks && report.brokenLinks.length > 0) {
+                const unique = [...new Set(report.brokenLinks.map(b => b.to))];
+                activities.unshift({
+                  timestamp: ts,
+                  type: 'error',
+                  icon: '🔗',
+                  title: `Found ${unique.length} broken link${unique.length === 1 ? '' : 's'} on the site`,
+                  details: unique.slice(0, 3).join(' · ') + (unique.length > 3 ? ` + ${unique.length - 3} more` : ''),
+                });
+              }
+
+              // 7) Content briefs — opportunities to push keywords to page 1
+              if (report.contentBriefs && report.contentBriefs.length > 0) {
+                activities.unshift({
+                  timestamp: ts,
+                  type: 'brief',
+                  icon: '💡',
+                  title: `Generated ${report.contentBriefs.length} content optimisation brief${report.contentBriefs.length === 1 ? '' : 's'}`,
+                  details: `Top opportunity: "${report.contentBriefs[0].query}" at #${report.contentBriefs[0].currentPosition} — +${report.contentBriefs[0].estimatedTrafficGain} clicks/mo potential`,
+                });
+              }
+
+              // 8) Errors if any
               for (const err of (report.errors || [])) {
                 activities.unshift({
                   timestamp: ts,
