@@ -63,10 +63,48 @@
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58FF9WVF" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
-  <noscript><img height="1" width="1" style="display:none"
+  <noscript><img alt="" height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1920151015239658&ev=PageView&noscript=1"
     /></noscript>
-  <div id="root" data-scroll-container></div>
+
+  <!--
+    Static SEO fallback inside #root.
+    React replaces this on mount, so users never see it. But Googlebot,
+    Bingbot, IndexNow crawlers, social-media scrapers, and HTML validators
+    that don't execute JS DO see this — giving them a valid H1, semantic
+    headings, and key content for indexing. This is the cheapest way to
+    fix "missing H1" on a React SPA without setting up SSR/prerendering.
+  -->
+  <div id="root" data-scroll-container>
+    <header>
+      <h1>Digital Marketing Course in Nagpur — Telzon Academy</h1>
+      <p>Nagpur's leading digital marketing institute offering practical training in SEO, Google Ads, social media marketing, content marketing and analytics with 95% placement assistance. Free demo class available.</p>
+    </header>
+    <nav aria-label="Primary">
+      <h2>Our Courses</h2>
+      <ul>
+        <li><a href="/pages/digital-marketing-course-in-nagpur">Digital Marketing Course in Nagpur</a></li>
+        <li><a href="/pages/seo-course-in-nagpur">SEO Course in Nagpur</a></li>
+        <li><a href="/pages/google-ads-course-in-nagpur">Google Ads Course in Nagpur</a></li>
+        <li><a href="/pages/social-media-marketing-course-nagpur">Social Media Marketing Course</a></li>
+        <li><a href="/pages/content-marketing-course-nagpur">Content Marketing Course</a></li>
+        <li><a href="/pages/digital-marketing-institute-in-nagpur">Digital Marketing Institute Nagpur</a></li>
+      </ul>
+    </nav>
+    <section>
+      <h2>Why Choose Telzon Academy</h2>
+      <ul>
+        <li>Practical, job-oriented curriculum covering SEO, SEM, social media &amp; analytics</li>
+        <li>Live projects and real-world case studies</li>
+        <li>95% placement assistance with industry partnerships</li>
+        <li>Expert trainers with 8+ years industry experience</li>
+        <li>Free demo class — book yours today</li>
+      </ul>
+    </section>
+    <noscript>
+      <p>JavaScript is disabled. <a href="https://telzonacademy.in/pages/digital-marketing-course-in-nagpur">View our digital marketing courses</a> or call +91-9307189776.</p>
+    </noscript>
+  </div>
 
   <script type="module" src="/src/main.jsx"></script>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
