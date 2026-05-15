@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-15T19:20:25.239Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-05-15T19:16:40.748Z",
     "type": "done",
     "icon": "✓",
