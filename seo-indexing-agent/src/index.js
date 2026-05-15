@@ -82,6 +82,20 @@ program
   });
 
 program
+  .command('ai-monitor')
+  .description('AI brain — analyse recent reports with Claude, surface bugs/anomalies/fixes')
+  .action(async () => {
+    const { AIMonitor } = require('./agents/AIMonitor');
+    const monitor = new AIMonitor();
+    try {
+      await monitor.analyze();
+    } catch (err) {
+      console.error(chalk.red(`AI monitor failed: ${err.message}`));
+      process.exit(0); // soft-fail — don't break workflow
+    }
+  });
+
+program
   .command('heartbeat')
   .description('Hourly health check — fast probe of homepage, sitemap, robots, sample pages')
   .option('-u, --url <url>', 'Website URL')

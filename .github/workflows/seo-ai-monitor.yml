@@ -1,0 +1,127 @@
+name: SEO AI Monitor
+
+# Daily AI brain — analyses all the SEO agent's reports with Claude,
+# surfaces bugs, anomalies, recommendations, and proposed code fixes.
+# Runs once a day after the main audit so it can review a full day of data.
+
+on:
+  schedule:
+    - cron: '30 3 * * *'   # 03:30 UTC = 09:00 IST — runs 90 min after daily audit
+  workflow_dispatch:
+
+jobs:
+  ai-monitor:
+    name: AI Brain
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    if: "!contains(github.event.head_commit.message, 'chore(seo):')"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN || github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: seo-indexing-agent
+        run: npm install --omit=optional
+
+      - name: Run AI analysis
+        working-directory: seo-indexing-agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node src/index.js ai-monitor
+
+      - name: Log AI insights to activity feed
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          script: |
+            const fs = require('fs');
+            try {
+              const insightsPath = 'public/seo-reports/ai-insights.json';
+              if (!fs.existsSync(insightsPath)) {
+                console.log('No AI insights produced (likely missing ANTHROPIC_API_KEY)');
+                return;
+              }
+              const insights = JSON.parse(fs.readFileSync(insightsPath, 'utf8'));
+              const ts = insights.timestamp || new Date().toISOString();
+
+              const actPath = 'public/seo-reports/activity.json';
+              const acts = fs.existsSync(actPath)
+                ? JSON.parse(fs.readFileSync(actPath, 'utf8'))
+                : [];
+
+              // Per-bug activity entries
+              for (const bug of (insights.bugs || []).slice(0, 5)) {
+                acts.unshift({
+                  timestamp: ts,
+                  type: 'ai-bug',
+                  icon: '🐛',
+                  title: `AI detected ${bug.severity} bug: ${bug.title}`,
+                  details: bug.details || '',
+                });
+              }
+              // Per-anomaly entries
+              for (const an of (insights.anomalies || []).slice(0, 5)) {
+                acts.unshift({
+                  timestamp: ts,
+                  type: 'ai-anomaly',
+                  icon: '🔍',
+                  title: `AI flagged anomaly: ${an.metric}`,
+                  details: (an.observation || '') + (an.likelyCause ? ` · Likely cause: ${an.likelyCause}` : ''),
+                });
+              }
+              // Top recommendation
+              if ((insights.recommendations || []).length > 0) {
+                const top = insights.recommendations[0];
+                acts.unshift({
+                  timestamp: ts,
+                  type: 'ai-rec',
+                  icon: '💭',
+                  title: `AI recommendation (${top.priority}): ${top.action}`,
+                  details: top.expectedImpact || '',
+                });
+              }
+              // Summary entry
+              acts.unshift({
+                timestamp: ts,
+                type: 'ai-scan',
+                icon: '🧠',
+                title: `AI brain scan completed · Health: ${insights.healthScore ?? '?'}/100`,
+                details: insights.summary || '',
+              });
+
+              fs.writeFileSync(actPath, JSON.stringify(acts.slice(0, 200), null, 2));
+
+              // Commit + push
+              const { execSync } = require('child_process');
+              execSync('git config user.name "SEO Bot"');
+              execSync('git config user.email "seo-bot@telzonacademy.in"');
+              execSync('git add public/seo-reports/');
+              try {
+                execSync('git diff --cached --quiet || git commit -m "chore(seo): ai-monitor scan"');
+                execSync('git push');
+              } catch (e) { console.log('Push:', e.message); }
+            } catch (e) { console.log('AI log error:', e.message); }
+
+      - name: Deploy insights to Hostinger
+        if: always()
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host:     ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port:     65002
+          source:   "public/seo-reports/"
+          target:   ${{ secrets.FTP_SERVER_DIR }}
+          strip_components: 1
+          timeout:  60s
+        continue-on-error: true
