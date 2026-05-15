@@ -1,13 +1,15 @@
 {
-  "timestamp": "2026-05-15T18:19:41.348Z",
+  "timestamp": "2026-05-15T18:37:41.340Z",
   "summary": {
     "pagesFound": 64,
     "issuesFound": 5,
     "critical": 3,
     "important": 1,
     "low": 1,
-    "issuesFixed": 0,
-    "pagesSubmitted": 0
+    "issuesFixed": 5,
+    "pagesSubmitted": 0,
+    "avgPosition": null,
+    "totalKeywords": 0
   },
   "issues": [
     {
@@ -649,7 +651,52 @@
       }
     }
   ],
-  "fixes": [],
+  "fixes": [
+    {
+      "issue": "1 duplicate title tags found",
+      "description": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
+      "instruction": "Manual fix required for: DUPLICATE_TITLES. See audit report for details."
+    },
+    {
+      "issue": "63 pages have incorrect canonical URL",
+      "description": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
+      "instruction": "Manual fix required for: WRONG_CANONICAL. See audit report for details."
+    },
+    {
+      "issue": "64 pages missing H1 heading",
+      "description": "H1 headings help Google understand the primary topic of each page.",
+      "instruction": "Manual fix required for: MISSING_H1. See audit report for details."
+    },
+    {
+      "issue": "64 pages appear to be client-side rendered only",
+      "description": "Convert client-side rendered pages to Server Components",
+      "code": "// BEFORE — client-side only (Googlebot sees empty page):\n'use client'\nimport { useEffect, useState } from 'react'\nexport default function Page() {\n  const [data, setData] = useState(null)\n  useEffect(() => { fetch('/api/data').then(r => r.json()).then(setData) }, [])\n  if (!data) return <div>Loading...</div>\n  return <div>{data.title}</div>\n}\n\n// AFTER — Server Component (Googlebot sees full content instantly):\n// No 'use client' directive needed\nexport default async function Page() {\n  const data = await fetch('https://api.example.com/data', {\n    next: { revalidate: 3600 }  // ISR: revalidate every hour\n  }).then(r => r.json())\n  return <div>{data.title}</div>\n}"
+    },
+    {
+      "issue": "1 Next.js pages fetch data client-side only",
+      "description": "Convert useEffect data fetching to server-side",
+      "code": "// Pattern to replace in each affected file:\n// Remove: useEffect, useState, client-side fetch\n// Add: async server component or getServerSideProps\n\n// App Router conversion:\n// 1. Remove 'use client' from the top of the file\n// 2. Make the component async\n// 3. Move fetch calls to the component body (top level)\n// 4. Remove useEffect and useState hooks\n\n// If you need interactivity, split the component:\n// - page.tsx (server) → fetches data, passes as props\n// - ProductDetails.tsx (client, 'use client') → handles UI interactions only"
+    }
+  ],
   "submitted": [],
+  "keywords": [],
+  "keywordSummary": {
+    "avgPosition": null,
+    "totalImpressions": 0,
+    "totalClicks": 0,
+    "avgCtr": 0,
+    "improved": 0,
+    "dropped": 0,
+    "byCategory": {
+      "top3": 0,
+      "page1": 0,
+      "almost": 0,
+      "page2to5": 0,
+      "beyond": 0
+    },
+    "topGainers": [],
+    "opportunities": [],
+    "total": 0
+  },
   "errors": []
 }
