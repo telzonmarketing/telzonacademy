@@ -17,6 +17,7 @@ const { KeywordTracker } = require('../trackers/KeywordTracker');
 const { HealthChecker } = require('../auditors/HealthChecker');
 const { BrokenLinkChecker } = require('../auditors/BrokenLinkChecker');
 const { ContentBriefGenerator } = require('../auditors/ContentBriefGenerator');
+const { PersistentFixer } = require('./PersistentFixer');
 
 class IndexingAgent {
   constructor(config = {}) {
@@ -288,6 +289,24 @@ class IndexingAgent {
       }
     } catch (_) {}
     await this.rankKeywords(previousKeywords);
+
+    // Phase 4.5: Persistent issue tracking — keep working until each issue is WON
+    console.log(chalk.bold('\n[ PHASE 4.5 ] Reconciling issue lifecycle\n'));
+    const tracker = new PersistentFixer({ statePath: '../public/seo-reports/issue-tracker.json' });
+    const { state: trkState, actions: trkActions } = tracker.reconcile(
+      this.results.issuesFound,
+      this.results.issuesFixed
+    );
+    this.results.issueTracker = trkState;
+    this.results.issueActions = trkActions;
+    console.log(`  Issues — Open: ${chalk.yellow(trkState.stats.open || 0)} · Fixing: ${chalk.cyan(trkState.stats.fixing || 0)} · Resolved: ${chalk.green(trkState.stats.resolved || 0)} · Escalated: ${chalk.red(trkState.stats.escalated || 0)}`);
+    const wins = trkActions.filter(a => a.type === 'resolved');
+    if (wins.length > 0) {
+      console.log(chalk.green.bold(`  🏆 ${wins.length} issue${wins.length === 1 ? '' : 's'} WON this run:`));
+      for (const w of wins.slice(0, 5)) {
+        console.log(chalk.green(`     ✓ "${w.title}" — resolved after ${w.attempts} attempt${w.attempts === 1 ? '' : 's'}${w.daysToResolve ? ' over ' + w.daysToResolve + ' day' + (w.daysToResolve === 1 ? '' : 's') : ''}`));
+      }
+    }
 
     // Phase 5: Content briefs — turn keyword opportunities into action items
     if (this.results.keywords.length > 0) {

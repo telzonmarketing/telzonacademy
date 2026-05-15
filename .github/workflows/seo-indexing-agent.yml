@@ -220,6 +220,43 @@ jobs:
                 });
               }
 
+              // 6.5) Issue lifecycle — wins, regressions, escalations
+              for (const a of (report.issueActions || [])) {
+                if (a.type === 'resolved') {
+                  activities.unshift({
+                    timestamp: ts,
+                    type: 'win',
+                    icon: '🏆',
+                    title: `WON: "${a.title}" resolved after ${a.attempts} attempt${a.attempts === 1 ? '' : 's'}`,
+                    details: a.daysToResolve ? `Took ${a.daysToResolve} day${a.daysToResolve === 1 ? '' : 's'} from first detection` : '',
+                  });
+                } else if (a.type === 'regressed') {
+                  activities.unshift({
+                    timestamp: ts,
+                    type: 'error',
+                    icon: '↩',
+                    title: `REGRESSED: "${a.title}" came back`,
+                    details: 'Issue was resolved before — now detected again. Bot will retry.',
+                  });
+                } else if (a.type === 'escalated') {
+                  activities.unshift({
+                    timestamp: ts,
+                    type: 'error',
+                    icon: '🚨',
+                    title: `ESCALATED: "${a.title}" needs human attention`,
+                    details: `Auto-fix failed after ${a.attempts} attempts — manual intervention required`,
+                  });
+                } else if (a.type === 'fix-attempted') {
+                  activities.unshift({
+                    timestamp: ts,
+                    type: 'fix',
+                    icon: '🔁',
+                    title: `Attempt #${a.attempt}: working on "${a.title}"`,
+                    details: '',
+                  });
+                }
+              }
+
               // 7) Content briefs — opportunities to push keywords to page 1
               if (report.contentBriefs && report.contentBriefs.length > 0) {
                 activities.unshift({

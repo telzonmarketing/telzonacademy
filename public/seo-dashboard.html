@@ -142,6 +142,32 @@
     .activity-item.ai-anomaly::before { border-color: #f59e0b; background: #f59e0b; }
     .activity-item.ai-rec::before     { border-color: #8b5cf6; background: #8b5cf6; }
     .activity-item.ai-scan::before    { border-color: #ec4899; background: #ec4899; }
+    .activity-item.win::before        { border-color: #22c55e; background: #22c55e; }
+
+    /* Issue lifecycle */
+    .issue-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #1e293b; }
+    .issue-row:last-child { border-bottom: none; }
+    .issue-status {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 10px; border-radius: 10px; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.5px; min-width: 90px; justify-content: center;
+    }
+    .issue-status.open      { background: #f9731620; color: #fdba74; }
+    .issue-status.fixing    { background: #3b82f620; color: #93c5fd; }
+    .issue-status.resolved  { background: #22c55e20; color: #86efac; }
+    .issue-status.escalated { background: #ef444420; color: #fca5a5; }
+    .issue-status.regressed { background: #eab30820; color: #fde047; }
+    .issue-title { color: #f1f5f9; font-size: 13px; flex: 1; }
+    .issue-attempts { color: #64748b; font-size: 11px; }
+    .issue-attempts strong { color: #c4b5fd; }
+    .lifecycle-stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 16px; }
+    .lifecycle-stat {
+      background: #0f172a; border: 1px solid #334155; border-radius: 8px;
+      padding: 12px; text-align: center;
+    }
+    .lifecycle-stat .num { font-size: 24px; font-weight: 800; }
+    .lifecycle-stat .label { font-size: 10px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+    @media (max-width: 700px) { .lifecycle-stats { grid-template-columns: repeat(2, 1fr); } }
 
     /* AI brain section */
     .ai-card {
@@ -422,6 +448,13 @@
     </div>
   </div>
 
+  <!-- 🏆 Issue Lifecycle — track each issue until WON -->
+  <div class="card" id="lifecycle-card" style="display:none;border-color:#22c55e">
+    <h2>🏆 Issue Lifecycle <span style="font-size:12px;color:#94a3b8;font-weight:400;margin-left:8px">Bot keeps retrying until each issue is WON</span></h2>
+    <div class="lifecycle-stats" id="lifecycle-stats"></div>
+    <div id="lifecycle-list"></div>
+  </div>
+
   <!-- Site Health pulse card -->
   <div class="card" id="health-card" style="display:none">
     <h2><span class="pulse-dot" id="health-pulse"></span> <span id="health-title">Site Health</span>
@@ -451,7 +484,8 @@
       <button data-filter="fix">🔧 Fixes</button>
       <button data-filter="submit">🚀 Submissions</button>
       <button data-filter="rank">📊 Rankings</button>
-      <button data-filter="rank-up">📈 Wins</button>
+      <button data-filter="rank-up">📈 KW Wins</button>
+      <button data-filter="win">🏆 Issue Wins</button>
       <button data-filter="crawl">🕷 Crawls</button>
       <button data-filter="error">⚠ Errors</button>
       <button data-filter="ai-scan">🧠 AI scans</button>
@@ -744,6 +778,47 @@
     document.getElementById('blitz-indexnow').textContent = blitzCount;
   }
 
+  function renderLifecycle(tracker) {
+    if (!tracker || !tracker.issues) return;
+    var card = document.getElementById('lifecycle-card');
+    card.style.display = 'block';
+    var stats = tracker.stats || {};
+    var statsEl = document.getElementById('lifecycle-stats');
+    statsEl.innerHTML =
+      '<div class="lifecycle-stat"><div class="num" style="color:#fdba74">' + (stats.open || 0) + '</div><div class="label">Open</div></div>' +
+      '<div class="lifecycle-stat"><div class="num" style="color:#93c5fd">' + (stats.fixing || 0) + '</div><div class="label">Fixing</div></div>' +
+      '<div class="lifecycle-stat"><div class="num" style="color:#86efac">' + (stats.resolved || 0) + '</div><div class="label">🏆 Won</div></div>' +
+      '<div class="lifecycle-stat"><div class="num" style="color:#fca5a5">' + (stats.escalated || 0) + '</div><div class="label">Escalated</div></div>' +
+      '<div class="lifecycle-stat"><div class="num" style="color:#fde047">' + (stats.regressed || 0) + '</div><div class="label">Regressed</div></div>';
+
+    // Sort: open/fixing first, then resolved last (most recent wins on top within each group)
+    var issues = Object.values(tracker.issues);
+    var statusRank = { open: 0, regressed: 1, fixing: 2, escalated: 3, resolved: 4 };
+    issues.sort(function(a, b) {
+      var r = (statusRank[a.status] || 9) - (statusRank[b.status] || 9);
+      if (r !== 0) return r;
+      var aT = new Date(a.resolvedAt || a.lastSeenAt || 0).getTime();
+      var bT = new Date(b.resolvedAt || b.lastSeenAt || 0).getTime();
+      return bT - aT;
+    });
+
+    var listEl = document.getElementById('lifecycle-list');
+    if (issues.length === 0) {
+      listEl.innerHTML = '<div class="empty">No issues tracked yet — first full audit not completed</div>';
+      return;
+    }
+    listEl.innerHTML = issues.slice(0, 30).map(function(i) {
+      var attemptsStr = i.status === 'resolved'
+        ? 'WON after <strong>' + (i.attempts?.length || 0) + ' attempt' + ((i.attempts?.length || 0) === 1 ? '' : 's') + '</strong>' + (i.daysToResolve ? ' · ' + i.daysToResolve + 'd' : '')
+        : '<strong>' + (i.attempts?.length || 0) + '</strong> fix attempt' + ((i.attempts?.length || 0) === 1 ? '' : 's') + ' · first seen ' + timeAgo(i.detectedAt);
+      return '<div class="issue-row">' +
+        '<span class="issue-status ' + i.status + '">' + i.status + '</span>' +
+        '<div class="issue-title">' + (i.title || '') + '</div>' +
+        '<div class="issue-attempts">' + attemptsStr + '</div>' +
+        '</div>';
+    }).join('');
+  }
+
   function renderAI(ins) {
     if (!ins) return;
     var card = document.getElementById('ai-card');
@@ -978,13 +1053,14 @@
   async function load() {
     try {
       var t = Date.now();
-      var [reportRes, historyRes, kwRes, actRes, hbRes, aiRes] = await Promise.all([
+      var [reportRes, historyRes, kwRes, actRes, hbRes, aiRes, lcRes] = await Promise.all([
         fetch('/seo-reports/latest.json?t=' + t),
         fetch('/seo-reports/history.json?t=' + t),
         fetch('/seo-reports/keywords.json?t=' + t),
         fetch('/seo-reports/activity.json?t=' + t),
         fetch('/seo-reports/heartbeat.json?t=' + t),
         fetch('/seo-reports/ai-insights.json?t=' + t),
+        fetch('/seo-reports/issue-tracker.json?t=' + t),
       ]);
 
       if (!reportRes.ok) throw new Error('No report yet (HTTP ' + reportRes.status + ')');
@@ -996,12 +1072,14 @@
       var acts;    try { acts    = actRes.ok     ? await actRes.json()     : []; }   catch(e) { acts = []; }
       var hb;      try { hb      = hbRes.ok      ? await hbRes.json()      : null; } catch(e) { hb = null; }
       var ai;      try { ai      = aiRes.ok      ? await aiRes.json()      : null; } catch(e) { ai = null; }
+      var lc;      try { lc      = lcRes.ok      ? await lcRes.json()      : null; } catch(e) { lc = null; }
 
       ALL_ACTIVITIES = Array.isArray(acts) ? acts : [];
       setupActivityFilters();
       renderActivities();
       renderHealth(hb);
       renderAI(ai);
+      renderLifecycle(lc || report.issueTracker);
       renderBriefs(report.contentBriefs || []);
       renderBlitz(history, kwData);
 

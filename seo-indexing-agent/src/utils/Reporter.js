@@ -27,6 +27,8 @@ class Reporter {
       contentBriefs: results.contentBriefs || [],
       healthCheck: results.healthCheck || null,
       indexNow: results.indexNow || null,
+      issueTracker: results.issueTracker || null,
+      issueActions: results.issueActions || [],
       errors: results.errors,
     };
 
