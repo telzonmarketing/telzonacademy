@@ -125,6 +125,112 @@ jobs:
                 fs.writeFileSync(kwPath, JSON.stringify(kwData, null, 2));
               }
 
+              // ── ACTIVITY FEED: log every action the bot took this run ──
+              const actPath = 'public/seo-reports/activity.json';
+              const activities = fs.existsSync(actPath)
+                ? JSON.parse(fs.readFileSync(actPath, 'utf8'))
+                : [];
+              const ts = report.timestamp || new Date().toISOString();
+              const runMode = process.env.GITHUB_EVENT_NAME === 'schedule' ? 'scheduled' : 'manual';
+
+              // 1) Run started
+              activities.unshift({
+                timestamp: ts,
+                type: 'run',
+                icon: '▶',
+                title: `SEO bot ${runMode} run started`,
+                details: `Mode: full audit + fix + submit + keyword tracking`,
+              });
+
+              // 2) Crawl completed
+              if (report.summary?.pagesFound > 0) {
+                activities.unshift({
+                  timestamp: ts,
+                  type: 'crawl',
+                  icon: '🕷',
+                  title: `Crawled ${report.summary.pagesFound} pages`,
+                  details: `Found ${report.summary.issuesFound || 0} issues (${report.summary.critical || 0} critical, ${report.summary.important || 0} important)`,
+                });
+              }
+
+              // 3) Each fix applied (one entry per fix)
+              if (report.fixes && report.fixes.length > 0) {
+                for (const fix of report.fixes) {
+                  activities.unshift({
+                    timestamp: ts,
+                    type: 'fix',
+                    icon: '🔧',
+                    title: `Auto-fixed: ${fix.title || fix.issue || 'issue'}`,
+                    details: fix.description || fix.file || '',
+                  });
+                }
+              }
+
+              // 4) Pages submitted to Google
+              if (report.summary?.pagesSubmitted > 0) {
+                activities.unshift({
+                  timestamp: ts,
+                  type: 'submit',
+                  icon: '🚀',
+                  title: `Submitted ${report.summary.pagesSubmitted} pages to Google Indexing API`,
+                  details: (report.submitted || []).slice(0, 3).join(', ') + (report.submitted?.length > 3 ? ` + ${report.submitted.length - 3} more` : ''),
+                });
+              }
+
+              // 5) Keyword tracking results
+              if (report.summary?.totalKeywords > 0) {
+                const ks = report.keywordSummary || {};
+                activities.unshift({
+                  timestamp: ts,
+                  type: 'rank',
+                  icon: '📊',
+                  title: `Tracked ${report.summary.totalKeywords} keywords from GSC`,
+                  details: `Avg position: ${report.summary.avgPosition} · ↑${ks.improved || 0} improved · ↓${ks.dropped || 0} dropped · ${ks.opportunities?.length || 0} on cusp of page 1`,
+                });
+
+                // Top movers — log each separately so the user sees the wins
+                for (const k of (ks.topGainers || []).slice(0, 5)) {
+                  activities.unshift({
+                    timestamp: ts,
+                    type: 'rank-up',
+                    icon: '📈',
+                    title: `"${k.query}" moved up ${k.change} positions → now #${k.position}`,
+                    details: '',
+                  });
+                }
+              } else if (process.env.GOOGLE_SERVICE_ACCOUNT_KEY) {
+                activities.unshift({
+                  timestamp: ts,
+                  type: 'rank',
+                  icon: '⏳',
+                  title: `Keyword tracking: no data yet`,
+                  details: 'GSC needs 2-3 days of data after API enable to populate rankings',
+                });
+              }
+
+              // 6) Errors if any
+              for (const err of (report.errors || [])) {
+                activities.unshift({
+                  timestamp: ts,
+                  type: 'error',
+                  icon: '⚠',
+                  title: 'Run encountered an error',
+                  details: err,
+                });
+              }
+
+              // Run completed
+              activities.unshift({
+                timestamp: new Date().toISOString(),
+                type: 'done',
+                icon: '✓',
+                title: 'Run completed',
+                details: `Total: ${report.summary?.pagesFound || 0} pages · ${report.summary?.issuesFixed || 0} fixes · ${report.summary?.pagesSubmitted || 0} submitted`,
+              });
+
+              // Keep last 200 activities (rolling window — enough for ~1 month of runs)
+              fs.writeFileSync(actPath, JSON.stringify(activities.slice(0, 200), null, 2));
+
               // Git commit + push (triggers deploy.yml → files reach Hostinger)
               const { execSync } = require('child_process');
               execSync('git config user.name "SEO Bot"');

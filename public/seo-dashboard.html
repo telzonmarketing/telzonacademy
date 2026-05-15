@@ -105,6 +105,37 @@
     .full-width { grid-column: 1 / -1; }
     .section-header { font-size: 18px; font-weight: 700; color: #f8fafc; margin: 32px 0 16px; display: flex; align-items: center; gap: 10px; }
     .divider { border: none; border-top: 1px solid #334155; margin: 32px 0; }
+
+    /* Activity Feed */
+    .activity-feed { position: relative; padding-left: 20px; }
+    .activity-feed::before { content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: #334155; }
+    .activity-item { position: relative; padding: 10px 0 10px 22px; border-bottom: 1px solid #1e293b; }
+    .activity-item:last-child { border-bottom: none; }
+    .activity-item::before {
+      content: ''; position: absolute; left: -19px; top: 16px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: #1e293b; border: 2px solid #475569; box-sizing: border-box;
+    }
+    .activity-item.run::before    { border-color: #3b82f6; background: #3b82f6; }
+    .activity-item.crawl::before  { border-color: #06b6d4; background: #06b6d4; }
+    .activity-item.fix::before    { border-color: #22c55e; background: #22c55e; }
+    .activity-item.submit::before { border-color: #a855f7; background: #a855f7; }
+    .activity-item.rank::before   { border-color: #f97316; background: #f97316; }
+    .activity-item.rank-up::before { border-color: #22c55e; background: #22c55e; }
+    .activity-item.done::before   { border-color: #22c55e; background: #22c55e; }
+    .activity-item.error::before  { border-color: #ef4444; background: #ef4444; }
+    .activity-icon { display: inline-block; margin-right: 6px; }
+    .activity-title { color: #f1f5f9; font-size: 13px; font-weight: 500; line-height: 1.5; }
+    .activity-details { color: #64748b; font-size: 12px; margin-top: 2px; }
+    .activity-time { color: #475569; font-size: 11px; margin-top: 2px; font-variant-numeric: tabular-nums; }
+    .activity-filter { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+    .activity-filter button {
+      background: #0f172a; border: 1px solid #334155; color: #94a3b8;
+      padding: 4px 10px; border-radius: 12px; font-size: 11px; cursor: pointer;
+      transition: all 0.15s;
+    }
+    .activity-filter button:hover { border-color: #64748b; color: #f1f5f9; }
+    .activity-filter button.active { background: #3b82f6; border-color: #3b82f6; color: #fff; }
     @media (max-width: 900px) { .score-row { grid-template-columns: repeat(3, 1fr); } .grid-2 { grid-template-columns: 1fr; } }
     @media (max-width: 600px) { .score-row { grid-template-columns: repeat(2, 1fr); } }
   </style>
@@ -243,6 +274,29 @@
 
   <hr class="divider" />
 
+  <hr class="divider" />
+
+  <!-- Activity Feed -->
+  <div class="section-header">📜 Activity Feed <span style="font-size:13px;color:#64748b;font-weight:400">— everything the bot did, with timestamps</span></div>
+
+  <div class="card">
+    <h2>⚡ What Changed &amp; When</h2>
+    <div class="activity-filter" id="activity-filter">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="fix">🔧 Fixes</button>
+      <button data-filter="submit">🚀 Submissions</button>
+      <button data-filter="rank">📊 Rankings</button>
+      <button data-filter="rank-up">📈 Wins</button>
+      <button data-filter="crawl">🕷 Crawls</button>
+      <button data-filter="error">⚠ Errors</button>
+    </div>
+    <div class="activity-feed" id="activity-feed">
+      <div class="empty">Loading activity...</div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
   <!-- Issues + Fixes row -->
   <div class="grid-2">
     <div class="card">
@@ -308,6 +362,59 @@
   }
   function fmtFull(d) {
     return new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+  function fmtDateTime(d) {
+    return new Date(d).toLocaleString('en-IN', {
+      day: 'numeric', month: 'short', year: 'numeric',
+      hour: '2-digit', minute: '2-digit', hour12: true,
+    });
+  }
+  function timeAgo(d) {
+    var ms = Date.now() - new Date(d).getTime();
+    var s = Math.floor(ms / 1000);
+    if (s < 60)    return s + 's ago';
+    var m = Math.floor(s / 60);
+    if (m < 60)    return m + 'm ago';
+    var h = Math.floor(m / 60);
+    if (h < 24)    return h + 'h ago';
+    var dDays = Math.floor(h / 24);
+    if (dDays < 7) return dDays + 'd ago';
+    return fmt(d);
+  }
+
+  // ── Activity feed rendering ──
+  var ALL_ACTIVITIES = [];
+  var CURRENT_FILTER = 'all';
+
+  function renderActivities() {
+    var feed = document.getElementById('activity-feed');
+    if (!feed) return;
+    var items = CURRENT_FILTER === 'all'
+      ? ALL_ACTIVITIES
+      : ALL_ACTIVITIES.filter(function(a) { return a.type === CURRENT_FILTER; });
+    if (items.length === 0) {
+      feed.innerHTML = '<div class="empty">No activity yet — first run hasn\'t completed</div>';
+      return;
+    }
+    feed.innerHTML = items.slice(0, 100).map(function(a) {
+      return '<div class="activity-item ' + (a.type || '') + '">' +
+        '<div class="activity-title"><span class="activity-icon">' + (a.icon || '•') + '</span>' + a.title + '</div>' +
+        (a.details ? '<div class="activity-details">' + a.details + '</div>' : '') +
+        '<div class="activity-time" title="' + fmtDateTime(a.timestamp) + '">' + timeAgo(a.timestamp) + ' · ' + fmtDateTime(a.timestamp) + '</div>' +
+        '</div>';
+    }).join('');
+  }
+
+  function setupActivityFilters() {
+    var btns = document.querySelectorAll('#activity-filter button');
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        btns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        CURRENT_FILTER = btn.getAttribute('data-filter');
+        renderActivities();
+      });
+    });
   }
   function num(n) {
     if (n == null) return '—';
@@ -541,10 +648,11 @@
   async function load() {
     try {
       var t = Date.now();
-      var [reportRes, historyRes, kwRes] = await Promise.all([
+      var [reportRes, historyRes, kwRes, actRes] = await Promise.all([
         fetch('/seo-reports/latest.json?t=' + t),
         fetch('/seo-reports/history.json?t=' + t),
         fetch('/seo-reports/keywords.json?t=' + t),
+        fetch('/seo-reports/activity.json?t=' + t),
       ]);
 
       if (!reportRes.ok) throw new Error('No report yet (HTTP ' + reportRes.status + ')');
@@ -553,6 +661,11 @@
       var report;  try { report  = await reportRes.json(); }  catch(e) { throw new Error('latest.json invalid'); }
       var history; try { history = historyRes.ok ? await historyRes.json() : []; } catch(e) { history = []; }
       var kwData;  try { kwData  = kwRes.ok      ? await kwRes.json()      : null; } catch(e) { kwData = null; }
+      var acts;    try { acts    = actRes.ok     ? await actRes.json()     : []; }   catch(e) { acts = []; }
+
+      ALL_ACTIVITIES = Array.isArray(acts) ? acts : [];
+      setupActivityFilters();
+      renderActivities();
 
       renderReport(report, history, kwData);
       loadChartJS(function() { renderReport(report, history, kwData); });
@@ -566,6 +679,7 @@
       document.getElementById('pages-list').innerHTML   = '<li><span style="color:#64748b;font-size:13px">—</span></li>';
       document.getElementById('history-body').innerHTML = '<tr><td colspan="8" class="empty">No history yet — check back after the first scheduled run</td></tr>';
       document.getElementById('kw-body').innerHTML      = '<tr><td colspan="8" class="empty">No keyword data yet</td></tr>';
+      document.getElementById('activity-feed').innerHTML = '<div class="empty">No activity yet — first run hasn\'t completed</div>';
     }
   }
 
