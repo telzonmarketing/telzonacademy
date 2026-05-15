@@ -1,26 +1,655 @@
 {
-  "timestamp": "2026-05-05T12:37:00.000Z",
+  "timestamp": "2026-05-15T18:09:32.503Z",
   "summary": {
-    "pagesFound": 1,
+    "pagesFound": 64,
     "issuesFound": 5,
-    "critical": 2,
-    "important": 2,
+    "critical": 3,
+    "important": 1,
     "low": 1,
-    "fixed": 2,
-    "submitted": 1
+    "issuesFixed": 0,
+    "pagesSubmitted": 0
   },
   "issues": [
-    { "severity": "critical", "title": "1 pages have noindex tag", "description": "Pages with noindex are invisible to Google." },
-    { "severity": "critical", "title": "1 Next.js pages fetch data client-side only", "description": "Data loaded in useEffect is not seen by Googlebot." },
-    { "severity": "important", "title": "1 pages missing meta description", "description": "Meta descriptions improve click-through rate from search results." },
-    { "severity": "important", "title": "1 pages missing canonical URL", "description": "Canonical tags prevent duplicate content issues." },
-    { "severity": "low", "title": "1 pages missing H1 heading", "description": "Every page should have exactly one H1 heading." }
+    {
+      "type": "DUPLICATE_TITLES",
+      "severity": "important",
+      "title": "1 duplicate title tags found",
+      "description": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
+      "affectedUrls": [
+        "https://telzonacademy.in/",
+        "https://telzonacademy.in/blog",
+        "https://telzonacademy.in/lead-generation-package",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
+        "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-institute-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-with-placement-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
+        "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-near-me",
+        "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
+        "https://telzonacademy.in/pages/marketing-school-in-nagpur",
+        "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/seo-course-in-nagpur",
+        "https://telzonacademy.in/pages/google-ads-course-nagpur",
+        "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/content-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur",
+        "https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-services-in-nagpur",
+        "https://telzonacademy.in/pages/seo-services-in-nagpur",
+        "https://telzonacademy.in/pages/seo-freelancer-in-nagpur",
+        "https://telzonacademy.in/pages/social-media-marketing-agency-in-nagpur",
+        "https://telzonacademy.in/pages/top-10-digital-marketing-institutes-in-nagpur",
+        "https://telzonacademy.in/pages/top-digital-marketing-courses-in-nagpur-2026",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-dharampeth-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-sitabuldi-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-sadar-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-pratap-nagar-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-ramdaspeth-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-jobs-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-salary-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-career-after-12th-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-for-students-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-after-graduation-nagpur",
+        "https://telzonacademy.in/pages/weekend-digital-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-civil-lines-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-itwari-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-gandhibagh-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-wardhaman-nagar-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-manewada-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-hingna-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-amravati-road-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-wardha-road-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-katol-road-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-kamptee-road-nagpur",
+        "https://telzonacademy.in/pages/facebook-ads-course-in-nagpur",
+        "https://telzonacademy.in/pages/instagram-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/youtube-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/linkedin-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/email-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur"
+      ],
+      "details": [
+        {
+          "title": "Digital Marketing Course in Nagpur | Free Demo | Telzon Academy",
+          "urls": [
+            "https://telzonacademy.in/",
+            "https://telzonacademy.in/blog",
+            "https://telzonacademy.in/lead-generation-package",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
+            "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-institute-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-with-placement-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
+            "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-near-me",
+            "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
+            "https://telzonacademy.in/pages/marketing-school-in-nagpur",
+            "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
+            "https://telzonacademy.in/pages/seo-course-in-nagpur",
+            "https://telzonacademy.in/pages/google-ads-course-nagpur",
+            "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
+            "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
+            "https://telzonacademy.in/pages/content-marketing-course-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur",
+            "https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-services-in-nagpur",
+            "https://telzonacademy.in/pages/seo-services-in-nagpur",
+            "https://telzonacademy.in/pages/seo-freelancer-in-nagpur",
+            "https://telzonacademy.in/pages/social-media-marketing-agency-in-nagpur",
+            "https://telzonacademy.in/pages/top-10-digital-marketing-institutes-in-nagpur",
+            "https://telzonacademy.in/pages/top-digital-marketing-courses-in-nagpur-2026",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-dharampeth-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-sitabuldi-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-sadar-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-pratap-nagar-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-ramdaspeth-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-jobs-in-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-salary-in-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-career-after-12th-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-for-students-in-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-after-graduation-nagpur",
+            "https://telzonacademy.in/pages/weekend-digital-marketing-course-in-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-in-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-civil-lines-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-itwari-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-gandhibagh-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-wardhaman-nagar-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-manewada-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-hingna-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-amravati-road-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-wardha-road-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-katol-road-nagpur",
+            "https://telzonacademy.in/pages/digital-marketing-course-in-kamptee-road-nagpur",
+            "https://telzonacademy.in/pages/facebook-ads-course-in-nagpur",
+            "https://telzonacademy.in/pages/instagram-marketing-course-in-nagpur",
+            "https://telzonacademy.in/pages/youtube-marketing-course-in-nagpur",
+            "https://telzonacademy.in/pages/linkedin-marketing-course-in-nagpur",
+            "https://telzonacademy.in/pages/email-marketing-course-in-nagpur",
+            "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur"
+          ]
+        }
+      ],
+      "fix": "FIX_DUPLICATE_TITLES"
+    },
+    {
+      "type": "WRONG_CANONICAL",
+      "severity": "critical",
+      "title": "63 pages have incorrect canonical URL",
+      "description": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
+      "affectedUrls": [
+        {
+          "url": "https://telzonacademy.in/blog",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/lead-generation-package",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-institute-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-with-placement-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-near-me",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/marketing-school-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/seo-course-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/google-ads-course-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/content-marketing-course-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-services-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/seo-services-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/seo-freelancer-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/social-media-marketing-agency-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/top-10-digital-marketing-institutes-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/top-digital-marketing-courses-in-nagpur-2026",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-dharampeth-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-sitabuldi-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-sadar-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-pratap-nagar-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-ramdaspeth-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-jobs-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-salary-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-career-after-12th-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-for-students-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-after-graduation-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/weekend-digital-marketing-course-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-civil-lines-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-itwari-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-gandhibagh-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-wardhaman-nagar-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-manewada-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-hingna-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-amravati-road-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-wardha-road-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-katol-road-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-kamptee-road-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/facebook-ads-course-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/instagram-marketing-course-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/youtube-marketing-course-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/linkedin-marketing-course-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/email-marketing-course-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        },
+        {
+          "url": "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur",
+          "canonical": "https://telzonacademy.in/"
+        }
+      ],
+      "fix": "FIX_CANONICAL_TAGS"
+    },
+    {
+      "type": "MISSING_H1",
+      "severity": "low",
+      "title": "64 pages missing H1 heading",
+      "description": "H1 headings help Google understand the primary topic of each page.",
+      "affectedUrls": [
+        "https://telzonacademy.in/",
+        "https://telzonacademy.in/blog",
+        "https://telzonacademy.in/lead-generation-package",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
+        "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-institute-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-with-placement-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
+        "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-near-me",
+        "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
+        "https://telzonacademy.in/pages/marketing-school-in-nagpur",
+        "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/seo-course-in-nagpur",
+        "https://telzonacademy.in/pages/google-ads-course-nagpur",
+        "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/content-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur",
+        "https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-services-in-nagpur",
+        "https://telzonacademy.in/pages/seo-services-in-nagpur",
+        "https://telzonacademy.in/pages/seo-freelancer-in-nagpur",
+        "https://telzonacademy.in/pages/social-media-marketing-agency-in-nagpur",
+        "https://telzonacademy.in/pages/top-10-digital-marketing-institutes-in-nagpur",
+        "https://telzonacademy.in/pages/top-digital-marketing-courses-in-nagpur-2026",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-dharampeth-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-sitabuldi-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-sadar-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-pratap-nagar-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-ramdaspeth-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-jobs-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-salary-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-career-after-12th-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-for-students-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-after-graduation-nagpur",
+        "https://telzonacademy.in/pages/weekend-digital-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-civil-lines-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-itwari-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-gandhibagh-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-wardhaman-nagar-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-manewada-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-hingna-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-amravati-road-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-wardha-road-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-katol-road-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-kamptee-road-nagpur",
+        "https://telzonacademy.in/pages/facebook-ads-course-in-nagpur",
+        "https://telzonacademy.in/pages/instagram-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/youtube-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/linkedin-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/email-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur"
+      ],
+      "fix": "ADD_H1_TAGS"
+    },
+    {
+      "type": "CLIENT_SIDE_RENDERING",
+      "severity": "critical",
+      "title": "64 pages appear to be client-side rendered only",
+      "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
+      "affectedUrls": [
+        "https://telzonacademy.in/",
+        "https://telzonacademy.in/blog",
+        "https://telzonacademy.in/lead-generation-package",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
+        "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-institute-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-with-placement-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
+        "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-near-me",
+        "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
+        "https://telzonacademy.in/pages/marketing-school-in-nagpur",
+        "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/seo-course-in-nagpur",
+        "https://telzonacademy.in/pages/google-ads-course-nagpur",
+        "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/content-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur",
+        "https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-services-in-nagpur",
+        "https://telzonacademy.in/pages/seo-services-in-nagpur",
+        "https://telzonacademy.in/pages/seo-freelancer-in-nagpur",
+        "https://telzonacademy.in/pages/social-media-marketing-agency-in-nagpur",
+        "https://telzonacademy.in/pages/top-10-digital-marketing-institutes-in-nagpur",
+        "https://telzonacademy.in/pages/top-digital-marketing-courses-in-nagpur-2026",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-dharampeth-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-sitabuldi-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-sadar-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-pratap-nagar-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-ramdaspeth-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-jobs-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-salary-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-career-after-12th-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-for-students-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-after-graduation-nagpur",
+        "https://telzonacademy.in/pages/weekend-digital-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-civil-lines-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-itwari-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-gandhibagh-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-wardhaman-nagar-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-manewada-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-hingna-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-amravati-road-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-wardha-road-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-katol-road-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-kamptee-road-nagpur",
+        "https://telzonacademy.in/pages/facebook-ads-course-in-nagpur",
+        "https://telzonacademy.in/pages/instagram-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/youtube-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/linkedin-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/email-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur"
+      ],
+      "fix": "ENABLE_SSR",
+      "fixData": {
+        "pages": [
+          "https://telzonacademy.in/",
+          "https://telzonacademy.in/blog",
+          "https://telzonacademy.in/lead-generation-package",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
+          "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-institute-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-with-placement-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
+          "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-near-me",
+          "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
+          "https://telzonacademy.in/pages/marketing-school-in-nagpur",
+          "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
+          "https://telzonacademy.in/pages/seo-course-in-nagpur",
+          "https://telzonacademy.in/pages/google-ads-course-nagpur",
+          "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
+          "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
+          "https://telzonacademy.in/pages/content-marketing-course-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur",
+          "https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-services-in-nagpur",
+          "https://telzonacademy.in/pages/seo-services-in-nagpur",
+          "https://telzonacademy.in/pages/seo-freelancer-in-nagpur",
+          "https://telzonacademy.in/pages/social-media-marketing-agency-in-nagpur",
+          "https://telzonacademy.in/pages/top-10-digital-marketing-institutes-in-nagpur",
+          "https://telzonacademy.in/pages/top-digital-marketing-courses-in-nagpur-2026",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-dharampeth-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-sitabuldi-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-sadar-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-pratap-nagar-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-ramdaspeth-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-jobs-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-salary-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-career-after-12th-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-for-students-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-after-graduation-nagpur",
+          "https://telzonacademy.in/pages/weekend-digital-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-civil-lines-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-itwari-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-gandhibagh-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-wardhaman-nagar-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-manewada-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-hingna-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-amravati-road-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-wardha-road-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-katol-road-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-kamptee-road-nagpur",
+          "https://telzonacademy.in/pages/facebook-ads-course-in-nagpur",
+          "https://telzonacademy.in/pages/instagram-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/youtube-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/linkedin-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/email-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur"
+        ],
+        "framework": "vite-react"
+      }
+    },
+    {
+      "type": "NEXTJS_CLIENT_FETCH",
+      "severity": "critical",
+      "title": "1 Next.js pages fetch data client-side only",
+      "description": "Pages using useEffect+fetch render empty for Googlebot. Convert to getStaticProps, getServerSideProps, or async Server Components.",
+      "affectedFiles": [
+        "src/pages/admin/AdminMetaAds.jsx"
+      ],
+      "fix": "CONVERT_TO_SSR",
+      "fixData": {
+        "files": [
+          [
+            "src/pages/admin/AdminMetaAds.jsx",
+            "import React, { useEffect, useState, useCallback, useRef } from 'react';\nimport {\n  Loader2, RefreshCw, TrendingUp, IndianRupee, Users, Eye,\n  MousePointerClick, AlertTriangle, Play, Pause, Edit2, Check, X,\n  BarChart3, PlusCircle, Zap, Target, ArrowUpRight, ChevronDown,\n  ChevronUp, Award, AlertCircle, CheckCircle2, Rocket, Activity,\n  Star, ExternalLink, Info, Lightbulb, DollarSign, Flame, Shield,\n  ToggleLeft, ToggleRight, Filter, Clock, TrendingDown,\n} from 'lucide-react';\nimport AdminShell from '@/components/admin/AdminShell';\nimport { supabase } from '@/lib/customSupabaseClient';\n\nconst SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://lcnfnwivodzjjpykihfn.supabase.co';\nconst META_STATS_URL   = `${SUPABASE_URL}/functions/v1/meta-stats`;\nconst META_MANAGER_URL = `${SUPABASE_URL}/functions/v1/meta-ads-manager`;\n\n// ── Formatters ────────────────────────────────────────────────────────────────\nconst fmtINR = (n) => {\n  if (n == null || isNaN(n)) return '—';\n  return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(n);\n};\nconst fmtNum = (n) => {\n  if (n == null || isNaN(n)) return '—';\n  return new Intl.NumberFormat('en-IN').format(Math.round(n));\n};\nconst fmtPct = (n) => n == null ? '—' : `${Number(n).toFixed(2)}%`;\nconst fmtROAS = (n) => n == null ? '—' : `${Number(n).toFixed(1)}x`;\n\n// ── Color helpers ─────────────────────────────────────────────────────────────\nconst cplColor = (cpl) => {\n  if (!cpl) return 'text-gray-400';\n  if (cpl < 200) return 'text-green-400';\n  if (cpl < 500) return 'text-yellow-400';\n  return 'text-red-400';\n};\nconst roasColor = (roas) => {\n  if (!roas) return 'text-gray-400';\n  if (roas >= 5) return 'text-green-400';\n  if (roas >= 2) return 'text-yellow-400';\n  return 'text-red-400';\n};\nconst statusBadge = (s) => {\n  if (s === 'ACTIVE')   return 'bg-green-500/20 text-green-300 border-green-500/30';\n  if (s === 'PAUSED')   return 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30';\n  return 'bg-gray-500/20 text-gray-300 border-gray-500/30';\n};\n\nconst PRESETS = [\n  { value:'today', label:'Today' },\n  { value:'yesterday', label:'Yesterday' },\n  { value:'last_7d', label:'Last 7 days' },\n  { value:'last_14d', label:'Last 14 days' },\n  { value:'last_30d', label:'Last 30 days' },\n  { value:'this_month', label:'This month' },\n  { value:'last_month', label:'Last month' },\n];\n\nconst TABS = [\n  { id:'overview',     label:'📊 Overview',          icon: BarChart3 },\n  { id:'campaigns',    label:'🎯 Campaigns',          icon: Target },\n  { id:'intelligence', label:'🧠 Intelligence',       icon: Activity },\n  { id:'create',       label:'🚀 Create Campaign',    icon: PlusCircle },\n  { id:'advisor',      label:'💡 AI Advisor',         icon: Lightbulb },\n];\n\n// ── KPI Card ──────────────────────────────────────────────────────────────────\nfunction KpiCard({ icon: Icon, label, value, sub, color = 'violet', trend }) {\n  const colors = {\n    violet: 'from-violet-600/20 to-violet-500/10 border-violet-500/20',\n    orange: 'from-orange-600/20 to-orange-500/10 border-orange-500/20',\n    green:  'from-green-600/20 to-green-500/10 border-green-500/20',\n    blue:   'from-blue-600/20 to-blue-500/10 border-blue-500/20',\n    pink:   'from-pink-600/20 to-pink-500/10 border-pink-500/20',\n  };\n  return (\n    <div className={`rounded-xl border bg-gradient-to-br p-4 ${colors[color]}`}>\n      <div className=\"flex items-start justify-between mb-2\">\n        <div className=\"p-2 rounded-lg bg-white/10\">\n          <Icon className=\"w-4 h-4 text-white\" />\n        </div>\n        {trend != null && (\n          <span className={`text-xs font-semibold flex items-center gap-0.5 ${trend >= 0 ? 'text-green-400' : 'text-red-400'}`}>\n            {trend >= 0 ? <ArrowUpRight className=\"w-3 h-3\" /> : <TrendingDown className=\"w-3 h-3\" />}\n            {Math.abs(trend)}%\n          </span>\n        )}\n      </div>\n      <p className=\"text-2xl font-black text-white mt-1\">{value}</p>\n      <p className=\"text-xs text-gray-400 mt-0.5\">{label}</p>\n      {sub && <p className=\"text-xs text-gray-500 mt-0.5\">{sub}</p>}\n    </div>\n  );\n}\n\n// ── Inline Budget Editor ───────────────────────────────────────────────────────\nfunction BudgetEditor({ campaignId, currentBudget, onSave, onCancel }) {\n  const [val, setVal] = useState(String(Math.round(currentBudget || 500)));\n  return (\n    <div className=\"flex items-center gap-1\">\n      <span className=\"text-gray-400 text-xs\">₹</span>\n      <input\n        type=\"number\" min=\"100\" step=\"50\"\n        className=\"w-20 bg-white/10 border border-white/20 rounded px-2 py-1 text-white text-xs focus:outline-none focus:border-violet-500\"\n        value={val}\n        onChange={e => setVal(e.target.value)}\n        autoFocus\n      />\n      <button onClick={() => onSave(campaignId, Number(val))} className=\"text-green-400 hover:text-green-300\"><Check className=\"w-3.5 h-3.5\" /></button>\n      <button onClick={onCancel} className=\"text-red-400 hover:text-red-300\"><X className=\"w-3.5 h-3.5\" /></button>\n    </div>\n  );\n}\n\n// ── Overview Tab ──────────────────────────────────────────────────────────────\nfunction OverviewTab({ stats, campaigns, loading, datePreset, setDatePreset, refresh }) {\n  const totals = stats?.totals ?? {};\n  const totalLeads = campaigns.reduce((s,c) => s + (c.leads||0), 0);\n  const totalSpend = campaigns.reduce((s,c) => s + (c.spend||0), 0);\n  const avgCPL    = totalLeads > 0 ? totalSpend / totalLeads : null;\n  const estROAS   = totalLeads > 0 && totalSpend > 0 ? (totalLeads * 15000) / totalSpend : null;\n  const activeCnt = campaigns.filter(c => c.status === 'ACTIVE').length;\n  const pausedCnt = campaigns.filter(c => c.status === 'PAUSED').length;\n\n  return (\n    <div className=\"space-y-6\">\n      {/* Date selector + refresh */}\n      <div className=\"flex flex-wrap items-center gap-3\">\n        <select\n          value={datePreset}\n          onChange={e => setDatePreset(e.target.value)}\n          className=\"bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-violet-500\"\n        >\n          {PRESETS.map(p => <option key={p.value} value={p.value} className=\"bg-gray-900\">{p.label}</option>)}\n        </select>\n        <button\n          onClick={refresh}\n          disabled={loading}\n          className=\"flex items-center gap-2 px-4 py-2 rounded-lg bg-violet-600/20 border border-violet-500/30 text-sm text-violet-300 hover:bg-violet-600/30 transition-colors disabled:opacity-50\"\n        >\n          {loading ? <Loader2 className=\"w-4 h-4 animate-spin\" /> : <RefreshCw className=\"w-4 h-4\" />}\n          Refresh\n        </button>\n        <a\n          href={`https://adsmanager.facebook.com/adsmanager/manage/campaigns?act=${1670463227160429}`}\n          target=\"_blank\" rel=\"noopener noreferrer\"\n          className=\"flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600/20 border border-blue-500/30 text-sm text-blue-300 hover:bg-blue-600/30 transition-colors\"\n        >\n          <ExternalLink className=\"w-4 h-4\" /> Meta Ads Manager\n        </a>\n      </div>\n\n      {/* KPI Grid */}\n      {loading && !campaigns.length ? (\n        <div className=\"flex justify-center py-12\"><Loader2 className=\"w-8 h-8 animate-spin text-violet-400\" /></div>\n      ) : (\n        <div className=\"grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4\">\n          <KpiCard icon={IndianRupee}      label=\"Total Spend\"     value={fmtINR(totalSpend || totals.spend)}    color=\"orange\" />\n          <KpiCard icon={Users}            label=\"Total Leads\"     value={fmtNum(totalLeads || totals.leads)}    color=\"violet\" />\n          <KpiCard icon={Target}           label=\"Avg CPL\"         value={fmtINR(avgCPL || totals.cpl)}          color={avgCPL < 300 ? 'green' : 'pink'} />\n          <KpiCard icon={TrendingUp}       label=\"Est. ROAS\"       value={fmtROAS(estROAS)}                      color=\"green\"  sub=\"at ₹15K course fee\" />\n          <KpiCard icon={MousePointerClick} label=\"Total Clicks\"   value={fmtNum(campaigns.reduce((s,c)=>s+(c.clicks||0),0) || totals.clicks)} color=\"blue\" />\n        </div>\n      )}\n\n      {/* Campaign status summary */}\n      <div className=\"grid grid-cols-3 gap-4\">\n        <div className=\"rounded-xl border border-green-500/20 bg-green-500/10 p-4 text-center\">\n          <p className=\"text-2xl font-black text-green-400\">{activeCnt}</p>\n          <p className=\"text-xs text-gray-400 mt-1\">Active Campaigns</p>\n        </div>\n        <div className=\"rounded-xl border border-yellow-500/20 bg-yellow-500/10 p-4 text-center\">\n          <p className=\"text-2xl font-black text-yellow-400\">{pausedCnt}</p>\n          <p className=\"text-xs text-gray-400 mt-1\">Paused Campaigns</p>\n        </div>\n        <div className=\"rounded-xl border border-violet-500/20 bg-violet-500/10 p-4 text-center\">\n          <p className=\"text-2xl font-black text-violet-400\">{campaigns.length}</p>\n          <p className=\"text-xs text-gray-400 mt-1\">Total Campaigns</p>\n        </div>\n      </div>\n\n      {/* Benchmark info */}\n      <div className=\"rounded-xl border border-white/10 bg-white/5 p-5\">\n        <h3 className=\"font-bold text-white mb-3 flex items-center gap-2\"><Award className=\"w-4 h-4 text-yellow-400\" /> Industry Benchmarks (EdTech India)</h3>\n        <div className=\"grid grid-cols-2 md:grid-cols-4 gap-4 text-sm\">\n          {[\n            { label:'Good CPL', value:'< ₹200', color:'text-green-400' },\n            { label:'Avg CPL',  value:'₹200–₹500', color:'text-yellow-400' },\n            { label:'Bad CPL',  value:'> ₹500', color:'text-red-400' },\n            { label:'Target ROAS', value:'5x–10x', color:'text-violet-400' },\n          ].map(b => (\n            <div key={b.label} className=\"rounded-lg bg-white/5 p-3 border border-white/10\">\n              <p className={`font-bold text-base ${b.color}`}>{b.value}</p>\n              <p className=\"text-gray-400 text-xs mt-0.5\">{b.label}</p>\n            </div>\n          ))}\n        </div>\n      </div>\n    </div>\n  );\n}\n\n// ── Campaigns Tab ─────────────────────────────────────────────────────────────\nfunction CampaignsTab({ campaigns, loading, onToggle, onUpdateBudget, onScale, refresh }) {\n  const [editingId, setEditingId] = useState(null);\n  const [expandedId, setExpandedId] = useState(null);\n  const [toggling, setToggling] = useState({});\n  const [scaling, setScaling] = useState({});\n\n  const handleToggle = async (c) => {\n    const newStatus = c.status === 'ACTIVE' ? 'PAUSED' : 'ACTIVE';\n    setToggling(t => ({ ...t, [c.id]: true }));\n    await onToggle(c.id, newStatus);\n    setToggling(t => ({ ...t, [c.id]: false }));\n  };\n\n  const handleScale = async (c) => {\n    setScaling(s => ({ ...s, [c.id]: true }));\n    await onScale(c.id, c.daily_budget);\n    setScaling(s => ({ ...s, [c.id]: false }));\n  };\n\n  if (loading && !campaigns.length)\n    return <div className=\"flex justify-center py-12\"><Loader2 className=\"w-8 h-8 animate-spin text-violet-400\" /></div>;\n\n  if (!campaigns.length)\n    return (\n      <div className=\"text-center py-12 text-gray-400\">\n        <Target className=\"w-12 h-12 mx-auto mb-4 opacity-30\" />\n        <p className=\"font-semibold\">No campaigns found</p>\n        <p className=\"text-sm mt-1\">Create your first campaign in the 🚀 Create Campaign tab</p>\n      </div>\n    );\n\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"flex items-center justify-between\">\n        <p className=\"text-sm text-gray-400\">{campaigns.length} campaigns · <span className=\"text-green-400\">{campaigns.filter(c=>c.status==='ACTIVE').length} active</span></p>\n        <button onClick={refresh} className=\"flex items-center gap-1.5 text-xs text-gray-400 hover:text-white\">\n          <RefreshCw className=\"w-3.5 h-3.5\" /> Refresh\n        </button>\n      </div>\n\n      {campaigns.map(c => {\n        const isEditing = editingId === c.id;\n        const isExpanded = expandedId === c.id;\n        const isToggling = toggling[c.id];\n        const isScaling  = scaling[c.id];\n        const scoreGood  = c.cpl && c.cpl < 300;\n        const scoreBad   = c.cpl && c.cpl > 500;\n        const noLeads    = c.leads === 0 && c.spend > 500;\n\n        return (\n          <div key={c.id} className={`rounded-xl border transition-all ${scoreBad||noLeads ? 'border-red-500/20 bg-red-500/5' : scoreGood ? 'border-green-500/20 bg-green-500/5' : 'border-white/10 bg-white/5'}`}>\n            <div className=\"p-4\">\n              <div className=\"flex flex-wrap items-start gap-3\">\n                {/* Status toggle */}\n                <button\n                  onClick={() => handleToggle(c)}\n                  disabled={isToggling}\n                  className={`mt-0.5 flex-shrink-0 transition-colors ${isToggling ? 'opacity-50' : ''}`}\n                  title={c.status === 'ACTIVE' ? 'Click to Pause' : 'Click to Activate'}\n                >\n                  {isToggling\n                    ? <Loader2 className=\"w-5 h-5 animate-spin text-gray-400\" />\n                    : c.status === 'ACTIVE'\n                      ? <ToggleRight className=\"w-6 h-6 text-green-400\" />\n                      : <ToggleLeft  className=\"w-6 h-6 text-gray-500\" />\n                  }\n                </button>\n\n                {/* Name + badges */}\n                <div className=\"flex-1 min-w-0\">\n                  <div className=\"flex items-center gap-2 flex-wrap\">\n                    <p className=\"font-bold text-white text-sm truncate\">{c.name}</p>\n                    <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${statusBadge(c.status)}`}>{c.status}</span>\n                    {scoreGood && <span className=\"text-xs px-2 py-0.5 rounded-full bg-green-500/20 text-green-300 border border-green-500/30 flex items-center gap-1\"><Star className=\"w-3 h-3\" /> Top Performer</span>}\n                    {noLeads   && <span className=\"text-xs px-2 py-0.5 rounded-full bg-red-500/20 text-red-300 border border-red-500/30 flex items-center gap-1\"><AlertCircle className=\"w-3 h-3\" /> No Leads</span>}\n                  </div>\n                  <p className=\"text-xs text-gray-500 mt-0.5\">{c.objective?.replace('_',' ')} · ID: {c.id}</p>\n                </div>\n\n                {/* Key metrics */}\n                <div className=\"flex items-center gap-4 text-sm\">\n                  <div className=\"text-center\">\n                    <p className=\"font-bold text-white\">{fmtINR(c.spend)}</p>\n                    <p className=\"text-[10px] text-gray-500\">Spend</p>\n                  </div>\n                  <div className=\"text-center\">\n                    <p className=\"font-bold text-white\">{c.leads ?? '—'}</p>\n                    <p className=\"text-[10px] text-gray-500\">Leads</p>\n                  </div>\n                  <div className=\"text-center\">\n                    <p className={`font-bold ${cplColor(c.cpl)}`}>{fmtINR(c.cpl)}</p>\n                    <p className=\"text-[10px] text-gray-500\">CPL</p>\n                  </div>\n                  <div className=\"text-center\">\n                    <p className={`font-bold ${roasColor(c.roas)}`}>{fmtROAS(c.roas)}</p>\n                    <p className=\"text-[10px] text-gray-500\">Est.ROAS</p>\n                  </div>\n                </div>\n\n                {/* Actions */}\n                <div className=\"flex items-center gap-2\">\n                  {/* Budget */}\n                  {isEditing ? (\n                    <BudgetEditor\n                      campaignId={c.id}\n                      currentBudget={c.daily_budget}\n                      onSave={async (id, val) => { await onUpdateBudget(id, val); setEditingId(null); }}\n                      onCancel={() => setEditingId(null)}\n                    />\n                  ) : (\n                    <button\n                      onClick={() => setEditingId(c.id)}\n                      className=\"flex items-center gap-1 text-xs text-gray-400 hover:text-white border border-white/10 rounded px-2 py-1 hover:border-white/20 transition-colors\"\n                      title=\"Edit daily budget\"\n                    >\n                      <Edit2 className=\"w-3 h-3\" />\n                      {c.daily_budget ? fmtINR(c.daily_budget)+'/day' : 'Set Budget'}\n                    </button>\n                  )}\n\n                  {/* Scale */}\n                  {c.status === 'ACTIVE' && c.daily_budget && !isEditing && (\n                    <button\n                      onClick={() => handleScale(c)}\n                      disabled={isScaling}\n                      className=\"flex items-center gap-1 text-xs text-green-300 hover:text-green-200 border border-green-500/30 rounded px-2 py-1 hover:bg-green-500/10 transition-colors disabled:opacity-50\"\n                      title=\"Scale budget by +20%\"\n                    >\n                      {isScaling ? <Loader2 className=\"w-3 h-3 animate-spin\" /> : <ArrowUpRight className=\"w-3 h-3\" />}\n                      Scale +20%\n                    </button>\n                  )}\n\n                  {/* Expand */}\n                  <button\n                    onClick={() => setExpandedId(isExpanded ? null : c.id)}\n                    className=\"text-gray-500 hover:text-white p-1\"\n                  >\n                    {isExpanded ? <ChevronUp className=\"w-4 h-4\" /> : <ChevronDown className=\"w-4 h-4\" />}\n                  </button>\n                </div>\n              </div>\n\n              {/* Expanded details */}\n              {isExpanded && (\n                <div className=\"mt-4 pt-4 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm\">\n                  {[\n                    { label:'Impressions', value: fmtNum(c.impressions) },\n                    { label:'Clicks', value: fmtNum(c.clicks) },\n                    { label:'CTR', value: fmtPct(c.ctr) },\n                    { label:'CPM', value: fmtINR(c.cpm) },\n                    { label:'Reach', value: fmtNum(c.reach) },\n                    { label:'Daily Budget', value: fmtINR(c.daily_budget) },\n                    { label:'Budget Left', value: fmtINR(c.budget_remaining) },\n                  ].map(m => (\n                    <div key={m.label} className=\"bg-white/5 rounded-lg p-2.5 border border-white/10\">\n                      <p className=\"text-white font-semibold\">{m.value}</p>\n                      <p className=\"text-gray-500 text-xs mt-0.5\">{m.label}</p>\n                    </div>\n                  ))}\n                  <a\n                    href={`https://adsmanager.facebook.com/adsmanager/manage/campaigns?act=1670463227160429&selected_campaign_ids=${c.id}`}\n                    target=\"_blank\" rel=\"noopener noreferrer\"\n                    className=\"bg-blue-500/10 rounded-lg p-2.5 border border-blue-500/20 flex items-center gap-2 text-blue-300 hover:bg-blue-500/20 transition-colors\"\n                  >\n                    <ExternalLink className=\"w-3.5 h-3.5\" />\n                    <span className=\"text-xs font-semibold\">Open in Meta</span>\n                  </a>\n                </div>\n              )}\n            </div>\n          </div>\n        );\n      })}\n    </div>\n  );\n}\n\n// ── Create Campaign Tab ────────────────────────────────────────────────────────\nfunction CreateCampaignTab({ onCreated, getHeaders }) {\n  const [step, setStep] = useState(1);\n  const [loading, setLoading] = useState(false);\n  const [result, setResult] = useState(null);\n  const [form, setForm] = useState({\n    name: '',\n    daily_budget_inr: 500,\n    age_min: 18,\n    age_max: 40,\n    country: 'IN',\n    template: 'lead_gen',\n  });\n\n  const templates = [\n    {\n      id: 'lead_gen',\n      name: 'Lead Generation — Course',\n      icon: '🎓',\n      desc: 'Best for getting student registrations. Optimized for Lead conversion events.',\n      budget: 500,\n      roas: '5x–10x',\n      cpl: '₹150–₹300',\n    },\n    {\n      id: 'retarget',\n      name: 'Retargeting — Website Visitors',\n      icon: '🎯',\n      desc: 'Re-engage people who visited your site but didn\\'t register. Highest ROAS.',\n      budget: 300,\n      roas: '8x–15x',\n      cpl: '₹80–₹200',\n    },\n    {\n      id: 'awareness',\n      name: 'Brand Awareness',\n      icon: '📢',\n      desc: 'Reach new audiences in Maharashtra. Good for building top-of-funnel.',\n      budget: 300,\n      roas: '2x–4x',\n      cpl: '₹400–₹800',\n    },\n  ];\n\n  const selectedTemplate = templates.find(t => t.id === form.template);\n\n  const handleCreate = async () => {\n    if (!form.name.trim()) { alert('Enter a campaign name'); return; }\n    setLoading(true);\n    setResult(null);\n    try {\n      const headers = await getHeaders();\n      const res = await fetch(META_MANAGER_URL, {\n        method: 'POST',\n        headers: { ...headers, 'Content-Type': 'application/json' },\n        body: JSON.stringify({ action: 'create_campaign', ...form }),\n      });\n      const data = await res.json();\n      setResult(data);\n      if (data.ok) { onCreated(); setStep(1); setForm(f => ({ ...f, name: '' })); }\n    } catch (e) {\n      setResult({ error: e.message });\n    }\n    setLoading(false);\n  };\n\n  return (\n    <div className=\"max-w-2xl space-y-6\">\n      {/* Step indicator */}\n      <div className=\"flex items-center gap-3\">\n        {[1,2,3].map(s => (\n          <React.Fragment key={s}>\n            <button\n              onClick={() => s < step && setStep(s)}\n              className={`w-8 h-8 rounded-full text-sm font-bold flex items-center justify-center transition-colors ${\n                step === s ? 'bg-violet-600 text-white' :\n                step > s  ? 'bg-green-600 text-white' : 'bg-white/10 text-gray-500'\n              }`}\n            >\n              {step > s ? <Check className=\"w-4 h-4\" /> : s}\n            </button>\n            {s < 3 && <div className={`flex-1 h-0.5 ${step > s ? 'bg-green-600' : 'bg-white/10'}`} />}\n          </React.Fragment>\n        ))}\n        <div className=\"ml-2 text-sm text-gray-400\">\n          {step === 1 && 'Choose Template'} {step === 2 && 'Campaign Settings'} {step === 3 && 'Review & Create'}\n        </div>\n      </div>\n\n      {/* Step 1: Template */}\n      {step === 1 && (\n        <div className=\"space-y-3\">\n          <h3 className=\"font-bold text-white\">Choose a Campaign Template</h3>\n          <p className=\"text-sm text-gray-400\">Templates have pre-optimized settings for maximum ROAS.</p>\n          {templates.map(t => (\n            <button\n              key={t.id}\n              onClick={() => { setForm(f => ({ ...f, template: t.id, daily_budget_inr: t.budget })); setStep(2); }}\n              className={`w-full text-left rounded-xl border p-4 transition-all hover:border-violet-500/40 ${\n                form.template === t.id ? 'border-violet-500/60 bg-violet-500/10' : 'border-white/10 bg-white/5'\n              }`}\n            >\n              <div className=\"flex items-start justify-between\">\n                <div>\n                  <p className=\"font-bold text-white flex items-center gap-2\">{t.icon} {t.name}</p>\n                  <p className=\"text-sm text-gray-400 mt-1\">{t.desc}</p>\n                  <div className=\"flex gap-4 mt-2 text-xs\">\n                    <span className=\"text-green-400\">Est. ROAS: {t.roas}</span>\n                    <span className=\"text-yellow-400\">CPL: {t.cpl}</span>\n                    <span className=\"text-blue-400\">Budget: ₹{t.budget}/day</span>\n                  </div>\n                </div>\n                <ChevronDown className=\"w-5 h-5 text-gray-500 rotate-[-90deg] flex-shrink-0 mt-1\" />\n              </div>\n            </button>\n          ))}\n        </div>\n      )}\n\n      {/* Step 2: Settings */}\n      {step === 2 && (\n        <div className=\"space-y-4\">\n          <h3 className=\"font-bold text-white\">Campaign Settings</h3>\n\n          <div>\n            <label className=\"block text-sm font-medium text-gray-300 mb-1\">Campaign Name *</label>\n            <input\n              type=\"text\"\n              placeholder=\"e.g. Digital Marketing Course — June 2025\"\n              value={form.name}\n              onChange={e => setForm(f => ({ ...f, name: e.target.value }))}\n              className=\"w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-violet-500 placeholder:text-gray-500\"\n            />\n          </div>\n\n          <div>\n            <label className=\"block text-sm font-medium text-gray-300 mb-1\">Daily Budget (₹)</label>\n            <div className=\"flex items-center gap-3\">\n              <input\n                type=\"range\" min=\"100\" max=\"5000\" step=\"100\"\n                value={form.daily_budget_inr}\n                onChange={e => setForm(f => ({ ...f, daily_budget_inr: Number(e.target.value) }))}\n                className=\"flex-1 accent-violet-500\"\n              />\n              <div className=\"w-24 bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white text-sm font-bold text-center\">\n                ₹{form.daily_budget_inr}\n              </div>\n            </div>\n            <div className=\"flex justify-between text-xs text-gray-500 mt-1 px-0.5\">\n              <span>₹100 (min)</span>\n              <span className=\"text-violet-400\">₹500 recommended</span>\n              <span>₹5000</span>\n            </div>\n          </div>\n\n          <div className=\"grid grid-cols-2 gap-4\">\n            <div>\n              <label className=\"block text-sm font-medium text-gray-300 mb-1\">Min Age</label>\n              <select value={form.age_min} onChange={e => setForm(f => ({ ...f, age_min: Number(e.target.value) }))}\n                className=\"w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-violet-500\">\n                {[18,21,24,25,28].map(a => <option key={a} value={a} className=\"bg-gray-900\">{a}</option>)}\n              </select>\n            </div>\n            <div>\n              <label className=\"block text-sm font-medium text-gray-300 mb-1\">Max Age</label>\n              <select value={form.age_max} onChange={e => setForm(f => ({ ...f, age_max: Number(e.target.value) }))}\n                className=\"w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-violet-500\">\n                {[30,35,40,45,50,65].map(a => <option key={a} value={a} className=\"bg-gray-900\">{a}</option>)}\n              </select>\n            </div>\n          </div>\n\n          <div>\n            <label className=\"block text-sm font-medium text-gray-300 mb-1\">Country</label>\n            <select value={form.country} onChange={e => setForm(f => ({ ...f, country: e.target.value }))}\n              className=\"w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-violet-500\">\n              <option value=\"IN\" className=\"bg-gray-900\">🇮🇳 India</option>\n            </select>\n          </div>\n\n          {/* Smart tips */}\n          <div className=\"rounded-xl border border-blue-500/20 bg-blue-500/10 p-4\">\n            <p className=\"text-sm font-semibold text-blue-300 mb-2 flex items-center gap-2\"><Lightbulb className=\"w-4 h-4\" /> Smart Tips for {selectedTemplate?.name}</p>\n            <ul className=\"space-y-1.5 text-xs text-blue-200\">\n              <li>✅ Campaign will be created <strong>PAUSED</strong> — review before activating</li>\n              <li>✅ Pixel {1920151015239658} is linked for conversion tracking</li>\n              <li>✅ Optimization goal: LEAD_GENERATION (best for course registrations)</li>\n              <li>💡 After creating, add 3–5 ad creatives (images/videos) in Meta Ads Manager</li>\n              <li>💡 Use Advantage+ audience for Meta to find the best leads automatically</li>\n              <li>💡 Run for 7+ days before judging performance (learning phase)</li>\n            </ul>\n          </div>\n\n          <div className=\"flex gap-3\">\n            <button onClick={() => setStep(1)} className=\"flex-1 py-2.5 rounded-lg border border-white/20 text-gray-300 text-sm hover:bg-white/5 transition-colors\">Back</button>\n            <button onClick={() => setStep(3)} disabled={!form.name.trim()}\n              className=\"flex-1 py-2.5 rounded-lg bg-violet-600 hover:bg-violet-700 text-white text-sm font-bold transition-colors disabled:opacity-50\">\n              Review Campaign →\n            </button>\n          </div>\n        </div>\n      )}\n\n      {/* Step 3: Review */}\n      {step === 3 && (\n        <div className=\"space-y-4\">\n          <h3 className=\"font-bold text-white\">Review & Create</h3>\n\n          <div className=\"rounded-xl border border-white/10 bg-white/5 divide-y divide-white/10\">\n            {[\n              { label: 'Campaign Name', value: form.name },\n              { label: 'Template', value: selectedTemplate?.name },\n              { label: 'Daily Budget', value: `₹${form.daily_budget_inr}/day` },\n              { label: 'Target Age', value: `${form.age_min}–${form.age_max} years` },\n              { label: 'Country', value: '🇮🇳 India' },\n              { label: 'Objective', value: 'Lead Generation' },\n              { label: 'Initial Status', value: 'PAUSED (safe to review)' },\n              { label: 'Pixel', value: '1920151015239658 (linked)' },\n            ].map(r => (\n              <div key={r.label} className=\"flex justify-between px-4 py-2.5 text-sm\">\n                <span className=\"text-gray-400\">{r.label}</span>\n                <span className=\"text-white font-medium\">{r.value}</span>\n              </div>\n            ))}\n          </div>\n\n          {/* Est. results */}\n          <div className=\"rounded-xl border border-green-500/20 bg-green-500/10 p-4\">\n            <p className=\"text-sm font-semibold text-green-300 mb-2 flex items-center gap-2\"><Activity className=\"w-4 h-4\" /> Estimated Monthly Results</p>\n            <div className=\"grid grid-cols-3 gap-3 text-center text-sm\">\n              <div><p className=\"font-bold text-white\">₹{(form.daily_budget_inr * 30).toLocaleString('en-IN')}</p><p className=\"text-xs text-gray-400\">Monthly spend</p></div>\n              <div><p className=\"font-bold text-white\">{Math.round((form.daily_budget_inr * 30) / 250)}–{Math.round((form.daily_budget_inr * 30) / 150)}</p><p className=\"text-xs text-gray-400\">Est. leads</p></div>\n              <div><p className=\"font-bold text-green-400\">{fmtROAS(Math.round((form.daily_budget_inr * 30) / 250) * 15000 / (form.daily_budget_inr * 30))}</p><p className=\"text-xs text-gray-400\">Est. ROAS</p></div>\n            </div>\n          </div>\n\n          {result && (\n            <div className={`rounded-xl border p-4 text-sm ${result.ok ? 'border-green-500/30 bg-green-500/10 text-green-300' : 'border-red-500/30 bg-red-500/10 text-red-300'}`}>\n              {result.ok\n                ? `✅ Campaign created! ID: ${result.campaign_id} · Ad Set: ${result.adset_id}. ${result.note}`\n                : `❌ Error: ${result.error} ${JSON.stringify(result.detail || '')}`\n              }\n            </div>\n          )}\n\n          <div className=\"flex gap-3\">\n            <button onClick={() => setStep(2)} className=\"flex-1 py-2.5 rounded-lg border border-white/20 text-gray-300 text-sm hover:bg-white/5 transition-colors\">Back</button>\n            <button\n              onClick={handleCreate}\n              disabled={loading}\n              className=\"flex-1 py-2.5 rounded-lg bg-gradient-to-r from-violet-600 to-orange-500 hover:from-violet-700 hover:to-orange-600 text-white text-sm font-bold transition-all disabled:opacity-50 flex items-center justify-center gap-2\"\n            >\n              {loading ? <><Loader2 className=\"w-4 h-4 animate-spin\" /> Creating...</> : <><Rocket className=\"w-4 h-4\" /> Create Campaign</>}\n            </button>\n          </div>\n        </div>\n      )}\n    </div>\n  );\n}\n\n// ── AI Advisor Tab ─────────────────────────────────────────────────────────────\nfunction AdvisorTab({ campaigns, stats }) {\n  const totalSpend  = campaigns.reduce((s,c) => s + (c.spend||0), 0);\n  const totalLeads  = campaigns.reduce((s,c) => s + (c.leads||0), 0);\n  const avgCPL      = totalLeads > 0 ? totalSpend / totalLeads : null;\n  const estROAS     = totalLeads > 0 && totalSpend > 0 ? (totalLeads * 15000) / totalSpend : null;\n  const activeCamps = campaigns.filter(c => c.status === 'ACTIVE');\n  const highCPL     = campaigns.filter(c => c.cpl && c.cpl > 500 && c.status === 'ACTIVE');\n  const noLeads     = campaigns.filter(c => c.leads === 0 && c.spend > 800 && c.status === 'ACTIVE');\n  const winners     = campaigns.filter(c => c.cpl && c.cpl < 200 && c.leads >= 3);\n  const lowBudget   = campaigns.filter(c => c.status === 'ACTIVE' && c.daily_budget && c.daily_budget < 300);\n\n  const insights = [];\n\n  // Critical issues\n  if (highCPL.length > 0) insights.push({\n    type: 'critical', icon: AlertCircle, color: 'red',\n    title: `🔴 ${highCPL.length} active campaign(s) with CPL > ₹500`,\n    detail: `${highCPL.map(c=>c.name).join(', ')} — Pause or fix these immediately. High CPL burns your budget with low ROAS.`,\n    action: 'Pause these campaigns and refresh the creatives.',\n  });\n  if (noLeads.length > 0) insights.push({\n    type: 'critical', icon: AlertCircle, color: 'red',\n    title: `🔴 ${noLeads.length} active campaign(s) spending without leads`,\n    detail: `${noLeads.map(c=>c.name).join(', ')} — Spent ₹${noLeads.reduce((s,c)=>s+(c.spend||0),0).toFixed(0)} with 0 leads.`,\n    action: 'Pause immediately. Check ad creative, audience size, and landing page.',\n  });\n\n  // Opportunities\n  if (winners.length > 0) insights.push({\n    type: 'opportunity', icon: Star, color: 'green',\n    title: `🟢 ${winners.length} winning campaign(s) — Scale now!`,\n    detail: `${winners.map(c=>`${c.name} (CPL ${fmtINR(c.cpl)})`).join(', ')} — These are performing well.`,\n    action: 'Click \"Scale +20%\" on these campaigns to increase leads while ROAS is good.',\n  });\n  if (lowBudget.length > 0) insights.push({\n    type: 'opportunity', icon: ArrowUpRight, color: 'green',\n    title: `💰 ${lowBudget.length} active campaign(s) on low budget (< ₹300/day)`,\n    detail: 'Low budget = slow learning phase = poor results. Meta needs data to optimize.',\n    action: 'Increase budget to ₹500–₹1000/day for faster learning and better CPL.',\n  });\n\n  // Strategy tips\n  if (activeCamps.length === 0) insights.push({\n    type: 'info', icon: Info, color: 'blue',\n    title: '⚡ No active campaigns',\n    detail: 'You currently have no running campaigns. Create a new campaign to start getting leads.',\n    action: 'Go to 🚀 Create Campaign tab and create a Lead Generation campaign.',\n  });\n  if (avgCPL && avgCPL > 300) insights.push({\n    type: 'warning', icon: AlertTriangle, color: 'yellow',\n    title: `⚠️ Average CPL is ${fmtINR(avgCPL)} — above ₹300 target`,\n    detail: 'Your average cost per lead is higher than industry standard for EdTech in India.',\n    action: 'Test new ad creatives. Use video ads (they get 3x more leads than static images). Narrow audience to 18–30 year olds in Maharashtra.',\n  });\n  if (campaigns.length > 0 && totalLeads === 0) insights.push({\n    type: 'critical', icon: AlertCircle, color: 'red',\n    title: '🔴 No lead data — pixel may not be firing',\n    detail: 'You have campaigns but no lead data. Either your pixel is not tracking leads, or campaigns are paused/in learning.',\n    action: 'Test your pixel at: https://www.facebook.com/events_manager2/list/pixel/1920151015239658/test_events',\n  });\n\n  // Always-on best practices\n  const checklist = [\n    { check: campaigns.some(c=>c.leads>0), label: 'Pixel tracking leads correctly' },\n    { check: activeCamps.length > 0, label: 'At least 1 active campaign' },\n    { check: !noLeads.length, label: 'No budget-wasting campaigns' },\n    { check: winners.length > 0, label: 'Have winning campaigns to scale' },\n    { check: avgCPL && avgCPL < 300, label: `Average CPL below ₹300 (current: ${fmtINR(avgCPL)})` },\n    { check: estROAS && estROAS >= 5, label: `ROAS above 5x (current: ${fmtROAS(estROAS)})` },\n  ];\n\n  const score = checklist.filter(c => c.check).length;\n  const scoreColor = score >= 5 ? 'text-green-400' : score >= 3 ? 'text-yellow-400' : 'text-red-400';\n\n  return (\n    <div className=\"space-y-6\">\n      {/* Health Score */}\n      <div className=\"rounded-xl border border-white/10 bg-gradient-to-br from-violet-600/10 to-orange-500/10 p-5\">\n        <div className=\"flex items-center justify-between mb-4\">\n          <div>\n            <h3 className=\"font-black text-white text-lg\">Ad Account Health Score</h3>\n            <p className=\"text-sm text-gray-400\">Based on your current campaign data</p>\n          </div>\n          <div className=\"text-right\">\n            <p className={`text-4xl font-black ${scoreColor}`}>{score}/6</p>\n            <p className=\"text-xs text-gray-500 mt-0.5\">\n              {score >= 5 ? 'Excellent' : score >= 3 ? 'Needs work' : 'Critical issues'}\n            </p>\n          </div>\n        </div>\n        <div className=\"space-y-2\">\n          {checklist.map((item, i) => (\n            <div key={i} className=\"flex items-center gap-3 text-sm\">\n              {item.check\n                ? <CheckCircle2 className=\"w-4 h-4 text-green-400 flex-shrink-0\" />\n                : <AlertCircle  className=\"w-4 h-4 text-red-400 flex-shrink-0\" />\n              }\n              <span className={item.check ? 'text-gray-300' : 'text-red-300'}>{item.label}</span>\n            </div>\n          ))}\n        </div>\n      </div>\n\n      {/* Actionable insights */}\n      <div>\n        <h3 className=\"font-bold text-white mb-3 flex items-center gap-2\">\n          <Zap className=\"w-5 h-5 text-yellow-400\" /> AI Recommendations ({insights.length})\n        </h3>\n        {insights.length === 0 ? (\n          <div className=\"rounded-xl border border-green-500/20 bg-green-500/10 p-5 text-center\">\n            <CheckCircle2 className=\"w-8 h-8 text-green-400 mx-auto mb-2\" />\n            <p className=\"font-bold text-green-300\">Everything looks great!</p>\n            <p className=\"text-sm text-gray-400 mt-1\">No critical issues detected. Keep scaling winners.</p>\n          </div>\n        ) : (\n          <div className=\"space-y-3\">\n            {insights.map((ins, i) => {\n              const colors = {\n                red:    'border-red-500/30 bg-red-500/10',\n                yellow: 'border-yellow-500/30 bg-yellow-500/10',\n                green:  'border-green-500/30 bg-green-500/10',\n                blue:   'border-blue-500/30 bg-blue-500/10',\n              };\n              const iconColors = { red:'text-red-400', yellow:'text-yellow-400', green:'text-green-400', blue:'text-blue-400' };\n              return (\n                <div key={i} className={`rounded-xl border p-4 ${colors[ins.color]}`}>\n                  <p className=\"font-bold text-white text-sm\">{ins.title}</p>\n                  <p className=\"text-xs text-gray-300 mt-1\">{ins.detail}</p>\n                  <div className=\"mt-2 flex items-start gap-2\">\n                    <ArrowUpRight className={`w-3.5 h-3.5 mt-0.5 flex-shrink-0 ${iconColors[ins.color]}`} />\n                    <p className={`text-xs font-semibold ${iconColors[ins.color]}`}>{ins.action}</p>\n                  </div>\n                </div>\n              );\n            })}\n          </div>\n        )}\n      </div>\n\n      {/* Meta Ads Masterclass */}\n      <div className=\"rounded-xl border border-white/10 bg-white/5 p-5\">\n        <h3 className=\"font-bold text-white mb-4 flex items-center gap-2\"><Flame className=\"w-4 h-4 text-orange-400\" /> Max ROAS Playbook for Digital Marketing Courses</h3>\n        <div className=\"grid md:grid-cols-2 gap-4 text-sm\">\n          {[\n            {\n              title: '🎥 Video Ads Get 3x More Leads',\n              tips: ['Use 15–30 second Reels-format videos', 'Show student success stories/testimonials', 'First 3 seconds must grab attention', 'Add captions — 85% watch without sound'],\n            },\n            {\n              title: '🎯 Audience Strategy',\n              tips: ['Start with Advantage+ Audience', 'Exclude existing leads (upload custom audience)', 'Lookalike from your top 100 leads', 'Target: 18–30, Maharashtra, Job seekers'],\n            },\n            {\n              title: '💰 Budget Strategy',\n              tips: ['Start with ₹500/day per campaign', 'Don\\'t touch budget for 7 days (learning phase)', 'Scale winners by 20% every 3 days max', 'Never cut budget by >25% at once — resets learning'],\n            },\n            {\n              title: '📐 Creative Best Practices',\n              tips: ['Test 3–5 different ad creatives per campaign', 'Use social proof: \"500+ students placed\"', 'Strong CTA: \"Register Free Demo — Limited Seats\"', 'Mobile-first: 9:16 vertical format'],\n            },\n            {\n              title: '🔄 Campaign Structure (Best)',\n              tips: ['1 campaign = 1 objective', '2–3 ad sets per campaign', '3–5 ads per ad set', 'Duplicate winning ad sets, don\\'t edit them'],\n            },\n            {\n              title: '📊 When to Pause a Campaign',\n              tips: ['CPL > ₹500 after ₹2000 spend', '0 leads after ₹1000 spend', 'CTR < 0.5% (bad creative)', 'Frequency > 3 (audience fatigued — refresh creative)'],\n            },\n          ].map((section, i) => (\n            <div key={i} className=\"rounded-lg bg-white/5 border border-white/10 p-3\">\n              <p className=\"font-bold text-white mb-2\">{section.title}</p>\n              <ul className=\"space-y-1\">\n                {section.tips.map((tip, j) => (\n                  <li key={j} className=\"text-gray-400 text-xs flex items-start gap-1.5\">\n                    <span className=\"text-violet-400 mt-0.5\">•</span>{tip}\n                  </li>\n                ))}\n              </ul>\n            </div>\n          ))}\n        </div>\n      </div>\n\n      {/* Token expiry warning */}\n      <div className=\"rounded-xl border border-yellow-500/20 bg-yellow-500/10 p-4\">\n        <p className=\"text-sm font-semibold text-yellow-300 flex items-center gap-2 mb-1\"><Clock className=\"w-4 h-4\" /> Token Expiry Reminder</p>\n        <p className=\"text-xs text-yellow-200\">Your Meta Marketing API token expires in ~60 days. When the dashboard stops showing data, go to <strong>developers.facebook.com/tools/explorer</strong> and regenerate the token. Update it by telling me the new token.</p>\n      </div>\n    </div>\n  );\n}\n\n// ── Intelligence Tab — THE differentiator ──────────────────────────────────────\n// Connects Meta Ads data with the actual leads in your DB.\n// Detects patterns. Marks lead quality. Shows logical reasoning.\nconst QUALITY_OPTIONS = [\n  { v:'hot',       icon:'🔥', label:'Hot',       color:'bg-red-500/20 text-red-300 border-red-500/30' },\n  { v:'warm',      icon:'👍', label:'Warm',      color:'bg-orange-500/20 text-orange-300 border-orange-500/30' },\n  { v:'cold',      icon:'❄️', label:'Cold',      color:'bg-blue-500/20 text-blue-300 border-blue-500/30' },\n  { v:'converted', icon:'✅', label:'Converted', color:'bg-green-500/20 text-green-300 border-green-500/30' },\n  { v:'spam',      icon:'🚫', label:'Spam',      color:'bg-gray-500/20 text-gray-300 border-gray-500/30' },\n];\nconst QUALITY_VALUE = { hot:5, warm:3, converted:6, cold:1, spam:0 };\n\nfunction IntelligenceTab({ campaigns }) {\n  const [leads, setLeads]     = useState([]);\n  const [loading, setLoading] = useState(false);\n  const [view, setView]       = useState('pulse'); // pulse | time | source | insights\n  const [days, setDays]       = useState(30);\n\n  const loadLeads = useCallback(async () => {\n    setLoading(true);\n    try {\n      const since = new Date(Date.now() - days * 86400_000).toISOString();\n      const { data } = await supabase\n        .from('leads')\n        .select('id, full_name, email, phone, source, utm_source, utm_medium, utm_campaign, fbclid, page_url, lead_quality, admin_notes, responded_at, created_at')\n        .gte('created_at', since)\n        .order('created_at', { ascending: false })\n        .limit(500);\n      setLeads(data || []);\n    } catch (e) { console.error(e); }\n    setLoading(false);\n  }, [days]);\n\n  useEffect(() => { loadLeads(); }, [loadLeads]);\n\n  const markQuality = async (leadId, quality) => {\n    setLeads(ls => ls.map(l => l.id === leadId ? { ...l, lead_quality: quality } : l));\n    await supabase.from('leads').update({ lead_quality: quality }).eq('id', leadId);\n  };\n\n  // ── PATTERN COMPUTATIONS ────────────────────────────────────────────────────\n  // Time pattern: 7-day x 24-hour heatmap\n  const timeMatrix = Array.from({ length: 7 }, () => Array(24).fill(0));\n  for (const lead of leads) {\n    const d = new Date(lead.created_at);\n    timeMatrix[d.getDay()][d.getHours()]++;\n  }\n  const maxCount = Math.max(1, ...timeMatrix.flat());\n  const peakHour = (() => {\n    const hours = Array(24).fill(0);\n    leads.forEach(l => hours[new Date(l.created_at).getHours()]++);\n    return hours.indexOf(Math.max(...hours));\n  })();\n  const peakDay = (() => {\n    const ds = Array(7).fill(0);\n    leads.forEach(l => ds[new Date(l.created_at).getDay()]++);\n    return ds.indexOf(Math.max(...ds));\n  })();\n  const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];\n  const peakDayCount = timeMatrix[peakDay].reduce((s,n)=>s+n,0);\n  const peakDayPct = leads.length > 0 ? Math.round((peakDayCount / leads.length) * 100) : 0;\n\n  // Source intelligence: group leads by source/utm and compute quality score\n  const sourceGroups = {};\n  for (const lead of leads) {\n    const key = lead.utm_campaign || lead.utm_source || lead.source || '(direct)';\n    if (!sourceGroups[key]) sourceGroups[key] = { name: key, total: 0, hot: 0, warm: 0, cold: 0, converted: 0, spam: 0, scored: 0, totalScore: 0 };\n    const g = sourceGroups[key];\n    g.total++;\n    if (lead.lead_quality) {\n      g[lead.lead_quality]++;\n      g.scored++;\n      g.totalScore += QUALITY_VALUE[lead.lead_quality] || 0;\n    }\n  }\n  const sourceRanking = Object.values(sourceGroups)\n    .map(g => ({ ...g, avgQuality: g.scored > 0 ? g.totalScore / g.scored : null }))\n    .sort((a,b) => b.total - a.total);\n\n  // Auto-detected insights\n  const insights = [];\n  if (leads.length >= 10) {\n    insights.push({\n      icon:'🕐',\n      text: `Peak lead time: ${dayNames[peakDay]}s at ${peakHour}:00 — ${peakDayPct}% of all leads come on ${dayNames[peakDay]}s`,\n      action: `Set highest budget on ${dayNames[peakDay]}s. Schedule WhatsApp follow-ups for ${peakHour}:00–${(peakHour+2)%24}:00.`,\n    });\n\n    // Top quality source\n    const topQuality = sourceRanking.filter(s => s.avgQuality != null && s.scored >= 3).sort((a,b) => b.avgQuality - a.avgQuality)[0];\n    const topVolume = sourceRanking[0];\n    if (topQuality && topVolume && topQuality.name !== topVolume.name) {\n      insights.push({\n        icon:'⚖️',\n        text: `Highest VOLUME source: \"${topVolume.name}\" (${topVolume.total} leads). Highest QUALITY source: \"${topQuality.name}\" (avg score ${topQuality.avgQuality.toFixed(1)}/6).`,\n        action: `Scale budget on \"${topQuality.name}\" — fewer leads but better quality = higher ROAS.`,\n      });\n    }\n\n    // Spam detection\n    const spamSource = sourceRanking.find(s => s.spam >= 3 && s.spam / s.total > 0.3);\n    if (spamSource) {\n      insights.push({\n        icon:'🚫',\n        text: `\"${spamSource.name}\" has ${spamSource.spam} spam leads out of ${spamSource.total} (${Math.round(spamSource.spam/spamSource.total*100)}%).`,\n        action: 'Pause this campaign or refine targeting — you\\'re paying for junk leads.',\n      });\n    }\n\n    // Conversion winners\n    const converters = sourceRanking.filter(s => s.converted >= 1);\n    if (converters.length > 0) {\n      const top = converters.sort((a,b) => b.converted - a.converted)[0];\n      insights.push({\n        icon:'💎',\n        text: `\"${top.name}\" has produced ${top.converted} actual paying customer(s) — ${(top.converted/top.total*100).toFixed(1)}% conversion.`,\n        action: 'Build a Lookalike audience from this source\\'s leads. They convert.',\n      });\n    }\n\n    // Lead velocity\n    const today = leads.filter(l => Date.now() - new Date(l.created_at).getTime() < 86400_000).length;\n    const avgPerDay = leads.length / Math.max(1, days);\n    if (today > avgPerDay * 1.3) {\n      insights.push({\n        icon:'🔥',\n        text: `Today: ${today} leads vs your ${days}-day average of ${avgPerDay.toFixed(1)}/day.`,\n        action: 'Trending UP! Increase budget today to capture more demand.',\n      });\n    } else if (today < avgPerDay * 0.5 && new Date().getHours() > 18) {\n      insights.push({\n        icon:'📉',\n        text: `Today: only ${today} leads vs average ${avgPerDay.toFixed(1)}/day.`,\n        action: 'Below average. Check if any campaigns ran out of budget today.',\n      });\n    }\n\n    // Quality distribution\n    const totalScored = leads.filter(l => l.lead_quality).length;\n    const hotCount = leads.filter(l => l.lead_quality === 'hot' || l.lead_quality === 'converted').length;\n    if (totalScored >= 5) {\n      const hotRate = (hotCount / totalScored) * 100;\n      insights.push({\n        icon: hotRate >= 30 ? '🌟' : '⚠️',\n        text: `${hotRate.toFixed(0)}% of your scored leads are Hot or Converted (${hotCount}/${totalScored}).`,\n        action: hotRate >= 30\n          ? 'Excellent quality! Your audience targeting is working — scale budget.'\n          : 'Quality is low. Refine targeting (narrow age, location, interests) before scaling.',\n      });\n    }\n  }\n\n  // ── RENDER ──────────────────────────────────────────────────────────────────\n  const heatColor = (v) => {\n    if (v === 0) return 'bg-white/[0.03]';\n    const intensity = v / maxCount;\n    if (intensity > 0.75) return 'bg-violet-500';\n    if (intensity > 0.5)  return 'bg-violet-500/70';\n    if (intensity > 0.25) return 'bg-violet-500/40';\n    return 'bg-violet-500/20';\n  };\n\n  const subTabs = [\n    { id:'pulse',    label:'🔴 Lead Pulse',     desc:'Live stream + quality scoring' },\n    { id:'time',     label:'🕐 Time Patterns',  desc:'When your audience converts' },\n    { id:'source',   label:'📊 Source Quality', desc:'Which campaigns produce winners' },\n    { id:'insights', label:'✨ Pattern Insights', desc:'Auto-detected from your data' },\n  ];\n\n  return (\n    <div className=\"space-y-6\">\n      {/* Hero stats */}\n      <div className=\"rounded-xl border border-violet-500/20 bg-gradient-to-br from-violet-600/10 to-orange-500/10 p-5\">\n        <div className=\"flex items-start justify-between flex-wrap gap-3\">\n          <div>\n            <h3 className=\"font-black text-white text-lg flex items-center gap-2\"><Activity className=\"w-5 h-5 text-violet-400\" /> Intelligence Engine</h3>\n            <p className=\"text-xs text-gray-400 mt-1\">Connecting your <strong className=\"text-white\">{leads.length} leads</strong> with <strong className=\"text-white\">{campaigns.length} campaigns</strong> to find patterns no one else can see.</p>\n          </div>\n          <div className=\"flex items-center gap-2\">\n            <select value={days} onChange={e => setDays(Number(e.target.value))}\n              className=\"bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-violet-500\">\n              <option value={7} className=\"bg-gray-900\">Last 7 days</option>\n              <option value={14} className=\"bg-gray-900\">Last 14 days</option>\n              <option value={30} className=\"bg-gray-900\">Last 30 days</option>\n              <option value={90} className=\"bg-gray-900\">Last 90 days</option>\n            </select>\n            <button onClick={loadLeads} className=\"flex items-center gap-1.5 px-3 py-2 rounded-lg bg-violet-600/20 border border-violet-500/30 text-sm text-violet-300 hover:bg-violet-600/30 transition-colors\">\n              {loading ? <Loader2 className=\"w-4 h-4 animate-spin\" /> : <RefreshCw className=\"w-4 h-4\" />}\n            </button>\n          </div>\n        </div>\n      </div>\n\n      {/* Sub-tabs */}\n      <div className=\"flex flex-wrap gap-2\">\n        {subTabs.map(t => (\n          <button key={t.id} onClick={() => setView(t.id)}\n            className={`text-left rounded-lg px-3 py-2 text-sm transition-all ${\n              view === t.id\n                ? 'bg-gradient-to-r from-violet-600/30 to-orange-500/20 text-white border border-violet-500/30'\n                : 'text-gray-400 hover:text-white hover:bg-white/5 border border-white/10'\n            }`}>\n            <div className=\"font-semibold\">{t.label}</div>\n            <div className=\"text-[10px] opacity-70 mt-0.5\">{t.desc}</div>\n          </button>\n        ))}\n      </div>\n\n      {/* PULSE: Lead stream with quality marking */}\n      {view === 'pulse' && (\n        <div className=\"space-y-2\">\n          <div className=\"rounded-xl border border-blue-500/20 bg-blue-500/5 p-3 text-xs text-blue-200 flex items-start gap-2\">\n            <Info className=\"w-4 h-4 flex-shrink-0 mt-0.5\" />\n            <div>\n              <strong>How this makes you smarter:</strong> Mark each lead's quality in 1 click. The system learns which campaigns/sources produce winners. Over time, your \"Source Quality\" rankings become predictive — you'll know which campaigns to scale BEFORE you waste money.\n            </div>\n          </div>\n\n          {loading && !leads.length ? (\n            <div className=\"flex justify-center py-12\"><Loader2 className=\"w-8 h-8 animate-spin text-violet-400\" /></div>\n          ) : leads.length === 0 ? (\n            <div className=\"text-center py-12 text-gray-400\"><p>No leads in this period.</p></div>\n          ) : (\n            <div className=\"space-y-1.5\">\n              {leads.map(lead => {\n                const t = new Date(lead.created_at);\n                const ago = (() => {\n                  const m = Math.round((Date.now() - t.getTime()) / 60000);\n                  if (m < 60) return `${m}m ago`;\n                  const h = Math.round(m/60);\n                  if (h < 24) return `${h}h ago`;\n                  return `${Math.round(h/24)}d ago`;\n                })();\n                const sourceTag = lead.utm_campaign || lead.utm_source || lead.source || '(direct)';\n                const isFromMeta = lead.fbclid || lead.utm_source?.toLowerCase().includes('facebook') || lead.utm_source?.toLowerCase().includes('meta');\n                return (\n                  <div key={lead.id} className=\"rounded-lg border border-white/10 bg-white/5 p-3\">\n                    <div className=\"flex items-center gap-3 flex-wrap\">\n                      <div className=\"flex-1 min-w-[200px]\">\n                        <div className=\"flex items-center gap-2 flex-wrap\">\n                          <p className=\"font-bold text-white text-sm\">{lead.full_name}</p>\n                          {isFromMeta && <span className=\"text-[10px] px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold\">META</span>}\n                          {lead.lead_quality && (\n                            <span className={`text-[10px] px-1.5 py-0.5 rounded border font-bold ${QUALITY_OPTIONS.find(q => q.v === lead.lead_quality)?.color}`}>\n                              {QUALITY_OPTIONS.find(q => q.v === lead.lead_quality)?.icon} {lead.lead_quality.toUpperCase()}\n                            </span>\n                          )}\n                        </div>\n                        <p className=\"text-xs text-gray-400 mt-0.5\">\n                          <span className=\"text-violet-300\">{sourceTag}</span>\n                          {' · '}{lead.phone || lead.email || '—'}\n                          {' · '}<span className=\"text-gray-500\">{ago}</span>\n                        </p>\n                      </div>\n                      <div className=\"flex items-center gap-1\">\n                        {QUALITY_OPTIONS.map(q => (\n                          <button\n                            key={q.v}\n                            onClick={() => markQuality(lead.id, q.v)}\n                            className={`text-xs px-2 py-1 rounded border transition-all ${\n                              lead.lead_quality === q.v\n                                ? q.color + ' ring-1 ring-white/30'\n                                : 'border-white/10 text-gray-500 hover:text-white hover:border-white/30'\n                            }`}\n                            title={q.label}\n                          >\n                            {q.icon}\n                          </button>\n                        ))}\n                      </div>\n                    </div>\n                  </div>\n                );\n              })}\n            </div>\n          )}\n        </div>\n      )}\n\n      {/* TIME: Heatmap */}\n      {view === 'time' && (\n        <div className=\"space-y-4\">\n          <div className=\"rounded-xl border border-blue-500/20 bg-blue-500/5 p-3 text-xs text-blue-200 flex items-start gap-2\">\n            <Info className=\"w-4 h-4 flex-shrink-0 mt-0.5\" />\n            <div>\n              <strong>Why this is unique:</strong> Industry tools tell you \"average best time\" — useless because every business is different. This shows YOUR audience's exact patterns. Turn ads ON when leads come in. Turn OFF during dead hours. Save 30%+ on wasted spend.\n            </div>\n          </div>\n\n          {leads.length < 5 ? (\n            <div className=\"text-center py-12 text-gray-400\">\n              <Activity className=\"w-12 h-12 mx-auto mb-2 opacity-30\" />\n              <p className=\"text-sm\">Need at least 5 leads to detect time patterns. You have {leads.length}.</p>\n            </div>\n          ) : (\n            <>\n              {/* Peak summary */}\n              <div className=\"grid grid-cols-2 gap-3\">\n                <div className=\"rounded-xl border border-violet-500/30 bg-violet-500/10 p-4\">\n                  <p className=\"text-xs text-gray-400 mb-1\">Peak Day</p>\n                  <p className=\"text-2xl font-black text-white\">{dayNames[peakDay]}</p>\n                  <p className=\"text-xs text-violet-300 mt-1\">{peakDayPct}% of weekly leads</p>\n                </div>\n                <div className=\"rounded-xl border border-orange-500/30 bg-orange-500/10 p-4\">\n                  <p className=\"text-xs text-gray-400 mb-1\">Peak Hour</p>\n                  <p className=\"text-2xl font-black text-white\">{peakHour}:00 – {(peakHour+1)%24}:00</p>\n                  <p className=\"text-xs text-orange-300 mt-1\">Schedule follow-up calls then</p>\n                </div>\n              </div>\n\n              {/* Heatmap */}\n              <div className=\"rounded-xl border border-white/10 bg-white/5 p-4 overflow-x-auto\">\n                <p className=\"text-sm font-bold text-white mb-3\">Lead Distribution Heatmap (Day × Hour)</p>\n                <div className=\"inline-block min-w-full\">\n                  {/* Hour headers */}\n                  <div className=\"flex gap-0.5 mb-1 ml-10\">\n                    {Array.from({length:24}).map((_,h) => (\n                      <div key={h} className=\"w-6 text-[9px] text-gray-500 text-center\">{h}</div>\n                    ))}\n                  </div>\n                  {/* Rows */}\n                  {dayNames.map((dn, di) => (\n                    <div key={di} className=\"flex gap-0.5 items-center mb-0.5\">\n                      <div className=\"w-9 text-[10px] text-gray-400 font-semibold\">{dn}</div>\n                      {Array.from({length:24}).map((_,h) => {\n                        const v = timeMatrix[di][h];\n                        return (\n                          <div\n                            key={h}\n                            className={`w-6 h-6 rounded-sm ${heatColor(v)} flex items-center justify-center text-[9px] text-white font-bold transition-all hover:scale-125 hover:z-10 hover:ring-1 hover:ring-white`}\n                            title={`${dn} ${h}:00 — ${v} lead${v!==1?'s':''}`}\n                          >\n                            {v > 0 ? v : ''}\n                          </div>\n                        );\n                      })}\n                    </div>\n                  ))}\n                </div>\n                <div className=\"flex items-center gap-2 mt-3 text-xs text-gray-500\">\n                  <span>Less</span>\n                  <div className=\"flex gap-0.5\">\n                    {[0.05, 0.25, 0.5, 0.75, 1].map((v,i) => (\n                      <div key={i} className={`w-3 h-3 rounded-sm ${heatColor(v * maxCount)}`} />\n                    ))}\n                  </div>\n                  <span>More</span>\n                </div>\n              </div>\n\n              <div className=\"rounded-xl border border-green-500/20 bg-green-500/10 p-4\">\n                <p className=\"text-sm font-semibold text-green-300 mb-1\">💡 Logical Action Plan:</p>\n                <ul className=\"text-xs text-green-200 space-y-1\">\n                  <li>• Set <strong>highest budget</strong> on {dayNames[peakDay]}s ({peakDayPct}% of weekly leads come from this day)</li>\n                  <li>• Be ready to <strong>respond within 5 minutes</strong> at {peakHour}:00 — peak intent time</li>\n                  <li>• Consider <strong>pausing ads 2:00–6:00 AM</strong> if those cells are empty (saves ~15% spend)</li>\n                  <li>• Run <strong>retargeting ads</strong> 1-2 hours after peak — when people start comparing options</li>\n                </ul>\n              </div>\n            </>\n          )}\n        </div>\n      )}\n\n      {/* SOURCE: Quality Ranking */}\n      {view === 'source' && (\n        <div className=\"space-y-4\">\n          <div className=\"rounded-xl border border-blue-500/20 bg-blue-500/5 p-3 text-xs text-blue-200 flex items-start gap-2\">\n            <Info className=\"w-4 h-4 flex-shrink-0 mt-0.5\" />\n            <div>\n              <strong>The hidden truth:</strong> Two campaigns can produce the same number of leads, but one might give you 5 paying students and the other 0. Volume ≠ Value. This table shows you the <strong className=\"text-white\">real winners</strong>.\n            </div>\n          </div>\n\n          {sourceRanking.length === 0 ? (\n            <div className=\"text-center py-12 text-gray-400 text-sm\">No sources yet.</div>\n          ) : (\n            <div className=\"rounded-xl border border-white/10 bg-white/5 overflow-hidden\">\n              <table className=\"w-full text-sm\">\n                <thead className=\"bg-white/5 text-xs text-gray-400\">\n                  <tr>\n                    <th className=\"text-left p-3 font-semibold\">Source / Campaign</th>\n                    <th className=\"text-center p-3 font-semibold\">Leads</th>\n                    <th className=\"text-center p-3 font-semibold\">🔥 Hot</th>\n                    <th className=\"text-center p-3 font-semibold\">✅ Conv.</th>\n                    <th className=\"text-center p-3 font-semibold\">🚫 Spam</th>\n                    <th className=\"text-center p-3 font-semibold\">Quality Score</th>\n                    <th className=\"text-center p-3 font-semibold\">Verdict</th>\n                  </tr>\n                </thead>\n                <tbody className=\"divide-y divide-white/5\">\n                  {sourceRanking.map(s => {\n                    const score = s.avgQuality;\n                    const verdict = score == null ? '—' :\n                      score >= 4 ? '🚀 SCALE' :\n                      score >= 2 ? '🔄 Optimize' :\n                      '🛑 Pause';\n                    const verdictColor = score == null ? 'text-gray-400' :\n                      score >= 4 ? 'text-green-400' :\n                      score >= 2 ? 'text-yellow-400' :\n                      'text-red-400';\n                    return (\n                      <tr key={s.name} className=\"hover:bg-white/5\">\n                        <td className=\"p-3 font-medium text-white truncate max-w-[200px]\" title={s.name}>{s.name}</td>\n                        <td className=\"text-center p-3 text-gray-300\">{s.total}</td>\n                        <td className=\"text-center p-3 text-red-300\">{s.hot || '—'}</td>\n                        <td className=\"text-center p-3 text-green-300\">{s.converted || '—'}</td>\n                        <td className=\"text-center p-3 text-gray-500\">{s.spam || '—'}</td>\n                        <td className=\"text-center p-3\">\n                          {score != null ? (\n                            <div className=\"inline-flex items-center gap-1\">\n                              <span className={`font-bold ${score >= 4 ? 'text-green-400' : score >= 2 ? 'text-yellow-400' : 'text-red-400'}`}>{score.toFixed(1)}</span>\n                              <span className=\"text-gray-500\">/6</span>\n                            </div>\n                          ) : <span className=\"text-gray-500 text-xs\">Unscored</span>}\n                        </td>\n                        <td className={`text-center p-3 font-bold ${verdictColor}`}>{verdict}</td>\n                      </tr>\n                    );\n                  })}\n                </tbody>\n              </table>\n            </div>\n          )}\n\n          <div className=\"rounded-xl border border-yellow-500/20 bg-yellow-500/10 p-4\">\n            <p className=\"text-sm font-semibold text-yellow-300 mb-1\">📚 How Quality Score is Computed:</p>\n            <p className=\"text-xs text-yellow-200\">\n              Hot=5pts · Warm=3pts · Cold=1pt · Converted=6pts · Spam=0pts. Score is the average across leads YOU marked.\n              Mark leads in the 🔴 Lead Pulse tab to populate this ranking.\n            </p>\n          </div>\n        </div>\n      )}\n\n      {/* INSIGHTS: Auto-detected patterns */}\n      {view === 'insights' && (\n        <div className=\"space-y-4\">\n          <div className=\"rounded-xl border border-blue-500/20 bg-blue-500/5 p-3 text-xs text-blue-200 flex items-start gap-2\">\n            <Info className=\"w-4 h-4 flex-shrink-0 mt-0.5\" />\n            <div>\n              <strong>Logical, pattern-based, YOUR data only:</strong> Every insight below is mathematically derived from YOUR {leads.length} leads — not generic advice. Each one explains the WHY with numbers.\n            </div>\n          </div>\n\n          {insights.length === 0 ? (\n            <div className=\"text-center py-12 text-gray-400\">\n              <Lightbulb className=\"w-12 h-12 mx-auto mb-2 opacity-30\" />\n              <p className=\"text-sm\">Need more data to detect patterns. Get 10+ leads and mark some quality.</p>\n            </div>\n          ) : (\n            <div className=\"space-y-3\">\n              {insights.map((ins, i) => (\n                <div key={i} className=\"rounded-xl border border-white/10 bg-white/5 p-4\">\n                  <div className=\"flex items-start gap-3\">\n                    <span className=\"text-2xl flex-shrink-0\">{ins.icon}</span>\n                    <div className=\"flex-1\">\n                      <p className=\"text-sm text-white font-medium\">{ins.text}</p>\n                      <div className=\"mt-2 flex items-start gap-2\">\n                        <ArrowUpRight className=\"w-3.5 h-3.5 text-violet-400 mt-0.5 flex-shrink-0\" />\n                        <p className=\"text-xs text-violet-300 font-semibold\">{ins.action}</p>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              ))}\n            </div>\n          )}\n\n          <div className=\"rounded-xl border border-violet-500/20 bg-gradient-to-br from-violet-600/10 to-orange-500/10 p-4\">\n            <p className=\"text-sm font-bold text-white mb-2\">🤖 Why this beats every other tool:</p>\n            <ul className=\"text-xs text-gray-300 space-y-1\">\n              <li>✅ Cross-references Meta Ads + Lead DB (no other tool has both)</li>\n              <li>✅ Learns from your manual quality scoring (closed feedback loop)</li>\n              <li>✅ Patterns are computed from YOUR data, not industry averages</li>\n              <li>✅ Every recommendation shows the math behind it</li>\n              <li>✅ Detects spam sources before you waste more budget</li>\n              <li>✅ Builds Lookalike-ready audiences from real converters</li>\n            </ul>\n          </div>\n        </div>\n      )}\n    </div>\n  );\n}\n\n// ── Main Component ─────────────────────────────────────────────────────────────\nconst AdminMetaAds = () => {\n  const [tab, setTab]             = useState('overview');\n  const [campaigns, setCampaigns] = useState([]);\n  const [stats, setStats]         = useState(null);\n  const [loading, setLoading]     = useState(false);\n  const [datePreset, setDatePreset] = useState('last_7d');\n  const mountedRef = useRef(true);\n\n  useEffect(() => { mountedRef.current = true; return () => { mountedRef.current = false; }; }, []);\n\n  const getHeaders = useCallback(async () => {\n    const { data: { session } } = await supabase.auth.getSession();\n    const token = session?.access_token;\n    return token ? { Authorization: `Bearer ${token}`, apikey: import.meta.env.VITE_SUPABASE_ANON_KEY || '' } : {};\n  }, []);\n\n  const loadData = useCallback(async (preset = datePreset) => {\n    setLoading(true);\n    try {\n      const headers = await getHeaders();\n\n      // Fetch campaigns from manager + stats in parallel\n      const [camRes, statsRes] = await Promise.all([\n        fetch(META_MANAGER_URL, {\n          method: 'POST',\n          headers: { ...headers, 'Content-Type': 'application/json' },\n          body: JSON.stringify({ action: 'list_campaigns', date_preset: preset }),\n        }),\n        fetch(`${META_STATS_URL}?date_preset=${preset}`, { headers }),\n      ]);\n\n      const [camData, statsData] = await Promise.all([camRes.json(), statsRes.json()]);\n      if (!mountedRef.current) return;\n      if (camData.ok) setCampaigns(camData.campaigns ?? []);\n      if (statsData.ok) setStats(statsData);\n    } catch (e) {\n      console.error('Failed to load Meta data:', e);\n    }\n    if (mountedRef.current) setLoading(false);\n  }, [datePreset, getHeaders]);\n\n  useEffect(() => { loadData(datePreset); }, [datePreset]);\n\n  const handleToggle = async (campaignId, newStatus) => {\n    try {\n      const headers = await getHeaders();\n      await fetch(META_MANAGER_URL, {\n        method: 'POST',\n        headers: { ...headers, 'Content-Type': 'application/json' },\n        body: JSON.stringify({ action: 'toggle_status', object_id: campaignId, status: newStatus }),\n      });\n      setCampaigns(cs => cs.map(c => c.id === campaignId ? { ...c, status: newStatus } : c));\n    } catch (e) { console.error(e); }\n  };\n\n  const handleUpdateBudget = async (campaignId, budgetINR) => {\n    try {\n      const headers = await getHeaders();\n      await fetch(META_MANAGER_URL, {\n        method: 'POST',\n        headers: { ...headers, 'Content-Type': 'application/json' },\n        body: JSON.stringify({ action: 'update_budget', object_id: campaignId, daily_budget_inr: budgetINR }),\n      });\n      setCampaigns(cs => cs.map(c => c.id === campaignId ? { ...c, daily_budget: budgetINR } : c));\n    } catch (e) { console.error(e); }\n  };\n\n  const handleScale = async (campaignId, currentBudget) => {\n    const newBudget = Math.round((currentBudget || 500) * 1.2);\n    await handleUpdateBudget(campaignId, newBudget);\n  };\n\n  return (\n    <AdminShell title=\"Meta Ads Pro\">\n      {/* Tabs */}\n      <div className=\"flex gap-1 overflow-x-auto mb-6 pb-1\">\n        {TABS.map(t => (\n          <button\n            key={t.id}\n            onClick={() => setTab(t.id)}\n            className={`whitespace-nowrap px-4 py-2 rounded-lg text-sm font-semibold transition-all ${\n              tab === t.id\n                ? 'bg-gradient-to-r from-violet-600/30 to-orange-500/20 text-white border border-violet-500/30'\n                : 'text-gray-400 hover:text-white hover:bg-white/5 border border-transparent'\n            }`}\n          >\n            {t.label}\n          </button>\n        ))}\n      </div>\n\n      {/* Tab content */}\n      {tab === 'overview'     && <OverviewTab     stats={stats} campaigns={campaigns} loading={loading} datePreset={datePreset} setDatePreset={setDatePreset} refresh={() => loadData(datePreset)} />}\n      {tab === 'campaigns'    && <CampaignsTab    campaigns={campaigns} loading={loading} onToggle={handleToggle} onUpdateBudget={handleUpdateBudget} onScale={handleScale} refresh={() => loadData(datePreset)} />}\n      {tab === 'intelligence' && <IntelligenceTab campaigns={campaigns} />}\n      {tab === 'create'       && <CreateCampaignTab onCreated={() => { loadData(datePreset); setTab('campaigns'); }} getHeaders={getHeaders} />}\n      {tab === 'advisor'      && <AdvisorTab campaigns={campaigns} stats={stats} />}\n    </AdminShell>\n  );\n};\n\nexport default AdminMetaAds;\n"
+          ]
+        ]
+      }
+    }
   ],
-  "fixes": [
-    { "title": "Created sitemap.xml", "description": "app/sitemap.ts", "file": "app/sitemap.ts" },
-    { "title": "Updated robots.txt", "description": "public/robots.txt", "file": "public/robots.txt" }
-  ],
-  "submittedUrls": [
-    "https://telzonacademy.in/"
-  ]
+  "fixes": [],
+  "submitted": [],
+  "errors": []
 }
