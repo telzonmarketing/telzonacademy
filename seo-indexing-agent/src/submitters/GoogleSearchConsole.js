@@ -72,6 +72,46 @@ class GoogleSearchConsole {
       return false;
     }
   }
+
+  /**
+   * Fetch top keywords and their positions from Google Search Console.
+   * Returns array of { query, page, position, impressions, clicks, ctr }
+   * sorted by impressions descending.
+   */
+  async getKeywordRankings(siteUrl, { startDate, endDate, rowLimit = 50 } = {}) {
+    await this.init();
+    if (!this.searchconsole) return [];
+
+    // Default: last 28 days
+    const end = endDate || new Date().toISOString().slice(0, 10);
+    const start = startDate || new Date(Date.now() - 28 * 86400000).toISOString().slice(0, 10);
+
+    try {
+      const res = await this.searchconsole.searchanalytics.query({
+        siteUrl,
+        requestBody: {
+          startDate: start,
+          endDate: end,
+          dimensions: ['query', 'page'],
+          rowLimit,
+          dimensionFilterGroups: [],
+        },
+      });
+
+      const rows = res.data.rows || [];
+      return rows.map(row => ({
+        query:       row.keys[0],
+        page:        row.keys[1],
+        position:    Math.round(row.position * 10) / 10,   // 1 decimal place
+        impressions: row.impressions,
+        clicks:      row.clicks,
+        ctr:         Math.round(row.ctr * 1000) / 10,      // percentage, 1 decimal
+      }));
+    } catch (err) {
+      console.warn('  GSC searchAnalytics error:', err.message);
+      return [];
+    }
+  }
 }
 
 module.exports = { GoogleSearchConsole };

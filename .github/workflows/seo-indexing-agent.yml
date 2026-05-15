@@ -66,11 +66,30 @@ jobs:
                 pagesFound: report.summary?.pagesFound || 0,
                 critical: report.summary?.critical || 0,
                 important: report.summary?.important || 0,
-                fixed: report.summary?.fixed || 0,
-                submitted: report.summary?.submitted || 0,
+                fixed: report.summary?.issuesFixed || 0,
+                submitted: report.summary?.pagesSubmitted || 0,
+                avgPosition: report.summary?.avgPosition || null,
+                totalKeywords: report.summary?.totalKeywords || 0,
               };
               history.unshift(entry);
-              fs.writeFileSync(histPath, JSON.stringify(history.slice(0, 60), null, 2));
+              fs.writeFileSync(histPath, JSON.stringify(history.slice(0, 90), null, 2));
+
+              // Save keywords.json (latest rankings + rolling history)
+              const kwPath = 'public/seo-reports/keywords.json';
+              const kwData = fs.existsSync(kwPath) ? JSON.parse(fs.readFileSync(kwPath, 'utf8')) : { latest: [], history: [] };
+              if (report.keywords && report.keywords.length > 0) {
+                kwData.latest = report.keywords;
+                kwData.summary = report.keywordSummary || {};
+                kwData.history.unshift({
+                  timestamp: report.timestamp,
+                  avgPosition: report.summary?.avgPosition || null,
+                  totalKeywords: report.summary?.totalKeywords || 0,
+                  improved: report.keywordSummary?.improved || 0,
+                  dropped: report.keywordSummary?.dropped || 0,
+                });
+                kwData.history = kwData.history.slice(0, 90);
+                fs.writeFileSync(kwPath, JSON.stringify(kwData, null, 2));
+              }
 
               // Git commit
               const { execSync } = require('child_process');

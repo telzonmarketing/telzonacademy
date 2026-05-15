@@ -38,18 +38,26 @@
     .badge { background: #22c55e20; color: #22c55e; border: 1px solid #22c55e40; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
     .badge.error { background: #ef444420; color: #ef4444; border-color: #ef444440; }
     .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
-    .score-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 32px; }
+
+    /* Score cards — 6 in a row */
+    .score-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-bottom: 32px; }
     .score-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 20px; text-align: center; }
     .score-card .value { font-size: 36px; font-weight: 800; margin-bottom: 4px; }
     .score-card .label { font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
-    .green { color: #22c55e; }
-    .red { color: #ef4444; }
+    .score-card .sublabel { font-size: 11px; color: #64748b; margin-top: 4px; }
+
+    .green  { color: #22c55e; }
+    .red    { color: #ef4444; }
     .yellow { color: #f59e0b; }
-    .blue { color: #3b82f6; }
+    .blue   { color: #3b82f6; }
     .purple { color: #a855f7; }
+    .orange { color: #f97316; }
+
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
-    .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 24px; }
+    .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 24px; margin-bottom: 24px; }
     .card h2 { font-size: 15px; font-weight: 600; color: #f1f5f9; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .card h2 .badge-sm { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; background: #f97316; color: #fff; margin-left: 4px; }
+
     .issue-list { list-style: none; }
     .issue-list li { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid #1e293b; font-size: 13px; }
     .issue-list li:last-child { border-bottom: none; }
@@ -58,6 +66,31 @@
     .dot.important { background: #f59e0b; }
     .dot.low { background: #3b82f6; }
     .dot.fixed { background: #22c55e; }
+
+    /* Keyword table */
+    .kw-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .kw-table th { text-align: left; padding: 10px 12px; color: #94a3b8; font-weight: 500; border-bottom: 1px solid #334155; white-space: nowrap; }
+    .kw-table td { padding: 9px 12px; border-bottom: 1px solid #1e293b; vertical-align: middle; }
+    .kw-table tr:hover td { background: #0f172a; }
+    .kw-table .pos-badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-weight: 700; font-size: 12px; min-width: 36px; text-align: center; }
+    .pos-top3  { background: #22c55e30; color: #22c55e; }
+    .pos-page1 { background: #3b82f630; color: #3b82f6; }
+    .pos-almost { background: #f97316; color: #fff; }
+    .pos-far   { background: #33415520; color: #64748b; }
+    .change-up   { color: #22c55e; font-weight: 600; }
+    .change-down { color: #ef4444; font-weight: 600; }
+    .change-new  { color: #94a3b8; font-size: 11px; }
+    .page-link { color: #94a3b8; font-size: 11px; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; text-decoration: none; }
+    .page-link:hover { color: #a78bfa; text-decoration: underline; }
+
+    /* Opportunity section */
+    .opp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+    .opp-card { background: #0f172a; border: 1px solid #f9731640; border-radius: 10px; padding: 14px 16px; }
+    .opp-card .kw { color: #f1f5f9; font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+    .opp-card .meta { display: flex; gap: 16px; font-size: 12px; color: #94a3b8; }
+    .opp-card .meta span strong { color: #f1f5f9; }
+
+    /* History table */
     .history-table { width: 100%; border-collapse: collapse; font-size: 13px; }
     .history-table th { text-align: left; padding: 10px 12px; color: #94a3b8; font-weight: 500; border-bottom: 1px solid #334155; }
     .history-table td { padding: 10px 12px; border-bottom: 1px solid #1e293b; }
@@ -70,7 +103,10 @@
     .chart-wrap { position: relative; height: 200px; }
     .last-run { font-size: 12px; color: #64748b; }
     .full-width { grid-column: 1 / -1; }
-    @media (max-width: 768px) { .score-row { grid-template-columns: repeat(2, 1fr); } .grid-2 { grid-template-columns: 1fr; } }
+    .section-header { font-size: 18px; font-weight: 700; color: #f8fafc; margin: 32px 0 16px; display: flex; align-items: center; gap: 10px; }
+    .divider { border: none; border-top: 1px solid #334155; margin: 32px 0; }
+    @media (max-width: 900px) { .score-row { grid-template-columns: repeat(3, 1fr); } .grid-2 { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .score-row { grid-template-columns: repeat(2, 1fr); } }
   </style>
 </head>
 <body>
@@ -93,7 +129,7 @@
     }
   })();
   function checkPass() {
-    const val = document.getElementById('pass-input').value;
+    var val = document.getElementById('pass-input').value;
     if (val === '9923022925') {
       sessionStorage.setItem('seo_auth', 'ok');
       document.getElementById('login-screen').style.display = 'none';
@@ -112,7 +148,7 @@
 
 <div class="header">
   <div>
-    <h1>SEO Indexing Dashboard</h1>
+    <h1>SEO Dashboard</h1>
     <div class="subtitle" id="site-url">telzonacademy.in</div>
   </div>
   <div style="display:flex;align-items:center;gap:12px;">
@@ -123,7 +159,7 @@
 
 <div class="container">
 
-  <!-- Score cards -->
+  <!-- Score cards row — 6 cards -->
   <div class="score-row">
     <div class="score-card">
       <div class="value blue" id="pages-crawled">—</div>
@@ -145,110 +181,273 @@
       <div class="value purple" id="submitted-count">—</div>
       <div class="label">Submitted to Google</div>
     </div>
+    <div class="score-card">
+      <div class="value orange" id="avg-position">—</div>
+      <div class="label">Avg KW Position</div>
+      <div class="sublabel" id="kw-total-label">lower = better</div>
+    </div>
   </div>
 
-  <!-- Charts + Issues -->
-  <div class="grid-2">
-
-    <div class="card">
+  <!-- Charts row -->
+  <div class="grid-2" style="margin-bottom:0">
+    <div class="card" style="margin-bottom:0">
       <h2>📈 Issues Over Time</h2>
       <div class="chart-wrap">
         <canvas id="trend-chart"></canvas>
       </div>
     </div>
+    <div class="card" style="margin-bottom:0">
+      <h2>📊 Avg Keyword Position Trend</h2>
+      <div class="chart-wrap">
+        <canvas id="kw-trend-chart"></canvas>
+      </div>
+    </div>
+  </div>
 
+  <hr class="divider" />
+
+  <!-- Keyword Rankings -->
+  <div class="section-header">🎯 Keyword Rankings <span style="font-size:13px;color:#64748b;font-weight:400">— last 28 days from Google Search Console</span></div>
+
+  <!-- Opportunity cards: keywords at position 11-20 -->
+  <div class="card" id="opp-section" style="display:none">
+    <h2>🚀 Almost Page 1 <span class="badge-sm" id="opp-count">0</span>
+      <span style="font-size:12px;color:#94a3b8;font-weight:400;margin-left:8px">Keywords at positions 11–20 — one push away from page 1</span>
+    </h2>
+    <div class="opp-grid" id="opp-grid"></div>
+  </div>
+
+  <!-- Full keyword table -->
+  <div class="card">
+    <h2>📋 All Tracked Keywords <span id="kw-count-label" style="font-size:12px;color:#64748b;font-weight:400;margin-left:8px"></span></h2>
+    <div style="overflow-x:auto">
+      <table class="kw-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Keyword</th>
+            <th>Position</th>
+            <th>Change</th>
+            <th>Impressions</th>
+            <th>Clicks</th>
+            <th>CTR</th>
+            <th>Page</th>
+          </tr>
+        </thead>
+        <tbody id="kw-body">
+          <tr><td colspan="8" class="empty">Loading keyword data...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Issues + Fixes row -->
+  <div class="grid-2">
     <div class="card">
       <h2>🔴 Current Issues</h2>
       <ul class="issue-list" id="issues-list">
         <li><span class="dot critical"></span><span>Loading...</span></li>
       </ul>
     </div>
-
     <div class="card">
       <h2>✅ Auto Fixes Applied</h2>
       <ul class="issue-list" id="fixes-list">
         <li><span class="dot fixed"></span><span>Loading...</span></li>
       </ul>
     </div>
-
-    <div class="card">
+    <div class="card full-width">
       <h2>🌐 Pages Submitted to Google</h2>
       <ul class="issue-list" id="pages-list">
         <li><span style="color:#64748b;font-size:13px;">Loading...</span></li>
       </ul>
     </div>
-
   </div>
 
   <!-- History table -->
   <div class="card">
     <h2>📅 Daily Run History</h2>
-    <table class="history-table">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Pages</th>
-          <th>Critical</th>
-          <th>Important</th>
-          <th>Fixed</th>
-          <th>Submitted</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody id="history-body">
-        <tr><td colspan="7" class="empty">Loading history...</td></tr>
-      </tbody>
-    </table>
+    <div style="overflow-x:auto">
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Pages</th>
+            <th>Critical</th>
+            <th>Important</th>
+            <th>Fixed</th>
+            <th>Submitted</th>
+            <th>Avg Position</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="history-body">
+          <tr><td colspan="8" class="empty">Loading history...</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 </div>
 
 <script>
-  // ─── Chart.js loaded dynamically to avoid CSP issues with external scripts ───
-  let trendChart;
-  let ChartLib = null;
+  var trendChart, kwTrendChart;
+  var ChartLib = null;
 
   function loadChartJS(cb) {
-    const s = document.createElement('script');
+    var s = document.createElement('script');
     s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js';
     s.onload = function() { ChartLib = window.Chart; cb(); };
-    s.onerror = function() { cb(); }; // chart unavailable — data still shows
+    s.onerror = function() { cb(); };
     document.head.appendChild(s);
   }
 
   function fmt(d) {
+    return new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+  }
+  function fmtFull(d) {
     return new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
   }
+  function num(n) {
+    if (n == null) return '—';
+    if (n >= 1000000) return (n/1000000).toFixed(1) + 'M';
+    if (n >= 1000) return (n/1000).toFixed(1) + 'k';
+    return String(n);
+  }
 
-  function renderReport(report, history) {
-    const s = report.summary || {};
+  function posBadgeClass(pos) {
+    if (pos <= 3)  return 'pos-top3';
+    if (pos <= 10) return 'pos-page1';
+    if (pos <= 20) return 'pos-almost';
+    return 'pos-far';
+  }
 
-    // Fix field-name mapping: Reporter.js uses issuesFixed/pagesSubmitted
-    const fixedCount    = s.issuesFixed    != null ? s.issuesFixed    : (s.fixed    || 0);
-    const submittedCount = s.pagesSubmitted != null ? s.pagesSubmitted : (s.submitted || 0);
-    // submitted URLs live at top-level report.submitted (array) or report.submittedUrls
-    const submittedUrls = Array.isArray(report.submitted)
-      ? report.submitted
-      : (report.submittedUrls || []);
+  function renderKeywords(kwData) {
+    var keywords = (kwData && kwData.latest) ? kwData.latest : [];
+    var summary  = (kwData && kwData.summary) ? kwData.summary : {};
+    var history  = (kwData && kwData.history) ? kwData.history : [];
+
+    // Avg position card
+    var avgPos = summary.avgPosition || null;
+    document.getElementById('avg-position').textContent = avgPos ? avgPos : '—';
+    if (keywords.length > 0) {
+      document.getElementById('kw-total-label').textContent = keywords.length + ' keywords tracked';
+    }
+
+    // Opportunity section
+    var opps = (summary.opportunities || []).filter(function(k) { return k.position >= 11 && k.position <= 20; });
+    if (opps.length > 0) {
+      document.getElementById('opp-section').style.display = 'block';
+      document.getElementById('opp-count').textContent = opps.length;
+      document.getElementById('opp-grid').innerHTML = opps.map(function(k) {
+        return '<div class="opp-card">' +
+          '<div class="kw">' + k.query + '</div>' +
+          '<div class="meta">' +
+          '<span>Position: <strong>' + k.position + '</strong></span>' +
+          '<span>Impressions: <strong>' + num(k.impressions) + '</strong></span>' +
+          '</div>' +
+          '</div>';
+      }).join('');
+    }
+
+    // Keyword table
+    var tbody = document.getElementById('kw-body');
+    if (keywords.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="8" class="empty">No keyword data yet — GSC needs 2–3 days to populate after first run</td></tr>';
+      document.getElementById('kw-count-label').textContent = '';
+    } else {
+      document.getElementById('kw-count-label').textContent = '(' + keywords.length + ' keywords, sorted by impressions)';
+      tbody.innerHTML = keywords.map(function(k, i) {
+        var changeHtml = '';
+        if (k.change == null) {
+          changeHtml = '<span class="change-new">new</span>';
+        } else if (k.change > 0) {
+          changeHtml = '<span class="change-up">↑ ' + k.change + '</span>';
+        } else if (k.change < 0) {
+          changeHtml = '<span class="change-down">↓ ' + Math.abs(k.change) + '</span>';
+        } else {
+          changeHtml = '<span style="color:#64748b">—</span>';
+        }
+        var pageShort = (k.page || '').replace('https://telzonacademy.in', '');
+        if (!pageShort) pageShort = '/';
+        return '<tr>' +
+          '<td style="color:#475569">' + (i + 1) + '</td>' +
+          '<td style="color:#f1f5f9;font-weight:500;max-width:260px">' + k.query + '</td>' +
+          '<td><span class="pos-badge ' + posBadgeClass(k.position) + '">' + k.position + '</span></td>' +
+          '<td>' + changeHtml + '</td>' +
+          '<td style="color:#94a3b8">' + num(k.impressions) + '</td>' +
+          '<td style="color:#94a3b8">' + num(k.clicks) + '</td>' +
+          '<td style="color:#64748b">' + (k.ctr || 0) + '%</td>' +
+          '<td><a href="' + (k.page || '#') + '" target="_blank" class="page-link" title="' + (k.page || '') + '">' + pageShort + '</a></td>' +
+          '</tr>';
+      }).join('');
+    }
+
+    // Keyword position trend chart
+    try {
+      if (ChartLib && history.length > 0) {
+        var kwLabels = history.slice().reverse().map(function(h) { return fmt(h.timestamp); });
+        var kwPos    = history.slice().reverse().map(function(h) { return h.avgPosition; });
+        if (kwTrendChart) kwTrendChart.destroy();
+        kwTrendChart = new ChartLib(document.getElementById('kw-trend-chart'), {
+          type: 'line',
+          data: {
+            labels: kwLabels,
+            datasets: [{
+              label: 'Avg Position',
+              data: kwPos,
+              borderColor: '#f97316',
+              backgroundColor: '#f9731620',
+              tension: 0.4,
+              fill: true,
+              pointRadius: 3,
+            }]
+          },
+          options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: '#94a3b8', font: { size: 11 } } } },
+            scales: {
+              x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#1e293b' } },
+              y: {
+                ticks: { color: '#64748b', font: { size: 10 } },
+                grid: { color: '#334155' },
+                beginAtZero: false,
+                reverse: true,
+                title: { display: true, text: 'Position (lower = better)', color: '#64748b', font: { size: 10 } }
+              }
+            }
+          }
+        });
+      }
+    } catch(e) { console.warn('KW chart error:', e.message); }
+  }
+
+  function renderReport(report, history, kwData) {
+    var s = report.summary || {};
+
+    var fixedCount     = s.issuesFixed     != null ? s.issuesFixed     : (s.fixed     || 0);
+    var submittedCount = s.pagesSubmitted  != null ? s.pagesSubmitted  : (s.submitted || 0);
+    var submittedUrls  = Array.isArray(report.submitted) ? report.submitted : (report.submittedUrls || []);
 
     // Status badge
-    const badge = document.getElementById('status-badge');
+    var badge = document.getElementById('status-badge');
     if ((s.critical || 0) === 0) {
       badge.textContent = '✓ Healthy'; badge.className = 'badge';
     } else {
       badge.textContent = '⚠ ' + s.critical + ' Critical'; badge.className = 'badge error';
     }
 
-    document.getElementById('last-run').textContent = 'Last run: ' + fmt(report.timestamp || Date.now());
-    document.getElementById('pages-crawled').textContent  = s.pagesFound   || 0;
-    document.getElementById('critical-count').textContent = s.critical     || 0;
-    document.getElementById('important-count').textContent = s.important   || 0;
-    document.getElementById('fixed-count').textContent    = fixedCount;
+    document.getElementById('last-run').textContent = 'Last run: ' + fmtFull(report.timestamp || Date.now());
+    document.getElementById('pages-crawled').textContent   = s.pagesFound   || 0;
+    document.getElementById('critical-count').textContent  = s.critical     || 0;
+    document.getElementById('important-count').textContent = s.important    || 0;
+    document.getElementById('fixed-count').textContent     = fixedCount;
     document.getElementById('submitted-count').textContent = submittedCount;
 
     // Issues list
-    const issuesList = document.getElementById('issues-list');
-    const issues = report.issues || [];
+    var issuesList = document.getElementById('issues-list');
+    var issues = report.issues || [];
     if (issues.length === 0) {
       issuesList.innerHTML = '<li><span class="dot fixed"></span><span style="color:#22c55e">No issues found — site is healthy!</span></li>';
     } else {
@@ -261,8 +460,8 @@
     }
 
     // Fixes list
-    const fixesList = document.getElementById('fixes-list');
-    const fixes = report.fixes || [];
+    var fixesList = document.getElementById('fixes-list');
+    var fixes = report.fixes || [];
     if (fixes.length === 0) {
       fixesList.innerHTML = '<li><span style="color:#64748b;font-size:13px">No fixes applied in this run</span></li>';
     } else {
@@ -275,7 +474,7 @@
     }
 
     // Pages submitted
-    const pagesList = document.getElementById('pages-list');
+    var pagesList = document.getElementById('pages-list');
     if (submittedUrls.length === 0) {
       pagesList.innerHTML = '<li><span style="color:#64748b;font-size:13px">No pages submitted in this run</span></li>';
     } else {
@@ -286,30 +485,34 @@
     }
 
     // History table
-    const tbody = document.getElementById('history-body');
+    var tbody = document.getElementById('history-body');
     if (!history || history.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="7" class="empty">No history yet — check back after the next run</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="8" class="empty">No history yet — check back after the next run</td></tr>';
     } else {
       tbody.innerHTML = history.map(function(h) {
+        var posCell = h.avgPosition ? '<span style="color:#f97316;font-weight:600">' + h.avgPosition + '</span>' : '—';
         return '<tr>' +
-          '<td>' + fmt(h.timestamp) + '</td>' +
+          '<td>' + fmtFull(h.timestamp) + '</td>' +
           '<td>' + (h.pagesFound || 0) + '</td>' +
           '<td><span class="pill ' + ((h.critical||0)>0?'critical':'ok') + '">' + (h.critical||0) + '</span></td>' +
           '<td>' + (h.important||0) + '</td>' +
           '<td><span class="pill fixed">' + (h.fixed||0) + '</span></td>' +
           '<td>' + (h.submitted||0) + '</td>' +
+          '<td>' + posCell + '</td>' +
           '<td><span class="pill ' + ((h.critical||0)===0?'fixed':'critical') + '">' + ((h.critical||0)===0?'✓ Clean':'Issues') + '</span></td>' +
           '</tr>';
       }).join('');
     }
 
-    // Trend chart — wrapped in try/catch so a missing Chart.js never breaks the page
+    // Keyword section
+    renderKeywords(kwData);
+
+    // Issues over time trend chart
     try {
       if (ChartLib && history && history.length > 0) {
-        const labels      = history.map(function(h) { return fmt(h.timestamp); });
-        const criticalData = history.map(function(h) { return h.critical || 0; });
-        const fixedData    = history.map(function(h) { return h.fixed    || 0; });
-
+        var labels       = history.slice().reverse().map(function(h) { return fmt(h.timestamp); });
+        var criticalData = history.slice().reverse().map(function(h) { return h.critical || 0; });
+        var fixedData    = history.slice().reverse().map(function(h) { return h.fixed    || 0; });
         if (trendChart) trendChart.destroy();
         trendChart = new ChartLib(document.getElementById('trend-chart'), {
           type: 'line',
@@ -331,37 +534,36 @@
         });
       }
     } catch(chartErr) {
-      // Chart rendering failed (CSP or load error) — data cards already populated above
       console.warn('Chart.js unavailable:', chartErr.message);
     }
   }
 
   async function load() {
     try {
-      const [reportRes, historyRes] = await Promise.all([
-        fetch('/seo-reports/latest.json?t=' + Date.now()),
-        fetch('/seo-reports/history.json?t=' + Date.now()),
+      var t = Date.now();
+      var [reportRes, historyRes, kwRes] = await Promise.all([
+        fetch('/seo-reports/latest.json?t=' + t),
+        fetch('/seo-reports/history.json?t=' + t),
+        fetch('/seo-reports/keywords.json?t=' + t),
       ]);
 
       if (!reportRes.ok) throw new Error('No report yet (HTTP ' + reportRes.status + ')');
-      const report  = await reportRes.json();
-      const history = historyRes.ok ? await historyRes.json() : [];
+      var report  = await reportRes.json();
+      var history = historyRes.ok ? await historyRes.json() : [];
+      var kwData  = kwRes.ok ? await kwRes.json() : null;
 
-      // Render data immediately (no chart yet)
-      renderReport(report, history);
+      renderReport(report, history, kwData);
+      loadChartJS(function() { renderReport(report, history, kwData); });
 
-      // Then load Chart.js and re-render chart once available
-      loadChartJS(function() { renderReport(report, history); });
-
-    } catch (e) {
+    } catch(e) {
       console.warn('SEO dashboard load error:', e.message);
       document.getElementById('status-badge').textContent = 'No data yet';
       document.getElementById('last-run').textContent = 'Run the bot to see results';
-      document.getElementById('issues-list').innerHTML = '<li><span style="color:#64748b;font-size:13px">No report found — the bot will generate one on its next run (daily at 8am UTC)</span></li>';
-      document.getElementById('fixes-list').innerHTML  = '<li><span style="color:#64748b;font-size:13px">—</span></li>';
-      document.getElementById('pages-list').innerHTML  = '<li><span style="color:#64748b;font-size:13px">—</span></li>';
-      document.getElementById('history-body').innerHTML = '<tr><td colspan="7" class="empty">No history yet — check back after the first scheduled run</td></tr>';
-      // Leave score cards as — so user can see something went wrong (not fake zeros)
+      document.getElementById('issues-list').innerHTML  = '<li><span style="color:#64748b;font-size:13px">No report found — the bot generates one daily at 8am UTC</span></li>';
+      document.getElementById('fixes-list').innerHTML   = '<li><span style="color:#64748b;font-size:13px">—</span></li>';
+      document.getElementById('pages-list').innerHTML   = '<li><span style="color:#64748b;font-size:13px">—</span></li>';
+      document.getElementById('history-body').innerHTML = '<tr><td colspan="8" class="empty">No history yet — check back after the first scheduled run</td></tr>';
+      document.getElementById('kw-body').innerHTML      = '<tr><td colspan="8" class="empty">No keyword data yet</td></tr>';
     }
   }
 

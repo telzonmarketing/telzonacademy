@@ -12,6 +12,7 @@ const { GoogleSearchConsole } = require('../submitters/GoogleSearchConsole');
 const { IndexingAPISubmitter } = require('../submitters/IndexingAPISubmitter');
 const { IssueFixer } = require('../fixers/IssueFixer');
 const { Reporter } = require('../utils/Reporter');
+const { KeywordTracker } = require('../trackers/KeywordTracker');
 
 class IndexingAgent {
   constructor(config = {}) {
@@ -34,6 +35,8 @@ class IndexingAgent {
       issuesFound: [],
       issuesFixed: [],
       pagesSubmitted: [],
+      keywords: [],
+      keywordSummary: {},
       errors: [],
     };
   }
@@ -172,8 +175,36 @@ class IndexingAgent {
     return results;
   }
 
+  async rankKeywords(previousKeywords = []) {
+    if (!this.config.siteUrl) return;
+    if (!process.env.GOOGLE_SERVICE_ACCOUNT_KEY_PATH && !process.env.GOOGLE_SERVICE_ACCOUNT_KEY) return;
+
+    console.log(chalk.bold('\n[ PHASE 4 ] Tracking keyword rankings\n'));
+    const spinner = ora('Fetching keyword positions from Google Search Console...').start();
+
+    try {
+      const tracker = new KeywordTracker(this.config);
+      const { keywords, summary } = await tracker.track(this.config.siteUrl, previousKeywords);
+      this.results.keywords = keywords;
+      this.results.keywordSummary = summary;
+
+      if (summary.total > 0) {
+        spinner.succeed(`Tracked ${chalk.bold(summary.total)} keywords — avg position: ${chalk.bold(summary.avgPosition)}`);
+        if (summary.improved > 0) console.log(chalk.green(`  ↑ ${summary.improved} keywords improved`));
+        if (summary.dropped > 0)  console.log(chalk.yellow(`  ↓ ${summary.dropped} keywords dropped`));
+        if (summary.opportunities.length > 0) {
+          console.log(chalk.cyan(`  🎯 ${summary.opportunities.length} keywords almost on page 1 (pos 11–20)`));
+        }
+      } else {
+        spinner.warn('No keyword data yet — GSC needs 2–3 days to populate after connecting');
+      }
+    } catch (err) {
+      spinner.warn(`Keyword tracking skipped: ${err.message}`);
+    }
+  }
+
   async runFull() {
-    console.log(chalk.bold.green('\nRunning full pipeline: Audit → Fix → Submit\n'));
+    console.log(chalk.bold.green('\nRunning full pipeline: Audit → Fix → Submit → Rank\n'));
     console.log(chalk.gray('─'.repeat(56)));
 
     await this.audit('full-report.json');
@@ -192,6 +223,28 @@ class IndexingAgent {
       console.log(chalk.yellow('\nSkipping submission: Google credentials not configured'));
       console.log(chalk.gray('Add GOOGLE_SERVICE_ACCOUNT_KEY_PATH to .env to enable auto-submission\n'));
     }
+
+    // Phase 4: keyword rank tracking (load previous snapshot for change detection)
+    let previousKeywords = [];
+    try {
+      const fs = require('fs');
+      if (fs.existsSync('keywords-snapshot.json')) {
+        previousKeywords = JSON.parse(fs.readFileSync('keywords-snapshot.json', 'utf8'));
+      }
+    } catch (_) {}
+    await this.rankKeywords(previousKeywords);
+
+    // Save new keyword snapshot for next run's change detection
+    if (this.results.keywords.length > 0) {
+      try {
+        const fs = require('fs');
+        fs.writeFileSync('keywords-snapshot.json', JSON.stringify(this.results.keywords, null, 2));
+      } catch (_) {}
+    }
+
+    // Save the full report including keywords
+    const reporter = new Reporter();
+    await reporter.save(this.results, 'full-report.json');
 
     console.log(chalk.bold.green('\n✓ Full pipeline complete!\n'));
   }

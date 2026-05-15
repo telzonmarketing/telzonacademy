@@ -15,10 +15,14 @@ class Reporter {
         low: results.issuesFound.filter(i => i.severity === 'low').length,
         issuesFixed: results.issuesFixed.length,
         pagesSubmitted: results.pagesSubmitted.length,
+        avgPosition: results.keywordSummary?.avgPosition || null,
+        totalKeywords: results.keywordSummary?.total || 0,
       },
       issues: results.issuesFound,
       fixes: results.issuesFixed,
       submitted: results.pagesSubmitted,
+      keywords: results.keywords || [],
+      keywordSummary: results.keywordSummary || {},
       errors: results.errors,
     };
 

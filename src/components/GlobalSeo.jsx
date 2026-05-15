@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { useLocation } from 'react-router-dom';
 import { supabase } from '@/lib/customSupabaseClient';
 
 const GlobalSeo = () => {
+  const location = useLocation();
   const [seoData, setSeoData] = useState({
     meta_title: 'Digital Marketing Course in Nagpur | Free Demo | Telzon Academy',
     meta_description: 'Join Telzon Academy — Nagpur\'s top digital marketing institute. Practical SEO, Google Ads, social media training with 95% placement success. Free demo class available. Enroll now.',
@@ -33,7 +35,8 @@ const GlobalSeo = () => {
     fetchSeoSettings();
   }, []);
 
-  const canonicalUrl = 'https://telzonacademy.in';
+  // Dynamic canonical: each page points to its own URL (fixes WRONG_CANONICAL for all 63 inner pages)
+  const canonicalUrl = 'https://telzonacademy.in' + location.pathname;
 
   const schema = {
     '@context': 'https://schema.org',
