@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-05-15T19:44:25.992Z",
+  "timestamp": "2026-05-15T19:50:51.105Z",
   "summary": {
     "pagesFound": 64,
-    "issuesFound": 5,
-    "critical": 3,
-    "important": 1,
+    "issuesFound": 7,
+    "critical": 4,
+    "important": 2,
     "low": 1,
-    "issuesFixed": 5,
+    "issuesFixed": 7,
     "pagesSubmitted": 0,
     "avgPosition": null,
     "totalKeywords": 0
@@ -40,7 +40,6 @@
         "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
         "https://telzonacademy.in/pages/marketing-school-in-nagpur",
         "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/seo-course-in-nagpur",
         "https://telzonacademy.in/pages/google-ads-course-nagpur",
         "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
         "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
@@ -109,7 +108,6 @@
             "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
             "https://telzonacademy.in/pages/marketing-school-in-nagpur",
             "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
-            "https://telzonacademy.in/pages/seo-course-in-nagpur",
             "https://telzonacademy.in/pages/google-ads-course-nagpur",
             "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
             "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
@@ -157,9 +155,19 @@
       "fix": "FIX_DUPLICATE_TITLES"
     },
     {
+      "type": "MISSING_CANONICAL",
+      "severity": "important",
+      "title": "1 pages missing canonical URL",
+      "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
+      "affectedUrls": [
+        "https://telzonacademy.in/pages/seo-course-in-nagpur"
+      ],
+      "fix": "ADD_CANONICAL_TAGS"
+    },
+    {
       "type": "WRONG_CANONICAL",
       "severity": "critical",
-      "title": "63 pages have incorrect canonical URL",
+      "title": "62 pages have incorrect canonical URL",
       "description": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
       "affectedUrls": [
         {
@@ -244,10 +252,6 @@
         },
         {
           "url": "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/seo-course-in-nagpur",
           "canonical": "https://telzonacademy.in/"
         },
         {
@@ -420,7 +424,7 @@
     {
       "type": "MISSING_H1",
       "severity": "low",
-      "title": "64 pages missing H1 heading",
+      "title": "63 pages missing H1 heading",
       "description": "H1 headings help Google understand the primary topic of each page.",
       "affectedUrls": [
         "https://telzonacademy.in/",
@@ -445,7 +449,6 @@
         "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
         "https://telzonacademy.in/pages/marketing-school-in-nagpur",
         "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/seo-course-in-nagpur",
         "https://telzonacademy.in/pages/google-ads-course-nagpur",
         "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
         "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
@@ -491,9 +494,22 @@
       "fix": "ADD_H1_TAGS"
     },
     {
+      "type": "ERROR_PAGES",
+      "severity": "critical",
+      "title": "1 pages return error status codes",
+      "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+      "affectedUrls": [
+        {
+          "url": "https://telzonacademy.in/pages/seo-course-in-nagpur",
+          "status": 404
+        }
+      ],
+      "fix": "FIX_ERROR_PAGES"
+    },
+    {
       "type": "CLIENT_SIDE_RENDERING",
       "severity": "critical",
-      "title": "64 pages appear to be client-side rendered only",
+      "title": "63 pages appear to be client-side rendered only",
       "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
       "affectedUrls": [
         "https://telzonacademy.in/",
@@ -518,7 +534,6 @@
         "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
         "https://telzonacademy.in/pages/marketing-school-in-nagpur",
         "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/seo-course-in-nagpur",
         "https://telzonacademy.in/pages/google-ads-course-nagpur",
         "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
         "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
@@ -586,7 +601,6 @@
           "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
           "https://telzonacademy.in/pages/marketing-school-in-nagpur",
           "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
-          "https://telzonacademy.in/pages/seo-course-in-nagpur",
           "https://telzonacademy.in/pages/google-ads-course-nagpur",
           "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
           "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
@@ -658,17 +672,28 @@
       "instruction": "Manual fix required for: DUPLICATE_TITLES. See audit report for details."
     },
     {
-      "issue": "63 pages have incorrect canonical URL",
+      "issue": "1 pages missing canonical URL",
+      "description": "Add canonical tags to all pages via Next.js metadata",
+      "code": "// app/layout.tsx — add canonical to root layout\nexport const metadata = {\n  alternates: {\n    canonical: '/',  // relative canonicals work in Next.js 13+\n  },\n}\n\n// app/blog/[slug]/page.tsx — dynamic canonical\nexport async function generateMetadata({ params }) {\n  return {\n    alternates: {\n      canonical: `https://yoursite.com/blog/${params.slug}`,\n    },\n  }\n}",
+      "fileChange": null
+    },
+    {
+      "issue": "62 pages have incorrect canonical URL",
       "description": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
       "instruction": "Manual fix required for: WRONG_CANONICAL. See audit report for details."
     },
     {
-      "issue": "64 pages missing H1 heading",
+      "issue": "63 pages missing H1 heading",
       "description": "H1 headings help Google understand the primary topic of each page.",
       "instruction": "Manual fix required for: MISSING_H1. See audit report for details."
     },
     {
-      "issue": "64 pages appear to be client-side rendered only",
+      "issue": "1 pages return error status codes",
+      "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+      "instruction": "Manual fix required for: ERROR_PAGES. See audit report for details."
+    },
+    {
+      "issue": "63 pages appear to be client-side rendered only",
       "description": "Convert client-side rendered pages to Server Components",
       "code": "// BEFORE — client-side only (Googlebot sees empty page):\n'use client'\nimport { useEffect, useState } from 'react'\nexport default function Page() {\n  const [data, setData] = useState(null)\n  useEffect(() => { fetch('/api/data').then(r => r.json()).then(setData) }, [])\n  if (!data) return <div>Loading...</div>\n  return <div>{data.title}</div>\n}\n\n// AFTER — Server Component (Googlebot sees full content instantly):\n// No 'use client' directive needed\nexport default async function Page() {\n  const data = await fetch('https://api.example.com/data', {\n    next: { revalidate: 3600 }  // ISR: revalidate every hour\n  }).then(r => r.json())\n  return <div>{data.title}</div>\n}"
     },
@@ -708,6 +733,10 @@
     "keyLocation": "https://telzonacademy.in/c218d7307cc58cf886898bc873656853.txt",
     "note": "Notified Bing/Yandex/Naver of 64 URLs"
   },
+  "bingSubmissions": {
+    "submitted": 0,
+    "failed": 64
+  },
   "issueTracker": {
     "issues": {
       "c79a5c8cc207": {
@@ -718,7 +747,7 @@
         "description": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
         "status": "fixing",
         "detectedAt": "2026-05-15T19:28:12.445Z",
-        "lastSeenAt": "2026-05-15T19:44:25.041Z",
+        "lastSeenAt": "2026-05-15T19:50:51.103Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:28:12.445Z",
@@ -732,6 +761,11 @@
           },
           {
             "timestamp": "2026-05-15T19:44:25.041Z",
+            "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
+            "file": null
+          },
+          {
+            "timestamp": "2026-05-15T19:50:51.103Z",
             "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
             "file": null
           }
@@ -744,7 +778,7 @@
         "severity": "critical",
         "title": "63 pages have incorrect canonical URL",
         "description": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
-        "status": "fixing",
+        "status": "resolved",
         "detectedAt": "2026-05-15T19:28:12.445Z",
         "lastSeenAt": "2026-05-15T19:44:25.041Z",
         "attempts": [
@@ -764,7 +798,9 @@
             "file": null
           }
         ],
-        "firstSeenRun": "2026-05-15T19:28:12.445Z"
+        "firstSeenRun": "2026-05-15T19:28:12.445Z",
+        "resolvedAt": "2026-05-15T19:50:51.103Z",
+        "daysToResolve": 1
       },
       "791ad617b3ed": {
         "id": "791ad617b3ed",
@@ -772,7 +808,7 @@
         "severity": "low",
         "title": "64 pages missing H1 heading",
         "description": "H1 headings help Google understand the primary topic of each page.",
-        "status": "fixing",
+        "status": "resolved",
         "detectedAt": "2026-05-15T19:28:12.445Z",
         "lastSeenAt": "2026-05-15T19:44:25.041Z",
         "attempts": [
@@ -792,7 +828,9 @@
             "file": null
           }
         ],
-        "firstSeenRun": "2026-05-15T19:28:12.445Z"
+        "firstSeenRun": "2026-05-15T19:28:12.445Z",
+        "resolvedAt": "2026-05-15T19:50:51.103Z",
+        "daysToResolve": 1
       },
       "a924a5969e28": {
         "id": "a924a5969e28",
@@ -800,7 +838,7 @@
         "severity": "critical",
         "title": "64 pages appear to be client-side rendered only",
         "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
-        "status": "fixing",
+        "status": "resolved",
         "detectedAt": "2026-05-15T19:28:12.445Z",
         "lastSeenAt": "2026-05-15T19:44:25.041Z",
         "attempts": [
@@ -820,7 +858,9 @@
             "file": null
           }
         ],
-        "firstSeenRun": "2026-05-15T19:28:12.445Z"
+        "firstSeenRun": "2026-05-15T19:28:12.445Z",
+        "resolvedAt": "2026-05-15T19:50:51.103Z",
+        "daysToResolve": 1
       },
       "68149022932d": {
         "id": "68149022932d",
@@ -830,7 +870,7 @@
         "description": "Pages using useEffect+fetch render empty for Googlebot. Convert to getStaticProps, getServerSideProps, or async Server Components.",
         "status": "fixing",
         "detectedAt": "2026-05-15T19:28:12.445Z",
-        "lastSeenAt": "2026-05-15T19:44:25.041Z",
+        "lastSeenAt": "2026-05-15T19:50:51.103Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:28:12.445Z",
@@ -846,107 +886,205 @@
             "timestamp": "2026-05-15T19:44:25.041Z",
             "strategy": "Convert useEffect data fetching to server-side",
             "file": null
+          },
+          {
+            "timestamp": "2026-05-15T19:50:51.103Z",
+            "strategy": "Convert useEffect data fetching to server-side",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:28:12.445Z"
+      },
+      "daa3e6f34fda": {
+        "id": "daa3e6f34fda",
+        "type": "MISSING_CANONICAL",
+        "severity": "important",
+        "title": "1 pages missing canonical URL",
+        "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
+        "status": "fixing",
+        "detectedAt": "2026-05-15T19:50:51.103Z",
+        "lastSeenAt": "2026-05-15T19:50:51.103Z",
+        "attempts": [
+          {
+            "timestamp": "2026-05-15T19:50:51.103Z",
+            "strategy": "Add canonical tags to all pages via Next.js metadata",
+            "file": null
+          }
+        ],
+        "firstSeenRun": "2026-05-15T19:50:51.103Z"
+      },
+      "382282935c57": {
+        "id": "382282935c57",
+        "type": "WRONG_CANONICAL",
+        "severity": "critical",
+        "title": "62 pages have incorrect canonical URL",
+        "description": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
+        "status": "fixing",
+        "detectedAt": "2026-05-15T19:50:51.103Z",
+        "lastSeenAt": "2026-05-15T19:50:51.103Z",
+        "attempts": [
+          {
+            "timestamp": "2026-05-15T19:50:51.103Z",
+            "strategy": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
+            "file": null
+          }
+        ],
+        "firstSeenRun": "2026-05-15T19:50:51.103Z"
+      },
+      "8c182c135a37": {
+        "id": "8c182c135a37",
+        "type": "MISSING_H1",
+        "severity": "low",
+        "title": "63 pages missing H1 heading",
+        "description": "H1 headings help Google understand the primary topic of each page.",
+        "status": "fixing",
+        "detectedAt": "2026-05-15T19:50:51.103Z",
+        "lastSeenAt": "2026-05-15T19:50:51.103Z",
+        "attempts": [
+          {
+            "timestamp": "2026-05-15T19:50:51.103Z",
+            "strategy": "H1 headings help Google understand the primary topic of each page.",
+            "file": null
+          }
+        ],
+        "firstSeenRun": "2026-05-15T19:50:51.103Z"
+      },
+      "c2bcb0cbe37f": {
+        "id": "c2bcb0cbe37f",
+        "type": "ERROR_PAGES",
+        "severity": "critical",
+        "title": "1 pages return error status codes",
+        "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+        "status": "fixing",
+        "detectedAt": "2026-05-15T19:50:51.103Z",
+        "lastSeenAt": "2026-05-15T19:50:51.103Z",
+        "attempts": [
+          {
+            "timestamp": "2026-05-15T19:50:51.103Z",
+            "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+            "file": null
+          }
+        ],
+        "firstSeenRun": "2026-05-15T19:50:51.103Z"
+      },
+      "7d874f3ebe0c": {
+        "id": "7d874f3ebe0c",
+        "type": "CLIENT_SIDE_RENDERING",
+        "severity": "critical",
+        "title": "63 pages appear to be client-side rendered only",
+        "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
+        "status": "fixing",
+        "detectedAt": "2026-05-15T19:50:51.103Z",
+        "lastSeenAt": "2026-05-15T19:50:51.103Z",
+        "attempts": [
+          {
+            "timestamp": "2026-05-15T19:50:51.103Z",
+            "strategy": "Convert client-side rendered pages to Server Components",
+            "file": null
+          }
+        ],
+        "firstSeenRun": "2026-05-15T19:50:51.103Z"
       }
     },
     "stats": {
       "open": 0,
-      "fixing": 5,
-      "resolved": 0,
+      "fixing": 7,
+      "resolved": 3,
       "escalated": 0,
       "regressed": 0
     },
-    "lastReconciled": "2026-05-15T19:44:25.041Z"
+    "lastReconciled": "2026-05-15T19:50:51.103Z"
   },
   "issueActions": [
+    {
+      "id": "daa3e6f34fda",
+      "type": "opened",
+      "title": "1 pages missing canonical URL"
+    },
+    {
+      "id": "382282935c57",
+      "type": "opened",
+      "title": "62 pages have incorrect canonical URL"
+    },
+    {
+      "id": "8c182c135a37",
+      "type": "opened",
+      "title": "63 pages missing H1 heading"
+    },
+    {
+      "id": "c2bcb0cbe37f",
+      "type": "opened",
+      "title": "1 pages return error status codes"
+    },
+    {
+      "id": "7d874f3ebe0c",
+      "type": "opened",
+      "title": "63 pages appear to be client-side rendered only"
+    },
     {
       "id": "c79a5c8cc207",
       "type": "fix-attempted",
       "title": "1 duplicate title tags found",
-      "attempt": 3
+      "attempt": 4
     },
     {
-      "id": "7b1a0fe7305b",
+      "id": "daa3e6f34fda",
       "type": "fix-attempted",
-      "title": "63 pages have incorrect canonical URL",
-      "attempt": 3
+      "title": "1 pages missing canonical URL",
+      "attempt": 1
     },
     {
-      "id": "791ad617b3ed",
+      "id": "382282935c57",
       "type": "fix-attempted",
-      "title": "64 pages missing H1 heading",
-      "attempt": 3
+      "title": "62 pages have incorrect canonical URL",
+      "attempt": 1
     },
     {
-      "id": "a924a5969e28",
+      "id": "8c182c135a37",
       "type": "fix-attempted",
-      "title": "64 pages appear to be client-side rendered only",
-      "attempt": 3
+      "title": "63 pages missing H1 heading",
+      "attempt": 1
+    },
+    {
+      "id": "c2bcb0cbe37f",
+      "type": "fix-attempted",
+      "title": "1 pages return error status codes",
+      "attempt": 1
+    },
+    {
+      "id": "7d874f3ebe0c",
+      "type": "fix-attempted",
+      "title": "63 pages appear to be client-side rendered only",
+      "attempt": 1
     },
     {
       "id": "68149022932d",
       "type": "fix-attempted",
       "title": "1 Next.js pages fetch data client-side only",
-      "attempt": 3
-    }
-  ],
-  "solverEnrichments": [
+      "attempt": 4
+    },
     {
-      "issueId": "791ad617b3ed",
+      "id": "7b1a0fe7305b",
+      "type": "resolved",
+      "title": "63 pages have incorrect canonical URL",
+      "daysToResolve": 1,
+      "attempts": 3
+    },
+    {
+      "id": "791ad617b3ed",
+      "type": "resolved",
       "title": "64 pages missing H1 heading",
-      "result": {
-        "solved": false,
-        "diagnosis": {
-          "errorCount": 1,
-          "warningCount": 9,
-          "topErrors": [
-            {
-              "message": "An “img” element must have an “alt” attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.",
-              "extract": "<noscript><img height=\"1\" width=\"1\" style=\"display:none\"\n    src=\"https://www.facebook.com/tr?id=1920151015239658&ev=PageView&noscript=1\"\n    /></nosc",
-              "line": 265,
-              "column": 6
-            }
-          ],
-          "summary": "W3C: 1 HTML errors, 9 warnings on https://telzonacademy.in/"
-        },
-        "attempts": [
-          {
-            "solver": "W3C Validator",
-            "solved": false,
-            "diagnosis": {
-              "errorCount": 1,
-              "warningCount": 9,
-              "topErrors": [
-                {
-                  "message": "An “img” element must have an “alt” attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.",
-                  "extract": "<noscript><img height=\"1\" width=\"1\" style=\"display:none\"\n    src=\"https://www.facebook.com/tr?id=1920151015239658&ev=PageView&noscript=1\"\n    /></nosc",
-                  "line": 265,
-                  "column": 6
-                }
-              ],
-              "summary": "W3C: 1 HTML errors, 9 warnings on https://telzonacademy.in/"
-            },
-            "enrichment": {
-              "w3c": {
-                "errorCount": 1,
-                "warningCount": 9,
-                "topErrors": [
-                  {
-                    "message": "An “img” element must have an “alt” attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.",
-                    "extract": "<noscript><img height=\"1\" width=\"1\" style=\"display:none\"\n    src=\"https://www.facebook.com/tr?id=1920151015239658&ev=PageView&noscript=1\"\n    /></nosc",
-                    "line": 265,
-                    "column": 6
-                  }
-                ],
-                "summary": "W3C: 1 HTML errors, 9 warnings on https://telzonacademy.in/"
-              }
-            }
-          }
-        ]
-      }
+      "daysToResolve": 1,
+      "attempts": 3
+    },
+    {
+      "id": "a924a5969e28",
+      "type": "resolved",
+      "title": "64 pages appear to be client-side rendered only",
+      "daysToResolve": 1,
+      "attempts": 3
     }
   ],
+  "solverEnrichments": [],
   "errors": []
 }
