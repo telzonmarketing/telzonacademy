@@ -548,9 +548,11 @@
       ]);
 
       if (!reportRes.ok) throw new Error('No report yet (HTTP ' + reportRes.status + ')');
-      var report  = await reportRes.json();
-      var history = historyRes.ok ? await historyRes.json() : [];
-      var kwData  = kwRes.ok ? await kwRes.json() : null;
+      // Parse each JSON independently — a missing file served as SPA-fallback HTML
+      // must not break the rest of the dashboard
+      var report;  try { report  = await reportRes.json(); }  catch(e) { throw new Error('latest.json invalid'); }
+      var history; try { history = historyRes.ok ? await historyRes.json() : []; } catch(e) { history = []; }
+      var kwData;  try { kwData  = kwRes.ok      ? await kwRes.json()      : null; } catch(e) { kwData = null; }
 
       renderReport(report, history, kwData);
       loadChartJS(function() { renderReport(report, history, kwData); });
