@@ -1,5 +1,103 @@
 [
   {
+    "timestamp": "2026-05-15T19:44:26.118Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 64 pages · 5 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-05-15T19:44:25.992Z",
+    "type": "fix",
+    "icon": "🔬",
+    "title": "External API enriched \"64 pages missing H1 heading\"",
+    "details": "W3C: 1 HTML errors, 9 warnings on https://telzonacademy.in/"
+  },
+  {
+    "timestamp": "2026-05-15T19:44:25.992Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #3: working on \"1 Next.js pages fetch data client-side only\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-05-15T19:44:25.992Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #3: working on \"64 pages appear to be client-side rendered only\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-05-15T19:44:25.992Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #3: working on \"64 pages missing H1 heading\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-05-15T19:44:25.992Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #3: working on \"63 pages have incorrect canonical URL\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-05-15T19:44:25.992Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #3: working on \"1 duplicate title tags found\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-05-15T19:44:25.992Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 Next.js pages fetch data client-side only",
+    "details": "Convert useEffect data fetching to server-side"
+  },
+  {
+    "timestamp": "2026-05-15T19:44:25.992Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 64 pages appear to be client-side rendered only",
+    "details": "Convert client-side rendered pages to Server Components"
+  },
+  {
+    "timestamp": "2026-05-15T19:44:25.992Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 64 pages missing H1 heading",
+    "details": "H1 headings help Google understand the primary topic of each page."
+  },
+  {
+    "timestamp": "2026-05-15T19:44:25.992Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 63 pages have incorrect canonical URL",
+    "details": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded."
+  },
+  {
+    "timestamp": "2026-05-15T19:44:25.992Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 duplicate title tags found",
+    "details": "Duplicate titles cause Google to pick which page to index, often ignoring the others."
+  },
+  {
+    "timestamp": "2026-05-15T19:44:25.992Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 64 pages",
+    "details": "Found 5 issues (3 critical, 1 important)"
+  },
+  {
+    "timestamp": "2026-05-15T19:44:25.992Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot manual run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-05-15T19:37:35.960Z",
     "type": "done",
     "icon": "✓",
