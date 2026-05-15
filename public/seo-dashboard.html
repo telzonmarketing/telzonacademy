@@ -360,6 +360,41 @@
 
   <hr class="divider" />
 
+  <!-- 7-Day Blitz Progress -->
+  <div class="card" id="blitz-card" style="background:linear-gradient(135deg,#0c4a6e 0%,#1e293b 100%);border-color:#0ea5e9">
+    <h2>⚡ 7-Day Blitz Progress <span style="font-size:12px;color:#7dd3fc;font-weight:400;margin-left:8px" id="blitz-day-label">Day 1 of 7</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:14px">
+      <div>
+        <div style="font-size:11px;color:#7dd3fc;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px">Pages Submitted</div>
+        <div style="font-size:24px;font-weight:700;color:#f1f5f9" id="blitz-submissions">—</div>
+        <div style="font-size:11px;color:#94a3b8" id="blitz-submissions-delta"></div>
+      </div>
+      <div>
+        <div style="font-size:11px;color:#7dd3fc;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px">Impressions (7d)</div>
+        <div style="font-size:24px;font-weight:700;color:#f1f5f9" id="blitz-impressions">—</div>
+        <div style="font-size:11px;color:#94a3b8" id="blitz-impressions-delta">vs previous week</div>
+      </div>
+      <div>
+        <div style="font-size:11px;color:#7dd3fc;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px">Avg Position</div>
+        <div style="font-size:24px;font-weight:700;color:#f1f5f9" id="blitz-position">—</div>
+        <div style="font-size:11px;color:#94a3b8" id="blitz-position-delta"></div>
+      </div>
+      <div>
+        <div style="font-size:11px;color:#7dd3fc;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px">Keywords Improved</div>
+        <div style="font-size:24px;font-weight:700;color:#22c55e" id="blitz-improved">—</div>
+        <div style="font-size:11px;color:#94a3b8">since Day 1</div>
+      </div>
+      <div>
+        <div style="font-size:11px;color:#7dd3fc;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px">IndexNow Submissions</div>
+        <div style="font-size:24px;font-weight:700;color:#f1f5f9" id="blitz-indexnow">—</div>
+        <div style="font-size:11px;color:#94a3b8">Bing + Yandex + Naver</div>
+      </div>
+    </div>
+    <div style="margin-top:14px;padding:10px 14px;background:rgba(14,165,233,0.1);border-radius:8px;font-size:12px;color:#bae6fd" id="blitz-note">
+      Aggressive 2-hourly submission active. Expect first ranking movements in 5–10 days.
+    </div>
+  </div>
+
   <!-- 🧠 AI BRAIN — autonomous monitor + fix proposer -->
   <div class="ai-card" id="ai-card" style="display:none">
     <h2>🧠 AI Brain
@@ -662,6 +697,53 @@
     } catch(e) { console.warn('KW chart error:', e.message); }
   }
 
+  // 7-day blitz: compute progress vs day-1 snapshot
+  function renderBlitz(history, kwData) {
+    // Find oldest entry within the last 8 days as "Day 1"
+    if (!history || history.length === 0) return;
+    var now = Date.now();
+    var weekAgo = now - 7 * 86400000;
+    var day1   = history.find(function(h) { return new Date(h.timestamp).getTime() <= weekAgo; });
+    var oldest = history[history.length - 1];
+    var baseline = day1 || oldest;
+    var today = history[0];
+
+    var dayNum = Math.min(7, Math.max(1, Math.ceil((now - new Date(baseline.timestamp).getTime()) / 86400000)));
+    document.getElementById('blitz-day-label').textContent = 'Day ' + dayNum + ' of 7';
+
+    // Submissions delta
+    var totalSubsToday = today.submitted || 0;
+    var totalSubsBase  = baseline.submitted || 0;
+    document.getElementById('blitz-submissions').textContent = totalSubsToday;
+    if (totalSubsBase > 0 && totalSubsToday !== totalSubsBase) {
+      var d = totalSubsToday - totalSubsBase;
+      document.getElementById('blitz-submissions-delta').innerHTML =
+        (d > 0 ? '<span style="color:#22c55e">+' + d + '</span>' : '<span style="color:#ef4444">' + d + '</span>') + ' vs Day 1';
+    }
+
+    // Impressions from keyword history
+    if (kwData && kwData.history && kwData.history.length > 0) {
+      var khToday = kwData.history[0];
+      var khBase  = kwData.history.find(function(h) { return new Date(h.timestamp).getTime() <= weekAgo; }) || kwData.history[kwData.history.length - 1];
+      document.getElementById('blitz-impressions').textContent = num(khToday.totalKeywords || 0) + ' kws';
+      if (khToday.avgPosition && khBase.avgPosition) {
+        document.getElementById('blitz-position').textContent = khToday.avgPosition;
+        var pDiff = khBase.avgPosition - khToday.avgPosition;
+        if (pDiff !== 0) {
+          document.getElementById('blitz-position-delta').innerHTML =
+            (pDiff > 0 ? '<span style="color:#22c55e">↑ ' + pDiff.toFixed(1) + ' positions</span>' : '<span style="color:#ef4444">↓ ' + Math.abs(pDiff).toFixed(1) + '</span>') + ' vs Day 1';
+        }
+      }
+      document.getElementById('blitz-improved').textContent = (khToday.improved || 0);
+    }
+
+    // IndexNow count from activity feed
+    var blitzCount = ALL_ACTIVITIES.filter(function(a) {
+      return a.title && a.title.indexOf('blitz') >= 0;
+    }).length;
+    document.getElementById('blitz-indexnow').textContent = blitzCount;
+  }
+
   function renderAI(ins) {
     if (!ins) return;
     var card = document.getElementById('ai-card');
@@ -921,6 +1003,7 @@
       renderHealth(hb);
       renderAI(ai);
       renderBriefs(report.contentBriefs || []);
+      renderBlitz(history, kwData);
 
       renderReport(report, history, kwData);
       loadChartJS(function() { renderReport(report, history, kwData); });

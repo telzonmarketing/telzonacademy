@@ -10,6 +10,7 @@ const { MetaAuditor } = require('../auditors/MetaAuditor');
 const { GitHubConnector } = require('../utils/GitHubConnector');
 const { GoogleSearchConsole } = require('../submitters/GoogleSearchConsole');
 const { IndexingAPISubmitter } = require('../submitters/IndexingAPISubmitter');
+const { IndexNowSubmitter } = require('../submitters/IndexNowSubmitter');
 const { IssueFixer } = require('../fixers/IssueFixer');
 const { Reporter } = require('../utils/Reporter');
 const { KeywordTracker } = require('../trackers/KeywordTracker');
@@ -209,6 +210,21 @@ class IndexingAgent {
     console.log(chalk.green(`\n✓ Submitted ${results.submitted.length} pages to Google`));
     if (results.failed.length > 0) {
       console.log(chalk.yellow(`  ${results.failed.length} pages failed — check report for details`));
+    }
+
+    // Also submit via IndexNow → Bing, Yandex, Naver, Seznam, Yep (free, instant)
+    console.log(chalk.cyan('\n  Notifying Bing/Yandex via IndexNow...'));
+    try {
+      const indexNow = new IndexNowSubmitter(this.config);
+      const inResult = await indexNow.submitBatch(pagesToSubmit);
+      this.results.indexNow = inResult;
+      if (inResult.submitted > 0) {
+        console.log(chalk.green(`  ✓ IndexNow: ${inResult.note}`));
+      } else {
+        console.log(chalk.yellow(`  ⚠ IndexNow: ${inResult.note || 'unknown error'}`));
+      }
+    } catch (err) {
+      console.log(chalk.yellow(`  IndexNow skipped: ${err.message}`));
     }
 
     return results;
