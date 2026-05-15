@@ -763,33 +763,34 @@
   }
 
   // 7-day blitz: compute progress vs day-1 snapshot
-  function renderBlitz(history, kwData) {
-    // Find oldest entry within the last 8 days as "Day 1"
+  function renderBlitz(history, kwData, report) {
     if (!history || history.length === 0) return;
     var now = Date.now();
-    var weekAgo = now - 7 * 86400000;
-    var day1   = history.find(function(h) { return new Date(h.timestamp).getTime() <= weekAgo; });
-    var oldest = history[history.length - 1];
-    var baseline = day1 || oldest;
-    var today = history[0];
 
-    var dayNum = Math.min(7, Math.max(1, Math.ceil((now - new Date(baseline.timestamp).getTime()) / 86400000)));
+    // Day counter: from the OLDEST entry, capped at 7. Floor at 1 so day-of-launch shows Day 1.
+    var oldest = history[history.length - 1];
+    var ageMs  = now - new Date(oldest.timestamp).getTime();
+    var dayNum = Math.min(7, Math.max(1, Math.ceil(ageMs / 86400000)));
     document.getElementById('blitz-day-label').textContent = 'Day ' + dayNum + ' of 7';
 
-    // Submissions delta
-    var totalSubsToday = today.submitted || 0;
-    var totalSubsBase  = baseline.submitted || 0;
-    document.getElementById('blitz-submissions').textContent = totalSubsToday;
-    if (totalSubsBase > 0 && totalSubsToday !== totalSubsBase) {
-      var d = totalSubsToday - totalSubsBase;
-      document.getElementById('blitz-submissions-delta').innerHTML =
-        (d > 0 ? '<span style="color:#22c55e">+' + d + '</span>' : '<span style="color:#ef4444">' + d + '</span>') + ' vs Day 1';
+    var today = history[0];
+    var baseline = history.find(function(h) { return new Date(h.timestamp).getTime() <= now - 6 * 86400000; }) || oldest;
+
+    // Submissions — show latest report's pagesSubmitted (the most recent run's count)
+    var submittedNow = (report && report.summary && report.summary.pagesSubmitted) || today.submitted || 0;
+    document.getElementById('blitz-submissions').textContent = submittedNow;
+    var deltaEl = document.getElementById('blitz-submissions-delta');
+    if (dayNum >= 2 && baseline.submitted != null) {
+      var d = submittedNow - (baseline.submitted || 0);
+      deltaEl.innerHTML = (d >= 0 ? '<span style="color:#22c55e">+' + d + '</span>' : '<span style="color:#ef4444">' + d + '</span>') + ' vs Day 1';
+    } else {
+      deltaEl.textContent = 'baseline (Day 1)';
     }
 
-    // Impressions from keyword history
+    // Impressions / position
     if (kwData && kwData.history && kwData.history.length > 0) {
       var khToday = kwData.history[0];
-      var khBase  = kwData.history.find(function(h) { return new Date(h.timestamp).getTime() <= weekAgo; }) || kwData.history[kwData.history.length - 1];
+      var khBase  = kwData.history.find(function(h) { return new Date(h.timestamp).getTime() <= now - 6 * 86400000; }) || kwData.history[kwData.history.length - 1];
       document.getElementById('blitz-impressions').textContent = num(khToday.totalKeywords || 0) + ' kws';
       if (khToday.avgPosition && khBase.avgPosition) {
         document.getElementById('blitz-position').textContent = khToday.avgPosition;
@@ -802,11 +803,21 @@
       document.getElementById('blitz-improved').textContent = (khToday.improved || 0);
     }
 
-    // IndexNow count from activity feed
-    var blitzCount = ALL_ACTIVITIES.filter(function(a) {
-      return a.title && a.title.indexOf('blitz') >= 0;
+    // IndexNow + Bing submission count from activity feed
+    var ixCount = ALL_ACTIVITIES.filter(function(a) {
+      return a.title && (/blitz|indexnow|bing/i.test(a.title));
     }).length;
-    document.getElementById('blitz-indexnow').textContent = blitzCount;
+    document.getElementById('blitz-indexnow').textContent = ixCount;
+  }
+
+  // Update the static Bing card status based on whether Bing submissions ran
+  function updateBingStatus(report) {
+    var bingActive = report && report.bingSubmissions && (report.bingSubmissions.submitted > 0 || report.bingSubmissions.failed > 0);
+    var el = document.getElementById('bing-status');
+    if (!el) return;
+    if (bingActive) {
+      el.innerHTML = '<span style="color:#22c55e">✓ Active · ' + (report.bingSubmissions.submitted || 0) + ' submitted last run</span>';
+    }
   }
 
   function renderLifecycle(tracker) {
@@ -1112,7 +1123,8 @@
       renderAI(ai);
       renderLifecycle(lc || report.issueTracker);
       renderBriefs(report.contentBriefs || []);
-      renderBlitz(history, kwData);
+      renderBlitz(history, kwData, report);
+      updateBingStatus(report);
 
       renderReport(report, history, kwData);
       loadChartJS(function() { renderReport(report, history, kwData); });

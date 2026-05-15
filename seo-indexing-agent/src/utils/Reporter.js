@@ -27,6 +27,7 @@ class Reporter {
       contentBriefs: results.contentBriefs || [],
       healthCheck: results.healthCheck || null,
       indexNow: results.indexNow || null,
+      bingSubmissions: results.bingSubmissions || null,
       issueTracker: results.issueTracker || null,
       issueActions: results.issueActions || [],
       solverEnrichments: results.solverEnrichments || [],
