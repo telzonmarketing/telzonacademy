@@ -257,6 +257,27 @@ jobs:
                 }
               }
 
+              // 6.7) External API solver enrichments
+              for (const e of (report.solverEnrichments || [])) {
+                if (e.result?.solved) {
+                  activities.unshift({
+                    timestamp: ts,
+                    type: 'win',
+                    icon: '🤝',
+                    title: `External API WIN via ${e.result.solverUsed}: "${e.title}"`,
+                    details: e.result.diagnosis?.summary || e.result.diagnosis?.message || '',
+                  });
+                } else if (e.result?.diagnosis) {
+                  activities.unshift({
+                    timestamp: ts,
+                    type: 'fix',
+                    icon: '🔬',
+                    title: `External API enriched "${e.title.slice(0, 60)}"`,
+                    details: e.result.diagnosis.summary || '',
+                  });
+                }
+              }
+
               // 7) Content briefs — opportunities to push keywords to page 1
               if (report.contentBriefs && report.contentBriefs.length > 0) {
                 activities.unshift({

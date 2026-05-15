@@ -18,6 +18,7 @@ const { HealthChecker } = require('../auditors/HealthChecker');
 const { BrokenLinkChecker } = require('../auditors/BrokenLinkChecker');
 const { ContentBriefGenerator } = require('../auditors/ContentBriefGenerator');
 const { PersistentFixer } = require('./PersistentFixer');
+const { SolverRegistry } = require('../solvers/SolverRegistry');
 
 class IndexingAgent {
   constructor(config = {}) {
@@ -306,6 +307,28 @@ class IndexingAgent {
       for (const w of wins.slice(0, 5)) {
         console.log(chalk.green(`     ✓ "${w.title}" — resolved after ${w.attempts} attempt${w.attempts === 1 ? '' : 's'}${w.daysToResolve ? ' over ' + w.daysToResolve + ' day' + (w.daysToResolve === 1 ? '' : 's') : ''}`));
       }
+    }
+
+    // Phase 4.7: SolverRegistry — call external free APIs to win stuck issues
+    const stuckIssues = Object.values(trkState.issues || {})
+      .filter(i => i.status === 'fixing' && (i.attempts?.length || 0) >= 2);
+    if (stuckIssues.length > 0) {
+      console.log(chalk.bold(`\n[ PHASE 4.7 ] ${stuckIssues.length} stuck issue(s) — invoking external API solvers\n`));
+      const registry = new SolverRegistry(this.config);
+      const enrichments = [];
+      for (const issue of stuckIssues.slice(0, 10)) {  // cap to avoid rate limits
+        const matches = registry.match(issue);
+        if (matches.length === 0) continue;
+        console.log(`  → "${issue.title.slice(0, 60)}..." — trying ${matches.map(s => s.name).join(', ')}`);
+        const result = await registry.solve(issue, { siteUrl: this.config.siteUrl });
+        if (result.solved) {
+          console.log(chalk.green(`    ✓ Solved by ${result.solverUsed}`));
+        } else if (result.diagnosis) {
+          console.log(chalk.cyan(`    ◐ Enriched diagnosis from ${result.attempts?.[0]?.solver}: ${result.diagnosis.summary || ''}`));
+        }
+        enrichments.push({ issueId: issue.id, title: issue.title, result });
+      }
+      this.results.solverEnrichments = enrichments;
     }
 
     // Phase 5: Content briefs — turn keyword opportunities into action items

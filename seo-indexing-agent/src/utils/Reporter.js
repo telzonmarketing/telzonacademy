@@ -29,6 +29,7 @@ class Reporter {
       indexNow: results.indexNow || null,
       issueTracker: results.issueTracker || null,
       issueActions: results.issueActions || [],
+      solverEnrichments: results.solverEnrichments || [],
       errors: results.errors,
     };
 
