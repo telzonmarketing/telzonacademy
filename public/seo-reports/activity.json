@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-16T23:10:30.736Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 249ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-05-16T22:38:31.551Z",
     "type": "aeo",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "✓",
     "title": "Run completed",
     "details": "Total: 64 pages · 7 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-05-15T19:50:51.105Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"64 pages appear to be client-side rendered only\" resolved after 3 attempts",
-    "details": "Took 1 day from first detection"
   }
 ]
