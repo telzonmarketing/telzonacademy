@@ -1,5 +1,47 @@
 [
   {
+    "timestamp": "2026-05-16T13:07:25.301Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): Few pages have question-style headings",
+    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
+  },
+  {
+    "timestamp": "2026-05-16T13:07:25.301Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-05-16T13:07:25.301Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): Only 0% of pages have structured data",
+    "details": "AI engines rely heavily on schema.org markup to understand and cite content."
+  },
+  {
+    "timestamp": "2026-05-16T13:07:25.301Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): llms.txt missing or unreachable",
+    "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking."
+  },
+  {
+    "timestamp": "2026-05-16T13:07:25.301Z",
+    "type": "error",
+    "icon": "🤖",
+    "title": "AEO issue (critical): AI crawlers not explicitly allowed in robots.txt",
+    "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data."
+  },
+  {
+    "timestamp": "2026-05-16T13:07:25.301Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 29/100 (F)",
+    "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-16T13:03:39.757Z",
     "type": "fix",
     "icon": "🤖",
@@ -1356,47 +1398,5 @@
     "icon": "🔁",
     "title": "Attempt #1: working on \"1 duplicate title tags found\"",
     "details": ""
-  },
-  {
-    "timestamp": "2026-05-15T19:28:12.446Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 Next.js pages fetch data client-side only",
-    "details": "Convert useEffect data fetching to server-side"
-  },
-  {
-    "timestamp": "2026-05-15T19:28:12.446Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 64 pages appear to be client-side rendered only",
-    "details": "Convert client-side rendered pages to Server Components"
-  },
-  {
-    "timestamp": "2026-05-15T19:28:12.446Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 64 pages missing H1 heading",
-    "details": "H1 headings help Google understand the primary topic of each page."
-  },
-  {
-    "timestamp": "2026-05-15T19:28:12.446Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 63 pages have incorrect canonical URL",
-    "details": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded."
-  },
-  {
-    "timestamp": "2026-05-15T19:28:12.446Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 duplicate title tags found",
-    "details": "Duplicate titles cause Google to pick which page to index, often ignoring the others."
-  },
-  {
-    "timestamp": "2026-05-15T19:28:12.446Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 64 pages",
-    "details": "Found 5 issues (3 critical, 1 important)"
   }
 ]

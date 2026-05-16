@@ -1,9 +1,15 @@
 {
-  "timestamp": "2026-05-16T13:03:39.757Z",
-  "pagesAudited": 65,
-  "score": 57,
-  "grade": "D",
+  "timestamp": "2026-05-16T13:07:25.301Z",
+  "pagesAudited": 1,
+  "score": 29,
+  "grade": "F",
   "issues": [
+    {
+      "severity": "critical",
+      "title": "AI crawlers not explicitly allowed in robots.txt",
+      "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data.",
+      "fix": "Add explicit User-agent: <bot> Allow: / blocks for each AI crawler"
+    },
     {
       "severity": "important",
       "title": "llms.txt missing or unreachable",
@@ -24,18 +30,21 @@
     },
     {
       "severity": "low",
+      "title": "Few pages have question-style headings",
+      "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility.",
+      "fix": "Convert some H2/H3 headings into questions matching real user queries"
+    },
+    {
+      "severity": "low",
       "title": "No Organization/EducationalOrganization schema found",
       "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy.",
       "fix": "Add Organization schema with name, url, address, sameAs on key pages"
     }
   ],
-  "strengths": [
-    "All 0 major AI crawlers explicitly allowed",
-    "65 pages have question-style headings"
-  ],
+  "strengths": [],
   "llms": {
-    "compactBytes": 18270,
-    "fullBytes": 71255
+    "compactBytes": 383,
+    "fullBytes": 91
   },
   "faqSuggestions": [],
   "visibility": {
