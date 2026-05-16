@@ -1,5 +1,82 @@
 [
   {
+    "timestamp": "2026-05-16T07:07:43.202Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 65 pages · 3 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-05-16T07:07:43.076Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"1 pages missing from sitemap\" needs human attention",
+    "details": "Auto-fix failed after 6 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-05-16T07:07:43.076Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"1 duplicate title tags found\" needs human attention",
+    "details": "Auto-fix failed after 10 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-05-16T07:07:43.076Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #4: working on \"65 pages missing canonical URL\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-05-16T07:07:43.076Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #10: working on \"1 duplicate title tags found\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-05-16T07:07:43.076Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #6: working on \"1 pages missing from sitemap\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-05-16T07:07:43.076Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 65 pages missing canonical URL",
+    "details": "Add canonical tags to all pages via Next.js metadata"
+  },
+  {
+    "timestamp": "2026-05-16T07:07:43.076Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 duplicate title tags found",
+    "details": "Duplicate titles cause Google to pick which page to index, often ignoring the others."
+  },
+  {
+    "timestamp": "2026-05-16T07:07:43.076Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 pages missing from sitemap",
+    "details": "Add 1 missing URLs to sitemap"
+  },
+  {
+    "timestamp": "2026-05-16T07:07:43.076Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 65 pages",
+    "details": "Found 3 issues (1 critical, 2 important)"
+  },
+  {
+    "timestamp": "2026-05-16T07:07:43.076Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot manual run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-05-16T07:02:42.809Z",
     "type": "done",
     "icon": "✓",
