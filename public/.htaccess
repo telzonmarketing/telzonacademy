@@ -54,11 +54,11 @@
   # ── SEO: Per-page canonical via HTTP Link header ──────────────────────────
   # Google, Bing, and modern crawlers honor canonical declared in HTTP Link
   # header exactly like <link rel="canonical">. This sets each request's URL
-  # as its own canonical — perfect for an SPA that can't easily set per-route
-  # canonicals in static HTML. Excludes /seo-reports/* (bot data files) and
-  # /assets/* (JS/CSS bundles).
+  # path (query string stripped) as its own canonical.
+  # SetEnvIf captures only the path portion (before any '?') into CANON_PATH.
+  SetEnvIf Request_URI "^([^?]*)" CANON_PATH=$1
   <If "%{REQUEST_URI} !~ m#^/(seo-reports|assets|.*\.(css|js|json|png|jpg|svg|ico|xml|txt))#">
-    Header always set Link "expr=<https://telzonacademy.in%{REQUEST_URI}>; rel=\"canonical\""
+    Header always set Link "<https://telzonacademy.in%{CANON_PATH}e>; rel=\"canonical\""
   </If>
 
   # ── Caching ────────────────────────────────────────────────────────────────
