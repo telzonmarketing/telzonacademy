@@ -1,5 +1,68 @@
 [
   {
+    "timestamp": "2026-05-16T13:37:32.482Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 65 pages · 2 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-05-16T13:37:32.356Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"1 pages missing from sitemap\" needs human attention",
+    "details": "Auto-fix failed after 10 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-05-16T13:37:32.356Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"1 duplicate title tags found\" needs human attention",
+    "details": "Auto-fix failed after 14 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-05-16T13:37:32.356Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #14: working on \"1 duplicate title tags found\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-05-16T13:37:32.356Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #10: working on \"1 pages missing from sitemap\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-05-16T13:37:32.356Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 duplicate title tags found",
+    "details": "Duplicate titles cause Google to pick which page to index, often ignoring the others."
+  },
+  {
+    "timestamp": "2026-05-16T13:37:32.356Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 pages missing from sitemap",
+    "details": "Add 1 missing URLs to sitemap"
+  },
+  {
+    "timestamp": "2026-05-16T13:37:32.356Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 65 pages",
+    "details": "Found 2 issues (1 critical, 1 important)"
+  },
+  {
+    "timestamp": "2026-05-16T13:37:32.356Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot manual run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-05-16T13:24:11.217Z",
     "type": "done",
     "icon": "✓",
@@ -1335,68 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 1 duplicate title tags found",
     "details": "Duplicate titles cause Google to pick which page to index, often ignoring the others."
-  },
-  {
-    "timestamp": "2026-05-15T19:44:25.992Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 64 pages",
-    "details": "Found 5 issues (3 critical, 1 important)"
-  },
-  {
-    "timestamp": "2026-05-15T19:44:25.992Z",
-    "type": "run",
-    "icon": "▶",
-    "title": "SEO bot manual run started",
-    "details": "Mode: full audit + fix + submit + keyword tracking"
-  },
-  {
-    "timestamp": "2026-05-15T19:37:35.960Z",
-    "type": "done",
-    "icon": "✓",
-    "title": "Run completed",
-    "details": "Total: 64 pages · 5 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-05-15T19:37:35.820Z",
-    "type": "fix",
-    "icon": "🔬",
-    "title": "External API enriched \"64 pages missing H1 heading\"",
-    "details": "W3C: 1 HTML errors, 9 warnings on https://telzonacademy.in/"
-  },
-  {
-    "timestamp": "2026-05-15T19:37:35.820Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #2: working on \"1 Next.js pages fetch data client-side only\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-15T19:37:35.820Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #2: working on \"64 pages appear to be client-side rendered only\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-15T19:37:35.820Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #2: working on \"64 pages missing H1 heading\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-15T19:37:35.820Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #2: working on \"63 pages have incorrect canonical URL\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-15T19:37:35.820Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #2: working on \"1 duplicate title tags found\"",
-    "details": ""
   }
 ]
