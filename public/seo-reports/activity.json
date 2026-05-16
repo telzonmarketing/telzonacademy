@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-16T20:36:40.753Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-05-16T19:59:12.711Z",
     "type": "aeo",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #1: working on \"63 pages missing H1 heading\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-15T19:50:51.105Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #1: working on \"62 pages have incorrect canonical URL\"",
     "details": ""
   }
 ]
