@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-16T22:07:04.072Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 337ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-05-16T21:41:21.143Z",
     "type": "aeo",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🏆",
     "title": "WON: \"63 pages have incorrect canonical URL\" resolved after 3 attempts",
     "details": "Took 1 day from first detection"
-  },
-  {
-    "timestamp": "2026-05-15T19:50:51.105Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #4: working on \"1 Next.js pages fetch data client-side only\"",
-    "details": ""
   }
 ]
