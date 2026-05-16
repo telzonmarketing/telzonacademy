@@ -55,7 +55,7 @@ class AEOAgent {
 
     // 3. AI-friendliness audit
     const aiAudit = new AICrawlerAuditor(this.config);
-    const aiAuditResult = aiAudit.audit(pages);
+    const aiAuditResult = await aiAudit.audit(pages);
     console.log(`  AI-friendliness score: ${chalk.bold(aiAuditResult.score + '/100')} (${aiAuditResult.grade})`);
 
     // 4. Generate FAQ schema suggestions for landing pages

@@ -2,6 +2,7 @@
 
 const axios = require('axios');
 const cheerio = require('cheerio');
+// AICrawlerAuditor now async — fetches robots.txt + llms.txt directly
 
 /**
  * AICrawlerAuditor — scores how AI-search-friendly the site is.
@@ -23,14 +24,14 @@ class AICrawlerAuditor {
     this.siteUrl = config.siteUrl;
   }
 
-  audit(pages) {
+  async audit(pages) {
     const issues    = [];
     const strengths = [];
     let score = 100;
 
-    // 1. AI crawler access in robots.txt
-    const robotsCheck = this._checkRobots(pages);
-    if (!robotsCheck.allowed) {
+    // 1. AI crawler access in robots.txt — fetched directly (not in pages[])
+    const robotsCheck = await this._checkRobots();
+    if (!robotsCheck.allowed.length) {
       score -= 20;
       issues.push({
         severity: 'critical',
@@ -38,13 +39,22 @@ class AICrawlerAuditor {
         details: `Missing: ${robotsCheck.missing.join(', ')}. AI engines may skip your site or use cached/stale data.`,
         fix: 'Add explicit User-agent: <bot> Allow: / blocks for each AI crawler',
       });
+    } else if (robotsCheck.missing.length) {
+      score -= Math.round(robotsCheck.missing.length * 2);
+      issues.push({
+        severity: 'low',
+        title: `${robotsCheck.missing.length} AI crawler(s) not explicitly allowed`,
+        details: `Allowed: ${robotsCheck.allowed.join(', ')}. Missing: ${robotsCheck.missing.join(', ')}.`,
+        fix: 'Add the missing User-agent blocks to robots.txt',
+      });
+      strengths.push(`${robotsCheck.allowed.length}/${robotsCheck.allowed.length + robotsCheck.missing.length} AI crawlers explicitly allowed`);
     } else {
       strengths.push(`All ${robotsCheck.allowed.length} major AI crawlers explicitly allowed`);
     }
 
-    // 2. llms.txt presence
-    const llmsPage = pages.find(p => p.url.endsWith('/llms.txt'));
-    if (!llmsPage || llmsPage.statusCode !== 200) {
+    // 2. llms.txt presence — fetch directly
+    const llmsOk = await this._checkLlmsTxt();
+    if (!llmsOk) {
       score -= 10;
       issues.push({
         severity: 'important',
@@ -130,9 +140,12 @@ class AICrawlerAuditor {
     };
   }
 
-  _checkRobots(pages) {
-    const robotsPage = pages.find(p => p.url.endsWith('/robots.txt'));
-    const text = robotsPage?.html || '';
+  async _checkRobots() {
+    let text = '';
+    try {
+      const res = await axios.get(`${this.siteUrl.replace(/\/$/, '')}/robots.txt`, { timeout: 10000 });
+      text = res.data || '';
+    } catch (_) {}
     const required = [
       'GPTBot', 'ClaudeBot', 'PerplexityBot', 'CCBot', 'Google-Extended',
       'anthropic-ai', 'ChatGPT-User', 'Applebot-Extended', 'Bytespider', 'cohere-ai',
@@ -140,6 +153,13 @@ class AICrawlerAuditor {
     const allowed = required.filter(bot => new RegExp(`User-agent:\\s*${bot}`, 'i').test(text));
     const missing = required.filter(bot => !allowed.includes(bot));
     return { allowed, missing };
+  }
+
+  async _checkLlmsTxt() {
+    try {
+      const res = await axios.get(`${this.siteUrl.replace(/\/$/, '')}/llms.txt`, { timeout: 10000 });
+      return res.status === 200 && res.data && res.data.length > 100;
+    } catch (_) { return false; }
   }
 }
 
