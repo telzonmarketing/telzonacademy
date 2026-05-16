@@ -1,32 +1,22 @@
 {
-  "timestamp": "2026-05-16T13:14:52.253Z",
+  "timestamp": "2026-05-16T13:47:19.755Z",
   "pagesAudited": 64,
-  "score": 67,
-  "grade": "C",
+  "score": 80,
+  "grade": "B",
   "issues": [
     {
-      "severity": "important",
-      "title": "Only 0% of pages have structured data",
-      "details": "AI engines rely heavily on schema.org markup to understand and cite content.",
-      "fix": "Add JSON-LD blocks (Course/FAQPage/Organization) to each page"
-    },
-    {
-      "severity": "important",
-      "title": "No FAQPage schema detected anywhere",
-      "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often.",
-      "fix": "Add FAQPage JSON-LD to landing pages with question/answer pairs"
-    },
-    {
-      "severity": "low",
-      "title": "No Organization/EducationalOrganization schema found",
-      "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy.",
-      "fix": "Add Organization schema with name, url, address, sameAs on key pages"
+      "severity": "critical",
+      "title": "AI crawlers not explicitly allowed in robots.txt",
+      "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data.",
+      "fix": "Add explicit User-agent: <bot> Allow: / blocks for each AI crawler"
     }
   ],
   "strengths": [
-    "All 10 major AI crawlers explicitly allowed",
     "llms.txt present at site root",
-    "64 pages have question-style headings"
+    "64/64 pages have structured data",
+    "64 pages have FAQPage schema",
+    "64 pages have question-style headings",
+    "64 pages declare Organization schema"
   ],
   "llms": {
     "compactBytes": 18005,
@@ -62,16 +52,5 @@
     "perplexityActive": false,
     "braveActive": false
   },
-  "aiCrawlers": [
-    "GPTBot",
-    "ClaudeBot",
-    "PerplexityBot",
-    "CCBot",
-    "Google-Extended",
-    "anthropic-ai",
-    "ChatGPT-User",
-    "Applebot-Extended",
-    "Bytespider",
-    "cohere-ai"
-  ]
+  "aiCrawlers": []
 }
