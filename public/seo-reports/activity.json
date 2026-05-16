@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-16T09:03:14.857Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 328ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-05-16T07:45:26.533Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 64 pages missing H1 heading",
     "details": "H1 headings help Google understand the primary topic of each page."
-  },
-  {
-    "timestamp": "2026-05-15T19:01:08.992Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 63 pages have incorrect canonical URL",
-    "details": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded."
   }
 ]
