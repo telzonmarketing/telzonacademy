@@ -1,0 +1,105 @@
+name: SEO AEO Heartbeat
+
+# Lightweight 5-minute AEO check. NOT a full crawl — just verifies:
+#  - llms.txt is reachable
+#  - robots.txt is reachable + AI bot block still present
+#  - One sample landing page is alive
+# Updates aeo-heartbeat.json which the dashboard polls every 60s,
+# giving a near-live feel without hitting site rate limits.
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'   # every 5 minutes
+  workflow_dispatch:
+
+jobs:
+  aeo-heartbeat:
+    name: AEO Heartbeat
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    if: "!contains(github.event.head_commit.message, 'chore(seo):')"
+    concurrency:
+      group: aeo-heartbeat
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN || github.token }}
+
+      - name: Run AEO heartbeat (no install — pure curl)
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+        run: |
+          set +e
+          mkdir -p public/seo-reports
+          NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          BASE="${SITE_URL%/}"
+
+          check() {
+            local path="$1"
+            local label="$2"
+            local start=$(date +%s%3N)
+            local status=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$BASE$path")
+            local elapsed=$(($(date +%s%3N) - start))
+            echo "{\"path\":\"$path\",\"label\":\"$label\",\"status\":$status,\"ok\":$([ "$status" = "200" ] && echo true || echo false),\"ms\":$elapsed}"
+          }
+
+          # Build the heartbeat JSON
+          {
+            echo "{"
+            echo "  \"timestamp\": \"$NOW\","
+            echo "  \"checks\": ["
+            check "/llms.txt"        "llms.txt"
+            echo ","
+            check "/llms-full.txt"   "llms-full.txt"
+            echo ","
+            check "/robots.txt"      "robots.txt"
+            echo ","
+            check "/sitemap.xml"     "sitemap.xml"
+            echo ","
+            check "/"                "homepage"
+            echo "  ],"
+
+            # AI-bot rule presence in robots.txt
+            ROBOTS=$(curl -s --max-time 10 "$BASE/robots.txt")
+            ALLOWED=0
+            for BOT in GPTBot ClaudeBot PerplexityBot CCBot Google-Extended anthropic-ai ChatGPT-User Applebot-Extended Bytespider cohere-ai; do
+              echo "$ROBOTS" | grep -qi "User-agent:[[:space:]]*$BOT" && ALLOWED=$((ALLOWED + 1))
+            done
+            echo "  \"aiBotsAllowed\": $ALLOWED,"
+            echo "  \"aiBotsRequired\": 10,"
+            echo "  \"healthy\": $([ "$ALLOWED" -ge 8 ] && echo true || echo false)"
+            echo "}"
+          } > public/seo-reports/aeo-heartbeat.json
+
+          cat public/seo-reports/aeo-heartbeat.json
+
+      - name: Commit + push heartbeat
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          script: |
+            const { execSync } = require('child_process');
+            execSync('git config user.name "SEO Bot"');
+            execSync('git config user.email "seo-bot@telzonacademy.in"');
+            execSync('git add public/seo-reports/aeo-heartbeat.json');
+            try {
+              execSync('git diff --cached --quiet || git commit -m "chore(seo): aeo-heartbeat"');
+              execSync('git push');
+            } catch (e) { console.log('Push:', e.message); }
+
+      - name: Deploy heartbeat to Hostinger
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host:     ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port:     65002
+          source:   "public/seo-reports/aeo-heartbeat.json"
+          target:   ${{ secrets.FTP_SERVER_DIR }}/seo-reports/
+          strip_components: 2
+          timeout:  30s
+        continue-on-error: true

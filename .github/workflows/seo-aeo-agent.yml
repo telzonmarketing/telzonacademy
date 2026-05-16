@@ -6,7 +6,7 @@ name: SEO AEO Agent
 
 on:
   schedule:
-    - cron: '45 4 * * *'   # 04:45 UTC = 10:15 IST — runs after AI monitor
+    - cron: '0 * * * *'    # every hour on the hour — full AEO scan
   workflow_dispatch:
 
 jobs:

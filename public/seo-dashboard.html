@@ -442,7 +442,10 @@
 
   <!-- 🤖 AEO — Answer Engine Optimization (ChatGPT/Claude/Perplexity/Gemini) -->
   <div class="card" id="aeo-card" style="display:none;background:linear-gradient(135deg,#3b0764 0%,#1e293b 100%);border-color:#a855f7">
-    <h2>🤖 AEO — Answer Engine Optimization <span style="font-size:12px;color:#d8b4fe;font-weight:400;margin-left:8px" id="aeo-meta">—</span></h2>
+    <h2>🤖 AEO — Answer Engine Optimization <span class="live-dot"></span>
+      <span style="font-size:12px;color:#d8b4fe;font-weight:400;margin-left:8px" id="aeo-meta">—</span>
+      <span style="font-size:11px;color:#86efac;font-weight:600;margin-left:8px" id="aeo-pulse">—</span>
+    </h2>
     <div style="display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin-top:12px;margin-bottom:14px">
       <div style="text-align:center;padding:14px 22px;background:rgba(168,85,247,0.15);border-radius:12px;border:1px solid #a855f7">
         <div style="font-size:36px;font-weight:800;color:#f1f5f9" id="aeo-score">—</div>
@@ -1018,13 +1021,22 @@
     }).join('');
   }
 
-  function renderAEO(aeo) {
-    if (!aeo) return;
+  function renderAEO(aeo, aeoHb) {
+    if (!aeo && !aeoHb) return;
     var card = document.getElementById('aeo-card');
     card.style.display = 'block';
-    document.getElementById('aeo-score').textContent = aeo.score != null ? aeo.score : '—';
-    document.getElementById('aeo-grade').textContent = aeo.grade || '—';
-    document.getElementById('aeo-meta').textContent  = 'Last scan ' + timeAgo(aeo.timestamp) + ' · ' + aeo.pagesAudited + ' pages audited';
+    if (aeo) {
+      document.getElementById('aeo-score').textContent = aeo.score != null ? aeo.score : '—';
+      document.getElementById('aeo-grade').textContent = aeo.grade || '—';
+      document.getElementById('aeo-meta').textContent  = 'Full scan ' + timeAgo(aeo.timestamp) + ' · ' + aeo.pagesAudited + ' pages';
+    }
+    // Live pulse — heartbeat ticks every 5 min
+    var pulseEl = document.getElementById('aeo-pulse');
+    if (aeoHb && pulseEl) {
+      var hbOk = aeoHb.healthy && (aeoHb.checks || []).every(function(c) { return c.ok; });
+      pulseEl.textContent = (hbOk ? '● ' : '○ ') + 'heartbeat ' + timeAgo(aeoHb.timestamp) + ' · ' + aeoHb.aiBotsAllowed + '/' + aeoHb.aiBotsRequired + ' bots';
+      pulseEl.style.color = hbOk ? '#86efac' : '#fca5a5';
+    }
 
     var v = aeo.visibility || {};
     document.getElementById('aeo-grid').innerHTML =
@@ -1284,7 +1296,7 @@
   async function load() {
     try {
       var t = Date.now();
-      var [reportRes, historyRes, kwRes, actRes, hbRes, aiRes, aeoRes, lcRes] = await Promise.all([
+      var [reportRes, historyRes, kwRes, actRes, hbRes, aiRes, aeoRes, aeoHbRes, lcRes] = await Promise.all([
         fetch('/seo-reports/latest.json?t=' + t),
         fetch('/seo-reports/history.json?t=' + t),
         fetch('/seo-reports/keywords.json?t=' + t),
@@ -1292,6 +1304,7 @@
         fetch('/seo-reports/heartbeat.json?t=' + t),
         fetch('/seo-reports/ai-insights.json?t=' + t),
         fetch('/seo-reports/aeo-report.json?t=' + t),
+        fetch('/seo-reports/aeo-heartbeat.json?t=' + t),
         fetch('/seo-reports/issue-tracker.json?t=' + t),
       ]);
 
@@ -1305,6 +1318,7 @@
       var hb;      try { hb      = hbRes.ok      ? await hbRes.json()      : null; } catch(e) { hb = null; }
       var ai;      try { ai      = aiRes.ok      ? await aiRes.json()      : null; } catch(e) { ai = null; }
       var aeo;     try { aeo     = aeoRes.ok     ? await aeoRes.json()     : null; } catch(e) { aeo = null; }
+      var aeoHb;   try { aeoHb   = aeoHbRes.ok   ? await aeoHbRes.json()   : null; } catch(e) { aeoHb = null; }
       var lc;      try { lc      = lcRes.ok      ? await lcRes.json()      : null; } catch(e) { lc = null; }
 
       ALL_ACTIVITIES = Array.isArray(acts) ? acts : [];
@@ -1312,7 +1326,7 @@
       renderActivities();
       renderHealth(hb);
       renderDailyProgress(kwData);
-      renderAEO(aeo);
+      renderAEO(aeo, aeoHb);
       renderAI(ai);
       renderLifecycle(lc || report.issueTracker);
       renderBriefs(report.contentBriefs || []);
