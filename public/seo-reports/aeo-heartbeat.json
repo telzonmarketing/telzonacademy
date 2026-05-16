@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-05-16T13:28:32Z",
+  "checks": [
+{"path":"/llms.txt","label":"llms.txt","status":403,"ok":false,"ms":273}
+,
+{"path":"/llms-full.txt","label":"llms-full.txt","status":403,"ok":false,"ms":219}
+,
+{"path":"/robots.txt","label":"robots.txt","status":403,"ok":false,"ms":216}
+,
+{"path":"/sitemap.xml","label":"sitemap.xml","status":403,"ok":false,"ms":216}
+,
+{"path":"/","label":"homepage","status":403,"ok":false,"ms":218}
+  ],
+  "aiBotsAllowed": 0,
+  "aiBotsRequired": 10,
+  "healthy": false
+}
