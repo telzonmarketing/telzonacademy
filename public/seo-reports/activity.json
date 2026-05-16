@@ -1,5 +1,40 @@
 [
   {
+    "timestamp": "2026-05-16T13:03:39.757Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
+    "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
+  },
+  {
+    "timestamp": "2026-05-16T13:03:39.757Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-05-16T13:03:39.757Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): Only 0% of pages have structured data",
+    "details": "AI engines rely heavily on schema.org markup to understand and cite content."
+  },
+  {
+    "timestamp": "2026-05-16T13:03:39.757Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): llms.txt missing or unreachable",
+    "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking."
+  },
+  {
+    "timestamp": "2026-05-16T13:03:39.757Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 57/100 (D)",
+    "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-16T13:01:24.814Z",
     "type": "fix",
     "icon": "🤖",
@@ -1363,40 +1398,5 @@
     "icon": "🕷",
     "title": "Crawled 64 pages",
     "details": "Found 5 issues (3 critical, 1 important)"
-  },
-  {
-    "timestamp": "2026-05-15T19:28:12.446Z",
-    "type": "run",
-    "icon": "▶",
-    "title": "SEO bot manual run started",
-    "details": "Mode: full audit + fix + submit + keyword tracking"
-  },
-  {
-    "timestamp": "2026-05-15T19:20:25.239Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-05-15T19:16:40.748Z",
-    "type": "done",
-    "icon": "✓",
-    "title": "Run completed",
-    "details": "Total: 64 pages · 5 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-05-15T19:16:40.617Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 Next.js pages fetch data client-side only",
-    "details": "Convert useEffect data fetching to server-side"
-  },
-  {
-    "timestamp": "2026-05-15T19:16:40.617Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 64 pages appear to be client-side rendered only",
-    "details": "Convert client-side rendered pages to Server Components"
   }
 ]
