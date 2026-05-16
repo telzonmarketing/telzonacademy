@@ -1,41 +1,20 @@
 {
-  "timestamp": "2026-05-16T13:52:30.943Z",
-  "pagesAudited": 0,
-  "score": 57,
-  "grade": "D",
-  "issues": [
-    {
-      "severity": "important",
-      "title": "llms.txt missing or unreachable",
-      "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking.",
-      "fix": "AEO agent will generate it on next run"
-    },
-    {
-      "severity": "important",
-      "title": "Only 0% of pages have structured data",
-      "details": "AI engines rely heavily on schema.org markup to understand and cite content.",
-      "fix": "Add JSON-LD blocks (Course/FAQPage/Organization) to each page"
-    },
-    {
-      "severity": "important",
-      "title": "No FAQPage schema detected anywhere",
-      "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often.",
-      "fix": "Add FAQPage JSON-LD to landing pages with question/answer pairs"
-    },
-    {
-      "severity": "low",
-      "title": "No Organization/EducationalOrganization schema found",
-      "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy.",
-      "fix": "Add Organization schema with name, url, address, sameAs on key pages"
-    }
-  ],
+  "timestamp": "2026-05-16T14:07:05.517Z",
+  "pagesAudited": 64,
+  "score": 100,
+  "grade": "A",
+  "issues": [],
   "strengths": [
     "All 10 major AI crawlers explicitly allowed",
-    "0 pages have question-style headings"
+    "llms.txt present at site root",
+    "64/64 pages have structured data",
+    "64 pages have FAQPage schema",
+    "64 pages have question-style headings",
+    "64 pages declare Organization schema"
   ],
   "llms": {
-    "compactBytes": 0,
-    "fullBytes": 0
+    "compactBytes": 18005,
+    "fullBytes": 70170
   },
   "faqSuggestions": [],
   "visibility": {

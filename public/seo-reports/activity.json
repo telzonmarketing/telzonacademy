@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-16T14:07:05.517Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 100/100 (A)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-16T14:01:36.350Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1391,12 +1398,5 @@
     "icon": "✓",
     "title": "Run completed",
     "details": "Total: 64 pages · 5 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-05-15T19:44:25.992Z",
-    "type": "fix",
-    "icon": "🔬",
-    "title": "External API enriched \"64 pages missing H1 heading\"",
-    "details": "W3C: 1 HTML errors, 9 warnings on https://telzonacademy.in/"
   }
 ]
