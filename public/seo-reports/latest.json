@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-05-15T19:53:47.434Z",
+  "timestamp": "2026-05-16T04:59:37.555Z",
   "summary": {
     "pagesFound": 65,
-    "issuesFound": 6,
-    "critical": 4,
-    "important": 1,
-    "low": 1,
-    "issuesFixed": 6,
+    "issuesFound": 5,
+    "critical": 3,
+    "important": 2,
+    "low": 0,
+    "issuesFixed": 5,
     "pagesSubmitted": 0,
     "avgPosition": null,
     "totalKeywords": 0
@@ -175,9 +175,74 @@
       "fix": "FIX_DUPLICATE_TITLES"
     },
     {
+      "type": "MISSING_CANONICAL",
+      "severity": "important",
+      "title": "56 pages missing canonical URL",
+      "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
+      "affectedUrls": [
+        "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
+        "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-near-me",
+        "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
+        "https://telzonacademy.in/pages/marketing-school-in-nagpur",
+        "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/seo-course-in-nagpur",
+        "https://telzonacademy.in/pages/google-ads-course-nagpur",
+        "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/content-marketing-course-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur",
+        "https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-services-in-nagpur",
+        "https://telzonacademy.in/pages/seo-services-in-nagpur",
+        "https://telzonacademy.in/pages/seo-freelancer-in-nagpur",
+        "https://telzonacademy.in/pages/social-media-marketing-agency-in-nagpur",
+        "https://telzonacademy.in/pages/top-10-digital-marketing-institutes-in-nagpur",
+        "https://telzonacademy.in/pages/top-digital-marketing-courses-in-nagpur-2026",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-dharampeth-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-sitabuldi-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-sadar-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-pratap-nagar-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-ramdaspeth-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-jobs-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-salary-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-career-after-12th-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-for-students-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-after-graduation-nagpur",
+        "https://telzonacademy.in/pages/weekend-digital-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-in-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-civil-lines-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-itwari-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-gandhibagh-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-wardhaman-nagar-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-manewada-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-hingna-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-amravati-road-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-wardha-road-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-katol-road-nagpur",
+        "https://telzonacademy.in/pages/digital-marketing-course-in-kamptee-road-nagpur",
+        "https://telzonacademy.in/pages/facebook-ads-course-in-nagpur",
+        "https://telzonacademy.in/pages/instagram-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/youtube-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/linkedin-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/email-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/google-ads-course-in-nagpur"
+      ],
+      "fix": "ADD_CANONICAL_TAGS"
+    },
+    {
       "type": "WRONG_CANONICAL",
       "severity": "critical",
-      "title": "64 pages have incorrect canonical URL",
+      "title": "8 pages have incorrect canonical URL",
       "description": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
       "affectedUrls": [
         {
@@ -211,352 +276,9 @@
         {
           "url": "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
           "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-near-me",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/marketing-school-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/seo-course-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/google-ads-course-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/content-marketing-course-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-services-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/seo-services-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/seo-freelancer-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/social-media-marketing-agency-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/top-10-digital-marketing-institutes-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/top-digital-marketing-courses-in-nagpur-2026",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-dharampeth-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-sitabuldi-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-sadar-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-pratap-nagar-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-ramdaspeth-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-jobs-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-salary-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-career-after-12th-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-for-students-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-after-graduation-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/weekend-digital-marketing-course-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-civil-lines-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-itwari-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-gandhibagh-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-wardhaman-nagar-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-manewada-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-hingna-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-amravati-road-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-wardha-road-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-katol-road-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-in-kamptee-road-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/facebook-ads-course-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/instagram-marketing-course-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/youtube-marketing-course-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/linkedin-marketing-course-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/email-marketing-course-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
-        },
-        {
-          "url": "https://telzonacademy.in/pages/google-ads-course-in-nagpur",
-          "canonical": "https://telzonacademy.in/"
         }
       ],
       "fix": "FIX_CANONICAL_TAGS"
-    },
-    {
-      "type": "MISSING_H1",
-      "severity": "low",
-      "title": "32 pages missing H1 heading",
-      "description": "H1 headings help Google understand the primary topic of each page.",
-      "affectedUrls": [
-        "https://telzonacademy.in/",
-        "https://telzonacademy.in/blog",
-        "https://telzonacademy.in/lead-generation-package",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
-        "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-institute-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-with-placement-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
-        "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-near-me",
-        "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
-        "https://telzonacademy.in/pages/marketing-school-in-nagpur",
-        "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/seo-course-in-nagpur",
-        "https://telzonacademy.in/pages/google-ads-course-nagpur",
-        "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/content-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur",
-        "https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-services-in-nagpur",
-        "https://telzonacademy.in/pages/seo-services-in-nagpur"
-      ],
-      "fix": "ADD_H1_TAGS"
-    },
-    {
-      "type": "CLIENT_SIDE_RENDERING",
-      "severity": "critical",
-      "title": "32 pages appear to be client-side rendered only",
-      "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
-      "affectedUrls": [
-        "https://telzonacademy.in/",
-        "https://telzonacademy.in/blog",
-        "https://telzonacademy.in/lead-generation-package",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
-        "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-institute-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-with-placement-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
-        "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-near-me",
-        "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
-        "https://telzonacademy.in/pages/marketing-school-in-nagpur",
-        "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/seo-course-in-nagpur",
-        "https://telzonacademy.in/pages/google-ads-course-nagpur",
-        "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/content-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur",
-        "https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-services-in-nagpur",
-        "https://telzonacademy.in/pages/seo-services-in-nagpur"
-      ],
-      "fix": "ENABLE_SSR",
-      "fixData": {
-        "pages": [
-          "https://telzonacademy.in/",
-          "https://telzonacademy.in/blog",
-          "https://telzonacademy.in/lead-generation-package",
-          "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
-          "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-institute-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-course-with-placement-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
-          "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-course-near-me",
-          "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
-          "https://telzonacademy.in/pages/marketing-school-in-nagpur",
-          "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
-          "https://telzonacademy.in/pages/seo-course-in-nagpur",
-          "https://telzonacademy.in/pages/google-ads-course-nagpur",
-          "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
-          "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
-          "https://telzonacademy.in/pages/content-marketing-course-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur",
-          "https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-services-in-nagpur",
-          "https://telzonacademy.in/pages/seo-services-in-nagpur"
-        ],
-        "framework": "vite-react"
-      }
     },
     {
       "type": "NEXTJS_CLIENT_FETCH",
@@ -581,7 +303,7 @@
     {
       "issue": "1 pages missing from sitemap",
       "description": "Add 1 missing URLs to sitemap",
-      "code": "<!-- Add these entries to your sitemap.xml -->\n  <url>\n    <loc>https://telzonacademy.in/pages/google-ads-course-in-nagpur</loc>\n    <lastmod>2026-05-15</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>",
+      "code": "<!-- Add these entries to your sitemap.xml -->\n  <url>\n    <loc>https://telzonacademy.in/pages/google-ads-course-in-nagpur</loc>\n    <lastmod>2026-05-16</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>",
       "instruction": "These URLs were found by crawling but are not in your sitemap. Add them to app/sitemap.ts or sitemap.xml."
     },
     {
@@ -590,19 +312,15 @@
       "instruction": "Manual fix required for: DUPLICATE_TITLES. See audit report for details."
     },
     {
-      "issue": "64 pages have incorrect canonical URL",
+      "issue": "56 pages missing canonical URL",
+      "description": "Add canonical tags to all pages via Next.js metadata",
+      "code": "// app/layout.tsx — add canonical to root layout\nexport const metadata = {\n  alternates: {\n    canonical: '/',  // relative canonicals work in Next.js 13+\n  },\n}\n\n// app/blog/[slug]/page.tsx — dynamic canonical\nexport async function generateMetadata({ params }) {\n  return {\n    alternates: {\n      canonical: `https://yoursite.com/blog/${params.slug}`,\n    },\n  }\n}",
+      "fileChange": null
+    },
+    {
+      "issue": "8 pages have incorrect canonical URL",
       "description": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
       "instruction": "Manual fix required for: WRONG_CANONICAL. See audit report for details."
-    },
-    {
-      "issue": "32 pages missing H1 heading",
-      "description": "H1 headings help Google understand the primary topic of each page.",
-      "instruction": "Manual fix required for: MISSING_H1. See audit report for details."
-    },
-    {
-      "issue": "32 pages appear to be client-side rendered only",
-      "description": "Convert client-side rendered pages to Server Components",
-      "code": "// BEFORE — client-side only (Googlebot sees empty page):\n'use client'\nimport { useEffect, useState } from 'react'\nexport default function Page() {\n  const [data, setData] = useState(null)\n  useEffect(() => { fetch('/api/data').then(r => r.json()).then(setData) }, [])\n  if (!data) return <div>Loading...</div>\n  return <div>{data.title}</div>\n}\n\n// AFTER — Server Component (Googlebot sees full content instantly):\n// No 'use client' directive needed\nexport default async function Page() {\n  const data = await fetch('https://api.example.com/data', {\n    next: { revalidate: 3600 }  // ISR: revalidate every hour\n  }).then(r => r.json())\n  return <div>{data.title}</div>\n}"
     },
     {
       "issue": "1 Next.js pages fetch data client-side only",
@@ -654,7 +372,7 @@
         "description": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
         "status": "escalated",
         "detectedAt": "2026-05-15T19:28:12.445Z",
-        "lastSeenAt": "2026-05-15T19:53:47.433Z",
+        "lastSeenAt": "2026-05-16T04:59:37.554Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:28:12.445Z",
@@ -680,11 +398,16 @@
             "timestamp": "2026-05-15T19:53:47.433Z",
             "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
             "file": null
+          },
+          {
+            "timestamp": "2026-05-16T04:59:37.554Z",
+            "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:28:12.445Z",
-        "escalatedAt": "2026-05-15T19:53:47.433Z",
-        "escalationReason": "Issue persists after 5 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-05-16T04:59:37.554Z",
+        "escalationReason": "Issue persists after 6 auto-fix attempts. Needs human intervention."
       },
       "7b1a0fe7305b": {
         "id": "7b1a0fe7305b",
@@ -784,7 +507,7 @@
         "description": "Pages using useEffect+fetch render empty for Googlebot. Convert to getStaticProps, getServerSideProps, or async Server Components.",
         "status": "escalated",
         "detectedAt": "2026-05-15T19:28:12.445Z",
-        "lastSeenAt": "2026-05-15T19:53:47.433Z",
+        "lastSeenAt": "2026-05-16T04:59:37.554Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:28:12.445Z",
@@ -810,11 +533,16 @@
             "timestamp": "2026-05-15T19:53:47.433Z",
             "strategy": "Convert useEffect data fetching to server-side",
             "file": null
+          },
+          {
+            "timestamp": "2026-05-16T04:59:37.554Z",
+            "strategy": "Convert useEffect data fetching to server-side",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:28:12.445Z",
-        "escalatedAt": "2026-05-15T19:53:47.433Z",
-        "escalationReason": "Issue persists after 5 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-05-16T04:59:37.554Z",
+        "escalationReason": "Issue persists after 6 auto-fix attempts. Needs human intervention."
       },
       "daa3e6f34fda": {
         "id": "daa3e6f34fda",
@@ -924,10 +652,15 @@
         "description": "These crawlable pages are not in your sitemap — Google won't prioritise discovering them.",
         "status": "fixing",
         "detectedAt": "2026-05-15T19:53:47.433Z",
-        "lastSeenAt": "2026-05-15T19:53:47.433Z",
+        "lastSeenAt": "2026-05-16T04:59:37.554Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:53:47.433Z",
+            "strategy": "Add 1 missing URLs to sitemap",
+            "file": null
+          },
+          {
+            "timestamp": "2026-05-16T04:59:37.554Z",
             "strategy": "Add 1 missing URLs to sitemap",
             "file": null
           }
@@ -940,7 +673,7 @@
         "severity": "critical",
         "title": "64 pages have incorrect canonical URL",
         "description": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
-        "status": "fixing",
+        "status": "resolved",
         "detectedAt": "2026-05-15T19:53:47.433Z",
         "lastSeenAt": "2026-05-15T19:53:47.433Z",
         "attempts": [
@@ -950,7 +683,9 @@
             "file": null
           }
         ],
-        "firstSeenRun": "2026-05-15T19:53:47.433Z"
+        "firstSeenRun": "2026-05-15T19:53:47.433Z",
+        "resolvedAt": "2026-05-16T04:59:37.554Z",
+        "daysToResolve": 1
       },
       "c2f98ac075b8": {
         "id": "c2f98ac075b8",
@@ -958,7 +693,7 @@
         "severity": "low",
         "title": "32 pages missing H1 heading",
         "description": "H1 headings help Google understand the primary topic of each page.",
-        "status": "fixing",
+        "status": "resolved",
         "detectedAt": "2026-05-15T19:53:47.433Z",
         "lastSeenAt": "2026-05-15T19:53:47.433Z",
         "attempts": [
@@ -968,7 +703,9 @@
             "file": null
           }
         ],
-        "firstSeenRun": "2026-05-15T19:53:47.433Z"
+        "firstSeenRun": "2026-05-15T19:53:47.433Z",
+        "resolvedAt": "2026-05-16T04:59:37.554Z",
+        "daysToResolve": 1
       },
       "e1740c1abfb9": {
         "id": "e1740c1abfb9",
@@ -976,7 +713,7 @@
         "severity": "critical",
         "title": "32 pages appear to be client-side rendered only",
         "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
-        "status": "fixing",
+        "status": "resolved",
         "detectedAt": "2026-05-15T19:53:47.433Z",
         "lastSeenAt": "2026-05-15T19:53:47.433Z",
         "attempts": [
@@ -986,107 +723,115 @@
             "file": null
           }
         ],
-        "firstSeenRun": "2026-05-15T19:53:47.433Z"
+        "firstSeenRun": "2026-05-15T19:53:47.433Z",
+        "resolvedAt": "2026-05-16T04:59:37.554Z",
+        "daysToResolve": 1
+      },
+      "4134fe8c6983": {
+        "id": "4134fe8c6983",
+        "type": "MISSING_CANONICAL",
+        "severity": "important",
+        "title": "56 pages missing canonical URL",
+        "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
+        "status": "fixing",
+        "detectedAt": "2026-05-16T04:59:37.554Z",
+        "lastSeenAt": "2026-05-16T04:59:37.554Z",
+        "attempts": [
+          {
+            "timestamp": "2026-05-16T04:59:37.554Z",
+            "strategy": "Add canonical tags to all pages via Next.js metadata",
+            "file": null
+          }
+        ],
+        "firstSeenRun": "2026-05-16T04:59:37.554Z"
+      },
+      "bc898f53e32d": {
+        "id": "bc898f53e32d",
+        "type": "WRONG_CANONICAL",
+        "severity": "critical",
+        "title": "8 pages have incorrect canonical URL",
+        "description": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
+        "status": "fixing",
+        "detectedAt": "2026-05-16T04:59:37.554Z",
+        "lastSeenAt": "2026-05-16T04:59:37.554Z",
+        "attempts": [
+          {
+            "timestamp": "2026-05-16T04:59:37.554Z",
+            "strategy": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
+            "file": null
+          }
+        ],
+        "firstSeenRun": "2026-05-16T04:59:37.554Z"
       }
     },
     "stats": {
       "open": 0,
-      "fixing": 4,
-      "resolved": 8,
+      "fixing": 3,
+      "resolved": 11,
       "escalated": 2,
       "regressed": 0
     },
-    "lastReconciled": "2026-05-15T19:53:47.433Z"
+    "lastReconciled": "2026-05-16T04:59:37.554Z"
   },
   "issueActions": [
     {
-      "id": "53924c1b51a7",
+      "id": "4134fe8c6983",
       "type": "opened",
-      "title": "1 pages missing from sitemap"
+      "title": "56 pages missing canonical URL"
     },
     {
-      "id": "746e26a5ef46",
+      "id": "bc898f53e32d",
       "type": "opened",
-      "title": "64 pages have incorrect canonical URL"
-    },
-    {
-      "id": "c2f98ac075b8",
-      "type": "opened",
-      "title": "32 pages missing H1 heading"
-    },
-    {
-      "id": "e1740c1abfb9",
-      "type": "opened",
-      "title": "32 pages appear to be client-side rendered only"
+      "title": "8 pages have incorrect canonical URL"
     },
     {
       "id": "53924c1b51a7",
       "type": "fix-attempted",
       "title": "1 pages missing from sitemap",
-      "attempt": 1
+      "attempt": 2
     },
     {
       "id": "c79a5c8cc207",
       "type": "fix-attempted",
       "title": "1 duplicate title tags found",
-      "attempt": 5
+      "attempt": 6
+    },
+    {
+      "id": "4134fe8c6983",
+      "type": "fix-attempted",
+      "title": "56 pages missing canonical URL",
+      "attempt": 1
+    },
+    {
+      "id": "bc898f53e32d",
+      "type": "fix-attempted",
+      "title": "8 pages have incorrect canonical URL",
+      "attempt": 1
+    },
+    {
+      "id": "68149022932d",
+      "type": "fix-attempted",
+      "title": "1 Next.js pages fetch data client-side only",
+      "attempt": 6
     },
     {
       "id": "746e26a5ef46",
-      "type": "fix-attempted",
+      "type": "resolved",
       "title": "64 pages have incorrect canonical URL",
-      "attempt": 1
+      "daysToResolve": 1,
+      "attempts": 1
     },
     {
       "id": "c2f98ac075b8",
-      "type": "fix-attempted",
+      "type": "resolved",
       "title": "32 pages missing H1 heading",
-      "attempt": 1
+      "daysToResolve": 1,
+      "attempts": 1
     },
     {
       "id": "e1740c1abfb9",
-      "type": "fix-attempted",
+      "type": "resolved",
       "title": "32 pages appear to be client-side rendered only",
-      "attempt": 1
-    },
-    {
-      "id": "68149022932d",
-      "type": "fix-attempted",
-      "title": "1 Next.js pages fetch data client-side only",
-      "attempt": 5
-    },
-    {
-      "id": "daa3e6f34fda",
-      "type": "resolved",
-      "title": "1 pages missing canonical URL",
-      "daysToResolve": 1,
-      "attempts": 1
-    },
-    {
-      "id": "382282935c57",
-      "type": "resolved",
-      "title": "62 pages have incorrect canonical URL",
-      "daysToResolve": 1,
-      "attempts": 1
-    },
-    {
-      "id": "8c182c135a37",
-      "type": "resolved",
-      "title": "63 pages missing H1 heading",
-      "daysToResolve": 1,
-      "attempts": 1
-    },
-    {
-      "id": "c2bcb0cbe37f",
-      "type": "resolved",
-      "title": "1 pages return error status codes",
-      "daysToResolve": 1,
-      "attempts": 1
-    },
-    {
-      "id": "7d874f3ebe0c",
-      "type": "resolved",
-      "title": "63 pages appear to be client-side rendered only",
       "daysToResolve": 1,
       "attempts": 1
     },
@@ -1094,13 +839,13 @@
       "id": "c79a5c8cc207",
       "type": "escalated",
       "title": "1 duplicate title tags found",
-      "attempts": 5
+      "attempts": 6
     },
     {
       "id": "68149022932d",
       "type": "escalated",
       "title": "1 Next.js pages fetch data client-side only",
-      "attempts": 5
+      "attempts": 6
     }
   ],
   "solverEnrichments": [],

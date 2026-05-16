@@ -8,7 +8,7 @@
       "description": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
       "status": "escalated",
       "detectedAt": "2026-05-15T19:28:12.445Z",
-      "lastSeenAt": "2026-05-15T19:53:47.433Z",
+      "lastSeenAt": "2026-05-16T04:59:37.554Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:28:12.445Z",
@@ -34,11 +34,16 @@
           "timestamp": "2026-05-15T19:53:47.433Z",
           "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
           "file": null
+        },
+        {
+          "timestamp": "2026-05-16T04:59:37.554Z",
+          "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-05-15T19:28:12.445Z",
-      "escalatedAt": "2026-05-15T19:53:47.433Z",
-      "escalationReason": "Issue persists after 5 auto-fix attempts. Needs human intervention."
+      "escalatedAt": "2026-05-16T04:59:37.554Z",
+      "escalationReason": "Issue persists after 6 auto-fix attempts. Needs human intervention."
     },
     "7b1a0fe7305b": {
       "id": "7b1a0fe7305b",
@@ -138,7 +143,7 @@
       "description": "Pages using useEffect+fetch render empty for Googlebot. Convert to getStaticProps, getServerSideProps, or async Server Components.",
       "status": "escalated",
       "detectedAt": "2026-05-15T19:28:12.445Z",
-      "lastSeenAt": "2026-05-15T19:53:47.433Z",
+      "lastSeenAt": "2026-05-16T04:59:37.554Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:28:12.445Z",
@@ -164,11 +169,16 @@
           "timestamp": "2026-05-15T19:53:47.433Z",
           "strategy": "Convert useEffect data fetching to server-side",
           "file": null
+        },
+        {
+          "timestamp": "2026-05-16T04:59:37.554Z",
+          "strategy": "Convert useEffect data fetching to server-side",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-05-15T19:28:12.445Z",
-      "escalatedAt": "2026-05-15T19:53:47.433Z",
-      "escalationReason": "Issue persists after 5 auto-fix attempts. Needs human intervention."
+      "escalatedAt": "2026-05-16T04:59:37.554Z",
+      "escalationReason": "Issue persists after 6 auto-fix attempts. Needs human intervention."
     },
     "daa3e6f34fda": {
       "id": "daa3e6f34fda",
@@ -278,10 +288,15 @@
       "description": "These crawlable pages are not in your sitemap — Google won't prioritise discovering them.",
       "status": "fixing",
       "detectedAt": "2026-05-15T19:53:47.433Z",
-      "lastSeenAt": "2026-05-15T19:53:47.433Z",
+      "lastSeenAt": "2026-05-16T04:59:37.554Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:53:47.433Z",
+          "strategy": "Add 1 missing URLs to sitemap",
+          "file": null
+        },
+        {
+          "timestamp": "2026-05-16T04:59:37.554Z",
           "strategy": "Add 1 missing URLs to sitemap",
           "file": null
         }
@@ -294,7 +309,7 @@
       "severity": "critical",
       "title": "64 pages have incorrect canonical URL",
       "description": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
-      "status": "fixing",
+      "status": "resolved",
       "detectedAt": "2026-05-15T19:53:47.433Z",
       "lastSeenAt": "2026-05-15T19:53:47.433Z",
       "attempts": [
@@ -304,7 +319,9 @@
           "file": null
         }
       ],
-      "firstSeenRun": "2026-05-15T19:53:47.433Z"
+      "firstSeenRun": "2026-05-15T19:53:47.433Z",
+      "resolvedAt": "2026-05-16T04:59:37.554Z",
+      "daysToResolve": 1
     },
     "c2f98ac075b8": {
       "id": "c2f98ac075b8",
@@ -312,7 +329,7 @@
       "severity": "low",
       "title": "32 pages missing H1 heading",
       "description": "H1 headings help Google understand the primary topic of each page.",
-      "status": "fixing",
+      "status": "resolved",
       "detectedAt": "2026-05-15T19:53:47.433Z",
       "lastSeenAt": "2026-05-15T19:53:47.433Z",
       "attempts": [
@@ -322,7 +339,9 @@
           "file": null
         }
       ],
-      "firstSeenRun": "2026-05-15T19:53:47.433Z"
+      "firstSeenRun": "2026-05-15T19:53:47.433Z",
+      "resolvedAt": "2026-05-16T04:59:37.554Z",
+      "daysToResolve": 1
     },
     "e1740c1abfb9": {
       "id": "e1740c1abfb9",
@@ -330,7 +349,7 @@
       "severity": "critical",
       "title": "32 pages appear to be client-side rendered only",
       "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
-      "status": "fixing",
+      "status": "resolved",
       "detectedAt": "2026-05-15T19:53:47.433Z",
       "lastSeenAt": "2026-05-15T19:53:47.433Z",
       "attempts": [
@@ -340,15 +359,53 @@
           "file": null
         }
       ],
-      "firstSeenRun": "2026-05-15T19:53:47.433Z"
+      "firstSeenRun": "2026-05-15T19:53:47.433Z",
+      "resolvedAt": "2026-05-16T04:59:37.554Z",
+      "daysToResolve": 1
+    },
+    "4134fe8c6983": {
+      "id": "4134fe8c6983",
+      "type": "MISSING_CANONICAL",
+      "severity": "important",
+      "title": "56 pages missing canonical URL",
+      "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
+      "status": "fixing",
+      "detectedAt": "2026-05-16T04:59:37.554Z",
+      "lastSeenAt": "2026-05-16T04:59:37.554Z",
+      "attempts": [
+        {
+          "timestamp": "2026-05-16T04:59:37.554Z",
+          "strategy": "Add canonical tags to all pages via Next.js metadata",
+          "file": null
+        }
+      ],
+      "firstSeenRun": "2026-05-16T04:59:37.554Z"
+    },
+    "bc898f53e32d": {
+      "id": "bc898f53e32d",
+      "type": "WRONG_CANONICAL",
+      "severity": "critical",
+      "title": "8 pages have incorrect canonical URL",
+      "description": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
+      "status": "fixing",
+      "detectedAt": "2026-05-16T04:59:37.554Z",
+      "lastSeenAt": "2026-05-16T04:59:37.554Z",
+      "attempts": [
+        {
+          "timestamp": "2026-05-16T04:59:37.554Z",
+          "strategy": "Canonical pointing to a different page tells Google to index that page instead — your page will be excluded.",
+          "file": null
+        }
+      ],
+      "firstSeenRun": "2026-05-16T04:59:37.554Z"
     }
   },
   "stats": {
     "open": 0,
-    "fixing": 4,
-    "resolved": 8,
+    "fixing": 3,
+    "resolved": 11,
     "escalated": 2,
     "regressed": 0
   },
-  "lastReconciled": "2026-05-15T19:53:47.433Z"
+  "lastReconciled": "2026-05-16T04:59:37.554Z"
 }
