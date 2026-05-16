@@ -386,6 +386,30 @@
 
   <hr class="divider" />
 
+  <!-- 🤖 AEO — Answer Engine Optimization (ChatGPT/Claude/Perplexity/Gemini) -->
+  <div class="card" id="aeo-card" style="display:none;background:linear-gradient(135deg,#3b0764 0%,#1e293b 100%);border-color:#a855f7">
+    <h2>🤖 AEO — Answer Engine Optimization <span style="font-size:12px;color:#d8b4fe;font-weight:400;margin-left:8px" id="aeo-meta">—</span></h2>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin-top:12px;margin-bottom:14px">
+      <div style="text-align:center;padding:14px 22px;background:rgba(168,85,247,0.15);border-radius:12px;border:1px solid #a855f7">
+        <div style="font-size:36px;font-weight:800;color:#f1f5f9" id="aeo-score">—</div>
+        <div style="font-size:11px;color:#d8b4fe;text-transform:uppercase;letter-spacing:0.5px;margin-top:2px">AI score</div>
+        <div style="font-size:18px;font-weight:700;color:#fde047;margin-top:6px" id="aeo-grade">—</div>
+      </div>
+      <div style="font-size:13px;color:#e9d5ff;line-height:1.6" id="aeo-summary">
+        Optimizing visibility on ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews. Different signals than classic SEO — llms.txt, FAQPage schema, explicit AI crawler permissions.
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:14px" id="aeo-grid"></div>
+    <div style="margin-bottom:10px">
+      <strong style="color:#d8b4fe;font-size:13px">⚠️ AEO Issues</strong>
+      <div id="aeo-issues" style="margin-top:6px"></div>
+    </div>
+    <div>
+      <strong style="color:#86efac;font-size:13px">✓ Strengths</strong>
+      <div id="aeo-strengths" style="margin-top:6px;font-size:12px;color:#94a3b8"></div>
+    </div>
+  </div>
+
   <!-- 7-Day Blitz Progress -->
   <div class="card" id="blitz-card" style="background:linear-gradient(135deg,#0c4a6e 0%,#1e293b 100%);border-color:#0ea5e9">
     <h2>⚡ 7-Day Blitz Progress <span style="font-size:12px;color:#7dd3fc;font-weight:400;margin-left:8px" id="blitz-day-label">Day 1 of 7</span></h2>
@@ -861,6 +885,38 @@
     }).join('');
   }
 
+  function renderAEO(aeo) {
+    if (!aeo) return;
+    var card = document.getElementById('aeo-card');
+    card.style.display = 'block';
+    document.getElementById('aeo-score').textContent = aeo.score != null ? aeo.score : '—';
+    document.getElementById('aeo-grade').textContent = aeo.grade || '—';
+    document.getElementById('aeo-meta').textContent  = 'Last scan ' + timeAgo(aeo.timestamp) + ' · ' + aeo.pagesAudited + ' pages audited';
+
+    var v = aeo.visibility || {};
+    document.getElementById('aeo-grid').innerHTML =
+      '<div style="background:rgba(15,23,42,0.6);border:1px solid #334155;border-radius:8px;padding:12px"><div style="font-size:11px;color:#d8b4fe;text-transform:uppercase">AI Crawlers Allowed</div><div style="font-size:20px;font-weight:700;color:#f1f5f9;margin-top:2px">' + (aeo.aiCrawlers?.length || 0) + ' / 10</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">' + (aeo.aiCrawlers || []).slice(0,3).join(', ') + (aeo.aiCrawlers?.length > 3 ? ' +' + (aeo.aiCrawlers.length - 3) : '') + '</div></div>' +
+      '<div style="background:rgba(15,23,42,0.6);border:1px solid #334155;border-radius:8px;padding:12px"><div style="font-size:11px;color:#d8b4fe;text-transform:uppercase">FAQ Schemas Suggested</div><div style="font-size:20px;font-weight:700;color:#f1f5f9;margin-top:2px">' + (aeo.faqSuggestions?.length || 0) + '</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">Pages ready for FAQPage injection</div></div>' +
+      '<div style="background:rgba(15,23,42,0.6);border:1px solid #334155;border-radius:8px;padding:12px"><div style="font-size:11px;color:#d8b4fe;text-transform:uppercase">AI Visibility</div><div style="font-size:20px;font-weight:700;color:#f1f5f9;margin-top:2px">' + (v.citingCount || 0) + ' / ' + (v.checked || 0) + '</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">engines citing site</div></div>' +
+      '<div style="background:rgba(15,23,42,0.6);border:1px solid #334155;border-radius:8px;padding:12px"><div style="font-size:11px;color:#d8b4fe;text-transform:uppercase">llms.txt</div><div style="font-size:20px;font-weight:700;color:#22c55e;margin-top:2px">✓ Live</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">' + Math.round((aeo.llms?.compactBytes || 0)/1024) + 'KB · auto-refreshed daily</div></div>';
+
+    var iEl = document.getElementById('aeo-issues');
+    if ((aeo.issues || []).length === 0) {
+      iEl.innerHTML = '<div style="color:#22c55e;font-size:12px;margin-top:4px">No AEO issues detected ✓</div>';
+    } else {
+      iEl.innerHTML = aeo.issues.slice(0, 5).map(function(i) {
+        return '<div style="padding:8px 0;border-top:1px solid #1e293b;font-size:12px"><span class="ai-tag ' + (i.severity || 'medium') + '">' + i.severity + '</span><span style="color:#f1f5f9">' + i.title + '</span><div style="color:#94a3b8;margin-top:2px">' + (i.details || '') + '</div><div style="color:#86efac;margin-top:2px">→ Fix: ' + (i.fix || '') + '</div></div>';
+      }).join('');
+    }
+
+    var sEl = document.getElementById('aeo-strengths');
+    if ((aeo.strengths || []).length === 0) {
+      sEl.textContent = '—';
+    } else {
+      sEl.innerHTML = aeo.strengths.map(function(s) { return '• ' + s; }).join('<br>');
+    }
+  }
+
   function renderAI(ins) {
     if (!ins) return;
     var card = document.getElementById('ai-card');
@@ -1095,13 +1151,14 @@
   async function load() {
     try {
       var t = Date.now();
-      var [reportRes, historyRes, kwRes, actRes, hbRes, aiRes, lcRes] = await Promise.all([
+      var [reportRes, historyRes, kwRes, actRes, hbRes, aiRes, aeoRes, lcRes] = await Promise.all([
         fetch('/seo-reports/latest.json?t=' + t),
         fetch('/seo-reports/history.json?t=' + t),
         fetch('/seo-reports/keywords.json?t=' + t),
         fetch('/seo-reports/activity.json?t=' + t),
         fetch('/seo-reports/heartbeat.json?t=' + t),
         fetch('/seo-reports/ai-insights.json?t=' + t),
+        fetch('/seo-reports/aeo-report.json?t=' + t),
         fetch('/seo-reports/issue-tracker.json?t=' + t),
       ]);
 
@@ -1114,12 +1171,14 @@
       var acts;    try { acts    = actRes.ok     ? await actRes.json()     : []; }   catch(e) { acts = []; }
       var hb;      try { hb      = hbRes.ok      ? await hbRes.json()      : null; } catch(e) { hb = null; }
       var ai;      try { ai      = aiRes.ok      ? await aiRes.json()      : null; } catch(e) { ai = null; }
+      var aeo;     try { aeo     = aeoRes.ok     ? await aeoRes.json()     : null; } catch(e) { aeo = null; }
       var lc;      try { lc      = lcRes.ok      ? await lcRes.json()      : null; } catch(e) { lc = null; }
 
       ALL_ACTIVITIES = Array.isArray(acts) ? acts : [];
       setupActivityFilters();
       renderActivities();
       renderHealth(hb);
+      renderAEO(aeo);
       renderAI(ai);
       renderLifecycle(lc || report.issueTracker);
       renderBriefs(report.contentBriefs || []);

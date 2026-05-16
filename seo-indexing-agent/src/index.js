@@ -82,6 +82,18 @@ program
   });
 
 program
+  .command('aeo')
+  .description('AEO — Answer Engine Optimization for ChatGPT/Claude/Perplexity/Gemini')
+  .option('-u, --url <url>', 'Website URL')
+  .action(async (opts) => {
+    const { AEOAgent } = require('./aeo/AEOAgent');
+    const agent = new AEOAgent({
+      siteUrl: opts.url || process.env.SITE_URL,
+    });
+    await agent.run();
+  });
+
+program
   .command('ai-monitor')
   .description('AI brain — analyse recent reports with Claude, surface bugs/anomalies/fixes')
   .action(async () => {
