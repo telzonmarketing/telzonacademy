@@ -1,5 +1,33 @@
 [
   {
+    "timestamp": "2026-05-16T13:14:52.253Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
+    "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
+  },
+  {
+    "timestamp": "2026-05-16T13:14:52.253Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-05-16T13:14:52.253Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): Only 0% of pages have structured data",
+    "details": "AI engines rely heavily on schema.org markup to understand and cite content."
+  },
+  {
+    "timestamp": "2026-05-16T13:14:52.253Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 67/100 (C)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-16T13:07:25.301Z",
     "type": "fix",
     "icon": "🤖",
@@ -1369,34 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #1: working on \"1 Next.js pages fetch data client-side only\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-15T19:28:12.446Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #1: working on \"64 pages appear to be client-side rendered only\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-15T19:28:12.446Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #1: working on \"64 pages missing H1 heading\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-15T19:28:12.446Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #1: working on \"63 pages have incorrect canonical URL\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-15T19:28:12.446Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #1: working on \"1 duplicate title tags found\"",
     "details": ""
   }
 ]
