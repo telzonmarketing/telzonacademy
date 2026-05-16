@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-16T17:17:03.826Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 322ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-05-16T16:49:16.954Z",
     "type": "aeo",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 1 pages return error status codes",
     "details": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget."
-  },
-  {
-    "timestamp": "2026-05-15T19:50:51.105Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 63 pages missing H1 heading",
-    "details": "H1 headings help Google understand the primary topic of each page."
   }
 ]
