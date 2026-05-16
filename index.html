@@ -31,8 +31,14 @@
   <title>Digital Marketing Course in Nagpur | Free Demo | Telzon Academy</title>
   <meta name="description" content="Join Telzon Academy — Nagpur's top digital marketing institute. Practical SEO, Google Ads, social media training with 95% placement. Free demo class available." />
 
-  <!-- Fix /index.html duplicate — canonical always points to / -->
-  <link rel="canonical" href="https://telzonacademy.in/" />
+  <!--
+    NO static canonical here — react-helmet sets the correct per-route
+    canonical on JS execution. If we hardcode <link rel="canonical" />
+    pointing to /, EVERY inner page (served the same index.html by the
+    SPA fallback) gets canonicalized to homepage, telling Google to
+    ignore all 63 landing pages. Crawlers with no canonical at all
+    default to using the request URL as canonical — which is correct.
+  -->
 
   <!-- Google tag (GA4) — GT-5DHFK99D links G-R1JR4H02F1 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5DHFK99D"></script>
