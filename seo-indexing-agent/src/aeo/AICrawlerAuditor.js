@@ -145,7 +145,7 @@ class AICrawlerAuditor {
     try {
       const res = await axios.get(`${this.siteUrl.replace(/\/$/, '')}/robots.txt`, {
         timeout: 10000,
-        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AEO-Auditor/1.0; +https://telzonacademy.in)' },
+        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
       });
       text = res.data || '';
     } catch (_) {}
@@ -162,7 +162,7 @@ class AICrawlerAuditor {
     try {
       const res = await axios.get(`${this.siteUrl.replace(/\/$/, '')}/llms.txt`, {
         timeout: 10000,
-        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AEO-Auditor/1.0; +https://telzonacademy.in)' },
+        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
       });
       return res.status === 200 && res.data && res.data.length > 100;
     } catch (_) { return false; }

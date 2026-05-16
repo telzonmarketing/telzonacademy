@@ -128,7 +128,7 @@ class AEOAgent {
         const res = await axios.get(url, {
           timeout: 12000,
           validateStatus: () => true,
-          headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AEO-Auditor/1.0; +https://telzonacademy.in)' },
+          headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
         });
         if (res.status >= 200 && res.status < 400) {
           const $ = cheerio.load(res.data || '');
