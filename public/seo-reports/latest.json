@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-16T07:20:28.102Z",
+  "timestamp": "2026-05-16T13:24:11.115Z",
   "summary": {
     "pagesFound": 65,
     "issuesFound": 2,
@@ -232,7 +232,7 @@
         "description": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
         "status": "escalated",
         "detectedAt": "2026-05-15T19:28:12.445Z",
-        "lastSeenAt": "2026-05-16T07:20:28.102Z",
+        "lastSeenAt": "2026-05-16T13:24:11.114Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:28:12.445Z",
@@ -293,11 +293,16 @@
             "timestamp": "2026-05-16T07:20:28.102Z",
             "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
             "file": null
+          },
+          {
+            "timestamp": "2026-05-16T13:24:11.114Z",
+            "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:28:12.445Z",
-        "escalatedAt": "2026-05-16T07:20:28.102Z",
-        "escalationReason": "Issue persists after 12 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-05-16T13:24:11.114Z",
+        "escalationReason": "Issue persists after 13 auto-fix attempts. Needs human intervention."
       },
       "7b1a0fe7305b": {
         "id": "7b1a0fe7305b",
@@ -559,7 +564,7 @@
         "description": "These crawlable pages are not in your sitemap — Google won't prioritise discovering them.",
         "status": "escalated",
         "detectedAt": "2026-05-15T19:53:47.433Z",
-        "lastSeenAt": "2026-05-16T07:20:28.102Z",
+        "lastSeenAt": "2026-05-16T13:24:11.114Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:53:47.433Z",
@@ -600,11 +605,16 @@
             "timestamp": "2026-05-16T07:20:28.102Z",
             "strategy": "Add 1 missing URLs to sitemap",
             "file": null
+          },
+          {
+            "timestamp": "2026-05-16T13:24:11.114Z",
+            "strategy": "Add 1 missing URLs to sitemap",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:53:47.433Z",
-        "escalatedAt": "2026-05-16T07:20:28.102Z",
-        "escalationReason": "Issue persists after 8 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-05-16T13:24:11.114Z",
+        "escalationReason": "Issue persists after 9 auto-fix attempts. Needs human intervention."
       },
       "746e26a5ef46": {
         "id": "746e26a5ef46",
@@ -749,46 +759,32 @@
       "escalated": 3,
       "regressed": 0
     },
-    "lastReconciled": "2026-05-16T07:20:28.102Z"
+    "lastReconciled": "2026-05-16T13:24:11.114Z"
   },
   "issueActions": [
     {
       "id": "53924c1b51a7",
       "type": "fix-attempted",
       "title": "1 pages missing from sitemap",
-      "attempt": 8
+      "attempt": 9
     },
     {
       "id": "c79a5c8cc207",
       "type": "fix-attempted",
       "title": "1 duplicate title tags found",
-      "attempt": 12
-    },
-    {
-      "id": "daa3e6f34fda",
-      "type": "resolved",
-      "title": "1 pages missing canonical URL",
-      "daysToResolve": 1,
-      "attempts": 2
-    },
-    {
-      "id": "c2bcb0cbe37f",
-      "type": "resolved",
-      "title": "1 pages return error status codes",
-      "daysToResolve": 1,
-      "attempts": 2
+      "attempt": 13
     },
     {
       "id": "c79a5c8cc207",
       "type": "escalated",
       "title": "1 duplicate title tags found",
-      "attempts": 12
+      "attempts": 13
     },
     {
       "id": "53924c1b51a7",
       "type": "escalated",
       "title": "1 pages missing from sitemap",
-      "attempts": 8
+      "attempts": 9
     }
   ],
   "solverEnrichments": [],
