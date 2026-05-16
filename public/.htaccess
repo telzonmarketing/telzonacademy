@@ -2,6 +2,12 @@
   RewriteEngine On
   RewriteBase /
 
+  # ── SEO: 301 redirect /index.html → / so Google consolidates signals ──
+  # GSC currently shows /index.html as a separate URL with 66 impressions,
+  # splitting authority from / (which has 1,571 impressions). 301 fixes it.
+  RewriteCond %{THE_REQUEST} ^GET\s/index\.html[\s?] [NC]
+  RewriteRule ^index\.html$ / [R=301,L]
+
   # Block common vulnerability scanners and exploit paths
   RewriteCond %{REQUEST_URI} ^/(wp-admin|wp-login|xmlrpc|phpmyadmin|\.env|\.git|config\.php|shell\.php|eval-stdin) [NC]
   RewriteRule ^ - [F,L]
