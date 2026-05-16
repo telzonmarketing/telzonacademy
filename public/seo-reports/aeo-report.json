@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-05-16T13:01:24.814Z",
+  "pagesAudited": 65,
+  "score": 57,
+  "grade": "D",
+  "issues": [
+    {
+      "severity": "important",
+      "title": "llms.txt missing or unreachable",
+      "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking.",
+      "fix": "AEO agent will generate it on next run"
+    },
+    {
+      "severity": "important",
+      "title": "Only 0% of pages have structured data",
+      "details": "AI engines rely heavily on schema.org markup to understand and cite content.",
+      "fix": "Add JSON-LD blocks (Course/FAQPage/Organization) to each page"
+    },
+    {
+      "severity": "important",
+      "title": "No FAQPage schema detected anywhere",
+      "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often.",
+      "fix": "Add FAQPage JSON-LD to landing pages with question/answer pairs"
+    },
+    {
+      "severity": "low",
+      "title": "No Organization/EducationalOrganization schema found",
+      "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy.",
+      "fix": "Add Organization schema with name, url, address, sameAs on key pages"
+    }
+  ],
+  "strengths": [
+    "All 0 major AI crawlers explicitly allowed",
+    "65 pages have question-style headings"
+  ],
+  "llms": {
+    "compactBytes": 18270,
+    "fullBytes": 71255
+  },
+  "faqSuggestions": [],
+  "visibility": {
+    "checked": 3,
+    "citingCount": 0,
+    "perEngine": [
+      {
+        "query": "best digital marketing course in nagpur",
+        "source": "duckduckgo",
+        "cited": false,
+        "position": null,
+        "competitors": []
+      },
+      {
+        "query": "digital marketing institute nagpur",
+        "source": "duckduckgo",
+        "cited": false,
+        "position": null,
+        "competitors": []
+      },
+      {
+        "query": "telzon academy",
+        "source": "duckduckgo",
+        "cited": false,
+        "position": null,
+        "competitors": []
+      }
+    ],
+    "perplexityActive": false,
+    "braveActive": false
+  },
+  "aiCrawlers": []
+}
