@@ -143,7 +143,10 @@ class AICrawlerAuditor {
   async _checkRobots() {
     let text = '';
     try {
-      const res = await axios.get(`${this.siteUrl.replace(/\/$/, '')}/robots.txt`, { timeout: 10000 });
+      const res = await axios.get(`${this.siteUrl.replace(/\/$/, '')}/robots.txt`, {
+        timeout: 10000,
+        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AEO-Auditor/1.0; +https://telzonacademy.in)' },
+      });
       text = res.data || '';
     } catch (_) {}
     const required = [
@@ -157,7 +160,10 @@ class AICrawlerAuditor {
 
   async _checkLlmsTxt() {
     try {
-      const res = await axios.get(`${this.siteUrl.replace(/\/$/, '')}/llms.txt`, { timeout: 10000 });
+      const res = await axios.get(`${this.siteUrl.replace(/\/$/, '')}/llms.txt`, {
+        timeout: 10000,
+        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AEO-Auditor/1.0; +https://telzonacademy.in)' },
+      });
       return res.status === 200 && res.data && res.data.length > 100;
     } catch (_) { return false; }
   }

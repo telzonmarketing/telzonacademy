@@ -107,7 +107,10 @@ class AEOAgent {
   async _fetchSitemapUrls(siteUrl) {
     const base = siteUrl.replace(/\/$/, '');
     try {
-      const res = await axios.get(`${base}/sitemap.xml`, { timeout: 15000 });
+      const res = await axios.get(`${base}/sitemap.xml`, {
+        timeout: 15000,
+        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AEO-Auditor/1.0; +https://telzonacademy.in)' },
+      });
       const matches = [...(res.data || '').matchAll(/<loc>([^<]+)<\/loc>/g)];
       return matches.map(m => m[1]);
     } catch (e) {
@@ -125,7 +128,7 @@ class AEOAgent {
         const res = await axios.get(url, {
           timeout: 12000,
           validateStatus: () => true,
-          headers: { 'User-Agent': 'SEOIndexingAgent/1.0 (AEO scan; +https://telzonacademy.in)' },
+          headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AEO-Auditor/1.0; +https://telzonacademy.in)' },
         });
         if (res.status >= 200 && res.status < 400) {
           const $ = cheerio.load(res.data || '');
