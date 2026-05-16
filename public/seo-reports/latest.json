@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-05-16T07:07:43.076Z",
+  "timestamp": "2026-05-16T07:14:56.431Z",
   "summary": {
     "pagesFound": 65,
-    "issuesFound": 3,
-    "critical": 1,
+    "issuesFound": 4,
+    "critical": 2,
     "important": 2,
     "low": 0,
-    "issuesFixed": 3,
+    "issuesFixed": 4,
     "pagesSubmitted": 0,
     "avgPosition": null,
     "totalKeywords": 0
@@ -42,7 +42,6 @@
         "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur",
         "https://telzonacademy.in/pages/digital-marketing-institute-nagpur",
         "https://telzonacademy.in/pages/digital-marketing-course-with-placement-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
         "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
         "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
         "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
@@ -112,7 +111,6 @@
             "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur",
             "https://telzonacademy.in/pages/digital-marketing-institute-nagpur",
             "https://telzonacademy.in/pages/digital-marketing-course-with-placement-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
             "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
             "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
             "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
@@ -177,76 +175,25 @@
     {
       "type": "MISSING_CANONICAL",
       "severity": "important",
-      "title": "65 pages missing canonical URL",
+      "title": "1 pages missing canonical URL",
       "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
       "affectedUrls": [
-        "https://telzonacademy.in/",
-        "https://telzonacademy.in/blog",
-        "https://telzonacademy.in/lead-generation-package",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
-        "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-institute-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-with-placement-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
-        "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-near-me",
-        "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
-        "https://telzonacademy.in/pages/marketing-school-in-nagpur",
-        "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/seo-course-in-nagpur",
-        "https://telzonacademy.in/pages/google-ads-course-nagpur",
-        "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/content-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur",
-        "https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-services-in-nagpur",
-        "https://telzonacademy.in/pages/seo-services-in-nagpur",
-        "https://telzonacademy.in/pages/seo-freelancer-in-nagpur",
-        "https://telzonacademy.in/pages/social-media-marketing-agency-in-nagpur",
-        "https://telzonacademy.in/pages/top-10-digital-marketing-institutes-in-nagpur",
-        "https://telzonacademy.in/pages/top-digital-marketing-courses-in-nagpur-2026",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-dharampeth-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-sitabuldi-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-sadar-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-pratap-nagar-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-ramdaspeth-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-jobs-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-salary-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-career-after-12th-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-for-students-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-after-graduation-nagpur",
-        "https://telzonacademy.in/pages/weekend-digital-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-civil-lines-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-itwari-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-gandhibagh-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-wardhaman-nagar-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-manewada-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-hingna-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-amravati-road-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-wardha-road-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-katol-road-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-kamptee-road-nagpur",
-        "https://telzonacademy.in/pages/facebook-ads-course-in-nagpur",
-        "https://telzonacademy.in/pages/instagram-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/youtube-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/linkedin-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/email-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/google-ads-course-in-nagpur"
+        "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur"
       ],
       "fix": "ADD_CANONICAL_TAGS"
+    },
+    {
+      "type": "ERROR_PAGES",
+      "severity": "critical",
+      "title": "1 pages return error status codes",
+      "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+      "affectedUrls": [
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
+          "status": 404
+        }
+      ],
+      "fix": "FIX_ERROR_PAGES"
     }
   ],
   "fixes": [
@@ -262,10 +209,15 @@
       "instruction": "Manual fix required for: DUPLICATE_TITLES. See audit report for details."
     },
     {
-      "issue": "65 pages missing canonical URL",
+      "issue": "1 pages missing canonical URL",
       "description": "Add canonical tags to all pages via Next.js metadata",
       "code": "// app/layout.tsx — add canonical to root layout\nexport const metadata = {\n  alternates: {\n    canonical: '/',  // relative canonicals work in Next.js 13+\n  },\n}\n\n// app/blog/[slug]/page.tsx — dynamic canonical\nexport async function generateMetadata({ params }) {\n  return {\n    alternates: {\n      canonical: `https://yoursite.com/blog/${params.slug}`,\n    },\n  }\n}",
       "fileChange": null
+    },
+    {
+      "issue": "1 pages return error status codes",
+      "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+      "instruction": "Manual fix required for: ERROR_PAGES. See audit report for details."
     }
   ],
   "submitted": [],
@@ -312,7 +264,7 @@
         "description": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
         "status": "escalated",
         "detectedAt": "2026-05-15T19:28:12.445Z",
-        "lastSeenAt": "2026-05-16T07:07:43.075Z",
+        "lastSeenAt": "2026-05-16T07:14:56.430Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:28:12.445Z",
@@ -363,11 +315,16 @@
             "timestamp": "2026-05-16T07:07:43.075Z",
             "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
             "file": null
+          },
+          {
+            "timestamp": "2026-05-16T07:14:56.430Z",
+            "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:28:12.445Z",
-        "escalatedAt": "2026-05-16T07:07:43.075Z",
-        "escalationReason": "Issue persists after 10 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-05-16T07:14:56.430Z",
+        "escalationReason": "Issue persists after 11 auto-fix attempts. Needs human intervention."
       },
       "7b1a0fe7305b": {
         "id": "7b1a0fe7305b",
@@ -515,19 +472,25 @@
         "severity": "important",
         "title": "1 pages missing canonical URL",
         "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
-        "status": "resolved",
+        "status": "fixing",
         "detectedAt": "2026-05-15T19:50:51.103Z",
-        "lastSeenAt": "2026-05-15T19:50:51.103Z",
+        "lastSeenAt": "2026-05-16T07:14:56.430Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:50:51.103Z",
+            "strategy": "Add canonical tags to all pages via Next.js metadata",
+            "file": null
+          },
+          {
+            "timestamp": "2026-05-16T07:14:56.430Z",
             "strategy": "Add canonical tags to all pages via Next.js metadata",
             "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:50:51.103Z",
         "resolvedAt": "2026-05-15T19:53:47.433Z",
-        "daysToResolve": 1
+        "daysToResolve": 1,
+        "regressedAt": "2026-05-16T07:14:56.430Z"
       },
       "382282935c57": {
         "id": "382282935c57",
@@ -575,19 +538,25 @@
         "severity": "critical",
         "title": "1 pages return error status codes",
         "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
-        "status": "resolved",
+        "status": "fixing",
         "detectedAt": "2026-05-15T19:50:51.103Z",
-        "lastSeenAt": "2026-05-15T19:50:51.103Z",
+        "lastSeenAt": "2026-05-16T07:14:56.430Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:50:51.103Z",
+            "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+            "file": null
+          },
+          {
+            "timestamp": "2026-05-16T07:14:56.430Z",
             "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
             "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:50:51.103Z",
         "resolvedAt": "2026-05-15T19:53:47.433Z",
-        "daysToResolve": 1
+        "daysToResolve": 1,
+        "regressedAt": "2026-05-16T07:14:56.430Z"
       },
       "7d874f3ebe0c": {
         "id": "7d874f3ebe0c",
@@ -617,7 +586,7 @@
         "description": "These crawlable pages are not in your sitemap — Google won't prioritise discovering them.",
         "status": "escalated",
         "detectedAt": "2026-05-15T19:53:47.433Z",
-        "lastSeenAt": "2026-05-16T07:07:43.075Z",
+        "lastSeenAt": "2026-05-16T07:14:56.430Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:53:47.433Z",
@@ -648,11 +617,16 @@
             "timestamp": "2026-05-16T07:07:43.075Z",
             "strategy": "Add 1 missing URLs to sitemap",
             "file": null
+          },
+          {
+            "timestamp": "2026-05-16T07:14:56.430Z",
+            "strategy": "Add 1 missing URLs to sitemap",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:53:47.433Z",
-        "escalatedAt": "2026-05-16T07:07:43.075Z",
-        "escalationReason": "Issue persists after 6 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-05-16T07:14:56.430Z",
+        "escalationReason": "Issue persists after 7 auto-fix attempts. Needs human intervention."
       },
       "746e26a5ef46": {
         "id": "746e26a5ef46",
@@ -760,7 +734,7 @@
         "severity": "important",
         "title": "65 pages missing canonical URL",
         "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
-        "status": "fixing",
+        "status": "resolved",
         "detectedAt": "2026-05-16T05:35:24.300Z",
         "lastSeenAt": "2026-05-16T07:07:43.075Z",
         "attempts": [
@@ -785,48 +759,73 @@
             "file": null
           }
         ],
-        "firstSeenRun": "2026-05-16T05:35:24.300Z"
+        "firstSeenRun": "2026-05-16T05:35:24.300Z",
+        "resolvedAt": "2026-05-16T07:14:56.430Z",
+        "daysToResolve": 1
       }
     },
     "stats": {
       "open": 0,
-      "fixing": 1,
-      "resolved": 13,
+      "fixing": 2,
+      "resolved": 12,
       "escalated": 3,
       "regressed": 0
     },
-    "lastReconciled": "2026-05-16T07:07:43.075Z"
+    "lastReconciled": "2026-05-16T07:14:56.430Z"
   },
   "issueActions": [
     {
+      "id": "daa3e6f34fda",
+      "type": "regressed",
+      "title": "1 pages missing canonical URL"
+    },
+    {
+      "id": "c2bcb0cbe37f",
+      "type": "regressed",
+      "title": "1 pages return error status codes"
+    },
+    {
       "id": "53924c1b51a7",
       "type": "fix-attempted",
       "title": "1 pages missing from sitemap",
-      "attempt": 6
+      "attempt": 7
     },
     {
       "id": "c79a5c8cc207",
       "type": "fix-attempted",
       "title": "1 duplicate title tags found",
-      "attempt": 10
+      "attempt": 11
+    },
+    {
+      "id": "daa3e6f34fda",
+      "type": "fix-attempted",
+      "title": "1 pages missing canonical URL",
+      "attempt": 2
+    },
+    {
+      "id": "c2bcb0cbe37f",
+      "type": "fix-attempted",
+      "title": "1 pages return error status codes",
+      "attempt": 2
     },
     {
       "id": "4bf79444ac2e",
-      "type": "fix-attempted",
+      "type": "resolved",
       "title": "65 pages missing canonical URL",
-      "attempt": 4
+      "daysToResolve": 1,
+      "attempts": 4
     },
     {
       "id": "c79a5c8cc207",
       "type": "escalated",
       "title": "1 duplicate title tags found",
-      "attempts": 10
+      "attempts": 11
     },
     {
       "id": "53924c1b51a7",
       "type": "escalated",
       "title": "1 pages missing from sitemap",
-      "attempts": 6
+      "attempts": 7
     }
   ],
   "solverEnrichments": [],
