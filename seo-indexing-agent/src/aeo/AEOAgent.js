@@ -3,11 +3,12 @@
 const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
+const axios = require('axios');
+const cheerio = require('cheerio');
 const { LLMsTxtBuilder } = require('./LLMsTxtBuilder');
 const { AICrawlerAuditor } = require('./AICrawlerAuditor');
 const { FAQSchemaGenerator } = require('./FAQSchemaGenerator');
 const { AIVisibilityProbe } = require('./AIVisibilityProbe');
-const { SiteCrawler } = require('../auditors/SiteCrawler');
 
 /**
  * AEOAgent — Answer Engine Optimization for AI search engines.
@@ -43,15 +44,23 @@ class AEOAgent {
 
     console.log(chalk.bold.magenta('\n[ AEO ] Answer Engine Optimization run\n'));
 
-    // 1. Crawl pages
-    const crawler = new SiteCrawler(this.config);
-    const pages = await crawler.crawl(this.siteUrl);
-    console.log(`  Crawled ${pages.length} pages`);
+    // 1. Crawl pages — pull URLs from sitemap directly (more reliable than
+    //    BFS crawl for a React SPA), then fetch each in parallel.
+    const sitemapUrls = await this._fetchSitemapUrls(this.siteUrl);
+    console.log(`  Found ${sitemapUrls.length} URLs in sitemap`);
+    const pages = await this._fetchAll(sitemapUrls.slice(0, 100));
+    console.log(`  Fetched ${pages.length} pages`);
 
-    // 2. Refresh llms.txt + llms-full.txt
-    const llms = new LLMsTxtBuilder(this.config);
-    const llmsFiles = await llms.build(pages);
-    console.log(`  ✓ Refreshed llms.txt (${llmsFiles.compact.length} bytes) + llms-full.txt (${llmsFiles.full.length} bytes)`);
+    // 2. Refresh llms.txt + llms-full.txt — only if we actually got pages,
+    //    so we never overwrite a good file with a tiny stub
+    let llmsFiles = { compact: '', full: '' };
+    if (pages.length >= 5) {
+      const llms = new LLMsTxtBuilder(this.config);
+      llmsFiles = await llms.build(pages);
+      console.log(`  ✓ Refreshed llms.txt (${llmsFiles.compact.length} bytes) + llms-full.txt (${llmsFiles.full.length} bytes)`);
+    } else {
+      console.log(`  ⚠ Skipping llms.txt refresh — only ${pages.length} pages fetched (would overwrite good file)`);
+    }
 
     // 3. AI-friendliness audit
     const aiAudit = new AICrawlerAuditor(this.config);
@@ -93,6 +102,50 @@ class AEOAgent {
 
     console.log(chalk.green(`\n  ✓ AEO report saved · ${aiAuditResult.score}/100 (${aiAuditResult.grade})`));
     return report;
+  }
+
+  async _fetchSitemapUrls(siteUrl) {
+    const base = siteUrl.replace(/\/$/, '');
+    try {
+      const res = await axios.get(`${base}/sitemap.xml`, { timeout: 15000 });
+      const matches = [...(res.data || '').matchAll(/<loc>([^<]+)<\/loc>/g)];
+      return matches.map(m => m[1]);
+    } catch (e) {
+      console.log(`  ⚠ Sitemap fetch failed: ${e.message}`);
+      return [siteUrl];
+    }
+  }
+
+  async _fetchAll(urls) {
+    const out = [];
+    // Sequential to be polite — 100 URLs at ~500ms each = 50s max
+    for (const url of urls) {
+      try {
+        const start = Date.now();
+        const res = await axios.get(url, {
+          timeout: 12000,
+          validateStatus: () => true,
+          headers: { 'User-Agent': 'SEOIndexingAgent/1.0 (AEO scan; +https://telzonacademy.in)' },
+        });
+        if (res.status >= 200 && res.status < 400) {
+          const $ = cheerio.load(res.data || '');
+          out.push({
+            url,
+            statusCode: res.status,
+            html: res.data || '',
+            title: $('title').text().trim(),
+            metaDescription: $('meta[name="description"]').attr('content') || '',
+            metaRobots: $('meta[name="robots"]').attr('content') || '',
+            canonicalUrl: $('link[rel="canonical"]').attr('href') || '',
+            h1: $('h1').first().text().trim(),
+            hasStructuredData: $('script[type="application/ld+json"]').length > 0,
+            isIndexable: !/noindex/i.test($('meta[name="robots"]').attr('content') || ''),
+            loadTime: Date.now() - start,
+          });
+        }
+      } catch (_) {}
+    }
+    return out;
   }
 }
 
