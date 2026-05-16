@@ -24,8 +24,8 @@ class IndexingAuditor {
       });
     }
 
-    // Detect Next.js specific issues from source files
-    if (sourceFiles) {
+    // Detect Next.js specific issues — skip on non-Next.js projects (eg Vite)
+    if (sourceFiles && this.detectFramework(sourceFiles) === 'nextjs') {
       const nextIssues = this.auditNextJsSource(sourceFiles);
       issues.push(...nextIssues);
     }

@@ -158,7 +158,9 @@ class SiteCrawler {
         title: $('title').text().trim(),
         metaDescription: $('meta[name="description"]').attr('content') || '',
         metaRobots: $('meta[name="robots"]').attr('content') || '',
-        canonicalUrl: $('link[rel="canonical"]').attr('href') || '',
+        canonicalUrl: $('link[rel="canonical"]').attr('href')
+          || this._canonicalFromLinkHeader(res.headers?.link || res.headers?.Link)
+          || '',
         h1: $('h1').first().text().trim(),
         hasStructuredData: $('script[type="application/ld+json"]').length > 0,
         contentLength: (res.data || '').length,
@@ -176,6 +178,21 @@ class SiteCrawler {
         isIndexable: false,
       };
     }
+  }
+
+  /**
+   * Parse canonical URL from HTTP Link header per RFC 5988.
+   * Format: '<https://example.com/page>; rel="canonical"'
+   * Google honors this exactly like <link rel="canonical">.
+   */
+  _canonicalFromLinkHeader(linkHeader) {
+    if (!linkHeader) return '';
+    const headers = Array.isArray(linkHeader) ? linkHeader : [linkHeader];
+    for (const h of headers) {
+      const m = h.match(/<([^>]+)>\s*;\s*rel\s*=\s*["']?canonical["']?/i);
+      if (m) return m[1];
+    }
+    return '';
   }
 
   checkIndexable($, headers) {
