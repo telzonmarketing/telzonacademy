@@ -189,7 +189,9 @@ class SiteCrawler {
     if (!linkHeader) return '';
     const headers = Array.isArray(linkHeader) ? linkHeader : [linkHeader];
     for (const h of headers) {
-      const m = h.match(/<([^>]+)>\s*;\s*rel\s*=\s*["']?canonical["']?/i);
+      // Match `<url>; rel="canonical"`, also tolerate literal-backslash escaping
+      // (`rel=\"canonical\"`) some Apache configs emit.
+      const m = h.match(/<([^>]+)>\s*;\s*rel\s*=\s*\\?["']?canonical\\?["']?/i);
       if (m) return m[1];
     }
     return '';

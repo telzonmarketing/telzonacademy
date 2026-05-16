@@ -58,7 +58,7 @@
   # SetEnvIf captures only the path portion (before any '?') into CANON_PATH.
   SetEnvIf Request_URI "^([^?]*)" CANON_PATH=$1
   <If "%{REQUEST_URI} !~ m#^/(seo-reports|assets|.*\.(css|js|json|png|jpg|svg|ico|xml|txt))#">
-    Header always set Link "<https://telzonacademy.in%{CANON_PATH}e>; rel=\"canonical\""
+    Header always set Link '<https://telzonacademy.in%{CANON_PATH}e>; rel="canonical"'
   </If>
 
   # ── Caching ────────────────────────────────────────────────────────────────
