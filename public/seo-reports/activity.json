@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-17T07:45:49.645Z",
+    "type": "error",
+    "icon": "🔴",
+    "title": "Heartbeat: 1 check(s) failing",
+    "details": "ERR Homepage"
+  },
+  {
     "timestamp": "2026-05-17T06:15:31.961Z",
     "type": "aeo",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "error",
     "icon": "🚨",
     "title": "ESCALATED: \"1 Next.js pages fetch data client-side only\" needs human attention",
-    "details": "Auto-fix failed after 5 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-05-15T19:53:47.434Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"1 duplicate title tags found\" needs human attention",
     "details": "Auto-fix failed after 5 attempts — manual intervention required"
   }
 ]
