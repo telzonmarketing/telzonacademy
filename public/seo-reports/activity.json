@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-17T21:46:49.947Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 100/100 (A)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-17T21:09:52.479Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1390,13 +1397,6 @@
     "type": "error",
     "icon": "🚨",
     "title": "ESCALATED: \"1 Next.js pages fetch data client-side only\" needs human attention",
-    "details": "Auto-fix failed after 6 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-05-16T04:59:37.555Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"1 duplicate title tags found\" needs human attention",
     "details": "Auto-fix failed after 6 attempts — manual intervention required"
   }
 ]
