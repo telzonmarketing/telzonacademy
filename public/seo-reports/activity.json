@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-17T14:49:08.725Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-05-17T13:59:43.449Z",
     "type": "error",
     "icon": "🔴",
@@ -1391,12 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 1 pages missing from sitemap",
     "details": "Add 1 missing URLs to sitemap"
-  },
-  {
-    "timestamp": "2026-05-16T04:59:37.555Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 65 pages",
-    "details": "Found 5 issues (3 critical, 2 important)"
   }
 ]
