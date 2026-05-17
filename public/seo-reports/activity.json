@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-17T18:57:25.991Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 100/100 (A)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-17T18:47:54.010Z",
     "type": "submit",
     "icon": "⚡",
@@ -1390,13 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #6: working on \"1 Next.js pages fetch data client-side only\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-16T04:59:37.555Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #1: working on \"8 pages have incorrect canonical URL\"",
     "details": ""
   }
 ]
