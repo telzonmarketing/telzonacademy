@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-17T20:03:36.669Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 100/100 (A)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-17T19:39:15.232Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1390,13 +1397,6 @@
     "type": "win",
     "icon": "🏆",
     "title": "WON: \"32 pages missing H1 heading\" resolved after 1 attempt",
-    "details": "Took 1 day from first detection"
-  },
-  {
-    "timestamp": "2026-05-16T04:59:37.555Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"64 pages have incorrect canonical URL\" resolved after 1 attempt",
     "details": "Took 1 day from first detection"
   }
 ]
