@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-05-17T22:09:59.359Z",
+  "timestamp": "2026-05-17T23:13:38.343Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 9,
   "passed": 9,
   "failed": 0,
   "criticalFailed": 0,
-  "avgResponseMs": 358,
+  "avgResponseMs": 257,
   "results": [
     {
       "url": "https://telzonacademy.in",
@@ -13,7 +13,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 306
+      "ms": 287
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
@@ -21,7 +21,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 267
+      "ms": 240
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
@@ -29,7 +29,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 761
+      "ms": 4
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
@@ -37,7 +37,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 366
+      "ms": 334
     },
     {
       "url": "https://telzonacademy.in/",
@@ -45,7 +45,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 301
+      "ms": 379
     },
     {
       "url": "https://telzonacademy.in/blog",
@@ -53,7 +53,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 302
+      "ms": 273
     },
     {
       "url": "https://telzonacademy.in/lead-generation-package",
@@ -61,7 +61,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 302
+      "ms": 266
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
@@ -69,7 +69,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 312
+      "ms": 266
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
@@ -77,7 +77,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 303
+      "ms": 268
     }
   ],
   "healthy": true
