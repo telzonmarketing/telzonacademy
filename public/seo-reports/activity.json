@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-17T18:47:54.010Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-05-17T17:52:07.898Z",
     "type": "aeo",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #1: working on \"8 pages have incorrect canonical URL\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-16T04:59:37.555Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #1: working on \"56 pages missing canonical URL\"",
     "details": ""
   }
 ]
