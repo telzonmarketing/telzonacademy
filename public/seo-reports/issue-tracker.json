@@ -8,7 +8,7 @@
       "description": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
       "status": "escalated",
       "detectedAt": "2026-05-15T19:28:12.445Z",
-      "lastSeenAt": "2026-05-17T05:56:58.659Z",
+      "lastSeenAt": "2026-05-18T06:24:47.334Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:28:12.445Z",
@@ -84,11 +84,16 @@
           "timestamp": "2026-05-17T05:56:58.659Z",
           "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
           "file": null
+        },
+        {
+          "timestamp": "2026-05-18T06:24:47.334Z",
+          "strategy": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-05-15T19:28:12.445Z",
-      "escalatedAt": "2026-05-17T05:56:58.659Z",
-      "escalationReason": "Issue persists after 15 auto-fix attempts. Needs human intervention."
+      "escalatedAt": "2026-05-18T06:24:47.334Z",
+      "escalationReason": "Issue persists after 16 auto-fix attempts. Needs human intervention."
     },
     "7b1a0fe7305b": {
       "id": "7b1a0fe7305b",
@@ -350,7 +355,7 @@
       "description": "These crawlable pages are not in your sitemap — Google won't prioritise discovering them.",
       "status": "escalated",
       "detectedAt": "2026-05-15T19:53:47.433Z",
-      "lastSeenAt": "2026-05-17T05:56:58.659Z",
+      "lastSeenAt": "2026-05-18T06:24:47.334Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:53:47.433Z",
@@ -406,11 +411,16 @@
           "timestamp": "2026-05-17T05:56:58.659Z",
           "strategy": "Add 1 missing URLs to sitemap",
           "file": null
+        },
+        {
+          "timestamp": "2026-05-18T06:24:47.334Z",
+          "strategy": "Add 1 missing URLs to sitemap",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-05-15T19:53:47.433Z",
-      "escalatedAt": "2026-05-17T05:56:58.659Z",
-      "escalationReason": "Issue persists after 11 auto-fix attempts. Needs human intervention."
+      "escalatedAt": "2026-05-18T06:24:47.334Z",
+      "escalationReason": "Issue persists after 12 auto-fix attempts. Needs human intervention."
     },
     "746e26a5ef46": {
       "id": "746e26a5ef46",
@@ -555,5 +565,5 @@
     "escalated": 3,
     "regressed": 0
   },
-  "lastReconciled": "2026-05-17T05:56:58.659Z"
+  "lastReconciled": "2026-05-18T06:24:47.334Z"
 }
