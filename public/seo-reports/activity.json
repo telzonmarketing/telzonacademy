@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-18T16:34:37.018Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 368ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-05-18T14:58:10.650Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"1 pages missing from sitemap\" needs human attention",
     "details": "Auto-fix failed after 6 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-05-16T07:07:43.076Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"1 duplicate title tags found\" needs human attention",
-    "details": "Auto-fix failed after 10 attempts — manual intervention required"
   }
 ]
