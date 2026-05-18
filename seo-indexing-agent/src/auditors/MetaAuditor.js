@@ -34,23 +34,37 @@ class MetaAuditor {
       });
     }
 
-    // Duplicate titles
+    // Duplicate titles — but SPA-aware. If a React SPA serves identical
+    // index.html for many routes, the static <title> matches across them
+    // by design (react-helmet sets per-route title client-side). Don't
+    // flag this as a real duplicate when the HTML content also matches.
     const titleMap = {};
     pages.forEach(p => {
       if (p.title) {
         titleMap[p.title] = titleMap[p.title] || [];
-        titleMap[p.title].push(p.url);
+        titleMap[p.title].push(p);
       }
     });
-    const dupTitles = Object.entries(titleMap).filter(([, urls]) => urls.length > 1);
+    const dupTitles = Object.entries(titleMap)
+      .filter(([, ps]) => ps.length > 1)
+      .filter(([, ps]) => {
+        // If all pages share identical HTML content length within ~5% it's
+        // SPA-fallback HTML, not real duplicate titles — react-helmet swaps
+        // the title client-side per route. Skip it.
+        const lens = ps.map(p => p.contentLength || (p.html || '').length);
+        const min = Math.min(...lens);
+        const max = Math.max(...lens);
+        const isSpaFallback = min > 0 && (max - min) / max < 0.05;
+        return !isSpaFallback;
+      });
     if (dupTitles.length > 0) {
       issues.push({
         type: 'DUPLICATE_TITLES',
         severity: 'important',
         title: `${dupTitles.length} duplicate title tags found`,
         description: 'Duplicate titles cause Google to pick which page to index, often ignoring the others.',
-        affectedUrls: dupTitles.flatMap(([, urls]) => urls),
-        details: dupTitles.map(([title, urls]) => ({ title, urls })),
+        affectedUrls: dupTitles.flatMap(([, ps]) => ps.map(p => p.url)),
+        details: dupTitles.map(([title, ps]) => ({ title, urls: ps.map(p => p.url) })),
         fix: 'FIX_DUPLICATE_TITLES',
       });
     }
