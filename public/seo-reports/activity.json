@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026-05-18T17:29:30.970Z",
+    "type": "error",
+    "icon": "🤖",
+    "title": "AEO issue (critical): AI crawlers not explicitly allowed in robots.txt",
+    "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data."
+  },
+  {
+    "timestamp": "2026-05-18T17:29:30.970Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 80/100 (B)",
+    "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-18T16:34:37.018Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1384,19 +1398,5 @@
     "icon": "▶",
     "title": "SEO bot manual run started",
     "details": "Mode: full audit + fix + submit + keyword tracking"
-  },
-  {
-    "timestamp": "2026-05-16T07:07:43.202Z",
-    "type": "done",
-    "icon": "✓",
-    "title": "Run completed",
-    "details": "Total: 65 pages · 3 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-05-16T07:07:43.076Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"1 pages missing from sitemap\" needs human attention",
-    "details": "Auto-fix failed after 6 attempts — manual intervention required"
   }
 ]
