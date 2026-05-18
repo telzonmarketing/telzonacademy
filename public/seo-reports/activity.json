@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-18T19:04:38.921Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 356ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-05-18T17:51:33.566Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 1 pages missing from sitemap",
     "details": "Add 1 missing URLs to sitemap"
-  },
-  {
-    "timestamp": "2026-05-16T07:14:56.431Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 65 pages",
-    "details": "Found 4 issues (2 critical, 2 important)"
   }
 ]
