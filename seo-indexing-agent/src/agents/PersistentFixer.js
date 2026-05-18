@@ -114,7 +114,7 @@ class PersistentFixer {
     // 3. Mark issues NOT detected this run as resolved (if previously open/fixing)
     for (const id in state.issues) {
       const trk = state.issues[id];
-      if (!detectedIds.has(id) && (trk.status === 'open' || trk.status === 'fixing' || trk.status === 'regressed')) {
+      if (!detectedIds.has(id) && (trk.status === 'open' || trk.status === 'fixing' || trk.status === 'regressed' || trk.status === 'escalated')) {
         trk.status = 'resolved';
         trk.resolvedAt = now;
         const days = trk.detectedAt
