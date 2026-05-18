@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-18T22:46:00.901Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-05-18T22:15:24.384Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1390,13 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #2: working on \"1 pages return error status codes\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-16T07:14:56.431Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #2: working on \"1 pages missing canonical URL\"",
     "details": ""
   }
 ]
