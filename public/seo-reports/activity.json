@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-18T06:00:29.329Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-05-18T04:47:08.868Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1390,13 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #7: working on \"1 duplicate title tags found\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-16T05:35:24.301Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #3: working on \"1 pages missing from sitemap\"",
     "details": ""
   }
 ]
