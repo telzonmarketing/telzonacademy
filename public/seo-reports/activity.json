@@ -1,5 +1,47 @@
 [
   {
+    "timestamp": "2026-05-18T07:09:01.163Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 65 pages · 1 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-05-18T07:09:01.040Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"1 pages missing from sitemap\" needs human attention",
+    "details": "Auto-fix failed after 13 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-05-18T07:09:01.040Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #13: working on \"1 pages missing from sitemap\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-05-18T07:09:01.040Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 pages missing from sitemap",
+    "details": "Add 1 missing URLs to sitemap"
+  },
+  {
+    "timestamp": "2026-05-18T07:09:01.040Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 65 pages",
+    "details": "Found 1 issues (1 critical, 0 important)"
+  },
+  {
+    "timestamp": "2026-05-18T07:09:01.040Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot manual run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-05-18T06:49:10.976Z",
     "type": "fix",
     "icon": "🤖",
@@ -1356,47 +1398,5 @@
     "icon": "🕷",
     "title": "Crawled 65 pages",
     "details": "Found 3 issues (1 critical, 2 important)"
-  },
-  {
-    "timestamp": "2026-05-16T07:02:42.697Z",
-    "type": "run",
-    "icon": "▶",
-    "title": "SEO bot manual run started",
-    "details": "Mode: full audit + fix + submit + keyword tracking"
-  },
-  {
-    "timestamp": "2026-05-16T06:36:22.168Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 207ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-16T05:41:05.783Z",
-    "type": "done",
-    "icon": "✓",
-    "title": "Run completed",
-    "details": "Total: 65 pages · 3 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-05-16T05:41:05.655Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"1 duplicate title tags found\" needs human attention",
-    "details": "Auto-fix failed after 8 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-05-16T05:41:05.655Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #2: working on \"65 pages missing canonical URL\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-16T05:41:05.655Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #8: working on \"1 duplicate title tags found\"",
-    "details": ""
   }
 ]

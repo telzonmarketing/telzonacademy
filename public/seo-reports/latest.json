@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-05-18T06:24:47.335Z",
+  "timestamp": "2026-05-18T07:09:01.040Z",
   "summary": {
     "pagesFound": 65,
-    "issuesFound": 2,
+    "issuesFound": 1,
     "critical": 1,
-    "important": 1,
+    "important": 0,
     "low": 0,
-    "issuesFixed": 2,
+    "issuesFixed": 1,
     "pagesSubmitted": 0,
     "avgPosition": null,
     "totalKeywords": 0
@@ -27,152 +27,6 @@
         ],
         "siteUrl": "https://telzonacademy.in/"
       }
-    },
-    {
-      "type": "DUPLICATE_TITLES",
-      "severity": "important",
-      "title": "1 duplicate title tags found",
-      "description": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
-      "affectedUrls": [
-        "https://telzonacademy.in/",
-        "https://telzonacademy.in/blog",
-        "https://telzonacademy.in/lead-generation-package",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
-        "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-institute-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-with-placement-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
-        "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-near-me",
-        "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
-        "https://telzonacademy.in/pages/marketing-school-in-nagpur",
-        "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/seo-course-in-nagpur",
-        "https://telzonacademy.in/pages/google-ads-course-nagpur",
-        "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/content-marketing-course-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur",
-        "https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-services-in-nagpur",
-        "https://telzonacademy.in/pages/seo-services-in-nagpur",
-        "https://telzonacademy.in/pages/seo-freelancer-in-nagpur",
-        "https://telzonacademy.in/pages/social-media-marketing-agency-in-nagpur",
-        "https://telzonacademy.in/pages/top-10-digital-marketing-institutes-in-nagpur",
-        "https://telzonacademy.in/pages/top-digital-marketing-courses-in-nagpur-2026",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-dharampeth-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-sitabuldi-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-sadar-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-pratap-nagar-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-ramdaspeth-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-jobs-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-salary-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-career-after-12th-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-for-students-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-after-graduation-nagpur",
-        "https://telzonacademy.in/pages/weekend-digital-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-in-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-civil-lines-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-itwari-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-gandhibagh-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-wardhaman-nagar-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-manewada-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-hingna-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-amravati-road-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-wardha-road-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-katol-road-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-course-in-kamptee-road-nagpur",
-        "https://telzonacademy.in/pages/facebook-ads-course-in-nagpur",
-        "https://telzonacademy.in/pages/instagram-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/youtube-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/linkedin-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/email-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/google-ads-course-in-nagpur"
-      ],
-      "details": [
-        {
-          "title": "Digital Marketing Course in Nagpur | Free Demo | Telzon Academy",
-          "urls": [
-            "https://telzonacademy.in/",
-            "https://telzonacademy.in/blog",
-            "https://telzonacademy.in/lead-generation-package",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
-            "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-institute-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-with-placement-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
-            "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-near-me",
-            "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
-            "https://telzonacademy.in/pages/marketing-school-in-nagpur",
-            "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
-            "https://telzonacademy.in/pages/seo-course-in-nagpur",
-            "https://telzonacademy.in/pages/google-ads-course-nagpur",
-            "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
-            "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
-            "https://telzonacademy.in/pages/content-marketing-course-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur",
-            "https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-services-in-nagpur",
-            "https://telzonacademy.in/pages/seo-services-in-nagpur",
-            "https://telzonacademy.in/pages/seo-freelancer-in-nagpur",
-            "https://telzonacademy.in/pages/social-media-marketing-agency-in-nagpur",
-            "https://telzonacademy.in/pages/top-10-digital-marketing-institutes-in-nagpur",
-            "https://telzonacademy.in/pages/top-digital-marketing-courses-in-nagpur-2026",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-dharampeth-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-sitabuldi-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-sadar-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-pratap-nagar-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-ramdaspeth-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-jobs-in-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-salary-in-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-career-after-12th-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-for-students-in-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-after-graduation-nagpur",
-            "https://telzonacademy.in/pages/weekend-digital-marketing-course-in-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-in-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-civil-lines-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-itwari-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-gandhibagh-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-wardhaman-nagar-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-manewada-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-hingna-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-amravati-road-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-wardha-road-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-katol-road-nagpur",
-            "https://telzonacademy.in/pages/digital-marketing-course-in-kamptee-road-nagpur",
-            "https://telzonacademy.in/pages/facebook-ads-course-in-nagpur",
-            "https://telzonacademy.in/pages/instagram-marketing-course-in-nagpur",
-            "https://telzonacademy.in/pages/youtube-marketing-course-in-nagpur",
-            "https://telzonacademy.in/pages/linkedin-marketing-course-in-nagpur",
-            "https://telzonacademy.in/pages/email-marketing-course-in-nagpur",
-            "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur",
-            "https://telzonacademy.in/pages/google-ads-course-in-nagpur"
-          ]
-        }
-      ],
-      "fix": "FIX_DUPLICATE_TITLES"
     }
   ],
   "fixes": [
@@ -181,11 +35,6 @@
       "description": "Add 1 missing URLs to sitemap",
       "code": "<!-- Add these entries to your sitemap.xml -->\n  <url>\n    <loc>https://telzonacademy.in/pages/google-ads-course-in-nagpur</loc>\n    <lastmod>2026-05-18</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>",
       "instruction": "These URLs were found by crawling but are not in your sitemap. Add them to app/sitemap.ts or sitemap.xml."
-    },
-    {
-      "issue": "1 duplicate title tags found",
-      "description": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
-      "instruction": "Manual fix required for: DUPLICATE_TITLES. See audit report for details."
     }
   ],
   "submitted": [],
@@ -212,15 +61,15 @@
   "contentBriefs": [],
   "healthCheck": null,
   "indexNow": {
-    "submitted": 65,
+    "submitted": 64,
     "failed": 0,
     "statusCode": 200,
     "keyLocation": "https://telzonacademy.in/c218d7307cc58cf886898bc873656853.txt",
-    "note": "Notified Bing/Yandex/Naver of 65 URLs"
+    "note": "Notified Bing/Yandex/Naver of 64 URLs"
   },
   "bingSubmissions": {
-    "submitted": 34,
-    "failed": 31
+    "submitted": 0,
+    "failed": 64
   },
   "issueTracker": {
     "issues": {
@@ -579,7 +428,7 @@
         "description": "These crawlable pages are not in your sitemap — Google won't prioritise discovering them.",
         "status": "escalated",
         "detectedAt": "2026-05-15T19:53:47.433Z",
-        "lastSeenAt": "2026-05-18T06:24:47.334Z",
+        "lastSeenAt": "2026-05-18T07:09:01.039Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:53:47.433Z",
@@ -640,11 +489,16 @@
             "timestamp": "2026-05-18T06:24:47.334Z",
             "strategy": "Add 1 missing URLs to sitemap",
             "file": null
+          },
+          {
+            "timestamp": "2026-05-18T07:09:01.039Z",
+            "strategy": "Add 1 missing URLs to sitemap",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:53:47.433Z",
-        "escalatedAt": "2026-05-18T06:24:47.334Z",
-        "escalationReason": "Issue persists after 12 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-05-18T07:09:01.039Z",
+        "escalationReason": "Issue persists after 13 auto-fix attempts. Needs human intervention."
       },
       "746e26a5ef46": {
         "id": "746e26a5ef46",
@@ -789,32 +643,20 @@
       "escalated": 3,
       "regressed": 0
     },
-    "lastReconciled": "2026-05-18T06:24:47.334Z"
+    "lastReconciled": "2026-05-18T07:09:01.039Z"
   },
   "issueActions": [
     {
       "id": "53924c1b51a7",
       "type": "fix-attempted",
       "title": "1 pages missing from sitemap",
-      "attempt": 12
-    },
-    {
-      "id": "c79a5c8cc207",
-      "type": "fix-attempted",
-      "title": "1 duplicate title tags found",
-      "attempt": 16
-    },
-    {
-      "id": "c79a5c8cc207",
-      "type": "escalated",
-      "title": "1 duplicate title tags found",
-      "attempts": 16
+      "attempt": 13
     },
     {
       "id": "53924c1b51a7",
       "type": "escalated",
       "title": "1 pages missing from sitemap",
-      "attempts": 12
+      "attempts": 13
     }
   ],
   "solverEnrichments": [],
