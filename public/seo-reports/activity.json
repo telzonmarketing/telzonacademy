@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026-05-18T22:52:35.687Z",
+    "type": "error",
+    "icon": "🤖",
+    "title": "AEO issue (critical): AI crawlers not explicitly allowed in robots.txt",
+    "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data."
+  },
+  {
+    "timestamp": "2026-05-18T22:52:35.687Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 80/100 (B)",
+    "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-18T22:46:00.901Z",
     "type": "submit",
     "icon": "⚡",
@@ -1384,19 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"1 duplicate title tags found\" needs human attention",
     "details": "Auto-fix failed after 11 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-05-16T07:14:56.431Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"65 pages missing canonical URL\" resolved after 4 attempts",
-    "details": "Took 1 day from first detection"
-  },
-  {
-    "timestamp": "2026-05-16T07:14:56.431Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #2: working on \"1 pages return error status codes\"",
-    "details": ""
   }
 ]
