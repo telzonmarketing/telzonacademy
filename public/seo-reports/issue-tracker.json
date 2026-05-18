@@ -6,7 +6,7 @@
       "severity": "important",
       "title": "1 duplicate title tags found",
       "description": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
-      "status": "escalated",
+      "status": "resolved",
       "detectedAt": "2026-05-15T19:28:12.445Z",
       "lastSeenAt": "2026-05-18T06:24:47.334Z",
       "attempts": [
@@ -93,7 +93,9 @@
       ],
       "firstSeenRun": "2026-05-15T19:28:12.445Z",
       "escalatedAt": "2026-05-18T06:24:47.334Z",
-      "escalationReason": "Issue persists after 16 auto-fix attempts. Needs human intervention."
+      "escalationReason": "Issue persists after 16 auto-fix attempts. Needs human intervention.",
+      "resolvedAt": "2026-05-18T07:35:45.620Z",
+      "daysToResolve": 3
     },
     "7b1a0fe7305b": {
       "id": "7b1a0fe7305b",
@@ -191,7 +193,7 @@
       "severity": "critical",
       "title": "1 Next.js pages fetch data client-side only",
       "description": "Pages using useEffect+fetch render empty for Googlebot. Convert to getStaticProps, getServerSideProps, or async Server Components.",
-      "status": "escalated",
+      "status": "resolved",
       "detectedAt": "2026-05-15T19:28:12.445Z",
       "lastSeenAt": "2026-05-16T05:35:24.300Z",
       "attempts": [
@@ -233,7 +235,9 @@
       ],
       "firstSeenRun": "2026-05-15T19:28:12.445Z",
       "escalatedAt": "2026-05-16T05:35:24.300Z",
-      "escalationReason": "Issue persists after 7 auto-fix attempts. Needs human intervention."
+      "escalationReason": "Issue persists after 7 auto-fix attempts. Needs human intervention.",
+      "resolvedAt": "2026-05-18T07:35:45.620Z",
+      "daysToResolve": 3
     },
     "daa3e6f34fda": {
       "id": "daa3e6f34fda",
@@ -353,7 +357,7 @@
       "severity": "critical",
       "title": "1 pages missing from sitemap",
       "description": "These crawlable pages are not in your sitemap — Google won't prioritise discovering them.",
-      "status": "escalated",
+      "status": "resolved",
       "detectedAt": "2026-05-15T19:53:47.433Z",
       "lastSeenAt": "2026-05-18T07:09:01.039Z",
       "attempts": [
@@ -425,7 +429,9 @@
       ],
       "firstSeenRun": "2026-05-15T19:53:47.433Z",
       "escalatedAt": "2026-05-18T07:09:01.039Z",
-      "escalationReason": "Issue persists after 13 auto-fix attempts. Needs human intervention."
+      "escalationReason": "Issue persists after 13 auto-fix attempts. Needs human intervention.",
+      "resolvedAt": "2026-05-18T07:35:45.620Z",
+      "daysToResolve": 2
     },
     "746e26a5ef46": {
       "id": "746e26a5ef46",
@@ -566,9 +572,9 @@
   "stats": {
     "open": 0,
     "fixing": 0,
-    "resolved": 14,
-    "escalated": 3,
+    "resolved": 17,
+    "escalated": 0,
     "regressed": 0
   },
-  "lastReconciled": "2026-05-18T07:09:01.039Z"
+  "lastReconciled": "2026-05-18T07:35:45.620Z"
 }
