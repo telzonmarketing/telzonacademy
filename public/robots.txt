@@ -1,77 +1,8 @@
-# ────────────────────────────────────────────────────────────────────────────
-# robots.txt for telzonacademy.in
-# Optimized for both classic SEO and AEO (AI search engines)
-# ────────────────────────────────────────────────────────────────────────────
-
-# Default rules for all crawlers
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /private/
 Disallow: /api/
 Disallow: /_next/
-
-# ── AI search crawlers — explicitly allowed for citation eligibility ─────────
-# OpenAI (ChatGPT, GPTBot)
-User-agent: GPTBot
-Allow: /
 Disallow: /admin/
+Disallow: /private/
 
-User-agent: ChatGPT-User
-Allow: /
-Disallow: /admin/
-
-# Anthropic (Claude)
-User-agent: ClaudeBot
-Allow: /
-Disallow: /admin/
-
-User-agent: anthropic-ai
-Allow: /
-Disallow: /admin/
-
-User-agent: Claude-Web
-Allow: /
-Disallow: /admin/
-
-# Perplexity
-User-agent: PerplexityBot
-Allow: /
-Disallow: /admin/
-
-# Common Crawl — training data for most LLMs
-User-agent: CCBot
-Allow: /
-Disallow: /admin/
-
-# Google AI Overviews / Gemini training
-User-agent: Google-Extended
-Allow: /
-Disallow: /admin/
-
-# Apple Intelligence
-User-agent: Applebot-Extended
-Allow: /
-Disallow: /admin/
-
-# Cohere
-User-agent: cohere-ai
-Allow: /
-Disallow: /admin/
-
-# ByteDance (TikTok / Doubao AI)
-User-agent: Bytespider
-Allow: /
-Disallow: /admin/
-
-# DiffBot (used by various LLM training pipelines)
-User-agent: Diffbot
-Allow: /
-Disallow: /admin/
-
-# ── Sitemaps ────────────────────────────────────────────────────────────────
-Sitemap: https://telzonacademy.in/sitemap.xml
-
-# ── LLM-friendly briefing ───────────────────────────────────────────────────
-# Site content also available as: https://telzonacademy.in/llms.txt
-# Full content digest: https://telzonacademy.in/llms-full.txt
+Sitemap: https://telzonacademy.in//sitemap.xml
