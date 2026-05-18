@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-18T22:15:24.384Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 347ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-05-18T21:05:16.040Z",
     "type": "error",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #2: working on \"1 pages missing canonical URL\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-16T07:14:56.431Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #11: working on \"1 duplicate title tags found\"",
     "details": ""
   }
 ]
