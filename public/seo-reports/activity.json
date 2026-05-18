@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-18T20:48:16.274Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 369ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-05-18T19:28:01.289Z",
     "type": "error",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "↩",
     "title": "REGRESSED: \"1 pages missing canonical URL\" came back",
     "details": "Issue was resolved before — now detected again. Bot will retry."
-  },
-  {
-    "timestamp": "2026-05-16T07:14:56.431Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 pages return error status codes",
-    "details": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget."
   }
 ]
