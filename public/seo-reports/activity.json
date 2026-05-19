@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-19T23:34:10.970Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 378ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-05-19T22:54:42.854Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "▶",
     "title": "SEO bot manual run started",
     "details": "Mode: full audit + fix + submit + keyword tracking"
-  },
-  {
-    "timestamp": "2026-05-16T13:14:52.253Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
-    "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
   }
 ]
