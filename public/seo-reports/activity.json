@@ -1,5 +1,26 @@
 [
   {
+    "timestamp": "2026-05-19T17:09:37.478Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 64 pages · 0 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-05-19T17:09:37.378Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 64 pages",
+    "details": "Found 0 issues (0 critical, 0 important)"
+  },
+  {
+    "timestamp": "2026-05-19T17:09:37.378Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot manual run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-05-19T16:59:18.135Z",
     "type": "done",
     "icon": "✓",
@@ -1377,26 +1398,5 @@
     "icon": "🤖",
     "title": "AEO scan complete · Score 29/100 (F)",
     "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-05-16T13:03:39.757Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
-    "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
-  },
-  {
-    "timestamp": "2026-05-16T13:03:39.757Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-05-16T13:03:39.757Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): Only 0% of pages have structured data",
-    "details": "AI engines rely heavily on schema.org markup to understand and cite content."
   }
 ]
