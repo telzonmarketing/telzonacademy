@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-18T07:35:45.621Z",
+  "timestamp": "2026-05-19T06:19:05.908Z",
   "summary": {
     "pagesFound": 64,
     "issuesFound": 0,
@@ -625,31 +625,9 @@
       "escalated": 0,
       "regressed": 0
     },
-    "lastReconciled": "2026-05-18T07:35:45.620Z"
+    "lastReconciled": "2026-05-19T06:19:05.908Z"
   },
-  "issueActions": [
-    {
-      "id": "c79a5c8cc207",
-      "type": "resolved",
-      "title": "1 duplicate title tags found",
-      "daysToResolve": 3,
-      "attempts": 16
-    },
-    {
-      "id": "68149022932d",
-      "type": "resolved",
-      "title": "1 Next.js pages fetch data client-side only",
-      "daysToResolve": 3,
-      "attempts": 7
-    },
-    {
-      "id": "53924c1b51a7",
-      "type": "resolved",
-      "title": "1 pages missing from sitemap",
-      "daysToResolve": 2,
-      "attempts": 13
-    }
-  ],
+  "issueActions": [],
   "solverEnrichments": [],
   "errors": []
 }

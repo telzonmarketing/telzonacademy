@@ -1,5 +1,26 @@
 [
   {
+    "timestamp": "2026-05-19T06:19:06.034Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 64 pages · 0 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-05-19T06:19:05.908Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 64 pages",
+    "details": "Found 0 issues (0 critical, 0 important)"
+  },
+  {
+    "timestamp": "2026-05-19T06:19:05.908Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot scheduled run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-05-19T05:56:44.857Z",
     "type": "submit",
     "icon": "⚡",
@@ -1377,26 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"1 duplicate title tags found\" needs human attention",
     "details": "Auto-fix failed after 12 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-05-16T07:20:28.102Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"1 pages return error status codes\" resolved after 2 attempts",
-    "details": "Took 1 day from first detection"
-  },
-  {
-    "timestamp": "2026-05-16T07:20:28.102Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"1 pages missing canonical URL\" resolved after 2 attempts",
-    "details": "Took 1 day from first detection"
-  },
-  {
-    "timestamp": "2026-05-16T07:20:28.102Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #12: working on \"1 duplicate title tags found\"",
-    "details": ""
   }
 ]
