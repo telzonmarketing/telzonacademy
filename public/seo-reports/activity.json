@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-19T21:48:19.578Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 280ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-05-19T21:10:31.277Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (important): Only 0% of pages have structured data",
     "details": "AI engines rely heavily on schema.org markup to understand and cite content."
-  },
-  {
-    "timestamp": "2026-05-16T13:14:52.253Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 67/100 (C)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
   }
 ]
