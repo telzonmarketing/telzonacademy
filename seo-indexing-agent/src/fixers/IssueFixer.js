@@ -2,6 +2,23 @@
 
 const chalk = require('chalk');
 const { URL } = require('url');
+const axios = require('axios');
+
+// Used by fixCreateRobots / fixCreateSitemap to verify a 'missing' file
+// really IS missing before generating a stub. Most 'missing' detections
+// are false positives caused by CDN/host bot rules 403'ing the auditor's
+// request — generating a stub in that case destroys the real production
+// file (this happened on 2026-05-18 and tanked rankings for 3 days).
+async function fileReallyExistsAt(url) {
+  try {
+    const res = await axios.get(url, {
+      timeout: 8000,
+      validateStatus: null,
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; SEOIndexingAgent-FixVerify/1.0)' },
+    });
+    return res.status === 200 && typeof res.data === 'string' && res.data.length > 50;
+  } catch (_) { return false; }
+}
 
 class IssueFixer {
   constructor(config = {}) {
@@ -39,8 +56,21 @@ class IssueFixer {
     }
   }
 
-  fixCreateRobots(issue) {
+  async fixCreateRobots(issue) {
     const siteUrl = issue.fixData?.siteUrl || 'https://yoursite.com';
+
+    // Second-check: maybe the audit got 403'd. If the file actually exists,
+    // do NOT generate a stub — that would overwrite the production file.
+    const realUrl = `${siteUrl.replace(/\/$/, '')}/robots.txt`;
+    if (await fileReallyExistsAt(realUrl)) {
+      console.warn(`  ⚠ Audit flagged robots.txt missing but ${realUrl} returned content. Skipping fix to avoid overwriting production.`);
+      return {
+        issue: issue.title,
+        description: 'False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch.',
+        skipped: true,
+      };
+    }
+
     const content = `User-agent: *
 Allow: /
 Disallow: /api/
@@ -48,7 +78,7 @@ Disallow: /_next/
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: ${siteUrl}/sitemap.xml
+Sitemap: ${siteUrl.replace(/\/$/, '')}/sitemap.xml
 `;
     return {
       issue: issue.title,
@@ -88,9 +118,21 @@ Sitemap: ${siteUrl}/sitemap.xml
     };
   }
 
-  fixCreateSitemap(issue) {
+  async fixCreateSitemap(issue) {
     const siteUrl = issue.fixData?.siteUrl || 'https://yoursite.com';
     const pages = issue.fixData?.pages || [];
+
+    // Same false-positive guard as fixCreateRobots: don't generate a stub
+    // if the live sitemap actually responds.
+    const realUrl = `${siteUrl.replace(/\/$/, '')}/sitemap.xml`;
+    if (await fileReallyExistsAt(realUrl)) {
+      console.warn(`  ⚠ Audit flagged sitemap missing but ${realUrl} returned content. Skipping fix.`);
+      return {
+        issue: issue.title,
+        description: 'False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.',
+        skipped: true,
+      };
+    }
 
     const nextjsSitemapCode = `// app/sitemap.ts — Next.js App Router dynamic sitemap
 import { MetadataRoute } from 'next'

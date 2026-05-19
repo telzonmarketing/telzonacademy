@@ -99,7 +99,11 @@ class SitemapAuditor {
 
     // Also check robots.txt for Sitemap: directives
     try {
-      const robotsRes = await axios.get(new URL('/robots.txt', siteUrl).href, { timeout: 5000, validateStatus: null });
+      const robotsRes = await axios.get(new URL('/robots.txt', siteUrl).href, {
+        timeout: 5000,
+        validateStatus: null,
+        headers: { 'User-Agent': 'SEOIndexingAgent/1.0 (compatible; Googlebot/2.1)' },
+      });
       if (robotsRes.status === 200) {
         const matches = robotsRes.data.match(/^Sitemap:\s*(.+)$/gim) || [];
         matches.forEach(m => candidates.push(m.replace(/^Sitemap:\s*/i, '').trim()));
@@ -109,7 +113,14 @@ class SitemapAuditor {
     const found = [];
     for (const url of [...new Set(candidates)]) {
       try {
-        const res = await axios.get(url, { timeout: 8000, validateStatus: null });
+        // User-Agent required — Hostinger/CDNs 403 UA-less fetches.
+        // Without this the audit false-positives 'NO_SITEMAP' and the
+        // auto-fixer overwrites the production file.
+        const res = await axios.get(url, {
+          timeout: 8000,
+          validateStatus: null,
+          headers: { 'User-Agent': 'SEOIndexingAgent/1.0 (compatible; Googlebot/2.1)' },
+        });
         if (res.status === 200 && res.data && (res.data.includes('<urlset') || res.data.includes('<sitemapindex'))) {
           found.push(url);
         }
@@ -119,7 +130,10 @@ class SitemapAuditor {
   }
 
   async getUrlsFromSitemap(sitemapUrl) {
-    const res = await axios.get(sitemapUrl, { timeout: 10000 });
+    const res = await axios.get(sitemapUrl, {
+      timeout: 10000,
+      headers: { 'User-Agent': 'SEOIndexingAgent/1.0 (compatible; Googlebot/2.1)' },
+    });
     const parsed = await xml2js.parseStringPromise(res.data);
 
     // Sitemap index — recurse

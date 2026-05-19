@@ -16,7 +16,15 @@ class RobotsAuditor {
     let robotsExists = false;
 
     try {
-      const res = await axios.get(robotsUrl, { timeout: 8000, validateStatus: null });
+      // Hostinger + many CDNs 403 requests with no User-Agent. Without this
+      // header the audit false-positives a missing robots.txt and the fixer
+      // overwrites the live file with a stub — exactly what happened on
+      // 2026-05-18 (commit 1e35bc8) and tanked 3 days of rankings.
+      const res = await axios.get(robotsUrl, {
+        timeout: 8000,
+        validateStatus: null,
+        headers: { 'User-Agent': 'SEOIndexingAgent/1.0 (compatible; Googlebot/2.1)' },
+      });
       if (res.status === 200 && typeof res.data === 'string') {
         robotsText = res.data;
         robotsExists = true;

@@ -54,18 +54,34 @@ class GitHubConnector {
     return files;
   }
 
-  async pushFile(repo, filePath, content, commitMessage, branch = 'main') {
+  async pushFile(repo, filePath, content, commitMessage, branch = 'main', options = {}) {
     if (!this.token) throw new Error('GitHub token required to push files');
+    const { force = false } = options;
 
-    // Check if file exists to get its SHA
+    // Check if file exists to get its SHA + size
     let sha;
+    let existingSize = 0;
     try {
       const existing = await axios.get(
         `${this.base}/repos/${repo}/contents/${filePath}?ref=${branch}`,
         { headers: this.headers }
       );
       sha = existing.data.sha;
+      existingSize = existing.data.size || 0;
     } catch (_) {}
+
+    // Safety net — block destructive overwrites
+    //
+    // Background: on 2026-05-18 a false-positive `MISSING_ROBOTS_TXT` audit
+    // caused this method to truncate a 2.6KB production robots.txt to a
+    // 200-byte stub, killing rankings for 3 days. Refuse any push that
+    // shrinks an existing file by >50% unless the caller explicitly opts
+    // in via {force: true}.
+    const newSize = Buffer.byteLength(content);
+    if (existingSize > 100 && newSize < existingSize * 0.5 && !force) {
+      console.warn(`[GitHubConnector] REFUSED to overwrite ${filePath}: existing ${existingSize}b → new ${newSize}b (>50% shrink). Pass {force:true} if intentional.`);
+      return { skipped: true, reason: 'destructive-shrink', existingSize, newSize, path: filePath };
+    }
 
     const body = {
       message: commitMessage,
@@ -79,6 +95,7 @@ class GitHubConnector {
       body,
       { headers: this.headers }
     );
+    return { skipped: false, path: filePath };
   }
 
   async createPullRequest(repo, title, body, branch, baseBranch = 'main') {
