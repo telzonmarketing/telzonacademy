@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-20T12:05:23.384Z",
+    "type": "error",
+    "icon": "🔴",
+    "title": "Heartbeat: 1 check(s) failing",
+    "details": "504 Homepage"
+  },
+  {
     "timestamp": "2026-05-20T10:21:22.840Z",
     "type": "aeo",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔁",
     "title": "Attempt #10: working on \"1 pages missing from sitemap\"",
     "details": ""
-  },
-  {
-    "timestamp": "2026-05-16T13:37:32.356Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 duplicate title tags found",
-    "details": "Duplicate titles cause Google to pick which page to index, often ignoring the others."
   }
 ]
