@@ -440,6 +440,54 @@
     </div>
   </div>
 
+  <!-- 🔗 Backlink Agent — Directory + citation submission tracker -->
+  <div class="card" id="backlinks-card" style="display:none;background:linear-gradient(135deg,#0c4a6e 0%,#1e293b 100%);border-color:#0ea5e9">
+    <h2>🔗 Backlink Agent <span class="live-dot"></span>
+      <span style="font-size:12px;color:#7dd3fc;font-weight:400;margin-left:8px" id="backlinks-meta">—</span>
+      <button onclick="copyNAP()" style="margin-left:auto;float:right;background:#0ea5e9;border:none;color:#fff;padding:6px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer">📋 Copy NAP</button>
+    </h2>
+    <p style="font-size:13px;color:#bae6fd;margin-top:6px;margin-bottom:14px">
+      Pre-filled submission packets for 24 curated directories. Local-SEO citation engine.
+      Tier-1 = critical (Google Business, Bing Places, JustDial). Submit consistent NAP everywhere.
+    </p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:18px">
+      <div style="background:rgba(15,23,42,0.6);border:1px solid #334155;border-radius:8px;padding:12px;text-align:center">
+        <div style="font-size:11px;color:#7dd3fc;text-transform:uppercase">Tier 1 Live</div>
+        <div style="font-size:24px;font-weight:800;color:#22c55e" id="bl-tier1">—</div>
+        <div style="font-size:11px;color:#94a3b8" id="bl-tier1-total">of 5 critical</div>
+      </div>
+      <div style="background:rgba(15,23,42,0.6);border:1px solid #334155;border-radius:8px;padding:12px;text-align:center">
+        <div style="font-size:11px;color:#7dd3fc;text-transform:uppercase">Total Live</div>
+        <div style="font-size:24px;font-weight:800;color:#f1f5f9" id="bl-live">—</div>
+        <div style="font-size:11px;color:#94a3b8" id="bl-live-total">of 24</div>
+      </div>
+      <div style="background:rgba(15,23,42,0.6);border:1px solid #334155;border-radius:8px;padding:12px;text-align:center">
+        <div style="font-size:11px;color:#7dd3fc;text-transform:uppercase">Pending</div>
+        <div style="font-size:24px;font-weight:800;color:#f97316" id="bl-pending">—</div>
+        <div style="font-size:11px;color:#94a3b8">ready to submit</div>
+      </div>
+      <div style="background:rgba(15,23,42,0.6);border:1px solid #334155;border-radius:8px;padding:12px;text-align:center">
+        <div style="font-size:11px;color:#7dd3fc;text-transform:uppercase">Submitted</div>
+        <div style="font-size:24px;font-weight:800;color:#3b82f6" id="bl-submitted">—</div>
+        <div style="font-size:11px;color:#94a3b8">awaiting verify</div>
+      </div>
+      <div style="background:rgba(15,23,42,0.6);border:1px solid #334155;border-radius:8px;padding:12px;text-align:center">
+        <div style="font-size:11px;color:#7dd3fc;text-transform:uppercase">Broken</div>
+        <div style="font-size:24px;font-weight:800;color:#ef4444" id="bl-broken">—</div>
+        <div style="font-size:11px;color:#94a3b8">need fixing</div>
+      </div>
+    </div>
+
+    <h3 style="color:#bae6fd;font-size:14px;margin-bottom:10px">🎯 Submit Next (top 3 priorities)</h3>
+    <div id="bl-next-actions" style="margin-bottom:18px"></div>
+
+    <details>
+      <summary style="color:#7dd3fc;font-size:13px;font-weight:600;cursor:pointer;margin-bottom:10px">All 24 directories →</summary>
+      <div id="bl-all-list" style="margin-top:10px"></div>
+    </details>
+  </div>
+
   <!-- 🤖 AEO — Answer Engine Optimization (ChatGPT/Claude/Perplexity/Gemini) -->
   <div class="card" id="aeo-card" style="display:none;background:linear-gradient(135deg,#3b0764 0%,#1e293b 100%);border-color:#a855f7">
     <h2>🤖 AEO — Answer Engine Optimization <span class="live-dot"></span>
@@ -1021,6 +1069,82 @@
     }).join('');
   }
 
+  // Canonical NAP — used by the "📋 Copy NAP" button on the Backlink card.
+  var TELZON_NAP_TEXT = [
+    'Name: Telzon Academy',
+    'Phone: +91-9307189776',
+    'Email: connect@telzonacademy.in',
+    'Website: https://telzonacademy.in',
+    'Address: Nagpur, Maharashtra 440001, India',
+    'Hours: Mon–Sat 9:00 AM – 8:00 PM',
+    'Category: Digital Marketing Institute',
+    '',
+    'Short description:',
+    'Nagpur\'s top digital marketing institute with practical training, live projects and 95% placement.',
+    '',
+    'Long description:',
+    'Telzon Academy is Nagpur\'s leading digital marketing training institute. We train students, working professionals and business owners in SEO, Google Ads, social media marketing, content marketing and analytics through practical project-based courses with 95% placement assistance and free demo classes.',
+  ].join('\n');
+
+  function copyNAP() {
+    navigator.clipboard.writeText(TELZON_NAP_TEXT).then(function() {
+      var btn = event.target;
+      var orig = btn.textContent;
+      btn.textContent = '✓ Copied!';
+      btn.style.background = '#22c55e';
+      setTimeout(function() {
+        btn.textContent = orig;
+        btn.style.background = '#0ea5e9';
+      }, 2000);
+    });
+  }
+
+  function renderBacklinks(bl) {
+    if (!bl) return;
+    document.getElementById('backlinks-card').style.display = 'block';
+
+    var s = bl.stats || {};
+    document.getElementById('bl-tier1').textContent     = s.tier1Live || 0;
+    document.getElementById('bl-live').textContent      = s.live || 0;
+    document.getElementById('bl-pending').textContent   = s.pending || 0;
+    document.getElementById('bl-submitted').textContent = s.submitted || 0;
+    document.getElementById('bl-broken').textContent    = s.broken || 0;
+    document.getElementById('bl-live-total').textContent = 'of ' + (s.total || 0);
+    document.getElementById('backlinks-meta').textContent = 'Last scan ' + timeAgo(bl.timestamp) + ' · weekly cron';
+
+    // Next 3 actions — tier-1 first
+    var next = (bl.nextActions || []).slice(0, 3);
+    var nextEl = document.getElementById('bl-next-actions');
+    if (next.length === 0) {
+      nextEl.innerHTML = '<div style="color:#22c55e;padding:14px;background:rgba(34,197,94,0.1);border-radius:8px;font-size:13px">All directories submitted ✓</div>';
+    } else {
+      nextEl.innerHTML = next.map(function(a) {
+        var tierColor = a.tier === 1 ? '#ef4444' : a.tier === 2 ? '#f97316' : '#64748b';
+        return '<div style="background:rgba(15,23,42,0.6);border:1px solid #334155;border-left:4px solid ' + tierColor + ';border-radius:8px;padding:14px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;gap:12px">' +
+          '<div>' +
+          '<div style="color:#f1f5f9;font-weight:600;font-size:14px">' + a.name + ' <span style="background:' + tierColor + ';color:#fff;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-left:6px">TIER ' + a.tier + '</span></div>' +
+          '<div style="color:#94a3b8;font-size:12px;margin-top:3px">' + (a.notes || '') + '</div>' +
+          '</div>' +
+          '<a href="' + a.submissionUrl + '" target="_blank" rel="noopener" style="background:#0ea5e9;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600;white-space:nowrap">Submit →</a>' +
+          '</div>';
+      }).join('');
+    }
+
+    // Full list
+    var allEl = document.getElementById('bl-all-list');
+    if (bl.directories) {
+      allEl.innerHTML = '<div style="max-height:400px;overflow-y:auto">' + bl.directories.map(function(d) {
+        var color = d.status === 'live' ? '#22c55e' : d.status === 'submitted' ? '#3b82f6' : d.status === 'broken' ? '#ef4444' : '#64748b';
+        return '<div style="display:flex;align-items:center;gap:12px;padding:8px 12px;border-bottom:1px solid #1e293b;font-size:13px">' +
+          '<span style="display:inline-block;width:70px;text-align:center;padding:2px 6px;border-radius:10px;font-size:10px;font-weight:700;background:' + color + '20;color:' + color + '">' + d.status.toUpperCase() + '</span>' +
+          '<span style="flex:1;color:#f1f5f9">' + d.name + '</span>' +
+          '<span style="color:#64748b;font-size:11px">tier ' + d.tier + '</span>' +
+          '<a href="' + (d.listingUrl || d.submissionUrl) + '" target="_blank" rel="noopener" style="color:#7dd3fc;text-decoration:none">→</a>' +
+          '</div>';
+      }).join('') + '</div>';
+    }
+  }
+
   function renderAEO(aeo, aeoHb) {
     if (!aeo && !aeoHb) return;
     var card = document.getElementById('aeo-card');
@@ -1296,7 +1420,7 @@
   async function load() {
     try {
       var t = Date.now();
-      var [reportRes, historyRes, kwRes, actRes, hbRes, aiRes, aeoRes, aeoHbRes, lcRes] = await Promise.all([
+      var [reportRes, historyRes, kwRes, actRes, hbRes, aiRes, aeoRes, blRes, aeoHbRes, lcRes] = await Promise.all([
         fetch('/seo-reports/latest.json?t=' + t),
         fetch('/seo-reports/history.json?t=' + t),
         fetch('/seo-reports/keywords.json?t=' + t),
@@ -1304,6 +1428,7 @@
         fetch('/seo-reports/heartbeat.json?t=' + t),
         fetch('/seo-reports/ai-insights.json?t=' + t),
         fetch('/seo-reports/aeo-report.json?t=' + t),
+        fetch('/seo-reports/backlinks.json?t=' + t),
         fetch('/seo-reports/aeo-heartbeat.json?t=' + t),
         fetch('/seo-reports/issue-tracker.json?t=' + t),
       ]);
@@ -1319,6 +1444,7 @@
       var ai;      try { ai      = aiRes.ok      ? await aiRes.json()      : null; } catch(e) { ai = null; }
       var aeo;     try { aeo     = aeoRes.ok     ? await aeoRes.json()     : null; } catch(e) { aeo = null; }
       var aeoHb;   try { aeoHb   = aeoHbRes.ok   ? await aeoHbRes.json()   : null; } catch(e) { aeoHb = null; }
+      var bl;      try { bl      = blRes.ok      ? await blRes.json()      : null; } catch(e) { bl = null; }
       var lc;      try { lc      = lcRes.ok      ? await lcRes.json()      : null; } catch(e) { lc = null; }
 
       ALL_ACTIVITIES = Array.isArray(acts) ? acts : [];
@@ -1327,6 +1453,7 @@
       renderHealth(hb);
       renderDailyProgress(kwData);
       renderAEO(aeo, aeoHb);
+      renderBacklinks(bl);
       renderAI(ai);
       renderLifecycle(lc || report.issueTracker);
       renderBriefs(report.contentBriefs || []);

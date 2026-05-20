@@ -1,0 +1,100 @@
+name: SEO Backlink Agent
+
+# Weekly backlink agent — generates pre-filled submission packets for 24
+# curated directories, tracks lifecycle (pending/submitted/live/broken),
+# verifies live listings via Brave Search API.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # Mondays 06:00 UTC = 11:30 IST
+  workflow_dispatch:
+
+jobs:
+  backlinks:
+    name: Backlink Agent
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    if: "!contains(github.event.head_commit.message, 'chore(seo):')"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN || github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: seo-indexing-agent
+        run: npm install --omit=optional
+
+      - name: Run backlink agent
+        working-directory: seo-indexing-agent
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+          BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
+        run: node src/index.js backlinks --url $SITE_URL || true
+
+      - name: Log results to activity feed
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          script: |
+            const fs = require('fs');
+            try {
+              const reportPath = 'public/seo-reports/backlinks.json';
+              if (!fs.existsSync(reportPath)) return;
+              const r = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
+
+              const actPath = 'public/seo-reports/activity.json';
+              const acts = fs.existsSync(actPath) ? JSON.parse(fs.readFileSync(actPath, 'utf8')) : [];
+
+              acts.unshift({
+                timestamp: r.timestamp,
+                type: 'backlink',
+                icon: '🔗',
+                title: `Backlink scan · ${r.stats.live}/${r.stats.total} live · ${r.stats.tier1Live}/5 tier-1 live`,
+                details: `${r.stats.pending} pending · ${r.stats.submitted} submitted · ${r.stats.broken} broken`,
+              });
+
+              // Top 3 pending recommendations
+              for (const action of (r.nextActions || []).slice(0, 3)) {
+                acts.unshift({
+                  timestamp: r.timestamp,
+                  type: 'backlink',
+                  icon: '🔗',
+                  title: `Tier ${action.tier} backlink ready: ${action.name}`,
+                  details: action.notes || '',
+                });
+              }
+
+              fs.writeFileSync(actPath, JSON.stringify(acts.slice(0, 200), null, 2));
+
+              const { execSync } = require('child_process');
+              execSync('git config user.name "SEO Bot"');
+              execSync('git config user.email "seo-bot@telzonacademy.in"');
+              execSync('git add public/seo-reports/');
+              try {
+                execSync('git diff --cached --quiet || git commit -m "chore(seo): backlinks scan"');
+                execSync('git push');
+              } catch (e) { console.log('Push:', e.message); }
+            } catch (e) { console.log('Activity log error:', e.message); }
+
+      - name: Deploy to Hostinger
+        if: always()
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host:     ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port:     65002
+          source:   "public/seo-reports/backlinks.json"
+          target:   ${{ secrets.FTP_SERVER_DIR }}/seo-reports/
+          strip_components: 2
+          timeout:  30s
+        continue-on-error: true

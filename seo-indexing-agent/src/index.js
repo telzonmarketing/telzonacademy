@@ -82,6 +82,16 @@ program
   });
 
 program
+  .command('backlinks')
+  .description('Backlink agent — pre-filled submission packets for 24 directories + live tracking')
+  .option('-u, --url <url>', 'Website URL')
+  .action(async (opts) => {
+    const { BacklinkAgent } = require('./backlinks/BacklinkAgent');
+    const agent = new BacklinkAgent({ siteUrl: opts.url || process.env.SITE_URL });
+    await agent.run();
+  });
+
+program
   .command('aeo')
   .description('AEO — Answer Engine Optimization for ChatGPT/Claude/Perplexity/Gemini')
   .option('-u, --url <url>', 'Website URL')
