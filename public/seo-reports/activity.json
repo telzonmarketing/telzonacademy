@@ -1,5 +1,33 @@
 [
   {
+    "timestamp": "2026-05-20T17:35:35.110Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Tier 1 backlink ready: Apple Maps Connect",
+    "details": "Required for Apple Maps + Siri. Manual phone verification."
+  },
+  {
+    "timestamp": "2026-05-20T17:35:35.110Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Tier 1 backlink ready: Bing Places for Business",
+    "details": "Imports from Google Business. Phone verification."
+  },
+  {
+    "timestamp": "2026-05-20T17:35:35.110Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Tier 1 backlink ready: Google Business Profile",
+    "details": "Biggest local SEO ranking factor. Postcard verification required."
+  },
+  {
+    "timestamp": "2026-05-20T17:35:35.110Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Backlink scan · 0/24 live · 0/5 tier-1 live",
+    "details": "24 pending · 0 submitted · 0 broken"
+  },
+  {
     "timestamp": "2026-05-20T16:47:47.632Z",
     "type": "aeo",
     "icon": "🤖",
@@ -1370,33 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (critical): AI crawlers not explicitly allowed in robots.txt",
     "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data."
-  },
-  {
-    "timestamp": "2026-05-16T13:50:16.527Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 80/100 (B)",
-    "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-05-16T13:47:19.755Z",
-    "type": "error",
-    "icon": "🤖",
-    "title": "AEO issue (critical): AI crawlers not explicitly allowed in robots.txt",
-    "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data."
-  },
-  {
-    "timestamp": "2026-05-16T13:47:19.755Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 80/100 (B)",
-    "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-05-16T13:37:32.482Z",
-    "type": "done",
-    "icon": "✓",
-    "title": "Run completed",
-    "details": "Total: 65 pages · 2 fixes · 0 submitted"
   }
 ]
