@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-20T04:38:45.946Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 300ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-05-20T02:48:44.711Z",
     "type": "aeo",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔁",
     "title": "Attempt #9: working on \"1 pages missing from sitemap\"",
     "details": ""
-  },
-  {
-    "timestamp": "2026-05-16T13:24:11.115Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 duplicate title tags found",
-    "details": "Duplicate titles cause Google to pick which page to index, often ignoring the others."
   }
 ]
