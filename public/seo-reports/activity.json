@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-21T22:14:13.102Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 100/100 (A)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-21T21:50:54.267Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1391,12 +1398,5 @@
     "icon": "🕷",
     "title": "Crawled 65 pages",
     "details": "Found 2 issues (1 critical, 1 important)"
-  },
-  {
-    "timestamp": "2026-05-17T05:56:58.660Z",
-    "type": "run",
-    "icon": "▶",
-    "title": "SEO bot scheduled run started",
-    "details": "Mode: full audit + fix + submit + keyword tracking"
   }
 ]
