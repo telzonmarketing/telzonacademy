@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SEO Dashboard</title>
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --accent:  #a855f7;
+      --bg:      #0f172a;
+      --card:    #1e293b;
+      --border:  #334155;
+      --text:    #f8fafc;
+      --muted:   #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    /* Login gate */
+    #login-screen { position: fixed; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; z-index: 9999; }
+    #login-box   { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 36px; width: 380px; text-align: center; }
+    #login-box h2 { font-size: 20px; margin-bottom: 6px; }
+    #login-box p  { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+    #login-box input { width:100%; padding:12px 16px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); font-size:15px; outline:none; margin-bottom:12px; letter-spacing:2px; }
+    #login-box input:focus { border-color: var(--primary); }
+    #login-box button { width:100%; padding:12px; border-radius:8px; border:none; background:var(--primary); color:white; font-size:15px; font-weight:600; cursor:pointer; }
+    #login-error { color: #ef4444; font-size: 13px; margin-top: 10px; display: none; }
+    #login-client-name { color: var(--accent); font-weight: 600; }
+
+    /* Header */
+    .header { background: var(--card); border-bottom: 1px solid var(--border); padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .header .brand { display: flex; align-items: center; gap: 12px; }
+    .header img.logo { height: 40px; width: 40px; border-radius: 8px; object-fit: contain; background: white; padding: 4px; }
+    .header h1 { font-size: 18px; font-weight: 700; }
+    .header .subtitle { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .badge { background: #22c55e20; color: #22c55e; border: 1px solid #22c55e40; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge.error { background: #ef444420; color: #ef4444; border-color: #ef444440; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+    .empty { color: var(--muted); text-align: center; padding: 40px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 15px; font-weight: 600; margin-bottom: 16px; }
+    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; }
+    .stat { background: rgba(15,23,42,0.6); border: 1px solid var(--border); border-radius: 10px; padding: 14px; text-align: center; }
+    .stat .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat .value { font-size: 28px; font-weight: 800; margin-top: 4px; }
+    .telzon-footer { text-align: center; font-size: 11px; color: var(--muted); padding: 24px; }
+  </style>
+</head>
+<body>
+
+  <!-- Login -->
+  <div id="login-screen">
+    <div id="login-box">
+      <h2>🔒 SEO Dashboard</h2>
+      <p>Logging into: <span id="login-client-name">—</span></p>
+      <input type="password" id="pass-input" placeholder="Enter password" autofocus />
+      <button onclick="checkPass()">Unlock</button>
+      <div id="login-error">Incorrect password</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header" id="page-header" style="display:none">
+    <div class="brand">
+      <img class="logo" id="client-logo" alt="" />
+      <div>
+        <h1 id="client-name">—</h1>
+        <div class="subtitle" id="client-site">—</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <span id="last-run" class="subtitle">—</span>
+      <span class="badge" id="status-badge">Loading</span>
+    </div>
+  </div>
+
+  <div class="container" id="main-content" style="display:none">
+
+    <!-- Stat cards -->
+    <div class="card">
+      <h2>📊 SEO Snapshot</h2>
+      <div class="stat-row">
+        <div class="stat"><div class="label">Pages Crawled</div><div class="value" id="s-pages">—</div></div>
+        <div class="stat"><div class="label">Critical</div><div class="value" id="s-critical" style="color:#ef4444">—</div></div>
+        <div class="stat"><div class="label">Important</div><div class="value" id="s-important" style="color:#f59e0b">—</div></div>
+        <div class="stat"><div class="label">Auto Fixed</div><div class="value" id="s-fixed" style="color:#22c55e">—</div></div>
+        <div class="stat"><div class="label">Submitted</div><div class="value" id="s-submitted" style="color:#a855f7">—</div></div>
+        <div class="stat"><div class="label">Avg KW Pos</div><div class="value" id="s-pos" style="color:#f97316">—</div></div>
+      </div>
+    </div>
+
+    <!-- Issues -->
+    <div class="card">
+      <h2>🔴 Current Issues</h2>
+      <div id="issues-list"><div class="empty">Loading...</div></div>
+    </div>
+
+    <!-- AEO -->
+    <div class="card" id="aeo-section" style="display:none">
+      <h2>🤖 AEO Score (AI search visibility)</h2>
+      <div class="stat-row">
+        <div class="stat"><div class="label">Score</div><div class="value" id="aeo-score-val" style="color:#a855f7">—</div></div>
+        <div class="stat"><div class="label">Grade</div><div class="value" id="aeo-grade-val" style="color:#fde047">—</div></div>
+        <div class="stat"><div class="label">AI Bots Allowed</div><div class="value" id="aeo-bots">—</div></div>
+        <div class="stat"><div class="label">Pages w/ Schema</div><div class="value" id="aeo-schema">—</div></div>
+      </div>
+    </div>
+
+    <!-- Activity feed -->
+    <div class="card">
+      <h2>📜 Recent Activity</h2>
+      <div id="activity-list"><div class="empty">Loading...</div></div>
+    </div>
+
+    <div class="telzon-footer" id="telzon-footer">
+      Powered by Telzon Academy SEO Platform
+    </div>
+  </div>
+
+<script>
+  // ───────── Client + config ─────────
+  function getClientSlug() {
+    var p = new URLSearchParams(window.location.search);
+    return p.get('client') || 'telzonacademy';
+  }
+  var CLIENT = getClientSlug();
+  var BASE = '/clients/' + CLIENT;
+  var CONFIG = null;
+
+  // ───────── Auth ─────────
+  function checkPass() {
+    var val = document.getElementById('pass-input').value;
+    var stored = CONFIG && CONFIG.access && CONFIG.access.dashboardPassword;
+    if (!stored) {
+      document.getElementById('login-error').textContent = 'No password set for this client';
+      document.getElementById('login-error').style.display = 'block';
+      return;
+    }
+    if (val === stored) {
+      sessionStorage.setItem('seo_auth_' + CLIENT, 'ok');
+      onAuth();
+    } else {
+      document.getElementById('login-error').style.display = 'block';
+      document.getElementById('pass-input').value = '';
+    }
+  }
+
+  function onAuth() {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('page-header').style.display = 'flex';
+    document.getElementById('main-content').style.display = 'block';
+    loadDashboard();
+  }
+
+  // ───────── Helpers ─────────
+  function fmtAgo(d) {
+    if (!d) return '—';
+    var ms = Date.now() - new Date(d).getTime();
+    var s = Math.floor(ms / 1000);
+    if (s < 60)  return s + 's ago';
+    if (s < 3600) return Math.floor(s/60) + 'm ago';
+    if (s < 86400) return Math.floor(s/3600) + 'h ago';
+    return Math.floor(s/86400) + 'd ago';
+  }
+
+  async function fetchJSON(url) {
+    try {
+      var t = Date.now();
+      var r = await fetch(url + (url.includes('?') ? '&' : '?') + 't=' + t);
+      if (!r.ok) return null;
+      var ct = r.headers.get('content-type') || '';
+      if (!ct.includes('json')) return null;
+      return await r.json();
+    } catch (e) { return null; }
+  }
+
+  // ───────── Init ─────────
+  async function init() {
+    CONFIG = await fetchJSON(BASE + '/config.json');
+    if (!CONFIG) {
+      document.getElementById('login-client-name').textContent = '(unknown client)';
+      document.getElementById('login-error').textContent = 'Client "' + CLIENT + '" not found';
+      document.getElementById('login-error').style.display = 'block';
+      return;
+    }
+
+    document.getElementById('login-client-name').textContent = CONFIG.name || CLIENT;
+    document.title = (CONFIG.branding?.dashboardTitle) || (CONFIG.name + ' — SEO Dashboard');
+
+    // Apply branding
+    if (CONFIG.branding) {
+      if (CONFIG.branding.primaryColor) document.documentElement.style.setProperty('--primary', CONFIG.branding.primaryColor);
+      if (CONFIG.branding.accentColor)  document.documentElement.style.setProperty('--accent',  CONFIG.branding.accentColor);
+      if (CONFIG.branding.showTelzonBranding === false) {
+        document.getElementById('telzon-footer').style.display = 'none';
+      }
+    }
+
+    // Already authed?
+    if (sessionStorage.getItem('seo_auth_' + CLIENT) === 'ok') onAuth();
+  }
+
+  // ───────── Dashboard render ─────────
+  async function loadDashboard() {
+    document.getElementById('client-name').textContent = CONFIG.name;
+    document.getElementById('client-site').textContent = CONFIG.site.url;
+    if (CONFIG.branding?.logo) document.getElementById('client-logo').src = CONFIG.branding.logo;
+
+    var [latest, activity, aeo] = await Promise.all([
+      fetchJSON(BASE + '/seo-reports/latest.json'),
+      fetchJSON(BASE + '/seo-reports/activity.json'),
+      fetchJSON(BASE + '/seo-reports/aeo-report.json'),
+    ]);
+
+    if (!latest) {
+      document.getElementById('status-badge').textContent = 'No data yet';
+      document.getElementById('status-badge').className = 'badge error';
+      document.getElementById('last-run').textContent = 'First scan pending';
+      document.getElementById('issues-list').innerHTML = '<div class="empty">No data yet — bot scans within 24h of onboarding</div>';
+      return;
+    }
+
+    // Status
+    var s = latest.summary || {};
+    document.getElementById('s-pages').textContent     = s.pagesFound || 0;
+    document.getElementById('s-critical').textContent  = s.critical || 0;
+    document.getElementById('s-important').textContent = s.important || 0;
+    document.getElementById('s-fixed').textContent     = s.issuesFixed || 0;
+    document.getElementById('s-submitted').textContent = s.pagesSubmitted || 0;
+    document.getElementById('s-pos').textContent       = s.avgPosition || '—';
+
+    document.getElementById('last-run').textContent = 'Last run: ' + fmtAgo(latest.timestamp);
+    document.getElementById('status-badge').textContent = (s.critical || 0) === 0 ? '✓ Healthy' : '⚠ ' + s.critical + ' Critical';
+    document.getElementById('status-badge').className = 'badge' + ((s.critical || 0) === 0 ? '' : ' error');
+
+    // Issues
+    var issuesEl = document.getElementById('issues-list');
+    if ((latest.issues || []).length === 0) {
+      issuesEl.innerHTML = '<div style="color:#22c55e">✓ No issues detected</div>';
+    } else {
+      issuesEl.innerHTML = (latest.issues || []).slice(0, 8).map(function(i) {
+        return '<div style="padding:10px 0;border-bottom:1px solid var(--border);font-size:13px">' +
+          '<strong style="color:var(--text)">' + i.title + '</strong><br>' +
+          '<span style="color:var(--muted);font-size:12px">' + (i.description || '') + '</span>' +
+          '</div>';
+      }).join('');
+    }
+
+    // Activity
+    var actEl = document.getElementById('activity-list');
+    if ((activity || []).length === 0) {
+      actEl.innerHTML = '<div class="empty">No activity yet</div>';
+    } else {
+      actEl.innerHTML = activity.slice(0, 15).map(function(a) {
+        return '<div style="padding:8px 0;border-bottom:1px solid var(--border);font-size:13px">' +
+          '<strong>' + (a.icon || '•') + ' ' + a.title + '</strong>' +
+          (a.details ? '<br><span style="color:var(--muted);font-size:12px">' + a.details + '</span>' : '') +
+          '<div style="color:var(--muted);font-size:11px;margin-top:2px">' + fmtAgo(a.timestamp) + '</div>' +
+          '</div>';
+      }).join('');
+    }
+
+    // AEO
+    if (aeo) {
+      document.getElementById('aeo-section').style.display = 'block';
+      document.getElementById('aeo-score-val').textContent = aeo.score || '—';
+      document.getElementById('aeo-grade-val').textContent = aeo.grade || '—';
+      document.getElementById('aeo-bots').textContent      = (aeo.aiCrawlers || []).length + '/10';
+      var schemaPages = (aeo.strengths || []).find(function(s) { return s.includes('structured data'); });
+      document.getElementById('aeo-schema').textContent = schemaPages ? schemaPages.match(/\d+/)?.[0] || '—' : '—';
+    }
+  }
+
+  // Bind Enter on password input
+  document.getElementById('pass-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') checkPass();
+  });
+
+  init();
+  setInterval(function() { if (document.visibilityState === 'visible' && sessionStorage.getItem('seo_auth_' + CLIENT) === 'ok') loadDashboard(); }, 60000);
+</script>
+
+</body>
+</html>

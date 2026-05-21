@@ -282,7 +282,10 @@ class IndexingAgent {
     console.log(chalk.bold.green('\nRunning full pipeline: Audit → Fix → Submit → Rank\n'));
     console.log(chalk.gray('─'.repeat(56)));
 
-    await this.audit('full-report.json');
+    const fullReportPath = this.config.outputDir
+      ? `${this.config.outputDir}/latest.json`
+      : 'full-report.json';
+    await this.audit(fullReportPath);
     console.log(chalk.gray('─'.repeat(56)));
 
     const criticalIssues = this.results.issuesFound.filter(i => i.severity === 'critical');
@@ -301,17 +304,23 @@ class IndexingAgent {
 
     // Phase 4: keyword rank tracking (load previous snapshot for change detection)
     let previousKeywords = [];
+    const snapshotPath = this.config.outputDir
+      ? `${this.config.outputDir}/keywords-snapshot.json`
+      : 'keywords-snapshot.json';
     try {
       const fs = require('fs');
-      if (fs.existsSync('keywords-snapshot.json')) {
-        previousKeywords = JSON.parse(fs.readFileSync('keywords-snapshot.json', 'utf8'));
+      if (fs.existsSync(snapshotPath)) {
+        previousKeywords = JSON.parse(fs.readFileSync(snapshotPath, 'utf8'));
       }
     } catch (_) {}
     await this.rankKeywords(previousKeywords);
 
     // Phase 4.5: Persistent issue tracking — keep working until each issue is WON
     console.log(chalk.bold('\n[ PHASE 4.5 ] Reconciling issue lifecycle\n'));
-    const tracker = new PersistentFixer({ statePath: '../public/seo-reports/issue-tracker.json' });
+    const trackerPath = this.config.outputDir
+      ? `${this.config.outputDir}/issue-tracker.json`
+      : '../public/seo-reports/issue-tracker.json';
+    const tracker = new PersistentFixer({ statePath: trackerPath });
     const { state: trkState, actions: trkActions } = tracker.reconcile(
       this.results.issuesFound,
       this.results.issuesFixed
@@ -365,13 +374,13 @@ class IndexingAgent {
     if (this.results.keywords.length > 0) {
       try {
         const fs = require('fs');
-        fs.writeFileSync('keywords-snapshot.json', JSON.stringify(this.results.keywords, null, 2));
+        fs.writeFileSync(snapshotPath, JSON.stringify(this.results.keywords, null, 2));
       } catch (_) {}
     }
 
     // Save the full report including keywords
     const reporter = new Reporter();
-    await reporter.save(this.results, 'full-report.json');
+    await reporter.save(this.results, fullReportPath);
 
     console.log(chalk.bold.green('\n✓ Full pipeline complete!\n'));
   }

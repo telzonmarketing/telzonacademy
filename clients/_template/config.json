@@ -1,0 +1,58 @@
+{
+  "slug": "client-name",
+  "name": "Client Name",
+  "active": true,
+  "onboardedAt": "2026-05-21",
+
+  "site": {
+    "url": "https://example.com",
+    "primaryKeyword": "main keyword they want to rank for",
+    "competitors": ["https://competitor1.com", "https://competitor2.com"]
+  },
+
+  "nap": {
+    "businessName": "Client Business Name Pvt Ltd",
+    "phone": "+91-XXXXXXXXXX",
+    "email": "contact@example.com",
+    "address": {
+      "street": "Street Address",
+      "city": "Nagpur",
+      "state": "Maharashtra",
+      "pincode": "440001",
+      "country": "India"
+    },
+    "hours": "Mo-Sa 09:00-20:00",
+    "categories": ["Primary Category", "Secondary Category"],
+    "shortDescription": "One-line description used in directory submissions.",
+    "logo": "https://example.com/logo.png"
+  },
+
+  "credentials": {
+    "_comment": "Names of GitHub secrets — actual values stored in repo Secrets, never here.",
+    "gscServiceAccountSecret": "CLIENT_NAME_GSC_KEY",
+    "bingApiKeySecret": "CLIENT_NAME_BING_KEY",
+    "indexnowKey": "client-name-indexnow-key.txt"
+  },
+
+  "features": {
+    "fullAuditEnabled": true,
+    "heartbeatEnabled": true,
+    "blitzEnabled": false,
+    "aeoEnabled": true,
+    "backlinksEnabled": true,
+    "aiBrainEnabled": false
+  },
+
+  "branding": {
+    "logo": "https://example.com/logo.png",
+    "primaryColor": "#3b82f6",
+    "accentColor": "#a855f7",
+    "dashboardTitle": "Client SEO Dashboard",
+    "showTelzonBranding": false
+  },
+
+  "access": {
+    "dashboardPassword": "set-a-strong-password-here",
+    "_comment": "Client uses this password at telzonacademy.in/clients/dashboard.html?client=<slug>"
+  }
+}

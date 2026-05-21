@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Telzon SEO Platform — Admin Overview</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, sans-serif; background: #0f172a; color: #f8fafc; min-height: 100vh; padding: 32px; }
+    h1 { font-size: 24px; margin-bottom: 6px; }
+    .meta { color: #94a3b8; font-size: 13px; margin-bottom: 24px; }
+
+    #login { position: fixed; inset: 0; background: #0f172a; display: flex; align-items: center; justify-content: center; z-index: 999; }
+    #login-box { background: #1e293b; border-radius: 16px; padding: 36px; width: 360px; text-align: center; }
+    #login-box input { width:100%; padding:12px; border-radius:8px; border:1px solid #334155; background:#0f172a; color:#fff; margin:12px 0; font-size:15px; outline:none; }
+    #login-box button { width:100%; padding:12px; border-radius:8px; border:none; background:#3b82f6; color:white; font-size:15px; font-weight:600; cursor:pointer; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 20px; transition: transform 0.15s; }
+    .card:hover { transform: translateY(-2px); border-color: #475569; }
+    .card .title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .card .site  { color: #94a3b8; font-size: 12px; margin-bottom: 14px; }
+    .card .stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+    .card .stat  { background: rgba(15,23,42,0.5); border-radius: 8px; padding: 8px; text-align: center; }
+    .card .stat .v { font-size: 18px; font-weight: 700; }
+    .card .stat .l { font-size: 10px; color: #94a3b8; text-transform: uppercase; }
+    .card .open-btn { display: block; text-align: center; background: #3b82f6; color: white; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+    .card.no-data { opacity: 0.5; }
+  </style>
+</head>
+<body>
+
+<div id="login">
+  <div id="login-box">
+    <h2>🛠 Telzon SEO Admin</h2>
+    <p style="color:#94a3b8;font-size:13px;margin-top:8px">Master overview across all clients</p>
+    <input type="password" id="pw" placeholder="Admin password" />
+    <button onclick="auth()">Unlock</button>
+    <div id="err" style="color:#ef4444;font-size:13px;margin-top:8px;display:none">Wrong password</div>
+  </div>
+</div>
+
+<div id="content" style="display:none">
+  <h1>🛠 Telzon SEO Platform</h1>
+  <p class="meta">Multi-client SEO overview · <span id="client-count">—</span> active clients</p>
+  <div class="grid" id="grid"><div style="color:#94a3b8">Loading…</div></div>
+</div>
+
+<script>
+  // CHANGE THIS to your master password (only you should know it)
+  var ADMIN_PASSWORD = '9923022925-admin';
+
+  function auth() {
+    if (document.getElementById('pw').value === ADMIN_PASSWORD) {
+      sessionStorage.setItem('seo_admin', 'ok');
+      onAuth();
+    } else {
+      document.getElementById('err').style.display = 'block';
+    }
+  }
+
+  function onAuth() {
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+    load();
+  }
+
+  async function fetchJSON(url) {
+    try {
+      var r = await fetch(url + '?t=' + Date.now());
+      if (!r.ok) return null;
+      return await r.json();
+    } catch (e) { return null; }
+  }
+
+  function fmtAgo(d) {
+    if (!d) return '—';
+    var ms = Date.now() - new Date(d).getTime();
+    if (ms < 3600000) return Math.floor(ms/60000) + 'm ago';
+    if (ms < 86400000) return Math.floor(ms/3600000) + 'h ago';
+    return Math.floor(ms/86400000) + 'd ago';
+  }
+
+  async function load() {
+    var dir = await fetchJSON('/clients/directory.json');
+    if (!dir || !dir.clients) {
+      document.getElementById('grid').innerHTML = '<div style="color:#ef4444">No clients found</div>';
+      return;
+    }
+    document.getElementById('client-count').textContent = dir.clients.length;
+
+    var cards = await Promise.all(dir.clients.map(async function(c) {
+      var latest = await fetchJSON('/clients/' + c.slug + '/seo-reports/latest.json');
+      var noData = !latest;
+      var s = latest?.summary || {};
+      return '<div class="card' + (noData ? ' no-data' : '') + '">' +
+        '<div class="title">' + c.name + '</div>' +
+        '<div class="site">' + c.site + '</div>' +
+        '<div class="stats">' +
+          '<div class="stat"><div class="v">' + (s.pagesFound || '—') + '</div><div class="l">Pages</div></div>' +
+          '<div class="stat"><div class="v" style="color:#ef4444">' + (s.critical || 0) + '</div><div class="l">Critical</div></div>' +
+          '<div class="stat"><div class="v" style="color:#22c55e">' + (s.issuesFixed || 0) + '</div><div class="l">Fixed</div></div>' +
+        '</div>' +
+        '<div style="color:#94a3b8;font-size:11px;margin-bottom:10px">Last run: ' + fmtAgo(latest?.timestamp) + '</div>' +
+        '<a class="open-btn" href="/clients/dashboard.html?client=' + c.slug + '" target="_blank">Open dashboard →</a>' +
+        '</div>';
+    }));
+
+    document.getElementById('grid').innerHTML = cards.join('');
+  }
+
+  document.getElementById('pw').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') auth();
+  });
+
+  if (sessionStorage.getItem('seo_admin') === 'ok') onAuth();
+</script>
+
+</body>
+</html>

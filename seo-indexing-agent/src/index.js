@@ -82,6 +82,51 @@ program
   });
 
 program
+  .command('mt-run')
+  .description('Multi-tenant runner — loops through clients/*/config.json and runs the requested mode for each client')
+  .option('-m, --mode <mode>', 'full | heartbeat | audit | submit | aeo | backlinks', 'full')
+  .action(async (opts) => {
+    const { MultiTenantRunner } = require('./multi-tenant/MultiTenantRunner');
+    const { IndexingAgent } = require('./agents/IndexingAgent');
+    const runner = new MultiTenantRunner();
+
+    await runner.forEachClient(opts.mode, async (client) => {
+      const cfg = {
+        siteUrl: client.site.url,
+        githubRepo: process.env.GITHUB_REPO,
+        githubToken: process.env.GH_TOKEN,
+        clientSlug: client.slug,
+        outputDir: client._outputDir,
+      };
+      const agent = new IndexingAgent(cfg);
+
+      if (opts.mode === 'full')      return agent.runFull();
+      if (opts.mode === 'heartbeat') return agent.heartbeat();
+      if (opts.mode === 'audit')     return agent.audit(`${client._outputDir}/latest.json`);
+      if (opts.mode === 'submit')    return agent.submit();
+
+      if (opts.mode === 'aeo') {
+        const { AEOAgent } = require('./aeo/AEOAgent');
+        return new AEOAgent({
+          siteUrl: client.site.url,
+          publicDir: `${client._outputDir}/..`,
+          reportsDir: client._outputDir,
+        }).run();
+      }
+
+      if (opts.mode === 'backlinks') {
+        const { BacklinkAgent } = require('./backlinks/BacklinkAgent');
+        return new BacklinkAgent({
+          siteUrl: client.site.url,
+          statePath: `${client._outputDir}/backlinks.json`,
+        }).run();
+      }
+
+      throw new Error('Unsupported mode: ' + opts.mode);
+    });
+  });
+
+program
   .command('backlinks')
   .description('Backlink agent — pre-filled submission packets for 24 directories + live tracking')
   .option('-u, --url <url>', 'Website URL')

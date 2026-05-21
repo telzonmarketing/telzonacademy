@@ -1,0 +1,63 @@
+{
+  "slug": "telzonacademy",
+  "name": "Telzon Academy",
+  "active": true,
+  "onboardedAt": "2026-04-16",
+
+  "site": {
+    "url": "https://telzonacademy.in",
+    "primaryKeyword": "digital marketing course in nagpur",
+    "competitors": [
+      "https://www.inventateq.com",
+      "https://www.digitalfloats.com"
+    ]
+  },
+
+  "nap": {
+    "businessName": "Telzon Academy",
+    "phone": "+91-9307189776",
+    "email": "connect@telzonacademy.in",
+    "address": {
+      "street": "Nagpur",
+      "city": "Nagpur",
+      "state": "Maharashtra",
+      "pincode": "440001",
+      "country": "India"
+    },
+    "hours": "Mo-Sa 09:00-20:00",
+    "categories": [
+      "Digital Marketing Institute",
+      "Training Center",
+      "Educational Services"
+    ],
+    "shortDescription": "Nagpur's top digital marketing institute with practical training, live projects and 95% placement.",
+    "logo": "https://horizons-cdn.hostinger.com/79c8a858-426e-4a5e-be6a-862835a41c7c/e2680f0d45ebb3c1bcf9e8d8f6fa7d69.jpg"
+  },
+
+  "credentials": {
+    "gscServiceAccountSecret": "GOOGLE_SERVICE_ACCOUNT_KEY",
+    "bingApiKeySecret": "BING_API_KEY",
+    "indexnowKey": "c218d7307cc58cf886898bc873656853.txt"
+  },
+
+  "features": {
+    "fullAuditEnabled": true,
+    "heartbeatEnabled": true,
+    "blitzEnabled": true,
+    "aeoEnabled": true,
+    "backlinksEnabled": true,
+    "aiBrainEnabled": false
+  },
+
+  "branding": {
+    "logo": "https://horizons-cdn.hostinger.com/79c8a858-426e-4a5e-be6a-862835a41c7c/e2680f0d45ebb3c1bcf9e8d8f6fa7d69.jpg",
+    "primaryColor": "#3b82f6",
+    "accentColor": "#a855f7",
+    "dashboardTitle": "Telzon Academy SEO Dashboard",
+    "showTelzonBranding": true
+  },
+
+  "access": {
+    "dashboardPassword": "9923022925"
+  }
+}

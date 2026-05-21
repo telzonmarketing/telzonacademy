@@ -1,0 +1,100 @@
+name: SEO Multi-Client (SaaS)
+
+# Runs the SEO bot for every active client under clients/*/config.json.
+# A single workflow that scales as new clients are added — just commit
+# a new clients/<slug>/config.json and the next run picks them up.
+
+on:
+  schedule:
+    - cron: '0 2 * * *'      # daily full audit for all clients (07:30 IST)
+    - cron: '15 * * * *'     # hourly heartbeat for all clients
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Mode: full / heartbeat / audit / submit / aeo / backlinks'
+        required: true
+        default: 'full'
+        type: choice
+        options: [full, heartbeat, audit, submit, aeo, backlinks]
+
+jobs:
+  multi-tenant-run:
+    name: Multi-Client SEO Run
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    if: "!contains(github.event.head_commit.message, 'chore(seo):')"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN || github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: seo-indexing-agent
+        run: npm install --omit=optional
+
+      - name: Sync client configs to public/clients/
+        run: node seo-indexing-agent/scripts/sync-client-configs.js
+
+      - name: Determine mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if [ "${{ github.event.schedule }}" = "15 * * * *" ]; then
+              echo "mode=heartbeat" >> $GITHUB_OUTPUT
+            else
+              echo "mode=full" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "mode=${{ github.event.inputs.mode || 'full' }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run for every active client
+        working-directory: seo-indexing-agent
+        env:
+          # Telzon's own credentials
+          GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+          BING_API_KEY:               ${{ secrets.BING_API_KEY }}
+          BRAVE_SEARCH_API_KEY:       ${{ secrets.BRAVE_SEARCH_API_KEY }}
+          GITHUB_TOKEN:               ${{ secrets.GH_TOKEN }}
+          GITHUB_REPO:                ${{ github.repository }}
+          # New clients add their credentials as GitHub secrets — the
+          # client config maps secret-names so the agent picks them up.
+          # Add more env lines here as new clients are onboarded.
+        run: node src/index.js mt-run --mode ${{ steps.mode.outputs.mode }} || true
+
+      - name: Commit + push outputs
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          script: |
+            const { execSync } = require('child_process');
+            execSync('git config user.name "SEO Bot"');
+            execSync('git config user.email "seo-bot@telzonacademy.in"');
+            execSync('git add public/clients/');
+            try {
+              execSync('git diff --cached --quiet || git commit -m "chore(seo): multi-client ${{ steps.mode.outputs.mode }} run"');
+              execSync('git push');
+            } catch (e) { console.log('Push:', e.message); }
+
+      - name: Deploy multi-tenant data to Hostinger
+        if: always()
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host:     ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port:     65002
+          source:   "public/clients/"
+          target:   ${{ secrets.FTP_SERVER_DIR }}
+          strip_components: 1
+          timeout:  120s
+        continue-on-error: true
