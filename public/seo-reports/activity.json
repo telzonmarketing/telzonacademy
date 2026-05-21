@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-21T21:50:54.267Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 292ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-05-21T21:19:54.955Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "▶",
     "title": "SEO bot scheduled run started",
     "details": "Mode: full audit + fix + submit + keyword tracking"
-  },
-  {
-    "timestamp": "2026-05-17T05:38:34.155Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
   }
 ]
