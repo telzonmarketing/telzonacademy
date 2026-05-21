@@ -1,0 +1,31 @@
+{
+  "slug": "telzonacademy",
+  "name": "Telzon Academy",
+  "site": {
+    "url": "https://telzonacademy.in",
+    "primaryKeyword": "digital marketing course in nagpur",
+    "competitors": [
+      "https://www.inventateq.com",
+      "https://www.digitalfloats.com"
+    ]
+  },
+  "branding": {
+    "logo": "https://horizons-cdn.hostinger.com/79c8a858-426e-4a5e-be6a-862835a41c7c/e2680f0d45ebb3c1bcf9e8d8f6fa7d69.jpg",
+    "primaryColor": "#3b82f6",
+    "accentColor": "#a855f7",
+    "dashboardTitle": "Telzon Academy SEO Dashboard",
+    "showTelzonBranding": true
+  },
+  "features": {
+    "fullAuditEnabled": true,
+    "heartbeatEnabled": true,
+    "blitzEnabled": true,
+    "aeoEnabled": true,
+    "backlinksEnabled": true,
+    "aiBrainEnabled": false
+  },
+  "onboardedAt": "2026-04-16",
+  "access": {
+    "dashboardPassword": "9923022925"
+  }
+}
