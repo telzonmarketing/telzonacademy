@@ -34,6 +34,9 @@ class IndexingAgent {
       deep: config.deep || false,
       forceResubmit: config.forceResubmit || false,
       monitorInterval: config.monitorInterval || 24 * 3600 * 1000,
+      // Multi-tenant fields — passed through unchanged
+      outputDir: config.outputDir || null,
+      clientSlug: config.clientSlug || null,
     };
 
     this.results = {
