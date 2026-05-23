@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-23T16:45:39.624Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-05-23T15:57:26.743Z",
     "type": "aeo",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🏆",
     "title": "WON: \"1 pages missing from sitemap\" resolved after 13 attempts",
     "details": "Took 2 days from first detection"
-  },
-  {
-    "timestamp": "2026-05-18T07:35:45.621Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"1 Next.js pages fetch data client-side only\" resolved after 7 attempts",
-    "details": "Took 3 days from first detection"
   }
 ]
