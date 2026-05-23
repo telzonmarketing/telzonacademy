@@ -1,26 +1,20 @@
 {
-  "timestamp": "2026-05-23T10:27:37.241Z",
+  "timestamp": "2026-05-23T11:56:05.629Z",
   "pagesAudited": 64,
-  "score": 92,
+  "score": 100,
   "grade": "A",
-  "issues": [
-    {
-      "severity": "low",
-      "title": "Few pages have question-style headings",
-      "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility.",
-      "fix": "Convert some H2/H3 headings into questions matching real user queries"
-    }
-  ],
+  "issues": [],
   "strengths": [
     "All 10 major AI crawlers explicitly allowed",
     "llms.txt present at site root",
     "64/64 pages have structured data",
     "64 pages have FAQPage schema",
+    "64 pages have question-style headings",
     "64 pages declare Organization schema"
   ],
   "llms": {
     "compactBytes": 18005,
-    "fullBytes": 36890
+    "fullBytes": 70170
   },
   "faqSuggestions": [],
   "visibility": {
