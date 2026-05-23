@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-23T16:57:23.239Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 100/100 (A)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-23T16:45:39.624Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "✓",
     "title": "Run completed",
     "details": "Total: 64 pages · 0 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-05-18T07:35:45.621Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"1 pages missing from sitemap\" resolved after 13 attempts",
-    "details": "Took 2 days from first detection"
   }
 ]
