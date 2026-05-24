@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-24T08:01:21.559Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 368ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-05-24T06:30:45.616Z",
     "type": "aeo",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (critical): AI crawlers not explicitly allowed in robots.txt",
     "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data."
-  },
-  {
-    "timestamp": "2026-05-18T21:05:16.040Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 80/100 (B)",
-    "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
   }
 ]
