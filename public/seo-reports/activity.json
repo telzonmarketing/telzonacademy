@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-25T23:58:51.967Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 100/100 (A)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-25T22:50:08.816Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🔗",
     "title": "Tier 1 backlink ready: Bing Places for Business",
     "details": "Imports from Google Business. Phone verification."
-  },
-  {
-    "timestamp": "2026-05-20T17:35:35.110Z",
-    "type": "backlink",
-    "icon": "🔗",
-    "title": "Tier 1 backlink ready: Google Business Profile",
-    "details": "Biggest local SEO ranking factor. Postcard verification required."
   }
 ]
