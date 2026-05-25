@@ -1,5 +1,17 @@
 [
   {
+    "label": "full",
+    "timestamp": "2026-05-25T06:19:06.701Z",
+    "clients": [
+      {
+        "slug": "telzonacademy",
+        "name": "Telzon Academy",
+        "status": "ok",
+        "result": null
+      }
+    ]
+  },
+  {
     "label": "heartbeat",
     "timestamp": "2026-05-25T04:53:44.367Z",
     "clients": [
