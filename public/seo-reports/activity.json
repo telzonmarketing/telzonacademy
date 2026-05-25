@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-25T11:41:20.998Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-05-25T10:25:06.167Z",
     "type": "backlink",
     "icon": "🔗",
@@ -1391,12 +1398,5 @@
     "icon": "▶",
     "title": "SEO bot scheduled run started",
     "details": "Mode: full audit + fix + submit + keyword tracking"
-  },
-  {
-    "timestamp": "2026-05-20T05:55:47.216Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
   }
 ]
