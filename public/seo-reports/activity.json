@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-25T22:50:08.816Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-05-25T22:08:10.586Z",
     "type": "aeo",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔗",
     "title": "Tier 1 backlink ready: Google Business Profile",
     "details": "Biggest local SEO ranking factor. Postcard verification required."
-  },
-  {
-    "timestamp": "2026-05-20T17:35:35.110Z",
-    "type": "backlink",
-    "icon": "🔗",
-    "title": "Backlink scan · 0/24 live · 0/5 tier-1 live",
-    "details": "24 pending · 0 submitted · 0 broken"
   }
 ]
