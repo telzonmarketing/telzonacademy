@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-26T01:51:33.195Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-05-25T23:58:51.967Z",
     "type": "aeo",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔗",
     "title": "Tier 1 backlink ready: Apple Maps Connect",
     "details": "Required for Apple Maps + Siri. Manual phone verification."
-  },
-  {
-    "timestamp": "2026-05-20T17:35:35.110Z",
-    "type": "backlink",
-    "icon": "🔗",
-    "title": "Tier 1 backlink ready: Bing Places for Business",
-    "details": "Imports from Google Business. Phone verification."
   }
 ]
