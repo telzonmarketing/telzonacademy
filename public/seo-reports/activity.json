@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-26T23:03:32.764Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 100/100 (A)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-26T22:59:28.223Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "✓",
     "title": "Run completed",
     "details": "Total: 64 pages · 0 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-05-21T06:19:56.362Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 64 pages",
-    "details": "Found 0 issues (0 critical, 0 important)"
   }
 ]
