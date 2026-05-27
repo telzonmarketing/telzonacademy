@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-27T17:54:40.646Z",
+  "timestamp": "2026-05-27T20:03:57.904Z",
   "pagesAudited": 64,
   "score": 100,
   "grade": "A",
@@ -25,7 +25,8 @@
         "query": "best digital marketing course in nagpur",
         "source": "duckduckgo",
         "cited": false,
-        "error": "request-failed"
+        "position": null,
+        "competitors": []
       },
       {
         "query": "digital marketing institute nagpur",
