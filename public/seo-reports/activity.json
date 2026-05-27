@@ -1,5 +1,40 @@
 [
   {
+    "timestamp": "2026-05-27T22:27:00.272Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
+    "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
+  },
+  {
+    "timestamp": "2026-05-27T22:27:00.272Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-05-27T22:27:00.272Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): Only 0% of pages have structured data",
+    "details": "AI engines rely heavily on schema.org markup to understand and cite content."
+  },
+  {
+    "timestamp": "2026-05-27T22:27:00.272Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): llms.txt missing or unreachable",
+    "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking."
+  },
+  {
+    "timestamp": "2026-05-27T22:27:00.272Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 57/100 (D)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-27T21:34:00.726Z",
     "type": "submit",
     "icon": "⚡",
@@ -1363,40 +1398,5 @@
     "icon": "🤖",
     "title": "AEO scan complete · Score 100/100 (A)",
     "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-05-21T23:30:41.054Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 381ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-21T22:58:01.524Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-05-21T22:14:13.102Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 100/100 (A)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-05-21T21:50:54.267Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 292ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-21T21:19:54.955Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
   }
 ]
