@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-26T06:01:55.683Z",
+  "timestamp": "2026-05-27T06:13:29.597Z",
   "summary": {
     "pagesFound": 65,
     "issuesFound": 1,
@@ -58,8 +58,8 @@
     "note": "Notified Bing/Yandex/Naver of 65 URLs"
   },
   "bingSubmissions": {
-    "submitted": 0,
-    "failed": 65
+    "submitted": 36,
+    "failed": 29
   },
   "issueTracker": {
     "issues": {
@@ -71,7 +71,7 @@
         "description": "Long redirect chains waste crawl budget and dilute link equity.",
         "status": "open",
         "detectedAt": "2026-05-21T05:16:33.491Z",
-        "lastSeenAt": "2026-05-26T06:01:55.683Z",
+        "lastSeenAt": "2026-05-27T06:13:29.597Z",
         "attempts": [],
         "firstSeenRun": "2026-05-21T05:16:33.491Z"
       }
@@ -83,7 +83,7 @@
       "escalated": 0,
       "regressed": 0
     },
-    "lastReconciled": "2026-05-26T06:01:55.683Z"
+    "lastReconciled": "2026-05-27T06:13:29.597Z"
   },
   "issueActions": [],
   "solverEnrichments": [],
