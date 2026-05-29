@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-29T23:06:43.191Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 100/100 (A)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-29T23:02:33.016Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (important): llms.txt missing or unreachable",
     "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking."
-  },
-  {
-    "timestamp": "2026-05-23T08:58:46.244Z",
-    "type": "error",
-    "icon": "🤖",
-    "title": "AEO issue (critical): AI crawlers not explicitly allowed in robots.txt",
-    "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data."
   }
 ]
