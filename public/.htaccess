@@ -16,6 +16,15 @@
   RewriteCond %{QUERY_STRING} (union.*select|select.*from|insert.*into|drop.*table|--\s|;\s*drop) [NC]
   RewriteRule ^ - [F,L]
 
+  # ── Prerendered landing pages (SEO/AEO) ─────────────────────────────────────
+  # Serve /pages/<slug> from the static, prerendered /pages/<slug>.html when it
+  # exists, so non-JS crawlers (GPTBot, ClaudeBot, PerplexityBot, Bingbot) get
+  # unique per-page title/meta/schema/content. Preserves the exact canonical URL
+  # (no trailing slash). Falls through to the SPA below if no prerender exists.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/pages/$1.html -f
+  RewriteRule ^pages/([^/]+)/?$ /pages/$1.html [L]
+
   # SPA fallback — serve index.html for all non-file routes
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

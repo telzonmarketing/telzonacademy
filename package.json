@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "vite --host :: --port 3000",
-    "build": "vite build",
+    "build": "vite build && node tools/prerender.mjs",
+    "prerender": "node tools/prerender.mjs",
     "seo:brain": "node tools/seo-brain.js",
     "preview": "vite preview --host :: --port 3000",
     "lint": "eslint . --quiet"
