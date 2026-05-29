@@ -101,6 +101,42 @@
     .pill.ok { background: #3b82f620; color: #3b82f6; }
     .empty { text-align: center; padding: 40px; color: #475569; font-size: 14px; }
     .chart-wrap { position: relative; height: 200px; }
+
+    /* ── SEO Strategy Engine ── */
+    .strategy-hero { display: flex; gap: 28px; align-items: center; background: linear-gradient(135deg, #1e293b 0%, #172033 100%); border: 1px solid #334155; border-radius: 14px; padding: 24px 28px; margin-bottom: 16px; }
+    .health-ring-wrap { flex-shrink: 0; }
+    .strategy-head { flex: 1; min-width: 0; }
+    .strategy-head h2 { font-size: 17px; font-weight: 700; color: #f8fafc; display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+    .strategy-sub { font-size: 13px; color: #94a3b8; margin-bottom: 14px; }
+    .health-bars { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px 18px; }
+    .health-bar .hb-top { display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8; margin-bottom: 4px; }
+    .health-bar .hb-top strong { color: #e2e8f0; font-weight: 600; }
+    .health-bar .hb-track { height: 6px; background: #0f172a; border-radius: 4px; overflow: hidden; }
+    .health-bar .hb-fill { height: 100%; border-radius: 4px; transition: width .8s ease; }
+
+    .strategy-list { display: grid; gap: 12px; }
+    .strat-item { display: flex; gap: 14px; align-items: flex-start; background: #0f172a; border: 1px solid #1e293b; border-left-width: 3px; border-radius: 10px; padding: 14px 16px; }
+    .strat-item.p1 { border-left-color: #ef4444; }
+    .strat-item.p2 { border-left-color: #f59e0b; }
+    .strat-item.p3 { border-left-color: #3b82f6; }
+    .strat-item.done { border-left-color: #22c55e; opacity: .72; }
+    .strat-rank { flex-shrink: 0; width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 17px; background: #1e293b; }
+    .strat-body { flex: 1; min-width: 0; }
+    .strat-title { font-size: 14px; font-weight: 600; color: #f1f5f9; margin-bottom: 3px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .strat-why { font-size: 12.5px; color: #94a3b8; line-height: 1.5; margin-bottom: 6px; }
+    .strat-action { font-size: 12.5px; color: #cbd5e1; }
+    .strat-action a { color: #60a5fa; text-decoration: none; }
+    .strat-action a:hover { text-decoration: underline; }
+    .strat-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+    .tag { font-size: 10.5px; font-weight: 600; padding: 2px 8px; border-radius: 20px; text-transform: uppercase; letter-spacing: .3px; }
+    .tag.cat { background: #33415540; color: #94a3b8; }
+    .tag.impact-high { background: #ef444420; color: #f87171; }
+    .tag.impact-med  { background: #f59e0b20; color: #fbbf24; }
+    .tag.effort { background: #3b82f620; color: #93c5fd; }
+    .tag.prio1 { background: #ef444420; color: #f87171; }
+    .tag.prio2 { background: #f59e0b20; color: #fbbf24; }
+    .tag.prio3 { background: #3b82f620; color: #93c5fd; }
+    @media (max-width: 640px) { .strategy-hero { flex-direction: column; text-align: center; } }
     .last-run { font-size: 12px; color: #64748b; }
     .full-width { grid-column: 1 / -1; }
     .section-header { font-size: 18px; font-weight: 700; color: #f8fafc; margin: 32px 0 16px; display: flex; align-items: center; gap: 10px; }
@@ -357,6 +393,29 @@
       <div class="label">Avg KW Position</div>
       <div class="sublabel" id="kw-total-label">lower = better</div>
     </div>
+  </div>
+
+  <!-- ── SEO Strategy Engine: health score + prioritized next actions ── -->
+  <div class="strategy-hero" id="strategy-hero">
+    <div class="health-ring-wrap">
+      <svg class="health-ring" viewBox="0 0 120 120" width="120" height="120">
+        <circle cx="60" cy="60" r="52" fill="none" stroke="#334155" stroke-width="10"></circle>
+        <circle id="health-arc" cx="60" cy="60" r="52" fill="none" stroke="#22c55e" stroke-width="10"
+                stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7"
+                transform="rotate(-90 60 60)" style="transition:stroke-dashoffset .8s ease, stroke .8s ease"></circle>
+        <text id="health-score" x="60" y="58" text-anchor="middle" font-size="30" font-weight="800" fill="#f8fafc">—</text>
+        <text id="health-grade" x="60" y="78" text-anchor="middle" font-size="12" fill="#94a3b8">SEO Health</text>
+      </svg>
+    </div>
+    <div class="strategy-head">
+      <h2>🧠 SEO Strategy Engine <span class="badge-sm" id="strategy-count">0</span></h2>
+      <p class="strategy-sub" id="strategy-summary">Analyzing your live data and prioritizing the highest-impact moves…</p>
+      <div class="health-bars" id="health-bars"></div>
+    </div>
+  </div>
+  <div class="card" id="strategy-card" style="margin-bottom:24px">
+    <h2>🎯 Your Agents' Next Best Actions <span style="font-size:12px;color:#64748b;font-weight:400">— prioritized by impact, grounded in 2026 SEO &amp; AEO best practice</span></h2>
+    <div id="strategy-list" class="strategy-list"><div class="empty">Loading recommendations…</div></div>
   </div>
 
   <!-- Charts row -->
@@ -707,15 +766,140 @@
 </div>
 
 <script>
-  var trendChart, kwTrendChart;
-  var ChartLib = null;
+  // ChartLib is kept truthy so the existing render guards still pass. We no
+  // longer pull Chart.js from a CDN — the site CSP blocks cdn.jsdelivr.net,
+  // which is why these charts were permanently blank. Instead we draw with a
+  // tiny dependency-free canvas renderer baked right into this page, so the
+  // charts can never be blocked by CSP again.
+  var ChartLib = true;
+  var LAST_RENDER = null;
 
-  function loadChartJS(cb) {
-    var s = document.createElement('script');
-    s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js';
-    s.onload = function() { ChartLib = window.Chart; cb(); };
-    s.onerror = function() { cb(); };
-    document.head.appendChild(s);
+  function loadChartJS(cb) { cb(); }
+
+  // ── Dependency-free canvas line chart (CSP-safe, zero external deps) ──
+  // cfg = { labels:[], series:[{label,color,data:[num|null],fill}], beginAtZero, reverse, integer, emptyText }
+  function drawLineChart(canvas, cfg) {
+    if (!canvas || !canvas.getContext) return;
+    var host = canvas.parentElement;
+    var W = Math.max((host ? host.clientWidth : 0) || canvas.clientWidth || 320, 260);
+    var H = 200;
+    var dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    canvas.style.width = '100%';
+    canvas.style.height = H + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+
+    var labels = cfg.labels || [];
+    var series = (cfg.series || []).filter(function(s){ return s && s.data; });
+    var hasLegend = series.length > 0 && series.some(function(s){ return s.label; });
+    var padL = 40, padR = 16, padT = hasLegend ? 30 : 14, padB = 26;
+    var plotW = W - padL - padR, plotH = H - padT - padB;
+
+    var vals = [];
+    series.forEach(function(s){ s.data.forEach(function(v){ if (v != null && !isNaN(v)) vals.push(+v); }); });
+
+    if (vals.length === 0) {
+      ctx.fillStyle = '#475569';
+      ctx.font = '13px -apple-system, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(cfg.emptyText || 'No data yet', W / 2, H / 2);
+      return;
+    }
+
+    var min = Math.min.apply(null, vals), max = Math.max.apply(null, vals);
+    if (cfg.beginAtZero) min = Math.min(0, min);
+    if (min === max) { max = min + 1; min = Math.max(cfg.beginAtZero ? 0 : min - 1, min - 1); }
+    var span = max - min || 1;
+
+    // y maps value -> pixel. reverse=true puts the smallest value at the TOP
+    // (used for keyword position, where position 1 is best).
+    function yOf(v) {
+      var f = (v - min) / span;
+      return padT + (cfg.reverse ? f : (1 - f)) * plotH;
+    }
+    var n = labels.length || (series[0] ? series[0].data.length : 0);
+    function xOf(i) { return n <= 1 ? padL + plotW / 2 : padL + (i / (n - 1)) * plotW; }
+
+    // gridlines + y labels (4 bands)
+    ctx.strokeStyle = '#1e293b';
+    ctx.fillStyle = '#64748b';
+    ctx.font = '10px -apple-system, sans-serif';
+    ctx.lineWidth = 1;
+    for (var g = 0; g <= 4; g++) {
+      var gv = (cfg.reverse ? max - (g / 4) * span : min + (g / 4) * span);
+      var gy = yOf(gv);
+      ctx.beginPath(); ctx.moveTo(padL, gy); ctx.lineTo(W - padR, gy); ctx.stroke();
+      ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+      ctx.fillText(cfg.integer ? Math.round(gv) : (Math.round(gv * 10) / 10), padL - 6, gy);
+    }
+
+    // x labels — thin out so they never overlap
+    ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+    var step = Math.max(1, Math.ceil(n / 7));
+    for (var i = 0; i < n; i += step) {
+      ctx.fillText(labels[i] || '', xOf(i), H - padB + 6);
+    }
+
+    // series lines + optional area fill + points
+    series.forEach(function(s) {
+      var color = s.color || '#3b82f6';
+      // area fill
+      if (s.fill) {
+        ctx.beginPath();
+        var started = false, firstX = 0, lastX = 0;
+        for (var k = 0; k < s.data.length; k++) {
+          var v = s.data[k];
+          if (v == null || isNaN(v)) continue;
+          var x = xOf(k), y = yOf(+v);
+          if (!started) { ctx.moveTo(x, y); firstX = x; started = true; }
+          else ctx.lineTo(x, y);
+          lastX = x;
+        }
+        if (started) {
+          ctx.lineTo(lastX, padT + plotH);
+          ctx.lineTo(firstX, padT + plotH);
+          ctx.closePath();
+          ctx.fillStyle = color + '22';
+          ctx.fill();
+        }
+      }
+      // line
+      ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.lineJoin = 'round';
+      ctx.beginPath();
+      var pen = false;
+      for (var j = 0; j < s.data.length; j++) {
+        var val = s.data[j];
+        if (val == null || isNaN(val)) { pen = false; continue; }
+        var px = xOf(j), py = yOf(+val);
+        if (!pen) { ctx.moveTo(px, py); pen = true; } else ctx.lineTo(px, py);
+      }
+      ctx.stroke();
+      // points
+      ctx.fillStyle = color;
+      for (var p = 0; p < s.data.length; p++) {
+        var pv = s.data[p];
+        if (pv == null || isNaN(pv)) continue;
+        ctx.beginPath(); ctx.arc(xOf(p), yOf(+pv), 2.5, 0, Math.PI * 2); ctx.fill();
+      }
+    });
+
+    // legend (top-left)
+    if (hasLegend) {
+      var lx = padL, ly = 12;
+      ctx.font = '11px -apple-system, sans-serif';
+      ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+      series.forEach(function(s) {
+        if (!s.label) return;
+        ctx.fillStyle = s.color || '#3b82f6';
+        ctx.fillRect(lx, ly - 4, 10, 8);
+        ctx.fillStyle = '#94a3b8';
+        ctx.fillText(s.label, lx + 14, ly);
+        lx += 16 + ctx.measureText(s.label).width + 18;
+      });
+    }
   }
 
   function fmt(d) {
@@ -852,43 +1036,228 @@
       }).join('');
     }
 
-    // Keyword position trend chart
+    // Keyword position trend chart (lower position = better, so axis is reversed)
     try {
-      if (ChartLib && history.length > 0) {
-        var kwLabels = history.slice().reverse().map(function(h) { return fmt(h.timestamp); });
-        var kwPos    = history.slice().reverse().map(function(h) { return h.avgPosition; });
-        if (kwTrendChart) kwTrendChart.destroy();
-        kwTrendChart = new ChartLib(document.getElementById('kw-trend-chart'), {
-          type: 'line',
-          data: {
-            labels: kwLabels,
-            datasets: [{
-              label: 'Avg Position',
-              data: kwPos,
-              borderColor: '#f97316',
-              backgroundColor: '#f9731620',
-              tension: 0.4,
-              fill: true,
-              pointRadius: 3,
-            }]
-          },
-          options: {
-            responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { labels: { color: '#94a3b8', font: { size: 11 } } } },
-            scales: {
-              x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#1e293b' } },
-              y: {
-                ticks: { color: '#64748b', font: { size: 10 } },
-                grid: { color: '#334155' },
-                beginAtZero: false,
-                reverse: true,
-                title: { display: true, text: 'Position (lower = better)', color: '#64748b', font: { size: 10 } }
-              }
-            }
-          }
-        });
-      }
+      var kwHist = history.filter(function(h){ return h.avgPosition != null; });
+      drawLineChart(document.getElementById('kw-trend-chart'), {
+        labels: kwHist.slice().reverse().map(function(h) { return fmt(h.timestamp); }),
+        series: [{ label: 'Avg position (lower = better)', color: '#f97316',
+                   data: kwHist.slice().reverse().map(function(h) { return h.avgPosition; }), fill: true }],
+        reverse: true,
+        emptyText: 'Connect Google Search Console to chart ranking trends'
+      });
     } catch(e) { console.warn('KW chart error:', e.message); }
+  }
+
+  // ════════════════════════════════════════════════════════════════════
+  //  SEO STRATEGY ENGINE
+  //  A client-side rules engine that reads the live report data and emits
+  //  prioritized, actionable recommendations grounded in 2026 SEO/AEO best
+  //  practice. This is the "strategy layer" the agents execute against.
+  // ════════════════════════════════════════════════════════════════════
+  function renderStrategy(report, history, kwData, aeo, bl, hb) {
+    report = report || {};
+    var s   = report.summary || {};
+    var ks  = report.keywordSummary || (kwData && kwData.summary) || {};
+    var blStats = (bl && bl.stats) || {};
+    var aeoVis  = (aeo && aeo.visibility) || {};
+
+    var kwTotal     = s.totalKeywords || (kwData && kwData.latest ? kwData.latest.length : 0);
+    var avgPos      = s.avgPosition;
+    var critical    = s.critical || 0;
+    var important   = s.important || 0;
+    var broken      = (report.brokenLinks || []).length;
+    var submitted   = s.pagesSubmitted || 0;
+    var pages       = s.pagesFound || 0;
+    var opps        = (ks.opportunities || []).filter(function(k){ return k.position >= 11 && k.position <= 20; });
+    var aeoScore    = (aeo && typeof aeo.score === 'number') ? aeo.score : null;
+    var aeoCited    = aeoVis.citingCount || 0;
+    var aeoChecked  = aeoVis.checked || 0;
+    var tier1Live   = blStats.tier1Live || 0;
+    var liveCites   = blStats.live || 0;
+    var pendingCites= blStats.pending || 0;
+    var totalCites  = blStats.total || 0;
+
+    var recs = [];
+
+    // ── LOCAL SEO: Tier-1 citations (highest leverage for a local business) ──
+    if (tier1Live < 5 && totalCites > 0) {
+      recs.push({
+        prio: 1, cat: 'Local SEO', icon: '📍', impact: 'high', effort: 'low',
+        title: 'Claim your Tier-1 local citations (' + tier1Live + '/5 live)',
+        why: 'Google Business Profile alone is ~32% of local-pack ranking, yet ' + pendingCites + ' of your ' + totalCites + ' citations are still pending. This is the single highest-leverage move for a Nagpur-area business.',
+        action: 'Open the Backlink Agent below → submit Google Business Profile, Bing Places & JustDial first with consistent NAP.'
+      });
+    } else if (liveCites < totalCites && totalCites > 0) {
+      recs.push({
+        prio: 2, cat: 'Local SEO', icon: '📍', impact: 'high', effort: 'med',
+        title: 'Finish the remaining ' + (totalCites - liveCites) + ' directory citations',
+        why: 'NAP consistency across 30–50 directories is what makes Google trust your location. Inconsistent or missing citations suppress map-pack rankings.',
+        action: 'Work through the Backlink Agent submission packets — keep Name/Address/Phone byte-for-byte identical everywhere.'
+      });
+    }
+
+    // ── GOOGLE SEARCH CONSOLE: no keyword data = flying blind ──
+    if (kwTotal === 0 || avgPos == null) {
+      recs.push({
+        prio: 1, cat: 'Measurement', icon: '🔌', impact: 'high', effort: 'med',
+        title: 'Connect Google Search Console',
+        why: 'Your dashboard shows 0 tracked keywords because no GSC data is flowing. Without it you can\'t see what you rank for, find striking-distance keywords, or measure progress — the engine is running blind.',
+        action: 'Verify telzonacademy.in in <a href="https://search.google.com/search-console" target="_blank">Search Console</a>, add a service-account credential, and submit your sitemap. Data populates in 2–3 days.'
+      });
+    }
+
+    // ── AI / ANSWER-ENGINE VISIBILITY ──
+    if (aeoChecked > 0 && aeoCited === 0) {
+      recs.push({
+        prio: 1, cat: 'AI / AEO', icon: '🤖', impact: 'high', effort: 'med',
+        title: 'You\'re cited in 0 of ' + aeoChecked + ' AI answer checks — fix it',
+        why: 'AI answer engines now decide which brands to surface. Review profiles are the strongest lever: brands with no reviews see a ~1% AI-citation rate vs ~53% with even a handful. You also need answer-first, intro-loaded content — 44% of AI citations come from the first 30% of a page.',
+        action: 'Build a Trustpilot/Google review profile, add author/Org credentials (E-E-A-T), and lead each key page with a direct 1–2 sentence answer before the detail.'
+      });
+    }
+
+    // ── INDEXATION ──
+    if (submitted === 0 && pages > 0) {
+      recs.push({
+        prio: 2, cat: 'Indexation', icon: '🗂️', impact: 'med', effort: 'low',
+        title: 'Push your ' + pages + ' pages for indexing',
+        why: 'Nothing has been submitted to Google/Bing yet. Faster indexing means new and updated pages start ranking sooner.',
+        action: 'Enable IndexNow + sitemap submission in the agent so every crawl auto-pings Google & Bing.'
+      });
+    }
+
+    // ── STRIKING-DISTANCE KEYWORDS (only meaningful once GSC is live) ──
+    if (opps.length > 0) {
+      recs.push({
+        prio: 1, cat: 'Content', icon: '🎯', impact: 'high', effort: 'med',
+        title: opps.length + ' striking-distance keywords (position 11–20)',
+        why: 'These already rank on page 2 — small on-page improvements often push them onto page 1, where the clicks are. Highest ROI content work you can do.',
+        action: 'See the Opportunities section below. Strengthen the target page\'s title, intro answer, headings and internal links for each.'
+      });
+    }
+
+    // ── TECHNICAL HEALTH ──
+    if (critical > 0) {
+      recs.push({
+        prio: 1, cat: 'Technical', icon: '🛠️', impact: 'high', effort: 'med',
+        title: 'Resolve ' + critical + ' critical technical issue' + (critical > 1 ? 's' : ''),
+        why: 'Critical issues (indexability, broken meta, schema errors) directly block ranking. Clear these before investing in content.',
+        action: 'Review the Issues panel — the auto-fixer handles most; the rest are flagged for manual action.'
+      });
+    }
+    if (broken > 0) {
+      recs.push({
+        prio: 2, cat: 'Technical', icon: '🔗', impact: 'med', effort: 'low',
+        title: 'Fix ' + broken + ' broken link' + (broken > 1 ? 's' : ''),
+        why: 'Broken links waste crawl budget, leak link equity and hurt user trust — a quick win.',
+        action: 'See the Broken Links report and update or redirect each URL.'
+      });
+    }
+
+    // ── CORE WEB VITALS (no field data captured = enable it) ──
+    recs.push({
+      prio: 2, cat: 'Performance', icon: '⚡', impact: 'med', effort: 'med',
+      title: 'Track Core Web Vitals (LCP / INP / CLS)',
+      why: 'INP is the most-failed Core Web Vital in 2026 — 43% of sites miss the 200ms target. Targets: LCP < 2.5s, INP < 200ms, CLS < 0.1. Sites passing all three see ~24% lower bounce.',
+      action: 'Wire the PageSpeed/CrUX solver into the daily run so real field data shows here. Quick wins: set explicit width/height on every image, defer non-critical JS, preload the hero image.'
+    });
+
+    // ── CONTENT / TOPICAL AUTHORITY ──
+    var briefCount = (report.contentBriefs || []).length;
+    recs.push({
+      prio: 3, cat: 'Content', icon: '✍️', impact: 'med', effort: 'high',
+      title: briefCount > 0 ? 'Execute your ' + briefCount + ' content briefs into topic clusters' : 'Build topical authority with content clusters',
+      why: 'Depth and topical coverage win both classic rankings and AI citations. A pillar page + supporting cluster, richly internally linked, signals expertise (the first "E" in E-E-A-T).',
+      action: 'Group target keywords into 3–5 topic clusters (e.g. "digital marketing course", "SEO training", "PPC course"); publish one pillar + 4–6 supporting posts each, all interlinked.'
+    });
+
+    // ── MAINTAIN AEO STRENGTH (a "done well" item for morale + retention) ──
+    if (aeoScore != null && aeoScore >= 90) {
+      recs.push({
+        prio: 3, cat: 'AI / AEO', icon: '✅', impact: 'med', effort: 'low', done: true,
+        title: 'AEO foundation is strong (score ' + aeoScore + '/100)',
+        why: 'llms.txt is live, AI crawlers are allowed, and your pages carry FAQ + Organization schema. Keep it fresh as content changes.',
+        action: 'Maintain: regenerate llms.txt on the weekly cron and keep FAQPage schema on new pages.'
+      });
+    }
+
+    // sort: priority asc, then "done" items last within a priority
+    recs.sort(function(a, b){ return (a.prio - b.prio) || ((a.done?1:0) - (b.done?1:0)); });
+
+    // ── render the action list ──
+    var list = document.getElementById('strategy-list');
+    if (list) {
+      var open = recs.filter(function(r){ return !r.done; }).length;
+      var prioWord = { 1: 'Now', 2: 'Next', 3: 'Growth' };
+      list.innerHTML = recs.map(function(r) {
+        var impactTag = r.impact === 'high'
+          ? '<span class="tag impact-high">High impact</span>'
+          : '<span class="tag impact-med">Medium impact</span>';
+        return '<div class="strat-item ' + (r.done ? 'done' : 'p' + r.prio) + '">' +
+          '<div class="strat-rank">' + (r.icon || '•') + '</div>' +
+          '<div class="strat-body">' +
+            '<div class="strat-title">' + r.title + '</div>' +
+            '<div class="strat-why">' + r.why + '</div>' +
+            '<div class="strat-action">→ ' + r.action + '</div>' +
+            '<div class="strat-tags">' +
+              '<span class="tag prio' + r.prio + '">' + (prioWord[r.prio] || '') + '</span>' +
+              '<span class="tag cat">' + r.cat + '</span>' +
+              impactTag +
+              '<span class="tag effort">' + r.effort + ' effort</span>' +
+            '</div>' +
+          '</div></div>';
+      }).join('');
+      var cntEl = document.getElementById('strategy-count');
+      if (cntEl) cntEl.textContent = open;
+      var sumEl = document.getElementById('strategy-summary');
+      if (sumEl) {
+        var p1 = recs.filter(function(r){ return r.prio === 1 && !r.done; }).length;
+        sumEl.textContent = p1 > 0
+          ? p1 + ' high-priority move' + (p1 > 1 ? 's' : '') + ' to make now, ' + open + ' total — ranked by impact on your rankings.'
+          : open + ' optimization' + (open > 1 ? 's' : '') + ' queued — no critical blockers right now. Nice.';
+      }
+    }
+
+    // ── compute & render the SEO Health Score ──
+    var pillars = [
+      { key: 'Technical',   weight: 20, val: critical === 0 && broken === 0 ? 20 : Math.max(0, 20 - critical * 5 - broken * 2) },
+      { key: 'AI / AEO',    weight: 20, val: aeoScore != null ? Math.round(aeoScore / 100 * 20) : 0 },
+      { key: 'AI citations',weight: 10, val: aeoChecked === 0 ? 0 : Math.round(aeoCited / aeoChecked * 10) },
+      { key: 'Local SEO',   weight: 20, val: totalCites > 0 ? Math.round(Math.min(tier1Live / 5, 1) * 14 + Math.min(liveCites / totalCites, 1) * 6) : 0 },
+      { key: 'Keywords',    weight: 15, val: kwTotal === 0 ? 0 : Math.round(8 + (avgPos != null ? Math.max(0, (30 - Math.min(avgPos, 30)) / 30) * 7 : 0)) },
+      { key: 'Indexation',  weight: 15, val: submitted > 0 ? 15 : (pages > 0 ? 6 : 0) },
+    ];
+    var score = pillars.reduce(function(t, p){ return t + p.val; }, 0);
+    score = Math.max(0, Math.min(100, Math.round(score)));
+
+    var arc = document.getElementById('health-arc');
+    var scoreEl = document.getElementById('health-score');
+    var gradeEl = document.getElementById('health-grade');
+    if (arc && scoreEl) {
+      var circ = 2 * Math.PI * 52; // ≈326.7
+      arc.setAttribute('stroke-dasharray', circ.toFixed(1));
+      arc.setAttribute('stroke-dashoffset', (circ * (1 - score / 100)).toFixed(1));
+      var col = score >= 80 ? '#22c55e' : score >= 60 ? '#f59e0b' : score >= 40 ? '#f97316' : '#ef4444';
+      arc.setAttribute('stroke', col);
+      scoreEl.textContent = score;
+      scoreEl.setAttribute('fill', col);
+      if (gradeEl) {
+        var grade = score >= 90 ? 'Excellent' : score >= 75 ? 'Good' : score >= 55 ? 'Fair' : score >= 35 ? 'Needs work' : 'Critical';
+        gradeEl.textContent = grade;
+      }
+    }
+    var bars = document.getElementById('health-bars');
+    if (bars) {
+      bars.innerHTML = pillars.map(function(p) {
+        var pct = Math.round(p.val / p.weight * 100);
+        var col = pct >= 80 ? '#22c55e' : pct >= 50 ? '#f59e0b' : '#ef4444';
+        return '<div class="health-bar">' +
+          '<div class="hb-top"><span>' + p.key + '</span><strong>' + p.val + '/' + p.weight + '</strong></div>' +
+          '<div class="hb-track"><div class="hb-fill" style="width:' + pct + '%;background:' + col + '"></div></div>' +
+          '</div>';
+      }).join('');
+    }
   }
 
   // 7-day blitz: compute progress vs day-1 snapshot
@@ -1388,32 +1757,19 @@
 
     // Issues over time trend chart
     try {
-      if (ChartLib && history && history.length > 0) {
-        var labels       = history.slice().reverse().map(function(h) { return fmt(h.timestamp); });
-        var criticalData = history.slice().reverse().map(function(h) { return h.critical || 0; });
-        var fixedData    = history.slice().reverse().map(function(h) { return h.fixed    || 0; });
-        if (trendChart) trendChart.destroy();
-        trendChart = new ChartLib(document.getElementById('trend-chart'), {
-          type: 'line',
-          data: {
-            labels: labels,
-            datasets: [
-              { label: 'Critical Issues', data: criticalData, borderColor: '#ef4444', backgroundColor: '#ef444420', tension: 0.4, fill: true },
-              { label: 'Auto Fixed',      data: fixedData,    borderColor: '#22c55e', backgroundColor: '#22c55e20', tension: 0.4, fill: true },
-            ]
-          },
-          options: {
-            responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { labels: { color: '#94a3b8', font: { size: 11 } } } },
-            scales: {
-              x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#1e293b' } },
-              y: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#334155' }, beginAtZero: true }
-            }
-          }
-        });
-      }
+      var rev = (history || []).slice().reverse();
+      drawLineChart(document.getElementById('trend-chart'), {
+        labels: rev.map(function(h) { return fmt(h.timestamp); }),
+        series: [
+          { label: 'Critical',  color: '#ef4444', data: rev.map(function(h) { return h.critical  || 0; }), fill: true },
+          { label: 'Important', color: '#f59e0b', data: rev.map(function(h) { return h.important || 0; }), fill: false },
+          { label: 'Auto-fixed',color: '#22c55e', data: rev.map(function(h) { return h.fixed     || 0; }), fill: true },
+        ],
+        beginAtZero: true, integer: true,
+        emptyText: 'No runs recorded yet'
+      });
     } catch(chartErr) {
-      console.warn('Chart.js unavailable:', chartErr.message);
+      console.warn('Chart render error:', chartErr.message);
     }
   }
 
@@ -1460,8 +1816,9 @@
       renderBlitz(history, kwData, report);
       updateBingStatus(report);
 
+      LAST_RENDER = { report: report, history: history, kwData: kwData };
       renderReport(report, history, kwData);
-      loadChartJS(function() { renderReport(report, history, kwData); });
+      renderStrategy(report, history, kwData, aeo, bl, hb);
 
     } catch(e) {
       console.warn('SEO dashboard load error:', e.message);
@@ -1473,10 +1830,23 @@
       document.getElementById('history-body').innerHTML = '<tr><td colspan="8" class="empty">No history yet — check back after the first scheduled run</td></tr>';
       document.getElementById('kw-body').innerHTML      = '<tr><td colspan="8" class="empty">No keyword data yet</td></tr>';
       document.getElementById('activity-feed').innerHTML = '<div class="empty">No activity yet — first run hasn\'t completed</div>';
+      var sl = document.getElementById('strategy-list');
+      if (sl) sl.innerHTML = '<div class="empty">Recommendations appear once the bot has completed its first run.</div>';
+      var ss = document.getElementById('strategy-summary');
+      if (ss) ss.textContent = 'Waiting for the first scheduled run to gather data…';
     }
   }
 
   load();
+
+  // Redraw charts on resize (canvas charts aren't fluid like CSS) — debounced
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      if (LAST_RENDER) renderReport(LAST_RENDER.report, LAST_RENDER.history, LAST_RENDER.kwData);
+    }, 200);
+  });
 
   // Auto-refresh every 60s so the dashboard stays live without manual reload
   setInterval(function() {
