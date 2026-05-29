@@ -137,6 +137,16 @@ program
   });
 
 program
+  .command('competitor-backlinks')
+  .alias('complinks')
+  .description('Competitor backlink / link-gap finder — citations to replicate (via Brave Search)')
+  .action(async () => {
+    const { CompetitorBacklinks } = require('./backlinks/CompetitorBacklinks');
+    const agent = new CompetitorBacklinks();
+    await agent.run();
+  });
+
+program
   .command('aeo')
   .description('AEO — Answer Engine Optimization for ChatGPT/Claude/Perplexity/Gemini')
   .option('-u, --url <url>', 'Website URL')
