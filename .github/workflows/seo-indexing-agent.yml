@@ -314,6 +314,17 @@ jobs:
               // Keep last 200 activities (rolling window — enough for ~1 month of runs)
               fs.writeFileSync(actPath, JSON.stringify(activities.slice(0, 200), null, 2));
 
+              // ── STRATEGY: derive prioritized action plan + SEO Health Score ──
+              // Deterministic (no API key); reads the JSONs just written above plus
+              // any backlinks/aeo reports, and writes public/seo-reports/strategy.json.
+              try {
+                const { StrategyEngine } = require('./seo-indexing-agent/src/agents/StrategyEngine');
+                new StrategyEngine({
+                  reportsDir: 'public/seo-reports',
+                  siteUrl: process.env.SITE_URL || 'https://telzonacademy.in',
+                }).run();
+              } catch (stErr) { console.log('Strategy generation skipped:', stErr.message); }
+
               // Git commit + push (triggers deploy.yml → files reach Hostinger)
               const { execSync } = require('child_process');
               execSync('git config user.name "SEO Bot"');

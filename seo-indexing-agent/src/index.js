@@ -90,6 +90,8 @@ program
     const { IndexingAgent } = require('./agents/IndexingAgent');
     const runner = new MultiTenantRunner();
 
+    const { StrategyEngine } = require('./agents/StrategyEngine');
+
     await runner.forEachClient(opts.mode, async (client) => {
       const cfg = {
         siteUrl: client.site.url,
@@ -100,26 +102,39 @@ program
       };
       const agent = new IndexingAgent(cfg);
 
-      if (opts.mode === 'full')      return agent.runFull();
+      // Run the requested mode, then refresh the client's strategy.json from
+      // whatever reports now exist. Strategy generation is deterministic and
+      // soft-fails so it can never break a client's run.
+      const refreshStrategy = () => {
+        try {
+          new StrategyEngine({ reportsDir: client._outputDir, siteUrl: client.site.url }).run();
+        } catch (e) {
+          console.warn(`  strategy refresh skipped for ${client.slug}: ${e.message}`);
+        }
+      };
+
+      if (opts.mode === 'full')      { await agent.runFull(); return refreshStrategy(); }
       if (opts.mode === 'heartbeat') return agent.heartbeat();
-      if (opts.mode === 'audit')     return agent.audit(`${client._outputDir}/latest.json`);
+      if (opts.mode === 'audit')     { await agent.audit(`${client._outputDir}/latest.json`); return refreshStrategy(); }
       if (opts.mode === 'submit')    return agent.submit();
 
       if (opts.mode === 'aeo') {
         const { AEOAgent } = require('./aeo/AEOAgent');
-        return new AEOAgent({
+        await new AEOAgent({
           siteUrl: client.site.url,
           publicDir: `${client._outputDir}/..`,
           reportsDir: client._outputDir,
         }).run();
+        return refreshStrategy();
       }
 
       if (opts.mode === 'backlinks') {
         const { BacklinkAgent } = require('./backlinks/BacklinkAgent');
-        return new BacklinkAgent({
+        await new BacklinkAgent({
           siteUrl: client.site.url,
           statePath: `${client._outputDir}/backlinks.json`,
         }).run();
+        return refreshStrategy();
       }
 
       throw new Error('Unsupported mode: ' + opts.mode);
@@ -159,6 +174,24 @@ program
     } catch (err) {
       console.error(chalk.red(`AI monitor failed: ${err.message}`));
       process.exit(0); // soft-fail — don't break workflow
+    }
+  });
+
+program
+  .command('strategy')
+  .description('Strategy engine — derive a prioritized action plan + SEO Health Score from the latest reports')
+  .option('-d, --dir <dir>', 'Reports directory to read/write', 'public/seo-reports')
+  .option('-u, --url <url>', 'Website URL')
+  .action(async (opts) => {
+    const { StrategyEngine } = require('./agents/StrategyEngine');
+    try {
+      new StrategyEngine({
+        reportsDir: opts.dir,
+        siteUrl: opts.url || process.env.SITE_URL,
+      }).run();
+    } catch (err) {
+      console.error(chalk.red(`Strategy engine failed: ${err.message}`));
+      process.exit(0); // soft-fail — never break the daily workflow
     }
   });
 
