@@ -1,5 +1,26 @@
 [
   {
+    "timestamp": "2026-05-29T06:25:04.219Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 64 pages · 0 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-05-29T06:25:04.100Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 64 pages",
+    "details": "Found 0 issues (0 critical, 0 important)"
+  },
+  {
+    "timestamp": "2026-05-29T06:25:04.100Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot manual run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-05-29T05:08:21.306Z",
     "type": "aeo",
     "icon": "🤖",
@@ -1373,27 +1394,6 @@
   },
   {
     "timestamp": "2026-05-22T22:46:50.447Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-05-22T22:01:28.148Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 100/100 (A)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-05-22T21:38:45.126Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 291ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-05-22T21:03:05.293Z",
     "type": "submit",
     "icon": "⚡",
     "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-28T06:22:05.069Z",
+  "timestamp": "2026-05-29T06:25:04.100Z",
   "summary": {
     "pagesFound": 64,
     "issuesFound": 0,
@@ -37,11 +37,11 @@
   "contentBriefs": [],
   "healthCheck": null,
   "indexNow": {
-    "submitted": 64,
-    "failed": 0,
-    "statusCode": 200,
+    "submitted": 0,
+    "failed": 64,
+    "statusCode": 503,
     "keyLocation": "https://telzonacademy.in/c218d7307cc58cf886898bc873656853.txt",
-    "note": "Notified Bing/Yandex/Naver of 64 URLs"
+    "note": "IndexNow returned 503. <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns='http://www.w3.org/1999/xhtml'><head><meta content='text/html; char"
   },
   "bingSubmissions": {
     "submitted": 0,
@@ -625,7 +625,7 @@
       "escalated": 0,
       "regressed": 0
     },
-    "lastReconciled": "2026-05-28T06:22:05.068Z"
+    "lastReconciled": "2026-05-29T06:25:04.100Z"
   },
   "issueActions": [],
   "solverEnrichments": [],
