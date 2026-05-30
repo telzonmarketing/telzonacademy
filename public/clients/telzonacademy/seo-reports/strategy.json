@@ -1,0 +1,163 @@
+{
+  "timestamp": "2026-05-30T05:44:00.197Z",
+  "engine": "StrategyEngine v2",
+  "siteUrl": "https://telzonacademy.in",
+  "healthScore": 26,
+  "grade": "Critical",
+  "pillars": [
+    {
+      "key": "Technical",
+      "weight": 20,
+      "val": 20
+    },
+    {
+      "key": "AI / AEO",
+      "weight": 20,
+      "val": 0
+    },
+    {
+      "key": "AI citations",
+      "weight": 10,
+      "val": 0
+    },
+    {
+      "key": "Local SEO",
+      "weight": 20,
+      "val": 0
+    },
+    {
+      "key": "Keywords",
+      "weight": 15,
+      "val": 0
+    },
+    {
+      "key": "Indexation",
+      "weight": 15,
+      "val": 6
+    }
+  ],
+  "momentum": null,
+  "summary": "2 high-priority moves to make now, 10 total — ranked by impact on your rankings.",
+  "recommendations": [
+    {
+      "prio": 1,
+      "cat": "Reviews",
+      "icon": "⭐",
+      "impact": "high",
+      "effort": "low",
+      "timeToImpact": "4–8 weeks",
+      "title": "Run a Google review acquisition system",
+      "why": "Review quantity, recency and response-rate are active local ranking signals — review velocity matters as much as total count. Reviews also lift AI-answer citation rate dramatically (≈1% with none → ≈53% with even a handful).",
+      "action": "Ask every student for a Google review at course completion (QR code + short link), aim for 4–8/month, and reply to all reviews within 24h.",
+      "score": 9
+    },
+    {
+      "prio": 1,
+      "cat": "Measurement",
+      "icon": "🔌",
+      "impact": "high",
+      "effort": "med",
+      "timeToImpact": "2–3 days",
+      "title": "Confirm Google Search Console data is flowing",
+      "why": "The dashboard still shows 0 tracked keywords. If you just connected GSC, data takes 2–3 days to populate; if it stays empty, the service-account credential or sitemap submission needs fixing. Without it the engine can't find striking-distance keywords or measure progress.",
+      "action": "Verify the property, ensure the service-account credential is set, submit the sitemap, then re-check in 2–3 days.",
+      "score": 6
+    },
+    {
+      "prio": 2,
+      "cat": "Local SEO",
+      "icon": "🏪",
+      "impact": "high",
+      "effort": "low",
+      "timeToImpact": "2–4 weeks",
+      "title": "Work your Google Business Profile weekly",
+      "why": "GBP is a living ranking signal, not a set-and-forget listing. Weekly Google Posts, fully populated Products/Services, fresh photos, prompt messaging and answered Q&A all feed the local algorithm.",
+      "action": "Post a Google Update weekly, fill Products/Services with keyword-rich course descriptions, upload 3–5 photos/month, enable messaging, and seed the Q&A.",
+      "score": 9
+    },
+    {
+      "prio": 2,
+      "cat": "Indexation",
+      "icon": "🗂️",
+      "impact": "med",
+      "effort": "low",
+      "timeToImpact": "1–2 weeks",
+      "title": "Push your 65 pages for indexing",
+      "why": "Nothing submitted to Google/Bing yet. Faster indexing means new and updated pages start ranking sooner.",
+      "action": "Enable IndexNow + sitemap submission so every crawl auto-pings Google & Bing.",
+      "score": 6
+    },
+    {
+      "prio": 2,
+      "cat": "Schema",
+      "icon": "🏷️",
+      "impact": "high",
+      "effort": "med",
+      "timeToImpact": "2–4 weeks",
+      "title": "Expand structured data (Course, LocalBusiness, Breadcrumb, Review)",
+      "why": "You already ship FAQ + Organization schema. For an academy, Course schema makes courses eligible for rich results, AggregateRating shows ⭐ stars in the SERP (big CTR lift), and LocalBusiness + BreadcrumbList strengthen local + navigation signals.",
+      "action": "Add Course schema to each course page, AggregateRating from your Google reviews, LocalBusiness on contact/home, and BreadcrumbList sitewide.",
+      "score": 6
+    },
+    {
+      "prio": 2,
+      "cat": "Performance",
+      "icon": "⚡",
+      "impact": "med",
+      "effort": "med",
+      "timeToImpact": "2–6 weeks",
+      "title": "Track & fix Core Web Vitals (LCP / INP / CLS)",
+      "why": "INP is the most-failed Core Web Vital in 2026 — 43% of sites miss the 200ms target. Targets: LCP < 2.5s, INP < 200ms, CLS < 0.1. Passing all three cuts bounce ~24%.",
+      "action": "Wire the PageSpeed/CrUX solver into the daily run. Quick wins: explicit width/height on images, defer non-critical JS, preload the hero image.",
+      "score": 4
+    },
+    {
+      "prio": 2,
+      "cat": "Trust",
+      "icon": "🎓",
+      "impact": "med",
+      "effort": "med",
+      "timeToImpact": "ongoing",
+      "title": "Strengthen E-E-A-T signals",
+      "why": "Trust is now the primary filter for AI inclusion and a growing ranking factor. Real author identities, credentials, and social proof tell Google and LLMs you are a credible source.",
+      "action": "Add author bios with credentials to every post, a detailed About page (founder, faculty, accreditations), student testimonials, and link real social profiles.",
+      "score": 4
+    },
+    {
+      "prio": 3,
+      "cat": "Content",
+      "icon": "🔄",
+      "impact": "med",
+      "effort": "low",
+      "timeToImpact": "1–2 months",
+      "title": "Refresh existing content on a schedule",
+      "why": "Freshness is a ranking signal and re-engages AI crawlers. Updating proven pages is far cheaper than writing new ones and often recovers slipping rankings.",
+      "action": "Each month, update your 5 highest-impression pages: new stats/year, expanded answers, refreshed examples, and an updated \"last modified\" date.",
+      "score": 6
+    },
+    {
+      "prio": 3,
+      "cat": "Content",
+      "icon": "💬",
+      "impact": "med",
+      "effort": "med",
+      "timeToImpact": "1–3 months",
+      "title": "Target featured snippets & \"People Also Ask\"",
+      "why": "Snippet/PAA answers win position-zero visibility and are the exact format AI answer engines lift. Structured Q&A content is dual-purpose for SEO and AEO.",
+      "action": "For each target query add a concise 40–55 word direct answer under a question heading, plus a short list/table where it fits.",
+      "score": 4
+    },
+    {
+      "prio": 3,
+      "cat": "Content",
+      "icon": "✍️",
+      "impact": "med",
+      "effort": "high",
+      "timeToImpact": "2–4 months",
+      "title": "Build topical authority with content clusters",
+      "why": "Depth and topical coverage win both classic rankings and AI citations. A pillar page + supporting cluster, richly interlinked, signals expertise (the first \"E\" in E-E-A-T).",
+      "action": "Group target keywords into 3–5 clusters (e.g. \"digital marketing course\", \"SEO training\", \"PPC course\"); publish one pillar + 4–6 supporting posts each, all interlinked.",
+      "score": 2
+    }
+  ]
+}
