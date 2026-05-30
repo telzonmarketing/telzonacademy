@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-30T02:26:08.995Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 100/100 (A)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-30T01:49:38.873Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (important): No FAQPage schema detected anywhere",
     "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-05-23T08:58:46.244Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): Only 0% of pages have structured data",
-    "details": "AI engines rely heavily on schema.org markup to understand and cite content."
   }
 ]
