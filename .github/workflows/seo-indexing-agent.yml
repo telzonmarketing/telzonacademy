@@ -314,9 +314,19 @@ jobs:
               // Keep last 200 activities (rolling window — enough for ~1 month of runs)
               fs.writeFileSync(actPath, JSON.stringify(activities.slice(0, 200), null, 2));
 
+              // ── SCHEMA AUDIT: validate JSON-LD across pages (duplicate/invalid FAQ etc.) ──
+              try {
+                const { StructuredDataAuditor } = require('./seo-indexing-agent/src/auditors/StructuredDataAuditor');
+                await new StructuredDataAuditor({
+                  reportsDir: 'public/seo-reports',
+                  siteUrl: process.env.SITE_URL || 'https://telzonacademy.in',
+                  maxPages: 60,
+                }).run();
+              } catch (saErr) { console.log('Schema audit skipped:', saErr.message); }
+
               // ── STRATEGY: derive prioritized action plan + SEO Health Score ──
               // Deterministic (no API key); reads the JSONs just written above plus
-              // any backlinks/aeo reports, and writes public/seo-reports/strategy.json.
+              // any backlinks/aeo/schema reports, and writes public/seo-reports/strategy.json.
               try {
                 const { StrategyEngine } = require('./seo-indexing-agent/src/agents/StrategyEngine');
                 new StrategyEngine({

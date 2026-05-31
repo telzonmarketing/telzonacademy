@@ -28,8 +28,24 @@ const FAQ = () => {
     }
   ];
 
+  // FAQPage schema built from the SAME questions shown above, so the structured
+  // data always matches the visible content (Google requirement). This is the
+  // ONLY FAQPage on the homepage — the global one was removed from index.html to
+  // avoid duplicate/conflicting FAQPage blocks that Google flags as invalid.
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': 'https://telzonacademy.in/#faq',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  };
+
   return (
     <section className="py-20 px-4 relative">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

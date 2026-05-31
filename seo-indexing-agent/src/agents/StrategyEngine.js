@@ -42,8 +42,9 @@ class StrategyEngine {
     const bl = read('backlinks.json');
     const aeo = read('aeo-report.json');
     const history = read('history.json') || [];
+    const schemaAudit = read('schema-audit.json');
 
-    const strategy = this.compute(report, kwData, bl, aeo, history);
+    const strategy = this.compute(report, kwData, bl, aeo, history, schemaAudit);
 
     if (!fs.existsSync(this.reportsDir)) fs.mkdirSync(this.reportsDir, { recursive: true });
     fs.writeFileSync(
@@ -59,7 +60,7 @@ class StrategyEngine {
   /**
    * Pure function: report data in → strategy object out. No filesystem access.
    */
-  compute(report, kwData, bl, aeo, history) {
+  compute(report, kwData, bl, aeo, history, schemaAudit) {
     report = report || {};
     const s = report.summary || {};
     const ks = report.keywordSummary || (kwData && kwData.summary) || {};
@@ -201,6 +202,20 @@ class StrategyEngine {
         title: `Fix ${broken} broken link${broken > 1 ? 's' : ''}`,
         why: 'Broken links waste crawl budget, leak link equity and hurt user trust — a quick win.',
         action: 'Update or redirect each broken URL.',
+      });
+    }
+
+    // Structured-data errors found by the StructuredDataAuditor (GSC "invalid items" class)
+    if (schemaAudit && schemaAudit.totalIssues > 0) {
+      const dupFaq = schemaAudit.duplicateFaqPages || 0;
+      const detail = dupFaq > 0
+        ? `${dupFaq} page(s) ship a duplicate FAQPage (a static block + a per-route block) — exactly what Google reports as "FAQ: invalid items".`
+        : `${schemaAudit.totalIssues} structured-data issue(s) across ${schemaAudit.pagesWithIssues} page(s) (empty answers, disallowed HTML, missing fields).`;
+      add({
+        prio: 1, cat: 'Schema', icon: '🧩', impact: 'high', effort: 'low', timeToImpact: '1–2 weeks',
+        title: `Fix ${schemaAudit.totalIssues} structured-data error${schemaAudit.totalIssues > 1 ? 's' : ''} flagged by the schema auditor`,
+        why: `${detail} Invalid structured data loses rich-result eligibility (stars, FAQ) — a direct CTR hit.`,
+        action: 'Ensure exactly one block per @type per page; give every FAQ item a question + non-empty answer; remove disallowed HTML from answers. See schema-audit.json for the exact pages.',
       });
     }
 

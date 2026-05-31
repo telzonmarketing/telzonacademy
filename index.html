@@ -117,10 +117,16 @@
     Gemini) and crawlers that don't execute JavaScript. React-helmet adds
     additional per-route schemas at runtime — Google merges all of them.
 
-    These three boost the AEO score from 67/C to ~95/A by satisfying:
+    These boost the AEO score by satisfying:
       - "0% of pages have structured data" (now has JSON-LD in static HTML)
-      - "No FAQPage schema detected"
       - "No Organization/EducationalOrganization schema found"
+
+    NOTE: FAQPage is deliberately NOT static here. index.html is the shell for
+    every route, so a static FAQPage would duplicate the per-route FAQPage that
+    each React page emits (homepage FAQ.jsx + /pages/* LandingPage.jsx), which
+    Google flags as invalid FAQ items. FAQ schema is therefore emitted per-route
+    by React (matching each page's visible FAQ); AI crawlers get the FAQ content
+    via llms.txt / llms-full.txt.
   -->
   <script type="application/ld+json">
   {
@@ -169,80 +175,6 @@
       "reviewCount": "127",
       "bestRating": "5"
     }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "@id": "https://telzonacademy.in/#faq",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Where is Telzon Academy located?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Telzon Academy is located in Nagpur, Maharashtra, India. We offer in-person classes at our Nagpur campus as well as live online sessions for students across India. Contact us at +91-9307189776 or connect@telzonacademy.in to book a free demo class."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What courses does Telzon Academy offer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Telzon Academy offers a comprehensive Digital Marketing Course covering SEO, Google Ads, Meta Ads (Facebook & Instagram), social media marketing, content marketing, email marketing, analytics, and AI-powered marketing tools. We also offer specialized standalone courses in SEO, Performance Marketing, and Instagram Marketing for students who want focused training."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Telzon Academy provide placement assistance?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Telzon Academy provides 95% placement assistance to all course graduates. Our placement cell connects students with digital marketing agencies, e-commerce companies, startups, and IT firms hiring in Nagpur, Pune, Mumbai, Bangalore, and remote-first companies."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I take a free demo class at Telzon Academy?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, Telzon Academy offers a free demo class for every prospective student. You can book your free demo at https://telzonacademy.in/free-demo or call +91-9307189776 to schedule a session at our Nagpur campus or online."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the duration of the digital marketing course?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The full Digital Marketing Course at Telzon Academy is 4 months (16 weeks) of live training with practical assignments. Standalone modules like SEO or Google Ads are 4-6 weeks each. Working professionals can opt for weekend batches."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Who are the trainers at Telzon Academy?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Trainers at Telzon Academy are practicing digital marketing professionals with 8+ years of industry experience. They run live campaigns for real businesses, hold Google Ads and Meta Ads certifications, and bring real client case studies into the classroom."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is Telzon Academy good for beginners?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Telzon Academy's curriculum is designed for complete beginners — no prior marketing or technical background required. The first two weeks cover digital marketing fundamentals before moving into specialized modules. Most of our students join right after school, college, or a career switch."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What makes Telzon Academy different from other digital marketing institutes in Nagpur?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Three things set Telzon Academy apart: (1) Practical live-project curriculum — students run real campaigns for real businesses, not just demos, (2) AI-powered marketing modules covering ChatGPT, Claude, and Perplexity for marketers — most institutes haven't updated curriculum for the AI era, and (3) 95% placement assistance with active industry partnerships."
-        }
-      }
-    ]
   }
   </script>
 

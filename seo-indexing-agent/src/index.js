@@ -196,6 +196,26 @@ program
   });
 
 program
+  .command('schema-audit')
+  .description('Crawl pages and validate JSON-LD — detects duplicate/invalid FAQ & schema (the GSC "invalid items" class)')
+  .option('-d, --dir <dir>', 'Reports directory to write', 'public/seo-reports')
+  .option('-u, --url <url>', 'Website URL')
+  .option('-n, --max <n>', 'Max pages to audit', '60')
+  .action(async (opts) => {
+    const { StructuredDataAuditor } = require('./auditors/StructuredDataAuditor');
+    try {
+      await new StructuredDataAuditor({
+        reportsDir: opts.dir,
+        siteUrl: opts.url || process.env.SITE_URL,
+        maxPages: parseInt(opts.max, 10) || 60,
+      }).run();
+    } catch (err) {
+      console.error(chalk.red(`Schema audit failed: ${err.message}`));
+      process.exit(0); // soft-fail — never break the daily workflow
+    }
+  });
+
+program
   .command('heartbeat')
   .description('Hourly health check — fast probe of homepage, sitemap, robots, sample pages')
   .option('-u, --url <url>', 'Website URL')
