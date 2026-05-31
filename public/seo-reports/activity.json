@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-31T12:49:30.012Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 307ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-05-31T11:29:20.248Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (important): llms.txt missing or unreachable",
     "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking."
-  },
-  {
-    "timestamp": "2026-05-24T13:05:50.669Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 57/100 (D)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
   }
 ]
