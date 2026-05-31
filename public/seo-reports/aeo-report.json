@@ -1,14 +1,20 @@
 {
-  "timestamp": "2026-05-31T02:42:18.030Z",
+  "timestamp": "2026-05-31T06:53:16.285Z",
   "pagesAudited": 64,
-  "score": 100,
+  "score": 90,
   "grade": "A",
-  "issues": [],
+  "issues": [
+    {
+      "severity": "important",
+      "title": "No FAQPage schema detected anywhere",
+      "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often.",
+      "fix": "Add FAQPage JSON-LD to landing pages with question/answer pairs"
+    }
+  ],
   "strengths": [
     "All 10 major AI crawlers explicitly allowed",
     "llms.txt present at site root",
     "64/64 pages have structured data",
-    "64 pages have FAQPage schema",
     "64 pages have question-style headings",
     "64 pages declare Organization schema"
   ],
