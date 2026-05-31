@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-05-31T13:19:45.059Z",
-  "pagesAudited": 64,
+  "timestamp": "2026-05-31T15:15:46.916Z",
+  "pagesAudited": 62,
   "score": 90,
   "grade": "A",
   "issues": [
@@ -14,13 +14,13 @@
   "strengths": [
     "All 10 major AI crawlers explicitly allowed",
     "llms.txt present at site root",
-    "64/64 pages have structured data",
-    "64 pages have question-style headings",
-    "64 pages declare Organization schema"
+    "62/62 pages have structured data",
+    "62 pages have question-style headings",
+    "62 pages declare Organization schema"
   ],
   "llms": {
-    "compactBytes": 18005,
-    "fullBytes": 70170
+    "compactBytes": 17454,
+    "fullBytes": 67979
   },
   "faqSuggestions": [],
   "visibility": {
