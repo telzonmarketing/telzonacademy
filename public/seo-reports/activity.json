@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-05-31T02:42:18.030Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 100/100 (A)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-05-31T02:00:21.756Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (important): Only 0% of pages have structured data",
     "details": "AI engines rely heavily on schema.org markup to understand and cite content."
-  },
-  {
-    "timestamp": "2026-05-24T02:32:24.744Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): llms.txt missing or unreachable",
-    "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking."
   }
 ]
