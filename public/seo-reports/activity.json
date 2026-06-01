@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-01T23:21:01.999Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-06-01T22:58:15.251Z",
     "type": "fix",
     "icon": "🤖",
@@ -1387,13 +1394,6 @@
   },
   {
     "timestamp": "2026-05-25T22:08:10.586Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 100/100 (A)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-05-25T20:58:20.679Z",
     "type": "aeo",
     "icon": "🤖",
     "title": "AEO scan complete · Score 100/100 (A)",
