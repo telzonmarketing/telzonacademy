@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026-06-01T10:13:15.539Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-06-01T10:13:15.539Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 90/100 (A)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-06-01T09:09:00.400Z",
     "type": "submit",
     "icon": "⚡",
@@ -1384,19 +1398,5 @@
     "icon": "🔗",
     "title": "Tier 1 backlink ready: Google Business Profile",
     "details": "Biggest local SEO ranking factor. Postcard verification required."
-  },
-  {
-    "timestamp": "2026-05-25T10:25:06.167Z",
-    "type": "backlink",
-    "icon": "🔗",
-    "title": "Backlink scan · 0/24 live · 0/5 tier-1 live",
-    "details": "24 pending · 0 submitted · 0 broken"
-  },
-  {
-    "timestamp": "2026-05-25T07:06:33.350Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 100/100 (A)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
   }
 ]
