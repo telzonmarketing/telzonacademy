@@ -6,7 +6,7 @@
       "severity": "important",
       "title": "1 duplicate title tags found",
       "description": "Duplicate titles cause Google to pick which page to index, often ignoring the others.",
-      "status": "regressed",
+      "status": "resolved",
       "detectedAt": "2026-05-15T19:28:12.445Z",
       "lastSeenAt": "2026-05-31T06:28:51.899Z",
       "attempts": [
@@ -94,8 +94,8 @@
       "firstSeenRun": "2026-05-15T19:28:12.445Z",
       "escalatedAt": "2026-05-18T06:24:47.334Z",
       "escalationReason": "Issue persists after 16 auto-fix attempts. Needs human intervention.",
-      "resolvedAt": "2026-05-18T07:35:45.620Z",
-      "daysToResolve": 3,
+      "resolvedAt": "2026-06-01T07:12:21.898Z",
+      "daysToResolve": 16,
       "regressedAt": "2026-05-31T06:28:51.899Z"
     },
     "7b1a0fe7305b": {
@@ -573,9 +573,9 @@
   "stats": {
     "open": 0,
     "fixing": 0,
-    "resolved": 16,
+    "resolved": 17,
     "escalated": 0,
-    "regressed": 1
+    "regressed": 0
   },
-  "lastReconciled": "2026-05-31T06:28:51.899Z"
+  "lastReconciled": "2026-06-01T07:12:21.898Z"
 }
