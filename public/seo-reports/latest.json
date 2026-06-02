@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-01T07:12:21.898Z",
+  "timestamp": "2026-06-02T06:52:01.867Z",
   "summary": {
     "pagesFound": 64,
     "issuesFound": 0,
@@ -626,17 +626,9 @@
       "escalated": 0,
       "regressed": 0
     },
-    "lastReconciled": "2026-06-01T07:12:21.898Z"
+    "lastReconciled": "2026-06-02T06:52:01.867Z"
   },
-  "issueActions": [
-    {
-      "id": "c79a5c8cc207",
-      "type": "resolved",
-      "title": "1 duplicate title tags found",
-      "daysToResolve": 16,
-      "attempts": 16
-    }
-  ],
+  "issueActions": [],
   "solverEnrichments": [],
   "errors": []
 }

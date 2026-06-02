@@ -1,5 +1,26 @@
 [
   {
+    "timestamp": "2026-06-02T06:52:01.990Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 64 pages · 0 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-06-02T06:52:01.867Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 64 pages",
+    "details": "Found 0 issues (0 critical, 0 important)"
+  },
+  {
+    "timestamp": "2026-06-02T06:52:01.867Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot scheduled run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-06-02T05:25:37.508Z",
     "type": "fix",
     "icon": "🤖",
@@ -1377,26 +1398,5 @@
     "icon": "✓",
     "title": "Run completed",
     "details": "Total: 64 pages · 0 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-05-26T06:16:51.340Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 64 pages",
-    "details": "Found 0 issues (0 critical, 0 important)"
-  },
-  {
-    "timestamp": "2026-05-26T06:16:51.340Z",
-    "type": "run",
-    "icon": "▶",
-    "title": "SEO bot scheduled run started",
-    "details": "Mode: full audit + fix + submit + keyword tracking"
-  },
-  {
-    "timestamp": "2026-05-26T05:56:50.582Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
   }
 ]
