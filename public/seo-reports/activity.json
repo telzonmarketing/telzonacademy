@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-03T01:49:21.460Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 444ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-06-02T23:29:03.983Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "⚡",
     "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
     "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-05-27T14:22:49.852Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 100/100 (A)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
   }
 ]
