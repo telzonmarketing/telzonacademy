@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-04T09:04:14.521Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 372ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-06-04T08:11:23.728Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "✓",
     "title": "Run completed",
     "details": "Total: 64 pages · 0 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-05-29T18:44:40.549Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 64 pages",
-    "details": "Found 0 issues (0 critical, 0 important)"
   }
 ]
