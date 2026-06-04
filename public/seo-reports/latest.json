@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-03T07:03:52.554Z",
+  "timestamp": "2026-06-04T06:34:01.590Z",
   "summary": {
     "pagesFound": 64,
     "issuesFound": 0,
@@ -44,8 +44,8 @@
     "note": "Notified Bing/Yandex/Naver of 64 URLs"
   },
   "bingSubmissions": {
-    "submitted": 34,
-    "failed": 30
+    "submitted": 31,
+    "failed": 33
   },
   "issueTracker": {
     "issues": {
@@ -626,7 +626,7 @@
       "escalated": 0,
       "regressed": 0
     },
-    "lastReconciled": "2026-06-03T07:03:52.553Z"
+    "lastReconciled": "2026-06-04T06:34:01.589Z"
   },
   "issueActions": [],
   "solverEnrichments": [],
