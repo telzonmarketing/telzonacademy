@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-06-05T06:43:40.229Z",
+  "timestamp": "2026-06-06T06:02:56.959Z",
   "engine": "StrategyEngine v2",
   "siteUrl": "https://telzonacademy.in",
-  "healthScore": 44,
-  "grade": "Needs work",
+  "healthScore": 33,
+  "grade": "Critical",
   "pillars": [
     {
       "key": "Technical",
@@ -13,7 +13,7 @@
     {
       "key": "AI / AEO",
       "weight": 20,
-      "val": 18
+      "val": 7
     },
     {
       "key": "AI citations",
@@ -189,19 +189,6 @@
       "why": "Depth and topical coverage win both classic rankings and AI citations. A pillar page + supporting cluster, richly interlinked, signals expertise (the first \"E\" in E-E-A-T).",
       "action": "Group target keywords into 3–5 clusters (e.g. \"digital marketing course\", \"SEO training\", \"PPC course\"); publish one pillar + 4–6 supporting posts each, all interlinked.",
       "score": 2
-    },
-    {
-      "prio": 3,
-      "cat": "AI / AEO",
-      "icon": "✅",
-      "impact": "med",
-      "effort": "low",
-      "timeToImpact": "ongoing",
-      "done": true,
-      "title": "AEO foundation is strong (score 90/100)",
-      "why": "llms.txt is live, AI crawlers are allowed, and pages carry FAQ + Organization schema. Keep it fresh as content changes.",
-      "action": "Maintain: regenerate llms.txt on the weekly cron and keep FAQPage schema on new pages.",
-      "score": 6
     }
   ]
 }
