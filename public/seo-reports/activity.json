@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026-06-06T13:13:37.576Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-06-06T13:13:37.576Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 90/100 (A)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-06-06T13:00:33.823Z",
     "type": "submit",
     "icon": "⚡",
@@ -1384,19 +1398,5 @@
     "icon": "⚡",
     "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
     "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-06-01T19:01:38.080Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 594ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-06-01T16:33:03.623Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
   }
 ]
