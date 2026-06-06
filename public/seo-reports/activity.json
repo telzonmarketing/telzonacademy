@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-06T11:00:38.477Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 306ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-06-06T09:55:53.124Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔗",
     "title": "Tier 1 backlink ready: Bing Places for Business",
     "details": "Imports from Google Business. Phone verification."
-  },
-  {
-    "timestamp": "2026-06-01T11:51:07.666Z",
-    "type": "backlink",
-    "icon": "🔗",
-    "title": "Tier 1 backlink ready: Google Business Profile",
-    "details": "Biggest local SEO ranking factor. Postcard verification required."
   }
 ]
