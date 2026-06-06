@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026-06-06T11:20:11.925Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-06-06T11:20:11.925Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 90/100 (A)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-06-06T11:14:39.502Z",
     "type": "submit",
     "icon": "⚡",
@@ -1384,19 +1398,5 @@
     "icon": "⚡",
     "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
     "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-06-01T13:01:35.295Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 327ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-06-01T11:51:07.666Z",
-    "type": "backlink",
-    "icon": "🔗",
-    "title": "Tier 1 backlink ready: Apple Maps Connect",
-    "details": "Required for Apple Maps + Siri. Manual phone verification."
   }
 ]
