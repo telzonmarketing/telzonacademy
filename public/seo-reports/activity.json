@@ -1,5 +1,47 @@
 [
   {
+    "timestamp": "2026-06-06T04:48:09.804Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
+    "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
+  },
+  {
+    "timestamp": "2026-06-06T04:48:09.804Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-06-06T04:48:09.804Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): Only 0% of pages have structured data",
+    "details": "AI engines rely heavily on schema.org markup to understand and cite content."
+  },
+  {
+    "timestamp": "2026-06-06T04:48:09.804Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): llms.txt missing or unreachable",
+    "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking."
+  },
+  {
+    "timestamp": "2026-06-06T04:48:09.804Z",
+    "type": "error",
+    "icon": "🤖",
+    "title": "AEO issue (critical): AI crawlers not explicitly allowed in robots.txt",
+    "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data."
+  },
+  {
+    "timestamp": "2026-06-06T04:48:09.804Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 37/100 (F)",
+    "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-06-06T01:51:37.557Z",
     "type": "submit",
     "icon": "⚡",
@@ -1356,47 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (important): No FAQPage schema detected anywhere",
     "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-05-31T21:52:57.225Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 90/100 (A)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-05-31T20:02:15.617Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
-    "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
-  },
-  {
-    "timestamp": "2026-05-31T20:02:15.617Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-05-31T20:02:15.617Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): Only 0% of pages have structured data",
-    "details": "AI engines rely heavily on schema.org markup to understand and cite content."
-  },
-  {
-    "timestamp": "2026-05-31T20:02:15.617Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): llms.txt missing or unreachable",
-    "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking."
-  },
-  {
-    "timestamp": "2026-05-31T20:02:15.617Z",
-    "type": "error",
-    "icon": "🤖",
-    "title": "AEO issue (critical): AI crawlers not explicitly allowed in robots.txt",
-    "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data."
   }
 ]
