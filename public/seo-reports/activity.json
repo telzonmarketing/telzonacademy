@@ -1,5 +1,26 @@
 [
   {
+    "timestamp": "2026-06-07T05:51:50.326Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 64 pages · 0 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-06-07T05:51:50.199Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 64 pages",
+    "details": "Found 1 issues (0 critical, 1 important)"
+  },
+  {
+    "timestamp": "2026-06-07T05:51:50.199Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot manual run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-06-07T02:45:35.460Z",
     "type": "fix",
     "icon": "🤖",
@@ -1377,26 +1398,5 @@
     "icon": "⚡",
     "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
     "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-06-02T20:21:22.880Z",
-    "type": "error",
-    "icon": "🔴",
-    "title": "Heartbeat: 4 check(s) failing",
-    "details": "403 Homepage · 403 Sitemap · 403 Robots.txt · 403 Dashboard"
-  },
-  {
-    "timestamp": "2026-06-02T18:34:32.910Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
-    "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
-  },
-  {
-    "timestamp": "2026-06-02T18:34:32.910Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
   }
 ]
