@@ -93,31 +93,31 @@ const PlacementsAndCareers = () => {
                whileHover={{ scale: 1.1, opacity: 1 }}
                className="w-24 h-24 bg-white/5 rounded-xl flex items-center justify-center p-4 border border-white/10 hover:border-purple-500/50 transition-all cursor-pointer"
             >
-               <img alt="ChatGPT Logo" className="w-full h-full object-contain filter brightness-0 invert" src="https://horizons-cdn.hostinger.com/79c8a858-426e-4a5e-be6a-862835a41c7c/chatgpt-logo-cyycc.png" loading="lazy" />
+               <img alt="ChatGPT Logo" className="w-full h-full object-contain filter brightness-0 invert" src="/tool-logos/chatgpt.png" loading="lazy" width="200" height="200" />
             </motion.div>
              <motion.div 
                whileHover={{ scale: 1.1, opacity: 1 }}
                className="w-24 h-24 bg-white/5 rounded-xl flex items-center justify-center p-4 border border-white/10 hover:border-orange-500/50 transition-all cursor-pointer"
             >
-               <img alt="Semrush Logo" className="w-full h-full object-contain filter brightness-0 invert" src="https://horizons-cdn.hostinger.com/79c8a858-426e-4a5e-be6a-862835a41c7c/large-76a270657e9a0d62548da88a48ae0042-pQ4Z8.png" loading="lazy" />
+               <img alt="Semrush Logo" className="w-full h-full object-contain filter brightness-0 invert" src="/tool-logos/semrush.svg" loading="lazy" width="200" height="200" />
             </motion.div>
              <motion.div 
                whileHover={{ scale: 1.1, opacity: 1 }}
                className="w-24 h-24 bg-white/5 rounded-xl flex items-center justify-center p-4 border border-white/10 hover:border-blue-500/50 transition-all cursor-pointer"
             >
-               <img alt="Google Ads Logo" className="w-full h-full object-contain filter brightness-0 invert" src="https://horizons-cdn.hostinger.com/79c8a858-426e-4a5e-be6a-862835a41c7c/meta_png12-ZAHL6.png" loading="lazy" />
+               <img alt="Google Ads Logo" className="w-full h-full object-contain filter brightness-0 invert" src="/tool-logos/google-ads.png" loading="lazy" width="200" height="200" />
             </motion.div>
              <motion.div 
                whileHover={{ scale: 1.1, opacity: 1 }}
                className="w-24 h-24 bg-white/5 rounded-xl flex items-center justify-center p-4 border border-white/10 hover:border-blue-300/50 transition-all cursor-pointer"
             >
-               <img alt="Canva Logo" className="w-full h-full object-contain filter brightness-0 invert" src="https://horizons-cdn.hostinger.com/79c8a858-426e-4a5e-be6a-862835a41c7c/midjourney-logo-png_seeklogo-501203-yt60N.png" loading="lazy" />
+               <img alt="Canva Logo" className="w-full h-full object-contain filter brightness-0 invert" src="/tool-logos/canva.png" loading="lazy" width="200" height="200" />
             </motion.div>
              <motion.div 
                whileHover={{ scale: 1.1, opacity: 1 }}
                className="w-24 h-24 bg-white/5 rounded-xl flex items-center justify-center p-4 border border-white/10 hover:border-yellow-500/50 transition-all cursor-pointer"
             >
-               <img alt="Google Analytics Logo" className="w-full h-full object-contain filter brightness-0 invert" src="https://horizons-cdn.hostinger.com/79c8a858-426e-4a5e-be6a-862835a41c7c/gemini-logo-8raTV.png" loading="lazy" />
+               <img alt="Google Analytics Logo" className="w-full h-full object-contain filter brightness-0 invert" src="/tool-logos/google-analytics.svg" loading="lazy" width="200" height="200" />
             </motion.div>
             
             {/* "+100 More" Badge */}

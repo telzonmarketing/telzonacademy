@@ -1,20 +1,80 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform, useReducedMotion, useMotionTemplate, useSpring } from 'framer-motion';
 import { ArrowRight, Sparkles, CheckCircle, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { firePixelSchedule } from '@/lib/leadSubmit';
 
 const Hero = () => {
+  const sectionRef = useRef(null);
+  const prefersReducedMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+
+  // Peak brightness when hero is fully in view, fades to 0 as the section scrolls past the top.
+  // Spring smooths the value so the glow eases rather than jitters with raw scroll.
+  const intensityRaw = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const intensity = useSpring(intensityRaw, { stiffness: 120, damping: 30, mass: 0.4 });
+
+  const bgGlowOpacity = useTransform(intensity, [0, 1], [0, 1]);
+  const beamOpacity = useTransform(intensity, [0, 1], [0, 0.75]);
+  const beamScale = useTransform(intensity, [0, 1], [0.7, 1]);
+  const borderGlowOpacity = useTransform(intensity, [0, 1], [0, 0.9]);
+
+  const textShadowBlur = useTransform(intensity, [0, 1], [0, 38]);
+  const textShadowAlpha = useTransform(intensity, [0, 1], [0, 0.45]);
+  const textShadow = useMotionTemplate`0 0 ${textShadowBlur}px rgba(123, 97, 255, ${textShadowAlpha})`;
+
   const handleCTAClick = () => {
     firePixelSchedule();
     window.open('https://wa.me/919307189776?text=Hello%20Telzon%20Academy%2C%20I%20want%20to%20book%20a%20free%20demo%20class%20for%20the%20digital%20marketing%20course', '_blank');
   };
 
   return (
-    <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-      {/* Subtle ambient glows — replace the loud purple/orange blobs. */}
+    <section ref={sectionRef} className="pt-32 pb-20 px-4 relative overflow-hidden">
+      {/* Static ambient glows — fallback for reduced-motion users and base lighting layer. */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/15 rounded-full blur-[140px] -z-10" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-violet-500/10 rounded-full blur-[140px] -z-10" />
+
+      {!prefersReducedMotion && (
+        <>
+          {/* Layer 1 — background radial spotlight (LED dome). */}
+          <motion.div
+            aria-hidden="true"
+            style={{ opacity: bgGlowOpacity, willChange: 'opacity' }}
+            className="pointer-events-none absolute inset-0 -z-10"
+          >
+            <div
+              className="absolute top-[12%] left-1/2 -translate-x-1/2 w-[min(1200px,140vw)] h-[760px] rounded-full"
+              style={{
+                background:
+                  'radial-gradient(ellipse 60% 55% at center, rgba(79,125,255,0.45) 0%, rgba(123,97,255,0.32) 35%, rgba(79,125,255,0.10) 60%, transparent 80%)',
+                filter: 'blur(80px)',
+                mixBlendMode: 'screen',
+              }}
+            />
+          </motion.div>
+
+          {/* Layer 2 — light beam shaft falling behind the hero content. */}
+          <motion.div
+            aria-hidden="true"
+            style={{ opacity: beamOpacity, scaleY: beamScale, willChange: 'opacity, transform' }}
+            className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-16 -z-10 origin-top"
+          >
+            <div
+              className="w-[280px] md:w-[460px] h-[640px] md:h-[820px]"
+              style={{
+                background:
+                  'radial-gradient(ellipse 55% 100% at top, rgba(79,125,255,0.42) 0%, rgba(123,97,255,0.22) 45%, transparent 75%)',
+                filter: 'blur(48px)',
+                mixBlendMode: 'screen',
+              }}
+            />
+          </motion.div>
+        </>
+      )}
 
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -25,10 +85,13 @@ const Hero = () => {
               <span>No. 1 Digital Marketing Institute in Nagpur</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5 leading-[1.05] tracking-tight">
+            <motion.h1
+              style={prefersReducedMotion ? undefined : { textShadow, willChange: 'filter' }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5 leading-[1.05] tracking-tight"
+            >
               Best Digital Marketing<br />
               <span className="font-serif-display italic text-white/95">Course in Nagpur</span>
-            </h1>
+            </motion.h1>
 
             <p className="text-lg text-white/70 mb-6 leading-relaxed max-w-xl">
               Nagpur's most practical <strong className="text-white font-semibold">digital marketing training institute</strong>. Learn SEO, Google Ads, social media marketing, and content strategy — with live projects, expert mentors, and guaranteed placement support.
@@ -66,6 +129,24 @@ const Hero = () => {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="relative">
+            {/* Layer 3 — soft LED border glow around the hero image card. */}
+            {!prefersReducedMotion && (
+              <motion.div
+                aria-hidden="true"
+                style={{ opacity: borderGlowOpacity, willChange: 'opacity' }}
+                className="pointer-events-none absolute -inset-4 rounded-[1.6rem] -z-10"
+              >
+                <div
+                  className="absolute inset-0 rounded-[1.6rem]"
+                  style={{
+                    background:
+                      'linear-gradient(135deg, rgba(79,125,255,0.55) 0%, rgba(123,97,255,0.55) 100%)',
+                    filter: 'blur(32px)',
+                  }}
+                />
+              </motion.div>
+            )}
+
             <div className="surface-card-elevated relative overflow-hidden p-2">
               <div className="rounded-[1rem] overflow-hidden">
                 <img
