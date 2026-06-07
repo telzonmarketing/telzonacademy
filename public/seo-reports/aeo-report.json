@@ -1,9 +1,15 @@
 {
-  "timestamp": "2026-06-07T10:23:00.429Z",
+  "timestamp": "2026-06-07T12:16:57.457Z",
   "pagesAudited": 0,
-  "score": 57,
-  "grade": "D",
+  "score": 37,
+  "grade": "F",
   "issues": [
+    {
+      "severity": "critical",
+      "title": "AI crawlers not explicitly allowed in robots.txt",
+      "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data.",
+      "fix": "Add explicit User-agent: <bot> Allow: / blocks for each AI crawler"
+    },
     {
       "severity": "important",
       "title": "llms.txt missing or unreachable",
@@ -30,7 +36,6 @@
     }
   ],
   "strengths": [
-    "All 10 major AI crawlers explicitly allowed",
     "0 pages have question-style headings"
   ],
   "llms": {
@@ -67,16 +72,5 @@
     "perplexityActive": false,
     "braveActive": false
   },
-  "aiCrawlers": [
-    "GPTBot",
-    "ClaudeBot",
-    "PerplexityBot",
-    "CCBot",
-    "Google-Extended",
-    "anthropic-ai",
-    "ChatGPT-User",
-    "Applebot-Extended",
-    "Bytespider",
-    "cohere-ai"
-  ]
+  "aiCrawlers": []
 }
