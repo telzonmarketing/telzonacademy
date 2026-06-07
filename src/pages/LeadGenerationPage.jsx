@@ -105,10 +105,7 @@ const LeadGenerationPage = () => {
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 
-      <div className="min-h-screen text-white overflow-x-hidden" style={{
-        background: 'radial-gradient(circle at 50% 0%, #4c1d95 0%, #1e1b4b 42%, #312e81 62%, #c2410c 100%)',
-        backgroundAttachment: 'fixed',
-      }}>
+      <div className="min-h-screen text-white overflow-x-hidden font-sans">
         <Header />
 
         <main>

@@ -9,53 +9,46 @@ const FinalCTA = () => {
   };
 
   return (
-    <section className="py-20 px-4 relative overflow-hidden">
-      {/* Background flare */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-orange-500/20 blur-[120px] rounded-full -z-10"></div>
-      
-      <div className="container mx-auto max-w-4xl relative z-10">
+    <section className="py-24 px-4 relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-indigo-500/15 blur-[140px] rounded-full -z-10" />
+
+      <div className="container mx-auto max-w-5xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center"
+          className="surface-card-elevated grid-bg relative overflow-hidden p-10 md:p-16 text-center"
         >
-          <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mx-auto mb-6 border border-white/20">
-            <Rocket className="w-8 h-8 text-white" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40 pointer-events-none" />
+          <div className="relative">
+            <div className="w-14 h-14 rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-md flex items-center justify-center mx-auto mb-6">
+              <Rocket className="w-6 h-6 text-indigo-300" />
+            </div>
+
+            <h2 className="text-3xl md:text-5xl font-bold mb-5 text-white tracking-tight leading-[1.05]">
+              Ready to transform<br />
+              <span className="font-serif-display italic text-white/95">your career?</span>
+            </h2>
+
+            <p className="text-lg text-white/65 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Join hundreds of successful students who have kickstarted their digital marketing careers with Telzon Academy.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+              <Button onClick={handleCTAClick} className="btn-primary text-base px-7 py-6">
+                Enroll Now
+                <ArrowRight className="w-5 h-5 ml-1" />
+              </Button>
+              <Button onClick={handleCTAClick} variant="outline" className="btn-secondary text-base px-7 py-6">
+                Schedule a Call
+              </Button>
+            </div>
+
+            <p className="text-xs text-white/45 mt-8 uppercase tracking-[0.08em]">
+              Limited seats <span className="mx-2 text-white/20">•</span> Placement assistance <span className="mx-2 text-white/20">•</span> Industry certification
+            </p>
           </div>
-          
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white tracking-tight">
-            Ready to Transform Your Career?
-          </h2>
-          
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed font-light">
-            Join hundreds of successful students who have kickstarted their digital marketing careers with Telzon Academy.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              onClick={handleCTAClick}
-              size="lg"
-              className="bg-white text-purple-900 hover:bg-gray-100 font-bold transition-all duration-300 hover:scale-105 text-lg px-8"
-            >
-              Enroll Now
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-            
-            <Button
-              onClick={handleCTAClick}
-              size="lg"
-              variant="outline"
-              className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white transition-all duration-300 text-lg px-8 bg-transparent"
-            >
-              Schedule a Call
-            </Button>
-          </div>
-          
-          <p className="text-sm text-gray-400 mt-8 font-light">
-            Limited seats available • Job placement assistance • Industry certification
-          </p>
         </motion.div>
       </div>
     </section>

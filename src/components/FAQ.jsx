@@ -44,7 +44,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-20 px-4 relative">
+    <section className="py-24 px-4 relative">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="container mx-auto max-w-4xl">
         <motion.div
@@ -52,48 +52,50 @@ const FAQ = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
-            Frequently Asked Questions
+          <p className="text-[11px] font-semibold text-indigo-300 uppercase tracking-[0.14em] mb-3">FAQs</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 tracking-tight leading-[1.1]">
+            Frequently asked{' '}
+            <span className="font-serif-display italic text-white/90">questions</span>
           </h2>
-          <p className="text-lg text-gray-300 font-light">
-            Got questions? We've got answers!
+          <p className="text-base text-white/60">
+            Got questions? We've got answers.
           </p>
         </motion.div>
-        
-        <div className="space-y-4">
+
+        <div className="space-y-3">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-card rounded-xl overflow-hidden border border-white/10"
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="surface-card overflow-hidden"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-200"
+                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-white/[0.03] transition-colors duration-200"
               >
-                <span className="text-lg font-semibold text-white pr-4">{faq.question}</span>
+                <span className="text-base md:text-lg font-semibold text-white pr-4">{faq.question}</span>
                 <motion.div
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.25 }}
                 >
-                  <ChevronDown className="w-5 h-5 text-purple-300 flex-shrink-0" />
+                  <ChevronDown className="w-5 h-5 text-indigo-300 flex-shrink-0" />
                 </motion.div>
               </button>
-              
+
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.25 }}
                   >
-                    <div className="px-6 pb-5 text-gray-300 leading-relaxed font-light border-t border-white/5">
+                    <div className="px-6 pb-5 text-[15px] text-white/70 leading-relaxed border-t border-white/[0.06] pt-4">
                       {faq.answer}
                     </div>
                   </motion.div>

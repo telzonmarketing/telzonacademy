@@ -12,6 +12,7 @@ import Mentorship from '@/components/Mentorship';
 import LeadGenForm from '@/components/LeadGenForm';
 import FinalCTA from '@/components/FinalCTA';
 import { landingPages } from './landingPagesConfig';
+import { PAGE_FAQS } from './landingPagesFaqs';
 
 // ─── Nagpur localities for IndiaMart-style hyper-local targeting ─────────────
 const NAGPUR_AREAS = [
@@ -30,81 +31,7 @@ const SYLLABUS = [
   { week: 'Week 15–16', topic: 'Live Projects & Placement', items: ['2 live client campaigns', 'Portfolio building', 'Resume & LinkedIn', 'Mock interviews'] },
 ];
 
-// ─── Zomato/Swiggy style: unique FAQs per slug ───────────────────────────────
-const PAGE_FAQS = {
-  default: [
-    { q: 'What is the duration of the digital marketing course in Nagpur?', a: 'The course runs from 3 to 6 months depending on the batch you choose. We offer a 3-month intensive and a 6-month comprehensive program with weekend and weekday options.' },
-    { q: 'What are the fees for the digital marketing course at Telzon Academy?', a: 'Course fees range from ₹25,000 to ₹45,000 depending on the program. We offer flexible EMI options and merit-based scholarships. Contact us for the latest pricing.' },
-    { q: 'Do I need prior experience to join the digital marketing course in Nagpur?', a: 'No prior experience is needed. Our course starts from absolute basics and moves to advanced topics. Students from any background — science, commerce, arts — have successfully completed this course.' },
-    { q: 'Is there placement assistance after the digital marketing course?', a: 'Yes. Telzon Academy has a 95% placement success rate. We help with resume building, LinkedIn optimisation, mock interviews and direct connections with hiring partners in Nagpur and across India.' },
-    { q: 'Which areas in Nagpur is Telzon Academy accessible from?', a: 'Our institute is centrally located in Nagpur and easily reachable from Dharampeth, Sitabuldi, Sadar, Ramdaspeth, Civil Lines, Pratap Nagar and all other major areas. We also offer fully online classes.' },
-    { q: 'Will I get Google and Meta certification?', a: 'Yes. Our trainers guide you through the Google Ads, Google Analytics, and Meta Blueprint certification exams. These industry certifications are included in the course.' },
-  ],
-  'digital-marketing-course-fees-in-nagpur': [
-    { q: 'How much does a digital marketing course cost in Nagpur?', a: 'At Telzon Academy, fees range from ₹25,000 to ₹45,000. This is an all-inclusive fee — no hidden charges for study materials, tools or certification guidance.' },
-    { q: 'Is EMI available for the digital marketing course fees?', a: 'Yes. We offer 3-month and 6-month no-cost EMI options. You can start the course with a small registration amount and pay the rest in easy instalments.' },
-    { q: 'Are there any scholarships or discounts available?', a: 'We offer merit-based scholarships of up to 30% for students who perform well in our admission test. Early-bird discounts are also available for the next batch.' },
-    { q: 'What is included in the course fee?', a: 'The fee includes all study materials, live project access, tool subscriptions during training, certification exam prep, and 1 year of placement assistance. No extra charges.' },
-    { q: 'How does Telzon Academy\'s fee compare to other institutes in Nagpur?', a: 'Most institutes in Nagpur charge ₹15,000–₹20,000 for basic courses with no live projects. Telzon Academy charges a premium because we include live projects, Google/Meta certification and 95% placement support.' },
-    { q: 'Can I get a refund if I am not satisfied?', a: 'We offer a free demo class before you enroll so you can experience the quality first. After enrollment, we have a structured refund policy within the first 7 days.' },
-  ],
-  'digital-marketing-course-with-placement-nagpur': [
-    { q: 'What is Telzon Academy\'s placement record?', a: 'We have a 95% placement success rate. Our graduates work at companies like Swiggy, OLA, Nykaa, and dozens of Nagpur-based agencies and startups.' },
-    { q: 'How long does placement take after course completion?', a: 'Most students receive their first job offer within 30–60 days of course completion. Our placement team actively connects you with hiring partners throughout the course.' },
-    { q: 'What kind of jobs do digital marketing course graduates get in Nagpur?', a: 'Common roles include Digital Marketing Executive, SEO Analyst, Social Media Manager, Google Ads Specialist, Content Marketer and Performance Marketing Manager. Salaries range from ₹2.5 LPA to ₹8.5 LPA.' },
-    { q: 'Does Telzon Academy have a job guarantee?', a: 'We provide 100% placement assistance, not a guaranteed job. However, our 95% placement rate means almost every student who completes the course and projects gets placed within 60 days.' },
-    { q: 'Can I get a freelancing career after the digital marketing course?', a: 'Absolutely. Many of our graduates work as freelancers earning ₹30,000–₹1,00,000 per month. We teach you how to find clients and set up your own digital marketing consultancy.' },
-    { q: 'What companies hire from Telzon Academy?', a: 'Our graduates have been hired by Swiggy, OLA, Le Meridien, Amul, Nykaa, and many Nagpur-based digital agencies. We also partner with startups looking for freshers.' },
-  ],
-  'seo-course-in-nagpur': [
-    { q: 'What will I learn in the SEO course in Nagpur?', a: 'You will learn keyword research, on-page optimisation, technical SEO audits, link building, local SEO, Google Search Console, and how to rank websites on Google — all with live practice.' },
-    { q: 'Is SEO still worth learning in 2026?', a: 'Absolutely. SEO generates the highest ROI of any digital marketing channel. Every business in Nagpur needs SEO and good SEO professionals are in very high demand, earning ₹3–8 LPA.' },
-    { q: 'How long does it take to learn SEO?', a: 'Our SEO module takes 3–4 weeks of intensive training. To get good at it professionally, plan 3–6 months of consistent practice, which is why we include live projects.' },
-    { q: 'Will I work on a real website in the SEO course?', a: 'Yes. You will work on live websites — including your own practice site — and do real audits of existing websites during the course. No theoretical-only learning.' },
-    { q: 'Does the SEO course include local SEO for Nagpur businesses?', a: 'Yes. We have a dedicated local SEO module covering Google Business Profile, Nagpur-specific citation building, local keyword targeting and map pack optimisation.' },
-    { q: 'What tools are covered in the SEO course?', a: 'Google Search Console, Google Analytics, Semrush, Ahrefs (basic), Screaming Frog, Moz, Ubersuggest and Google PageSpeed Insights. All tools are available during training.' },
-  ],
-  'digital-marketing-agency-in-nagpur': [
-    { q: 'What does Telzon Academy as a digital marketing agency in Nagpur do?', a: 'We run end-to-end digital marketing for Nagpur businesses — SEO, Google Ads, Meta Ads, social media management, content creation, and lead generation. We also offer website design and conversion-rate optimisation.' },
-    { q: 'How much do digital marketing agency services in Nagpur cost?', a: 'Monthly retainers start at ₹15,000/month for SEO-only and go up to ₹75,000/month for full-stack growth packages. Pricing is transparent and based on scope, never on guesswork.' },
-    { q: 'Is Telzon Academy actually based in Nagpur?', a: 'Yes — our team, trainers and account managers are all based in Nagpur. You can walk in for a meeting any time. We work with both local Nagpur businesses and clients across India.' },
-    { q: 'Do you handle Google Ads and Meta Ads for Nagpur businesses?', a: 'Yes. Our certified team manages Google Search, Display, Performance Max, and Meta (Facebook + Instagram) ad campaigns with full transparency, weekly reporting and ROI tracking.' },
-    { q: 'How long until I see results from your digital marketing services?', a: 'Paid ads usually start delivering leads within the first week. SEO results kick in around 2–3 months, with major ranking gains by month 4–6. We share progress every 2 weeks.' },
-    { q: 'Can I get a free consultation before signing up?', a: 'Yes. Book a free 30-minute strategy call. We\'ll audit your current digital presence and give you 2–3 specific recommendations whether you sign up or not.' },
-  ],
-  'top-10-digital-marketing-institutes-in-nagpur': [
-    { q: 'Who ranks #1 among digital marketing institutes in Nagpur?', a: 'Based on student reviews (4.9/5 from 200+), placement rate (95%), course quality and AI-powered curriculum, Telzon Academy ranks #1 on most independent rankings of digital marketing institutes in Nagpur.' },
-    { q: 'How is this top 10 list determined?', a: 'We score each institute on: placement record, curriculum depth, trainer expertise, student reviews on Google, fee transparency and live project work. The full methodology is shared on this page.' },
-    { q: 'Are these rankings updated for 2026?', a: 'Yes. This list is reviewed and updated quarterly to reflect latest course offerings, placement records and student reviews from Nagpur.' },
-    { q: 'How do I choose the right institute from this list?', a: 'Take a free demo class at the top 2–3 institutes that match your budget and timing. Compare the trainer quality, curriculum and student energy before deciding.' },
-    { q: 'Are online digital marketing institutes also included?', a: 'We include institutes that offer online + offline hybrid options for Nagpur students. Pure online-only national platforms are listed separately.' },
-    { q: 'What\'s the average fee across the top 10?', a: 'Course fees in the top 10 range from ₹15,000 (basic) to ₹70,000 (premium with placement). Telzon Academy is in the mid-range at ₹25,000–₹45,000 with full placement support.' },
-  ],
-  'digital-marketing-course-in-dharampeth-nagpur': [
-    { q: 'Where exactly is Telzon Academy located relative to Dharampeth?', a: 'Telzon Academy is centrally located in Nagpur, easy to reach from Dharampeth. The commute from Variety Square or Wing Square is roughly 10–15 minutes by auto or your own vehicle.' },
-    { q: 'Are there any digital marketing institutes inside Dharampeth itself?', a: 'There are a few smaller coaching centres inside Dharampeth, but most lack live projects and placement support. Most serious students from Dharampeth join Telzon Academy for the full curriculum and placement track record.' },
-    { q: 'Can I attend the course online if I\'m based in Dharampeth?', a: 'Yes. We offer fully online live batches with the same syllabus and trainers. Many Dharampeth working professionals choose the online option to save commute time.' },
-    { q: 'What batch timings work best for Dharampeth working professionals?', a: 'Most Dharampeth working professionals prefer the evening (6–8 PM) or weekend batch (Sat–Sun 10 AM–2 PM). Both batches have the same content and trainers.' },
-    { q: 'Is parking available at the institute?', a: 'Yes. We have parking for two-wheelers and cars at the institute, so coming from Dharampeth by your own vehicle is no problem.' },
-    { q: 'Can I take a free demo class first?', a: 'Absolutely. We run free demo classes every Saturday. WhatsApp us your name to confirm a slot — no commitment required.' },
-  ],
-  'digital-marketing-jobs-in-nagpur': [
-    { q: 'What digital marketing jobs are available in Nagpur right now?', a: 'Common openings in Nagpur include Digital Marketing Executive, SEO Analyst, Social Media Manager, Performance Marketing Manager, Content Writer and Google Ads Specialist. Salaries range from ₹2.5L to ₹12L+ depending on experience.' },
-    { q: 'What is the entry-level digital marketing salary in Nagpur?', a: 'Fresher digital marketing salaries in Nagpur range from ₹2.5–₹3.5 LPA in 2026. With Google + Meta certifications and a portfolio, freshers can negotiate ₹4 LPA.' },
-    { q: 'Which companies hire digital marketers in Nagpur?', a: 'Major hirers include Persistent Systems, Tata Consultancy Services, dozens of Nagpur-based agencies, ed-tech companies, real estate firms and D2C brands. Telzon also has a hiring partner network of 50+ companies.' },
-    { q: 'How fast can I get a digital marketing job after the course?', a: 'On average, our students get placed within 30–60 days of course completion. 95% are placed within 90 days, provided they complete the course and project work.' },
-    { q: 'Can I work as a freelancer instead of taking a job?', a: 'Yes. Many Telzon graduates freelance for ₹40,000–₹1,00,000+ per month. We teach freelancing, client acquisition and pricing in a dedicated module.' },
-    { q: 'Are there remote digital marketing jobs available from Nagpur?', a: 'Yes. Remote roles are increasingly common — many Nagpur-based marketers work for Mumbai, Bangalore and overseas clients while staying in Nagpur. We help you craft a remote-friendly portfolio.' },
-  ],
-  'online-digital-marketing-course-nagpur': [
-    { q: 'Is the online digital marketing course at Telzon Academy live or recorded?', a: 'It is live instructor-led training over Zoom/Google Meet. You attend real-time classes, ask questions, and get assignments. Recorded sessions are also available if you miss a class.' },
-    { q: 'Is the online course as good as the offline one?', a: 'Yes — same curriculum, same trainers, same live projects. The only difference is you attend from home. Many of our top-placed students completed the course fully online.' },
-    { q: 'What equipment do I need for the online digital marketing course?', a: 'A laptop or desktop with a good internet connection is all you need. A smartphone is useful for social media modules. No special equipment required.' },
-    { q: 'Are there any batch timings for the online course?', a: 'We offer morning batches (10 AM–12 PM), evening batches (6 PM–8 PM), and weekend batches (Sat–Sun 10 AM–2 PM). You can choose based on your schedule.' },
-    { q: 'Will I get a certificate for completing the online course?', a: 'Yes, the same Telzon Academy certificate is awarded for online completion as for offline. It includes your name, the course details and is signed by our directors.' },
-    { q: 'Can I switch from online to offline during the course?', a: 'Yes. If you want to attend some sessions offline, you are welcome to come to our Nagpur centre. We are flexible — online, offline, or hybrid.' },
-  ],
-};
+// ─── FAQs per slug now live in landingPagesFaqs.js (shared with tools/prerender.js) ─
 
 // ─── Star rating component ───────────────────────────────────────────────────
 function Stars({ count = 5, filled = 5 }) {
@@ -144,25 +71,31 @@ function Breadcrumb({ slug, headline }) {
 function FAQSection({ faqs }) {
   const [open, setOpen] = useState(null);
   return (
-    <section className="py-16 px-4">
+    <section className="py-24 px-4">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl font-bold text-white mb-2 text-center">Frequently Asked Questions</h2>
-        <p className="text-gray-400 text-center mb-10">Everything you need to know before joining</p>
+        <div className="text-center mb-12">
+          <p className="text-[11px] font-semibold text-indigo-300 uppercase tracking-[0.14em] mb-3">FAQs</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 tracking-tight leading-[1.1]">
+            Frequently asked{' '}
+            <span className="font-serif-display italic text-white/90">questions</span>
+          </h2>
+          <p className="text-base text-white/60">Everything you need to know before joining</p>
+        </div>
         <div className="space-y-3">
           {faqs.map((faq, i) => (
-            <div key={i} className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+            <div key={i} className="surface-card overflow-hidden">
               <button onClick={() => setOpen(open === i ? null : i)}
-                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-white/5 transition-colors">
+                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-white/[0.03] transition-colors">
                 <span className="text-base font-semibold text-white pr-4">{faq.q}</span>
                 <motion.div animate={{ rotate: open === i ? 180 : 0 }} transition={{ duration: 0.25 }}>
-                  <ChevronDown className="w-5 h-5 text-purple-300 flex-shrink-0" />
+                  <ChevronDown className="w-5 h-5 text-indigo-300 flex-shrink-0" />
                 </motion.div>
               </button>
               <AnimatePresence>
                 {open === i && (
                   <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }}>
-                    <p className="px-6 pb-5 text-gray-300 leading-relaxed font-light border-t border-white/5">{faq.a}</p>
+                    <p className="px-6 pb-5 text-[15px] text-white/70 leading-relaxed border-t border-white/[0.06] pt-4">{faq.a}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -178,28 +111,34 @@ function FAQSection({ faqs }) {
 function SyllabusSection() {
   const [open, setOpen] = useState(0);
   return (
-    <section className="py-16 px-4 bg-black/20">
+    <section className="py-24 px-4">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl font-bold text-white mb-2 text-center">Course Curriculum</h2>
-        <p className="text-gray-400 text-center mb-10">16 weeks · 10+ live projects · Google & Meta certification</p>
+        <div className="text-center mb-12">
+          <p className="text-[11px] font-semibold text-indigo-300 uppercase tracking-[0.14em] mb-3">Curriculum</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 tracking-tight leading-[1.1]">
+            Course{' '}
+            <span className="font-serif-display italic text-white/90">curriculum</span>
+          </h2>
+          <p className="text-base text-white/60">16 weeks · 10+ live projects · Google &amp; Meta certification</p>
+        </div>
         <div className="space-y-2">
           {SYLLABUS.map((mod, i) => (
-            <div key={i} className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+            <div key={i} className="surface-card overflow-hidden">
               <button onClick={() => setOpen(open === i ? null : i)}
-                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/5 transition-colors">
+                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/[0.03] transition-colors">
                 <div className="flex items-center gap-4">
-                  <span className="text-xs text-purple-300 font-mono bg-purple-500/20 px-2 py-1 rounded">{mod.week}</span>
+                  <span className="text-[11px] text-indigo-300 font-semibold bg-indigo-400/10 border border-indigo-400/20 px-2.5 py-1 rounded-full uppercase tracking-[0.06em]">{mod.week}</span>
                   <span className="font-semibold text-white">{mod.topic}</span>
                 </div>
-                <ChevronDown className={`w-4 h-4 text-purple-300 transition-transform ${open === i ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-4 h-4 text-indigo-300 transition-transform ${open === i ? 'rotate-180' : ''}`} />
               </button>
               <AnimatePresence>
                 {open === i && (
                   <motion.div initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} transition={{ duration: 0.2 }}>
-                    <ul className="px-6 pb-4 grid md:grid-cols-2 gap-2 border-t border-white/5">
+                    <ul className="px-6 pb-5 grid md:grid-cols-2 gap-2.5 border-t border-white/[0.06] pt-4">
                       {mod.items.map((item, j) => (
-                        <li key={j} className="flex items-center gap-2 text-gray-300 text-sm">
-                          <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                        <li key={j} className="flex items-center gap-2.5 text-[15px] text-white/75">
+                          <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                           {item}
                         </li>
                       ))}
@@ -225,34 +164,37 @@ const REVIEWS = [
 
 function ReviewSection() {
   return (
-    <section className="py-16 px-4 bg-black/20">
+    <section className="py-24 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-white mb-2">Student Reviews</h2>
-          <div className="flex items-center justify-center gap-2 mb-2">
+        <div className="text-center mb-12">
+          <p className="text-[11px] font-semibold text-indigo-300 uppercase tracking-[0.14em] mb-3">Reviews</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight leading-[1.1]">
+            Student{' '}
+            <span className="font-serif-display italic text-white/90">stories</span>
+          </h2>
+          <div className="inline-flex items-center gap-2 rounded-full border border-yellow-400/20 bg-yellow-400/10 px-4 py-2">
             <Stars filled={5} />
-            <span className="text-white font-bold text-lg">4.9</span>
-            <span className="text-gray-400 text-sm">/ 5 · 200+ reviews</span>
+            <span className="text-white font-semibold text-sm">4.9</span>
+            <span className="text-white/55 text-sm">/ 5 · 200+ reviews from Nagpur</span>
           </div>
-          <p className="text-gray-400 text-sm">From students across Nagpur</p>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-5">
           {REVIEWS.map((r, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-              className="bg-white/5 border border-white/10 rounded-2xl p-6">
+              className="surface-card p-6 hover:border-white/15 transition-colors">
               <Stars filled={r.rating} />
-              <p className="text-gray-300 mt-3 mb-4 text-sm leading-relaxed italic">"{r.text}"</p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-purple-600/40 flex items-center justify-center text-white font-bold text-sm">
+              <p className="text-white/75 mt-4 mb-5 text-[15px] leading-relaxed">"{r.text}"</p>
+              <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500/40 to-violet-500/40 border border-white/10 flex items-center justify-center text-white font-bold text-sm">
                   {r.name.charAt(0)}
                 </div>
                 <div>
                   <p className="text-white font-semibold text-sm">{r.name}</p>
-                  <p className="text-purple-300 text-xs">{r.role}</p>
-                  <div className="flex items-center gap-1 mt-0.5">
-                    <MapPin className="w-3 h-3 text-gray-500" />
-                    <span className="text-gray-500 text-xs">{r.area}</span>
+                  <p className="text-indigo-300 text-xs mt-0.5">{r.role}</p>
+                  <div className="flex items-center gap-1 mt-1">
+                    <MapPin className="w-3 h-3 text-white/40" />
+                    <span className="text-white/40 text-[11px]">{r.area}</span>
                   </div>
                 </div>
               </div>
@@ -286,18 +228,19 @@ const AREA_SLUG_MAP = {
 
 function LocalAreasSection({ keyword }) {
   return (
-    <section className="py-14 px-4">
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-2xl font-bold text-white mb-2 text-center">
-          {keyword} Near You in Nagpur
+    <section className="py-20 px-4">
+      <div className="container mx-auto max-w-5xl text-center">
+        <p className="text-[11px] font-semibold text-indigo-300 uppercase tracking-[0.14em] mb-3">Local areas</p>
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">
+          {keyword} near you in Nagpur
         </h2>
-        <p className="text-gray-400 text-center mb-8 text-sm">
+        <p className="text-white/55 mb-9 text-sm">
           Easily accessible from every part of Nagpur — click your area for local details
         </p>
         <div className="flex flex-wrap gap-2 justify-center">
           {NAGPUR_AREAS.map(area => {
             const slug = AREA_SLUG_MAP[area];
-            const className = "text-sm text-gray-300 bg-white/5 border border-white/10 px-4 py-2 rounded-full hover:bg-purple-600/20 hover:border-purple-500/40 hover:text-white transition-all";
+            const className = "text-sm text-white/70 bg-white/[0.04] border border-white/[0.08] px-4 py-2 rounded-full hover:bg-indigo-500/15 hover:border-indigo-400/30 hover:text-white transition-all";
             return slug ? (
               <Link key={area} to={`/pages/${slug}`} className={className}>
                 {keyword} — {area}
@@ -321,18 +264,21 @@ function RelatedPagesSection({ currentSlug }) {
     .sort(() => Math.random() - 0.5)
     .slice(0, 9);
   return (
-    <section className="py-14 px-4 bg-black/20">
+    <section className="py-20 px-4">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-2xl font-bold text-white mb-2 text-center">Related Courses & Services</h2>
-        <p className="text-gray-400 text-center mb-8 text-sm">
-          Explore other digital marketing courses, locality pages and services from Telzon Academy
-        </p>
+        <div className="text-center mb-10">
+          <p className="text-[11px] font-semibold text-indigo-300 uppercase tracking-[0.14em] mb-3">Related</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">Related courses &amp; services</h2>
+          <p className="text-white/55 text-sm">
+            Explore other digital marketing courses, locality pages and services from Telzon Academy
+          </p>
+        </div>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
           {related.map(p => (
             <Link key={p.slug} to={`/pages/${p.slug}`}
-              className="group bg-white/5 border border-white/10 rounded-xl px-4 py-3 hover:bg-white/10 hover:border-purple-500/30 transition-all">
-              <p className="text-sm font-semibold text-white group-hover:text-purple-300 line-clamp-2">{p.headline}</p>
-              <p className="text-xs text-gray-500 mt-1 line-clamp-1">/pages/{p.slug}</p>
+              className="group surface-card px-4 py-3.5 hover:border-indigo-400/30 transition-all">
+              <p className="text-sm font-semibold text-white group-hover:text-indigo-200 line-clamp-2 leading-snug">{p.headline}</p>
+              <p className="text-[11px] text-white/40 mt-1.5 line-clamp-1 font-mono">/pages/{p.slug}</p>
             </Link>
           ))}
         </div>
@@ -351,14 +297,16 @@ function StatsBar() {
     { icon: Star, label: '4.9 / 5', sub: 'Student Rating' },
   ];
   return (
-    <div className="bg-black/30 border-y border-white/10 py-6 px-4">
-      <div className="container mx-auto max-w-6xl flex flex-wrap justify-center gap-8">
+    <div className="bg-black/40 border-y border-white/[0.06] py-8 px-4 backdrop-blur-sm">
+      <div className="container mx-auto max-w-6xl flex flex-wrap justify-center gap-x-12 gap-y-6">
         {stats.map(({ icon: Icon, label, sub }) => (
-          <div key={sub} className="flex items-center gap-3 text-center">
-            <Icon className="w-5 h-5 text-purple-400 flex-shrink-0" />
+          <div key={sub} className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl border border-indigo-400/20 bg-indigo-400/10 flex items-center justify-center flex-shrink-0">
+              <Icon className="w-4 h-4 text-indigo-300" />
+            </div>
             <div>
-              <p className="text-white font-bold text-lg leading-none">{label}</p>
-              <p className="text-gray-400 text-xs mt-0.5">{sub}</p>
+              <p className="text-white font-semibold text-base leading-none tracking-tight">{label}</p>
+              <p className="text-white/45 text-[11px] mt-1 uppercase tracking-[0.08em] font-medium">{sub}</p>
             </div>
           </div>
         ))}
@@ -532,63 +480,59 @@ const LandingPage = () => {
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>
 
-      <div className="min-h-screen text-white overflow-x-hidden"
-        style={{ background: 'radial-gradient(circle at 50% 0%, #4c1d95 0%, #1e1b4b 40%, #312e81 60%, #c2410c 100%)', backgroundAttachment: 'fixed' }}>
+      <div className="min-h-screen text-white overflow-x-hidden font-sans">
         <Header />
         <main>
 
           {/* ── HERO ── */}
-          <section className="pt-32 pb-16 px-4 relative overflow-hidden">
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/30 rounded-full blur-[100px] -z-10" />
-            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-[100px] -z-10" />
+          <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/15 rounded-full blur-[140px] -z-10" />
+            <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-violet-500/10 rounded-full blur-[140px] -z-10" />
             <div className="container mx-auto max-w-6xl">
               <Breadcrumb slug={slug} headline={page.headline} />
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                  {/* AggregateRating visible stars — Upgrad does this */}
                   <div className="flex items-center gap-2 mb-4">
                     <Stars filled={5} />
-                    <span className="text-yellow-400 font-bold text-sm">4.9</span>
-                    <span className="text-gray-400 text-sm">/ 5 · 200+ reviews</span>
+                    <span className="text-yellow-400 font-semibold text-sm">4.9</span>
+                    <span className="text-white/50 text-sm">/ 5 · 200+ reviews</span>
                   </div>
-                  <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white px-4 py-2 rounded-full mb-4 backdrop-blur-sm">
-                    <span className="text-sm font-semibold">#1 Digital Marketing Institute in Nagpur</span>
+                  <div className="badge-tag mb-5">
+                    <span>#1 Digital Marketing Institute in Nagpur</span>
                   </div>
-                  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">{page.headline}</h1>
-                  <p className="text-lg text-gray-300 mb-6 leading-relaxed font-light">{page.subheadline}</p>
-                  <ul className="space-y-2 mb-6">
+                  <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-[1.05] tracking-tight">{page.headline}</h1>
+                  <p className="text-lg text-white/65 mb-6 leading-relaxed max-w-xl">{page.subheadline}</p>
+                  <ul className="space-y-2.5 mb-7">
                     {page.bullets.map((item, i) => (
-                      <li key={i} className="flex items-center gap-3 text-gray-300 text-sm">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                        {item}
+                      <li key={i} className="flex items-start gap-3 text-[15px] text-white/80">
+                        <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-1" />
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
-                  {/* Upgrad-style quick-info pills */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2 mb-7">
                     {[['Clock','3–6 months'],['IndianRupee','₹25K–₹45K'],['Users','1000+ alumni'],['Award','95% placed']].map(([, label]) => (
-                      <span key={label} className="text-xs text-gray-300 bg-white/10 border border-white/10 px-3 py-1.5 rounded-full">{label}</span>
+                      <span key={label} className="text-[11px] font-semibold text-white/70 bg-white/[0.04] border border-white/[0.08] px-3 py-1.5 rounded-full uppercase tracking-[0.06em]">{label}</span>
                     ))}
                   </div>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <a href={`#lead-gen-${page.slug}`}
-                      className="bg-white text-purple-900 hover:bg-gray-100 font-bold transition-all duration-300 hover:scale-105 text-base px-8 py-4 rounded-xl text-center flex items-center justify-center gap-2">
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a href={`#lead-gen-${page.slug}`} className="btn-primary text-base px-7 py-4">
                       Book Free Demo Class <ArrowRight className="w-4 h-4" />
                     </a>
-                    <a href={`#lead-gen-${page.slug}`}
-                      className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 hover:border-white transition-all duration-300 text-base px-8 py-4 rounded-xl text-center">
+                    <a href={`#lead-gen-${page.slug}`} className="btn-secondary text-base px-7 py-4">
                       Get Course Details
                     </a>
                   </div>
                 </div>
                 <div className="relative">
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-white/5 p-2">
+                  <div className="surface-card-elevated relative overflow-hidden p-2">
                     <img alt={`${page.headline} — Telzon Academy Nagpur`}
                       src="https://images.unsplash.com/photo-1695133139074-d0ab15d6d7da"
-                      className="w-full h-full object-cover rounded-xl" loading="lazy" width="600" height="400" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1e1b4b]/60 to-transparent pointer-events-none rounded-2xl" />
-                    <div className="absolute top-4 right-4 bg-green-500/90 text-white text-xs font-bold px-3 py-1.5 rounded-full">
-                      Free Demo Available
+                      className="w-full h-full object-cover rounded-[1rem]" loading="lazy" width="600" height="400" />
+                    <div className="absolute inset-2 rounded-[1rem] bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
+                    <div className="absolute top-5 right-5 inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-400/15 backdrop-blur-md px-3 py-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="text-[11px] font-semibold text-emerald-100 uppercase tracking-[0.06em]">Free Demo</span>
                     </div>
                   </div>
                 </div>

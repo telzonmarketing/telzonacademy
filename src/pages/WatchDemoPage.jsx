@@ -354,13 +354,13 @@ export default function WatchDemoPage() {
         {/* Open Graph — for WhatsApp / Facebook link previews */}
         <meta property="og:title"       content="Upto 50% Off — New Batch | Telzon Academy Nagpur" />
         <meta property="og:description" content="Only 6 seats left. Learn SEO, Google Ads & Meta Ads with live projects. 95% placement rate. Reserve your free seat now." />
-        <meta property="og:image"       content="https://horizons-cdn.hostinger.com/79c8a858-426e-4a5e-be6a-862835a41c7c/e2680f0d45ebb3c1bcf9e8d8f6fa7d69.jpg" />
+        <meta property="og:image"       content="https://telzonacademy.in/telzon-logo-white-1024.png" />
         <meta property="og:type"        content="website" />
         <meta property="og:url"         content="https://telzonacademy.in/new-batch" />
         <meta name="twitter:card"       content="summary_large_image" />
         <meta name="twitter:title"      content="Upto 50% Off — New Batch | Telzon Academy" />
         <meta name="twitter:description" content="Only 6 seats left. Reserve your free seat before the batch fills up." />
-        <meta name="twitter:image"      content="https://horizons-cdn.hostinger.com/79c8a858-426e-4a5e-be6a-862835a41c7c/e2680f0d45ebb3c1bcf9e8d8f6fa7d69.jpg" />
+        <meta name="twitter:image"      content="https://telzonacademy.in/telzon-logo-white-1024.png" />
 
         {/* Google tag (GA4) — GT-5DHFK99D / G-R1JR4H02F1 */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5DHFK99D" />
@@ -392,7 +392,7 @@ export default function WatchDemoPage() {
 
         {/* ── Top bar ── */}
         <div className="sticky top-0 z-30 flex items-center justify-between px-4 py-2.5 border-b border-white/[0.06] bg-black/40 backdrop-blur-md">
-          <img src="https://horizons-cdn.hostinger.com/79c8a858-426e-4a5e-be6a-862835a41c7c/e2680f0d45ebb3c1bcf9e8d8f6fa7d69.jpg" alt="Telzon Academy" className="h-9 w-auto rounded-md" />
+          <img src="/telzon-logo-white-1024.png" alt="Telzon Academy" className="h-9 w-auto" />
           <div className="flex items-center gap-1">
             {[...Array(5)].map((_,i) => <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />)}
             <span className="text-white/70 text-xs ml-1 font-medium hidden sm:inline">4.9 / 5 · 1,000+ students</span>

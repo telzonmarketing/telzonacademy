@@ -67,28 +67,29 @@ const rows = [
 
 const ComparisonTable = () => {
   return (
-    <section className="py-20 px-4 relative">
+    <section className="py-24 px-4 relative">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="mb-14"
         >
-          <p className="text-sm font-semibold text-purple-400 uppercase tracking-widest mb-2">
+          <p className="text-[11px] font-semibold text-indigo-300 uppercase tracking-[0.14em] mb-3">
             Telzon Academy vs other institutes
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-            What sets this <span className="text-purple-400">program apart?</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-white leading-[1.1] tracking-tight max-w-3xl">
+            What sets this{' '}
+            <span className="font-serif-display italic text-white/90">program apart?</span>
           </h2>
         </motion.div>
 
         {/* Header row */}
-        <div className="grid grid-cols-[160px_1fr_1fr] md:grid-cols-[220px_1fr_1fr] gap-0 mb-3 px-2">
+        <div className="grid grid-cols-[140px_1fr_1fr] md:grid-cols-[220px_1fr_1fr] gap-0 mb-3 px-2">
           <div />
-          <div className="text-center font-bold text-purple-400 text-lg pb-2">Telzon Academy</div>
-          <div className="text-center font-bold text-white/60 text-lg pb-2">Other Institutes</div>
+          <div className="text-center text-[11px] font-semibold text-indigo-300 uppercase tracking-[0.12em] pb-3">Telzon Academy</div>
+          <div className="text-center text-[11px] font-semibold text-white/40 uppercase tracking-[0.12em] pb-3">Other Institutes</div>
         </div>
 
         {/* Rows */}
@@ -100,23 +101,23 @@ const ComparisonTable = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.04 }}
-              className="grid grid-cols-[160px_1fr_1fr] md:grid-cols-[220px_1fr_1fr] gap-0 items-stretch"
+              className="grid grid-cols-[140px_1fr_1fr] md:grid-cols-[220px_1fr_1fr] gap-0 items-stretch"
             >
               {/* Label */}
-              <div className="flex items-center bg-white/10 rounded-l-xl px-4 py-3 border border-white/10 border-r-0">
-                <span className="text-sm font-semibold text-white">{row.label}</span>
+              <div className="flex items-center rounded-l-xl border border-r-0 border-white/[0.08] bg-white/[0.025] px-4 py-3.5">
+                <span className="text-sm font-semibold text-white/90">{row.label}</span>
               </div>
 
-              {/* Telzon column */}
-              <div className="flex items-start gap-3 border-2 border-purple-500 border-l-0 border-r-0 bg-purple-500/10 px-4 py-3">
-                <ThumbsUp className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-white">{row.telzon}</span>
+              {/* Telzon column — highlighted with indigo */}
+              <div className="flex items-start gap-3 border-y border-indigo-400/30 bg-indigo-400/[0.06] px-4 py-3.5">
+                <ThumbsUp className="w-4.5 h-4.5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-white/90 leading-relaxed">{row.telzon}</span>
               </div>
 
               {/* Others column */}
-              <div className="flex items-start gap-3 bg-white/5 rounded-r-xl px-4 py-3 border border-white/10 border-l-0">
-                <ThumbsDown className="w-5 h-5 text-white/30 flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-white/50">{row.others}</span>
+              <div className="flex items-start gap-3 rounded-r-xl border border-l-0 border-white/[0.08] bg-white/[0.02] px-4 py-3.5">
+                <ThumbsDown className="w-4.5 h-4.5 text-white/25 flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-white/45 leading-relaxed">{row.others}</span>
               </div>
             </motion.div>
           ))}

@@ -1,62 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Design tokens ──────────────────────────────────────────────────────────
+   Inspired by premium-SaaS dark UI: deep-black canvas, slightly elevated
+   surfaces, electric indigo as primary CTA, restrained violet as accent.
+   ─────────────────────────────────────────────────────────────────────────── */
 @layer base {
   :root {
-    --background: 265 89% 12%; /* Deep Purple */
-    --foreground: 0 0% 100%;
+    /* Surfaces */
+    --background: 240 10% 4%;          /* #0a0a0c — deep canvas */
+    --surface-1: 240 8% 7%;            /* #111114 — card */
+    --surface-2: 240 7% 10%;           /* #18181c — elevated */
+    --surface-popover: 240 8% 8%;
 
-    --card: 265 89% 16%;
-    --card-foreground: 0 0% 100%;
+    --foreground: 0 0% 98%;            /* near-white text */
+    --foreground-muted: 240 5% 65%;    /* readable secondary (NOT washed) */
+    --foreground-subtle: 240 5% 50%;   /* labels, hints */
 
-    --popover: 265 89% 12%;
-    --popover-foreground: 0 0% 100%;
-
-    --primary: 271 91% 65%; /* Bright Purple */
+    /* Brand */
+    --primary: 224 80% 60%;            /* #4760eb — electric indigo */
     --primary-foreground: 0 0% 100%;
+    --primary-soft: 224 80% 60% / 0.12;
 
-    --secondary: 265 50% 25%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 265 50% 25%;
-    --muted-foreground: 270 20% 80%;
-
-    --accent: 32 95% 60%; /* Orange/Pink accent from Horizons */
+    --accent: 264 83% 66%;             /* #8b5cf6 — violet highlight */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Status */
+    --success: 152 76% 45%;            /* #19c37d */
+    --warning: 38 92% 55%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 265 50% 30%;
-    --input: 265 50% 30%;
-    --ring: 271 91% 65%;
+    /* Lines */
+    --border: 240 6% 16%;              /* #272729 subtle */
+    --border-soft: 240 6% 13%;
+    --input: 240 6% 18%;
+    --ring: 224 80% 60%;
 
-    --radius: 0.75rem;
+    /* shadcn-compat aliases (used by components/ui) */
+    --card: 240 8% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 8% 8%;
+    --popover-foreground: 0 0% 98%;
+    --secondary: 240 6% 14%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 6% 14%;
+    --muted-foreground: 240 5% 65%;
+
+    --radius: 0.875rem;                /* 14px — premium card radius */
   }
 }
 
+/* ─── Base layer ────────────────────────────────────────────────────────────── */
 @layer base {
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
   body {
     @apply bg-background text-foreground antialiased;
-    /* Hostinger Horizons Gradient Background */
-    background: radial-gradient(circle at 50% 0%, #4c1d95 0%, #1e1b4b 40%, #312e81 60%, #c2410c 100%);
+    /* Deep black canvas with a subtle indigo glow at the top — replaces the
+       old purple/orange gradient. Echoes the reference dashboards. */
+    background:
+      radial-gradient(1200px 600px at 50% -10%, rgba(71, 96, 235, 0.18) 0%, transparent 60%),
+      radial-gradient(800px 500px at 90% 10%, rgba(139, 92, 246, 0.10) 0%, transparent 60%),
+      #08080a;
     background-attachment: fixed;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: 'cv11', 'ss01', 'ss03';
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Typography hierarchy — used by editorial headings */
+  .font-serif-display {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
   }
 }
 
+/* ─── Reusable patterns ──────────────────────────────────────────────────────
+   Cards in the references use a subtle gradient + 1px border + restrained
+   shadow. We give it a class so every component can opt in consistently.
+   ─────────────────────────────────────────────────────────────────────────── */
+@layer components {
+  .surface-card {
+    @apply rounded-2xl border border-white/[0.08] bg-white/[0.025] backdrop-blur-sm shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset];
+  }
+  .surface-card-elevated {
+    @apply rounded-2xl border border-white/[0.10] bg-gradient-to-b from-white/[0.05] to-white/[0.015] shadow-[0_8px_30px_rgba(0,0,0,0.35)];
+  }
+  .surface-card-popular {
+    @apply rounded-2xl border border-white/90 bg-white text-neutral-900 shadow-[0_20px_60px_-15px_rgba(255,255,255,0.18)];
+  }
+  .badge-tag {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-white/80;
+  }
+  .badge-tag-accent {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-indigo-400/30 bg-indigo-400/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-indigo-200;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition-all duration-200 hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-white/40;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-white/[0.08] hover:border-white/25 focus:outline-none focus:ring-2 focus:ring-white/20;
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-indigo-500 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_rgba(71,96,235,0.6)] transition-all duration-200 hover:from-indigo-400 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-400/40;
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-white/40 transition-colors focus:border-indigo-400/50 focus:bg-white/[0.06] focus:outline-none focus:ring-2 focus:ring-indigo-400/20;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
+
+/* Legacy class names some components still reference */
 .glass-card {
-  @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl;
+  @apply surface-card;
 }
-
 .glass-card-hover {
-  @apply hover:bg-white/15 transition-all duration-300;
+  @apply transition-all duration-300 hover:bg-white/[0.05] hover:border-white/15;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Tawk chat widget — keep z-index above modals, match dark theme */
+iframe[title="chat widget"] {
+  color-scheme: light;
 }

@@ -16,6 +16,10 @@ module.exports = {
 			},
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+				serif: ['Instrument Serif', 'Georgia', 'serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -50,11 +54,26 @@ module.exports = {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))',
 				},
+				brand: {
+					indigo: '#4760eb',
+					'indigo-soft': 'rgba(71, 96, 235, 0.12)',
+					violet: '#8b5cf6',
+					'violet-soft': 'rgba(139, 92, 246, 0.12)',
+					success: '#19c37d',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)',
+				'2xl': 'calc(var(--radius) + 4px)',
+				'3xl': 'calc(var(--radius) + 8px)',
+			},
+			boxShadow: {
+				'surface-1': '0 1px 0 0 rgba(255,255,255,0.04) inset',
+				'card-elev': '0 8px 30px rgba(0,0,0,0.35)',
+				'cta-indigo': '0 8px 24px -8px rgba(71,96,235,0.6)',
+				'cta-white': '0 12px 40px -10px rgba(255,255,255,0.18)',
 			},
 			keyframes: {
 				'accordion-down': {
@@ -65,10 +84,15 @@ module.exports = {
 					from: { height: 'var(--radix-accordion-content-height)' },
 					to: { height: 0 },
 				},
+				'fade-up': {
+					'0%': { opacity: 0, transform: 'translateY(8px)' },
+					'100%': { opacity: 1, transform: 'translateY(0)' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-up': 'fade-up 0.5s ease-out',
 			},
 		},
 	},

@@ -61,7 +61,7 @@ const GlobalSeo = () => {
       longitude: 79.0882
     },
     image: 'https://images.unsplash.com/photo-1695133139074-d0ab15d6d7da',
-    logo: 'https://horizons-cdn.hostinger.com/79c8a858-426e-4a5e-be6a-862835a41c7c/e2680f0d45ebb3c1bcf9e8d8f6fa7d69.jpg',
+    logo: 'https://telzonacademy.in/telzon-logo-white-1024.png',
     priceRange: '₹₹',
     openingHours: 'Mo-Sa 09:00-20:00',
     sameAs: ['https://www.instagram.com/telzonacademy/'],

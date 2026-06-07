@@ -41,12 +41,7 @@ function HomePage() {
   return (
     <>
       <GlobalSeo />
-      <div className="min-h-screen text-white overflow-x-hidden" style={{
-        background: 'radial-gradient(circle at 50% 0%, #4c1d95 0%, #1e1b4b 40%, #312e81 60%, #c2410c 100%)',
-        backgroundAttachment: 'fixed',
-        fontFamily: '-apple-system, "SF Pro Text", "SF Pro Display", "Proxima Nova", Roboto, sans-serif',
-        scrollBehavior: 'smooth'
-      }}>
+      <div className="min-h-screen text-white overflow-x-hidden font-sans" style={{ scrollBehavior: 'smooth' }}>
         <Header />
         <main>
           <ScrollReveal><Hero /></ScrollReveal>
