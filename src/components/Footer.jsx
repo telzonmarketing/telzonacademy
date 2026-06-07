@@ -83,6 +83,18 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} Telzon Academy. All rights reserved.</p>
           <p className="uppercase tracking-[0.08em]">Nagpur's Best Digital Marketing Institute</p>
         </motion.div>
+
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }} className="mt-4 text-center text-[11px] text-white/35">
+          Developed by{' '}
+          <a
+            href="https://www.telzonmarketing.in/telzon-best-digital-marketing-agency-nagpur.html"
+            target="_blank"
+            rel="noopener"
+            className="text-white/55 hover:text-indigo-200 underline decoration-white/15 underline-offset-4 hover:decoration-indigo-300 transition-colors"
+          >
+            Telzon Marketing — Best Digital Marketing Company in Nagpur
+          </a>
+        </motion.div>
       </div>
     </footer>
   );
