@@ -577,7 +577,7 @@
       "description": "Long redirect chains waste crawl budget and dilute link equity.",
       "status": "open",
       "detectedAt": "2026-06-07T05:51:50.198Z",
-      "lastSeenAt": "2026-06-07T05:51:50.198Z",
+      "lastSeenAt": "2026-06-07T06:27:04.867Z",
       "attempts": [],
       "firstSeenRun": "2026-06-07T05:51:50.198Z"
     }
@@ -589,5 +589,5 @@
     "escalated": 0,
     "regressed": 0
   },
-  "lastReconciled": "2026-06-07T05:51:50.198Z"
+  "lastReconciled": "2026-06-07T06:27:04.867Z"
 }

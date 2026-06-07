@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-07T05:51:50.199Z",
+  "timestamp": "2026-06-07T06:27:04.867Z",
   "summary": {
     "pagesFound": 64,
     "issuesFound": 1,
@@ -306,8 +306,8 @@
     "note": "Notified Bing/Yandex/Naver of 64 URLs"
   },
   "bingSubmissions": {
-    "submitted": 64,
-    "failed": 0
+    "submitted": 0,
+    "failed": 64
   },
   "issueTracker": {
     "issues": {
@@ -888,7 +888,7 @@
         "description": "Long redirect chains waste crawl budget and dilute link equity.",
         "status": "open",
         "detectedAt": "2026-06-07T05:51:50.198Z",
-        "lastSeenAt": "2026-06-07T05:51:50.198Z",
+        "lastSeenAt": "2026-06-07T06:27:04.867Z",
         "attempts": [],
         "firstSeenRun": "2026-06-07T05:51:50.198Z"
       }
@@ -900,15 +900,9 @@
       "escalated": 0,
       "regressed": 0
     },
-    "lastReconciled": "2026-06-07T05:51:50.198Z"
+    "lastReconciled": "2026-06-07T06:27:04.867Z"
   },
-  "issueActions": [
-    {
-      "id": "02dc5d62e6d8",
-      "type": "opened",
-      "title": "63 pages have redirect chains"
-    }
-  ],
+  "issueActions": [],
   "solverEnrichments": [],
   "errors": []
 }
