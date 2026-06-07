@@ -575,19 +575,61 @@
       "severity": "important",
       "title": "63 pages have redirect chains",
       "description": "Long redirect chains waste crawl budget and dilute link equity.",
-      "status": "open",
+      "status": "fixing",
       "detectedAt": "2026-06-07T05:51:50.198Z",
-      "lastSeenAt": "2026-06-07T06:53:06.889Z",
-      "attempts": [],
+      "lastSeenAt": "2026-06-07T06:58:10.446Z",
+      "attempts": [
+        {
+          "timestamp": "2026-06-07T06:58:10.446Z",
+          "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
+          "file": null
+        }
+      ],
       "firstSeenRun": "2026-06-07T05:51:50.198Z"
+    },
+    "b4b96faddfd3": {
+      "id": "b4b96faddfd3",
+      "type": "MISSING_H1",
+      "severity": "low",
+      "title": "36 pages missing H1 heading",
+      "description": "H1 headings help Google understand the primary topic of each page.",
+      "status": "fixing",
+      "detectedAt": "2026-06-07T06:58:10.446Z",
+      "lastSeenAt": "2026-06-07T06:58:10.446Z",
+      "attempts": [
+        {
+          "timestamp": "2026-06-07T06:58:10.446Z",
+          "strategy": "H1 headings help Google understand the primary topic of each page.",
+          "file": null
+        }
+      ],
+      "firstSeenRun": "2026-06-07T06:58:10.446Z"
+    },
+    "cc097a330d3c": {
+      "id": "cc097a330d3c",
+      "type": "CLIENT_SIDE_RENDERING",
+      "severity": "critical",
+      "title": "36 pages appear to be client-side rendered only",
+      "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
+      "status": "fixing",
+      "detectedAt": "2026-06-07T06:58:10.446Z",
+      "lastSeenAt": "2026-06-07T06:58:10.446Z",
+      "attempts": [
+        {
+          "timestamp": "2026-06-07T06:58:10.446Z",
+          "strategy": "Convert client-side rendered pages to Server Components",
+          "file": null
+        }
+      ],
+      "firstSeenRun": "2026-06-07T06:58:10.446Z"
     }
   },
   "stats": {
-    "open": 1,
-    "fixing": 0,
+    "open": 0,
+    "fixing": 3,
     "resolved": 17,
     "escalated": 0,
     "regressed": 0
   },
-  "lastReconciled": "2026-06-07T06:53:06.889Z"
+  "lastReconciled": "2026-06-07T06:58:10.446Z"
 }
