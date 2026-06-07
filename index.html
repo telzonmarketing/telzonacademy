@@ -24,10 +24,15 @@
     fbq('track', 'PageView');
   </script>
 
-  <!-- Favicons — telzon academy mark -->
+  <!-- Favicons — telzon academy mark.
+       Google Search uses the largest available square PNG (multiple of 48).
+       Order: largest-first so crawlers prefer the high-res mark. -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="/favicon-144.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.webmanifest" />
