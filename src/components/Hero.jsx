@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useReducedMotion, useMotionTemplate, useSpring } from 'framer-motion';
 import { ArrowRight, Sparkles, CheckCircle, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -94,7 +95,16 @@ const Hero = () => {
             </motion.h1>
 
             <p className="text-lg text-white/70 mb-6 leading-relaxed max-w-xl">
-              Nagpur's most practical <strong className="text-white font-semibold">digital marketing training institute</strong>. Learn SEO, Google Ads, social media marketing, and content strategy — with live projects, expert mentors, and guaranteed placement support.
+              Nagpur's most practical{' '}
+              {/* Q-001 internal link · 2026-06-07: feeds authority into the cluster
+                  canonical page; anchor uses the target keyword. */}
+              <Link
+                to="/pages/digital-marketing-course-in-nagpur"
+                className="text-white font-semibold underline decoration-indigo-400/50 underline-offset-4 hover:decoration-indigo-300 transition-colors"
+              >
+                digital marketing course in Nagpur
+              </Link>
+              . Learn SEO, Google Ads, social media marketing, and content strategy — with live projects, expert mentors, and guaranteed placement support.
             </p>
 
             <div className="flex flex-wrap gap-2.5 mb-7">

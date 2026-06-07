@@ -67,6 +67,123 @@ function Breadcrumb({ slug, headline }) {
   );
 }
 
+// ─── GEO blocks (Q-001 cannibalization fix · 2026-06-07) ─────────────────────
+// Three additive blocks rendered ONLY when the landing-page config provides the
+// corresponding field. Designed for AI citation extraction (40–80 word answer
+// blocks, structured facts, named entities) per Tier 4 GEO requirements.
+
+function DirectAnswerBlock({ answer }) {
+  return (
+    <section className="py-16 px-4">
+      <div className="container mx-auto max-w-4xl">
+        <div className="surface-card-elevated p-7 md:p-9">
+          <p className="text-[11px] font-semibold text-indigo-300 uppercase tracking-[0.14em] mb-4">Quick Answer</p>
+          <p className="text-lg md:text-xl text-white/90 leading-relaxed font-light">{answer}</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CourseFactsBlock({ facts }) {
+  const rows = [
+    { label: 'Duration', value: facts.duration, icon: Clock },
+    { label: 'Course fees', value: facts.fees, icon: IndianRupee },
+    { label: 'Mode', value: facts.mode, icon: Users },
+    { label: 'Next intake', value: facts.nextIntake, icon: Award },
+  ];
+  return (
+    <section className="py-16 px-4">
+      <div className="container mx-auto max-w-5xl">
+        <div className="text-center mb-10">
+          <p className="text-[11px] font-semibold text-indigo-300 uppercase tracking-[0.14em] mb-3">Course facts</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+            Everything you need to <span className="font-serif-display italic text-white/90">know</span>
+          </h2>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          {rows.map((r) => (
+            <div key={r.label} className="surface-card p-5 flex items-start gap-3">
+              <div className="w-9 h-9 rounded-lg bg-indigo-500/15 border border-indigo-400/20 flex items-center justify-center flex-shrink-0">
+                <r.icon className="w-4 h-4 text-indigo-300" />
+              </div>
+              <div>
+                <p className="text-[10px] font-semibold text-white/45 uppercase tracking-[0.12em] mb-1">{r.label}</p>
+                <p className="text-base font-semibold text-white">{r.value}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="surface-card p-5">
+            <p className="text-[10px] font-semibold text-white/45 uppercase tracking-[0.12em] mb-3">Batches available</p>
+            <div className="flex flex-wrap gap-2">
+              {facts.batches.map((b) => (
+                <span key={b} className="text-[12px] font-medium text-white/80 bg-white/[0.04] border border-white/[0.08] px-3 py-1.5 rounded-full">{b}</span>
+              ))}
+            </div>
+          </div>
+          <div className="surface-card p-5">
+            <p className="text-[10px] font-semibold text-white/45 uppercase tracking-[0.12em] mb-3">Certifications included</p>
+            <div className="flex flex-wrap gap-2">
+              {facts.certifications.map((c) => (
+                <span key={c} className="text-[12px] font-medium text-emerald-100 bg-emerald-400/10 border border-emerald-400/20 px-3 py-1.5 rounded-full">{c}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CareerOutcomesBlock({ outcomes }) {
+  const stats = [
+    { label: 'Placement rate', value: outcomes.placementRate },
+    { label: 'Average salary', value: outcomes.averageSalary },
+    { label: 'Highest salary', value: outcomes.highestSalary },
+    { label: 'Time to first offer', value: outcomes.timeToFirstOffer },
+  ];
+  return (
+    <section className="py-16 px-4">
+      <div className="container mx-auto max-w-5xl">
+        <div className="text-center mb-10">
+          <p className="text-[11px] font-semibold text-indigo-300 uppercase tracking-[0.14em] mb-3">Career outcomes</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+            Where our students <span className="font-serif-display italic text-white/90">go next</span>
+          </h2>
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          {stats.map((s) => (
+            <div key={s.label} className="surface-card p-5 text-center">
+              <p className="text-2xl md:text-3xl font-bold text-white mb-1">{s.value}</p>
+              <p className="text-[10px] font-semibold text-white/45 uppercase tracking-[0.12em]">{s.label}</p>
+            </div>
+          ))}
+        </div>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="surface-card p-5">
+            <p className="text-[10px] font-semibold text-white/45 uppercase tracking-[0.12em] mb-3">Hiring partners</p>
+            <div className="flex flex-wrap gap-2">
+              {outcomes.hiringPartners.map((c) => (
+                <span key={c} className="text-[12px] font-medium text-white/85 bg-white/[0.04] border border-white/[0.08] px-3 py-1.5 rounded-full">{c}</span>
+              ))}
+            </div>
+          </div>
+          <div className="surface-card p-5">
+            <p className="text-[10px] font-semibold text-white/45 uppercase tracking-[0.12em] mb-3">Common roles</p>
+            <div className="flex flex-wrap gap-2">
+              {outcomes.roleTypes.map((r) => (
+                <span key={r} className="text-[12px] font-medium text-indigo-100 bg-indigo-400/10 border border-indigo-400/20 px-3 py-1.5 rounded-full">{r}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── FAQ accordion ───────────────────────────────────────────────────────────
 function FAQSection({ faqs }) {
   const [open, setOpen] = useState(null);
@@ -259,10 +376,21 @@ function LocalAreasSection({ keyword }) {
 
 // ─── Related courses section (Practo/Zomato pattern: dense internal linking) ─
 function RelatedPagesSection({ currentSlug }) {
-  const related = landingPages
-    .filter(p => p.slug !== currentSlug)
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 9);
+  // Q-001 internal linking · 2026-06-07
+  // The cluster canonical page MUST appear in the related grid on every
+  // other landing page. Deterministic order (not random) so authority flows
+  // consistently and the SSR/prerender HTML matches the React render.
+  const CLUSTER_CANONICAL = 'digital-marketing-course-in-nagpur';
+  const isOnCanonical = currentSlug === CLUSTER_CANONICAL;
+
+  const canonicalEntry = landingPages.find(p => p.slug === CLUSTER_CANONICAL);
+  const others = landingPages.filter(
+    p => p.slug !== currentSlug && p.slug !== CLUSTER_CANONICAL
+  );
+
+  const related = isOnCanonical
+    ? others.slice(0, 9)
+    : [canonicalEntry, ...others].filter(Boolean).slice(0, 9);
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto max-w-5xl">
@@ -539,6 +667,13 @@ const LandingPage = () => {
               </div>
             </div>
           </section>
+
+          {/* ── GEO BLOCKS · Q-001 cannibalization fix · 2026-06-07 ──
+              Renders only when the slug has these fields in landingPagesConfig.js.
+              All other slugs render unchanged.                                    */}
+          {page.directAnswer && <DirectAnswerBlock answer={page.directAnswer} />}
+          {page.courseFacts && <CourseFactsBlock facts={page.courseFacts} />}
+          {page.careerOutcomes && <CareerOutcomesBlock outcomes={page.careerOutcomes} />}
 
           {/* ── STATS BAR (Upgrad-style) ── */}
           <StatsBar />

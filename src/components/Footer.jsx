@@ -41,9 +41,11 @@ const Footer = () => {
 
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
             <h3 className="text-[11px] font-semibold mb-5 text-white/45 uppercase tracking-[0.12em]">Courses in Nagpur</h3>
+            {/* Q-001 internal link · 2026-06-07: target slug emphasised at the
+                top of the list with bold weight to concentrate authority. */}
             <ul className="space-y-2.5 text-sm text-white/65">
-              <li><a href="/pages/digital-marketing-course-in-nagpur" className="hover:text-white transition-colors">Digital Marketing Course in Nagpur</a></li>
-              <li><a href="/pages/best-digital-marketing-course-in-nagpur" className="hover:text-white transition-colors">Best Digital Marketing Course</a></li>
+              <li><a href="/pages/digital-marketing-course-in-nagpur" className="font-semibold text-white hover:text-indigo-200 transition-colors">Digital Marketing Course in Nagpur</a></li>
+              <li><a href="/pages/best-digital-marketing-course-in-nagpur" className="hover:text-white transition-colors">Best Digital Marketing Course in Nagpur</a></li>
               <li><a href="/pages/digital-marketing-institute-in-nagpur" className="hover:text-white transition-colors">Digital Marketing Institute in Nagpur</a></li>
               <li><a href="/pages/digital-marketing-course-with-placement-nagpur" className="hover:text-white transition-colors">Course with Placement Assistance</a></li>
               <li><a href="/pages/digital-marketing-course-fees-in-nagpur" className="hover:text-white transition-colors">Course Fees in Nagpur</a></li>

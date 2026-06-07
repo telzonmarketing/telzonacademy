@@ -4,24 +4,59 @@
 export const landingPages = [
   {
     slug: 'digital-marketing-course-in-nagpur',
-    metaTitle: 'Digital Marketing Course in Nagpur | Telzon Academy',
+    // Differentiated from the homepage (which leads with brand) — this page leads with the keyword.
+    // Q-001 cannibalization fix · 2026-06-07.
+    metaTitle: 'Digital Marketing Course in Nagpur — 95% Placement | Telzon Academy',
     metaDescription:
-      'Join Telzon Academy’s digital marketing course in Nagpur. Learn SEO, ads, social media and analytics with live projects and placement support.',
+      "Practical digital marketing course in Nagpur — 16-week SEO, Google Ads, social media & AI marketing training. 95% placement. Book your free demo at Telzon Academy.",
     metaKeywords:
-      'digital marketing course Nagpur, SEO training Nagpur, social media marketing course, digital marketing institute in Nagpur, digital marketing academy',
+      'digital marketing course Nagpur, digital marketing courses in Nagpur, digital marketing course fees Nagpur, digital marketing course with placement Nagpur, SEO training Nagpur',
     ogTitle:
-      'Best Digital Marketing Course in Nagpur – Telzon Academy',
+      'Digital Marketing Course in Nagpur — 95% Placement | Telzon Academy',
     ogDescription:
-      'Join Telzon Academy to learn digital marketing in Nagpur. Practical curriculum, live projects and placement support.',
+      'Practical 16-week digital marketing course in Nagpur covering SEO, Google Ads, social media and AI marketing. Free demo class available. 95% placement support.',
     headline: 'Master Digital Marketing in Nagpur',
     subheadline:
       'Join our comprehensive course and become a certified digital marketer. Learn practical skills with real projects and expert mentorship.',
     bullets: [
-      'Practical, job‑oriented curriculum covering SEO, SEM, social media & analytics',
-      'Work on live projects and case studies',
-      'Placement assistance with 95% success rate',
-      'Expert trainers with industry experience'
-    ]
+      'Practical, job-oriented curriculum: SEO, Google Ads, social media, content & AI marketing',
+      '16-week intensive program with weekday, weekend and live online batches',
+      'Live client projects and real ad-account work — no theory-only learning',
+      '95% placement assistance with 50+ hiring partners across Nagpur and India',
+      'Google Ads, Google Analytics & Meta Blueprint certifications included',
+      'Course fees ₹25,000–₹45,000 with no-cost EMI and merit-based scholarships',
+      'Free demo class — experience the teaching before you enrol',
+      'Centrally located in Nagpur — accessible from Dharampeth, Sitabuldi, Sadar and online',
+    ],
+    // 40–80 word block designed for AI extraction (ChatGPT / Gemini / Perplexity / Google AI Overviews).
+    // Per Tier 4 GEO requirement.
+    directAnswer:
+      "Telzon Academy's digital marketing course in Nagpur is a 16-week practical program covering SEO, Google Ads, Meta Ads, social media marketing, content strategy, analytics and AI marketing. The course includes live client projects, Google + Meta certifications, and 95% placement assistance with 50+ hiring partners. Fees range from ₹25,000 to ₹45,000 with no-cost EMI and merit-based scholarships. Free demo class available.",
+    // Structured facts block — surfaces concise course data for snippet + citation use.
+    courseFacts: {
+      duration: '16 weeks',
+      fees: '₹25,000 – ₹45,000',
+      batches: ['Weekday morning', 'Weekday evening', 'Weekend', 'Live online'],
+      certifications: ['Google Ads', 'Google Analytics', 'Meta Blueprint'],
+      mode: 'Offline + online live',
+      nextIntake: 'Monthly batches',
+    },
+    // Career outcomes block — placement-focused, hiring-partner-rich (Tier 4 priority cluster).
+    careerOutcomes: {
+      placementRate: '95%',
+      averageSalary: '₹3.5 LPA',
+      highestSalary: '₹8.5 LPA',
+      timeToFirstOffer: '30–60 days post-course',
+      hiringPartners: ['Swiggy', 'OLA', 'Nykaa', 'Le Meridien', 'Amul', 'Cloud Intellect'],
+      roleTypes: [
+        'Digital Marketing Executive',
+        'SEO Analyst',
+        'Social Media Manager',
+        'Google Ads Specialist',
+        'Content Marketer',
+        'Performance Marketing Manager',
+      ],
+    },
   },
   {
     slug: 'digital-marketing-institute-in-nagpur',

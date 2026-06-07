@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Rocket, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -47,6 +48,18 @@ const FinalCTA = () => {
 
             <p className="text-xs text-white/45 mt-8 uppercase tracking-[0.08em]">
               Limited seats <span className="mx-2 text-white/20">•</span> Placement assistance <span className="mx-2 text-white/20">•</span> Industry certification
+            </p>
+
+            {/* Q-001 internal link · 2026-06-07: secondary path to the canonical
+                course page; below the conversion CTAs so it never competes with them. */}
+            <p className="text-sm text-white/55 mt-6">
+              Want the full curriculum, fees and batch details?{' '}
+              <Link
+                to="/pages/digital-marketing-course-in-nagpur"
+                className="text-indigo-300 hover:text-indigo-200 underline decoration-indigo-400/40 underline-offset-4 transition-colors"
+              >
+                View the digital marketing course in Nagpur →
+              </Link>
             </p>
           </div>
         </motion.div>

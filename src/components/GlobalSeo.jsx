@@ -6,10 +6,12 @@ import { supabase } from '@/lib/customSupabaseClient';
 const GlobalSeo = () => {
   const location = useLocation();
   const [seoData, setSeoData] = useState({
-    meta_title: 'Digital Marketing Course in Nagpur | Free Demo | Telzon Academy',
-    meta_description: 'Join Telzon Academy — Nagpur\'s top digital marketing institute. Practical SEO, Google Ads, social media training with 95% placement success. Free demo class available. Enroll now.',
-    og_title: 'Digital Marketing Course in Nagpur | Free Demo | Telzon Academy',
-    og_description: 'Telzon Academy Nagpur — practical digital marketing training with 95% placement. Free demo available. Learn SEO, Google Ads, social media & more. Enroll today.'
+    // Q-001 soft retitling · 2026-06-07: brand-first to reduce title collision
+    // with /pages/digital-marketing-course-in-nagpur. Same keywords preserved.
+    meta_title: 'Telzon Academy | Digital Marketing Course in Nagpur | Free Demo Class',
+    meta_description: "Telzon Academy — Nagpur's top digital marketing course with 95% placement support. Practical SEO, Google Ads, social media, and AI marketing training. Book a free demo class today.",
+    og_title: 'Telzon Academy | Digital Marketing Course in Nagpur | Free Demo Class',
+    og_description: 'Telzon Academy Nagpur — practical digital marketing training with 95% placement. Free demo available. Learn SEO, Google Ads, social media, AI marketing & more.'
   });
 
   useEffect(() => {
