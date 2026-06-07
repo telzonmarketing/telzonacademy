@@ -100,6 +100,12 @@
     fix "missing H1" on a React SPA without setting up SSR/prerendering.
   -->
   <div id="root" data-scroll-container>
+    <!--
+      Static SEO fallback below is wrapped in <noscript> so JS-enabled browsers
+      treat it as raw text and DON'T render it — eliminating the brief flash of
+      plain HTML before React mounts. Crawlers without JS still parse the body.
+    -->
+    <noscript>
     <header>
       <h1>Telzon Academy — Digital Marketing Course &amp; Training Institute in Nagpur</h1>
       <p>Telzon Academy is Nagpur's top-rated digital marketing training institute, helping students, working professionals and business owners build a career in digital marketing through practical, placement-focused programs. Our flagship course covers Search Engine Optimisation (SEO), Google Ads (PPC), Meta and Instagram advertising, social media management, email and WhatsApp marketing, content strategy, web analytics and AI-driven marketing — taught through live projects with industry mentors.</p>
@@ -139,8 +145,6 @@
       <h2>Contact Telzon Academy</h2>
       <p>Call <a href="tel:+919307189776">+91-9307189776</a> or email <a href="mailto:connect@telzonacademy.in">connect@telzonacademy.in</a> to book a free demo class. Visit our Nagpur centre — open Monday to Saturday, 9 AM to 8 PM.</p>
     </section>
-    <noscript>
-      <p>JavaScript is disabled. <a href="https://telzonacademy.in/pages/digital-marketing-course-in-nagpur">View our digital marketing courses</a> or call +91-9307189776.</p>
     </noscript>
   </div>
 

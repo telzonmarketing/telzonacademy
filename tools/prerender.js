@@ -119,7 +119,11 @@ function rewriteRoot(html, innerHtml) {
   const before = html.slice(0, openIdx + openMarker.length);
   const after = html.slice(rootEnd);
 
-  return `${before}\n${innerHtml}\n${after}`;
+  // Wrap the static SEO fallback in <noscript>. Browsers with JS treat the
+  // contents as raw text and DON'T render it — so JS users never see a
+  // flash of plain HTML before React mounts. Crawlers without JS (Ubersuggest,
+  // Facebook OG, basic bots) still parse it as HTML and get the unique copy.
+  return `${before}\n<noscript>\n${innerHtml}\n</noscript>\n${after}`;
 }
 
 function landingPageContent(page) {
