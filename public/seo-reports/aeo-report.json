@@ -1,26 +1,31 @@
 {
-  "timestamp": "2026-06-07T02:45:35.460Z",
+  "timestamp": "2026-06-07T07:01:48.265Z",
   "pagesAudited": 64,
-  "score": 90,
-  "grade": "A",
+  "score": 82,
+  "grade": "B",
   "issues": [
     {
       "severity": "important",
       "title": "No FAQPage schema detected anywhere",
       "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often.",
       "fix": "Add FAQPage JSON-LD to landing pages with question/answer pairs"
+    },
+    {
+      "severity": "low",
+      "title": "Few pages have question-style headings",
+      "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility.",
+      "fix": "Convert some H2/H3 headings into questions matching real user queries"
     }
   ],
   "strengths": [
     "All 10 major AI crawlers explicitly allowed",
     "llms.txt present at site root",
     "64/64 pages have structured data",
-    "64 pages have question-style headings",
     "64 pages declare Organization schema"
   ],
   "llms": {
-    "compactBytes": 18005,
-    "fullBytes": 70170
+    "compactBytes": 16996,
+    "fullBytes": 114996
   },
   "faqSuggestions": [],
   "visibility": {
