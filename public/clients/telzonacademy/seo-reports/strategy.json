@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-06-07T06:19:10.367Z",
+  "timestamp": "2026-06-08T06:33:37.390Z",
   "engine": "StrategyEngine v2",
   "siteUrl": "https://telzonacademy.in",
-  "healthScore": 26,
+  "healthScore": 21,
   "grade": "Critical",
   "pillars": [
     {
       "key": "Technical",
       "weight": 20,
-      "val": 20
+      "val": 15
     },
     {
       "key": "AI / AEO",
@@ -37,7 +37,7 @@
     }
   ],
   "momentum": null,
-  "summary": "2 high-priority moves to make now, 10 total — ranked by impact on your rankings.",
+  "summary": "3 high-priority moves to make now, 11 total — ranked by impact on your rankings.",
   "recommendations": [
     {
       "prio": 1,
@@ -61,6 +61,18 @@
       "title": "Confirm Google Search Console data is flowing",
       "why": "The dashboard still shows 0 tracked keywords. If you just connected GSC, data takes 2–3 days to populate; if it stays empty, the service-account credential or sitemap submission needs fixing. Without it the engine can't find striking-distance keywords or measure progress.",
       "action": "Verify the property, ensure the service-account credential is set, submit the sitemap, then re-check in 2–3 days.",
+      "score": 6
+    },
+    {
+      "prio": 1,
+      "cat": "Technical",
+      "icon": "🛠️",
+      "impact": "high",
+      "effort": "med",
+      "timeToImpact": "days",
+      "title": "Resolve 1 critical technical issue",
+      "why": "Critical issues (indexability, broken meta, schema errors) directly block ranking. Clear these before investing in content.",
+      "action": "The auto-fixer handles most; the rest are flagged for manual action.",
       "score": 6
     },
     {
