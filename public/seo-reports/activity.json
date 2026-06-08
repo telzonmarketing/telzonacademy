@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-08T19:58:21.051Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-06-08T17:46:09.740Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔴",
     "title": "Heartbeat: 4 check(s) failing",
     "details": "403 Homepage · 403 Sitemap · 403 Robots.txt · 403 Dashboard"
-  },
-  {
-    "timestamp": "2026-06-06T11:20:11.925Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
   }
 ]
