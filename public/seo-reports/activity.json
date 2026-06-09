@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-09T12:17:09.630Z",
+    "type": "error",
+    "icon": "🔴",
+    "title": "Heartbeat: 4 check(s) failing",
+    "details": "403 Homepage · 403 Sitemap · 403 Robots.txt · 403 Dashboard"
+  },
+  {
     "timestamp": "2026-06-09T10:54:25.146Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🕷",
     "title": "Crawled 64 pages",
     "details": "Found 1 issues (0 critical, 1 important)"
-  },
-  {
-    "timestamp": "2026-06-07T06:27:04.867Z",
-    "type": "run",
-    "icon": "▶",
-    "title": "SEO bot manual run started",
-    "details": "Mode: full audit + fix + submit + keyword tracking"
   }
 ]
