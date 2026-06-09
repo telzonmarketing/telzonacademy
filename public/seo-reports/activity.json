@@ -1,5 +1,26 @@
 [
   {
+    "timestamp": "2026-06-09T10:54:25.146Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): Few pages have question-style headings",
+    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
+  },
+  {
+    "timestamp": "2026-06-09T10:54:25.146Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-06-09T10:54:25.146Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 82/100 (B)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-06-09T09:00:56.784Z",
     "type": "submit",
     "icon": "⚡",
@@ -1373,27 +1394,6 @@
   },
   {
     "timestamp": "2026-06-07T06:27:04.867Z",
-    "type": "run",
-    "icon": "▶",
-    "title": "SEO bot manual run started",
-    "details": "Mode: full audit + fix + submit + keyword tracking"
-  },
-  {
-    "timestamp": "2026-06-07T05:51:50.326Z",
-    "type": "done",
-    "icon": "✓",
-    "title": "Run completed",
-    "details": "Total: 64 pages · 0 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-06-07T05:51:50.199Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 64 pages",
-    "details": "Found 1 issues (0 critical, 1 important)"
-  },
-  {
-    "timestamp": "2026-06-07T05:51:50.199Z",
     "type": "run",
     "icon": "▶",
     "title": "SEO bot manual run started",
