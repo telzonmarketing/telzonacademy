@@ -22,10 +22,15 @@
       "description": "Long redirect chains waste crawl budget and dilute link equity.",
       "status": "fixing",
       "detectedAt": "2026-06-07T06:19:10.365Z",
-      "lastSeenAt": "2026-06-08T06:33:37.387Z",
+      "lastSeenAt": "2026-06-09T06:06:20.146Z",
       "attempts": [
         {
           "timestamp": "2026-06-08T06:33:37.387Z",
+          "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
+          "file": null
+        },
+        {
+          "timestamp": "2026-06-09T06:06:20.146Z",
           "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
           "file": null
         }
@@ -40,10 +45,15 @@
       "description": "H1 headings help Google understand the primary topic of each page.",
       "status": "fixing",
       "detectedAt": "2026-06-08T06:33:37.387Z",
-      "lastSeenAt": "2026-06-08T06:33:37.387Z",
+      "lastSeenAt": "2026-06-09T06:06:20.146Z",
       "attempts": [
         {
           "timestamp": "2026-06-08T06:33:37.387Z",
+          "strategy": "H1 headings help Google understand the primary topic of each page.",
+          "file": null
+        },
+        {
+          "timestamp": "2026-06-09T06:06:20.146Z",
           "strategy": "H1 headings help Google understand the primary topic of each page.",
           "file": null
         }
@@ -58,10 +68,15 @@
       "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
       "status": "fixing",
       "detectedAt": "2026-06-08T06:33:37.387Z",
-      "lastSeenAt": "2026-06-08T06:33:37.387Z",
+      "lastSeenAt": "2026-06-09T06:06:20.146Z",
       "attempts": [
         {
           "timestamp": "2026-06-08T06:33:37.387Z",
+          "strategy": "Convert client-side rendered pages to Server Components",
+          "file": null
+        },
+        {
+          "timestamp": "2026-06-09T06:06:20.146Z",
           "strategy": "Convert client-side rendered pages to Server Components",
           "file": null
         }
@@ -76,5 +91,5 @@
     "escalated": 0,
     "regressed": 0
   },
-  "lastReconciled": "2026-06-08T06:33:37.387Z"
+  "lastReconciled": "2026-06-09T06:06:20.146Z"
 }
