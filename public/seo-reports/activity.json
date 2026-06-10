@@ -1,5 +1,26 @@
 [
   {
+    "timestamp": "2026-06-10T11:33:03.003Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): Few pages have question-style headings",
+    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
+  },
+  {
+    "timestamp": "2026-06-10T11:33:03.003Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-06-10T11:33:03.003Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 82/100 (B)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-06-10T11:30:20.913Z",
     "type": "submit",
     "icon": "⚡",
@@ -1377,26 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 1 pages missing meta description",
     "details": "Meta descriptions improve click-through rates from search results, which signals quality to Google."
-  },
-  {
-    "timestamp": "2026-06-07T08:24:13.651Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 pages missing <title> tag",
-    "details": "Title tags are a primary ranking signal. Pages without titles are deprioritised by Google."
-  },
-  {
-    "timestamp": "2026-06-07T08:24:13.651Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 noindex pages listed in sitemap",
-    "details": "Sitemap should only list indexable pages. noindex pages in sitemap confuse Googlebot."
-  },
-  {
-    "timestamp": "2026-06-07T08:24:13.651Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 64 pages",
-    "details": "Found 7 issues (1 critical, 4 important)"
   }
 ]
