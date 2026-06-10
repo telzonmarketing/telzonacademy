@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-10T06:19:18.757Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-06-10T02:39:27.311Z",
     "type": "fix",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "win",
     "icon": "🏆",
     "title": "WON: \"36 pages appear to be client-side rendered only\" resolved after 1 attempt",
-    "details": "Took 1 day from first detection"
-  },
-  {
-    "timestamp": "2026-06-07T08:13:28.974Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"36 pages missing H1 heading\" resolved after 1 attempt",
     "details": "Took 1 day from first detection"
   }
 ]
