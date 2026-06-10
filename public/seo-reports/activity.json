@@ -1,5 +1,26 @@
 [
   {
+    "timestamp": "2026-06-10T22:49:41.273Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): Few pages have question-style headings",
+    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
+  },
+  {
+    "timestamp": "2026-06-10T22:49:41.273Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-06-10T22:49:41.273Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 82/100 (B)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-06-10T21:50:54.485Z",
     "type": "submit",
     "icon": "⚡",
@@ -1377,26 +1398,5 @@
     "icon": "▶",
     "title": "SEO bot manual run started",
     "details": "Mode: full audit + fix + submit + keyword tracking"
-  },
-  {
-    "timestamp": "2026-06-07T08:24:13.775Z",
-    "type": "done",
-    "icon": "✓",
-    "title": "Run completed",
-    "details": "Total: 64 pages · 7 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-06-07T08:24:13.651Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"64 pages missing H1 heading\" needs human attention",
-    "details": "Auto-fix failed after 5 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-06-07T08:24:13.651Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"63 pages have redirect chains\" resolved after 2 attempts",
-    "details": "Took 1 day from first detection"
   }
 ]
