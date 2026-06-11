@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-06-09T06:20:53.287Z",
+  "timestamp": "2026-06-11T07:03:12.576Z",
   "engine": "StrategyEngine v2",
   "siteUrl": "https://telzonacademy.in",
-  "healthScore": 37,
-  "grade": "Needs work",
+  "healthScore": 28,
+  "grade": "Critical",
   "pillars": [
     {
       "key": "Technical",
@@ -13,7 +13,7 @@
     {
       "key": "AI / AEO",
       "weight": 20,
-      "val": 16
+      "val": 7
     },
     {
       "key": "AI citations",
@@ -38,9 +38,9 @@
   ],
   "momentum": {
     "window": "7d",
-    "direction": "declining",
+    "direction": "steady",
     "keywordsDelta": 0,
-    "criticalDelta": 1,
+    "criticalDelta": 0,
     "positionDelta": null,
     "note": ""
   },
