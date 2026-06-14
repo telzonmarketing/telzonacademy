@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-14T17:04:53.655Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-06-14T15:44:49.331Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (critical): AI crawlers not explicitly allowed in robots.txt",
     "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data."
-  },
-  {
-    "timestamp": "2026-06-11T05:23:17.162Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 37/100 (F)",
-    "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
   }
 ]
