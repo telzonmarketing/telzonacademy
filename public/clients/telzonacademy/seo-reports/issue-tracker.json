@@ -22,7 +22,7 @@
       "description": "Long redirect chains waste crawl budget and dilute link equity.",
       "status": "fixing",
       "detectedAt": "2026-06-07T06:19:10.365Z",
-      "lastSeenAt": "2026-06-11T06:45:45.521Z",
+      "lastSeenAt": "2026-06-14T06:30:22.292Z",
       "attempts": [
         {
           "timestamp": "2026-06-08T06:33:37.387Z",
@@ -36,6 +36,11 @@
         },
         {
           "timestamp": "2026-06-11T06:45:45.521Z",
+          "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
+          "file": null
+        },
+        {
+          "timestamp": "2026-06-14T06:30:22.292Z",
           "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
           "file": null
         }
@@ -50,7 +55,7 @@
       "description": "H1 headings help Google understand the primary topic of each page.",
       "status": "fixing",
       "detectedAt": "2026-06-08T06:33:37.387Z",
-      "lastSeenAt": "2026-06-11T06:45:45.521Z",
+      "lastSeenAt": "2026-06-14T06:30:22.292Z",
       "attempts": [
         {
           "timestamp": "2026-06-08T06:33:37.387Z",
@@ -64,6 +69,11 @@
         },
         {
           "timestamp": "2026-06-11T06:45:45.521Z",
+          "strategy": "H1 headings help Google understand the primary topic of each page.",
+          "file": null
+        },
+        {
+          "timestamp": "2026-06-14T06:30:22.292Z",
           "strategy": "H1 headings help Google understand the primary topic of each page.",
           "file": null
         }
@@ -78,7 +88,7 @@
       "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
       "status": "fixing",
       "detectedAt": "2026-06-08T06:33:37.387Z",
-      "lastSeenAt": "2026-06-11T06:45:45.521Z",
+      "lastSeenAt": "2026-06-14T06:30:22.292Z",
       "attempts": [
         {
           "timestamp": "2026-06-08T06:33:37.387Z",
@@ -94,6 +104,11 @@
           "timestamp": "2026-06-11T06:45:45.521Z",
           "strategy": "Convert client-side rendered pages to Server Components",
           "file": null
+        },
+        {
+          "timestamp": "2026-06-14T06:30:22.292Z",
+          "strategy": "Convert client-side rendered pages to Server Components",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-06-08T06:33:37.387Z"
@@ -106,5 +121,5 @@
     "escalated": 0,
     "regressed": 0
   },
-  "lastReconciled": "2026-06-11T06:45:45.521Z"
+  "lastReconciled": "2026-06-14T06:30:22.292Z"
 }
