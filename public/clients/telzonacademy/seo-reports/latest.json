@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-14T06:30:23.265Z",
+  "timestamp": "2026-06-15T07:13:33.492Z",
   "summary": {
     "pagesFound": 65,
     "issuesFound": 3,
@@ -544,8 +544,8 @@
     "note": "Notified Bing/Yandex/Naver of 65 URLs"
   },
   "bingSubmissions": {
-    "submitted": 36,
-    "failed": 29
+    "submitted": 65,
+    "failed": 0
   },
   "issueTracker": {
     "issues": {
@@ -569,9 +569,9 @@
         "severity": "important",
         "title": "64 pages have redirect chains",
         "description": "Long redirect chains waste crawl budget and dilute link equity.",
-        "status": "fixing",
+        "status": "escalated",
         "detectedAt": "2026-06-07T06:19:10.365Z",
-        "lastSeenAt": "2026-06-14T06:30:22.292Z",
+        "lastSeenAt": "2026-06-15T07:13:33.491Z",
         "attempts": [
           {
             "timestamp": "2026-06-08T06:33:37.387Z",
@@ -592,9 +592,16 @@
             "timestamp": "2026-06-14T06:30:22.292Z",
             "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
             "file": null
+          },
+          {
+            "timestamp": "2026-06-15T07:13:33.491Z",
+            "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
+            "file": null
           }
         ],
-        "firstSeenRun": "2026-06-07T06:19:10.365Z"
+        "firstSeenRun": "2026-06-07T06:19:10.365Z",
+        "escalatedAt": "2026-06-15T07:13:33.491Z",
+        "escalationReason": "Issue persists after 5 auto-fix attempts. Needs human intervention."
       },
       "91972ff13dbe": {
         "id": "91972ff13dbe",
@@ -602,9 +609,9 @@
         "severity": "low",
         "title": "65 pages missing H1 heading",
         "description": "H1 headings help Google understand the primary topic of each page.",
-        "status": "fixing",
+        "status": "escalated",
         "detectedAt": "2026-06-08T06:33:37.387Z",
-        "lastSeenAt": "2026-06-14T06:30:22.292Z",
+        "lastSeenAt": "2026-06-15T07:13:33.491Z",
         "attempts": [
           {
             "timestamp": "2026-06-08T06:33:37.387Z",
@@ -625,9 +632,16 @@
             "timestamp": "2026-06-14T06:30:22.292Z",
             "strategy": "H1 headings help Google understand the primary topic of each page.",
             "file": null
+          },
+          {
+            "timestamp": "2026-06-15T07:13:33.491Z",
+            "strategy": "H1 headings help Google understand the primary topic of each page.",
+            "file": null
           }
         ],
-        "firstSeenRun": "2026-06-08T06:33:37.387Z"
+        "firstSeenRun": "2026-06-08T06:33:37.387Z",
+        "escalatedAt": "2026-06-15T07:13:33.491Z",
+        "escalationReason": "Issue persists after 5 auto-fix attempts. Needs human intervention."
       },
       "43c9065c7998": {
         "id": "43c9065c7998",
@@ -635,9 +649,9 @@
         "severity": "critical",
         "title": "65 pages appear to be client-side rendered only",
         "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
-        "status": "fixing",
+        "status": "escalated",
         "detectedAt": "2026-06-08T06:33:37.387Z",
-        "lastSeenAt": "2026-06-14T06:30:22.292Z",
+        "lastSeenAt": "2026-06-15T07:13:33.491Z",
         "attempts": [
           {
             "timestamp": "2026-06-08T06:33:37.387Z",
@@ -658,74 +672,65 @@
             "timestamp": "2026-06-14T06:30:22.292Z",
             "strategy": "Convert client-side rendered pages to Server Components",
             "file": null
+          },
+          {
+            "timestamp": "2026-06-15T07:13:33.491Z",
+            "strategy": "Convert client-side rendered pages to Server Components",
+            "file": null
           }
         ],
-        "firstSeenRun": "2026-06-08T06:33:37.387Z"
+        "firstSeenRun": "2026-06-08T06:33:37.387Z",
+        "escalatedAt": "2026-06-15T07:13:33.491Z",
+        "escalationReason": "Issue persists after 5 auto-fix attempts. Needs human intervention."
       }
     },
     "stats": {
       "open": 0,
-      "fixing": 3,
+      "fixing": 0,
       "resolved": 1,
-      "escalated": 0,
+      "escalated": 3,
       "regressed": 0
     },
-    "lastReconciled": "2026-06-14T06:30:22.292Z"
+    "lastReconciled": "2026-06-15T07:13:33.491Z"
   },
   "issueActions": [
     {
       "id": "91972ff13dbe",
       "type": "fix-attempted",
       "title": "65 pages missing H1 heading",
-      "attempt": 4
+      "attempt": 5
     },
     {
       "id": "43c9065c7998",
       "type": "fix-attempted",
       "title": "65 pages appear to be client-side rendered only",
-      "attempt": 4
+      "attempt": 5
     },
     {
       "id": "622b6d80b02a",
       "type": "fix-attempted",
       "title": "64 pages have redirect chains",
-      "attempt": 4
-    }
-  ],
-  "solverEnrichments": [
+      "attempt": 5
+    },
     {
-      "issueId": "91972ff13dbe",
+      "id": "622b6d80b02a",
+      "type": "escalated",
+      "title": "64 pages have redirect chains",
+      "attempts": 5
+    },
+    {
+      "id": "91972ff13dbe",
+      "type": "escalated",
       "title": "65 pages missing H1 heading",
-      "result": {
-        "solved": false,
-        "diagnosis": {
-          "errorCount": 0,
-          "warningCount": 16,
-          "topErrors": [],
-          "summary": "W3C: 0 HTML errors, 16 warnings on https://telzonacademy.in"
-        },
-        "attempts": [
-          {
-            "solver": "W3C Validator",
-            "solved": false,
-            "diagnosis": {
-              "errorCount": 0,
-              "warningCount": 16,
-              "topErrors": [],
-              "summary": "W3C: 0 HTML errors, 16 warnings on https://telzonacademy.in"
-            },
-            "enrichment": {
-              "w3c": {
-                "errorCount": 0,
-                "warningCount": 16,
-                "topErrors": [],
-                "summary": "W3C: 0 HTML errors, 16 warnings on https://telzonacademy.in"
-              }
-            }
-          }
-        ]
-      }
+      "attempts": 5
+    },
+    {
+      "id": "43c9065c7998",
+      "type": "escalated",
+      "title": "65 pages appear to be client-side rendered only",
+      "attempts": 5
     }
   ],
+  "solverEnrichments": [],
   "errors": []
 }
