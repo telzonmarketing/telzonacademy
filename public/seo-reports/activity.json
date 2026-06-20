@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-20T06:19:30.401Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-06-20T05:05:27.741Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "💚",
     "title": "Heartbeat: site healthy (9/9 checks · 552ms avg)",
     "details": ""
-  },
-  {
-    "timestamp": "2026-06-15T12:35:04.541Z",
-    "type": "backlink",
-    "icon": "🔗",
-    "title": "Tier 1 backlink ready: Apple Maps Connect",
-    "details": "Required for Apple Maps + Siri. Manual phone verification."
   }
 ]
