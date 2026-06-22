@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-06-20T06:41:58.807Z",
+  "timestamp": "2026-06-22T07:39:02.363Z",
   "engine": "StrategyEngine v2",
   "siteUrl": "https://telzonacademy.in",
-  "healthScore": 28,
-  "grade": "Critical",
+  "healthScore": 37,
+  "grade": "Needs work",
   "pillars": [
     {
       "key": "Technical",
@@ -13,7 +13,7 @@
     {
       "key": "AI / AEO",
       "weight": 20,
-      "val": 7
+      "val": 16
     },
     {
       "key": "AI citations",
