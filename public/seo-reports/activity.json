@@ -1,5 +1,33 @@
 [
   {
+    "timestamp": "2026-06-22T12:20:18.592Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Tier 1 backlink ready: Apple Maps Connect",
+    "details": "Required for Apple Maps + Siri. Manual phone verification."
+  },
+  {
+    "timestamp": "2026-06-22T12:20:18.592Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Tier 1 backlink ready: Bing Places for Business",
+    "details": "Imports from Google Business. Phone verification."
+  },
+  {
+    "timestamp": "2026-06-22T12:20:18.592Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Tier 1 backlink ready: Google Business Profile",
+    "details": "Biggest local SEO ranking factor. Postcard verification required."
+  },
+  {
+    "timestamp": "2026-06-22T12:20:18.592Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Backlink scan · 0/24 live · 0/5 tier-1 live",
+    "details": "24 pending · 0 submitted · 0 broken"
+  },
+  {
     "timestamp": "2026-06-22T09:35:15.030Z",
     "type": "submit",
     "icon": "⚡",
@@ -1370,33 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (low): Few pages have question-style headings",
     "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-06-18T13:59:04.400Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-06-18T13:59:04.400Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-06-18T13:44:03.921Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 413ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-06-18T12:45:20.880Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
   }
 ]
