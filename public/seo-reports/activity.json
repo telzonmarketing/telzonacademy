@@ -1,5 +1,103 @@
 [
   {
+    "timestamp": "2026-06-23T06:20:51.999Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 64 pages · 4 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-06-23T06:20:51.884Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"63 pages have redirect chains\" needs human attention",
+    "details": "Auto-fix failed after 14 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-06-23T06:20:51.884Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"64 pages appear to be client-side rendered only\" needs human attention",
+    "details": "Auto-fix failed after 16 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-06-23T06:20:51.884Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"64 pages missing H1 heading\" needs human attention",
+    "details": "Auto-fix failed after 17 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-06-23T06:20:51.884Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #14: working on \"63 pages have redirect chains\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-06-23T06:20:51.884Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #16: working on \"64 pages appear to be client-side rendered only\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-06-23T06:20:51.884Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #1: working on \"7 pages load slowly (>3s)\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-06-23T06:20:51.884Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #17: working on \"64 pages missing H1 heading\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-06-23T06:20:51.884Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 63 pages have redirect chains",
+    "details": "Long redirect chains waste crawl budget and dilute link equity."
+  },
+  {
+    "timestamp": "2026-06-23T06:20:51.884Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 64 pages appear to be client-side rendered only",
+    "details": "Convert client-side rendered pages to Server Components"
+  },
+  {
+    "timestamp": "2026-06-23T06:20:51.884Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 7 pages load slowly (>3s)",
+    "details": "Page speed is a Google ranking factor. Slow pages get deprioritised in crawl budget allocation."
+  },
+  {
+    "timestamp": "2026-06-23T06:20:51.884Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 64 pages missing H1 heading",
+    "details": "H1 headings help Google understand the primary topic of each page."
+  },
+  {
+    "timestamp": "2026-06-23T06:20:51.884Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 64 pages",
+    "details": "Found 4 issues (1 critical, 2 important)"
+  },
+  {
+    "timestamp": "2026-06-23T06:20:51.884Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot scheduled run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-06-23T05:58:43.831Z",
     "type": "submit",
     "icon": "⚡",
@@ -1300,103 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (important): No FAQPage schema detected anywhere",
     "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-06-19T12:52:07.841Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-06-19T09:00:04.837Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
-    "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
-  },
-  {
-    "timestamp": "2026-06-19T09:00:04.837Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-06-19T09:00:04.837Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): Only 0% of pages have structured data",
-    "details": "AI engines rely heavily on schema.org markup to understand and cite content."
-  },
-  {
-    "timestamp": "2026-06-19T09:00:04.837Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): llms.txt missing or unreachable",
-    "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking."
-  },
-  {
-    "timestamp": "2026-06-19T09:00:04.837Z",
-    "type": "error",
-    "icon": "🤖",
-    "title": "AEO issue (critical): AI crawlers not explicitly allowed in robots.txt",
-    "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data."
-  },
-  {
-    "timestamp": "2026-06-19T09:00:04.837Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 37/100 (F)",
-    "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-06-19T08:57:42.277Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-06-19T07:31:15.169Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 543ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-06-19T03:34:07.062Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-06-19T03:34:07.062Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-06-19T03:34:07.062Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-06-19T02:38:57.548Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-06-19T02:08:15.622Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 604ms avg)",
-    "details": ""
   }
 ]
