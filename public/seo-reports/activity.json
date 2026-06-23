@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-23T23:32:01.862Z",
+    "type": "error",
+    "icon": "🔴",
+    "title": "Heartbeat: 4 check(s) failing",
+    "details": "403 Homepage · 403 Sitemap · 403 Robots.txt · 403 Dashboard"
+  },
+  {
     "timestamp": "2026-06-23T23:01:40.747Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO scan complete · Score 37/100 (F)",
     "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-06-20T02:01:06.067Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
   }
 ]
