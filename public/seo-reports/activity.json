@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-24T04:38:45.101Z",
+    "type": "error",
+    "icon": "🔴",
+    "title": "Heartbeat: 4 check(s) failing",
+    "details": "403 Homepage · 403 Sitemap · 403 Robots.txt · 403 Dashboard"
+  },
+  {
     "timestamp": "2026-06-24T02:33:20.519Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
     "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
-  },
-  {
-    "timestamp": "2026-06-20T05:05:27.741Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
   }
 ]

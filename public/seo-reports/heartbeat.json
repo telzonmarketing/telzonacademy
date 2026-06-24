@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-06-23T23:32:01.862Z",
+  "timestamp": "2026-06-24T04:38:45.101Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 4,
   "passed": 0,
   "failed": 4,
   "criticalFailed": 3,
-  "avgResponseMs": 60,
+  "avgResponseMs": 47,
   "results": [
     {
       "url": "https://telzonacademy.in",
@@ -13,7 +13,7 @@
       "critical": true,
       "status": 403,
       "ok": false,
-      "ms": 59
+      "ms": 46
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
@@ -21,7 +21,7 @@
       "critical": true,
       "status": 403,
       "ok": false,
-      "ms": 61
+      "ms": 47
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
@@ -29,7 +29,7 @@
       "critical": true,
       "status": 403,
       "ok": false,
-      "ms": 59
+      "ms": 48
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
@@ -37,7 +37,7 @@
       "critical": false,
       "status": 403,
       "ok": false,
-      "ms": 61
+      "ms": 47
     }
   ],
   "healthy": false
