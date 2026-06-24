@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-24T05:56:52.357Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-06-24T04:38:45.101Z",
     "type": "error",
     "icon": "🔴",
@@ -1391,12 +1398,5 @@
     "icon": "⚡",
     "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
     "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-06-20T05:05:27.741Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
-    "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
   }
 ]
