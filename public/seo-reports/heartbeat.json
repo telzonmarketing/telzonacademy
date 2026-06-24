@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-06-24T20:12:31.484Z",
+  "timestamp": "2026-06-24T21:49:33.483Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 9,
-  "passed": 8,
-  "failed": 1,
-  "criticalFailed": 1,
-  "avgResponseMs": 1629,
+  "passed": 9,
+  "failed": 0,
+  "criticalFailed": 0,
+  "avgResponseMs": 616,
   "results": [
     {
       "url": "https://telzonacademy.in",
@@ -13,7 +13,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 326
+      "ms": 281
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
@@ -21,16 +21,15 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 292
+      "ms": 236
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
       "name": "Robots.txt",
       "critical": true,
-      "status": 0,
-      "ok": false,
-      "ms": 8400,
-      "error": "aborted"
+      "status": 200,
+      "ok": true,
+      "ms": 679
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
@@ -38,7 +37,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 1107
+      "ms": 832
     },
     {
       "url": "https://telzonacademy.in/",
@@ -46,7 +45,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 301
+      "ms": 240
     },
     {
       "url": "https://telzonacademy.in/blog",
@@ -54,7 +53,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 1135
+      "ms": 735
     },
     {
       "url": "https://telzonacademy.in/lead-generation-package",
@@ -62,7 +61,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 874
+      "ms": 770
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
@@ -70,7 +69,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 1110
+      "ms": 1000
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
@@ -78,8 +77,8 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 1114
+      "ms": 768
     }
   ],
-  "healthy": false
+  "healthy": true
 }
