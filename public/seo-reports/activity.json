@@ -1,5 +1,26 @@
 [
   {
+    "timestamp": "2026-06-26T23:58:37.713Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): Few pages have question-style headings",
+    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
+  },
+  {
+    "timestamp": "2026-06-26T23:58:37.713Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-06-26T23:58:37.713Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 82/100 (B)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-06-26T22:58:40.276Z",
     "type": "submit",
     "icon": "⚡",
@@ -1377,26 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 7 pages load slowly (>3s)",
     "details": "Page speed is a Google ranking factor. Slow pages get deprioritised in crawl budget allocation."
-  },
-  {
-    "timestamp": "2026-06-23T06:20:51.884Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 64 pages missing H1 heading",
-    "details": "H1 headings help Google understand the primary topic of each page."
-  },
-  {
-    "timestamp": "2026-06-23T06:20:51.884Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 64 pages",
-    "details": "Found 4 issues (1 critical, 2 important)"
-  },
-  {
-    "timestamp": "2026-06-23T06:20:51.884Z",
-    "type": "run",
-    "icon": "▶",
-    "title": "SEO bot scheduled run started",
-    "details": "Mode: full audit + fix + submit + keyword tracking"
   }
 ]
