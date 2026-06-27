@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-27T01:24:19.205Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 644ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-06-26T23:58:37.713Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 64 pages appear to be client-side rendered only",
     "details": "Convert client-side rendered pages to Server Components"
-  },
-  {
-    "timestamp": "2026-06-23T06:20:51.884Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 7 pages load slowly (>3s)",
-    "details": "Page speed is a Google ranking factor. Slow pages get deprioritised in crawl budget allocation."
   }
 ]
