@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-27T15:06:07.343Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-06-27T14:56:30.120Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (important): llms.txt missing or unreachable",
     "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking."
-  },
-  {
-    "timestamp": "2026-06-23T23:01:40.747Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 57/100 (D)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
   }
 ]
