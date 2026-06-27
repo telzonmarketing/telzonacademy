@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-27T20:45:43.847Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-06-27T20:04:50.869Z",
     "type": "fix",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #17: working on \"64 pages appear to be client-side rendered only\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-06-24T06:17:21.084Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #18: working on \"64 pages missing H1 heading\"",
     "details": ""
   }
 ]
