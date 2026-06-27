@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-06-27T13:03:10.034Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-06-27T11:23:13.689Z",
     "type": "fix",
     "icon": "🤖",
@@ -1387,13 +1394,6 @@
   },
   {
     "timestamp": "2026-06-23T21:23:01.531Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-06-23T19:47:23.098Z",
     "type": "submit",
     "icon": "⚡",
     "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
