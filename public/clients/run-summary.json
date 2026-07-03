@@ -1,5 +1,17 @@
 [
   {
+    "label": "heartbeat",
+    "timestamp": "2026-07-03T07:40:07.301Z",
+    "clients": [
+      {
+        "slug": "telzonacademy",
+        "name": "Telzon Academy",
+        "status": "ok",
+        "result": null
+      }
+    ]
+  },
+  {
     "label": "full",
     "timestamp": "2026-07-03T05:45:05.697Z",
     "clients": [
@@ -1178,18 +1190,6 @@
   {
     "label": "heartbeat",
     "timestamp": "2026-06-20T08:28:54.736Z",
-    "clients": [
-      {
-        "slug": "telzonacademy",
-        "name": "Telzon Academy",
-        "status": "ok",
-        "result": null
-      }
-    ]
-  },
-  {
-    "label": "full",
-    "timestamp": "2026-06-20T06:12:21.275Z",
     "clients": [
       {
         "slug": "telzonacademy",
