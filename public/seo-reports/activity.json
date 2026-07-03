@@ -1,5 +1,26 @@
 [
   {
+    "timestamp": "2026-07-03T06:23:53.492Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): Few pages have question-style headings",
+    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
+  },
+  {
+    "timestamp": "2026-07-03T06:23:53.492Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-07-03T06:23:53.492Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 82/100 (B)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-07-03T06:03:15.867Z",
     "type": "done",
     "icon": "✓",
@@ -1373,27 +1394,6 @@
   },
   {
     "timestamp": "2026-06-29T17:30:33.604Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-06-29T14:43:55.051Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-06-29T14:43:55.051Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-06-29T14:43:55.051Z",
     "type": "aeo",
     "icon": "🤖",
     "title": "AEO scan complete · Score 82/100 (B)",
