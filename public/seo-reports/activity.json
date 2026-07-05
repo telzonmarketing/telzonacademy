@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-05T12:44:11.681Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 422ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-07-05T11:25:15.651Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (low): Few pages have question-style headings",
     "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-07-02T15:08:38.603Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
   }
 ]
