@@ -1,17 +1,93 @@
 {
-  "timestamp": "2026-07-07T06:19:05.681Z",
+  "timestamp": "2026-07-08T05:31:20.832Z",
   "summary": {
     "pagesFound": 64,
-    "issuesFound": 3,
-    "critical": 1,
+    "issuesFound": 4,
+    "critical": 2,
     "important": 1,
     "low": 1,
-    "issuesFixed": 3,
+    "issuesFixed": 4,
     "pagesSubmitted": 0,
     "avgPosition": null,
     "totalKeywords": 0
   },
   "issues": [
+    {
+      "type": "NO_SITEMAP",
+      "severity": "critical",
+      "title": "No sitemap.xml found",
+      "description": "Google cannot discover your pages without a sitemap. This is mandatory for sites with 100+ pages.",
+      "fix": "CREATE_SITEMAP",
+      "fixData": {
+        "siteUrl": "https://telzonacademy.in/",
+        "pages": [
+          "https://telzonacademy.in/",
+          "https://telzonacademy.in/blog",
+          "https://telzonacademy.in/lead-generation-package",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
+          "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-institute-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-with-placement-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-fees-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur",
+          "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-near-me",
+          "https://telzonacademy.in/pages/digital-marketing-course-duration-nagpur",
+          "https://telzonacademy.in/pages/marketing-school-in-nagpur",
+          "https://telzonacademy.in/pages/online-digital-marketing-course-nagpur",
+          "https://telzonacademy.in/pages/seo-course-in-nagpur",
+          "https://telzonacademy.in/pages/google-ads-course-nagpur",
+          "https://telzonacademy.in/pages/social-media-marketing-course-nagpur",
+          "https://telzonacademy.in/pages/performance-marketing-course-nagpur",
+          "https://telzonacademy.in/pages/content-marketing-course-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-agency-in-nagpur",
+          "https://telzonacademy.in/pages/best-digital-marketing-agency-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-services-in-nagpur",
+          "https://telzonacademy.in/pages/seo-services-in-nagpur",
+          "https://telzonacademy.in/pages/seo-freelancer-in-nagpur",
+          "https://telzonacademy.in/pages/social-media-marketing-agency-in-nagpur",
+          "https://telzonacademy.in/pages/top-10-digital-marketing-institutes-in-nagpur",
+          "https://telzonacademy.in/pages/top-digital-marketing-courses-in-nagpur-2026",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-dharampeth-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-sitabuldi-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-sadar-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-pratap-nagar-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-ramdaspeth-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-jobs-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-salary-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-career-after-12th-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-for-students-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-after-graduation-nagpur",
+          "https://telzonacademy.in/pages/weekend-digital-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-in-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-civil-lines-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-itwari-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-gandhibagh-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-wardhaman-nagar-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-manewada-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-hingna-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-amravati-road-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-wardha-road-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-katol-road-nagpur",
+          "https://telzonacademy.in/pages/digital-marketing-course-in-kamptee-road-nagpur",
+          "https://telzonacademy.in/pages/facebook-ads-course-in-nagpur",
+          "https://telzonacademy.in/pages/instagram-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/youtube-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/linkedin-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/email-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur"
+        ]
+      }
+    },
     {
       "type": "MISSING_H1",
       "severity": "low",
@@ -491,6 +567,11 @@
   ],
   "fixes": [
     {
+      "issue": "No sitemap.xml found",
+      "description": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
+      "skipped": true
+    },
+    {
       "issue": "64 pages missing H1 heading",
       "description": "H1 headings help Google understand the primary topic of each page.",
       "instruction": "Manual fix required for: MISSING_H1. See audit report for details."
@@ -678,7 +759,7 @@
         "description": "H1 headings help Google understand the primary topic of each page.",
         "status": "escalated",
         "detectedAt": "2026-05-15T19:28:12.445Z",
-        "lastSeenAt": "2026-07-07T06:19:05.680Z",
+        "lastSeenAt": "2026-07-08T05:31:20.831Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:28:12.445Z",
@@ -844,14 +925,19 @@
             "timestamp": "2026-07-07T06:19:05.680Z",
             "strategy": "H1 headings help Google understand the primary topic of each page.",
             "file": null
+          },
+          {
+            "timestamp": "2026-07-08T05:31:20.831Z",
+            "strategy": "H1 headings help Google understand the primary topic of each page.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:28:12.445Z",
         "resolvedAt": "2026-05-15T19:50:51.103Z",
         "daysToResolve": 1,
         "regressedAt": "2026-06-07T08:13:28.122Z",
-        "escalatedAt": "2026-07-07T06:19:05.680Z",
-        "escalationReason": "Issue persists after 33 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-07-08T05:31:20.831Z",
+        "escalationReason": "Issue persists after 34 auto-fix attempts. Needs human intervention."
       },
       "a924a5969e28": {
         "id": "a924a5969e28",
@@ -861,7 +947,7 @@
         "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
         "status": "escalated",
         "detectedAt": "2026-05-15T19:28:12.445Z",
-        "lastSeenAt": "2026-07-07T06:19:05.680Z",
+        "lastSeenAt": "2026-07-08T05:31:20.831Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:28:12.445Z",
@@ -1022,14 +1108,19 @@
             "timestamp": "2026-07-07T06:19:05.680Z",
             "strategy": "Convert client-side rendered pages to Server Components",
             "file": null
+          },
+          {
+            "timestamp": "2026-07-08T05:31:20.831Z",
+            "strategy": "Convert client-side rendered pages to Server Components",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:28:12.445Z",
         "resolvedAt": "2026-06-07T08:24:13.649Z",
         "daysToResolve": 23,
         "regressedAt": "2026-06-07T08:31:59.156Z",
-        "escalatedAt": "2026-07-07T06:19:05.680Z",
-        "escalationReason": "Issue persists after 32 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-07-08T05:31:20.831Z",
+        "escalationReason": "Issue persists after 33 auto-fix attempts. Needs human intervention."
       },
       "68149022932d": {
         "id": "68149022932d",
@@ -1431,7 +1522,7 @@
         "description": "Long redirect chains waste crawl budget and dilute link equity.",
         "status": "escalated",
         "detectedAt": "2026-06-07T05:51:50.198Z",
-        "lastSeenAt": "2026-07-07T06:19:05.680Z",
+        "lastSeenAt": "2026-07-08T05:31:20.831Z",
         "attempts": [
           {
             "timestamp": "2026-06-07T06:58:10.446Z",
@@ -1582,14 +1673,19 @@
             "timestamp": "2026-07-07T06:19:05.680Z",
             "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
             "file": null
+          },
+          {
+            "timestamp": "2026-07-08T05:31:20.831Z",
+            "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-06-07T05:51:50.198Z",
         "resolvedAt": "2026-06-07T08:24:13.649Z",
         "daysToResolve": 1,
         "regressedAt": "2026-06-07T08:31:59.156Z",
-        "escalatedAt": "2026-07-07T06:19:05.680Z",
-        "escalationReason": "Issue persists after 30 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-07-08T05:31:20.831Z",
+        "escalationReason": "Issue persists after 31 auto-fix attempts. Needs human intervention."
       },
       "b4b96faddfd3": {
         "id": "b4b96faddfd3",
@@ -1730,53 +1826,82 @@
         "firstSeenRun": "2026-06-23T06:20:51.883Z",
         "resolvedAt": "2026-06-24T06:17:21.084Z",
         "daysToResolve": 1
+      },
+      "855fe6d4e9d2": {
+        "id": "855fe6d4e9d2",
+        "type": "NO_SITEMAP",
+        "severity": "critical",
+        "title": "No sitemap.xml found",
+        "description": "Google cannot discover your pages without a sitemap. This is mandatory for sites with 100+ pages.",
+        "status": "fixing",
+        "detectedAt": "2026-07-08T05:31:20.831Z",
+        "lastSeenAt": "2026-07-08T05:31:20.831Z",
+        "attempts": [
+          {
+            "timestamp": "2026-07-08T05:31:20.831Z",
+            "strategy": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
+            "file": null
+          }
+        ],
+        "firstSeenRun": "2026-07-08T05:31:20.831Z"
       }
     },
     "stats": {
       "open": 0,
-      "fixing": 0,
+      "fixing": 1,
       "resolved": 22,
       "escalated": 3,
       "regressed": 0
     },
-    "lastReconciled": "2026-07-07T06:19:05.680Z"
+    "lastReconciled": "2026-07-08T05:31:20.831Z"
   },
   "issueActions": [
     {
+      "id": "855fe6d4e9d2",
+      "type": "opened",
+      "title": "No sitemap.xml found"
+    },
+    {
+      "id": "855fe6d4e9d2",
+      "type": "fix-attempted",
+      "title": "No sitemap.xml found",
+      "attempt": 1
+    },
+    {
       "id": "791ad617b3ed",
       "type": "fix-attempted",
       "title": "64 pages missing H1 heading",
+      "attempt": 34
+    },
+    {
+      "id": "a924a5969e28",
+      "type": "fix-attempted",
+      "title": "64 pages appear to be client-side rendered only",
       "attempt": 33
     },
     {
-      "id": "a924a5969e28",
-      "type": "fix-attempted",
-      "title": "64 pages appear to be client-side rendered only",
-      "attempt": 32
-    },
-    {
       "id": "02dc5d62e6d8",
       "type": "fix-attempted",
       "title": "63 pages have redirect chains",
-      "attempt": 30
+      "attempt": 31
     },
     {
       "id": "791ad617b3ed",
       "type": "escalated",
       "title": "64 pages missing H1 heading",
-      "attempts": 33
+      "attempts": 34
     },
     {
       "id": "a924a5969e28",
       "type": "escalated",
       "title": "64 pages appear to be client-side rendered only",
-      "attempts": 32
+      "attempts": 33
     },
     {
       "id": "02dc5d62e6d8",
       "type": "escalated",
       "title": "63 pages have redirect chains",
-      "attempts": 30
+      "attempts": 31
     }
   ],
   "solverEnrichments": [],
