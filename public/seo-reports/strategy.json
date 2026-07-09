@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-07-08T05:31:42.030Z",
+  "timestamp": "2026-07-09T06:15:35.927Z",
   "engine": "StrategyEngine v2",
   "siteUrl": "https://telzonacademy.in",
-  "healthScore": 32,
+  "healthScore": 28,
   "grade": "Critical",
   "pillars": [
     {
       "key": "Technical",
       "weight": 20,
-      "val": 10
+      "val": 15
     },
     {
       "key": "AI / AEO",
       "weight": 20,
-      "val": 16
+      "val": 7
     },
     {
       "key": "AI citations",
@@ -38,9 +38,9 @@
   ],
   "momentum": {
     "window": "7d",
-    "direction": "declining",
+    "direction": "steady",
     "keywordsDelta": 0,
-    "criticalDelta": 1,
+    "criticalDelta": 0,
     "positionDelta": null,
     "note": ""
   },
@@ -101,7 +101,7 @@
       "impact": "high",
       "effort": "med",
       "timeToImpact": "days",
-      "title": "Resolve 2 critical technical issues",
+      "title": "Resolve 1 critical technical issue",
       "why": "Critical issues (indexability, broken meta, schema errors) directly block ranking. Clear these before investing in content.",
       "action": "The auto-fixer handles most; the rest are flagged for manual action.",
       "score": 6
