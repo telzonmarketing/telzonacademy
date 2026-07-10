@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-10T08:54:00.660Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-07-10T08:43:00.196Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1391,12 +1398,5 @@
     "icon": "🕷",
     "title": "Crawled 64 pages",
     "details": "Found 3 issues (1 critical, 1 important)"
-  },
-  {
-    "timestamp": "2026-07-07T06:19:05.681Z",
-    "type": "run",
-    "icon": "▶",
-    "title": "SEO bot scheduled run started",
-    "details": "Mode: full audit + fix + submit + keyword tracking"
   }
 ]
