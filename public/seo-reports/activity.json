@@ -1,5 +1,208 @@
 [
   {
+    "timestamp": "2026-07-10T06:16:39.214Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 64 pages · 8 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔬",
+    "title": "External API enriched \"1 pages missing meta description\"",
+    "details": "W3C: 0 HTML errors, 16 warnings on https://telzonacademy.in/"
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"64 pages missing H1 heading\" needs human attention",
+    "details": "Auto-fix failed after 36 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"63 pages have redirect chains\" resolved after 32 attempts",
+    "details": "Took 33 days from first detection"
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"64 pages appear to be client-side rendered only\" resolved after 34 attempts",
+    "details": "Took 55 days from first detection"
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #2: working on \"62 pages have redirect chains\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #3: working on \"63 pages appear to be client-side rendered only\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #1: working on \"1 pages load slowly (>3s)\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #36: working on \"64 pages missing H1 heading\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #4: working on \"1 pages missing canonical URL\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #2: working on \"1 pages missing meta description\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #2: working on \"1 pages missing <title> tag\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #2: working on \"1 noindex pages listed in sitemap\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "error",
+    "icon": "↩",
+    "title": "REGRESSED: \"62 pages have redirect chains\" came back",
+    "details": "Issue was resolved before — now detected again. Bot will retry."
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "error",
+    "icon": "↩",
+    "title": "REGRESSED: \"63 pages appear to be client-side rendered only\" came back",
+    "details": "Issue was resolved before — now detected again. Bot will retry."
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "error",
+    "icon": "↩",
+    "title": "REGRESSED: \"1 pages missing canonical URL\" came back",
+    "details": "Issue was resolved before — now detected again. Bot will retry."
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "error",
+    "icon": "↩",
+    "title": "REGRESSED: \"1 pages missing meta description\" came back",
+    "details": "Issue was resolved before — now detected again. Bot will retry."
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "error",
+    "icon": "↩",
+    "title": "REGRESSED: \"1 pages missing <title> tag\" came back",
+    "details": "Issue was resolved before — now detected again. Bot will retry."
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "error",
+    "icon": "↩",
+    "title": "REGRESSED: \"1 noindex pages listed in sitemap\" came back",
+    "details": "Issue was resolved before — now detected again. Bot will retry."
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 62 pages have redirect chains",
+    "details": "Long redirect chains waste crawl budget and dilute link equity."
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 63 pages appear to be client-side rendered only",
+    "details": "Convert client-side rendered pages to Server Components"
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 pages load slowly (>3s)",
+    "details": "Page speed is a Google ranking factor. Slow pages get deprioritised in crawl budget allocation."
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 64 pages missing H1 heading",
+    "details": "H1 headings help Google understand the primary topic of each page."
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 pages missing canonical URL",
+    "details": "Add canonical tags to all pages via Next.js metadata"
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 pages missing meta description",
+    "details": "Meta descriptions improve click-through rates from search results, which signals quality to Google."
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 pages missing <title> tag",
+    "details": "Title tags are a primary ranking signal. Pages without titles are deprioritised by Google."
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 noindex pages listed in sitemap",
+    "details": "Sitemap should only list indexable pages. noindex pages in sitemap confuse Googlebot."
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 64 pages",
+    "details": "Found 8 issues (1 critical, 5 important)"
+  },
+  {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot scheduled run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-07-10T05:49:44.178Z",
     "type": "submit",
     "icon": "⚡",
@@ -1195,208 +1398,5 @@
     "icon": "🤖",
     "title": "AEO scan complete · Score 82/100 (B)",
     "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-07-07T01:43:33.573Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-07-07T01:09:30.739Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 480ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-07-07T00:01:27.171Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-07-07T00:01:27.171Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-07-07T00:01:27.171Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-07-06T22:54:49.831Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-07-06T22:40:08.328Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 297ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-07-06T22:07:44.703Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-07-06T22:07:44.703Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-07-06T22:07:44.703Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-07-06T21:17:57.737Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-07-06T20:48:36.227Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-07-06T20:48:36.227Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-07-06T20:48:36.227Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-07-06T19:07:10.832Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 364ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-07-06T18:51:46.976Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-07-06T18:51:46.976Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-07-06T18:51:46.976Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-07-06T18:03:10.428Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-07-06T16:13:59.263Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-07-06T16:13:59.263Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-07-06T16:13:59.263Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-07-06T14:49:30.234Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-07-06T12:39:26.578Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-07-06T12:39:26.578Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-07-06T12:39:26.578Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-07-06T11:53:07.002Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-07-06T10:54:01.373Z",
-    "type": "backlink",
-    "icon": "🔗",
-    "title": "Tier 1 backlink ready: Apple Maps Connect",
-    "details": "Required for Apple Maps + Siri. Manual phone verification."
-  },
-  {
-    "timestamp": "2026-07-06T10:54:01.373Z",
-    "type": "backlink",
-    "icon": "🔗",
-    "title": "Tier 1 backlink ready: Bing Places for Business",
-    "details": "Imports from Google Business. Phone verification."
   }
 ]

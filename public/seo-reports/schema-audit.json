@@ -1,10 +1,25 @@
 {
-  "timestamp": "2026-07-09T06:15:35.924Z",
+  "timestamp": "2026-07-10T06:17:41.836Z",
   "siteUrl": "https://telzonacademy.in",
   "pagesAudited": 60,
-  "pagesWithIssues": 0,
+  "pagesWithIssues": 2,
   "duplicateFaqPages": 0,
-  "totalIssues": 0,
-  "issuesByKind": {},
-  "examples": []
+  "totalIssues": 2,
+  "issuesByKind": {
+    "fetch-error": 2
+  },
+  "examples": [
+    {
+      "kind": "fetch-error",
+      "severity": "low",
+      "message": "Could not fetch (504)",
+      "url": "https://telzonacademy.in/pages/digital-marketing-course-fees-and-duration-nagpur"
+    },
+    {
+      "kind": "fetch-error",
+      "severity": "low",
+      "message": "Could not fetch (ECONNABORTED)",
+      "url": "https://telzonacademy.in/pages/digital-marketing-classes-in-nagpur"
+    }
+  ]
 }

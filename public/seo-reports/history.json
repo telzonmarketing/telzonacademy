@@ -1,5 +1,15 @@
 [
   {
+    "timestamp": "2026-07-10T06:16:39.100Z",
+    "pagesFound": 64,
+    "critical": 1,
+    "important": 5,
+    "fixed": 8,
+    "submitted": 0,
+    "avgPosition": null,
+    "totalKeywords": 0
+  },
+  {
     "timestamp": "2026-07-09T06:15:06.639Z",
     "pagesFound": 64,
     "critical": 1,
@@ -884,13 +894,5 @@
     "important": 1,
     "fixed": 0,
     "submitted": 0
-  },
-  {
-    "timestamp": "2026-05-05T12:37:00.000Z",
-    "pagesFound": 1,
-    "critical": 2,
-    "important": 2,
-    "fixed": 2,
-    "submitted": 1
   }
 ]
