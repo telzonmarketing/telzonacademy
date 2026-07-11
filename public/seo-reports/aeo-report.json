@@ -1,9 +1,27 @@
 {
-  "timestamp": "2026-07-11T11:49:37.904Z",
-  "pagesAudited": 64,
-  "score": 82,
-  "grade": "B",
+  "timestamp": "2026-07-11T12:59:32.044Z",
+  "pagesAudited": 0,
+  "score": 37,
+  "grade": "F",
   "issues": [
+    {
+      "severity": "critical",
+      "title": "AI crawlers not explicitly allowed in robots.txt",
+      "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data.",
+      "fix": "Add explicit User-agent: <bot> Allow: / blocks for each AI crawler"
+    },
+    {
+      "severity": "important",
+      "title": "llms.txt missing or unreachable",
+      "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking.",
+      "fix": "AEO agent will generate it on next run"
+    },
+    {
+      "severity": "important",
+      "title": "Only 0% of pages have structured data",
+      "details": "AI engines rely heavily on schema.org markup to understand and cite content.",
+      "fix": "Add JSON-LD blocks (Course/FAQPage/Organization) to each page"
+    },
     {
       "severity": "important",
       "title": "No FAQPage schema detected anywhere",
@@ -12,20 +30,17 @@
     },
     {
       "severity": "low",
-      "title": "Few pages have question-style headings",
-      "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility.",
-      "fix": "Convert some H2/H3 headings into questions matching real user queries"
+      "title": "No Organization/EducationalOrganization schema found",
+      "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy.",
+      "fix": "Add Organization schema with name, url, address, sameAs on key pages"
     }
   ],
   "strengths": [
-    "All 10 major AI crawlers explicitly allowed",
-    "llms.txt present at site root",
-    "64/64 pages have structured data",
-    "64 pages declare Organization schema"
+    "0 pages have question-style headings"
   ],
   "llms": {
-    "compactBytes": 17058,
-    "fullBytes": 115060
+    "compactBytes": 0,
+    "fullBytes": 0
   },
   "faqSuggestions": [],
   "visibility": {
@@ -57,16 +72,5 @@
     "perplexityActive": false,
     "braveActive": false
   },
-  "aiCrawlers": [
-    "GPTBot",
-    "ClaudeBot",
-    "PerplexityBot",
-    "CCBot",
-    "Google-Extended",
-    "anthropic-ai",
-    "ChatGPT-User",
-    "Applebot-Extended",
-    "Bytespider",
-    "cohere-ai"
-  ]
+  "aiCrawlers": []
 }
