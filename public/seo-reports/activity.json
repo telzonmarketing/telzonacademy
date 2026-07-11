@@ -1,5 +1,152 @@
 [
   {
+    "timestamp": "2026-07-11T05:22:33.712Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 64 pages · 3 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"63 pages have redirect chains\" needs human attention",
+    "details": "Auto-fix failed after 33 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"64 pages appear to be client-side rendered only\" needs human attention",
+    "details": "Auto-fix failed after 35 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"64 pages missing H1 heading\" needs human attention",
+    "details": "Auto-fix failed after 37 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"1 pages load slowly (>3s)\" resolved after 1 attempt",
+    "details": "Took 1 day from first detection"
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"62 pages have redirect chains\" resolved after 2 attempts",
+    "details": "Took 34 days from first detection"
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"1 pages missing meta description\" resolved after 2 attempts",
+    "details": "Took 34 days from first detection"
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"1 pages missing <title> tag\" resolved after 2 attempts",
+    "details": "Took 34 days from first detection"
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"1 noindex pages listed in sitemap\" resolved after 2 attempts",
+    "details": "Took 34 days from first detection"
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"63 pages appear to be client-side rendered only\" resolved after 3 attempts",
+    "details": "Took 56 days from first detection"
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"1 pages missing canonical URL\" resolved after 4 attempts",
+    "details": "Took 56 days from first detection"
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #33: working on \"63 pages have redirect chains\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #35: working on \"64 pages appear to be client-side rendered only\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #37: working on \"64 pages missing H1 heading\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "error",
+    "icon": "↩",
+    "title": "REGRESSED: \"63 pages have redirect chains\" came back",
+    "details": "Issue was resolved before — now detected again. Bot will retry."
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "error",
+    "icon": "↩",
+    "title": "REGRESSED: \"64 pages appear to be client-side rendered only\" came back",
+    "details": "Issue was resolved before — now detected again. Bot will retry."
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 63 pages have redirect chains",
+    "details": "Long redirect chains waste crawl budget and dilute link equity."
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 64 pages appear to be client-side rendered only",
+    "details": "Convert client-side rendered pages to Server Components"
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 64 pages missing H1 heading",
+    "details": "H1 headings help Google understand the primary topic of each page."
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 64 pages",
+    "details": "Found 3 issues (1 critical, 1 important)"
+  },
+  {
+    "timestamp": "2026-07-11T05:22:33.604Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot scheduled run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-07-11T04:57:43.390Z",
     "type": "fix",
     "icon": "🤖",
@@ -1251,152 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"63 pages have redirect chains\" needs human attention",
     "details": "Auto-fix failed after 31 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-07-08T05:31:20.832Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"64 pages appear to be client-side rendered only\" needs human attention",
-    "details": "Auto-fix failed after 33 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-07-08T05:31:20.832Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"64 pages missing H1 heading\" needs human attention",
-    "details": "Auto-fix failed after 34 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-07-08T05:31:20.832Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #31: working on \"63 pages have redirect chains\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-07-08T05:31:20.832Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #33: working on \"64 pages appear to be client-side rendered only\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-07-08T05:31:20.832Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #34: working on \"64 pages missing H1 heading\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-07-08T05:31:20.832Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #1: working on \"No sitemap.xml found\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-07-08T05:31:20.832Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 63 pages have redirect chains",
-    "details": "Long redirect chains waste crawl budget and dilute link equity."
-  },
-  {
-    "timestamp": "2026-07-08T05:31:20.832Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 64 pages appear to be client-side rendered only",
-    "details": "Convert client-side rendered pages to Server Components"
-  },
-  {
-    "timestamp": "2026-07-08T05:31:20.832Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 64 pages missing H1 heading",
-    "details": "H1 headings help Google understand the primary topic of each page."
-  },
-  {
-    "timestamp": "2026-07-08T05:31:20.832Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: No sitemap.xml found",
-    "details": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch."
-  },
-  {
-    "timestamp": "2026-07-08T05:31:20.832Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 64 pages",
-    "details": "Found 4 issues (2 critical, 1 important)"
-  },
-  {
-    "timestamp": "2026-07-08T05:31:20.832Z",
-    "type": "run",
-    "icon": "▶",
-    "title": "SEO bot scheduled run started",
-    "details": "Mode: full audit + fix + submit + keyword tracking"
-  },
-  {
-    "timestamp": "2026-07-08T04:55:16.151Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-07-08T03:50:01.046Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 331ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-07-08T01:55:28.618Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-07-08T01:55:28.618Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-07-08T01:55:28.618Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-07-08T01:17:56.312Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-07-07T23:51:20.218Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-07-07T23:51:20.218Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-07-07T23:51:20.218Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
   }
 ]
