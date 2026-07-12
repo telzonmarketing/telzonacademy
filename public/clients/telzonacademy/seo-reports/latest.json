@@ -1,57 +1,17 @@
 {
-  "timestamp": "2026-07-10T05:59:51.222Z",
+  "timestamp": "2026-07-12T05:22:52.590Z",
   "summary": {
     "pagesFound": 65,
-    "issuesFound": 8,
+    "issuesFound": 3,
     "critical": 1,
-    "important": 5,
-    "low": 2,
-    "issuesFixed": 8,
+    "important": 1,
+    "low": 1,
+    "issuesFixed": 3,
     "pagesSubmitted": 0,
     "avgPosition": null,
     "totalKeywords": 0
   },
   "issues": [
-    {
-      "type": "NOINDEX_IN_SITEMAP",
-      "severity": "important",
-      "title": "1 noindex pages listed in sitemap",
-      "description": "Sitemap should only list indexable pages. noindex pages in sitemap confuse Googlebot.",
-      "affectedUrls": [
-        "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur"
-      ],
-      "fix": "REMOVE_NOINDEX_FROM_SITEMAP"
-    },
-    {
-      "type": "MISSING_TITLE",
-      "severity": "important",
-      "title": "1 pages missing <title> tag",
-      "description": "Title tags are a primary ranking signal. Pages without titles are deprioritised by Google.",
-      "affectedUrls": [
-        "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur"
-      ],
-      "fix": "ADD_TITLE_TAGS"
-    },
-    {
-      "type": "MISSING_META_DESCRIPTION",
-      "severity": "low",
-      "title": "1 pages missing meta description",
-      "description": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
-      "affectedUrls": [
-        "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur"
-      ],
-      "fix": "ADD_META_DESCRIPTIONS"
-    },
-    {
-      "type": "MISSING_CANONICAL",
-      "severity": "important",
-      "title": "1 pages missing canonical URL",
-      "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
-      "affectedUrls": [
-        "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur"
-      ],
-      "fix": "ADD_CANONICAL_TAGS"
-    },
     {
       "type": "MISSING_H1",
       "severity": "low",
@@ -127,22 +87,9 @@
       "fix": "ADD_H1_TAGS"
     },
     {
-      "type": "SLOW_PAGES",
-      "severity": "important",
-      "title": "1 pages load slowly (>3s)",
-      "description": "Page speed is a Google ranking factor. Slow pages get deprioritised in crawl budget allocation.",
-      "affectedUrls": [
-        {
-          "url": "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
-          "loadTime": 5909
-        }
-      ],
-      "fix": "OPTIMISE_PAGE_SPEED"
-    },
-    {
       "type": "CLIENT_SIDE_RENDERING",
       "severity": "critical",
-      "title": "64 pages appear to be client-side rendered only",
+      "title": "65 pages appear to be client-side rendered only",
       "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
       "affectedUrls": [
         "https://telzonacademy.in",
@@ -208,7 +155,8 @@
         "https://telzonacademy.in/pages/instagram-marketing-course-in-nagpur",
         "https://telzonacademy.in/pages/youtube-marketing-course-in-nagpur",
         "https://telzonacademy.in/pages/linkedin-marketing-course-in-nagpur",
-        "https://telzonacademy.in/pages/email-marketing-course-in-nagpur"
+        "https://telzonacademy.in/pages/email-marketing-course-in-nagpur",
+        "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur"
       ],
       "fix": "ENABLE_SSR",
       "fixData": {
@@ -276,7 +224,8 @@
           "https://telzonacademy.in/pages/instagram-marketing-course-in-nagpur",
           "https://telzonacademy.in/pages/youtube-marketing-course-in-nagpur",
           "https://telzonacademy.in/pages/linkedin-marketing-course-in-nagpur",
-          "https://telzonacademy.in/pages/email-marketing-course-in-nagpur"
+          "https://telzonacademy.in/pages/email-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur"
         ],
         "framework": "unknown"
       }
@@ -284,7 +233,7 @@
     {
       "type": "REDIRECT_CHAINS",
       "severity": "important",
-      "title": "63 pages have redirect chains",
+      "title": "64 pages have redirect chains",
       "description": "Long redirect chains waste crawl budget and dilute link equity.",
       "affectedUrls": [
         [
@@ -538,6 +487,10 @@
         [
           "https://telzonacademy.in/pages/email-marketing-course-in-nagpur",
           "https://telzonacademy.in/pages/email-marketing-course-in-nagpur/"
+        ],
+        [
+          "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur",
+          "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur/"
         ]
       ],
       "fix": "FIX_REDIRECT_CHAINS"
@@ -545,43 +498,17 @@
   ],
   "fixes": [
     {
-      "issue": "1 noindex pages listed in sitemap",
-      "description": "Sitemap should only list indexable pages. noindex pages in sitemap confuse Googlebot.",
-      "instruction": "Manual fix required for: NOINDEX_IN_SITEMAP. See audit report for details."
-    },
-    {
-      "issue": "1 pages missing <title> tag",
-      "description": "Title tags are a primary ranking signal. Pages without titles are deprioritised by Google.",
-      "instruction": "Manual fix required for: MISSING_TITLE. See audit report for details."
-    },
-    {
-      "issue": "1 pages missing meta description",
-      "description": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
-      "instruction": "Manual fix required for: MISSING_META_DESCRIPTION. See audit report for details."
-    },
-    {
-      "issue": "1 pages missing canonical URL",
-      "description": "Add canonical tags to all pages via Next.js metadata",
-      "code": "// app/layout.tsx — add canonical to root layout\nexport const metadata = {\n  alternates: {\n    canonical: '/',  // relative canonicals work in Next.js 13+\n  },\n}\n\n// app/blog/[slug]/page.tsx — dynamic canonical\nexport async function generateMetadata({ params }) {\n  return {\n    alternates: {\n      canonical: `https://yoursite.com/blog/${params.slug}`,\n    },\n  }\n}",
-      "fileChange": null
-    },
-    {
       "issue": "65 pages missing H1 heading",
       "description": "H1 headings help Google understand the primary topic of each page.",
       "instruction": "Manual fix required for: MISSING_H1. See audit report for details."
     },
     {
-      "issue": "1 pages load slowly (>3s)",
-      "description": "Page speed is a Google ranking factor. Slow pages get deprioritised in crawl budget allocation.",
-      "instruction": "Manual fix required for: SLOW_PAGES. See audit report for details."
-    },
-    {
-      "issue": "64 pages appear to be client-side rendered only",
+      "issue": "65 pages appear to be client-side rendered only",
       "description": "Convert client-side rendered pages to Server Components",
       "code": "// BEFORE — client-side only (Googlebot sees empty page):\n'use client'\nimport { useEffect, useState } from 'react'\nexport default function Page() {\n  const [data, setData] = useState(null)\n  useEffect(() => { fetch('/api/data').then(r => r.json()).then(setData) }, [])\n  if (!data) return <div>Loading...</div>\n  return <div>{data.title}</div>\n}\n\n// AFTER — Server Component (Googlebot sees full content instantly):\n// No 'use client' directive needed\nexport default async function Page() {\n  const data = await fetch('https://api.example.com/data', {\n    next: { revalidate: 3600 }  // ISR: revalidate every hour\n  }).then(r => r.json())\n  return <div>{data.title}</div>\n}"
     },
     {
-      "issue": "63 pages have redirect chains",
+      "issue": "64 pages have redirect chains",
       "description": "Long redirect chains waste crawl budget and dilute link equity.",
       "instruction": "Manual fix required for: REDIRECT_CHAINS. See audit report for details."
     }
@@ -617,8 +544,8 @@
     "note": "Notified Bing/Yandex/Naver of 65 URLs"
   },
   "bingSubmissions": {
-    "submitted": 0,
-    "failed": 65
+    "submitted": 35,
+    "failed": 30
   },
   "issueTracker": {
     "issues": {
@@ -642,9 +569,9 @@
         "severity": "important",
         "title": "64 pages have redirect chains",
         "description": "Long redirect chains waste crawl budget and dilute link equity.",
-        "status": "resolved",
+        "status": "escalated",
         "detectedAt": "2026-06-07T06:19:10.365Z",
-        "lastSeenAt": "2026-07-09T05:59:56.172Z",
+        "lastSeenAt": "2026-07-12T05:22:52.589Z",
         "attempts": [
           {
             "timestamp": "2026-06-08T06:33:37.387Z",
@@ -760,14 +687,19 @@
             "timestamp": "2026-07-09T05:59:56.172Z",
             "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
             "file": null
+          },
+          {
+            "timestamp": "2026-07-12T05:22:52.589Z",
+            "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-06-07T06:19:10.365Z",
-        "escalatedAt": "2026-07-09T05:59:56.172Z",
-        "escalationReason": "Issue persists after 23 auto-fix attempts. Needs human intervention.",
+        "escalatedAt": "2026-07-12T05:22:52.589Z",
+        "escalationReason": "Issue persists after 24 auto-fix attempts. Needs human intervention.",
         "resolvedAt": "2026-07-10T05:59:51.202Z",
         "daysToResolve": 33,
-        "regressedAt": "2026-07-09T05:59:56.172Z"
+        "regressedAt": "2026-07-12T05:22:52.589Z"
       },
       "91972ff13dbe": {
         "id": "91972ff13dbe",
@@ -777,7 +709,7 @@
         "description": "H1 headings help Google understand the primary topic of each page.",
         "status": "escalated",
         "detectedAt": "2026-06-08T06:33:37.387Z",
-        "lastSeenAt": "2026-07-10T05:59:51.202Z",
+        "lastSeenAt": "2026-07-12T05:22:52.589Z",
         "attempts": [
           {
             "timestamp": "2026-06-08T06:33:37.387Z",
@@ -908,11 +840,16 @@
             "timestamp": "2026-07-10T05:59:51.202Z",
             "strategy": "H1 headings help Google understand the primary topic of each page.",
             "file": null
+          },
+          {
+            "timestamp": "2026-07-12T05:22:52.589Z",
+            "strategy": "H1 headings help Google understand the primary topic of each page.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-06-08T06:33:37.387Z",
-        "escalatedAt": "2026-07-10T05:59:51.202Z",
-        "escalationReason": "Issue persists after 26 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-07-12T05:22:52.589Z",
+        "escalationReason": "Issue persists after 27 auto-fix attempts. Needs human intervention."
       },
       "43c9065c7998": {
         "id": "43c9065c7998",
@@ -920,9 +857,9 @@
         "severity": "critical",
         "title": "65 pages appear to be client-side rendered only",
         "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
-        "status": "resolved",
+        "status": "escalated",
         "detectedAt": "2026-06-08T06:33:37.387Z",
-        "lastSeenAt": "2026-07-09T05:59:56.172Z",
+        "lastSeenAt": "2026-07-12T05:22:52.589Z",
         "attempts": [
           {
             "timestamp": "2026-06-08T06:33:37.387Z",
@@ -1038,14 +975,19 @@
             "timestamp": "2026-07-09T05:59:56.172Z",
             "strategy": "Convert client-side rendered pages to Server Components",
             "file": null
+          },
+          {
+            "timestamp": "2026-07-12T05:22:52.589Z",
+            "strategy": "Convert client-side rendered pages to Server Components",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-06-08T06:33:37.387Z",
-        "escalatedAt": "2026-07-09T05:59:56.172Z",
-        "escalationReason": "Issue persists after 23 auto-fix attempts. Needs human intervention.",
+        "escalatedAt": "2026-07-12T05:22:52.589Z",
+        "escalationReason": "Issue persists after 24 auto-fix attempts. Needs human intervention.",
         "resolvedAt": "2026-07-10T05:59:51.202Z",
         "daysToResolve": 32,
-        "regressedAt": "2026-07-09T05:59:56.172Z"
+        "regressedAt": "2026-07-12T05:22:52.589Z"
       },
       "c842bc749ac8": {
         "id": "c842bc749ac8",
@@ -1053,7 +995,7 @@
         "severity": "important",
         "title": "1 pages load slowly (>3s)",
         "description": "Page speed is a Google ranking factor. Slow pages get deprioritised in crawl budget allocation.",
-        "status": "fixing",
+        "status": "resolved",
         "detectedAt": "2026-06-22T07:17:05.719Z",
         "lastSeenAt": "2026-07-10T05:59:51.202Z",
         "attempts": [
@@ -1069,8 +1011,8 @@
           }
         ],
         "firstSeenRun": "2026-06-22T07:17:05.719Z",
-        "resolvedAt": "2026-06-23T06:04:56.789Z",
-        "daysToResolve": 1,
+        "resolvedAt": "2026-07-12T05:22:52.589Z",
+        "daysToResolve": 20,
         "regressedAt": "2026-07-10T05:59:51.202Z"
       },
       "0316ce4e5f6d": {
@@ -1339,7 +1281,7 @@
         "severity": "important",
         "title": "1 noindex pages listed in sitemap",
         "description": "Sitemap should only list indexable pages. noindex pages in sitemap confuse Googlebot.",
-        "status": "fixing",
+        "status": "resolved",
         "detectedAt": "2026-07-10T05:59:51.202Z",
         "lastSeenAt": "2026-07-10T05:59:51.202Z",
         "attempts": [
@@ -1349,7 +1291,9 @@
             "file": null
           }
         ],
-        "firstSeenRun": "2026-07-10T05:59:51.202Z"
+        "firstSeenRun": "2026-07-10T05:59:51.202Z",
+        "resolvedAt": "2026-07-12T05:22:52.589Z",
+        "daysToResolve": 2
       },
       "a339883f77a2": {
         "id": "a339883f77a2",
@@ -1357,7 +1301,7 @@
         "severity": "important",
         "title": "1 pages missing <title> tag",
         "description": "Title tags are a primary ranking signal. Pages without titles are deprioritised by Google.",
-        "status": "fixing",
+        "status": "resolved",
         "detectedAt": "2026-07-10T05:59:51.202Z",
         "lastSeenAt": "2026-07-10T05:59:51.202Z",
         "attempts": [
@@ -1367,7 +1311,9 @@
             "file": null
           }
         ],
-        "firstSeenRun": "2026-07-10T05:59:51.202Z"
+        "firstSeenRun": "2026-07-10T05:59:51.202Z",
+        "resolvedAt": "2026-07-12T05:22:52.589Z",
+        "daysToResolve": 2
       },
       "4f684ed51e73": {
         "id": "4f684ed51e73",
@@ -1375,7 +1321,7 @@
         "severity": "low",
         "title": "1 pages missing meta description",
         "description": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
-        "status": "fixing",
+        "status": "resolved",
         "detectedAt": "2026-07-10T05:59:51.202Z",
         "lastSeenAt": "2026-07-10T05:59:51.202Z",
         "attempts": [
@@ -1385,7 +1331,9 @@
             "file": null
           }
         ],
-        "firstSeenRun": "2026-07-10T05:59:51.202Z"
+        "firstSeenRun": "2026-07-10T05:59:51.202Z",
+        "resolvedAt": "2026-07-12T05:22:52.589Z",
+        "daysToResolve": 2
       },
       "daa3e6f34fda": {
         "id": "daa3e6f34fda",
@@ -1393,7 +1341,7 @@
         "severity": "important",
         "title": "1 pages missing canonical URL",
         "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
-        "status": "fixing",
+        "status": "resolved",
         "detectedAt": "2026-07-10T05:59:51.202Z",
         "lastSeenAt": "2026-07-10T05:59:51.202Z",
         "attempts": [
@@ -1403,7 +1351,9 @@
             "file": null
           }
         ],
-        "firstSeenRun": "2026-07-10T05:59:51.202Z"
+        "firstSeenRun": "2026-07-10T05:59:51.202Z",
+        "resolvedAt": "2026-07-12T05:22:52.589Z",
+        "daysToResolve": 2
       },
       "a924a5969e28": {
         "id": "a924a5969e28",
@@ -1411,7 +1361,7 @@
         "severity": "critical",
         "title": "64 pages appear to be client-side rendered only",
         "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
-        "status": "fixing",
+        "status": "resolved",
         "detectedAt": "2026-07-10T05:59:51.202Z",
         "lastSeenAt": "2026-07-10T05:59:51.202Z",
         "attempts": [
@@ -1421,7 +1371,9 @@
             "file": null
           }
         ],
-        "firstSeenRun": "2026-07-10T05:59:51.202Z"
+        "firstSeenRun": "2026-07-10T05:59:51.202Z",
+        "resolvedAt": "2026-07-12T05:22:52.589Z",
+        "daysToResolve": 2
       },
       "02dc5d62e6d8": {
         "id": "02dc5d62e6d8",
@@ -1429,7 +1381,7 @@
         "severity": "important",
         "title": "63 pages have redirect chains",
         "description": "Long redirect chains waste crawl budget and dilute link equity.",
-        "status": "fixing",
+        "status": "resolved",
         "detectedAt": "2026-07-10T05:59:51.202Z",
         "lastSeenAt": "2026-07-10T05:59:51.202Z",
         "attempts": [
@@ -1439,154 +1391,117 @@
             "file": null
           }
         ],
-        "firstSeenRun": "2026-07-10T05:59:51.202Z"
+        "firstSeenRun": "2026-07-10T05:59:51.202Z",
+        "resolvedAt": "2026-07-12T05:22:52.589Z",
+        "daysToResolve": 2
       }
     },
     "stats": {
       "open": 0,
-      "fixing": 7,
-      "resolved": 16,
-      "escalated": 1,
+      "fixing": 0,
+      "resolved": 21,
+      "escalated": 3,
       "regressed": 0
     },
-    "lastReconciled": "2026-07-10T05:59:51.202Z"
+    "lastReconciled": "2026-07-12T05:22:52.589Z"
   },
   "issueActions": [
     {
-      "id": "bba7a7ba062e",
-      "type": "opened",
-      "title": "1 noindex pages listed in sitemap"
-    },
-    {
-      "id": "a339883f77a2",
-      "type": "opened",
-      "title": "1 pages missing <title> tag"
-    },
-    {
-      "id": "4f684ed51e73",
-      "type": "opened",
-      "title": "1 pages missing meta description"
-    },
-    {
-      "id": "daa3e6f34fda",
-      "type": "opened",
-      "title": "1 pages missing canonical URL"
-    },
-    {
-      "id": "c842bc749ac8",
+      "id": "43c9065c7998",
       "type": "regressed",
-      "title": "1 pages load slowly (>3s)"
+      "title": "65 pages appear to be client-side rendered only"
     },
     {
-      "id": "a924a5969e28",
-      "type": "opened",
-      "title": "64 pages appear to be client-side rendered only"
-    },
-    {
-      "id": "02dc5d62e6d8",
-      "type": "opened",
-      "title": "63 pages have redirect chains"
-    },
-    {
-      "id": "bba7a7ba062e",
-      "type": "fix-attempted",
-      "title": "1 noindex pages listed in sitemap",
-      "attempt": 1
-    },
-    {
-      "id": "a339883f77a2",
-      "type": "fix-attempted",
-      "title": "1 pages missing <title> tag",
-      "attempt": 1
-    },
-    {
-      "id": "4f684ed51e73",
-      "type": "fix-attempted",
-      "title": "1 pages missing meta description",
-      "attempt": 1
-    },
-    {
-      "id": "daa3e6f34fda",
-      "type": "fix-attempted",
-      "title": "1 pages missing canonical URL",
-      "attempt": 1
+      "id": "622b6d80b02a",
+      "type": "regressed",
+      "title": "64 pages have redirect chains"
     },
     {
       "id": "91972ff13dbe",
       "type": "fix-attempted",
       "title": "65 pages missing H1 heading",
-      "attempt": 26
-    },
-    {
-      "id": "c842bc749ac8",
-      "type": "fix-attempted",
-      "title": "1 pages load slowly (>3s)",
-      "attempt": 2
-    },
-    {
-      "id": "a924a5969e28",
-      "type": "fix-attempted",
-      "title": "64 pages appear to be client-side rendered only",
-      "attempt": 1
-    },
-    {
-      "id": "02dc5d62e6d8",
-      "type": "fix-attempted",
-      "title": "63 pages have redirect chains",
-      "attempt": 1
-    },
-    {
-      "id": "622b6d80b02a",
-      "type": "resolved",
-      "title": "64 pages have redirect chains",
-      "daysToResolve": 33,
-      "attempts": 23
+      "attempt": 27
     },
     {
       "id": "43c9065c7998",
-      "type": "resolved",
+      "type": "fix-attempted",
       "title": "65 pages appear to be client-side rendered only",
-      "daysToResolve": 32,
-      "attempts": 23
+      "attempt": 24
+    },
+    {
+      "id": "622b6d80b02a",
+      "type": "fix-attempted",
+      "title": "64 pages have redirect chains",
+      "attempt": 24
+    },
+    {
+      "id": "c842bc749ac8",
+      "type": "resolved",
+      "title": "1 pages load slowly (>3s)",
+      "daysToResolve": 20,
+      "attempts": 2
+    },
+    {
+      "id": "bba7a7ba062e",
+      "type": "resolved",
+      "title": "1 noindex pages listed in sitemap",
+      "daysToResolve": 2,
+      "attempts": 1
+    },
+    {
+      "id": "a339883f77a2",
+      "type": "resolved",
+      "title": "1 pages missing <title> tag",
+      "daysToResolve": 2,
+      "attempts": 1
+    },
+    {
+      "id": "4f684ed51e73",
+      "type": "resolved",
+      "title": "1 pages missing meta description",
+      "daysToResolve": 2,
+      "attempts": 1
+    },
+    {
+      "id": "daa3e6f34fda",
+      "type": "resolved",
+      "title": "1 pages missing canonical URL",
+      "daysToResolve": 2,
+      "attempts": 1
+    },
+    {
+      "id": "a924a5969e28",
+      "type": "resolved",
+      "title": "64 pages appear to be client-side rendered only",
+      "daysToResolve": 2,
+      "attempts": 1
+    },
+    {
+      "id": "02dc5d62e6d8",
+      "type": "resolved",
+      "title": "63 pages have redirect chains",
+      "daysToResolve": 2,
+      "attempts": 1
+    },
+    {
+      "id": "622b6d80b02a",
+      "type": "escalated",
+      "title": "64 pages have redirect chains",
+      "attempts": 24
     },
     {
       "id": "91972ff13dbe",
       "type": "escalated",
       "title": "65 pages missing H1 heading",
-      "attempts": 26
-    }
-  ],
-  "solverEnrichments": [
+      "attempts": 27
+    },
     {
-      "issueId": "c842bc749ac8",
-      "title": "1 pages load slowly (>3s)",
-      "result": {
-        "solved": false,
-        "diagnosis": {
-          "performanceScore": null,
-          "opportunities": [],
-          "summary": "PageSpeed score ?/100. 0 concrete improvements identified."
-        },
-        "attempts": [
-          {
-            "solver": "PageSpeed Insights",
-            "solved": false,
-            "diagnosis": {
-              "performanceScore": null,
-              "opportunities": [],
-              "summary": "PageSpeed score ?/100. 0 concrete improvements identified."
-            },
-            "enrichment": {
-              "pageSpeed": {
-                "performanceScore": null,
-                "opportunities": [],
-                "summary": "PageSpeed score ?/100. 0 concrete improvements identified."
-              }
-            }
-          }
-        ]
-      }
+      "id": "43c9065c7998",
+      "type": "escalated",
+      "title": "65 pages appear to be client-side rendered only",
+      "attempts": 24
     }
   ],
+  "solverEnrichments": [],
   "errors": []
 }
