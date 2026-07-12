@@ -1,5 +1,26 @@
 [
   {
+    "timestamp": "2026-07-12T20:03:17.785Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): Few pages have question-style headings",
+    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
+  },
+  {
+    "timestamp": "2026-07-12T20:03:17.785Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-07-12T20:03:17.785Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 82/100 (B)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-07-12T19:32:57.890Z",
     "type": "error",
     "icon": "🔴",
@@ -1377,26 +1398,5 @@
     "icon": "🏆",
     "title": "WON: \"63 pages have redirect chains\" resolved after 32 attempts",
     "details": "Took 33 days from first detection"
-  },
-  {
-    "timestamp": "2026-07-10T06:16:39.100Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"64 pages appear to be client-side rendered only\" resolved after 34 attempts",
-    "details": "Took 55 days from first detection"
-  },
-  {
-    "timestamp": "2026-07-10T06:16:39.100Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #2: working on \"62 pages have redirect chains\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-07-10T06:16:39.100Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #3: working on \"63 pages appear to be client-side rendered only\"",
-    "details": ""
   }
 ]
