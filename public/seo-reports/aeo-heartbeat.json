@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-07-12T12:33:27Z",
+  "timestamp": "2026-07-12T14:07:06Z",
   "checks": [
-{"path":"/llms.txt","label":"llms.txt","status":403,"ok":false,"ms":301}
+{"path":"/llms.txt","label":"llms.txt","status":200,"ok":true,"ms":888}
 ,
-{"path":"/llms-full.txt","label":"llms-full.txt","status":403,"ok":false,"ms":128}
+{"path":"/llms-full.txt","label":"llms-full.txt","status":200,"ok":true,"ms":965}
 ,
-{"path":"/robots.txt","label":"robots.txt","status":403,"ok":false,"ms":129}
+{"path":"/robots.txt","label":"robots.txt","status":200,"ok":true,"ms":764}
 ,
-{"path":"/sitemap.xml","label":"sitemap.xml","status":403,"ok":false,"ms":128}
+{"path":"/sitemap.xml","label":"sitemap.xml","status":200,"ok":true,"ms":793}
 ,
-{"path":"/","label":"homepage","status":403,"ok":false,"ms":125}
+{"path":"/","label":"homepage","status":200,"ok":true,"ms":796}
   ],
-  "aiBotsAllowed": 0,
+  "aiBotsAllowed": 10,
   "aiBotsRequired": 10,
-  "healthy": false
+  "healthy": true
 }
