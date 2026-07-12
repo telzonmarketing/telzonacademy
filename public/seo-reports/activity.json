@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-12T14:44:43.541Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-07-12T14:35:56.675Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 1 noindex pages listed in sitemap",
     "details": "Sitemap should only list indexable pages. noindex pages in sitemap confuse Googlebot."
-  },
-  {
-    "timestamp": "2026-07-10T06:16:39.100Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 64 pages",
-    "details": "Found 8 issues (1 critical, 5 important)"
   }
 ]
