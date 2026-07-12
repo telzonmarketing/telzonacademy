@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-12T15:18:14.940Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 410ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-07-12T14:44:43.541Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 1 pages missing <title> tag",
     "details": "Title tags are a primary ranking signal. Pages without titles are deprioritised by Google."
-  },
-  {
-    "timestamp": "2026-07-10T06:16:39.100Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 noindex pages listed in sitemap",
-    "details": "Sitemap should only list indexable pages. noindex pages in sitemap confuse Googlebot."
   }
 ]
