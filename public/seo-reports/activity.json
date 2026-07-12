@@ -1,5 +1,26 @@
 [
   {
+    "timestamp": "2026-07-12T18:54:19.251Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): Few pages have question-style headings",
+    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
+  },
+  {
+    "timestamp": "2026-07-12T18:54:19.251Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-07-12T18:54:19.251Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 82/100 (B)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-07-12T18:44:22.663Z",
     "type": "submit",
     "icon": "⚡",
@@ -1376,27 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #1: working on \"1 pages load slowly (>3s)\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-07-10T06:16:39.100Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #36: working on \"64 pages missing H1 heading\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-07-10T06:16:39.100Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #4: working on \"1 pages missing canonical URL\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-07-10T06:16:39.100Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #2: working on \"1 pages missing meta description\"",
     "details": ""
   }
 ]
