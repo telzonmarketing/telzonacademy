@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-12T17:27:02.353Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 465ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-07-12T16:50:07.167Z",
     "type": "fix",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "error",
     "icon": "↩",
     "title": "REGRESSED: \"1 pages missing <title> tag\" came back",
-    "details": "Issue was resolved before — now detected again. Bot will retry."
-  },
-  {
-    "timestamp": "2026-07-10T06:16:39.100Z",
-    "type": "error",
-    "icon": "↩",
-    "title": "REGRESSED: \"1 noindex pages listed in sitemap\" came back",
     "details": "Issue was resolved before — now detected again. Bot will retry."
   }
 ]
