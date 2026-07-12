@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-11T05:22:33.604Z",
+  "timestamp": "2026-07-12T05:39:37.655Z",
   "summary": {
     "pagesFound": 64,
     "issuesFound": 3,
@@ -678,7 +678,7 @@
         "description": "H1 headings help Google understand the primary topic of each page.",
         "status": "escalated",
         "detectedAt": "2026-05-15T19:28:12.445Z",
-        "lastSeenAt": "2026-07-11T05:22:33.603Z",
+        "lastSeenAt": "2026-07-12T05:39:37.654Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:28:12.445Z",
@@ -864,14 +864,19 @@
             "timestamp": "2026-07-11T05:22:33.603Z",
             "strategy": "H1 headings help Google understand the primary topic of each page.",
             "file": null
+          },
+          {
+            "timestamp": "2026-07-12T05:39:37.654Z",
+            "strategy": "H1 headings help Google understand the primary topic of each page.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:28:12.445Z",
         "resolvedAt": "2026-05-15T19:50:51.103Z",
         "daysToResolve": 1,
         "regressedAt": "2026-06-07T08:13:28.122Z",
-        "escalatedAt": "2026-07-11T05:22:33.603Z",
-        "escalationReason": "Issue persists after 37 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-07-12T05:39:37.654Z",
+        "escalationReason": "Issue persists after 38 auto-fix attempts. Needs human intervention."
       },
       "a924a5969e28": {
         "id": "a924a5969e28",
@@ -881,7 +886,7 @@
         "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
         "status": "escalated",
         "detectedAt": "2026-05-15T19:28:12.445Z",
-        "lastSeenAt": "2026-07-11T05:22:33.603Z",
+        "lastSeenAt": "2026-07-12T05:39:37.654Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:28:12.445Z",
@@ -1057,14 +1062,19 @@
             "timestamp": "2026-07-11T05:22:33.603Z",
             "strategy": "Convert client-side rendered pages to Server Components",
             "file": null
+          },
+          {
+            "timestamp": "2026-07-12T05:39:37.654Z",
+            "strategy": "Convert client-side rendered pages to Server Components",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:28:12.445Z",
         "resolvedAt": "2026-07-10T06:16:38.087Z",
         "daysToResolve": 55,
         "regressedAt": "2026-07-11T05:22:33.603Z",
-        "escalatedAt": "2026-07-11T05:22:33.603Z",
-        "escalationReason": "Issue persists after 35 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-07-12T05:39:37.654Z",
+        "escalationReason": "Issue persists after 36 auto-fix attempts. Needs human intervention."
       },
       "68149022932d": {
         "id": "68149022932d",
@@ -1476,7 +1486,7 @@
         "description": "Long redirect chains waste crawl budget and dilute link equity.",
         "status": "escalated",
         "detectedAt": "2026-06-07T05:51:50.198Z",
-        "lastSeenAt": "2026-07-11T05:22:33.603Z",
+        "lastSeenAt": "2026-07-12T05:39:37.654Z",
         "attempts": [
           {
             "timestamp": "2026-06-07T06:58:10.446Z",
@@ -1642,14 +1652,19 @@
             "timestamp": "2026-07-11T05:22:33.603Z",
             "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
             "file": null
+          },
+          {
+            "timestamp": "2026-07-12T05:39:37.654Z",
+            "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-06-07T05:51:50.198Z",
         "resolvedAt": "2026-07-10T06:16:38.087Z",
         "daysToResolve": 33,
         "regressedAt": "2026-07-11T05:22:33.603Z",
-        "escalatedAt": "2026-07-11T05:22:33.603Z",
-        "escalationReason": "Issue persists after 33 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-07-12T05:39:37.654Z",
+        "escalationReason": "Issue persists after 34 auto-fix attempts. Needs human intervention."
       },
       "b4b96faddfd3": {
         "id": "b4b96faddfd3",
@@ -1863,103 +1878,44 @@
       "escalated": 3,
       "regressed": 0
     },
-    "lastReconciled": "2026-07-11T05:22:33.603Z"
+    "lastReconciled": "2026-07-12T05:39:37.654Z"
   },
   "issueActions": [
     {
-      "id": "a924a5969e28",
-      "type": "regressed",
-      "title": "64 pages appear to be client-side rendered only"
-    },
-    {
-      "id": "02dc5d62e6d8",
-      "type": "regressed",
-      "title": "63 pages have redirect chains"
-    },
-    {
       "id": "791ad617b3ed",
       "type": "fix-attempted",
       "title": "64 pages missing H1 heading",
-      "attempt": 37
+      "attempt": 38
     },
     {
       "id": "a924a5969e28",
       "type": "fix-attempted",
       "title": "64 pages appear to be client-side rendered only",
-      "attempt": 35
+      "attempt": 36
     },
     {
       "id": "02dc5d62e6d8",
       "type": "fix-attempted",
       "title": "63 pages have redirect chains",
-      "attempt": 33
-    },
-    {
-      "id": "daa3e6f34fda",
-      "type": "resolved",
-      "title": "1 pages missing canonical URL",
-      "daysToResolve": 56,
-      "attempts": 4
-    },
-    {
-      "id": "7d874f3ebe0c",
-      "type": "resolved",
-      "title": "63 pages appear to be client-side rendered only",
-      "daysToResolve": 56,
-      "attempts": 3
-    },
-    {
-      "id": "bba7a7ba062e",
-      "type": "resolved",
-      "title": "1 noindex pages listed in sitemap",
-      "daysToResolve": 34,
-      "attempts": 2
-    },
-    {
-      "id": "a339883f77a2",
-      "type": "resolved",
-      "title": "1 pages missing <title> tag",
-      "daysToResolve": 34,
-      "attempts": 2
-    },
-    {
-      "id": "4f684ed51e73",
-      "type": "resolved",
-      "title": "1 pages missing meta description",
-      "daysToResolve": 34,
-      "attempts": 2
-    },
-    {
-      "id": "c4cfda4cc35c",
-      "type": "resolved",
-      "title": "62 pages have redirect chains",
-      "daysToResolve": 34,
-      "attempts": 2
-    },
-    {
-      "id": "c842bc749ac8",
-      "type": "resolved",
-      "title": "1 pages load slowly (>3s)",
-      "daysToResolve": 1,
-      "attempts": 1
+      "attempt": 34
     },
     {
       "id": "791ad617b3ed",
       "type": "escalated",
       "title": "64 pages missing H1 heading",
-      "attempts": 37
+      "attempts": 38
     },
     {
       "id": "a924a5969e28",
       "type": "escalated",
       "title": "64 pages appear to be client-side rendered only",
-      "attempts": 35
+      "attempts": 36
     },
     {
       "id": "02dc5d62e6d8",
       "type": "escalated",
       "title": "63 pages have redirect chains",
-      "attempts": 33
+      "attempts": 34
     }
   ],
   "solverEnrichments": [],
