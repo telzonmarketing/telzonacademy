@@ -1,5 +1,26 @@
 [
   {
+    "timestamp": "2026-07-13T21:48:15.614Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): Few pages have question-style headings",
+    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
+  },
+  {
+    "timestamp": "2026-07-13T21:48:15.614Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-07-13T21:48:15.614Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 82/100 (B)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-07-13T20:52:16.595Z",
     "type": "fix",
     "icon": "🤖",
@@ -1377,26 +1398,5 @@
     "icon": "🏆",
     "title": "WON: \"1 pages missing <title> tag\" resolved after 2 attempts",
     "details": "Took 34 days from first detection"
-  },
-  {
-    "timestamp": "2026-07-11T05:22:33.604Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"1 noindex pages listed in sitemap\" resolved after 2 attempts",
-    "details": "Took 34 days from first detection"
-  },
-  {
-    "timestamp": "2026-07-11T05:22:33.604Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"63 pages appear to be client-side rendered only\" resolved after 3 attempts",
-    "details": "Took 56 days from first detection"
-  },
-  {
-    "timestamp": "2026-07-11T05:22:33.604Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"1 pages missing canonical URL\" resolved after 4 attempts",
-    "details": "Took 56 days from first detection"
   }
 ]
