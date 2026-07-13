@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-07-13T21:48:15.614Z",
-  "pagesAudited": 63,
+  "timestamp": "2026-07-13T22:48:06.287Z",
+  "pagesAudited": 64,
   "score": 82,
   "grade": "B",
   "issues": [
@@ -20,12 +20,12 @@
   "strengths": [
     "All 10 major AI crawlers explicitly allowed",
     "llms.txt present at site root",
-    "63/63 pages have structured data",
-    "63 pages declare Organization schema"
+    "64/64 pages have structured data",
+    "64 pages declare Organization schema"
   ],
   "llms": {
-    "compactBytes": 16787,
-    "fullBytes": 113253
+    "compactBytes": 17058,
+    "fullBytes": 115060
   },
   "faqSuggestions": [],
   "visibility": {
