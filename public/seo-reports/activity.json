@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-13T22:42:30.927Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-07-13T21:48:15.614Z",
     "type": "fix",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "win",
     "icon": "🏆",
     "title": "WON: \"1 pages missing meta description\" resolved after 2 attempts",
-    "details": "Took 34 days from first detection"
-  },
-  {
-    "timestamp": "2026-07-11T05:22:33.604Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"1 pages missing <title> tag\" resolved after 2 attempts",
     "details": "Took 34 days from first detection"
   }
 ]
