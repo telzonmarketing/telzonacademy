@@ -1,5 +1,15 @@
 [
   {
+    "timestamp": "2026-07-15T05:10:20.768Z",
+    "pagesFound": 64,
+    "critical": 1,
+    "important": 1,
+    "fixed": 3,
+    "submitted": 0,
+    "avgPosition": null,
+    "totalKeywords": 0
+  },
+  {
     "timestamp": "2026-07-14T05:00:23.538Z",
     "pagesFound": 64,
     "critical": 1,
@@ -881,16 +891,6 @@
   },
   {
     "timestamp": "2026-05-15T18:57:26.350Z",
-    "pagesFound": 64,
-    "critical": 3,
-    "important": 1,
-    "fixed": 5,
-    "submitted": 0,
-    "avgPosition": null,
-    "totalKeywords": 0
-  },
-  {
-    "timestamp": "2026-05-15T18:51:58.731Z",
     "pagesFound": 64,
     "critical": 3,
     "important": 1,

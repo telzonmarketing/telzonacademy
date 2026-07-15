@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-14T05:00:49.370Z",
+  "timestamp": "2026-07-15T05:11:00.628Z",
   "engine": "StrategyEngine v2",
   "siteUrl": "https://telzonacademy.in",
   "healthScore": 37,
@@ -38,13 +38,13 @@
   ],
   "momentum": {
     "window": "7d",
-    "direction": "improving",
+    "direction": "steady",
     "keywordsDelta": 0,
-    "criticalDelta": -1,
+    "criticalDelta": 0,
     "positionDelta": null,
-    "note": "Last 7 days: 1 fewer critical issues."
+    "note": ""
   },
-  "summary": "5 high-priority moves to make now, 13 total — ranked by impact on your rankings. Last 7 days: 1 fewer critical issues.",
+  "summary": "5 high-priority moves to make now, 13 total — ranked by impact on your rankings.",
   "recommendations": [
     {
       "prio": 1,
