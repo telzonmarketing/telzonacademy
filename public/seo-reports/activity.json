@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-16T09:30:37.451Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 468ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-07-16T07:51:24.662Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🔗",
     "title": "Tier 1 backlink ready: Apple Maps Connect",
     "details": "Required for Apple Maps + Siri. Manual phone verification."
-  },
-  {
-    "timestamp": "2026-07-13T09:41:15.866Z",
-    "type": "backlink",
-    "icon": "🔗",
-    "title": "Tier 1 backlink ready: Bing Places for Business",
-    "details": "Imports from Google Business. Phone verification."
   }
 ]
