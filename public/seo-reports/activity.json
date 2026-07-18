@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-18T20:37:22.952Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-07-18T20:00:08.022Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"64 pages missing H1 heading\" needs human attention",
     "details": "Auto-fix failed after 42 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-07-16T05:20:42.086Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #38: working on \"63 pages have redirect chains\"",
-    "details": ""
   }
 ]
