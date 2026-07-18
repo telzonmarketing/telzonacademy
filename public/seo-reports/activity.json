@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-18T19:34:21.218Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 377ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-07-18T18:51:53.717Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 63 pages have redirect chains",
     "details": "Long redirect chains waste crawl budget and dilute link equity."
-  },
-  {
-    "timestamp": "2026-07-16T05:20:42.086Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 64 pages appear to be client-side rendered only",
-    "details": "Convert client-side rendered pages to Server Components"
   }
 ]
