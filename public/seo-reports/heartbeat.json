@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-07-19T19:34:41.438Z",
+  "timestamp": "2026-07-19T22:10:56.307Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 9,
-  "passed": 7,
-  "failed": 2,
+  "passed": 8,
+  "failed": 1,
   "criticalFailed": 0,
-  "avgResponseMs": 2441,
+  "avgResponseMs": 1614,
   "results": [
     {
       "url": "https://telzonacademy.in",
@@ -13,7 +13,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 208
+      "ms": 240
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
@@ -21,7 +21,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 205
+      "ms": 206
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
@@ -29,7 +29,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 207
+      "ms": 574
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
@@ -37,7 +37,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 217
+      "ms": 325
     },
     {
       "url": "https://telzonacademy.in/",
@@ -45,7 +45,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 201
+      "ms": 234
     },
     {
       "url": "https://telzonacademy.in/blog",
@@ -53,7 +53,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 445
+      "ms": 856
     },
     {
       "url": "https://telzonacademy.in/lead-generation-package",
@@ -61,7 +61,7 @@
       "critical": false,
       "status": 0,
       "ok": false,
-      "ms": 10004,
+      "ms": 10007,
       "error": "timeout of 10000ms exceeded"
     },
     {
@@ -70,16 +70,15 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 479
+      "ms": 1250
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
       "name": "/pages/digital-marketing-institute-in-nagpur",
       "critical": false,
-      "status": 0,
-      "ok": false,
-      "ms": 10001,
-      "error": "timeout of 10000ms exceeded"
+      "status": 200,
+      "ok": true,
+      "ms": 835
     }
   ],
   "healthy": true
