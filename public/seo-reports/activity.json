@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-20T22:14:53.565Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 891ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-07-20T20:58:09.568Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"64 pages missing H1 heading\" needs human attention",
     "details": "Auto-fix failed after 44 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-07-18T04:57:20.711Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #40: working on \"63 pages have redirect chains\"",
-    "details": ""
   }
 ]
