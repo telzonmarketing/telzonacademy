@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-20T22:44:52.085Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-07-20T22:14:53.565Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1391,12 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"64 pages appear to be client-side rendered only\" needs human attention",
     "details": "Auto-fix failed after 42 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-07-18T04:57:20.711Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"64 pages missing H1 heading\" needs human attention",
-    "details": "Auto-fix failed after 44 attempts — manual intervention required"
   }
 ]
