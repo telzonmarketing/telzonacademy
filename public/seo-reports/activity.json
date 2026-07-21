@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-21T18:41:39.439Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 538ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-07-21T18:11:49.680Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO scan complete · Score 82/100 (B)",
     "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-07-18T21:07:41.971Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 286ms avg)",
-    "details": ""
   }
 ]
