@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-22T09:40:04.311Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 267ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-07-22T08:11:35.404Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
     "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
-  },
-  {
-    "timestamp": "2026-07-19T08:03:21.988Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
   }
 ]
