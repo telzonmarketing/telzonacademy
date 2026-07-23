@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-23T03:49:58.546Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 477ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-07-23T02:00:54.118Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "⚡",
     "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
     "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-07-19T22:10:56.307Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (8/9 checks · 1614ms avg)",
-    "details": ""
   }
 ]
