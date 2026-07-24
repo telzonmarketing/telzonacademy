@@ -1,84 +1,48 @@
 {
-  "timestamp": "2026-07-23T20:31:51.642Z",
+  "timestamp": "2026-07-24T00:12:44.998Z",
   "siteUrl": "https://telzonacademy.in",
-  "totalChecks": 9,
-  "passed": 9,
-  "failed": 0,
-  "criticalFailed": 0,
-  "avgResponseMs": 493,
+  "totalChecks": 4,
+  "passed": 0,
+  "failed": 4,
+  "criticalFailed": 3,
+  "avgResponseMs": 504,
   "results": [
     {
       "url": "https://telzonacademy.in",
       "name": "Homepage",
       "critical": true,
-      "status": 200,
-      "ok": true,
-      "ms": 280
+      "status": 0,
+      "ok": false,
+      "ms": 505,
+      "error": ""
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
       "name": "Sitemap",
       "critical": true,
-      "status": 200,
-      "ok": true,
-      "ms": 273
+      "status": 0,
+      "ok": false,
+      "ms": 504,
+      "error": ""
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
       "name": "Robots.txt",
       "critical": true,
-      "status": 200,
-      "ok": true,
-      "ms": 517
+      "status": 0,
+      "ok": false,
+      "ms": 504,
+      "error": ""
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
       "name": "Dashboard",
       "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 329
-    },
-    {
-      "url": "https://telzonacademy.in/",
-      "name": "/",
-      "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 287
-    },
-    {
-      "url": "https://telzonacademy.in/blog",
-      "name": "/blog",
-      "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 681
-    },
-    {
-      "url": "https://telzonacademy.in/lead-generation-package",
-      "name": "/lead-generation-package",
-      "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 688
-    },
-    {
-      "url": "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
-      "name": "/pages/digital-marketing-course-in-nagpur",
-      "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 701
-    },
-    {
-      "url": "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
-      "name": "/pages/digital-marketing-institute-in-nagpur",
-      "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 681
+      "status": 0,
+      "ok": false,
+      "ms": 504,
+      "error": ""
     }
   ],
-  "healthy": true
+  "healthy": false
 }
