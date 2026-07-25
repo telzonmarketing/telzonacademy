@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-25T17:18:05.096Z",
+    "type": "error",
+    "icon": "🔴",
+    "title": "Heartbeat: 4 check(s) failing",
+    "details": "ERR Homepage · ERR Sitemap · ERR Robots.txt · ERR Dashboard"
+  },
+  {
     "timestamp": "2026-07-25T16:58:06.492Z",
     "type": "fix",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #45: working on \"63 pages have redirect chains\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-07-23T05:21:13.823Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #47: working on \"64 pages appear to be client-side rendered only\"",
     "details": ""
   }
 ]
