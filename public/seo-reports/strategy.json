@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-24T05:31:01.647Z",
+  "timestamp": "2026-07-25T05:25:35.832Z",
   "engine": "StrategyEngine v2",
   "siteUrl": "https://telzonacademy.in",
   "healthScore": 37,
@@ -44,7 +44,7 @@
     "positionDelta": null,
     "note": ""
   },
-  "summary": "5 high-priority moves to make now, 13 total — ranked by impact on your rankings.",
+  "summary": "6 high-priority moves to make now, 14 total — ranked by impact on your rankings.",
   "recommendations": [
     {
       "prio": 1,
@@ -68,6 +68,18 @@
       "title": "Run a Google review acquisition system",
       "why": "Review quantity, recency and response-rate are active local ranking signals — review velocity matters as much as total count. Reviews also lift AI-answer citation rate dramatically (≈1% with none → ≈53% with even a handful).",
       "action": "Ask every student for a Google review at course completion (QR code + short link), aim for 4–8/month, and reply to all reviews within 24h.",
+      "score": 9
+    },
+    {
+      "prio": 1,
+      "cat": "Schema",
+      "icon": "🧩",
+      "impact": "high",
+      "effort": "low",
+      "timeToImpact": "1–2 weeks",
+      "title": "Fix 2 structured-data errors flagged by the schema auditor",
+      "why": "2 structured-data issue(s) across 2 page(s) (empty answers, disallowed HTML, missing fields). Invalid structured data loses rich-result eligibility (stars, FAQ) — a direct CTR hit.",
+      "action": "Ensure exactly one block per @type per page; give every FAQ item a question + non-empty answer; remove disallowed HTML from answers. See schema-audit.json for the exact pages.",
       "score": 9
     },
     {
