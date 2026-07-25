@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-25T20:38:48.423Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-07-25T20:11:07.208Z",
     "type": "fix",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #46: working on \"63 pages have redirect chains\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-07-23T05:34:48.090Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #48: working on \"64 pages appear to be client-side rendered only\"",
     "details": ""
   }
 ]
