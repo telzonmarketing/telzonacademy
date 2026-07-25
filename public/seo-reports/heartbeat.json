@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-07-25T14:04:22.002Z",
+  "timestamp": "2026-07-25T15:30:06.356Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 9,
   "passed": 9,
   "failed": 0,
   "criticalFailed": 0,
-  "avgResponseMs": 471,
+  "avgResponseMs": 706,
   "results": [
     {
       "url": "https://telzonacademy.in",
@@ -13,7 +13,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 289
+      "ms": 293
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
@@ -21,7 +21,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 291
+      "ms": 264
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
@@ -29,7 +29,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 21
+      "ms": 816
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
@@ -37,7 +37,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 279
+      "ms": 379
     },
     {
       "url": "https://telzonacademy.in/",
@@ -45,7 +45,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 299
+      "ms": 264
     },
     {
       "url": "https://telzonacademy.in/blog",
@@ -53,7 +53,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 448
+      "ms": 1080
     },
     {
       "url": "https://telzonacademy.in/lead-generation-package",
@@ -61,7 +61,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 868
+      "ms": 1050
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
@@ -69,7 +69,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 1146
+      "ms": 1092
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
@@ -77,7 +77,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 601
+      "ms": 1116
     }
   ],
   "healthy": true
