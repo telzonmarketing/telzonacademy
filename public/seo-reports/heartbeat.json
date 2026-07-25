@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-25T17:18:05.096Z",
+  "timestamp": "2026-07-25T19:36:44.675Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 4,
   "passed": 0,
@@ -13,7 +13,7 @@
       "critical": true,
       "status": 0,
       "ok": false,
-      "ms": 506,
+      "ms": 504,
       "error": ""
     },
     {
@@ -22,7 +22,7 @@
       "critical": true,
       "status": 0,
       "ok": false,
-      "ms": 504,
+      "ms": 505,
       "error": ""
     },
     {
