@@ -136,7 +136,7 @@
       "description": "H1 headings help Google understand the primary topic of each page.",
       "status": "escalated",
       "detectedAt": "2026-05-15T19:28:12.445Z",
-      "lastSeenAt": "2026-07-25T05:23:54.355Z",
+      "lastSeenAt": "2026-07-26T05:42:29.152Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:28:12.445Z",
@@ -397,14 +397,19 @@
           "timestamp": "2026-07-25T05:23:54.355Z",
           "strategy": "H1 headings help Google understand the primary topic of each page.",
           "file": null
+        },
+        {
+          "timestamp": "2026-07-26T05:42:29.152Z",
+          "strategy": "H1 headings help Google understand the primary topic of each page.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-05-15T19:28:12.445Z",
       "resolvedAt": "2026-05-15T19:50:51.103Z",
       "daysToResolve": 1,
       "regressedAt": "2026-06-07T08:13:28.122Z",
-      "escalatedAt": "2026-07-25T05:23:54.355Z",
-      "escalationReason": "Issue persists after 52 auto-fix attempts. Needs human intervention."
+      "escalatedAt": "2026-07-26T05:42:29.152Z",
+      "escalationReason": "Issue persists after 53 auto-fix attempts. Needs human intervention."
     },
     "a924a5969e28": {
       "id": "a924a5969e28",
@@ -412,9 +417,9 @@
       "severity": "critical",
       "title": "64 pages appear to be client-side rendered only",
       "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
-      "status": "resolved",
+      "status": "escalated",
       "detectedAt": "2026-05-15T19:28:12.445Z",
-      "lastSeenAt": "2026-07-24T05:30:24.570Z",
+      "lastSeenAt": "2026-07-26T05:42:29.152Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:28:12.445Z",
@@ -660,14 +665,19 @@
           "timestamp": "2026-07-24T05:30:24.570Z",
           "strategy": "Convert client-side rendered pages to Server Components",
           "file": null
+        },
+        {
+          "timestamp": "2026-07-26T05:42:29.152Z",
+          "strategy": "Convert client-side rendered pages to Server Components",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-05-15T19:28:12.445Z",
       "resolvedAt": "2026-07-25T05:23:54.355Z",
       "daysToResolve": 70,
-      "regressedAt": "2026-07-11T05:22:33.603Z",
-      "escalatedAt": "2026-07-24T05:30:24.570Z",
-      "escalationReason": "Issue persists after 49 auto-fix attempts. Needs human intervention."
+      "regressedAt": "2026-07-26T05:42:29.152Z",
+      "escalatedAt": "2026-07-26T05:42:29.152Z",
+      "escalationReason": "Issue persists after 50 auto-fix attempts. Needs human intervention."
     },
     "68149022932d": {
       "id": "68149022932d",
@@ -727,7 +737,7 @@
       "severity": "important",
       "title": "1 pages missing canonical URL",
       "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
-      "status": "escalated",
+      "status": "resolved",
       "detectedAt": "2026-05-15T19:50:51.103Z",
       "lastSeenAt": "2026-07-25T05:23:54.355Z",
       "attempts": [
@@ -758,8 +768,8 @@
         }
       ],
       "firstSeenRun": "2026-05-15T19:50:51.103Z",
-      "resolvedAt": "2026-07-11T05:22:33.603Z",
-      "daysToResolve": 56,
+      "resolvedAt": "2026-07-26T05:42:29.152Z",
+      "daysToResolve": 71,
       "regressedAt": "2026-07-25T05:23:54.355Z",
       "escalatedAt": "2026-07-25T05:23:54.355Z",
       "escalationReason": "Issue persists after 5 auto-fix attempts. Needs human intervention."
@@ -836,7 +846,7 @@
       "severity": "critical",
       "title": "63 pages appear to be client-side rendered only",
       "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
-      "status": "fixing",
+      "status": "resolved",
       "detectedAt": "2026-05-15T19:50:51.103Z",
       "lastSeenAt": "2026-07-25T05:23:54.355Z",
       "attempts": [
@@ -862,8 +872,8 @@
         }
       ],
       "firstSeenRun": "2026-05-15T19:50:51.103Z",
-      "resolvedAt": "2026-07-11T05:22:33.603Z",
-      "daysToResolve": 56,
+      "resolvedAt": "2026-07-26T05:42:29.152Z",
+      "daysToResolve": 71,
       "regressedAt": "2026-07-25T05:23:54.355Z"
     },
     "53924c1b51a7": {
@@ -1089,9 +1099,9 @@
       "severity": "important",
       "title": "63 pages have redirect chains",
       "description": "Long redirect chains waste crawl budget and dilute link equity.",
-      "status": "resolved",
+      "status": "escalated",
       "detectedAt": "2026-06-07T05:51:50.198Z",
-      "lastSeenAt": "2026-07-24T05:30:24.570Z",
+      "lastSeenAt": "2026-07-26T05:42:29.152Z",
       "attempts": [
         {
           "timestamp": "2026-06-07T06:58:10.446Z",
@@ -1327,14 +1337,19 @@
           "timestamp": "2026-07-24T05:30:24.570Z",
           "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
           "file": null
+        },
+        {
+          "timestamp": "2026-07-26T05:42:29.152Z",
+          "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-06-07T05:51:50.198Z",
       "resolvedAt": "2026-07-25T05:23:54.355Z",
       "daysToResolve": 48,
-      "regressedAt": "2026-07-11T05:22:33.603Z",
-      "escalatedAt": "2026-07-24T05:30:24.570Z",
-      "escalationReason": "Issue persists after 47 auto-fix attempts. Needs human intervention."
+      "regressedAt": "2026-07-26T05:42:29.152Z",
+      "escalatedAt": "2026-07-26T05:42:29.152Z",
+      "escalationReason": "Issue persists after 48 auto-fix attempts. Needs human intervention."
     },
     "b4b96faddfd3": {
       "id": "b4b96faddfd3",
@@ -1382,7 +1397,7 @@
       "severity": "important",
       "title": "1 noindex pages listed in sitemap",
       "description": "Sitemap should only list indexable pages. noindex pages in sitemap confuse Googlebot.",
-      "status": "fixing",
+      "status": "resolved",
       "detectedAt": "2026-06-07T08:24:13.649Z",
       "lastSeenAt": "2026-07-25T05:23:54.355Z",
       "attempts": [
@@ -1403,8 +1418,8 @@
         }
       ],
       "firstSeenRun": "2026-06-07T08:24:13.649Z",
-      "resolvedAt": "2026-07-11T05:22:33.603Z",
-      "daysToResolve": 34,
+      "resolvedAt": "2026-07-26T05:42:29.152Z",
+      "daysToResolve": 49,
       "regressedAt": "2026-07-25T05:23:54.355Z"
     },
     "a339883f77a2": {
@@ -1413,7 +1428,7 @@
       "severity": "important",
       "title": "1 pages missing <title> tag",
       "description": "Title tags are a primary ranking signal. Pages without titles are deprioritised by Google.",
-      "status": "fixing",
+      "status": "resolved",
       "detectedAt": "2026-06-07T08:24:13.649Z",
       "lastSeenAt": "2026-07-25T05:23:54.355Z",
       "attempts": [
@@ -1434,8 +1449,8 @@
         }
       ],
       "firstSeenRun": "2026-06-07T08:24:13.649Z",
-      "resolvedAt": "2026-07-11T05:22:33.603Z",
-      "daysToResolve": 34,
+      "resolvedAt": "2026-07-26T05:42:29.152Z",
+      "daysToResolve": 49,
       "regressedAt": "2026-07-25T05:23:54.355Z"
     },
     "4f684ed51e73": {
@@ -1444,7 +1459,7 @@
       "severity": "low",
       "title": "1 pages missing meta description",
       "description": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
-      "status": "fixing",
+      "status": "resolved",
       "detectedAt": "2026-06-07T08:24:13.649Z",
       "lastSeenAt": "2026-07-25T05:23:54.355Z",
       "attempts": [
@@ -1465,8 +1480,8 @@
         }
       ],
       "firstSeenRun": "2026-06-07T08:24:13.649Z",
-      "resolvedAt": "2026-07-11T05:22:33.603Z",
-      "daysToResolve": 34,
+      "resolvedAt": "2026-07-26T05:42:29.152Z",
+      "daysToResolve": 49,
       "regressedAt": "2026-07-25T05:23:54.355Z"
     },
     "c4cfda4cc35c": {
@@ -1475,7 +1490,7 @@
       "severity": "important",
       "title": "62 pages have redirect chains",
       "description": "Long redirect chains waste crawl budget and dilute link equity.",
-      "status": "fixing",
+      "status": "resolved",
       "detectedAt": "2026-06-07T08:24:13.649Z",
       "lastSeenAt": "2026-07-25T05:23:54.355Z",
       "attempts": [
@@ -1496,8 +1511,8 @@
         }
       ],
       "firstSeenRun": "2026-06-07T08:24:13.649Z",
-      "resolvedAt": "2026-07-11T05:22:33.603Z",
-      "daysToResolve": 34,
+      "resolvedAt": "2026-07-26T05:42:29.152Z",
+      "daysToResolve": 49,
       "regressedAt": "2026-07-25T05:23:54.355Z"
     },
     "44fb0227da6a": {
@@ -1569,10 +1584,10 @@
   },
   "stats": {
     "open": 0,
-    "fixing": 5,
-    "resolved": 20,
-    "escalated": 2,
+    "fixing": 0,
+    "resolved": 24,
+    "escalated": 3,
     "regressed": 0
   },
-  "lastReconciled": "2026-07-25T05:23:54.355Z"
+  "lastReconciled": "2026-07-26T05:42:29.152Z"
 }

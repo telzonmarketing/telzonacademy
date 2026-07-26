@@ -1,25 +1,10 @@
 {
-  "timestamp": "2026-07-25T05:25:35.829Z",
+  "timestamp": "2026-07-26T05:43:15.257Z",
   "siteUrl": "https://telzonacademy.in",
   "pagesAudited": 60,
-  "pagesWithIssues": 2,
+  "pagesWithIssues": 0,
   "duplicateFaqPages": 0,
-  "totalIssues": 2,
-  "issuesByKind": {
-    "fetch-error": 2
-  },
-  "examples": [
-    {
-      "kind": "fetch-error",
-      "severity": "low",
-      "message": "Could not fetch (ECONNABORTED)",
-      "url": "https://telzonacademy.in/pages/digital-marketing-institute-nagpur"
-    },
-    {
-      "kind": "fetch-error",
-      "severity": "low",
-      "message": "Could not fetch (ECONNABORTED)",
-      "url": "https://telzonacademy.in/pages/digital-marketing-internship-in-nagpur"
-    }
-  ]
+  "totalIssues": 0,
+  "issuesByKind": {},
+  "examples": []
 }

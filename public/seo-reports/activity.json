@@ -1,5 +1,145 @@
 [
   {
+    "timestamp": "2026-07-26T05:42:29.266Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 64 pages · 3 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"63 pages have redirect chains\" needs human attention",
+    "details": "Auto-fix failed after 48 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"64 pages appear to be client-side rendered only\" needs human attention",
+    "details": "Auto-fix failed after 50 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"64 pages missing H1 heading\" needs human attention",
+    "details": "Auto-fix failed after 53 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"62 pages have redirect chains\" resolved after 3 attempts",
+    "details": "Took 49 days from first detection"
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"1 pages missing meta description\" resolved after 3 attempts",
+    "details": "Took 49 days from first detection"
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"1 pages missing <title> tag\" resolved after 3 attempts",
+    "details": "Took 49 days from first detection"
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"1 noindex pages listed in sitemap\" resolved after 3 attempts",
+    "details": "Took 49 days from first detection"
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"63 pages appear to be client-side rendered only\" resolved after 4 attempts",
+    "details": "Took 71 days from first detection"
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"1 pages missing canonical URL\" resolved after 5 attempts",
+    "details": "Took 71 days from first detection"
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #48: working on \"63 pages have redirect chains\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #50: working on \"64 pages appear to be client-side rendered only\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #53: working on \"64 pages missing H1 heading\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "error",
+    "icon": "↩",
+    "title": "REGRESSED: \"63 pages have redirect chains\" came back",
+    "details": "Issue was resolved before — now detected again. Bot will retry."
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "error",
+    "icon": "↩",
+    "title": "REGRESSED: \"64 pages appear to be client-side rendered only\" came back",
+    "details": "Issue was resolved before — now detected again. Bot will retry."
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 63 pages have redirect chains",
+    "details": "Long redirect chains waste crawl budget and dilute link equity."
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 64 pages appear to be client-side rendered only",
+    "details": "Convert client-side rendered pages to Server Components"
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 64 pages missing H1 heading",
+    "details": "H1 headings help Google understand the primary topic of each page."
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 64 pages",
+    "details": "Found 3 issues (1 critical, 1 important)"
+  },
+  {
+    "timestamp": "2026-07-26T05:42:29.154Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot scheduled run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-07-26T05:33:53.069Z",
     "type": "fix",
     "icon": "🤖",
@@ -1258,145 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (important): No FAQPage schema detected anywhere",
     "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-07-23T22:57:06.184Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-07-23T22:44:22.838Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-07-23T21:59:04.579Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-07-23T21:59:04.579Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-07-23T21:59:04.579Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-07-23T20:53:45.542Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-07-23T20:53:45.542Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-07-23T20:53:45.542Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-07-23T20:48:49.502Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-07-23T20:31:51.642Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 493ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-07-23T19:01:32.746Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
-    "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
-  },
-  {
-    "timestamp": "2026-07-23T19:01:32.746Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-07-23T19:01:32.746Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): Only 0% of pages have structured data",
-    "details": "AI engines rely heavily on schema.org markup to understand and cite content."
-  },
-  {
-    "timestamp": "2026-07-23T19:01:32.746Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): llms.txt missing or unreachable",
-    "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking."
-  },
-  {
-    "timestamp": "2026-07-23T19:01:32.746Z",
-    "type": "error",
-    "icon": "🤖",
-    "title": "AEO issue (critical): AI crawlers not explicitly allowed in robots.txt",
-    "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data."
-  },
-  {
-    "timestamp": "2026-07-23T19:01:32.746Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 37/100 (F)",
-    "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-07-23T18:56:13.785Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-07-23T17:11:59.616Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-07-23T17:11:59.616Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-07-23T17:11:59.616Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
   }
 ]
