@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-26T13:59:31.187Z",
+    "type": "error",
+    "icon": "🔴",
+    "title": "Heartbeat: 4 check(s) failing",
+    "details": "ERR Homepage · ERR Sitemap · ERR Robots.txt · ERR Dashboard"
+  },
+  {
     "timestamp": "2026-07-26T13:06:50.580Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "✓",
     "title": "Run completed",
     "details": "Total: 64 pages · 3 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-07-24T05:30:24.571Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"63 pages have redirect chains\" needs human attention",
-    "details": "Auto-fix failed after 47 attempts — manual intervention required"
   }
 ]
