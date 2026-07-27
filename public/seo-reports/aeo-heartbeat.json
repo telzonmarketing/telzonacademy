@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-07-27T22:35:33Z",
+  "timestamp": "2026-07-27T23:38:28Z",
   "checks": [
-{"path":"/llms.txt","label":"llms.txt","status":000,"ok":false,"ms":10011}
+{"path":"/llms.txt","label":"llms.txt","status":000,"ok":false,"ms":10010}
 ,
-{"path":"/llms-full.txt","label":"llms-full.txt","status":000,"ok":false,"ms":10011}
+{"path":"/llms-full.txt","label":"llms-full.txt","status":000,"ok":false,"ms":10010}
 ,
 {"path":"/robots.txt","label":"robots.txt","status":000,"ok":false,"ms":10010}
 ,
