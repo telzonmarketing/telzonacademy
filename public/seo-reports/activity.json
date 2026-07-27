@@ -1,5 +1,33 @@
 [
   {
+    "timestamp": "2026-07-27T10:04:13.449Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Tier 1 backlink ready: Apple Maps Connect",
+    "details": "Required for Apple Maps + Siri. Manual phone verification."
+  },
+  {
+    "timestamp": "2026-07-27T10:04:13.449Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Tier 1 backlink ready: Bing Places for Business",
+    "details": "Imports from Google Business. Phone verification."
+  },
+  {
+    "timestamp": "2026-07-27T10:04:13.449Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Tier 1 backlink ready: Google Business Profile",
+    "details": "Biggest local SEO ranking factor. Postcard verification required."
+  },
+  {
+    "timestamp": "2026-07-27T10:04:13.449Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Backlink scan · 0/24 live · 0/5 tier-1 live",
+    "details": "24 pending · 0 submitted · 0 broken"
+  },
+  {
     "timestamp": "2026-07-27T09:01:43.011Z",
     "type": "submit",
     "icon": "⚡",
@@ -1370,33 +1398,5 @@
     "icon": "↩",
     "title": "REGRESSED: \"1 noindex pages listed in sitemap\" came back",
     "details": "Issue was resolved before — now detected again. Bot will retry."
-  },
-  {
-    "timestamp": "2026-07-25T05:23:55.095Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 62 pages have redirect chains",
-    "details": "Long redirect chains waste crawl budget and dilute link equity."
-  },
-  {
-    "timestamp": "2026-07-25T05:23:55.095Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 63 pages appear to be client-side rendered only",
-    "details": "Convert client-side rendered pages to Server Components"
-  },
-  {
-    "timestamp": "2026-07-25T05:23:55.095Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 64 pages missing H1 heading",
-    "details": "H1 headings help Google understand the primary topic of each page."
-  },
-  {
-    "timestamp": "2026-07-25T05:23:55.095Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 pages missing canonical URL",
-    "details": "Add canonical tags to all pages via Next.js metadata"
   }
 ]
