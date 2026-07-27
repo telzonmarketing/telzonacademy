@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-27T11:42:15.532Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 536ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-07-27T10:34:30.418Z",
     "type": "fix",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "error",
     "icon": "↩",
     "title": "REGRESSED: \"63 pages appear to be client-side rendered only\" came back",
-    "details": "Issue was resolved before — now detected again. Bot will retry."
-  },
-  {
-    "timestamp": "2026-07-25T05:23:55.095Z",
-    "type": "error",
-    "icon": "↩",
-    "title": "REGRESSED: \"1 pages missing canonical URL\" came back",
     "details": "Issue was resolved before — now detected again. Bot will retry."
   }
 ]
