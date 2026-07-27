@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-07-26T19:36:40.131Z",
+  "timestamp": "2026-07-27T00:13:49.570Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 9,
-  "passed": 8,
-  "failed": 1,
+  "passed": 9,
+  "failed": 0,
   "criticalFailed": 0,
-  "avgResponseMs": 472,
+  "avgResponseMs": 637,
   "results": [
     {
       "url": "https://telzonacademy.in",
@@ -13,7 +13,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 243
+      "ms": 246
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
@@ -21,7 +21,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 211
+      "ms": 212
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
@@ -29,15 +29,15 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 581
+      "ms": 592
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
       "name": "Dashboard",
       "critical": false,
-      "status": 404,
-      "ok": false,
-      "ms": 210
+      "status": 200,
+      "ok": true,
+      "ms": 335
     },
     {
       "url": "https://telzonacademy.in/",
@@ -45,7 +45,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 240
+      "ms": 231
     },
     {
       "url": "https://telzonacademy.in/blog",
@@ -53,7 +53,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 933
+      "ms": 850
     },
     {
       "url": "https://telzonacademy.in/lead-generation-package",
@@ -61,7 +61,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 936
+      "ms": 1128
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
@@ -69,7 +69,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 446
+      "ms": 954
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
@@ -77,7 +77,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 452
+      "ms": 1184
     }
   ],
   "healthy": true
