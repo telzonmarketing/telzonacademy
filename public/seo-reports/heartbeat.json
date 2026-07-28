@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-07-28T18:48:22.101Z",
+  "timestamp": "2026-07-28T22:18:07.562Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 4,
   "passed": 0,
   "failed": 4,
   "criticalFailed": 3,
-  "avgResponseMs": 505,
+  "avgResponseMs": 504,
   "results": [
     {
       "url": "https://telzonacademy.in",
@@ -13,7 +13,7 @@
       "critical": true,
       "status": 0,
       "ok": false,
-      "ms": 506,
+      "ms": 505,
       "error": ""
     },
     {
@@ -31,7 +31,7 @@
       "critical": true,
       "status": 0,
       "ok": false,
-      "ms": 505,
+      "ms": 504,
       "error": ""
     },
     {
