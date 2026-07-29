@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-29T03:43:36.488Z",
+    "type": "error",
+    "icon": "🔴",
+    "title": "Heartbeat: 4 check(s) failing",
+    "details": "ERR Homepage · ERR Sitemap · ERR Robots.txt · ERR Dashboard"
+  },
+  {
     "timestamp": "2026-07-29T01:51:22.028Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🏆",
     "title": "WON: \"1 noindex pages listed in sitemap\" resolved after 3 attempts",
     "details": "Took 49 days from first detection"
-  },
-  {
-    "timestamp": "2026-07-26T05:42:29.154Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"63 pages appear to be client-side rendered only\" resolved after 4 attempts",
-    "details": "Took 71 days from first detection"
   }
 ]
