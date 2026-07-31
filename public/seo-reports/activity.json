@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-07-31T15:53:25.160Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-07-31T15:30:30.388Z",
     "type": "error",
     "icon": "🔴",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO scan complete · Score 82/100 (B)",
     "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-07-28T13:24:46.185Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
   }
 ]
