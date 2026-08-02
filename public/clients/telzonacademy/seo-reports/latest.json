@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-08-01T05:22:36.322Z",
+  "timestamp": "2026-08-02T05:22:00.002Z",
   "summary": {
     "pagesFound": 65,
-    "issuesFound": 3,
+    "issuesFound": 4,
     "critical": 1,
-    "important": 1,
+    "important": 2,
     "low": 1,
-    "issuesFixed": 3,
+    "issuesFixed": 4,
     "pagesSubmitted": 0,
     "avgPosition": null,
     "totalKeywords": 0
@@ -85,6 +85,23 @@
         "https://telzonacademy.in/pages/whatsapp-marketing-course-in-nagpur"
       ],
       "fix": "ADD_H1_TAGS"
+    },
+    {
+      "type": "SLOW_PAGES",
+      "severity": "important",
+      "title": "2 pages load slowly (>3s)",
+      "description": "Page speed is a Google ranking factor. Slow pages get deprioritised in crawl budget allocation.",
+      "affectedUrls": [
+        {
+          "url": "https://telzonacademy.in/lead-generation-package",
+          "loadTime": 3212
+        },
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
+          "loadTime": 3075
+        }
+      ],
+      "fix": "OPTIMISE_PAGE_SPEED"
     },
     {
       "type": "CLIENT_SIDE_RENDERING",
@@ -503,6 +520,11 @@
       "instruction": "Manual fix required for: MISSING_H1. See audit report for details."
     },
     {
+      "issue": "2 pages load slowly (>3s)",
+      "description": "Page speed is a Google ranking factor. Slow pages get deprioritised in crawl budget allocation.",
+      "instruction": "Manual fix required for: SLOW_PAGES. See audit report for details."
+    },
+    {
       "issue": "65 pages appear to be client-side rendered only",
       "description": "Convert client-side rendered pages to Server Components",
       "code": "// BEFORE — client-side only (Googlebot sees empty page):\n'use client'\nimport { useEffect, useState } from 'react'\nexport default function Page() {\n  const [data, setData] = useState(null)\n  useEffect(() => { fetch('/api/data').then(r => r.json()).then(setData) }, [])\n  if (!data) return <div>Loading...</div>\n  return <div>{data.title}</div>\n}\n\n// AFTER — Server Component (Googlebot sees full content instantly):\n// No 'use client' directive needed\nexport default async function Page() {\n  const data = await fetch('https://api.example.com/data', {\n    next: { revalidate: 3600 }  // ISR: revalidate every hour\n  }).then(r => r.json())\n  return <div>{data.title}</div>\n}"
@@ -544,8 +566,8 @@
     "note": "Notified Bing/Yandex/Naver of 65 URLs"
   },
   "bingSubmissions": {
-    "submitted": 0,
-    "failed": 65
+    "submitted": 35,
+    "failed": 30
   },
   "issueTracker": {
     "issues": {
@@ -571,7 +593,7 @@
         "description": "Long redirect chains waste crawl budget and dilute link equity.",
         "status": "escalated",
         "detectedAt": "2026-06-07T06:19:10.365Z",
-        "lastSeenAt": "2026-08-01T05:22:36.321Z",
+        "lastSeenAt": "2026-08-02T05:21:59.947Z",
         "attempts": [
           {
             "timestamp": "2026-06-08T06:33:37.387Z",
@@ -737,11 +759,16 @@
             "timestamp": "2026-08-01T05:22:36.321Z",
             "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
             "file": null
+          },
+          {
+            "timestamp": "2026-08-02T05:21:59.947Z",
+            "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-06-07T06:19:10.365Z",
-        "escalatedAt": "2026-08-01T05:22:36.321Z",
-        "escalationReason": "Issue persists after 33 auto-fix attempts. Needs human intervention.",
+        "escalatedAt": "2026-08-02T05:21:59.947Z",
+        "escalationReason": "Issue persists after 34 auto-fix attempts. Needs human intervention.",
         "resolvedAt": "2026-07-20T05:36:00.284Z",
         "daysToResolve": 43,
         "regressedAt": "2026-07-22T05:02:55.141Z"
@@ -754,7 +781,7 @@
         "description": "H1 headings help Google understand the primary topic of each page.",
         "status": "escalated",
         "detectedAt": "2026-06-08T06:33:37.387Z",
-        "lastSeenAt": "2026-08-01T05:22:36.321Z",
+        "lastSeenAt": "2026-08-02T05:21:59.947Z",
         "attempts": [
           {
             "timestamp": "2026-06-08T06:33:37.387Z",
@@ -940,11 +967,16 @@
             "timestamp": "2026-08-01T05:22:36.321Z",
             "strategy": "H1 headings help Google understand the primary topic of each page.",
             "file": null
+          },
+          {
+            "timestamp": "2026-08-02T05:21:59.947Z",
+            "strategy": "H1 headings help Google understand the primary topic of each page.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-06-08T06:33:37.387Z",
-        "escalatedAt": "2026-08-01T05:22:36.321Z",
-        "escalationReason": "Issue persists after 37 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-08-02T05:21:59.947Z",
+        "escalationReason": "Issue persists after 38 auto-fix attempts. Needs human intervention."
       },
       "43c9065c7998": {
         "id": "43c9065c7998",
@@ -954,7 +986,7 @@
         "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
         "status": "escalated",
         "detectedAt": "2026-06-08T06:33:37.387Z",
-        "lastSeenAt": "2026-08-01T05:22:36.321Z",
+        "lastSeenAt": "2026-08-02T05:21:59.947Z",
         "attempts": [
           {
             "timestamp": "2026-06-08T06:33:37.387Z",
@@ -1120,11 +1152,16 @@
             "timestamp": "2026-08-01T05:22:36.321Z",
             "strategy": "Convert client-side rendered pages to Server Components",
             "file": null
+          },
+          {
+            "timestamp": "2026-08-02T05:21:59.947Z",
+            "strategy": "Convert client-side rendered pages to Server Components",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-06-08T06:33:37.387Z",
-        "escalatedAt": "2026-08-01T05:22:36.321Z",
-        "escalationReason": "Issue persists after 33 auto-fix attempts. Needs human intervention.",
+        "escalatedAt": "2026-08-02T05:21:59.947Z",
+        "escalationReason": "Issue persists after 34 auto-fix attempts. Needs human intervention.",
         "resolvedAt": "2026-07-20T05:36:00.284Z",
         "daysToResolve": 42,
         "regressedAt": "2026-07-22T05:02:55.141Z"
@@ -1166,19 +1203,25 @@
         "severity": "important",
         "title": "2 pages load slowly (>3s)",
         "description": "Page speed is a Google ranking factor. Slow pages get deprioritised in crawl budget allocation.",
-        "status": "resolved",
+        "status": "fixing",
         "detectedAt": "2026-06-23T06:04:56.789Z",
-        "lastSeenAt": "2026-06-23T06:04:56.789Z",
+        "lastSeenAt": "2026-08-02T05:21:59.947Z",
         "attempts": [
           {
             "timestamp": "2026-06-23T06:04:56.789Z",
+            "strategy": "Page speed is a Google ranking factor. Slow pages get deprioritised in crawl budget allocation.",
+            "file": null
+          },
+          {
+            "timestamp": "2026-08-02T05:21:59.947Z",
             "strategy": "Page speed is a Google ranking factor. Slow pages get deprioritised in crawl budget allocation.",
             "file": null
           }
         ],
         "firstSeenRun": "2026-06-23T06:04:56.789Z",
         "resolvedAt": "2026-06-24T06:03:39.212Z",
-        "daysToResolve": 1
+        "daysToResolve": 1,
+        "regressedAt": "2026-08-02T05:21:59.947Z"
       },
       "d5491555b37b": {
         "id": "d5491555b37b",
@@ -1683,51 +1726,93 @@
     },
     "stats": {
       "open": 0,
-      "fixing": 0,
-      "resolved": 28,
+      "fixing": 1,
+      "resolved": 27,
       "escalated": 3,
       "regressed": 0
     },
-    "lastReconciled": "2026-08-01T05:22:36.321Z"
+    "lastReconciled": "2026-08-02T05:21:59.947Z"
   },
   "issueActions": [
     {
+      "id": "0316ce4e5f6d",
+      "type": "regressed",
+      "title": "2 pages load slowly (>3s)"
+    },
+    {
       "id": "91972ff13dbe",
       "type": "fix-attempted",
       "title": "65 pages missing H1 heading",
-      "attempt": 37
+      "attempt": 38
+    },
+    {
+      "id": "0316ce4e5f6d",
+      "type": "fix-attempted",
+      "title": "2 pages load slowly (>3s)",
+      "attempt": 2
     },
     {
       "id": "43c9065c7998",
       "type": "fix-attempted",
       "title": "65 pages appear to be client-side rendered only",
-      "attempt": 33
+      "attempt": 34
     },
     {
       "id": "622b6d80b02a",
       "type": "fix-attempted",
       "title": "64 pages have redirect chains",
-      "attempt": 33
+      "attempt": 34
     },
     {
       "id": "622b6d80b02a",
       "type": "escalated",
       "title": "64 pages have redirect chains",
-      "attempts": 33
+      "attempts": 34
     },
     {
       "id": "91972ff13dbe",
       "type": "escalated",
       "title": "65 pages missing H1 heading",
-      "attempts": 37
+      "attempts": 38
     },
     {
       "id": "43c9065c7998",
       "type": "escalated",
       "title": "65 pages appear to be client-side rendered only",
-      "attempts": 33
+      "attempts": 34
     }
   ],
-  "solverEnrichments": [],
+  "solverEnrichments": [
+    {
+      "issueId": "0316ce4e5f6d",
+      "title": "2 pages load slowly (>3s)",
+      "result": {
+        "solved": false,
+        "diagnosis": {
+          "performanceScore": null,
+          "opportunities": [],
+          "summary": "PageSpeed score ?/100. 0 concrete improvements identified."
+        },
+        "attempts": [
+          {
+            "solver": "PageSpeed Insights",
+            "solved": false,
+            "diagnosis": {
+              "performanceScore": null,
+              "opportunities": [],
+              "summary": "PageSpeed score ?/100. 0 concrete improvements identified."
+            },
+            "enrichment": {
+              "pageSpeed": {
+                "performanceScore": null,
+                "opportunities": [],
+                "summary": "PageSpeed score ?/100. 0 concrete improvements identified."
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
   "errors": []
 }

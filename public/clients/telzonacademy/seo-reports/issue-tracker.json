@@ -22,7 +22,7 @@
       "description": "Long redirect chains waste crawl budget and dilute link equity.",
       "status": "escalated",
       "detectedAt": "2026-06-07T06:19:10.365Z",
-      "lastSeenAt": "2026-08-01T05:22:36.321Z",
+      "lastSeenAt": "2026-08-02T05:21:59.947Z",
       "attempts": [
         {
           "timestamp": "2026-06-08T06:33:37.387Z",
@@ -188,11 +188,16 @@
           "timestamp": "2026-08-01T05:22:36.321Z",
           "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
           "file": null
+        },
+        {
+          "timestamp": "2026-08-02T05:21:59.947Z",
+          "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-06-07T06:19:10.365Z",
-      "escalatedAt": "2026-08-01T05:22:36.321Z",
-      "escalationReason": "Issue persists after 33 auto-fix attempts. Needs human intervention.",
+      "escalatedAt": "2026-08-02T05:21:59.947Z",
+      "escalationReason": "Issue persists after 34 auto-fix attempts. Needs human intervention.",
       "resolvedAt": "2026-07-20T05:36:00.284Z",
       "daysToResolve": 43,
       "regressedAt": "2026-07-22T05:02:55.141Z"
@@ -205,7 +210,7 @@
       "description": "H1 headings help Google understand the primary topic of each page.",
       "status": "escalated",
       "detectedAt": "2026-06-08T06:33:37.387Z",
-      "lastSeenAt": "2026-08-01T05:22:36.321Z",
+      "lastSeenAt": "2026-08-02T05:21:59.947Z",
       "attempts": [
         {
           "timestamp": "2026-06-08T06:33:37.387Z",
@@ -391,11 +396,16 @@
           "timestamp": "2026-08-01T05:22:36.321Z",
           "strategy": "H1 headings help Google understand the primary topic of each page.",
           "file": null
+        },
+        {
+          "timestamp": "2026-08-02T05:21:59.947Z",
+          "strategy": "H1 headings help Google understand the primary topic of each page.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-06-08T06:33:37.387Z",
-      "escalatedAt": "2026-08-01T05:22:36.321Z",
-      "escalationReason": "Issue persists after 37 auto-fix attempts. Needs human intervention."
+      "escalatedAt": "2026-08-02T05:21:59.947Z",
+      "escalationReason": "Issue persists after 38 auto-fix attempts. Needs human intervention."
     },
     "43c9065c7998": {
       "id": "43c9065c7998",
@@ -405,7 +415,7 @@
       "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
       "status": "escalated",
       "detectedAt": "2026-06-08T06:33:37.387Z",
-      "lastSeenAt": "2026-08-01T05:22:36.321Z",
+      "lastSeenAt": "2026-08-02T05:21:59.947Z",
       "attempts": [
         {
           "timestamp": "2026-06-08T06:33:37.387Z",
@@ -571,11 +581,16 @@
           "timestamp": "2026-08-01T05:22:36.321Z",
           "strategy": "Convert client-side rendered pages to Server Components",
           "file": null
+        },
+        {
+          "timestamp": "2026-08-02T05:21:59.947Z",
+          "strategy": "Convert client-side rendered pages to Server Components",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-06-08T06:33:37.387Z",
-      "escalatedAt": "2026-08-01T05:22:36.321Z",
-      "escalationReason": "Issue persists after 33 auto-fix attempts. Needs human intervention.",
+      "escalatedAt": "2026-08-02T05:21:59.947Z",
+      "escalationReason": "Issue persists after 34 auto-fix attempts. Needs human intervention.",
       "resolvedAt": "2026-07-20T05:36:00.284Z",
       "daysToResolve": 42,
       "regressedAt": "2026-07-22T05:02:55.141Z"
@@ -617,19 +632,25 @@
       "severity": "important",
       "title": "2 pages load slowly (>3s)",
       "description": "Page speed is a Google ranking factor. Slow pages get deprioritised in crawl budget allocation.",
-      "status": "resolved",
+      "status": "fixing",
       "detectedAt": "2026-06-23T06:04:56.789Z",
-      "lastSeenAt": "2026-06-23T06:04:56.789Z",
+      "lastSeenAt": "2026-08-02T05:21:59.947Z",
       "attempts": [
         {
           "timestamp": "2026-06-23T06:04:56.789Z",
+          "strategy": "Page speed is a Google ranking factor. Slow pages get deprioritised in crawl budget allocation.",
+          "file": null
+        },
+        {
+          "timestamp": "2026-08-02T05:21:59.947Z",
           "strategy": "Page speed is a Google ranking factor. Slow pages get deprioritised in crawl budget allocation.",
           "file": null
         }
       ],
       "firstSeenRun": "2026-06-23T06:04:56.789Z",
       "resolvedAt": "2026-06-24T06:03:39.212Z",
-      "daysToResolve": 1
+      "daysToResolve": 1,
+      "regressedAt": "2026-08-02T05:21:59.947Z"
     },
     "d5491555b37b": {
       "id": "d5491555b37b",
@@ -1134,10 +1155,10 @@
   },
   "stats": {
     "open": 0,
-    "fixing": 0,
-    "resolved": 28,
+    "fixing": 1,
+    "resolved": 27,
     "escalated": 3,
     "regressed": 0
   },
-  "lastReconciled": "2026-08-01T05:22:36.321Z"
+  "lastReconciled": "2026-08-02T05:21:59.947Z"
 }
