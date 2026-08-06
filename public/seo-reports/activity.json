@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-08-06T11:55:16.478Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-08-06T10:31:10.266Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔗",
     "title": "Backlink scan · 0/24 live · 0/5 tier-1 live",
     "details": "24 pending · 0 submitted · 0 broken"
-  },
-  {
-    "timestamp": "2026-08-03T08:56:10.199Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
   }
 ]
