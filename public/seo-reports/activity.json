@@ -1,5 +1,47 @@
 [
   {
+    "timestamp": "2026-08-08T04:06:32.496Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
+    "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
+  },
+  {
+    "timestamp": "2026-08-08T04:06:32.496Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-08-08T04:06:32.496Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): Only 0% of pages have structured data",
+    "details": "AI engines rely heavily on schema.org markup to understand and cite content."
+  },
+  {
+    "timestamp": "2026-08-08T04:06:32.496Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): llms.txt missing or unreachable",
+    "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking."
+  },
+  {
+    "timestamp": "2026-08-08T04:06:32.496Z",
+    "type": "error",
+    "icon": "🤖",
+    "title": "AEO issue (critical): AI crawlers not explicitly allowed in robots.txt",
+    "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data."
+  },
+  {
+    "timestamp": "2026-08-08T04:06:32.496Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 37/100 (F)",
+    "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-08-08T03:42:34.171Z",
     "type": "done",
     "icon": "✓",
@@ -1356,47 +1398,5 @@
     "icon": "🤖",
     "title": "AEO scan complete · Score 82/100 (B)",
     "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-08-05T08:11:40.030Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-08-05T06:43:38.784Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 660ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-08-05T05:24:05.476Z",
-    "type": "done",
-    "icon": "✓",
-    "title": "Run completed",
-    "details": "Total: 64 pages · 3 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-08-05T05:24:05.364Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"63 pages have redirect chains\" needs human attention",
-    "details": "Auto-fix failed after 58 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-08-05T05:24:05.364Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"64 pages appear to be client-side rendered only\" needs human attention",
-    "details": "Auto-fix failed after 60 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-08-05T05:24:05.364Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"64 pages missing H1 heading\" needs human attention",
-    "details": "Auto-fix failed after 63 attempts — manual intervention required"
   }
 ]
