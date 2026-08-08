@@ -1,84 +1,48 @@
 {
-  "timestamp": "2026-08-08T19:00:40.497Z",
+  "timestamp": "2026-08-08T20:50:42.640Z",
   "siteUrl": "https://telzonacademy.in",
-  "totalChecks": 9,
-  "passed": 9,
-  "failed": 0,
-  "criticalFailed": 0,
-  "avgResponseMs": 619,
+  "totalChecks": 4,
+  "passed": 0,
+  "failed": 4,
+  "criticalFailed": 3,
+  "avgResponseMs": 504,
   "results": [
     {
       "url": "https://telzonacademy.in",
       "name": "Homepage",
       "critical": true,
-      "status": 200,
-      "ok": true,
-      "ms": 347
+      "status": 0,
+      "ok": false,
+      "ms": 505,
+      "error": "connect ETIMEDOUT 2.57.91.110:443; connect ENETUNREACH 2a02:4780:84:3f20:9ace:a7dc:1696:5a66:443 - Local (:::0); connect ETIMEDOUT 84.32.84.80:443; connect ENETUNREACH 2a02:4780:84:73a8:c03c:ae5f:b9d3:bf92:443 - Local (:::0)"
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
       "name": "Sitemap",
       "critical": true,
-      "status": 200,
-      "ok": true,
-      "ms": 316
+      "status": 0,
+      "ok": false,
+      "ms": 504,
+      "error": "connect ETIMEDOUT 2.57.91.110:443; connect ENETUNREACH 2a02:4780:84:3f20:9ace:a7dc:1696:5a66:443 - Local (:::0); connect ETIMEDOUT 84.32.84.80:443; connect ENETUNREACH 2a02:4780:84:73a8:c03c:ae5f:b9d3:bf92:443 - Local (:::0)"
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
       "name": "Robots.txt",
       "critical": true,
-      "status": 200,
-      "ok": true,
-      "ms": 485
+      "status": 0,
+      "ok": false,
+      "ms": 504,
+      "error": "connect ETIMEDOUT 2.57.91.110:443; connect ENETUNREACH 2a02:4780:84:3f20:9ace:a7dc:1696:5a66:443 - Local (:::0); connect ETIMEDOUT 84.32.84.80:443; connect ENETUNREACH 2a02:4780:84:73a8:c03c:ae5f:b9d3:bf92:443 - Local (:::0)"
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
       "name": "Dashboard",
       "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 482
-    },
-    {
-      "url": "https://telzonacademy.in/",
-      "name": "/",
-      "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 352
-    },
-    {
-      "url": "https://telzonacademy.in/blog",
-      "name": "/blog",
-      "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 934
-    },
-    {
-      "url": "https://telzonacademy.in/lead-generation-package",
-      "name": "/lead-generation-package",
-      "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 850
-    },
-    {
-      "url": "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
-      "name": "/pages/digital-marketing-course-in-nagpur",
-      "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 857
-    },
-    {
-      "url": "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
-      "name": "/pages/digital-marketing-institute-in-nagpur",
-      "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 944
+      "status": 0,
+      "ok": false,
+      "ms": 504,
+      "error": "connect ETIMEDOUT 84.32.84.80:443; connect ENETUNREACH 2a02:4780:84:3f20:9ace:a7dc:1696:5a66:443 - Local (:::0); connect ETIMEDOUT 2.57.91.110:443; connect ENETUNREACH 2a02:4780:84:73a8:c03c:ae5f:b9d3:bf92:443 - Local (:::0)"
     }
   ],
-  "healthy": true
+  "healthy": false
 }
