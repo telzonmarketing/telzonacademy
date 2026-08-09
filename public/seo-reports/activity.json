@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-08-09T23:48:32.083Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 584ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-08-09T23:23:25.610Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (important): Only 0% of pages have structured data",
     "details": "AI engines rely heavily on schema.org markup to understand and cite content."
-  },
-  {
-    "timestamp": "2026-08-08T07:41:25.383Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): llms.txt missing or unreachable",
-    "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking."
   }
 ]
