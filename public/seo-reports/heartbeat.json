@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-08-08T23:46:59.843Z",
+  "timestamp": "2026-08-09T04:38:55.201Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 9,
-  "passed": 9,
-  "failed": 0,
+  "passed": 7,
+  "failed": 2,
   "criticalFailed": 0,
-  "avgResponseMs": 503,
+  "avgResponseMs": 2483,
   "results": [
     {
       "url": "https://telzonacademy.in",
@@ -13,7 +13,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 331
+      "ms": 239
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
@@ -21,7 +21,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 288
+      "ms": 232
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
@@ -29,7 +29,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 810
+      "ms": 241
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
@@ -37,7 +37,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 442
+      "ms": 262
     },
     {
       "url": "https://telzonacademy.in/",
@@ -45,15 +45,16 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 321
+      "ms": 238
     },
     {
       "url": "https://telzonacademy.in/blog",
       "name": "/blog",
       "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 647
+      "status": 0,
+      "ok": false,
+      "ms": 10004,
+      "error": "timeout of 10000ms exceeded"
     },
     {
       "url": "https://telzonacademy.in/lead-generation-package",
@@ -61,7 +62,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 661
+      "ms": 600
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
@@ -69,15 +70,16 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 625
+      "ms": 528
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
       "name": "/pages/digital-marketing-institute-in-nagpur",
       "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 400
+      "status": 0,
+      "ok": false,
+      "ms": 10002,
+      "error": "timeout of 10000ms exceeded"
     }
   ],
   "healthy": true
