@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-08-09T21:49:44.878Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 366ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-08-09T21:23:40.432Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "💚",
     "title": "Heartbeat: site healthy (9/9 checks · 563ms avg)",
     "details": ""
-  },
-  {
-    "timestamp": "2026-08-08T05:35:59.271Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
-    "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
   }
 ]
