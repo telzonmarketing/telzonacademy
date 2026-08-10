@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-08-10T00:42:45.118Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-08-09T23:48:32.083Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (important): No FAQPage schema detected anywhere",
     "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-08-08T07:41:25.383Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): Only 0% of pages have structured data",
-    "details": "AI engines rely heavily on schema.org markup to understand and cite content."
   }
 ]
