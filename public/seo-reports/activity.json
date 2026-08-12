@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-08-12T02:46:57.749Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 505ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-08-12T01:12:57.356Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔴",
     "title": "Heartbeat: 4 check(s) failing",
     "details": "ERR Homepage · ERR Sitemap · ERR Robots.txt · ERR Dashboard"
-  },
-  {
-    "timestamp": "2026-08-09T22:22:03.110Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
   }
 ]
