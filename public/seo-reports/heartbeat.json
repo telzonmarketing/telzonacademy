@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-13T15:17:02.369Z",
+  "timestamp": "2026-08-13T18:12:07.416Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 4,
   "passed": 0,
@@ -13,8 +13,8 @@
       "critical": true,
       "status": 0,
       "ok": false,
-      "ms": 505,
-      "error": "connect ETIMEDOUT 84.32.84.77:443; connect ENETUNREACH 2a02:4780:84:9596:b99d:7162:2778:587b:443 - Local (:::0); connect ETIMEDOUT 2.57.91.86:443; connect ENETUNREACH 2a02:4780:84:8ac9:d6d7:9594:7b9a:c20c:443 - Local (:::0)"
+      "ms": 506,
+      "error": "connect ETIMEDOUT 148.135.128.135:443; connect ENETUNREACH 2a02:4780:4e:68c6:9412:1d7c:a0f:a05f:443 - Local (:::0); connect ETIMEDOUT 92.112.198.94:443; connect ENETUNREACH 2a02:4780:4f:c5f8:73fa:e3a8:5f3f:b6f0:443 - Local (:::0)"
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
@@ -22,8 +22,8 @@
       "critical": true,
       "status": 0,
       "ok": false,
-      "ms": 506,
-      "error": "connect ETIMEDOUT 2.57.91.86:443; connect ENETUNREACH 2a02:4780:84:9596:b99d:7162:2778:587b:443 - Local (:::0); connect ETIMEDOUT 84.32.84.77:443; connect ENETUNREACH 2a02:4780:84:8ac9:d6d7:9594:7b9a:c20c:443 - Local (:::0)"
+      "ms": 504,
+      "error": "connect ETIMEDOUT 92.112.198.94:443; connect ENETUNREACH 2a02:4780:4f:c5f8:73fa:e3a8:5f3f:b6f0:443 - Local (:::0); connect ETIMEDOUT 148.135.128.135:443; connect ENETUNREACH 2a02:4780:4e:68c6:9412:1d7c:a0f:a05f:443 - Local (:::0)"
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
@@ -31,8 +31,8 @@
       "critical": true,
       "status": 0,
       "ok": false,
-      "ms": 504,
-      "error": "connect ETIMEDOUT 2.57.91.86:443; connect ENETUNREACH 2a02:4780:84:8ac9:d6d7:9594:7b9a:c20c:443 - Local (:::0); connect ETIMEDOUT 84.32.84.77:443; connect ENETUNREACH 2a02:4780:84:9596:b99d:7162:2778:587b:443 - Local (:::0)"
+      "ms": 505,
+      "error": "connect ETIMEDOUT 92.112.198.94:443; connect ENETUNREACH 2a02:4780:4e:68c6:9412:1d7c:a0f:a05f:443 - Local (:::0); connect ETIMEDOUT 148.135.128.135:443; connect ENETUNREACH 2a02:4780:4f:c5f8:73fa:e3a8:5f3f:b6f0:443 - Local (:::0)"
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
@@ -41,7 +41,7 @@
       "status": 0,
       "ok": false,
       "ms": 505,
-      "error": "connect ETIMEDOUT 2.57.91.86:443; connect ENETUNREACH 2a02:4780:84:8ac9:d6d7:9594:7b9a:c20c:443 - Local (:::0); connect ETIMEDOUT 84.32.84.77:443; connect ENETUNREACH 2a02:4780:84:9596:b99d:7162:2778:587b:443 - Local (:::0)"
+      "error": "connect ETIMEDOUT 92.112.198.94:443; connect ENETUNREACH 2a02:4780:4e:68c6:9412:1d7c:a0f:a05f:443 - Local (:::0); connect ETIMEDOUT 148.135.128.135:443; connect ENETUNREACH 2a02:4780:4f:c5f8:73fa:e3a8:5f3f:b6f0:443 - Local (:::0)"
     }
   ],
   "healthy": false
