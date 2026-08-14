@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-08-14T05:05:55.232Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 624ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-08-14T04:17:41.092Z",
     "type": "done",
     "icon": "✓",
@@ -1391,12 +1398,5 @@
     "icon": "🔁",
     "title": "Attempt #70: working on \"64 pages missing H1 heading\"",
     "details": ""
-  },
-  {
-    "timestamp": "2026-08-12T04:16:48.681Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 63 pages have redirect chains",
-    "details": "Long redirect chains waste crawl budget and dilute link equity."
   }
 ]
