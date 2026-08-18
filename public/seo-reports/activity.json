@@ -1,5 +1,47 @@
 [
   {
+    "timestamp": "2026-08-18T21:15:02.129Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): No Organization/EducationalOrganization schema found",
+    "details": "AI engines weight cited sources by E-E-A-T. Organization schema confirms legitimacy."
+  },
+  {
+    "timestamp": "2026-08-18T21:15:02.129Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-08-18T21:15:02.129Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): Only 0% of pages have structured data",
+    "details": "AI engines rely heavily on schema.org markup to understand and cite content."
+  },
+  {
+    "timestamp": "2026-08-18T21:15:02.129Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): llms.txt missing or unreachable",
+    "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking."
+  },
+  {
+    "timestamp": "2026-08-18T21:15:02.129Z",
+    "type": "error",
+    "icon": "🤖",
+    "title": "AEO issue (critical): AI crawlers not explicitly allowed in robots.txt",
+    "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data."
+  },
+  {
+    "timestamp": "2026-08-18T21:15:02.129Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 37/100 (F)",
+    "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-08-18T20:14:36.059Z",
     "type": "fix",
     "icon": "🤖",
@@ -1356,47 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"64 pages appear to be client-side rendered only\" needs human attention",
     "details": "Auto-fix failed after 72 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-08-17T03:09:24.971Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"64 pages missing H1 heading\" needs human attention",
-    "details": "Auto-fix failed after 75 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-08-17T03:09:24.971Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #70: working on \"63 pages have redirect chains\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-08-17T03:09:24.971Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #72: working on \"64 pages appear to be client-side rendered only\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-08-17T03:09:24.971Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #75: working on \"64 pages missing H1 heading\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-08-17T03:09:24.971Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 63 pages have redirect chains",
-    "details": "Long redirect chains waste crawl budget and dilute link equity."
-  },
-  {
-    "timestamp": "2026-08-17T03:09:24.971Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 64 pages appear to be client-side rendered only",
-    "details": "Convert client-side rendered pages to Server Components"
   }
 ]
