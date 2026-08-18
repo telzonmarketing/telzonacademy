@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-08-18T21:40:56.821Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 449ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-08-18T21:15:02.129Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"63 pages have redirect chains\" needs human attention",
     "details": "Auto-fix failed after 70 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-08-17T03:09:24.971Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"64 pages appear to be client-side rendered only\" needs human attention",
-    "details": "Auto-fix failed after 72 attempts — manual intervention required"
   }
 ]
