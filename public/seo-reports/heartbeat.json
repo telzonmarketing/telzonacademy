@@ -1,19 +1,20 @@
 {
-  "timestamp": "2026-08-18T04:54:11.274Z",
+  "timestamp": "2026-08-18T07:06:40.218Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 9,
-  "passed": 9,
-  "failed": 0,
-  "criticalFailed": 0,
-  "avgResponseMs": 395,
+  "passed": 8,
+  "failed": 1,
+  "criticalFailed": 1,
+  "avgResponseMs": 1471,
   "results": [
     {
       "url": "https://telzonacademy.in",
       "name": "Homepage",
       "critical": true,
-      "status": 200,
-      "ok": true,
-      "ms": 228
+      "status": 0,
+      "ok": false,
+      "ms": 10004,
+      "error": "timeout of 10000ms exceeded"
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
@@ -21,7 +22,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 271
+      "ms": 238
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
@@ -29,7 +30,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 565
+      "ms": 14
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
@@ -37,7 +38,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 242
+      "ms": 222
     },
     {
       "url": "https://telzonacademy.in/",
@@ -45,7 +46,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 207
+      "ms": 242
     },
     {
       "url": "https://telzonacademy.in/blog",
@@ -53,7 +54,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 458
+      "ms": 744
     },
     {
       "url": "https://telzonacademy.in/lead-generation-package",
@@ -61,7 +62,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 694
+      "ms": 680
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
@@ -69,7 +70,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 446
+      "ms": 464
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
@@ -77,8 +78,8 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 447
+      "ms": 633
     }
   ],
-  "healthy": true
+  "healthy": false
 }
