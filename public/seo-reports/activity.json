@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-08-20T22:47:02.603Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 516ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-08-20T22:18:49.316Z",
     "type": "fix",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #74: working on \"64 pages appear to be client-side rendered only\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-08-19T03:08:12.675Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #77: working on \"64 pages missing H1 heading\"",
     "details": ""
   }
 ]
