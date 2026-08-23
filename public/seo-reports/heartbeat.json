@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-08-23T11:38:09.152Z",
+  "timestamp": "2026-08-23T13:47:18.027Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 9,
   "passed": 9,
   "failed": 0,
   "criticalFailed": 0,
-  "avgResponseMs": 586,
+  "avgResponseMs": 348,
   "results": [
     {
       "url": "https://telzonacademy.in",
@@ -13,7 +13,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 337
+      "ms": 265
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
@@ -21,7 +21,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 289
+      "ms": 265
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
@@ -29,7 +29,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 772
+      "ms": 266
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
@@ -37,7 +37,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 446
+      "ms": 272
     },
     {
       "url": "https://telzonacademy.in/",
@@ -45,7 +45,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 322
+      "ms": 268
     },
     {
       "url": "https://telzonacademy.in/blog",
@@ -53,7 +53,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 655
+      "ms": 319
     },
     {
       "url": "https://telzonacademy.in/lead-generation-package",
@@ -61,7 +61,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 1131
+      "ms": 326
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
@@ -69,7 +69,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 409
+      "ms": 567
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
@@ -77,7 +77,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 914
+      "ms": 582
     }
   ],
   "healthy": true
