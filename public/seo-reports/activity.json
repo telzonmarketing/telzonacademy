@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-08-28T05:26:46.484Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 326ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-08-28T01:49:55.391Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "💚",
     "title": "Heartbeat: site healthy (9/9 checks · 498ms avg)",
     "details": ""
-  },
-  {
-    "timestamp": "2026-08-25T03:09:26.926Z",
-    "type": "done",
-    "icon": "✓",
-    "title": "Run completed",
-    "details": "Total: 64 pages · 3 fixes · 0 submitted"
   }
 ]
