@@ -1,44 +1,48 @@
 {
-  "timestamp": "2026-08-29T02:14:21.312Z",
+  "timestamp": "2026-08-29T09:09:30.743Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 4,
-  "passed": 4,
-  "failed": 0,
-  "criticalFailed": 0,
-  "avgResponseMs": 531,
+  "passed": 0,
+  "failed": 4,
+  "criticalFailed": 3,
+  "avgResponseMs": 504,
   "results": [
     {
       "url": "https://telzonacademy.in",
       "name": "Homepage",
       "critical": true,
-      "status": 200,
-      "ok": true,
-      "ms": 1066
+      "status": 0,
+      "ok": false,
+      "ms": 505,
+      "error": "connect ETIMEDOUT 77.37.76.103:443; connect ENETUNREACH 2a02:4780:4f:bcb0:d2d9:6f2a:eb0d:a04:443 - Local (:::0); connect ETIMEDOUT 148.135.128.57:443; connect ENETUNREACH 2a02:4780:50:c97b:8e6d:29cc:4da9:9a04:443 - Local (:::0)"
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
       "name": "Sitemap",
       "critical": true,
-      "status": 200,
-      "ok": true,
-      "ms": 297
+      "status": 0,
+      "ok": false,
+      "ms": 504,
+      "error": "connect ETIMEDOUT 148.135.128.57:443; connect ENETUNREACH 2a02:4780:50:c97b:8e6d:29cc:4da9:9a04:443 - Local (:::0); connect ETIMEDOUT 77.37.76.103:443; connect ENETUNREACH 2a02:4780:4f:bcb0:d2d9:6f2a:eb0d:a04:443 - Local (:::0)"
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
       "name": "Robots.txt",
       "critical": true,
-      "status": 200,
-      "ok": true,
-      "ms": 300
+      "status": 0,
+      "ok": false,
+      "ms": 504,
+      "error": "connect ETIMEDOUT 77.37.76.103:443; connect ENETUNREACH 2a02:4780:50:c97b:8e6d:29cc:4da9:9a04:443 - Local (:::0); connect ETIMEDOUT 148.135.128.57:443; connect ENETUNREACH 2a02:4780:4f:bcb0:d2d9:6f2a:eb0d:a04:443 - Local (:::0)"
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
       "name": "Dashboard",
       "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 461
+      "status": 0,
+      "ok": false,
+      "ms": 504,
+      "error": "connect ETIMEDOUT 148.135.128.57:443; connect ENETUNREACH 2a02:4780:50:c97b:8e6d:29cc:4da9:9a04:443 - Local (:::0); connect ETIMEDOUT 77.37.76.103:443; connect ENETUNREACH 2a02:4780:4f:bcb0:d2d9:6f2a:eb0d:a04:443 - Local (:::0)"
     }
   ],
-  "healthy": true
+  "healthy": false
 }
