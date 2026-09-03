@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-09-03T05:51:39.791Z",
+    "type": "error",
+    "icon": "🔴",
+    "title": "Heartbeat: 4 check(s) failing",
+    "details": "ERR Homepage · ERR Sitemap · ERR Robots.txt · ERR Dashboard"
+  },
+  {
     "timestamp": "2026-09-03T02:17:33.464Z",
     "type": "fix",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #84: working on \"64 pages appear to be client-side rendered only\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-08-29T08:58:35.497Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #87: working on \"64 pages missing H1 heading\"",
     "details": ""
   }
 ]
