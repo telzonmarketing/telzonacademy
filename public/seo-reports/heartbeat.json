@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-09-11T16:32:02.196Z",
+  "timestamp": "2026-09-11T19:45:43.089Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 9,
-  "passed": 9,
-  "failed": 0,
-  "criticalFailed": 0,
-  "avgResponseMs": 380,
+  "passed": 8,
+  "failed": 1,
+  "criticalFailed": 1,
+  "avgResponseMs": 750,
   "results": [
     {
       "url": "https://telzonacademy.in",
@@ -13,7 +13,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 271
+      "ms": 256
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
@@ -21,15 +21,15 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 266
+      "ms": 749
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
       "name": "Robots.txt",
       "critical": true,
-      "status": 200,
-      "ok": true,
-      "ms": 21
+      "status": 404,
+      "ok": false,
+      "ms": 747
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
@@ -37,7 +37,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 281
+      "ms": 949
     },
     {
       "url": "https://telzonacademy.in/",
@@ -45,7 +45,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 255
+      "ms": 269
     },
     {
       "url": "https://telzonacademy.in/blog",
@@ -53,7 +53,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 333
+      "ms": 1062
     },
     {
       "url": "https://telzonacademy.in/lead-generation-package",
@@ -61,7 +61,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 574
+      "ms": 1120
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
@@ -69,7 +69,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 326
+      "ms": 1051
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
@@ -77,8 +77,8 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 1096
+      "ms": 547
     }
   ],
-  "healthy": true
+  "healthy": false
 }
