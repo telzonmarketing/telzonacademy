@@ -141,15 +141,60 @@ function landingPageContent(page) {
       <li>
         <strong>${escapeHtml(m.week)} — ${escapeHtml(m.topic)}:</strong>
         ${escapeHtml(m.items.join(', '))}.
+        <span>This module gives ${escapeHtml(keywordShort)} students hands-on practice with the tools and workflows used by digital marketers in Nagpur agencies and D2C brands, so you walk out with portfolio-ready work — not just notes.</span>
       </li>`).join('');
 
   const areasHtml = NAGPUR_AREAS.map(a => `<li>${escapeHtml(keywordShort)} — ${escapeHtml(a)}, Nagpur</li>`).join('\n        ');
+
+  // ── Q-006 (Action A) ── Conditional GEO blocks that mirror what
+  // LandingPage.jsx renders in React. Non-JS crawlers now see the same
+  // factual content that JS-executing crawlers already saw.
+  const directAnswerHtml = page.directAnswer ? `
+    <section>
+      <h2>Quick answer — ${escapeHtml(keywordShort)}</h2>
+      <p><strong>${escapeHtml(page.directAnswer)}</strong></p>
+    </section>` : '';
+
+  const courseFactsHtml = page.courseFacts ? `
+    <section>
+      <h2>Course facts — ${escapeHtml(keywordShort)}</h2>
+      <dl>
+        <dt>Duration</dt><dd>${escapeHtml(page.courseFacts.duration || '')}</dd>
+        <dt>Course fees</dt><dd>${escapeHtml(page.courseFacts.fees || '')}</dd>
+        <dt>Mode</dt><dd>${escapeHtml(page.courseFacts.mode || '')}</dd>
+        <dt>Next intake</dt><dd>${escapeHtml(page.courseFacts.nextIntake || '')}</dd>
+        <dt>Batches available</dt><dd>${escapeHtml((page.courseFacts.batches || []).join(', '))}</dd>
+        <dt>Certifications included</dt><dd>${escapeHtml((page.courseFacts.certifications || []).join(', '))}</dd>
+      </dl>
+    </section>` : '';
+
+  const careerOutcomesHtml = page.careerOutcomes ? `
+    <section>
+      <h2>Career outcomes — ${escapeHtml(keywordShort)}</h2>
+      <dl>
+        <dt>Placement rate</dt><dd>${escapeHtml(page.careerOutcomes.placementRate || '')}</dd>
+        <dt>Average salary</dt><dd>${escapeHtml(page.careerOutcomes.averageSalary || '')}</dd>
+        <dt>Highest salary</dt><dd>${escapeHtml(page.careerOutcomes.highestSalary || '')}</dd>
+        <dt>Time to first offer</dt><dd>${escapeHtml(page.careerOutcomes.timeToFirstOffer || '')}</dd>
+      </dl>
+      <p><strong>Hiring partners:</strong> ${escapeHtml((page.careerOutcomes.hiringPartners || []).join(', '))}.</p>
+      <p><strong>Common roles our ${escapeHtml(keywordShort)} graduates take:</strong> ${escapeHtml((page.careerOutcomes.roleTypes || []).join(', '))}.</p>
+    </section>` : '';
+
+  // ── Action B ── H1-adjacent intro paragraph (rendered when config provides it).
+  // Falls back to a generic template using headline + keywordShort so every slug gets one.
+  const intro = page.intro || `The <strong>${escapeHtml(keywordShort)}</strong> at Telzon Academy is Nagpur's most practical, placement-focused program for anyone starting or accelerating a digital marketing career. Over 16 weeks you'll learn Search Engine Optimisation, Google Ads, Meta Ads, social media management, content marketing, analytics and AI marketing — through live client projects, real ad-account work and case-study workbooks. Fees range from ₹25,000 to ₹45,000 with no-cost EMI and merit-based scholarships. Course sessions include Google Ads, Google Analytics and Meta Blueprint certification preparation. Every student gets 95% placement assistance with 50+ hiring partners across Nagpur and India, and we track our graduates' first-offer timeline (usually 30–60 days after course completion). Book a free demo class to experience the teaching quality before you enrol.`;
 
   return `    <header>
       <h1>${escapeHtml(page.headline)}</h1>
       <p>${escapeHtml(page.subheadline || '')}</p>
       <p>${escapeHtml(page.metaDescription || '')}</p>
+      <p><em>Last updated: September 2026.</em></p>
     </header>
+    <section>
+      <h2>${escapeHtml(page.headline)} — overview</h2>
+      <p>${intro}</p>
+    </section>${directAnswerHtml}${courseFactsHtml}${careerOutcomesHtml}
     <section>
       <h2>Why students choose Telzon Academy for ${escapeHtml(keywordShort)}</h2>
       <ul>
@@ -158,14 +203,14 @@ function landingPageContent(page) {
       <p>Telzon Academy is Nagpur's top-rated digital marketing institute with 1,000+ students trained, 95% placement assistance and a 4.9/5 rating from 200+ student reviews. Our course fees range from ₹25,000 to ₹45,000 with no-cost EMI options and merit-based scholarships. Programs run 3 to 6 months across weekday, weekend and fully online batches — pick whichever fits your schedule.</p>
     </section>
     <section>
-      <h2>What you'll learn (16-week curriculum)</h2>
+      <h2>What you'll learn — 16-week ${escapeHtml(keywordShort)} curriculum</h2>
       <ol>${syllabusHtml}
       </ol>
       <p>Every module ends with a graded assignment and a real campaign you can show in interviews. The course includes Google Ads, Google Analytics and Meta Blueprint certification preparation, access to all premium tools during training, and 1 year of placement assistance after course completion.</p>
     </section>
     <section>
       <h2>${escapeHtml(keywordShort)} — accessible from every part of Nagpur</h2>
-      <p>Our centre is centrally located in Nagpur and easy to reach from every major area. We also run live online batches with the same trainers and curriculum.</p>
+      <p>Our centre is centrally located in Nagpur and easy to reach from every major area. We also run live online batches with the same trainers and curriculum, so students in nearby cities and neighbourhoods across Vidarbha and Maharashtra can attend without relocating.</p>
       <ul>
         ${areasHtml}
       </ul>
