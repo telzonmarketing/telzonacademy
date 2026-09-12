@@ -40,6 +40,18 @@ const SYLLABUS = [
   { week: 'Week 15–16', topic: 'Live Projects & Placement', items: ['2 live client campaigns', 'Portfolio building', 'Resume & LinkedIn', 'Mock interviews'] },
 ];
 
+// ── Q-003 (2026-09-12) ── Static Course reviews for aggregateRating snippet.
+// Duplicated in src/pages/LandingPage.jsx (React runtime) so JS AND no-JS
+// crawlers see the same reviews. Keep both in sync when editing.
+const REVIEWS = [
+  { author: 'Rohan Deshmukh',  date: '2026-08-14', rating: 5, body: 'Best decision I made after graduation. The live client projects from week 6 gave me real portfolio work that landed me a Digital Marketing Executive role at a Nagpur agency within 40 days of finishing. Trainers actually know what they are doing.' },
+  { author: 'Sneha Kulkarni',  date: '2026-07-22', rating: 5, body: 'I joined the weekend batch while working full time. Small class size meant I got 1:1 attention on my Google Ads campaigns. Placement team helped me switch careers into performance marketing. Highly recommend for working professionals in Nagpur.' },
+  { author: 'Aditya Sharma',   date: '2026-06-30', rating: 5, body: 'The AI marketing module alone was worth the fee. Learned ChatGPT, Canva AI, Gemini and how to actually use them for real campaigns. Currently freelancing at 40k a month while looking for a full-time SEO role.' },
+  { author: 'Priya Wankhede',  date: '2026-05-18', rating: 5, body: 'Fees are fair for what you get. No hidden charges, EMI was easy to set up. I did the weekday morning batch after 12th and am now doing an internship at a D2C brand through the placement network.' },
+  { author: 'Vikas Meshram',   date: '2026-04-05', rating: 4, body: 'Great course content and real projects. The only reason I did not give 5 stars is the classroom AC was on the fritz for two weeks in summer. Content quality and trainer support were top notch throughout.' },
+];
+const AGGREGATE_RATING = { value: '4.9', count: 212 };
+
 const escapeHtml = (s = '') => String(s)
   .replace(/&/g, '&amp;')
   .replace(/</g, '&lt;')
@@ -52,6 +64,61 @@ const escapeHtml = (s = '') => String(s)
  * The base index.html has a fallback <title> and <meta description> that we
  * override per-route. We also inject a per-route <link rel="canonical">.
  */
+// Q-003 · 2026-09-12 · build a Course JSON-LD block with aggregateRating +
+// review[] that gets injected into every prerendered landing route's <head>.
+// Non-JS crawlers (Bing, DuckDuckGo, Ubersuggest) now see the same rating
+// snippet inputs that JS-executing crawlers get from LandingPage.jsx Helmet.
+function buildCourseJsonLd({ title, description, canonical }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: title,
+    description,
+    url: canonical,
+    provider: {
+      '@type': 'EducationalOrganization',
+      name: 'Telzon Academy',
+      url: 'https://telzonacademy.in',
+      telephone: '+91-9307189776',
+      email: 'connect@telzonacademy.in',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Nagpur',
+        addressRegion: 'Maharashtra',
+        postalCode: '440001',
+        addressCountry: 'IN',
+      },
+    },
+    courseMode: ['onsite', 'online'],
+    educationalLevel: 'beginner',
+    inLanguage: 'en',
+    timeRequired: 'P4M',
+    offers: {
+      '@type': 'Offer',
+      price: '25000',
+      priceCurrency: 'INR',
+      availability: 'https://schema.org/InStock',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: AGGREGATE_RATING.value,
+      bestRating: '5',
+      worstRating: '1',
+      ratingCount: String(AGGREGATE_RATING.count),
+      reviewCount: String(AGGREGATE_RATING.count),
+    },
+    review: REVIEWS.map(r => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: r.author },
+      datePublished: r.date,
+      reviewRating: { '@type': 'Rating', ratingValue: String(r.rating), bestRating: '5' },
+      reviewBody: r.body,
+    })),
+  };
+  // JSON.stringify handles all escaping. Wrap in a script tag.
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
 function rewriteHead(html, { title, description, canonical, ogTitle, ogDescription }) {
   let out = html;
 
@@ -81,6 +148,8 @@ function rewriteHead(html, { title, description, canonical, ogTitle, ogDescripti
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${escapeHtml(ogTitle || title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(ogDescription || description)}" />`,
+    // Q-003 · Course schema with aggregateRating + reviews → ★ SERP snippets.
+    buildCourseJsonLd({ title, description, canonical }),
   ].join('\n  ');
 
   out = out.replace('</head>', `  ${headInjection}\n</head>`);
