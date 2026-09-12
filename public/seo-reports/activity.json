@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-09-12T19:27:17.764Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 333ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-09-12T17:56:08.726Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "✓",
     "title": "Run completed",
     "details": "Total: 64 pages · 3 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-09-09T07:20:15.836Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"63 pages have redirect chains\" needs human attention",
-    "details": "Auto-fix failed after 94 attempts — manual intervention required"
   }
 ]
