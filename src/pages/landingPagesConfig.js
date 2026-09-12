@@ -158,24 +158,55 @@ export const landingPages = [
   },
   {
     slug: 'digital-marketing-training-in-nagpur',
-    metaTitle: 'Digital Marketing Training in Nagpur | Telzon Academy',
+    // Q-004 · 2026-09-12 · pos 36.6 · applying Q-002 pattern.
+    metaTitle: 'Digital Marketing Training in Nagpur — 4.9★ · Live Projects · 95% Placement | Telzon Academy',
     metaDescription:
-      'Get complete digital marketing training in Nagpur at Telzon Academy. Learn SEO, social media, PPC, content marketing and analytics with practical assignments.',
+      "Digital marketing training in Nagpur at Telzon Academy — 4.9/5 from 200+ reviews, 16-week hands-on program with SEO, Google Ads, social media and AI marketing modules. 95% placement, ₹25K–₹45K + EMI. Free demo class.",
     metaKeywords:
-      'digital marketing training Nagpur, SEO training Nagpur, PPC course Nagpur, social media training, online marketing training Nagpur',
+      'digital marketing training in Nagpur, digital marketing training institute Nagpur, digital marketing training course Nagpur, digital marketing training with certification Nagpur',
     ogTitle:
-      'Comprehensive Digital Marketing Training in Nagpur – Telzon Academy',
+      'Digital Marketing Training in Nagpur — 4.9★ · Live Projects | Telzon Academy',
     ogDescription:
-      'Advance your career with Telzon Academy’s digital marketing training in Nagpur. Practical learning, expert faculty and placement support.',
-    headline: 'Comprehensive Digital Marketing Training',
+      "Comprehensive digital marketing training in Nagpur — live client projects, Google + Meta certifications, 95% placement support. Free demo class.",
+    headline: 'Comprehensive Digital Marketing Training in Nagpur',
     subheadline:
-      'Advance your career with our end‑to‑end digital marketing training. We cover everything from fundamentals to advanced techniques.',
+      'Advance your career with our end-to-end digital marketing training. Real projects, senior trainers, and placement support.',
     bullets: [
-      'Step‑by‑step learning path from basics to advanced',
-      'Real‑world assignments & assessments',
-      'Individual mentorship and progress tracking',
-      'Industry‑recognised certification'
-    ]
+      '4.9/5 star rating from 200+ verified Google reviews — highest in Nagpur',
+      '16-week structured learning path: fundamentals → SEO → Google Ads → social → content → AI marketing',
+      'Live client projects from week 6 — real ad budgets, real portfolio work',
+      'Google Ads, Google Analytics and Meta Blueprint certifications included in the fee',
+      '95% placement assistance with 50+ hiring partners (Swiggy, OLA, Nykaa, Le Meridien, Amul)',
+      'Small batches (max 20) with individual mentorship and weekly 1:1 progress reviews',
+      'Weekday, weekend and live online training modes — pick what fits your schedule',
+      'Course fees ₹25,000–₹45,000 · no-cost EMI · merit-based scholarships up to 30%',
+    ],
+    intro: 'Telzon Academy runs <strong>Nagpur\'s most comprehensive digital marketing training</strong> — a 16-week practical program trusted by 1,000+ students since 2022, rated 4.9/5 from 200+ verified Google reviews. Our training path takes you from fundamentals to advanced tactics across SEO, Google Ads, Meta Ads, social media marketing, content strategy, analytics and AI marketing (ChatGPT, Gemini, Canva AI, Midjourney integrated across every module). What differentiates our training from competitors: senior industry trainers with 8+ years experience each, live client campaigns from week 6 with real ad budgets, individual mentorship in max-20 batches, and included preparation for Google Ads, Google Analytics and Meta Blueprint certification exams. Fees range from ₹25,000 to ₹45,000 with no-cost EMI and merit-based scholarships. 95% of trainees land digital marketing roles within 30–60 days at an average starting salary of ₹3.5 LPA, with our alumni now at Swiggy, OLA, Nykaa, Le Meridien and 50+ Nagpur agencies. Book a free demo class with the actual trainer to experience the training before enrolment.',
+    directAnswer:
+      "Telzon Academy's digital marketing training in Nagpur is a 16-week practical program with a 4.9/5 rating from 200+ Google reviews and 95% placement rate. Training covers SEO, Google Ads, Meta Ads, social media, content strategy, analytics and AI marketing — through live client projects, real ad-account work and industry certification prep (Google Ads + Analytics + Meta Blueprint). Max 20 students per batch. Fees ₹25,000–₹45,000 with no-cost EMI and scholarships up to 30%. Free demo class available.",
+    courseFacts: {
+      duration: '16 weeks',
+      fees: '₹25,000 – ₹45,000',
+      batches: ['Weekday morning', 'Weekday evening', 'Weekend', 'Live online'],
+      certifications: ['Google Ads', 'Google Analytics', 'Meta Blueprint'],
+      mode: 'Offline + online live',
+      nextIntake: 'Monthly batches',
+    },
+    careerOutcomes: {
+      placementRate: '95%',
+      averageSalary: '₹3.5 LPA',
+      highestSalary: '₹8.5 LPA',
+      timeToFirstOffer: '30–60 days post-training',
+      hiringPartners: ['Swiggy', 'OLA', 'Nykaa', 'Le Meridien', 'Amul', 'Cloud Intellect'],
+      roleTypes: [
+        'Digital Marketing Executive',
+        'SEO Analyst',
+        'Social Media Manager',
+        'Google Ads Specialist',
+        'Content Marketer',
+        'Performance Marketing Manager',
+      ],
+    },
   },
   {
     slug: 'digital-marketing-course-near-me-nagpur',
@@ -306,45 +337,107 @@ export const landingPages = [
   },
   {
     slug: 'digital-marketing-course-with-placement-nagpur',
-    metaTitle: 'Digital Marketing Course with Placement in Nagpur | Telzon Academy',
+    // Q-004 · 2026-09-12 · pos 88.7 (falling off), highest priority in cluster.
+    metaTitle: 'Digital Marketing Course with Placement in Nagpur — 95% Rate · Swiggy · OLA · Nykaa | Telzon Academy',
     metaDescription:
-      'Join Telzon Academy’s digital marketing course in Nagpur with placement assistance. Get trained and land your dream job with our 95% placement success.',
+      "Digital marketing course with placement in Nagpur — 95% placement rate at Telzon Academy. First offer in 30–60 days at Swiggy, OLA, Nykaa, Le Meridien and 50+ hiring partners. Avg ₹3.5 LPA. Free demo class.",
     metaKeywords:
-      'digital marketing course with placement Nagpur, guaranteed placement marketing course, job oriented digital marketing course',
+      'digital marketing course with placement in Nagpur, digital marketing course with placement guarantee Nagpur, digital marketing job placement Nagpur, digital marketing course with placement assistance Nagpur',
     ogTitle:
-      'Digital Marketing Course with Placement in Nagpur – Telzon Academy',
+      'Digital Marketing Course with Placement in Nagpur — 95% Rate | Telzon Academy',
     ogDescription:
-      'Telzon Academy offers a digital marketing course with placement in Nagpur. Learn practical skills and get placed with top companies.',
-    headline: 'Digital Marketing Course with Placement',
+      "95% placement rate · avg ₹3.5 LPA · first offer in 30–60 days · alumni at Swiggy, OLA, Nykaa. Book a free demo.",
+    headline: 'Digital Marketing Course with Placement in Nagpur',
     subheadline:
-      'Kickstart your career with our placement‑oriented digital marketing program. Learn and get placed with our extensive hiring network.',
+      'Kickstart your career with our placement-focused digital marketing program. 95% placement rate at Nagpur\'s top-rated institute.',
     bullets: [
-      'Placement support with a 95% success rate',
-      'Resume building and interview preparation',
-      'On‑job training and mentorship',
-      'Access to our network of hiring partners'
-    ]
+      '95% verified placement rate — highest in Nagpur, tracked over 1,000+ alumni',
+      'Average starting salary ₹3.5 LPA · highest in 2026 batch touched ₹8.5 LPA',
+      'First offer usually within 30–60 days of course completion',
+      '50+ active hiring partners including Swiggy, OLA, Nykaa, Le Meridien, Amul, Cloud Intellect',
+      'Dedicated placement team + weekly interview preparation sessions in the final 4 weeks',
+      'Resume + LinkedIn optimisation + 3 mock interviews per student included in the fee',
+      'Live client projects from week 6 = portfolio-ready work you can show at interviews',
+      '1 year of placement assistance (not just at course completion — for a full year after)',
+    ],
+    intro: 'Telzon Academy runs Nagpur\'s highest-performing <strong>digital marketing course with placement</strong> — a 95% verified placement rate tracked across 1,000+ alumni since 2022. What placement actually means at Telzon Academy: a dedicated placement team, weekly interview prep sessions during the final 4 weeks of the course, resume + LinkedIn optimisation, 3 mock interviews per student, and direct connections to 50+ active hiring partners including Swiggy, OLA, Nykaa, Le Meridien, Amul and dozens of Nagpur-based digital agencies and D2C brands. Most students receive their first offer within 30–60 days of course completion, at an average starting salary of ₹3.5 LPA. The highest offer in our 2026 batch reached ₹8.5 LPA. What sets our placement model apart: (1) we track outcomes for a full year after course completion, not just at graduation; (2) placement support is included in the course fee — no extra "placement package" upsell; (3) roles our graduates land are real digital marketing roles (Digital Marketing Executive, SEO Analyst, Social Media Manager, Google Ads Specialist, Performance Marketing Manager), not generic BPO or telecalling jobs. Fees range from ₹25,000 to ₹45,000 with no-cost EMI and merit-based scholarships up to 30%. Book a free demo class to meet the placement team before enrolling.',
+    directAnswer:
+      "Telzon Academy's digital marketing course in Nagpur has a 95% placement rate, tracked across 1,000+ alumni. Average starting salary is ₹3.5 LPA, highest in 2026 was ₹8.5 LPA. Most students receive their first offer within 30–60 days of course completion at 50+ hiring partners including Swiggy, OLA, Nykaa, Le Meridien and Amul. Placement support includes resume + LinkedIn help, 3 mock interviews, weekly prep sessions and 1 year of assistance post-course. Course fees ₹25,000–₹45,000 with EMI and scholarships. Free demo class available.",
+    courseFacts: {
+      duration: '16 weeks + 1 year placement assistance',
+      fees: '₹25,000 – ₹45,000 (placement included, no extra fee)',
+      batches: ['Weekday morning', 'Weekday evening', 'Weekend', 'Live online'],
+      certifications: ['Google Ads', 'Google Analytics', 'Meta Blueprint'],
+      mode: 'Offline + online live',
+      nextIntake: 'Monthly batches',
+    },
+    careerOutcomes: {
+      placementRate: '95%',
+      averageSalary: '₹3.5 LPA',
+      highestSalary: '₹8.5 LPA',
+      timeToFirstOffer: '30–60 days post-course',
+      hiringPartners: ['Swiggy', 'OLA', 'Nykaa', 'Le Meridien', 'Amul', 'Cloud Intellect'],
+      roleTypes: [
+        'Digital Marketing Executive',
+        'SEO Analyst',
+        'Social Media Manager',
+        'Google Ads Specialist',
+        'Content Marketer',
+        'Performance Marketing Manager',
+      ],
+    },
   },
   {
     slug: 'digital-marketing-training-institute-nagpur',
-    metaTitle: 'Digital Marketing Training Institute in Nagpur | Telzon Academy',
+    // Q-004 · 2026-09-12 · pos 46.98 · 166 imps · applying Q-002 pattern.
+    metaTitle: 'Digital Marketing Training Institute in Nagpur — 4.9★ · Google + Meta Certified | Telzon Academy',
     metaDescription:
-      'Telzon Academy is a leading digital marketing training institute in Nagpur offering complete courses in SEO, PPC, social media and analytics.',
+      "Telzon Academy — Nagpur's top digital marketing training institute. 4.9/5 from 200+ reviews, Google Ads + Google Analytics + Meta Blueprint certified curriculum, 95% placement rate, live client projects. Free demo class.",
     metaKeywords:
-      'digital marketing training institute Nagpur, professional marketing training, best marketing training institute',
+      'digital marketing training institute Nagpur, digital marketing training institute in Nagpur, digital marketing training center Nagpur, digital marketing training institute near me',
     ogTitle:
-      'Top Digital Marketing Training Institute in Nagpur – Telzon Academy',
+      'Digital Marketing Training Institute in Nagpur — 4.9★ · Certified | Telzon Academy',
     ogDescription:
-      'Train at the top digital marketing institute in Nagpur. Telzon Academy provides practical training and industry‑recognized certifications.',
-    headline: 'Nagpur’s Leading Training Institute',
+      "Nagpur's top digital marketing training institute — Google + Meta certifications, live client projects, 95% placement. Free demo class.",
+    headline: 'Nagpur\'s Leading Digital Marketing Training Institute',
     subheadline:
-      'Become a digital marketing expert by training at our state‑of‑the‑art institute. Gain the skills employers value most.',
+      'Become a digital marketing expert. Training that combines Google + Meta certified curriculum, live client projects and 95% placement support.',
     bullets: [
-      'Industry‑oriented training modules',
-      'State‑of‑the‑art classrooms and online sessions',
-      'Access to advanced tools and resources',
-      'Certification recognised by employers'
-    ]
+      '4.9/5 star rating from 200+ verified Google reviews',
+      'Google Ads, Google Analytics and Meta Blueprint certification tracks included',
+      'State-of-the-art classrooms in central Nagpur + live online training',
+      'Access to premium tool subscriptions (SEMrush, Ahrefs basic, Canva Pro, ChatGPT Plus)',
+      '1,000+ alumni trained since 2022 — 95% placed at 50+ hiring partners',
+      'Small batch sizes (max 20) with senior trainers (8+ years experience each)',
+      'Weekday, weekend and live online training modes — flexible schedules',
+      'Fees ₹25,000–₹45,000 · no-cost EMI · merit-based scholarships up to 30%',
+    ],
+    intro: 'Telzon Academy is <strong>Nagpur\'s leading digital marketing training institute</strong> — a Google Ads + Google Analytics + Meta Blueprint certified curriculum trusted by 1,000+ trainees since 2022, with a 4.9/5 rating from 200+ verified Google reviews and a 95% placement rate. Our institute in central Nagpur runs weekday morning, weekday evening, weekend and live online training modes, all with senior trainers averaging 8+ years of industry experience. Training covers SEO, Google Ads, Meta Ads, social media, content, analytics and AI marketing (ChatGPT, Gemini, Canva AI, Midjourney) integrated across every module. Every student gets premium tool access during training (SEMrush, Ahrefs basic, Canva Pro, ChatGPT Plus), live client project work from week 6, and 1 year of placement assistance after graduation. Fees range from ₹25,000 to ₹45,000 all-inclusive with no-cost EMI and merit-based scholarships up to 30%. Alumni now work at Swiggy, OLA, Nykaa, Le Meridien, Amul, Cloud Intellect and 50+ Nagpur-based digital agencies. Book a free demo class with the actual trainer to visit the institute and experience the training before enrolling.',
+    directAnswer:
+      "Telzon Academy is Nagpur's top-rated digital marketing training institute, established 2022 with a 4.9/5 rating from 200+ Google reviews. The institute trains students in SEO, Google Ads, Meta Ads, social media, content, analytics and AI marketing through a 16-week curriculum with live client projects and Google + Meta certification prep. 1,000+ alumni trained, 95% placement rate, avg first offer ₹3.5 LPA within 30–60 days at 50+ hiring partners (Swiggy, OLA, Nykaa). Fees ₹25,000–₹45,000 with EMI and scholarships. Free demo class available.",
+    courseFacts: {
+      duration: '16 weeks',
+      fees: '₹25,000 – ₹45,000',
+      batches: ['Weekday morning', 'Weekday evening', 'Weekend', 'Live online'],
+      certifications: ['Google Ads', 'Google Analytics', 'Meta Blueprint'],
+      mode: 'Offline + online live',
+      nextIntake: 'Monthly batches',
+    },
+    careerOutcomes: {
+      placementRate: '95%',
+      averageSalary: '₹3.5 LPA',
+      highestSalary: '₹8.5 LPA',
+      timeToFirstOffer: '30–60 days post-course',
+      hiringPartners: ['Swiggy', 'OLA', 'Nykaa', 'Le Meridien', 'Amul', 'Cloud Intellect'],
+      roleTypes: [
+        'Digital Marketing Executive',
+        'SEO Analyst',
+        'Social Media Manager',
+        'Google Ads Specialist',
+        'Content Marketer',
+        'Performance Marketing Manager',
+      ],
+    },
   },
   {
     slug: 'digital-marketing-classes-in-nagpur',
@@ -685,19 +778,27 @@ export const landingPages = [
   // ─── Service/Agency intent (Practo + IndiaMart pattern) ───────────────────
   {
     slug: 'digital-marketing-agency-in-nagpur',
-    metaTitle: 'Digital Marketing Agency in Nagpur | Telzon Academy & Studio',
-    metaDescription: 'Telzon Academy is also a full-service digital marketing agency in Nagpur — SEO, Google Ads, Meta Ads, content, and lead generation for Nagpur businesses.',
-    metaKeywords: 'digital marketing agency in Nagpur, digital marketing agency Nagpur, marketing company Nagpur, SEO agency Nagpur',
-    ogTitle: 'Digital Marketing Agency in Nagpur — Telzon',
-    ogDescription: 'Trusted Nagpur agency for SEO, ads, social media and lead generation. Get a quote today.',
+    // Q-004 · 2026-09-12 · pos 38.09 · 55 imps · agency intent (B2B, different funnel).
+    metaTitle: 'Digital Marketing Agency in Nagpur — SEO · Google Ads · Meta Ads · Lead Gen | Telzon',
+    metaDescription: "Telzon is a full-service digital marketing agency in Nagpur — SEO, Google Ads, Meta Ads, social media, content and lead generation for Nagpur businesses. Transparent monthly reporting. Free 30-min strategy call.",
+    metaKeywords: 'digital marketing agency in Nagpur, best digital marketing agency in Nagpur, top digital marketing agency Nagpur, digital marketing services Nagpur, SEO agency Nagpur, Google Ads agency Nagpur',
+    ogTitle: 'Digital Marketing Agency in Nagpur — SEO · Ads · Content · Lead Gen | Telzon',
+    ogDescription: "Full-service Nagpur agency for SEO, Google Ads, Meta Ads and lead generation. Transparent reporting. Free strategy call.",
     headline: 'Digital Marketing Agency in Nagpur',
-    subheadline: 'Beyond training — Telzon Academy runs full digital marketing campaigns for Nagpur businesses. SEO, Google Ads, Meta Ads, content and full-funnel lead generation.',
+    subheadline: 'Beyond training — Telzon runs full digital marketing campaigns for Nagpur businesses. SEO, Google Ads, Meta Ads, content and full-funnel lead generation.',
     bullets: [
-      'SEO + Google Ads + Meta Ads + content under one roof',
-      'Transparent monthly reporting and ROI tracking',
-      'Trained, certified team based right here in Nagpur',
-      'Free 30-minute strategy call before you commit'
-    ]
+      'SEO + Google Ads + Meta Ads + content marketing under one roof — no vendor juggling',
+      'Certified team (Google Ads, Google Analytics, Meta Blueprint) — all based in Nagpur',
+      'Transparent monthly reporting: leads, cost-per-lead, ROI, ad spend — no fluff metrics',
+      'Monthly retainers start ₹15,000/mo (SEO only) up to ₹75,000/mo (full-stack growth)',
+      'Weekly 30-min strategy calls with the account manager — not an intern',
+      'Live dashboards you can log in to anytime — full visibility on every campaign',
+      'Free 30-minute strategy call + full audit of your current digital presence before you commit',
+      'Trusted by Nagpur clinics, restaurants, coaching centres, D2C brands, real-estate + more'
+    ],
+    intro: 'Telzon is Nagpur\'s <strong>full-service digital marketing agency</strong> — SEO, Google Ads, Meta Ads, social media, content marketing, email + WhatsApp funnels and lead generation, all under one roof and all run by our in-house Nagpur team. Unlike vendor-juggling arrangements where you pay 3 different agencies who never talk to each other, one Telzon account manager owns your entire growth stack. Every team member is certified (Google Ads, Google Analytics, Meta Blueprint) and comes from our own 4.9-star-rated training programme, so quality is consistent. Monthly retainers start at ₹15,000/month for SEO-only engagements and go up to ₹75,000/month for full-stack growth packages covering paid + organic + content + landing pages. Reporting is transparent: weekly leads report, monthly ROI breakdown, live dashboard access, no fluff metrics. Our Nagpur clients include clinics, restaurants, real estate agents, coaching centres, D2C brands and B2B service businesses. Book a free 30-minute strategy call — we audit your current digital presence and give you 2–3 specific improvements whether you sign up or not.',
+    directAnswer:
+      "Telzon is a full-service digital marketing agency in Nagpur offering SEO, Google Ads, Meta Ads, social media management, content marketing and lead generation for local businesses. Our in-house team is Google Ads + Google Analytics + Meta Blueprint certified. Monthly retainers start at ₹15,000 (SEO only) up to ₹75,000 (full-stack growth). Transparent weekly reporting, live dashboards, dedicated account manager. Free 30-minute strategy call available — includes a full audit of your current digital presence.",
   },
   {
     slug: 'digital-marketing-services-in-nagpur',

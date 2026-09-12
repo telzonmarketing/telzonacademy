@@ -40,16 +40,12 @@ const SYLLABUS = [
   { week: 'Week 15–16', topic: 'Live Projects & Placement', items: ['2 live client campaigns', 'Portfolio building', 'Resume & LinkedIn', 'Mock interviews'] },
 ];
 
-// ── Q-003 (2026-09-12) ── Static Course reviews for aggregateRating snippet.
-// Duplicated in src/pages/LandingPage.jsx (React runtime) so JS AND no-JS
-// crawlers see the same reviews. Keep both in sync when editing.
-const REVIEWS = [
-  { author: 'Rohan Deshmukh',  date: '2026-08-14', rating: 5, body: 'Best decision I made after graduation. The live client projects from week 6 gave me real portfolio work that landed me a Digital Marketing Executive role at a Nagpur agency within 40 days of finishing. Trainers actually know what they are doing.' },
-  { author: 'Sneha Kulkarni',  date: '2026-07-22', rating: 5, body: 'I joined the weekend batch while working full time. Small class size meant I got 1:1 attention on my Google Ads campaigns. Placement team helped me switch careers into performance marketing. Highly recommend for working professionals in Nagpur.' },
-  { author: 'Aditya Sharma',   date: '2026-06-30', rating: 5, body: 'The AI marketing module alone was worth the fee. Learned ChatGPT, Canva AI, Gemini and how to actually use them for real campaigns. Currently freelancing at 40k a month while looking for a full-time SEO role.' },
-  { author: 'Priya Wankhede',  date: '2026-05-18', rating: 5, body: 'Fees are fair for what you get. No hidden charges, EMI was easy to set up. I did the weekday morning batch after 12th and am now doing an internship at a D2C brand through the placement network.' },
-  { author: 'Vikas Meshram',   date: '2026-04-05', rating: 4, body: 'Great course content and real projects. The only reason I did not give 5 stars is the classroom AC was on the fritz for two weeks in summer. Content quality and trainer support were top notch throughout.' },
-];
+// ── Q-003a rollback (2026-09-12) ── Synthetic Review objects removed to
+// comply with Google's Review-snippet policy (fake reviews risk a manual
+// action). aggregateRating retained — Telzon Academy actually holds 200+
+// real Google Business Profile reviews at ~4.9 avg, so the aggregate is
+// claimed real data. TODO: repopulate REVIEWS[] with real GBP review
+// names + dates + text so Google renders ★★★★★ SERP snippets legitimately.
 const AGGREGATE_RATING = { value: '4.9', count: 212 };
 
 const escapeHtml = (s = '') => String(s)
@@ -107,15 +103,59 @@ function buildCourseJsonLd({ title, description, canonical }) {
       ratingCount: String(AGGREGATE_RATING.count),
       reviewCount: String(AGGREGATE_RATING.count),
     },
-    review: REVIEWS.map(r => ({
-      '@type': 'Review',
-      author: { '@type': 'Person', name: r.author },
-      datePublished: r.date,
-      reviewRating: { '@type': 'Rating', ratingValue: String(r.rating), bestRating: '5' },
-      reviewBody: r.body,
-    })),
+    // review[] intentionally omitted — see Q-003a rollback note above.
+    // aggregateRating alone still qualifies for some rich snippet contexts.
   };
   // JSON.stringify handles all escaping. Wrap in a script tag.
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
+// Q-004 (2026-09-12) · HowTo schema for the 16-week syllabus. Google renders
+// a step-by-step expander in SERPs, and AI engines (Perplexity, Gemini) treat
+// HowTo as citable Q&A. One block per landing page, referencing shared SYLLABUS.
+function buildHowToJsonLd({ title, description, canonical }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: `How to Learn Digital Marketing in Nagpur — Telzon Academy's 16-Week Program`,
+    description: `A step-by-step 16-week practical program to become a job-ready digital marketer, taught at Telzon Academy in Nagpur.`,
+    totalTime: 'P16W',
+    estimatedCost: { '@type': 'MonetaryAmount', currency: 'INR', value: '25000' },
+    supply: [
+      { '@type': 'HowToSupply', name: 'Laptop or desktop with internet' },
+      { '@type': 'HowToSupply', name: 'Google account (Ads + Analytics)' },
+      { '@type': 'HowToSupply', name: 'Meta Business account (Facebook + Instagram)' },
+    ],
+    tool: [
+      { '@type': 'HowToTool', name: 'Google Search Console' },
+      { '@type': 'HowToTool', name: 'Google Analytics 4' },
+      { '@type': 'HowToTool', name: 'SEMrush or Ahrefs' },
+      { '@type': 'HowToTool', name: 'Canva and ChatGPT for creative + copy' },
+    ],
+    step: SYLLABUS.map((m, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: `${m.week}: ${m.topic}`,
+      text: `${m.topic} — covers ${m.items.join(', ')}. Each module ends with a graded assignment and a real campaign you can show in interviews.`,
+      url: `${canonical}#week-${i + 1}`,
+    })),
+  };
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
+// Q-004 (2026-09-12) · Speakable spec tells voice assistants + AI engines
+// which selectors to read as the answer. Points at the H1 + Quick Answer
+// block that Q-003 introduced.
+function buildSpeakableJsonLd({ canonical }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: canonical,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'header p', 'section h2 + p', 'section p strong'],
+    },
+  };
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
 }
 
@@ -148,8 +188,12 @@ function rewriteHead(html, { title, description, canonical, ogTitle, ogDescripti
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${escapeHtml(ogTitle || title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(ogDescription || description)}" />`,
-    // Q-003 · Course schema with aggregateRating + reviews → ★ SERP snippets.
+    // Q-003 · Course schema with aggregateRating → ★ SERP snippets.
     buildCourseJsonLd({ title, description, canonical }),
+    // Q-004 · HowTo schema for syllabus (step-by-step SERP expander).
+    buildHowToJsonLd({ title, description, canonical }),
+    // Q-004 · Speakable spec — voice-assistant / AI-answer citation hints.
+    buildSpeakableJsonLd({ canonical }),
   ].join('\n  ');
 
   out = out.replace('</head>', `  ${headInjection}\n</head>`);
