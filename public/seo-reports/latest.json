@@ -1,21 +1,31 @@
 {
-  "timestamp": "2026-09-12T17:27:21.213Z",
+  "timestamp": "2026-09-13T07:03:13.420Z",
   "summary": {
     "pagesFound": 64,
-    "issuesFound": 3,
-    "critical": 1,
-    "important": 1,
+    "issuesFound": 5,
+    "critical": 2,
+    "important": 2,
     "low": 1,
-    "issuesFixed": 3,
+    "issuesFixed": 5,
     "pagesSubmitted": 0,
     "avgPosition": null,
     "totalKeywords": 0
   },
   "issues": [
     {
+      "type": "MISSING_CANONICAL",
+      "severity": "important",
+      "title": "1 pages missing canonical URL",
+      "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
+      "affectedUrls": [
+        "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur"
+      ],
+      "fix": "ADD_CANONICAL_TAGS"
+    },
+    {
       "type": "MISSING_H1",
       "severity": "low",
-      "title": "64 pages missing H1 heading",
+      "title": "63 pages missing H1 heading",
       "description": "H1 headings help Google understand the primary topic of each page.",
       "affectedUrls": [
         "https://telzonacademy.in/",
@@ -32,7 +42,6 @@
         "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
         "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
         "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
         "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
         "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
         "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
@@ -86,9 +95,22 @@
       "fix": "ADD_H1_TAGS"
     },
     {
+      "type": "ERROR_PAGES",
+      "severity": "critical",
+      "title": "1 pages return error status codes",
+      "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+      "affectedUrls": [
+        {
+          "url": "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
+          "status": 404
+        }
+      ],
+      "fix": "FIX_ERROR_PAGES"
+    },
+    {
       "type": "CLIENT_SIDE_RENDERING",
       "severity": "critical",
-      "title": "64 pages appear to be client-side rendered only",
+      "title": "63 pages appear to be client-side rendered only",
       "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
       "affectedUrls": [
         "https://telzonacademy.in/",
@@ -105,7 +127,6 @@
         "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
         "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
         "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
-        "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
         "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
         "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
         "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
@@ -173,7 +194,6 @@
           "https://telzonacademy.in/pages/best-digital-marketing-classes-in-nagpur",
           "https://telzonacademy.in/pages/digital-marketing-course-for-beginners-nagpur",
           "https://telzonacademy.in/pages/digital-marketing-course-for-working-professionals-nagpur",
-          "https://telzonacademy.in/pages/digital-marketing-training-institute-nagpur",
           "https://telzonacademy.in/pages/digital-marketing-training-in-nagpur",
           "https://telzonacademy.in/pages/digital-marketing-academy-in-nagpur",
           "https://telzonacademy.in/pages/digital-marketing-course-near-me-nagpur",
@@ -491,12 +511,23 @@
   ],
   "fixes": [
     {
-      "issue": "64 pages missing H1 heading",
+      "issue": "1 pages missing canonical URL",
+      "description": "Add canonical tags to all pages via Next.js metadata",
+      "code": "// app/layout.tsx — add canonical to root layout\nexport const metadata = {\n  alternates: {\n    canonical: '/',  // relative canonicals work in Next.js 13+\n  },\n}\n\n// app/blog/[slug]/page.tsx — dynamic canonical\nexport async function generateMetadata({ params }) {\n  return {\n    alternates: {\n      canonical: `https://yoursite.com/blog/${params.slug}`,\n    },\n  }\n}",
+      "fileChange": null
+    },
+    {
+      "issue": "63 pages missing H1 heading",
       "description": "H1 headings help Google understand the primary topic of each page.",
       "instruction": "Manual fix required for: MISSING_H1. See audit report for details."
     },
     {
-      "issue": "64 pages appear to be client-side rendered only",
+      "issue": "1 pages return error status codes",
+      "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+      "instruction": "Manual fix required for: ERROR_PAGES. See audit report for details."
+    },
+    {
+      "issue": "63 pages appear to be client-side rendered only",
       "description": "Convert client-side rendered pages to Server Components",
       "code": "// BEFORE — client-side only (Googlebot sees empty page):\n'use client'\nimport { useEffect, useState } from 'react'\nexport default function Page() {\n  const [data, setData] = useState(null)\n  useEffect(() => { fetch('/api/data').then(r => r.json()).then(setData) }, [])\n  if (!data) return <div>Loading...</div>\n  return <div>{data.title}</div>\n}\n\n// AFTER — Server Component (Googlebot sees full content instantly):\n// No 'use client' directive needed\nexport default async function Page() {\n  const data = await fetch('https://api.example.com/data', {\n    next: { revalidate: 3600 }  // ISR: revalidate every hour\n  }).then(r => r.json())\n  return <div>{data.title}</div>\n}"
     },
@@ -537,8 +568,8 @@
     "note": "Notified Bing/Yandex/Naver of 64 URLs"
   },
   "bingSubmissions": {
-    "submitted": 0,
-    "failed": 64
+    "submitted": 34,
+    "failed": 30
   },
   "issueTracker": {
     "issues": {
@@ -676,7 +707,7 @@
         "severity": "low",
         "title": "64 pages missing H1 heading",
         "description": "H1 headings help Google understand the primary topic of each page.",
-        "status": "escalated",
+        "status": "resolved",
         "detectedAt": "2026-05-15T19:28:12.445Z",
         "lastSeenAt": "2026-09-12T17:27:21.212Z",
         "attempts": [
@@ -1212,8 +1243,8 @@
           }
         ],
         "firstSeenRun": "2026-05-15T19:28:12.445Z",
-        "resolvedAt": "2026-05-15T19:50:51.103Z",
-        "daysToResolve": 1,
+        "resolvedAt": "2026-09-13T07:03:12.967Z",
+        "daysToResolve": 120,
         "regressedAt": "2026-06-07T08:13:28.122Z",
         "escalatedAt": "2026-09-12T17:27:21.212Z",
         "escalationReason": "Issue persists after 106 auto-fix attempts. Needs human intervention."
@@ -1224,7 +1255,7 @@
         "severity": "critical",
         "title": "64 pages appear to be client-side rendered only",
         "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
-        "status": "escalated",
+        "status": "resolved",
         "detectedAt": "2026-05-15T19:28:12.445Z",
         "lastSeenAt": "2026-09-12T17:27:21.212Z",
         "attempts": [
@@ -1745,8 +1776,8 @@
           }
         ],
         "firstSeenRun": "2026-05-15T19:28:12.445Z",
-        "resolvedAt": "2026-07-25T05:23:54.355Z",
-        "daysToResolve": 70,
+        "resolvedAt": "2026-09-13T07:03:12.967Z",
+        "daysToResolve": 120,
         "regressedAt": "2026-07-26T05:42:29.152Z",
         "escalatedAt": "2026-09-12T17:27:21.212Z",
         "escalationReason": "Issue persists after 103 auto-fix attempts. Needs human intervention."
@@ -1809,9 +1840,9 @@
         "severity": "important",
         "title": "1 pages missing canonical URL",
         "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
-        "status": "resolved",
+        "status": "escalated",
         "detectedAt": "2026-05-15T19:50:51.103Z",
-        "lastSeenAt": "2026-07-25T05:23:54.355Z",
+        "lastSeenAt": "2026-09-13T07:03:12.967Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:50:51.103Z",
@@ -1837,14 +1868,19 @@
             "timestamp": "2026-07-25T05:23:54.355Z",
             "strategy": "Add canonical tags to all pages via Next.js metadata",
             "file": null
+          },
+          {
+            "timestamp": "2026-09-13T07:03:12.967Z",
+            "strategy": "Add canonical tags to all pages via Next.js metadata",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:50:51.103Z",
         "resolvedAt": "2026-07-26T05:42:29.152Z",
         "daysToResolve": 71,
-        "regressedAt": "2026-07-25T05:23:54.355Z",
-        "escalatedAt": "2026-07-25T05:23:54.355Z",
-        "escalationReason": "Issue persists after 5 auto-fix attempts. Needs human intervention."
+        "regressedAt": "2026-09-13T07:03:12.967Z",
+        "escalatedAt": "2026-09-13T07:03:12.967Z",
+        "escalationReason": "Issue persists after 6 auto-fix attempts. Needs human intervention."
       },
       "382282935c57": {
         "id": "382282935c57",
@@ -1872,19 +1908,25 @@
         "severity": "low",
         "title": "63 pages missing H1 heading",
         "description": "H1 headings help Google understand the primary topic of each page.",
-        "status": "resolved",
+        "status": "fixing",
         "detectedAt": "2026-05-15T19:50:51.103Z",
-        "lastSeenAt": "2026-05-15T19:50:51.103Z",
+        "lastSeenAt": "2026-09-13T07:03:12.967Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:50:51.103Z",
+            "strategy": "H1 headings help Google understand the primary topic of each page.",
+            "file": null
+          },
+          {
+            "timestamp": "2026-09-13T07:03:12.967Z",
             "strategy": "H1 headings help Google understand the primary topic of each page.",
             "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:50:51.103Z",
         "resolvedAt": "2026-05-15T19:53:47.433Z",
-        "daysToResolve": 1
+        "daysToResolve": 1,
+        "regressedAt": "2026-09-13T07:03:12.967Z"
       },
       "c2bcb0cbe37f": {
         "id": "c2bcb0cbe37f",
@@ -1892,9 +1934,9 @@
         "severity": "critical",
         "title": "1 pages return error status codes",
         "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
-        "status": "resolved",
+        "status": "fixing",
         "detectedAt": "2026-05-15T19:50:51.103Z",
-        "lastSeenAt": "2026-05-16T07:14:56.430Z",
+        "lastSeenAt": "2026-09-13T07:03:12.967Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:50:51.103Z",
@@ -1905,12 +1947,17 @@
             "timestamp": "2026-05-16T07:14:56.430Z",
             "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
             "file": null
+          },
+          {
+            "timestamp": "2026-09-13T07:03:12.967Z",
+            "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:50:51.103Z",
         "resolvedAt": "2026-05-16T07:20:28.102Z",
         "daysToResolve": 1,
-        "regressedAt": "2026-05-16T07:14:56.430Z"
+        "regressedAt": "2026-09-13T07:03:12.967Z"
       },
       "7d874f3ebe0c": {
         "id": "7d874f3ebe0c",
@@ -1918,9 +1965,9 @@
         "severity": "critical",
         "title": "63 pages appear to be client-side rendered only",
         "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
-        "status": "resolved",
+        "status": "escalated",
         "detectedAt": "2026-05-15T19:50:51.103Z",
-        "lastSeenAt": "2026-07-25T05:23:54.355Z",
+        "lastSeenAt": "2026-09-13T07:03:12.967Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:50:51.103Z",
@@ -1941,12 +1988,19 @@
             "timestamp": "2026-07-25T05:23:54.355Z",
             "strategy": "Convert client-side rendered pages to Server Components",
             "file": null
+          },
+          {
+            "timestamp": "2026-09-13T07:03:12.967Z",
+            "strategy": "Convert client-side rendered pages to Server Components",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:50:51.103Z",
         "resolvedAt": "2026-07-26T05:42:29.152Z",
         "daysToResolve": 71,
-        "regressedAt": "2026-07-25T05:23:54.355Z"
+        "regressedAt": "2026-09-13T07:03:12.967Z",
+        "escalatedAt": "2026-09-13T07:03:12.967Z",
+        "escalationReason": "Issue persists after 5 auto-fix attempts. Needs human intervention."
       },
       "53924c1b51a7": {
         "id": "53924c1b51a7",
@@ -2173,7 +2227,7 @@
         "description": "Long redirect chains waste crawl budget and dilute link equity.",
         "status": "escalated",
         "detectedAt": "2026-06-07T05:51:50.198Z",
-        "lastSeenAt": "2026-09-12T17:27:21.212Z",
+        "lastSeenAt": "2026-09-13T07:03:12.967Z",
         "attempts": [
           {
             "timestamp": "2026-06-07T06:58:10.446Z",
@@ -2679,14 +2733,19 @@
             "timestamp": "2026-09-12T17:27:21.212Z",
             "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
             "file": null
+          },
+          {
+            "timestamp": "2026-09-13T07:03:12.967Z",
+            "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-06-07T05:51:50.198Z",
         "resolvedAt": "2026-07-25T05:23:54.355Z",
         "daysToResolve": 48,
         "regressedAt": "2026-07-26T05:42:29.152Z",
-        "escalatedAt": "2026-09-12T17:27:21.212Z",
-        "escalationReason": "Issue persists after 101 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-09-13T07:03:12.967Z",
+        "escalationReason": "Issue persists after 102 auto-fix attempts. Needs human intervention."
       },
       "b4b96faddfd3": {
         "id": "b4b96faddfd3",
@@ -2921,51 +2980,131 @@
     },
     "stats": {
       "open": 0,
-      "fixing": 0,
-      "resolved": 24,
+      "fixing": 2,
+      "resolved": 22,
       "escalated": 3,
       "regressed": 0
     },
-    "lastReconciled": "2026-09-12T17:27:21.212Z"
+    "lastReconciled": "2026-09-13T07:03:12.967Z"
   },
   "issueActions": [
     {
-      "id": "791ad617b3ed",
-      "type": "fix-attempted",
-      "title": "64 pages missing H1 heading",
-      "attempt": 106
+      "id": "daa3e6f34fda",
+      "type": "regressed",
+      "title": "1 pages missing canonical URL"
     },
     {
-      "id": "a924a5969e28",
+      "id": "8c182c135a37",
+      "type": "regressed",
+      "title": "63 pages missing H1 heading"
+    },
+    {
+      "id": "c2bcb0cbe37f",
+      "type": "regressed",
+      "title": "1 pages return error status codes"
+    },
+    {
+      "id": "7d874f3ebe0c",
+      "type": "regressed",
+      "title": "63 pages appear to be client-side rendered only"
+    },
+    {
+      "id": "daa3e6f34fda",
       "type": "fix-attempted",
-      "title": "64 pages appear to be client-side rendered only",
-      "attempt": 103
+      "title": "1 pages missing canonical URL",
+      "attempt": 6
+    },
+    {
+      "id": "8c182c135a37",
+      "type": "fix-attempted",
+      "title": "63 pages missing H1 heading",
+      "attempt": 2
+    },
+    {
+      "id": "c2bcb0cbe37f",
+      "type": "fix-attempted",
+      "title": "1 pages return error status codes",
+      "attempt": 3
+    },
+    {
+      "id": "7d874f3ebe0c",
+      "type": "fix-attempted",
+      "title": "63 pages appear to be client-side rendered only",
+      "attempt": 5
     },
     {
       "id": "02dc5d62e6d8",
       "type": "fix-attempted",
       "title": "63 pages have redirect chains",
-      "attempt": 101
+      "attempt": 102
     },
     {
       "id": "791ad617b3ed",
-      "type": "escalated",
+      "type": "resolved",
       "title": "64 pages missing H1 heading",
+      "daysToResolve": 120,
       "attempts": 106
     },
     {
       "id": "a924a5969e28",
-      "type": "escalated",
+      "type": "resolved",
       "title": "64 pages appear to be client-side rendered only",
+      "daysToResolve": 120,
       "attempts": 103
+    },
+    {
+      "id": "daa3e6f34fda",
+      "type": "escalated",
+      "title": "1 pages missing canonical URL",
+      "attempts": 6
+    },
+    {
+      "id": "7d874f3ebe0c",
+      "type": "escalated",
+      "title": "63 pages appear to be client-side rendered only",
+      "attempts": 5
     },
     {
       "id": "02dc5d62e6d8",
       "type": "escalated",
       "title": "63 pages have redirect chains",
-      "attempts": 101
+      "attempts": 102
     }
   ],
-  "solverEnrichments": [],
+  "solverEnrichments": [
+    {
+      "issueId": "8c182c135a37",
+      "title": "63 pages missing H1 heading",
+      "result": {
+        "solved": false,
+        "diagnosis": {
+          "errorCount": 0,
+          "warningCount": 16,
+          "topErrors": [],
+          "summary": "W3C: 0 HTML errors, 16 warnings on https://telzonacademy.in/"
+        },
+        "attempts": [
+          {
+            "solver": "W3C Validator",
+            "solved": false,
+            "diagnosis": {
+              "errorCount": 0,
+              "warningCount": 16,
+              "topErrors": [],
+              "summary": "W3C: 0 HTML errors, 16 warnings on https://telzonacademy.in/"
+            },
+            "enrichment": {
+              "w3c": {
+                "errorCount": 0,
+                "warningCount": 16,
+                "topErrors": [],
+                "summary": "W3C: 0 HTML errors, 16 warnings on https://telzonacademy.in/"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
   "errors": []
 }
