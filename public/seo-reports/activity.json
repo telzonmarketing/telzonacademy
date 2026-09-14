@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-09-14T14:29:03.483Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-09-14T14:08:18.533Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1391,12 +1398,5 @@
     "icon": "⚡",
     "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
     "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-09-11T19:45:43.089Z",
-    "type": "error",
-    "icon": "🔴",
-    "title": "Heartbeat: 1 check(s) failing",
-    "details": "404 Robots.txt"
   }
 ]
