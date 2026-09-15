@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-09-15T07:08:24.987Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-09-15T02:42:35.753Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 64 pages appear to be client-side rendered only",
     "details": "Convert client-side rendered pages to Server Components"
-  },
-  {
-    "timestamp": "2026-09-12T07:08:10.700Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 64 pages missing H1 heading",
-    "details": "H1 headings help Google understand the primary topic of each page."
   }
 ]
