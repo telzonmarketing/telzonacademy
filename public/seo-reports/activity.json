@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-09-17T13:31:41.174Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 621ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-09-17T12:49:38.900Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🔁",
     "title": "Attempt #107: working on \"64 pages missing H1 heading\"",
     "details": ""
-  },
-  {
-    "timestamp": "2026-09-13T07:26:27.099Z",
-    "type": "error",
-    "icon": "↩",
-    "title": "REGRESSED: \"64 pages appear to be client-side rendered only\" came back",
-    "details": "Issue was resolved before — now detected again. Bot will retry."
   }
 ]
