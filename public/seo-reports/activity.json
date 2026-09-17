@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-09-17T17:47:46.984Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-09-17T13:59:41.674Z",
     "type": "fix",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "win",
     "icon": "🏆",
     "title": "WON: \"63 pages missing H1 heading\" resolved after 2 attempts",
-    "details": "Took 120 days from first detection"
-  },
-  {
-    "timestamp": "2026-09-13T07:26:27.099Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"1 pages missing canonical URL\" resolved after 6 attempts",
     "details": "Took 120 days from first detection"
   }
 ]
