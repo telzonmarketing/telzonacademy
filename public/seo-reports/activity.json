@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-09-18T22:37:04.416Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 633ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-09-18T22:07:17.190Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO scan complete · Score 82/100 (B)",
     "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-09-14T07:52:59.812Z",
-    "type": "done",
-    "icon": "✓",
-    "title": "Run completed",
-    "details": "Total: 64 pages · 3 fixes · 0 submitted"
   }
 ]
