@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-09-19T01:13:11.197Z",
+    "type": "error",
+    "icon": "🔴",
+    "title": "Heartbeat: 4 check(s) failing",
+    "details": "403 Homepage · 403 Sitemap · 403 Robots.txt · 403 Dashboard"
+  },
+  {
     "timestamp": "2026-09-19T00:50:52.133Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔗",
     "title": "Tier 1 backlink ready: Bing Places for Business",
     "details": "Imports from Google Business. Phone verification."
-  },
-  {
-    "timestamp": "2026-09-14T12:29:51.201Z",
-    "type": "backlink",
-    "icon": "🔗",
-    "title": "Tier 1 backlink ready: Google Business Profile",
-    "details": "Biggest local SEO ranking factor. Postcard verification required."
   }
 ]
