@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-20T02:44:18.266Z",
+  "timestamp": "2026-09-20T08:08:50.571Z",
   "pagesAudited": 64,
   "score": 82,
   "grade": "B",
@@ -24,8 +24,8 @@
     "64 pages declare Organization schema"
   ],
   "llms": {
-    "compactBytes": 17472,
-    "fullBytes": 115828
+    "compactBytes": 17159,
+    "fullBytes": 115161
   },
   "faqSuggestions": [],
   "visibility": {
