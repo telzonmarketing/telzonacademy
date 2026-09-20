@@ -9,9 +9,9 @@ const GlobalSeo = () => {
     // Q-001 soft retitling · 2026-06-07: brand-first to reduce title collision
     // with /pages/digital-marketing-course-in-nagpur. Same keywords preserved.
     meta_title: 'Telzon Academy | Digital Marketing Course in Nagpur | Free Demo Class',
-    meta_description: "Telzon Academy — Nagpur's top digital marketing course with 95% placement support. Practical SEO, Google Ads, social media, and AI marketing training. Book a free demo class today.",
+    meta_description: "Telzon Academy — Nagpur's top digital marketing course. Practical SEO, Google Ads, social media & AI marketing training with 95% placement. Book a free demo class.",
     og_title: 'Telzon Academy | Digital Marketing Course in Nagpur | Free Demo Class',
-    og_description: 'Telzon Academy Nagpur — practical digital marketing training with 95% placement. Free demo available. Learn SEO, Google Ads, social media, AI marketing & more.'
+    og_description: "Telzon Academy — Nagpur's top digital marketing course. Practical SEO, Google Ads, social media & AI marketing training with 95% placement. Book a free demo class."
   });
 
   useEffect(() => {

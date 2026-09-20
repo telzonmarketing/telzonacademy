@@ -46,7 +46,31 @@
   <!-- Q-001 soft retitling · 2026-06-07: brand-first to reduce title collision
        with /pages/digital-marketing-course-in-nagpur. All keywords preserved. -->
   <title>Telzon Academy | Digital Marketing Course in Nagpur | Free Demo Class</title>
-  <meta name="description" content="Telzon Academy — Nagpur's top digital marketing course with 95% placement support. Practical SEO, Google Ads, social media, and AI marketing training. Book a free demo class today." />
+  <meta name="description" content="Telzon Academy — Nagpur's top digital marketing course. Practical SEO, Google Ads, social media & AI marketing training with 95% placement. Book a free demo class." />
+
+  <!-- Q-005 (2026-09-20) · SEO audit fix · og:image site-wide.
+       Was missing on every page → blank social share cards. Same asset
+       for all routes; per-route og:title/description above still apply. -->
+  <meta property="og:image" content="https://telzonacademy.in/telzon-logo-white-1024.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="1024" />
+  <meta name="twitter:image" content="https://telzonacademy.in/telzon-logo-white-1024.png" />
+
+  <!-- Q-005 · Canonical fallback: prerendered routes already have a static
+       canonical injected by tools/prerender.js. This inline script only sets
+       one for URLs served via the SPA fallback (/ and /blog/:slug), so a
+       non-JS crawler that hits an inner blog post never sees canonical=/.  -->
+  <script>
+    (function(){
+      if (!document.querySelector('link[rel="canonical"]')) {
+        var c = document.createElement('link');
+        c.rel = 'canonical';
+        c.href = 'https://telzonacademy.in' + location.pathname;
+        document.head.appendChild(c);
+      }
+    })();
+  </script>
 
   <!--
     NO static canonical here — react-helmet sets the correct per-route
@@ -213,8 +237,10 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "127",
-      "bestRating": "5"
+      "ratingCount": "212",
+      "reviewCount": "212",
+      "bestRating": "5",
+      "worstRating": "1"
     }
   }
   </script>

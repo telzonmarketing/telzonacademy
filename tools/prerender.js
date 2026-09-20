@@ -185,9 +185,15 @@ function rewriteHead(html, { title, description, canonical, ogTitle, ogDescripti
     `<meta property="og:url" content="${escapeHtml(canonical)}" />`,
     `<meta property="og:locale" content="en_IN" />`,
     `<meta property="og:site_name" content="Telzon Academy" />`,
+    // Q-005 · og:image + twitter:image — was missing on every route.
+    `<meta property="og:image" content="${SITE}/telzon-logo-white-1024.png" />`,
+    `<meta property="og:image:type" content="image/png" />`,
+    `<meta property="og:image:width" content="1024" />`,
+    `<meta property="og:image:height" content="1024" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${escapeHtml(ogTitle || title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(ogDescription || description)}" />`,
+    `<meta name="twitter:image" content="${SITE}/telzon-logo-white-1024.png" />`,
     // Q-003 · Course schema with aggregateRating → ★ SERP snippets.
     buildCourseJsonLd({ title, description, canonical }),
     // Q-004 · HowTo schema for syllabus (step-by-step SERP expander).
@@ -258,6 +264,33 @@ function landingPageContent(page) {
       </li>`).join('');
 
   const areasHtml = NAGPUR_AREAS.map(a => `<li>${escapeHtml(keywordShort)} — ${escapeHtml(a)}, Nagpur</li>`).join('\n        ');
+
+  // Q-005 (2026-09-20) · Related-pages block for the noscript fallback.
+  // Fixes the 56-orphan-page finding: without this, every landing page
+  // only had inbound links from Footer + the target slug.
+  //
+  // Distribution strategy: cluster canonical is pinned first on every page
+  // (concentrates authority into the cluster page), then the remaining 11
+  // slots are ROTATED by an offset derived from this page's own slug so
+  // every landing page shows a DIFFERENT set of siblings. Result: instead
+  // of ~12 pages getting all inbound links, all 60+ do. Deterministic
+  // per URL (no SSR/CSR hydration mismatch). React's RelatedPagesSection
+  // continues to render its own richer version at runtime.
+  const CLUSTER_CANONICAL = 'digital-marketing-course-in-nagpur';
+  const canonicalEntry = landingPages.find(p => p.slug === CLUSTER_CANONICAL);
+  const otherEntries = landingPages.filter(
+    p => p.slug !== page.slug && p.slug !== CLUSTER_CANONICAL,
+  );
+  // Derive a stable rotation offset from the page's own slug.
+  let seed = 0;
+  for (const ch of page.slug) seed = (seed * 31 + ch.charCodeAt(0)) >>> 0;
+  const offset = otherEntries.length ? seed % otherEntries.length : 0;
+  const rotated = [...otherEntries.slice(offset), ...otherEntries.slice(0, offset)];
+  const relatedPool = page.slug === CLUSTER_CANONICAL
+    ? rotated.slice(0, 12)
+    : [canonicalEntry, ...rotated].filter(Boolean).slice(0, 12);
+  const relatedHtml = relatedPool.map(p => `
+        <li><a href="/pages/${escapeHtml(p.slug)}">${escapeHtml(p.headline)}</a></li>`).join('');
 
   // ── Q-006 (Action A) ── Conditional GEO blocks that mirror what
   // LandingPage.jsx renders in React. Non-JS crawlers now see the same
@@ -330,6 +363,19 @@ function landingPageContent(page) {
     </section>
     <section>
       <h2>Frequently Asked Questions about ${escapeHtml(keywordShort)} in Nagpur</h2>${faqsHtml}
+    </section>
+    <section>
+      <h2>Related digital marketing courses in Nagpur</h2>
+      <ul>${relatedHtml}
+      </ul>
+    </section>
+    <section>
+      <h2>Explore Telzon Academy</h2>
+      <ul>
+        <li><a href="/">Telzon Academy homepage — Nagpur's digital marketing institute</a></li>
+        <li><a href="/blog">Digital marketing blog &amp; resources</a></li>
+        <li><a href="/lead-generation-package">Lead generation package for Nagpur businesses</a></li>
+      </ul>
     </section>
     <section>
       <h2>Book a free demo class</h2>

@@ -65,9 +65,9 @@ export const landingPages = [
   {
     slug: 'digital-marketing-institute-in-nagpur',
     // Q-002 recovery · 2026-09-12 · pos 8.8 → 13.8 slide, applying Q-001 pattern.
-    metaTitle: 'Digital Marketing Institute in Nagpur — 4.9★ 200+ Reviews | Telzon Academy',
+    metaTitle: 'Digital Marketing Institute in Nagpur — 4.9★ 200+ Reviews | Telzon',
     metaDescription:
-      "Telzon Academy — Nagpur's top-rated digital marketing institute. 4.9/5 from 200+ reviews, 95% placement, 1,000+ alumni across Swiggy, OLA, Nykaa. Book a free demo class.",
+      "Nagpur's top-rated digital marketing institute — 4.9/5 from 200+ reviews, 95% placement, 1,000+ alumni at Swiggy, OLA, Nykaa. Free demo class.",
     metaKeywords:
       'digital marketing institute Nagpur, best digital marketing institute Nagpur, top digital marketing institute Nagpur, digital marketing academy Nagpur, marketing training institute Nagpur',
     ogTitle:
@@ -159,9 +159,9 @@ export const landingPages = [
   {
     slug: 'digital-marketing-training-in-nagpur',
     // Q-004 · 2026-09-12 · pos 36.6 · applying Q-002 pattern.
-    metaTitle: 'Digital Marketing Training in Nagpur — 4.9★ · Live Projects · 95% Placement | Telzon Academy',
+    metaTitle: 'Digital Marketing Training in Nagpur — 4.9★ · 95% Placement | Telzon',
     metaDescription:
-      "Digital marketing training in Nagpur at Telzon Academy — 4.9/5 from 200+ reviews, 16-week hands-on program with SEO, Google Ads, social media and AI marketing modules. 95% placement, ₹25K–₹45K + EMI. Free demo class.",
+      "Digital marketing training in Nagpur — 4.9/5 from 200+ reviews, 16-week hands-on SEO, Google Ads, social media & AI marketing. 95% placement, ₹25K–₹45K + EMI.",
     metaKeywords:
       'digital marketing training in Nagpur, digital marketing training institute Nagpur, digital marketing training course Nagpur, digital marketing training with certification Nagpur',
     ogTitle:
@@ -233,9 +233,9 @@ export const landingPages = [
   {
     slug: 'best-digital-marketing-course-in-nagpur',
     // Q-003 recovery · 2026-09-12 · pos 7.4 defense, applying Q-001 pattern.
-    metaTitle: 'Best Digital Marketing Course in Nagpur — 4.9★ · 95% Placement · Free Demo | Telzon Academy',
+    metaTitle: 'Best Digital Marketing Course Nagpur — 4.9★ · 95% Placement | Telzon',
     metaDescription:
-      "Best digital marketing course in Nagpur — 4.9/5 from 200+ reviews, 95% placement, 16-week live-project curriculum with AI marketing. Fees ₹25K–₹45K + EMI. Book a free demo class at Telzon Academy.",
+      "Best digital marketing course in Nagpur — 4.9/5 from 200+ reviews, 95% placement, 16-week live-project curriculum with AI marketing. ₹25K–₹45K + EMI. Free demo.",
     metaKeywords:
       'best digital marketing course in Nagpur, best digital marketing training in Nagpur, top digital marketing course Nagpur, best digital marketing institute Nagpur',
     ogTitle:
@@ -286,9 +286,9 @@ export const landingPages = [
     slug: 'digital-marketing-course-fees-in-nagpur',
     // Q-003 · 2026-09-12 · pos 5.3 with 0% CTR — snippet answers the query
     // upfront ("₹25K–₹45K") to convert curiosity into clicks.
-    metaTitle: 'Digital Marketing Course Fees in Nagpur — ₹25,000 to ₹45,000 · EMI · Scholarships | Telzon Academy',
+    metaTitle: 'Digital Marketing Course Fees in Nagpur — ₹25K–₹45K · EMI | Telzon',
     metaDescription:
-      "Digital marketing course fees in Nagpur — ₹25,000 to ₹45,000 all-inclusive at Telzon Academy. No-cost EMI (3 or 6 months), merit scholarships up to 30%, no hidden charges. 95% placement. Book a free demo class.",
+      "Digital marketing course fees in Nagpur — ₹25,000 to ₹45,000 all-inclusive at Telzon Academy. No-cost EMI, merit scholarships up to 30%, no hidden charges.",
     metaKeywords:
       'digital marketing course fees in Nagpur, digital marketing course price Nagpur, digital marketing course cost Nagpur, digital marketing course fees near me',
     ogTitle:
@@ -338,9 +338,9 @@ export const landingPages = [
   {
     slug: 'digital-marketing-course-with-placement-nagpur',
     // Q-004 · 2026-09-12 · pos 88.7 (falling off), highest priority in cluster.
-    metaTitle: 'Digital Marketing Course with Placement in Nagpur — 95% Rate · Swiggy · OLA · Nykaa | Telzon Academy',
+    metaTitle: 'Digital Marketing Course with Placement in Nagpur — 95% Rate | Telzon',
     metaDescription:
-      "Digital marketing course with placement in Nagpur — 95% placement rate at Telzon Academy. First offer in 30–60 days at Swiggy, OLA, Nykaa, Le Meridien and 50+ hiring partners. Avg ₹3.5 LPA. Free demo class.",
+      "Digital marketing course with placement in Nagpur — 95% rate at Telzon Academy. First offer in 30–60 days at Swiggy, OLA, Nykaa and 50+ partners. Avg ₹3.5 LPA.",
     metaKeywords:
       'digital marketing course with placement in Nagpur, digital marketing course with placement guarantee Nagpur, digital marketing job placement Nagpur, digital marketing course with placement assistance Nagpur',
     ogTitle:
@@ -390,9 +390,9 @@ export const landingPages = [
   {
     slug: 'digital-marketing-training-institute-nagpur',
     // Q-004 · 2026-09-12 · pos 46.98 · 166 imps · applying Q-002 pattern.
-    metaTitle: 'Digital Marketing Training Institute in Nagpur — 4.9★ · Google + Meta Certified | Telzon Academy',
+    metaTitle: 'Digital Marketing Training Institute Nagpur — 4.9★ Certified | Telzon',
     metaDescription:
-      "Telzon Academy — Nagpur's top digital marketing training institute. 4.9/5 from 200+ reviews, Google Ads + Google Analytics + Meta Blueprint certified curriculum, 95% placement rate, live client projects. Free demo class.",
+      "Nagpur's top digital marketing training institute — 4.9/5, Google Ads + Analytics + Meta Blueprint certified curriculum, 95% placement, live client projects.",
     metaKeywords:
       'digital marketing training institute Nagpur, digital marketing training institute in Nagpur, digital marketing training center Nagpur, digital marketing training institute near me',
     ogTitle:
@@ -443,9 +443,9 @@ export const landingPages = [
     slug: 'digital-marketing-classes-in-nagpur',
     // Q-002 recovery · 2026-09-12 · pos 32.4 stuck, applying Q-001 pattern
     // with a scheduling / batch-flexibility angle (matches "classes" intent).
-    metaTitle: 'Digital Marketing Classes in Nagpur — Weekday, Weekend & Online Batches | Telzon Academy',
+    metaTitle: 'Digital Marketing Classes Nagpur — Weekday/Weekend/Online | Telzon',
     metaDescription:
-      'Digital marketing classes in Nagpur at Telzon Academy — weekday morning, weekday evening, weekend and live online batches. 16-week program, 95% placement, ₹25K–₹45K with EMI.',
+      'Digital marketing classes in Nagpur — weekday morning, evening, weekend and live online batches. 16-week program, 95% placement, ₹25K–₹45K with EMI.',
     metaKeywords:
       'digital marketing classes Nagpur, weekend digital marketing classes Nagpur, evening digital marketing classes Nagpur, online digital marketing classes Nagpur, digital marketing class near me',
     ogTitle:
@@ -632,7 +632,7 @@ export const landingPages = [
   },
   {
     slug: 'digital-marketing-course-fees-and-duration-nagpur',
-    metaTitle: 'Digital Marketing Course Fees & Duration in Nagpur | Telzon Academy',
+    metaTitle: 'Digital Marketing Course Fees & Duration in Nagpur | Telzon',
     metaDescription: 'Transparent digital marketing course fees and duration at Telzon Academy Nagpur. Flexible payment plans, EMI options and scholarships available. Check fees now.',
     metaKeywords: '',
     ogTitle: 'Digital Marketing Course Fees & Duration — Telzon Academy Nagpur',
@@ -650,8 +650,8 @@ export const landingPages = [
     slug: 'best-digital-marketing-classes-in-nagpur',
     // Q-003 recovery · 2026-09-12 · pos 41.7 → target page 2. Lean into
     // "best" comparison + batch-flexibility angle (matches "classes" intent).
-    metaTitle: 'Best Digital Marketing Classes in Nagpur — 4.9★ · Small Batches · Weekend + Online | Telzon Academy',
-    metaDescription: 'Best digital marketing classes in Nagpur — 4.9/5 from 200+ reviews, max 20 students per batch, weekday morning, evening, weekend and live online options. 95% placement. Book a free demo class.',
+    metaTitle: 'Best Digital Marketing Classes Nagpur — 4.9★ Small Batches | Telzon',
+    metaDescription: 'Best digital marketing classes in Nagpur — 4.9/5, max 20 students per batch, weekday morning/evening/weekend/online options. 95% placement.',
     metaKeywords: 'best digital marketing classes in Nagpur, best digital marketing classes near me, top digital marketing classes Nagpur, best weekend digital marketing classes Nagpur',
     ogTitle: 'Best Digital Marketing Classes in Nagpur — 4.9★ · Small Batches | Telzon Academy',
     ogDescription: "Nagpur's highest-rated digital marketing classes — max 20 students per batch, flexible schedules, 95% placement. Book a free demo.",
@@ -779,8 +779,8 @@ export const landingPages = [
   {
     slug: 'digital-marketing-agency-in-nagpur',
     // Q-004 · 2026-09-12 · pos 38.09 · 55 imps · agency intent (B2B, different funnel).
-    metaTitle: 'Digital Marketing Agency in Nagpur — SEO · Google Ads · Meta Ads · Lead Gen | Telzon',
-    metaDescription: "Telzon is a full-service digital marketing agency in Nagpur — SEO, Google Ads, Meta Ads, social media, content and lead generation for Nagpur businesses. Transparent monthly reporting. Free 30-min strategy call.",
+    metaTitle: 'Digital Marketing Agency in Nagpur — SEO · Ads · Lead Gen | Telzon',
+    metaDescription: "Full-service digital marketing agency in Nagpur — SEO, Google Ads, Meta Ads, social media & lead generation. Transparent reporting. Free strategy call.",
     metaKeywords: 'digital marketing agency in Nagpur, best digital marketing agency in Nagpur, top digital marketing agency Nagpur, digital marketing services Nagpur, SEO agency Nagpur, Google Ads agency Nagpur',
     ogTitle: 'Digital Marketing Agency in Nagpur — SEO · Ads · Content · Lead Gen | Telzon',
     ogDescription: "Full-service Nagpur agency for SEO, Google Ads, Meta Ads and lead generation. Transparent reporting. Free strategy call.",
