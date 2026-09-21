@@ -136,7 +136,7 @@
       "description": "H1 headings help Google understand the primary topic of each page.",
       "status": "escalated",
       "detectedAt": "2026-05-15T19:28:12.445Z",
-      "lastSeenAt": "2026-09-20T07:43:34.178Z",
+      "lastSeenAt": "2026-09-21T07:56:21.293Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:28:12.445Z",
@@ -717,14 +717,19 @@
           "timestamp": "2026-09-20T07:43:34.178Z",
           "strategy": "H1 headings help Google understand the primary topic of each page.",
           "file": null
+        },
+        {
+          "timestamp": "2026-09-21T07:56:21.293Z",
+          "strategy": "H1 headings help Google understand the primary topic of each page.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-05-15T19:28:12.445Z",
       "resolvedAt": "2026-09-13T07:03:12.967Z",
       "daysToResolve": 120,
       "regressedAt": "2026-09-13T07:26:27.098Z",
-      "escalatedAt": "2026-09-20T07:43:34.178Z",
-      "escalationReason": "Issue persists after 116 auto-fix attempts. Needs human intervention."
+      "escalatedAt": "2026-09-21T07:56:21.293Z",
+      "escalationReason": "Issue persists after 117 auto-fix attempts. Needs human intervention."
     },
     "a924a5969e28": {
       "id": "a924a5969e28",
@@ -734,7 +739,7 @@
       "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
       "status": "escalated",
       "detectedAt": "2026-05-15T19:28:12.445Z",
-      "lastSeenAt": "2026-09-20T07:43:34.178Z",
+      "lastSeenAt": "2026-09-21T07:56:21.293Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:28:12.445Z",
@@ -1295,14 +1300,19 @@
           "timestamp": "2026-09-20T07:43:34.178Z",
           "strategy": "Convert client-side rendered pages to Server Components",
           "file": null
+        },
+        {
+          "timestamp": "2026-09-21T07:56:21.293Z",
+          "strategy": "Convert client-side rendered pages to Server Components",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-05-15T19:28:12.445Z",
       "resolvedAt": "2026-09-19T07:19:32.280Z",
       "daysToResolve": 126,
       "regressedAt": "2026-09-20T05:57:42.273Z",
-      "escalatedAt": "2026-09-20T07:43:34.178Z",
-      "escalationReason": "Issue persists after 112 auto-fix attempts. Needs human intervention."
+      "escalatedAt": "2026-09-21T07:56:21.293Z",
+      "escalationReason": "Issue persists after 113 auto-fix attempts. Needs human intervention."
     },
     "68149022932d": {
       "id": "68149022932d",
@@ -1759,7 +1769,7 @@
       "description": "Long redirect chains waste crawl budget and dilute link equity.",
       "status": "escalated",
       "detectedAt": "2026-06-07T05:51:50.198Z",
-      "lastSeenAt": "2026-09-20T07:43:34.178Z",
+      "lastSeenAt": "2026-09-21T07:56:21.293Z",
       "attempts": [
         {
           "timestamp": "2026-06-07T06:58:10.446Z",
@@ -2315,14 +2325,19 @@
           "timestamp": "2026-09-20T07:43:34.178Z",
           "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
           "file": null
+        },
+        {
+          "timestamp": "2026-09-21T07:56:21.293Z",
+          "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-06-07T05:51:50.198Z",
       "resolvedAt": "2026-09-19T07:19:32.280Z",
       "daysToResolve": 104,
       "regressedAt": "2026-09-20T05:57:42.273Z",
-      "escalatedAt": "2026-09-20T07:43:34.178Z",
-      "escalationReason": "Issue persists after 111 auto-fix attempts. Needs human intervention."
+      "escalatedAt": "2026-09-21T07:56:21.293Z",
+      "escalationReason": "Issue persists after 112 auto-fix attempts. Needs human intervention."
     },
     "b4b96faddfd3": {
       "id": "b4b96faddfd3",
@@ -2582,5 +2597,5 @@
     "escalated": 3,
     "regressed": 0
   },
-  "lastReconciled": "2026-09-20T07:43:34.178Z"
+  "lastReconciled": "2026-09-21T07:56:21.293Z"
 }
