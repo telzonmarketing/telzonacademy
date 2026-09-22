@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-09-22T22:13:43.266Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 731ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-09-22T20:33:47.554Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 63 pages appear to be client-side rendered only",
     "details": "Convert client-side rendered pages to Server Components"
-  },
-  {
-    "timestamp": "2026-09-19T07:19:33.255Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 64 pages missing H1 heading",
-    "details": "H1 headings help Google understand the primary topic of each page."
   }
 ]
