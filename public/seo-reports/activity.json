@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-09-22T23:54:42.869Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-09-22T22:34:53.964Z",
     "type": "fix",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "error",
     "icon": "↩",
     "title": "REGRESSED: \"1 pages missing meta description\" came back",
-    "details": "Issue was resolved before — now detected again. Bot will retry."
-  },
-  {
-    "timestamp": "2026-09-19T07:19:33.255Z",
-    "type": "error",
-    "icon": "↩",
-    "title": "REGRESSED: \"1 pages missing <title> tag\" came back",
     "details": "Issue was resolved before — now detected again. Bot will retry."
   }
 ]
