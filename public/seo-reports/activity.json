@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-09-23T00:41:06.220Z",
+    "type": "error",
+    "icon": "🔴",
+    "title": "Heartbeat: 4 check(s) failing",
+    "details": "403 Homepage · 403 Sitemap · 403 Robots.txt · 403 Dashboard"
+  },
+  {
     "timestamp": "2026-09-22T23:54:42.869Z",
     "type": "submit",
     "icon": "⚡",
@@ -1390,13 +1397,6 @@
     "type": "error",
     "icon": "↩",
     "title": "REGRESSED: \"1 pages missing canonical URL\" came back",
-    "details": "Issue was resolved before — now detected again. Bot will retry."
-  },
-  {
-    "timestamp": "2026-09-19T07:19:33.255Z",
-    "type": "error",
-    "icon": "↩",
-    "title": "REGRESSED: \"1 pages missing meta description\" came back",
     "details": "Issue was resolved before — now detected again. Bot will retry."
   }
 ]
