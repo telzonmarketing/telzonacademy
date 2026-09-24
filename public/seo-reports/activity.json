@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-09-24T19:13:29.861Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 457ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-09-24T18:02:19.376Z",
     "type": "submit",
     "icon": "⚡",
@@ -1390,13 +1397,6 @@
     "type": "win",
     "icon": "🏆",
     "title": "WON: \"62 pages have redirect chains\" resolved after 4 attempts",
-    "details": "Took 105 days from first detection"
-  },
-  {
-    "timestamp": "2026-09-20T05:57:42.274Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"1 pages missing meta description\" resolved after 4 attempts",
     "details": "Took 105 days from first detection"
   }
 ]
