@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-09-24T15:10:31.575Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 428ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-09-24T12:57:49.410Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🏆",
     "title": "WON: \"1 pages missing canonical URL\" resolved after 7 attempts",
     "details": "Took 127 days from first detection"
-  },
-  {
-    "timestamp": "2026-09-20T05:57:42.274Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #110: working on \"63 pages have redirect chains\"",
-    "details": ""
   }
 ]
