@@ -1,0 +1,8 @@
+{
+  "own": { "domain": "telzonacademy.in", "brand": "Telzon Academy" },
+  "competitors": [
+    { "domain": "mydigitalsavvy.com", "brand": "My Digital Savvy" },
+    { "domain": "nagpursofttech.in", "brand": "Nagpur Soft Tech" },
+    { "domain": "mediaforumdigital.com", "brand": "Mediaforum Digital" }
+  ]
+}
