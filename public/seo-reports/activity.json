@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-10-04T21:32:22.085Z",
+    "type": "error",
+    "icon": "🔴",
+    "title": "Heartbeat: 4 check(s) failing",
+    "details": "ERR Homepage · ERR Sitemap · ERR Robots.txt · ERR Dashboard"
+  },
+  {
     "timestamp": "2026-10-04T20:43:30.906Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"64 pages missing H1 heading\" needs human attention",
     "details": "Auto-fix failed after 126 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-09-29T08:20:38.406Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #121: working on \"63 pages have redirect chains\"",
-    "details": ""
   }
 ]
