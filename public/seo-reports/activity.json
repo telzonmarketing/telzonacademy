@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-10-04T17:39:32.415Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 478ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-10-04T17:19:48.926Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 64 pages missing H1 heading",
     "details": "H1 headings help Google understand the primary topic of each page."
-  },
-  {
-    "timestamp": "2026-09-29T08:20:38.406Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 64 pages",
-    "details": "Found 3 issues (1 critical, 1 important)"
   }
 ]
