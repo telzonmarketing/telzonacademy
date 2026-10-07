@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-10-07T08:44:45.907Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 436ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-10-07T08:32:34.078Z",
     "type": "done",
     "icon": "✓",
@@ -1391,12 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"64 pages appear to be client-side rendered only\" needs human attention",
     "details": "Auto-fix failed after 125 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-10-02T08:21:49.302Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"64 pages missing H1 heading\" needs human attention",
-    "details": "Auto-fix failed after 129 attempts — manual intervention required"
   }
 ]
