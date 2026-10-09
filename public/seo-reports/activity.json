@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-10-09T09:14:48.180Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 373ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-10-09T08:51:50.056Z",
     "type": "done",
     "icon": "✓",
@@ -1391,12 +1398,5 @@
     "icon": "🔁",
     "title": "Attempt #131: working on \"64 pages missing H1 heading\"",
     "details": ""
-  },
-  {
-    "timestamp": "2026-10-04T08:19:56.393Z",
-    "type": "error",
-    "icon": "↩",
-    "title": "REGRESSED: \"63 pages have redirect chains\" came back",
-    "details": "Issue was resolved before — now detected again. Bot will retry."
   }
 ]
