@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-10-13T08:34:39.628Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-10-13T02:03:07.540Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1391,12 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"63 pages have redirect chains\" needs human attention",
     "details": "Auto-fix failed after 129 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-10-07T08:32:34.005Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"64 pages appear to be client-side rendered only\" needs human attention",
-    "details": "Auto-fix failed after 131 attempts — manual intervention required"
   }
 ]
