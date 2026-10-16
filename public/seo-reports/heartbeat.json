@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-10-16T01:24:57.309Z",
+  "timestamp": "2026-10-16T07:14:31.613Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 9,
   "passed": 9,
   "failed": 0,
   "criticalFailed": 0,
-  "avgResponseMs": 388,
+  "avgResponseMs": 427,
   "results": [
     {
       "url": "https://telzonacademy.in",
@@ -13,7 +13,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 249
+      "ms": 268
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
@@ -21,7 +21,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 242
+      "ms": 276
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
@@ -29,7 +29,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 246
+      "ms": 289
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
@@ -37,7 +37,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 264
+      "ms": 296
     },
     {
       "url": "https://telzonacademy.in/",
@@ -45,7 +45,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 246
+      "ms": 309
     },
     {
       "url": "https://telzonacademy.in/blog",
@@ -53,7 +53,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 548
+      "ms": 563
     },
     {
       "url": "https://telzonacademy.in/lead-generation-package",
@@ -61,7 +61,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 552
+      "ms": 572
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
@@ -69,7 +69,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 528
+      "ms": 568
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
@@ -77,7 +77,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 621
+      "ms": 705
     }
   ],
   "healthy": true
