@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-15T23:28:42.755Z",
+  "timestamp": "2026-10-16T02:27:38.944Z",
   "pagesAudited": 64,
   "score": 82,
   "grade": "B",
@@ -36,13 +36,15 @@
         "query": "best digital marketing course in nagpur",
         "source": "duckduckgo",
         "cited": false,
-        "error": "request-failed"
+        "position": null,
+        "competitors": []
       },
       {
         "query": "digital marketing institute nagpur",
         "source": "duckduckgo",
         "cited": false,
-        "error": "request-failed"
+        "position": null,
+        "competitors": []
       },
       {
         "query": "telzon academy",
