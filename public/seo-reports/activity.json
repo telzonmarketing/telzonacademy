@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-10-20T22:19:50.643Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 446ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-10-20T21:03:37.579Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO issue (important): No FAQPage schema detected anywhere",
     "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-10-16T02:27:38.944Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
   }
 ]
