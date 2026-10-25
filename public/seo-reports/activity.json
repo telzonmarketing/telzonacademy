@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-10-25T23:40:07.814Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-10-25T22:11:55.414Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "💚",
     "title": "Heartbeat: site healthy (9/9 checks · 446ms avg)",
     "details": ""
-  },
-  {
-    "timestamp": "2026-10-20T21:03:37.579Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
   }
 ]
