@@ -6,13 +6,20 @@
       "severity": "important",
       "title": "1 pages have redirect chains",
       "description": "Long redirect chains waste crawl budget and dilute link equity.",
-      "status": "resolved",
+      "status": "fixing",
       "detectedAt": "2026-05-21T05:16:33.491Z",
-      "lastSeenAt": "2026-06-06T05:49:48.817Z",
-      "attempts": [],
+      "lastSeenAt": "2026-10-27T07:06:22.889Z",
+      "attempts": [
+        {
+          "timestamp": "2026-10-27T07:06:22.889Z",
+          "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
+          "file": null
+        }
+      ],
       "firstSeenRun": "2026-05-21T05:16:33.491Z",
       "resolvedAt": "2026-06-07T06:19:10.365Z",
-      "daysToResolve": 17
+      "daysToResolve": 17,
+      "regressedAt": "2026-10-27T07:06:22.889Z"
     },
     "622b6d80b02a": {
       "id": "622b6d80b02a",
@@ -20,7 +27,7 @@
       "severity": "important",
       "title": "64 pages have redirect chains",
       "description": "Long redirect chains waste crawl budget and dilute link equity.",
-      "status": "escalated",
+      "status": "resolved",
       "detectedAt": "2026-06-07T06:19:10.365Z",
       "lastSeenAt": "2026-10-26T07:16:58.673Z",
       "attempts": [
@@ -513,8 +520,8 @@
       "firstSeenRun": "2026-06-07T06:19:10.365Z",
       "escalatedAt": "2026-10-26T07:16:58.673Z",
       "escalationReason": "Issue persists after 97 auto-fix attempts. Needs human intervention.",
-      "resolvedAt": "2026-07-20T05:36:00.284Z",
-      "daysToResolve": 43,
+      "resolvedAt": "2026-10-27T07:06:22.889Z",
+      "daysToResolve": 142,
       "regressedAt": "2026-07-22T05:02:55.141Z"
     },
     "91972ff13dbe": {
@@ -523,7 +530,7 @@
       "severity": "low",
       "title": "65 pages missing H1 heading",
       "description": "H1 headings help Google understand the primary topic of each page.",
-      "status": "escalated",
+      "status": "resolved",
       "detectedAt": "2026-06-08T06:33:37.387Z",
       "lastSeenAt": "2026-10-26T07:16:58.673Z",
       "attempts": [
@@ -1035,7 +1042,9 @@
       ],
       "firstSeenRun": "2026-06-08T06:33:37.387Z",
       "escalatedAt": "2026-10-26T07:16:58.673Z",
-      "escalationReason": "Issue persists after 101 auto-fix attempts. Needs human intervention."
+      "escalationReason": "Issue persists after 101 auto-fix attempts. Needs human intervention.",
+      "resolvedAt": "2026-10-27T07:06:22.889Z",
+      "daysToResolve": 141
     },
     "43c9065c7998": {
       "id": "43c9065c7998",
@@ -1043,7 +1052,7 @@
       "severity": "critical",
       "title": "65 pages appear to be client-side rendered only",
       "description": "These pages have very little HTML content served from the server. Googlebot may not execute JavaScript to see the full content, leaving them effectively invisible.",
-      "status": "escalated",
+      "status": "resolved",
       "detectedAt": "2026-06-08T06:33:37.387Z",
       "lastSeenAt": "2026-10-26T07:16:58.673Z",
       "attempts": [
@@ -1536,8 +1545,8 @@
       "firstSeenRun": "2026-06-08T06:33:37.387Z",
       "escalatedAt": "2026-10-26T07:16:58.673Z",
       "escalationReason": "Issue persists after 97 auto-fix attempts. Needs human intervention.",
-      "resolvedAt": "2026-07-20T05:36:00.284Z",
-      "daysToResolve": 42,
+      "resolvedAt": "2026-10-27T07:06:22.889Z",
+      "daysToResolve": 141,
       "regressedAt": "2026-07-22T05:02:55.141Z"
     },
     "c842bc749ac8": {
@@ -1888,19 +1897,25 @@
       "severity": "low",
       "title": "1 pages missing meta description",
       "description": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
-      "status": "resolved",
+      "status": "fixing",
       "detectedAt": "2026-07-10T05:59:51.202Z",
-      "lastSeenAt": "2026-07-10T05:59:51.202Z",
+      "lastSeenAt": "2026-10-27T07:06:22.889Z",
       "attempts": [
         {
           "timestamp": "2026-07-10T05:59:51.202Z",
+          "strategy": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
+          "file": null
+        },
+        {
+          "timestamp": "2026-10-27T07:06:22.889Z",
           "strategy": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
           "file": null
         }
       ],
       "firstSeenRun": "2026-07-10T05:59:51.202Z",
       "resolvedAt": "2026-07-12T05:22:52.589Z",
-      "daysToResolve": 2
+      "daysToResolve": 2,
+      "regressedAt": "2026-10-27T07:06:22.889Z"
     },
     "daa3e6f34fda": {
       "id": "daa3e6f34fda",
@@ -1968,19 +1983,25 @@
       "severity": "important",
       "title": "robots.txt not found",
       "description": "A robots.txt file is missing. Without it, crawlers have no guidance and crawl budget may be wasted on non-content pages.",
-      "status": "resolved",
+      "status": "fixing",
       "detectedAt": "2026-07-20T05:36:00.284Z",
-      "lastSeenAt": "2026-07-20T05:36:00.284Z",
+      "lastSeenAt": "2026-10-27T07:06:22.889Z",
       "attempts": [
         {
           "timestamp": "2026-07-20T05:36:00.284Z",
+          "strategy": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch.",
+          "file": null
+        },
+        {
+          "timestamp": "2026-10-27T07:06:22.889Z",
           "strategy": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch.",
           "file": null
         }
       ],
       "firstSeenRun": "2026-07-20T05:36:00.284Z",
       "resolvedAt": "2026-07-22T05:02:55.141Z",
-      "daysToResolve": 2
+      "daysToResolve": 2,
+      "regressedAt": "2026-10-27T07:06:22.889Z"
     },
     "0c1293f1f543": {
       "id": "0c1293f1f543",
@@ -2101,14 +2122,50 @@
       "firstSeenRun": "2026-07-20T05:36:00.284Z",
       "resolvedAt": "2026-07-22T05:02:55.141Z",
       "daysToResolve": 2
+    },
+    "855fe6d4e9d2": {
+      "id": "855fe6d4e9d2",
+      "type": "NO_SITEMAP",
+      "severity": "critical",
+      "title": "No sitemap.xml found",
+      "description": "Google cannot discover your pages without a sitemap. This is mandatory for sites with 100+ pages.",
+      "status": "fixing",
+      "detectedAt": "2026-10-27T07:06:22.889Z",
+      "lastSeenAt": "2026-10-27T07:06:22.889Z",
+      "attempts": [
+        {
+          "timestamp": "2026-10-27T07:06:22.889Z",
+          "strategy": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
+          "file": null
+        }
+      ],
+      "firstSeenRun": "2026-10-27T07:06:22.889Z"
+    },
+    "c2bcb0cbe37f": {
+      "id": "c2bcb0cbe37f",
+      "type": "ERROR_PAGES",
+      "severity": "critical",
+      "title": "1 pages return error status codes",
+      "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+      "status": "fixing",
+      "detectedAt": "2026-10-27T07:06:22.889Z",
+      "lastSeenAt": "2026-10-27T07:06:22.889Z",
+      "attempts": [
+        {
+          "timestamp": "2026-10-27T07:06:22.889Z",
+          "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+          "file": null
+        }
+      ],
+      "firstSeenRun": "2026-10-27T07:06:22.889Z"
     }
   },
   "stats": {
     "open": 0,
-    "fixing": 0,
+    "fixing": 5,
     "resolved": 28,
-    "escalated": 3,
+    "escalated": 0,
     "regressed": 0
   },
-  "lastReconciled": "2026-10-26T07:16:58.673Z"
+  "lastReconciled": "2026-10-27T07:06:22.889Z"
 }
