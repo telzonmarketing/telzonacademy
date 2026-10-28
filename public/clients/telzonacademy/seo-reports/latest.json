@@ -1,28 +1,17 @@
 {
-  "timestamp": "2026-10-27T07:06:23.355Z",
+  "timestamp": "2026-10-28T07:44:41.580Z",
   "summary": {
     "pagesFound": 1,
-    "issuesFound": 5,
+    "issuesFound": 4,
     "critical": 2,
-    "important": 2,
+    "important": 1,
     "low": 1,
-    "issuesFixed": 5,
+    "issuesFixed": 4,
     "pagesSubmitted": 0,
     "avgPosition": null,
     "totalKeywords": 0
   },
   "issues": [
-    {
-      "type": "MISSING_ROBOTS_TXT",
-      "severity": "important",
-      "title": "robots.txt not found",
-      "description": "A robots.txt file is missing. Without it, crawlers have no guidance and crawl budget may be wasted on non-content pages.",
-      "url": "https://telzonacademy.in/robots.txt",
-      "fix": "CREATE_ROBOTS_TXT",
-      "fixData": {
-        "siteUrl": "https://telzonacademy.in"
-      }
-    },
     {
       "type": "NO_SITEMAP",
       "severity": "critical",
@@ -75,11 +64,6 @@
   ],
   "fixes": [
     {
-      "issue": "robots.txt not found",
-      "description": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch.",
-      "skipped": true
-    },
-    {
       "issue": "No sitemap.xml found",
       "description": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
       "skipped": true
@@ -124,14 +108,14 @@
   "contentBriefs": [],
   "healthCheck": null,
   "indexNow": {
-    "submitted": 65,
+    "submitted": 1,
     "failed": 0,
     "statusCode": 200,
     "keyLocation": "https://telzonacademy.in/c218d7307cc58cf886898bc873656853.txt",
-    "note": "Notified Bing/Yandex/Naver of 65 URLs"
+    "note": "Notified Bing/Yandex/Naver of 1 URLs"
   },
   "bingSubmissions": {
-    "submitted": 65,
+    "submitted": 1,
     "failed": 0
   },
   "issueTracker": {
@@ -144,10 +128,15 @@
         "description": "Long redirect chains waste crawl budget and dilute link equity.",
         "status": "fixing",
         "detectedAt": "2026-05-21T05:16:33.491Z",
-        "lastSeenAt": "2026-10-27T07:06:22.889Z",
+        "lastSeenAt": "2026-10-28T07:44:40.999Z",
         "attempts": [
           {
             "timestamp": "2026-10-27T07:06:22.889Z",
+            "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
+            "file": null
+          },
+          {
+            "timestamp": "2026-10-28T07:44:40.999Z",
             "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
             "file": null
           }
@@ -2035,7 +2024,7 @@
         "description": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
         "status": "fixing",
         "detectedAt": "2026-07-10T05:59:51.202Z",
-        "lastSeenAt": "2026-10-27T07:06:22.889Z",
+        "lastSeenAt": "2026-10-28T07:44:40.999Z",
         "attempts": [
           {
             "timestamp": "2026-07-10T05:59:51.202Z",
@@ -2044,6 +2033,11 @@
           },
           {
             "timestamp": "2026-10-27T07:06:22.889Z",
+            "strategy": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
+            "file": null
+          },
+          {
+            "timestamp": "2026-10-28T07:44:40.999Z",
             "strategy": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
             "file": null
           }
@@ -2119,7 +2113,7 @@
         "severity": "important",
         "title": "robots.txt not found",
         "description": "A robots.txt file is missing. Without it, crawlers have no guidance and crawl budget may be wasted on non-content pages.",
-        "status": "fixing",
+        "status": "resolved",
         "detectedAt": "2026-07-20T05:36:00.284Z",
         "lastSeenAt": "2026-10-27T07:06:22.889Z",
         "attempts": [
@@ -2135,8 +2129,8 @@
           }
         ],
         "firstSeenRun": "2026-07-20T05:36:00.284Z",
-        "resolvedAt": "2026-07-22T05:02:55.141Z",
-        "daysToResolve": 2,
+        "resolvedAt": "2026-10-28T07:44:40.999Z",
+        "daysToResolve": 100,
         "regressedAt": "2026-10-27T07:06:22.889Z"
       },
       "0c1293f1f543": {
@@ -2267,10 +2261,15 @@
         "description": "Google cannot discover your pages without a sitemap. This is mandatory for sites with 100+ pages.",
         "status": "fixing",
         "detectedAt": "2026-10-27T07:06:22.889Z",
-        "lastSeenAt": "2026-10-27T07:06:22.889Z",
+        "lastSeenAt": "2026-10-28T07:44:40.999Z",
         "attempts": [
           {
             "timestamp": "2026-10-27T07:06:22.889Z",
+            "strategy": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
+            "file": null
+          },
+          {
+            "timestamp": "2026-10-28T07:44:40.999Z",
             "strategy": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
             "file": null
           }
@@ -2285,10 +2284,15 @@
         "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
         "status": "fixing",
         "detectedAt": "2026-10-27T07:06:22.889Z",
-        "lastSeenAt": "2026-10-27T07:06:22.889Z",
+        "lastSeenAt": "2026-10-28T07:44:40.999Z",
         "attempts": [
           {
             "timestamp": "2026-10-27T07:06:22.889Z",
+            "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+            "file": null
+          },
+          {
+            "timestamp": "2026-10-28T07:44:40.999Z",
             "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
             "file": null
           }
@@ -2298,89 +2302,44 @@
     },
     "stats": {
       "open": 0,
-      "fixing": 5,
-      "resolved": 28,
+      "fixing": 4,
+      "resolved": 29,
       "escalated": 0,
       "regressed": 0
     },
-    "lastReconciled": "2026-10-27T07:06:22.889Z"
+    "lastReconciled": "2026-10-28T07:44:40.999Z"
   },
   "issueActions": [
-    {
-      "id": "b2a6442343a6",
-      "type": "regressed",
-      "title": "robots.txt not found"
-    },
-    {
-      "id": "855fe6d4e9d2",
-      "type": "opened",
-      "title": "No sitemap.xml found"
-    },
-    {
-      "id": "4f684ed51e73",
-      "type": "regressed",
-      "title": "1 pages missing meta description"
-    },
-    {
-      "id": "c2bcb0cbe37f",
-      "type": "opened",
-      "title": "1 pages return error status codes"
-    },
-    {
-      "id": "2a6a2bffeffd",
-      "type": "regressed",
-      "title": "1 pages have redirect chains"
-    },
-    {
-      "id": "b2a6442343a6",
-      "type": "fix-attempted",
-      "title": "robots.txt not found",
-      "attempt": 2
-    },
     {
       "id": "855fe6d4e9d2",
       "type": "fix-attempted",
       "title": "No sitemap.xml found",
-      "attempt": 1
+      "attempt": 2
     },
     {
       "id": "4f684ed51e73",
       "type": "fix-attempted",
       "title": "1 pages missing meta description",
-      "attempt": 2
+      "attempt": 3
     },
     {
       "id": "c2bcb0cbe37f",
       "type": "fix-attempted",
       "title": "1 pages return error status codes",
-      "attempt": 1
+      "attempt": 2
     },
     {
       "id": "2a6a2bffeffd",
       "type": "fix-attempted",
       "title": "1 pages have redirect chains",
-      "attempt": 1
+      "attempt": 2
     },
     {
-      "id": "622b6d80b02a",
+      "id": "b2a6442343a6",
       "type": "resolved",
-      "title": "64 pages have redirect chains",
-      "daysToResolve": 142,
-      "attempts": 97
-    },
-    {
-      "id": "91972ff13dbe",
-      "type": "resolved",
-      "title": "65 pages missing H1 heading",
-      "daysToResolve": 141,
-      "attempts": 101
-    },
-    {
-      "id": "43c9065c7998",
-      "type": "resolved",
-      "title": "65 pages appear to be client-side rendered only",
-      "daysToResolve": 141,
-      "attempts": 97
+      "title": "robots.txt not found",
+      "daysToResolve": 100,
+      "attempts": 2
     }
   ],
   "solverEnrichments": [
