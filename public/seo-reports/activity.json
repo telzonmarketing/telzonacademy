@@ -1,5 +1,96 @@
 [
   {
+    "timestamp": "2026-10-28T08:13:21.417Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 1 pages · 4 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-10-28T08:13:21.296Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"1 pages missing meta description\" needs human attention",
+    "details": "Auto-fix failed after 6 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-10-28T08:13:21.296Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"1 pages return error status codes\" needs human attention",
+    "details": "Auto-fix failed after 5 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-10-28T08:13:21.296Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #5: working on \"1 pages return error status codes\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-10-28T08:13:21.296Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #6: working on \"1 pages missing meta description\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-10-28T08:13:21.296Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #3: working on \"No sitemap.xml found\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-10-28T08:13:21.296Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #2: working on \"robots.txt not found\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-10-28T08:13:21.296Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 pages return error status codes",
+    "details": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget."
+  },
+  {
+    "timestamp": "2026-10-28T08:13:21.296Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 pages missing meta description",
+    "details": "Meta descriptions improve click-through rates from search results, which signals quality to Google."
+  },
+  {
+    "timestamp": "2026-10-28T08:13:21.296Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: No sitemap.xml found",
+    "details": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch."
+  },
+  {
+    "timestamp": "2026-10-28T08:13:21.296Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: robots.txt not found",
+    "details": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch."
+  },
+  {
+    "timestamp": "2026-10-28T08:13:21.296Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 1 pages",
+    "details": "Found 4 issues (2 critical, 1 important)"
+  },
+  {
+    "timestamp": "2026-10-28T08:13:21.296Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot scheduled run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-10-28T05:48:03.072Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1307,96 +1398,5 @@
     "icon": "⚡",
     "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
     "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-10-23T07:35:44.974Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 411ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-10-23T07:20:26.688Z",
-    "type": "done",
-    "icon": "✓",
-    "title": "Run completed",
-    "details": "Total: 64 pages · 3 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-10-23T07:20:26.569Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"63 pages have redirect chains\" needs human attention",
-    "details": "Auto-fix failed after 146 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-10-23T07:20:26.569Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"64 pages appear to be client-side rendered only\" needs human attention",
-    "details": "Auto-fix failed after 148 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-10-23T07:20:26.569Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"64 pages missing H1 heading\" needs human attention",
-    "details": "Auto-fix failed after 152 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-10-23T07:20:26.569Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #146: working on \"63 pages have redirect chains\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-10-23T07:20:26.569Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #148: working on \"64 pages appear to be client-side rendered only\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-10-23T07:20:26.569Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #152: working on \"64 pages missing H1 heading\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-10-23T07:20:26.569Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 63 pages have redirect chains",
-    "details": "Long redirect chains waste crawl budget and dilute link equity."
-  },
-  {
-    "timestamp": "2026-10-23T07:20:26.569Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 64 pages appear to be client-side rendered only",
-    "details": "Convert client-side rendered pages to Server Components"
-  },
-  {
-    "timestamp": "2026-10-23T07:20:26.569Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 64 pages missing H1 heading",
-    "details": "H1 headings help Google understand the primary topic of each page."
-  },
-  {
-    "timestamp": "2026-10-23T07:20:26.569Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 64 pages",
-    "details": "Found 3 issues (1 critical, 1 important)"
-  },
-  {
-    "timestamp": "2026-10-23T07:20:26.569Z",
-    "type": "run",
-    "icon": "▶",
-    "title": "SEO bot scheduled run started",
-    "details": "Mode: full audit + fix + submit + keyword tracking"
   }
 ]
