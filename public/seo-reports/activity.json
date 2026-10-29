@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-10-29T10:03:20.629Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 352ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-10-29T08:19:14.208Z",
     "type": "done",
     "icon": "✓",
@@ -1390,13 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #147: working on \"63 pages have redirect chains\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-10-24T07:10:15.126Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #149: working on \"64 pages appear to be client-side rendered only\"",
     "details": ""
   }
 ]
