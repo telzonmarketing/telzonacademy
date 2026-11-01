@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-31T08:17:58.544Z",
+  "timestamp": "2026-11-01T09:03:25.965Z",
   "engine": "StrategyEngine v2",
   "siteUrl": "https://telzonacademy.in",
   "healthScore": 32,
@@ -125,7 +125,7 @@
       "impact": "med",
       "effort": "low",
       "timeToImpact": "1–2 weeks",
-      "title": "Push your 1 pages for indexing",
+      "title": "Push your 64 pages for indexing",
       "why": "Nothing submitted to Google/Bing yet. Faster indexing means new and updated pages start ranking sooner.",
       "action": "Enable IndexNow + sitemap submission so every crawl auto-pings Google & Bing.",
       "score": 6
