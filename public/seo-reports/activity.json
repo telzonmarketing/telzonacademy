@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-01T17:08:17.075Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 459ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-11-01T16:29:01.522Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 1 pages missing meta description",
     "details": "Meta descriptions improve click-through rates from search results, which signals quality to Google."
-  },
-  {
-    "timestamp": "2026-10-27T07:38:22.954Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: No sitemap.xml found",
-    "details": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch."
   }
 ]
