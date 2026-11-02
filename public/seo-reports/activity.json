@@ -1,5 +1,33 @@
 [
   {
+    "timestamp": "2026-11-02T15:29:23.747Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Tier 1 backlink ready: Apple Maps Connect",
+    "details": "Required for Apple Maps + Siri. Manual phone verification."
+  },
+  {
+    "timestamp": "2026-11-02T15:29:23.747Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Tier 1 backlink ready: Bing Places for Business",
+    "details": "Imports from Google Business. Phone verification."
+  },
+  {
+    "timestamp": "2026-11-02T15:29:23.747Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Tier 1 backlink ready: Google Business Profile",
+    "details": "Biggest local SEO ranking factor. Postcard verification required."
+  },
+  {
+    "timestamp": "2026-11-02T15:29:23.747Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Backlink scan · 0/24 live · 0/5 tier-1 live",
+    "details": "24 pending · 0 submitted · 0 broken"
+  },
+  {
     "timestamp": "2026-11-02T11:53:27.811Z",
     "type": "fix",
     "icon": "🤖",
@@ -1370,33 +1398,5 @@
     "icon": "🔁",
     "title": "Attempt #6: working on \"1 pages missing meta description\"",
     "details": ""
-  },
-  {
-    "timestamp": "2026-10-28T08:13:21.296Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #3: working on \"No sitemap.xml found\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-10-28T08:13:21.296Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #2: working on \"robots.txt not found\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-10-28T08:13:21.296Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 pages return error status codes",
-    "details": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget."
-  },
-  {
-    "timestamp": "2026-10-28T08:13:21.296Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 pages missing meta description",
-    "details": "Meta descriptions improve click-through rates from search results, which signals quality to Google."
   }
 ]
