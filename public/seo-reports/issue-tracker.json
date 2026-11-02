@@ -1851,9 +1851,9 @@
       "severity": "critical",
       "title": "1 pages return error status codes",
       "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
-      "status": "resolved",
+      "status": "escalated",
       "detectedAt": "2026-05-15T19:50:51.103Z",
-      "lastSeenAt": "2026-10-31T08:17:18.278Z",
+      "lastSeenAt": "2026-11-02T09:15:26.173Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:50:51.103Z",
@@ -1894,14 +1894,19 @@
           "timestamp": "2026-10-31T08:17:18.278Z",
           "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
           "file": null
+        },
+        {
+          "timestamp": "2026-11-02T09:15:26.173Z",
+          "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-05-15T19:50:51.103Z",
       "resolvedAt": "2026-11-01T09:02:59.503Z",
       "daysToResolve": 170,
-      "regressedAt": "2026-10-27T07:38:22.952Z",
-      "escalatedAt": "2026-10-31T08:17:18.278Z",
-      "escalationReason": "Issue persists after 8 auto-fix attempts. Needs human intervention."
+      "regressedAt": "2026-11-02T09:15:26.173Z",
+      "escalatedAt": "2026-11-02T09:15:26.173Z",
+      "escalationReason": "Issue persists after 9 auto-fix attempts. Needs human intervention."
     },
     "7d874f3ebe0c": {
       "id": "7d874f3ebe0c",
@@ -2174,7 +2179,7 @@
       "severity": "important",
       "title": "63 pages have redirect chains",
       "description": "Long redirect chains waste crawl budget and dilute link equity.",
-      "status": "escalated",
+      "status": "resolved",
       "detectedAt": "2026-06-07T05:51:50.198Z",
       "lastSeenAt": "2026-11-01T09:02:59.503Z",
       "attempts": [
@@ -2930,8 +2935,8 @@
         }
       ],
       "firstSeenRun": "2026-06-07T05:51:50.198Z",
-      "resolvedAt": "2026-10-27T07:38:22.952Z",
-      "daysToResolve": 142,
+      "resolvedAt": "2026-11-02T09:15:26.173Z",
+      "daysToResolve": 148,
       "regressedAt": "2026-11-01T09:02:59.503Z",
       "escalatedAt": "2026-11-01T09:02:59.503Z",
       "escalationReason": "Issue persists after 150 auto-fix attempts. Needs human intervention."
@@ -3054,9 +3059,9 @@
       "severity": "low",
       "title": "1 pages missing meta description",
       "description": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
-      "status": "resolved",
+      "status": "escalated",
       "detectedAt": "2026-06-07T08:24:13.649Z",
-      "lastSeenAt": "2026-10-31T08:17:18.278Z",
+      "lastSeenAt": "2026-11-02T09:15:26.173Z",
       "attempts": [
         {
           "timestamp": "2026-06-07T08:24:13.649Z",
@@ -3102,14 +3107,19 @@
           "timestamp": "2026-10-31T08:17:18.278Z",
           "strategy": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
           "file": null
+        },
+        {
+          "timestamp": "2026-11-02T09:15:26.173Z",
+          "strategy": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-06-07T08:24:13.649Z",
       "resolvedAt": "2026-11-01T09:02:59.503Z",
       "daysToResolve": 147,
-      "regressedAt": "2026-10-27T07:38:22.952Z",
-      "escalatedAt": "2026-10-31T08:17:18.278Z",
-      "escalationReason": "Issue persists after 9 auto-fix attempts. Needs human intervention."
+      "regressedAt": "2026-11-02T09:15:26.173Z",
+      "escalatedAt": "2026-11-02T09:15:26.173Z",
+      "escalationReason": "Issue persists after 10 auto-fix attempts. Needs human intervention."
     },
     "c4cfda4cc35c": {
       "id": "c4cfda4cc35c",
@@ -3182,7 +3192,7 @@
       "description": "Google cannot discover your pages without a sitemap. This is mandatory for sites with 100+ pages.",
       "status": "escalated",
       "detectedAt": "2026-07-08T05:31:20.831Z",
-      "lastSeenAt": "2026-11-01T09:02:59.503Z",
+      "lastSeenAt": "2026-11-02T09:15:26.173Z",
       "attempts": [
         {
           "timestamp": "2026-07-08T05:31:20.831Z",
@@ -3218,14 +3228,19 @@
           "timestamp": "2026-11-01T09:02:59.503Z",
           "strategy": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
           "file": null
+        },
+        {
+          "timestamp": "2026-11-02T09:15:26.173Z",
+          "strategy": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-07-08T05:31:20.831Z",
       "resolvedAt": "2026-07-09T06:15:06.638Z",
       "daysToResolve": 1,
       "regressedAt": "2026-10-27T07:38:22.952Z",
-      "escalatedAt": "2026-11-01T09:02:59.503Z",
-      "escalationReason": "Issue persists after 7 auto-fix attempts. Needs human intervention."
+      "escalatedAt": "2026-11-02T09:15:26.173Z",
+      "escalationReason": "Issue persists after 8 auto-fix attempts. Needs human intervention."
     },
     "c842bc749ac8": {
       "id": "c842bc749ac8",
@@ -3261,7 +3276,7 @@
       "description": "A robots.txt file is missing. Without it, crawlers have no guidance and crawl budget may be wasted on non-content pages.",
       "status": "escalated",
       "detectedAt": "2026-10-27T07:38:22.952Z",
-      "lastSeenAt": "2026-11-01T09:02:59.503Z",
+      "lastSeenAt": "2026-11-02T09:15:26.173Z",
       "attempts": [
         {
           "timestamp": "2026-10-27T07:38:22.952Z",
@@ -3292,11 +3307,16 @@
           "timestamp": "2026-11-01T09:02:59.503Z",
           "strategy": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch.",
           "file": null
+        },
+        {
+          "timestamp": "2026-11-02T09:15:26.173Z",
+          "strategy": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-10-27T07:38:22.952Z",
-      "escalatedAt": "2026-11-01T09:02:59.503Z",
-      "escalationReason": "Issue persists after 6 auto-fix attempts. Needs human intervention."
+      "escalatedAt": "2026-11-02T09:15:26.173Z",
+      "escalationReason": "Issue persists after 7 auto-fix attempts. Needs human intervention."
     },
     "2b6869f98aaf": {
       "id": "2b6869f98aaf",
@@ -3304,7 +3324,7 @@
       "severity": "low",
       "title": "64 pages missing meta description",
       "description": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
-      "status": "fixing",
+      "status": "resolved",
       "detectedAt": "2026-11-01T09:02:59.503Z",
       "lastSeenAt": "2026-11-01T09:02:59.503Z",
       "attempts": [
@@ -3314,7 +3334,9 @@
           "file": null
         }
       ],
-      "firstSeenRun": "2026-11-01T09:02:59.503Z"
+      "firstSeenRun": "2026-11-01T09:02:59.503Z",
+      "resolvedAt": "2026-11-02T09:15:26.173Z",
+      "daysToResolve": 1
     },
     "a04c30745f14": {
       "id": "a04c30745f14",
@@ -3322,7 +3344,7 @@
       "severity": "critical",
       "title": "64 pages return error status codes",
       "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
-      "status": "fixing",
+      "status": "resolved",
       "detectedAt": "2026-11-01T09:02:59.503Z",
       "lastSeenAt": "2026-11-01T09:02:59.503Z",
       "attempts": [
@@ -3332,15 +3354,17 @@
           "file": null
         }
       ],
-      "firstSeenRun": "2026-11-01T09:02:59.503Z"
+      "firstSeenRun": "2026-11-01T09:02:59.503Z",
+      "resolvedAt": "2026-11-02T09:15:26.173Z",
+      "daysToResolve": 1
     }
   },
   "stats": {
     "open": 0,
-    "fixing": 2,
-    "resolved": 25,
-    "escalated": 3,
+    "fixing": 0,
+    "resolved": 26,
+    "escalated": 4,
     "regressed": 0
   },
-  "lastReconciled": "2026-11-01T09:02:59.503Z"
+  "lastReconciled": "2026-11-02T09:15:26.173Z"
 }

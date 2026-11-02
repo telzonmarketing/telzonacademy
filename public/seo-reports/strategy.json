@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-01T09:03:25.965Z",
+  "timestamp": "2026-11-02T09:15:57.474Z",
   "engine": "StrategyEngine v2",
   "siteUrl": "https://telzonacademy.in",
   "healthScore": 32,
@@ -38,9 +38,9 @@
   ],
   "momentum": {
     "window": "7d",
-    "direction": "declining",
+    "direction": "steady",
     "keywordsDelta": 0,
-    "criticalDelta": 1,
+    "criticalDelta": 0,
     "positionDelta": null,
     "note": ""
   },
@@ -125,7 +125,7 @@
       "impact": "med",
       "effort": "low",
       "timeToImpact": "1–2 weeks",
-      "title": "Push your 64 pages for indexing",
+      "title": "Push your 1 pages for indexing",
       "why": "Nothing submitted to Google/Bing yet. Faster indexing means new and updated pages start ranking sooner.",
       "action": "Enable IndexNow + sitemap submission so every crawl auto-pings Google & Bing.",
       "score": 6
