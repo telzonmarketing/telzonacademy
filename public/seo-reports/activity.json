@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-03T22:36:36.306Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-11-03T18:53:12.295Z",
     "type": "fix",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #7: working on \"1 pages missing meta description\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-10-29T08:19:14.137Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #4: working on \"No sitemap.xml found\"",
     "details": ""
   }
 ]
