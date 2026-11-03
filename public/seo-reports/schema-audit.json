@@ -1,10 +1,19 @@
 {
-  "timestamp": "2026-11-02T09:15:57.471Z",
+  "timestamp": "2026-11-03T09:22:01.196Z",
   "siteUrl": "https://telzonacademy.in",
   "pagesAudited": 60,
-  "pagesWithIssues": 0,
+  "pagesWithIssues": 1,
   "duplicateFaqPages": 0,
-  "totalIssues": 0,
-  "issuesByKind": {},
-  "examples": []
+  "totalIssues": 1,
+  "issuesByKind": {
+    "fetch-error": 1
+  },
+  "examples": [
+    {
+      "kind": "fetch-error",
+      "severity": "low",
+      "message": "Could not fetch (404)",
+      "url": "https://telzonacademy.in/pages/best-digital-marketing-course-in-nagpur"
+    }
+  ]
 }

@@ -1,5 +1,96 @@
 [
   {
+    "timestamp": "2026-11-03T09:21:19.863Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 1 pages · 3 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-11-03T09:21:19.748Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"No sitemap.xml found\" needs human attention",
+    "details": "Auto-fix failed after 9 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-11-03T09:21:19.748Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"1 pages missing meta description\" needs human attention",
+    "details": "Auto-fix failed after 11 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-11-03T09:21:19.748Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"1 pages return error status codes\" needs human attention",
+    "details": "Auto-fix failed after 10 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-11-03T09:21:19.748Z",
+    "type": "win",
+    "icon": "🏆",
+    "title": "WON: \"robots.txt not found\" resolved after 7 attempts",
+    "details": "Took 7 days from first detection"
+  },
+  {
+    "timestamp": "2026-11-03T09:21:19.748Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #10: working on \"1 pages return error status codes\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-11-03T09:21:19.748Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #11: working on \"1 pages missing meta description\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-11-03T09:21:19.748Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #9: working on \"No sitemap.xml found\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-11-03T09:21:19.748Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 pages return error status codes",
+    "details": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget."
+  },
+  {
+    "timestamp": "2026-11-03T09:21:19.748Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 pages missing meta description",
+    "details": "Meta descriptions improve click-through rates from search results, which signals quality to Google."
+  },
+  {
+    "timestamp": "2026-11-03T09:21:19.748Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: No sitemap.xml found",
+    "details": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch."
+  },
+  {
+    "timestamp": "2026-11-03T09:21:19.748Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 1 pages",
+    "details": "Found 3 issues (2 critical, 0 important)"
+  },
+  {
+    "timestamp": "2026-11-03T09:21:19.748Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot manual run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-11-03T08:41:11.929Z",
     "type": "submit",
     "icon": "⚡",
@@ -1307,96 +1398,5 @@
     "icon": "💚",
     "title": "Heartbeat: site healthy (9/9 checks · 620ms avg)",
     "details": ""
-  },
-  {
-    "timestamp": "2026-10-29T01:26:53.847Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-10-29T01:26:53.847Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-10-29T01:26:53.847Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-10-29T01:19:18.538Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-10-28T23:14:57.634Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 352ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-10-28T21:55:09.565Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-10-28T21:28:15.735Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-10-28T21:28:15.735Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-10-28T21:28:15.735Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-10-28T18:52:41.140Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 407ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-10-28T17:27:52.086Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-10-28T16:55:42.132Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-10-28T16:55:42.132Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
   }
 ]
