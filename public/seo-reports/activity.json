@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-04T21:55:26.251Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 435ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-11-04T20:11:09.994Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"1 pages return error status codes\" needs human attention",
     "details": "Auto-fix failed after 7 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-10-30T08:28:56.296Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #7: working on \"1 pages return error status codes\"",
-    "details": ""
   }
 ]
