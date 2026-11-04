@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-04T18:54:28.666Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-11-04T15:28:15.750Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1391,12 +1398,5 @@
     "icon": "🔁",
     "title": "Attempt #4: working on \"robots.txt not found\"",
     "details": ""
-  },
-  {
-    "timestamp": "2026-10-30T08:28:56.296Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 pages return error status codes",
-    "details": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget."
   }
 ]
