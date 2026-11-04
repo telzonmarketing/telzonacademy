@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-04T03:26:15.475Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-11-03T23:49:29.362Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "💚",
     "title": "Heartbeat: site healthy (9/9 checks · 352ms avg)",
     "details": ""
-  },
-  {
-    "timestamp": "2026-10-29T08:19:14.208Z",
-    "type": "done",
-    "icon": "✓",
-    "title": "Run completed",
-    "details": "Total: 1 pages · 4 fixes · 0 submitted"
   }
 ]
