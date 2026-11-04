@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-04T15:28:15.750Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 435ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-11-04T12:42:40.698Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 1 pages return error status codes",
     "details": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget."
-  },
-  {
-    "timestamp": "2026-10-30T08:28:56.296Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 pages missing meta description",
-    "details": "Meta descriptions improve click-through rates from search results, which signals quality to Google."
   }
 ]
