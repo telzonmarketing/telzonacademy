@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-06T03:46:27.543Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-11-06T02:59:56.958Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"1 pages missing meta description\" needs human attention",
     "details": "Auto-fix failed after 9 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-10-31T08:17:18.279Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"1 pages return error status codes\" needs human attention",
-    "details": "Auto-fix failed after 8 attempts — manual intervention required"
   }
 ]
