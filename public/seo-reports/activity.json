@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-06T21:32:18.492Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 837ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-11-06T18:33:00.119Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🕷",
     "title": "Crawled 64 pages",
     "details": "Found 5 issues (2 critical, 2 important)"
-  },
-  {
-    "timestamp": "2026-11-01T09:02:59.505Z",
-    "type": "run",
-    "icon": "▶",
-    "title": "SEO bot scheduled run started",
-    "details": "Mode: full audit + fix + submit + keyword tracking"
   }
 ]
