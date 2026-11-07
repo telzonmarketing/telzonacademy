@@ -1,28 +1,17 @@
 {
-  "timestamp": "2026-11-06T09:14:17.188Z",
+  "timestamp": "2026-11-07T08:39:33.892Z",
   "summary": {
     "pagesFound": 1,
-    "issuesFound": 4,
+    "issuesFound": 3,
     "critical": 2,
-    "important": 1,
+    "important": 0,
     "low": 1,
-    "issuesFixed": 4,
+    "issuesFixed": 3,
     "pagesSubmitted": 0,
     "avgPosition": null,
     "totalKeywords": 0
   },
   "issues": [
-    {
-      "type": "MISSING_ROBOTS_TXT",
-      "severity": "important",
-      "title": "robots.txt not found",
-      "description": "A robots.txt file is missing. Without it, crawlers have no guidance and crawl budget may be wasted on non-content pages.",
-      "url": "https://telzonacademy.in/robots.txt",
-      "fix": "CREATE_ROBOTS_TXT",
-      "fixData": {
-        "siteUrl": "https://telzonacademy.in/"
-      }
-    },
     {
       "type": "NO_SITEMAP",
       "severity": "critical",
@@ -61,11 +50,6 @@
     }
   ],
   "fixes": [
-    {
-      "issue": "robots.txt not found",
-      "description": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch.",
-      "skipped": true
-    },
     {
       "issue": "No sitemap.xml found",
       "description": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
@@ -113,8 +97,8 @@
     "note": "Notified Bing/Yandex/Naver of 64 URLs"
   },
   "bingSubmissions": {
-    "submitted": 64,
-    "failed": 0
+    "submitted": 34,
+    "failed": 30
   },
   "issueTracker": {
     "issues": {
@@ -1971,7 +1955,7 @@
         "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
         "status": "escalated",
         "detectedAt": "2026-05-15T19:50:51.103Z",
-        "lastSeenAt": "2026-11-06T09:14:17.185Z",
+        "lastSeenAt": "2026-11-07T08:39:33.890Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:50:51.103Z",
@@ -2037,14 +2021,19 @@
             "timestamp": "2026-11-06T09:14:17.185Z",
             "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
             "file": null
+          },
+          {
+            "timestamp": "2026-11-07T08:39:33.890Z",
+            "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:50:51.103Z",
         "resolvedAt": "2026-11-01T09:02:59.503Z",
         "daysToResolve": 170,
         "regressedAt": "2026-11-02T09:15:26.173Z",
-        "escalatedAt": "2026-11-06T09:14:17.185Z",
-        "escalationReason": "Issue persists after 13 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-11-07T08:39:33.890Z",
+        "escalationReason": "Issue persists after 14 auto-fix attempts. Needs human intervention."
       },
       "7d874f3ebe0c": {
         "id": "7d874f3ebe0c",
@@ -3199,7 +3188,7 @@
         "description": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
         "status": "escalated",
         "detectedAt": "2026-06-07T08:24:13.649Z",
-        "lastSeenAt": "2026-11-06T09:14:17.185Z",
+        "lastSeenAt": "2026-11-07T08:39:33.890Z",
         "attempts": [
           {
             "timestamp": "2026-06-07T08:24:13.649Z",
@@ -3270,14 +3259,19 @@
             "timestamp": "2026-11-06T09:14:17.185Z",
             "strategy": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
             "file": null
+          },
+          {
+            "timestamp": "2026-11-07T08:39:33.890Z",
+            "strategy": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-06-07T08:24:13.649Z",
         "resolvedAt": "2026-11-01T09:02:59.503Z",
         "daysToResolve": 147,
         "regressedAt": "2026-11-02T09:15:26.173Z",
-        "escalatedAt": "2026-11-06T09:14:17.185Z",
-        "escalationReason": "Issue persists after 14 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-11-07T08:39:33.890Z",
+        "escalationReason": "Issue persists after 15 auto-fix attempts. Needs human intervention."
       },
       "c4cfda4cc35c": {
         "id": "c4cfda4cc35c",
@@ -3350,7 +3344,7 @@
         "description": "Google cannot discover your pages without a sitemap. This is mandatory for sites with 100+ pages.",
         "status": "escalated",
         "detectedAt": "2026-07-08T05:31:20.831Z",
-        "lastSeenAt": "2026-11-06T09:14:17.185Z",
+        "lastSeenAt": "2026-11-07T08:39:33.890Z",
         "attempts": [
           {
             "timestamp": "2026-07-08T05:31:20.831Z",
@@ -3411,14 +3405,19 @@
             "timestamp": "2026-11-06T09:14:17.185Z",
             "strategy": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
             "file": null
+          },
+          {
+            "timestamp": "2026-11-07T08:39:33.890Z",
+            "strategy": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-07-08T05:31:20.831Z",
         "resolvedAt": "2026-07-09T06:15:06.638Z",
         "daysToResolve": 1,
         "regressedAt": "2026-10-27T07:38:22.952Z",
-        "escalatedAt": "2026-11-06T09:14:17.185Z",
-        "escalationReason": "Issue persists after 12 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-11-07T08:39:33.890Z",
+        "escalationReason": "Issue persists after 13 auto-fix attempts. Needs human intervention."
       },
       "c842bc749ac8": {
         "id": "c842bc749ac8",
@@ -3452,7 +3451,7 @@
         "severity": "important",
         "title": "robots.txt not found",
         "description": "A robots.txt file is missing. Without it, crawlers have no guidance and crawl budget may be wasted on non-content pages.",
-        "status": "escalated",
+        "status": "resolved",
         "detectedAt": "2026-10-27T07:38:22.952Z",
         "lastSeenAt": "2026-11-06T09:14:17.185Z",
         "attempts": [
@@ -3510,8 +3509,8 @@
         "firstSeenRun": "2026-10-27T07:38:22.952Z",
         "escalatedAt": "2026-11-06T09:14:17.185Z",
         "escalationReason": "Issue persists after 10 auto-fix attempts. Needs human intervention.",
-        "resolvedAt": "2026-11-03T09:21:19.747Z",
-        "daysToResolve": 7,
+        "resolvedAt": "2026-11-07T08:39:33.890Z",
+        "daysToResolve": 11,
         "regressedAt": "2026-11-04T08:56:38.143Z"
       },
       "2b6869f98aaf": {
@@ -3558,60 +3557,55 @@
     "stats": {
       "open": 0,
       "fixing": 0,
-      "resolved": 26,
-      "escalated": 4,
+      "resolved": 27,
+      "escalated": 3,
       "regressed": 0
     },
-    "lastReconciled": "2026-11-06T09:14:17.185Z"
+    "lastReconciled": "2026-11-07T08:39:33.890Z"
   },
   "issueActions": [
     {
-      "id": "b2a6442343a6",
-      "type": "fix-attempted",
-      "title": "robots.txt not found",
-      "attempt": 10
-    },
-    {
       "id": "855fe6d4e9d2",
       "type": "fix-attempted",
       "title": "No sitemap.xml found",
-      "attempt": 12
-    },
-    {
-      "id": "4f684ed51e73",
-      "type": "fix-attempted",
-      "title": "1 pages missing meta description",
-      "attempt": 14
-    },
-    {
-      "id": "c2bcb0cbe37f",
-      "type": "fix-attempted",
-      "title": "1 pages return error status codes",
       "attempt": 13
     },
     {
+      "id": "4f684ed51e73",
+      "type": "fix-attempted",
+      "title": "1 pages missing meta description",
+      "attempt": 15
+    },
+    {
+      "id": "c2bcb0cbe37f",
+      "type": "fix-attempted",
+      "title": "1 pages return error status codes",
+      "attempt": 14
+    },
+    {
+      "id": "b2a6442343a6",
+      "type": "resolved",
+      "title": "robots.txt not found",
+      "daysToResolve": 11,
+      "attempts": 10
+    },
+    {
       "id": "c2bcb0cbe37f",
       "type": "escalated",
       "title": "1 pages return error status codes",
-      "attempts": 13
+      "attempts": 14
     },
     {
       "id": "4f684ed51e73",
       "type": "escalated",
       "title": "1 pages missing meta description",
-      "attempts": 14
+      "attempts": 15
     },
     {
       "id": "855fe6d4e9d2",
       "type": "escalated",
       "title": "No sitemap.xml found",
-      "attempts": 12
-    },
-    {
-      "id": "b2a6442343a6",
-      "type": "escalated",
-      "title": "robots.txt not found",
-      "attempts": 10
+      "attempts": 13
     }
   ],
   "solverEnrichments": [],
