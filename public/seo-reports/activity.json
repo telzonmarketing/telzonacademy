@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-08T00:41:52.803Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 392ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-11-07T23:30:36.214Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: robots.txt not found",
     "details": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch."
-  },
-  {
-    "timestamp": "2026-11-02T09:15:26.174Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 1 pages",
-    "details": "Found 4 issues (2 critical, 1 important)"
   }
 ]
