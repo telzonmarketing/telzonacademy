@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-08T07:26:05.239Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 419ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-11-08T03:38:12.085Z",
     "type": "fix",
     "icon": "🤖",
@@ -1390,13 +1397,6 @@
     "type": "error",
     "icon": "↩",
     "title": "REGRESSED: \"1 pages return error status codes\" came back",
-    "details": "Issue was resolved before — now detected again. Bot will retry."
-  },
-  {
-    "timestamp": "2026-11-02T09:15:26.174Z",
-    "type": "error",
-    "icon": "↩",
-    "title": "REGRESSED: \"1 pages missing meta description\" came back",
     "details": "Issue was resolved before — now detected again. Bot will retry."
   }
 ]
