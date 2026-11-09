@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-09T08:44:47.490Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-11-09T08:02:27.710Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1391,12 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"1 pages return error status codes\" needs human attention",
     "details": "Auto-fix failed after 10 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-11-03T09:21:19.748Z",
-    "type": "win",
-    "icon": "🏆",
-    "title": "WON: \"robots.txt not found\" resolved after 7 attempts",
-    "details": "Took 7 days from first detection"
   }
 ]
