@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-09T08:02:27.710Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 377ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-11-09T07:30:38.649Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🏆",
     "title": "WON: \"robots.txt not found\" resolved after 7 attempts",
     "details": "Took 7 days from first detection"
-  },
-  {
-    "timestamp": "2026-11-03T09:21:19.748Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #10: working on \"1 pages return error status codes\"",
-    "details": ""
   }
 ]
