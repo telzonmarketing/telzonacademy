@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-11T08:28:57.693Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-11-11T06:32:35.040Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1391,12 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: No sitemap.xml found",
     "details": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch."
-  },
-  {
-    "timestamp": "2026-11-05T09:19:19.298Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: robots.txt not found",
-    "details": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch."
   }
 ]
