@@ -1,5 +1,40 @@
 [
   {
+    "timestamp": "2026-11-13T04:20:30.994Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): Few pages have question-style headings",
+    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
+  },
+  {
+    "timestamp": "2026-11-13T04:20:30.994Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-11-13T04:20:30.994Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): llms.txt missing or unreachable",
+    "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking."
+  },
+  {
+    "timestamp": "2026-11-13T04:20:30.994Z",
+    "type": "error",
+    "icon": "🤖",
+    "title": "AEO issue (critical): AI crawlers not explicitly allowed in robots.txt",
+    "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data."
+  },
+  {
+    "timestamp": "2026-11-13T04:20:30.994Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 52/100 (D)",
+    "details": "0 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-11-13T02:15:47.033Z",
     "type": "submit",
     "icon": "⚡",
@@ -1363,40 +1398,5 @@
     "icon": "🔧",
     "title": "Auto-fixed: 1 pages missing meta description",
     "details": "Meta descriptions improve click-through rates from search results, which signals quality to Google."
-  },
-  {
-    "timestamp": "2026-11-07T08:39:33.892Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: No sitemap.xml found",
-    "details": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch."
-  },
-  {
-    "timestamp": "2026-11-07T08:39:33.892Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 1 pages",
-    "details": "Found 3 issues (2 critical, 0 important)"
-  },
-  {
-    "timestamp": "2026-11-07T08:39:33.892Z",
-    "type": "run",
-    "icon": "▶",
-    "title": "SEO bot scheduled run started",
-    "details": "Mode: full audit + fix + submit + keyword tracking"
-  },
-  {
-    "timestamp": "2026-11-07T03:19:10.431Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-11-07T02:29:11.374Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
   }
 ]
