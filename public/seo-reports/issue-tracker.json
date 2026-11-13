@@ -1853,7 +1853,7 @@
       "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
       "status": "escalated",
       "detectedAt": "2026-05-15T19:50:51.103Z",
-      "lastSeenAt": "2026-11-12T09:39:03.164Z",
+      "lastSeenAt": "2026-11-13T09:24:30.494Z",
       "attempts": [
         {
           "timestamp": "2026-05-15T19:50:51.103Z",
@@ -1949,14 +1949,19 @@
           "timestamp": "2026-11-12T09:39:03.164Z",
           "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
           "file": null
+        },
+        {
+          "timestamp": "2026-11-13T09:24:30.494Z",
+          "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-05-15T19:50:51.103Z",
       "resolvedAt": "2026-11-01T09:02:59.503Z",
       "daysToResolve": 170,
       "regressedAt": "2026-11-02T09:15:26.173Z",
-      "escalatedAt": "2026-11-12T09:39:03.164Z",
-      "escalationReason": "Issue persists after 19 auto-fix attempts. Needs human intervention."
+      "escalatedAt": "2026-11-13T09:24:30.494Z",
+      "escalationReason": "Issue persists after 20 auto-fix attempts. Needs human intervention."
     },
     "7d874f3ebe0c": {
       "id": "7d874f3ebe0c",
@@ -3111,7 +3116,7 @@
       "description": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
       "status": "escalated",
       "detectedAt": "2026-06-07T08:24:13.649Z",
-      "lastSeenAt": "2026-11-12T09:39:03.164Z",
+      "lastSeenAt": "2026-11-13T09:24:30.494Z",
       "attempts": [
         {
           "timestamp": "2026-06-07T08:24:13.649Z",
@@ -3212,14 +3217,19 @@
           "timestamp": "2026-11-12T09:39:03.164Z",
           "strategy": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
           "file": null
+        },
+        {
+          "timestamp": "2026-11-13T09:24:30.494Z",
+          "strategy": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-06-07T08:24:13.649Z",
       "resolvedAt": "2026-11-01T09:02:59.503Z",
       "daysToResolve": 147,
       "regressedAt": "2026-11-02T09:15:26.173Z",
-      "escalatedAt": "2026-11-12T09:39:03.164Z",
-      "escalationReason": "Issue persists after 20 auto-fix attempts. Needs human intervention."
+      "escalatedAt": "2026-11-13T09:24:30.494Z",
+      "escalationReason": "Issue persists after 21 auto-fix attempts. Needs human intervention."
     },
     "c4cfda4cc35c": {
       "id": "c4cfda4cc35c",
@@ -3292,7 +3302,7 @@
       "description": "Google cannot discover your pages without a sitemap. This is mandatory for sites with 100+ pages.",
       "status": "escalated",
       "detectedAt": "2026-07-08T05:31:20.831Z",
-      "lastSeenAt": "2026-11-12T09:39:03.164Z",
+      "lastSeenAt": "2026-11-13T09:24:30.494Z",
       "attempts": [
         {
           "timestamp": "2026-07-08T05:31:20.831Z",
@@ -3383,14 +3393,19 @@
           "timestamp": "2026-11-12T09:39:03.164Z",
           "strategy": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
           "file": null
+        },
+        {
+          "timestamp": "2026-11-13T09:24:30.494Z",
+          "strategy": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-07-08T05:31:20.831Z",
       "resolvedAt": "2026-07-09T06:15:06.638Z",
       "daysToResolve": 1,
       "regressedAt": "2026-10-27T07:38:22.952Z",
-      "escalatedAt": "2026-11-12T09:39:03.164Z",
-      "escalationReason": "Issue persists after 18 auto-fix attempts. Needs human intervention."
+      "escalatedAt": "2026-11-13T09:24:30.494Z",
+      "escalationReason": "Issue persists after 19 auto-fix attempts. Needs human intervention."
     },
     "c842bc749ac8": {
       "id": "c842bc749ac8",
@@ -3426,7 +3441,7 @@
       "description": "A robots.txt file is missing. Without it, crawlers have no guidance and crawl budget may be wasted on non-content pages.",
       "status": "escalated",
       "detectedAt": "2026-10-27T07:38:22.952Z",
-      "lastSeenAt": "2026-11-12T09:39:03.164Z",
+      "lastSeenAt": "2026-11-13T09:24:30.494Z",
       "attempts": [
         {
           "timestamp": "2026-10-27T07:38:22.952Z",
@@ -3502,11 +3517,16 @@
           "timestamp": "2026-11-12T09:39:03.164Z",
           "strategy": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch.",
           "file": null
+        },
+        {
+          "timestamp": "2026-11-13T09:24:30.494Z",
+          "strategy": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch.",
+          "file": null
         }
       ],
       "firstSeenRun": "2026-10-27T07:38:22.952Z",
-      "escalatedAt": "2026-11-12T09:39:03.164Z",
-      "escalationReason": "Issue persists after 15 auto-fix attempts. Needs human intervention.",
+      "escalatedAt": "2026-11-13T09:24:30.494Z",
+      "escalationReason": "Issue persists after 16 auto-fix attempts. Needs human intervention.",
       "resolvedAt": "2026-11-07T08:39:33.890Z",
       "daysToResolve": 11,
       "regressedAt": "2026-11-08T08:53:16.505Z"
@@ -3559,5 +3579,5 @@
     "escalated": 4,
     "regressed": 0
   },
-  "lastReconciled": "2026-11-12T09:39:03.164Z"
+  "lastReconciled": "2026-11-13T09:24:30.494Z"
 }
