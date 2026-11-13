@@ -1,21 +1,9 @@
 {
-  "timestamp": "2026-11-13T04:20:30.994Z",
-  "pagesAudited": 20,
-  "score": 52,
-  "grade": "D",
+  "timestamp": "2026-11-13T12:44:42.564Z",
+  "pagesAudited": 64,
+  "score": 82,
+  "grade": "B",
   "issues": [
-    {
-      "severity": "critical",
-      "title": "AI crawlers not explicitly allowed in robots.txt",
-      "details": "Missing: GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended, anthropic-ai, ChatGPT-User, Applebot-Extended, Bytespider, cohere-ai. AI engines may skip your site or use cached/stale data.",
-      "fix": "Add explicit User-agent: <bot> Allow: / blocks for each AI crawler"
-    },
-    {
-      "severity": "important",
-      "title": "llms.txt missing or unreachable",
-      "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking.",
-      "fix": "AEO agent will generate it on next run"
-    },
     {
       "severity": "important",
       "title": "No FAQPage schema detected anywhere",
@@ -30,12 +18,14 @@
     }
   ],
   "strengths": [
-    "20/20 pages have structured data",
-    "20 pages declare Organization schema"
+    "All 10 major AI crawlers explicitly allowed",
+    "llms.txt present at site root",
+    "64/64 pages have structured data",
+    "64 pages declare Organization schema"
   ],
   "llms": {
-    "compactBytes": 5742,
-    "fullBytes": 36153
+    "compactBytes": 17159,
+    "fullBytes": 115161
   },
   "faqSuggestions": [],
   "visibility": {
@@ -67,5 +57,16 @@
     "perplexityActive": false,
     "braveActive": false
   },
-  "aiCrawlers": []
+  "aiCrawlers": [
+    "GPTBot",
+    "ClaudeBot",
+    "PerplexityBot",
+    "CCBot",
+    "Google-Extended",
+    "anthropic-ai",
+    "ChatGPT-User",
+    "Applebot-Extended",
+    "Bytespider",
+    "cohere-ai"
+  ]
 }
