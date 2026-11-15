@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-15T22:53:31.318Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 445ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-11-15T22:10:01.819Z",
     "type": "submit",
     "icon": "⚡",
@@ -1391,12 +1398,5 @@
     "icon": "🤖",
     "title": "AEO scan complete · Score 82/100 (B)",
     "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-11-09T15:55:49.530Z",
-    "type": "backlink",
-    "icon": "🔗",
-    "title": "Tier 1 backlink ready: Apple Maps Connect",
-    "details": "Required for Apple Maps + Siri. Manual phone verification."
   }
 ]
