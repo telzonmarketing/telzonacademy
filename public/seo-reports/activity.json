@@ -1,5 +1,110 @@
 [
   {
+    "timestamp": "2026-11-15T09:07:05.786Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 1 pages · 4 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-11-15T09:07:05.708Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"robots.txt not found\" needs human attention",
+    "details": "Auto-fix failed after 18 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-11-15T09:07:05.708Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"No sitemap.xml found\" needs human attention",
+    "details": "Auto-fix failed after 21 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-11-15T09:07:05.708Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"1 pages missing meta description\" needs human attention",
+    "details": "Auto-fix failed after 23 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-11-15T09:07:05.708Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"1 pages return error status codes\" needs human attention",
+    "details": "Auto-fix failed after 22 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-11-15T09:07:05.708Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #22: working on \"1 pages return error status codes\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-11-15T09:07:05.708Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #23: working on \"1 pages missing meta description\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-11-15T09:07:05.708Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #21: working on \"No sitemap.xml found\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-11-15T09:07:05.708Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #18: working on \"robots.txt not found\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-11-15T09:07:05.708Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 pages return error status codes",
+    "details": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget."
+  },
+  {
+    "timestamp": "2026-11-15T09:07:05.708Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 pages missing meta description",
+    "details": "Meta descriptions improve click-through rates from search results, which signals quality to Google."
+  },
+  {
+    "timestamp": "2026-11-15T09:07:05.708Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: No sitemap.xml found",
+    "details": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch."
+  },
+  {
+    "timestamp": "2026-11-15T09:07:05.708Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: robots.txt not found",
+    "details": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch."
+  },
+  {
+    "timestamp": "2026-11-15T09:07:05.708Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 1 pages",
+    "details": "Found 4 issues (2 critical, 1 important)"
+  },
+  {
+    "timestamp": "2026-11-15T09:07:05.708Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot scheduled run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-11-15T08:29:39.374Z",
     "type": "submit",
     "icon": "⚡",
@@ -1292,111 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #17: working on \"1 pages missing meta description\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-11-09T09:34:33.809Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #15: working on \"No sitemap.xml found\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-11-09T09:34:33.809Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #12: working on \"robots.txt not found\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-11-09T09:34:33.809Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 pages return error status codes",
-    "details": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget."
-  },
-  {
-    "timestamp": "2026-11-09T09:34:33.809Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 pages missing meta description",
-    "details": "Meta descriptions improve click-through rates from search results, which signals quality to Google."
-  },
-  {
-    "timestamp": "2026-11-09T09:34:33.809Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: No sitemap.xml found",
-    "details": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch."
-  },
-  {
-    "timestamp": "2026-11-09T09:34:33.809Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: robots.txt not found",
-    "details": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch."
-  },
-  {
-    "timestamp": "2026-11-09T09:34:33.809Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 1 pages",
-    "details": "Found 4 issues (2 critical, 1 important)"
-  },
-  {
-    "timestamp": "2026-11-09T09:34:33.809Z",
-    "type": "run",
-    "icon": "▶",
-    "title": "SEO bot scheduled run started",
-    "details": "Mode: full audit + fix + submit + keyword tracking"
-  },
-  {
-    "timestamp": "2026-11-09T08:44:47.490Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-11-09T08:02:27.710Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 377ms avg)",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-11-09T07:30:38.649Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
-  },
-  {
-    "timestamp": "2026-11-09T07:30:38.649Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (important): No FAQPage schema detected anywhere",
-    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
-  },
-  {
-    "timestamp": "2026-11-09T07:30:38.649Z",
-    "type": "aeo",
-    "icon": "🤖",
-    "title": "AEO scan complete · Score 82/100 (B)",
-    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-11-09T01:15:11.604Z",
-    "type": "submit",
-    "icon": "⚡",
-    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
-    "details": "Aggressive 2-hourly resubmission active for fast indexation"
-  },
-  {
-    "timestamp": "2026-11-09T00:56:42.077Z",
-    "type": "heartbeat",
-    "icon": "💚",
-    "title": "Heartbeat: site healthy (9/9 checks · 395ms avg)",
     "details": ""
   }
 ]
