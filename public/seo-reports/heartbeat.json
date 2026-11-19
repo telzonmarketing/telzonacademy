@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-11-19T03:34:20.696Z",
+  "timestamp": "2026-11-19T13:17:48.845Z",
   "siteUrl": "https://telzonacademy.in",
   "totalChecks": 9,
-  "passed": 9,
-  "failed": 0,
+  "passed": 8,
+  "failed": 1,
   "criticalFailed": 0,
-  "avgResponseMs": 549,
+  "avgResponseMs": 406,
   "results": [
     {
       "url": "https://telzonacademy.in",
@@ -13,7 +13,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 322
+      "ms": 258
     },
     {
       "url": "https://telzonacademy.in/sitemap.xml",
@@ -21,7 +21,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 309
+      "ms": 257
     },
     {
       "url": "https://telzonacademy.in/robots.txt",
@@ -29,7 +29,7 @@
       "critical": true,
       "status": 200,
       "ok": true,
-      "ms": 459
+      "ms": 262
     },
     {
       "url": "https://telzonacademy.in/seo-dashboard.html",
@@ -37,7 +37,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 376
+      "ms": 273
     },
     {
       "url": "https://telzonacademy.in/",
@@ -45,7 +45,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 353
+      "ms": 265
     },
     {
       "url": "https://telzonacademy.in/blog",
@@ -53,7 +53,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 798
+      "ms": 544
     },
     {
       "url": "https://telzonacademy.in/lead-generation-package",
@@ -61,7 +61,7 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 739
+      "ms": 558
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-course-in-nagpur",
@@ -69,15 +69,16 @@
       "critical": false,
       "status": 200,
       "ok": true,
-      "ms": 812
+      "ms": 559
     },
     {
       "url": "https://telzonacademy.in/pages/digital-marketing-institute-in-nagpur",
       "name": "/pages/digital-marketing-institute-in-nagpur",
       "critical": false,
-      "status": 200,
-      "ok": true,
-      "ms": 769
+      "status": 0,
+      "ok": false,
+      "ms": 676,
+      "error": "read ECONNRESET"
     }
   ],
   "healthy": true

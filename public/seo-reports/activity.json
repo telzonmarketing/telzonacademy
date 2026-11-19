@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-19T13:17:48.845Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (8/9 checks · 406ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-11-19T10:07:37.627Z",
     "type": "done",
     "icon": "✓",
@@ -1391,12 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"robots.txt not found\" needs human attention",
     "details": "Auto-fix failed after 16 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-11-13T09:24:30.496Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"No sitemap.xml found\" needs human attention",
-    "details": "Auto-fix failed after 19 attempts — manual intervention required"
   }
 ]
