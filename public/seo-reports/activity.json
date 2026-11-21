@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-21T13:45:20.873Z",
+    "type": "submit",
+    "icon": "⚡",
+    "title": "7-day blitz: force-submitted all pages to Google + Bing/Yandex",
+    "details": "Aggressive 2-hourly resubmission active for fast indexation"
+  },
+  {
     "timestamp": "2026-11-21T11:55:58.609Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"No sitemap.xml found\" needs human attention",
     "details": "Auto-fix failed after 21 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-11-15T09:07:05.708Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"1 pages missing meta description\" needs human attention",
-    "details": "Auto-fix failed after 23 attempts — manual intervention required"
   }
 ]
