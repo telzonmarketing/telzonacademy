@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-21T11:12:45.427Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 393ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-11-21T09:33:32.067Z",
     "type": "done",
     "icon": "✓",
@@ -1390,13 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #23: working on \"1 pages missing meta description\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-11-15T09:07:05.708Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #21: working on \"No sitemap.xml found\"",
     "details": ""
   }
 ]
