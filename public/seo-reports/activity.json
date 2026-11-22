@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-22T15:23:44.307Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 398ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-11-22T12:57:48.663Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "✓",
     "title": "Run completed",
     "details": "Total: 1 pages · 4 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-11-16T09:25:20.979Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"robots.txt not found\" needs human attention",
-    "details": "Auto-fix failed after 19 attempts — manual intervention required"
   }
 ]
