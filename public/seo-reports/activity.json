@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-23T12:56:28.331Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 516ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-11-23T10:35:31.679Z",
     "type": "done",
     "icon": "✓",
@@ -1390,13 +1397,6 @@
     "type": "fix",
     "icon": "🔁",
     "title": "Attempt #23: working on \"No sitemap.xml found\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-11-17T10:29:17.832Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #20: working on \"robots.txt not found\"",
     "details": ""
   }
 ]
