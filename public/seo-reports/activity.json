@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-23T02:51:03.059Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 558ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-11-23T01:16:29.514Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "💚",
     "title": "Heartbeat: site healthy (9/9 checks · 373ms avg)",
     "details": ""
-  },
-  {
-    "timestamp": "2026-11-16T17:42:36.805Z",
-    "type": "fix",
-    "icon": "🤖",
-    "title": "AEO issue (low): Few pages have question-style headings",
-    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
   }
 ]
