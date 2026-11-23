@@ -1,5 +1,33 @@
 [
   {
+    "timestamp": "2026-11-23T17:53:24.520Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Tier 1 backlink ready: Apple Maps Connect",
+    "details": "Required for Apple Maps + Siri. Manual phone verification."
+  },
+  {
+    "timestamp": "2026-11-23T17:53:24.520Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Tier 1 backlink ready: Bing Places for Business",
+    "details": "Imports from Google Business. Phone verification."
+  },
+  {
+    "timestamp": "2026-11-23T17:53:24.520Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Tier 1 backlink ready: Google Business Profile",
+    "details": "Biggest local SEO ranking factor. Postcard verification required."
+  },
+  {
+    "timestamp": "2026-11-23T17:53:24.520Z",
+    "type": "backlink",
+    "icon": "🔗",
+    "title": "Backlink scan · 0/24 live · 0/5 tier-1 live",
+    "details": "24 pending · 0 submitted · 0 broken"
+  },
+  {
     "timestamp": "2026-11-23T16:34:02.429Z",
     "type": "submit",
     "icon": "⚡",
@@ -1370,33 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"No sitemap.xml found\" needs human attention",
     "details": "Auto-fix failed after 23 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-11-17T10:29:17.832Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"1 pages missing meta description\" needs human attention",
-    "details": "Auto-fix failed after 25 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-11-17T10:29:17.832Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"1 pages return error status codes\" needs human attention",
-    "details": "Auto-fix failed after 24 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-11-17T10:29:17.832Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #24: working on \"1 pages return error status codes\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-11-17T10:29:17.832Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #25: working on \"1 pages missing meta description\"",
-    "details": ""
   }
 ]
