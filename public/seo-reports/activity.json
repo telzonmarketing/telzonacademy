@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-24T21:16:50.292Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 488ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-11-24T18:29:58.918Z",
     "type": "fix",
     "icon": "🤖",
@@ -1391,12 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"1 pages missing meta description\" needs human attention",
     "details": "Auto-fix failed after 26 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-11-18T10:00:51.223Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"1 pages return error status codes\" needs human attention",
-    "details": "Auto-fix failed after 25 attempts — manual intervention required"
   }
 ]
