@@ -1,5 +1,110 @@
 [
   {
+    "timestamp": "2026-11-25T11:07:00.660Z",
+    "type": "done",
+    "icon": "✓",
+    "title": "Run completed",
+    "details": "Total: 1 pages · 4 fixes · 0 submitted"
+  },
+  {
+    "timestamp": "2026-11-25T11:07:00.578Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"robots.txt not found\" needs human attention",
+    "details": "Auto-fix failed after 29 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-11-25T11:07:00.578Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"No sitemap.xml found\" needs human attention",
+    "details": "Auto-fix failed after 32 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-11-25T11:07:00.578Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"1 pages missing meta description\" needs human attention",
+    "details": "Auto-fix failed after 34 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-11-25T11:07:00.578Z",
+    "type": "error",
+    "icon": "🚨",
+    "title": "ESCALATED: \"1 pages return error status codes\" needs human attention",
+    "details": "Auto-fix failed after 33 attempts — manual intervention required"
+  },
+  {
+    "timestamp": "2026-11-25T11:07:00.578Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #33: working on \"1 pages return error status codes\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-11-25T11:07:00.578Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #34: working on \"1 pages missing meta description\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-11-25T11:07:00.578Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #32: working on \"No sitemap.xml found\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-11-25T11:07:00.578Z",
+    "type": "fix",
+    "icon": "🔁",
+    "title": "Attempt #29: working on \"robots.txt not found\"",
+    "details": ""
+  },
+  {
+    "timestamp": "2026-11-25T11:07:00.578Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 pages return error status codes",
+    "details": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget."
+  },
+  {
+    "timestamp": "2026-11-25T11:07:00.578Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: 1 pages missing meta description",
+    "details": "Meta descriptions improve click-through rates from search results, which signals quality to Google."
+  },
+  {
+    "timestamp": "2026-11-25T11:07:00.578Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: No sitemap.xml found",
+    "details": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch."
+  },
+  {
+    "timestamp": "2026-11-25T11:07:00.578Z",
+    "type": "fix",
+    "icon": "🔧",
+    "title": "Auto-fixed: robots.txt not found",
+    "details": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch."
+  },
+  {
+    "timestamp": "2026-11-25T11:07:00.578Z",
+    "type": "crawl",
+    "icon": "🕷",
+    "title": "Crawled 1 pages",
+    "details": "Found 4 issues (2 critical, 1 important)"
+  },
+  {
+    "timestamp": "2026-11-25T11:07:00.578Z",
+    "type": "run",
+    "icon": "▶",
+    "title": "SEO bot scheduled run started",
+    "details": "Mode: full audit + fix + submit + keyword tracking"
+  },
+  {
     "timestamp": "2026-11-25T10:45:13.385Z",
     "type": "done",
     "icon": "✓",
@@ -1293,110 +1398,5 @@
     "icon": "💚",
     "title": "Heartbeat: site healthy (8/9 checks · 406ms avg)",
     "details": ""
-  },
-  {
-    "timestamp": "2026-11-19T10:07:37.627Z",
-    "type": "done",
-    "icon": "✓",
-    "title": "Run completed",
-    "details": "Total: 1 pages · 4 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-11-19T10:07:37.506Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"robots.txt not found\" needs human attention",
-    "details": "Auto-fix failed after 22 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-11-19T10:07:37.506Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"No sitemap.xml found\" needs human attention",
-    "details": "Auto-fix failed after 25 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-11-19T10:07:37.506Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"1 pages missing meta description\" needs human attention",
-    "details": "Auto-fix failed after 27 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-11-19T10:07:37.506Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"1 pages return error status codes\" needs human attention",
-    "details": "Auto-fix failed after 26 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-11-19T10:07:37.506Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #26: working on \"1 pages return error status codes\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-11-19T10:07:37.506Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #27: working on \"1 pages missing meta description\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-11-19T10:07:37.506Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #25: working on \"No sitemap.xml found\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-11-19T10:07:37.506Z",
-    "type": "fix",
-    "icon": "🔁",
-    "title": "Attempt #22: working on \"robots.txt not found\"",
-    "details": ""
-  },
-  {
-    "timestamp": "2026-11-19T10:07:37.506Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 pages return error status codes",
-    "details": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget."
-  },
-  {
-    "timestamp": "2026-11-19T10:07:37.506Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: 1 pages missing meta description",
-    "details": "Meta descriptions improve click-through rates from search results, which signals quality to Google."
-  },
-  {
-    "timestamp": "2026-11-19T10:07:37.506Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: No sitemap.xml found",
-    "details": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch."
-  },
-  {
-    "timestamp": "2026-11-19T10:07:37.506Z",
-    "type": "fix",
-    "icon": "🔧",
-    "title": "Auto-fixed: robots.txt not found",
-    "details": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch."
-  },
-  {
-    "timestamp": "2026-11-19T10:07:37.506Z",
-    "type": "crawl",
-    "icon": "🕷",
-    "title": "Crawled 1 pages",
-    "details": "Found 4 issues (2 critical, 1 important)"
-  },
-  {
-    "timestamp": "2026-11-19T10:07:37.506Z",
-    "type": "run",
-    "icon": "▶",
-    "title": "SEO bot scheduled run started",
-    "details": "Mode: full audit + fix + submit + keyword tracking"
   }
 ]
