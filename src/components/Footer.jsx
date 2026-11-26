@@ -52,6 +52,8 @@ const Footer = () => {
               <li><a href="/pages/digital-marketing-course-for-beginners-nagpur" className="hover:text-white transition-colors">Course for Beginners</a></li>
               <li><a href="/pages/seo-course-in-nagpur" className="hover:text-white transition-colors">SEO Course in Nagpur</a></li>
               <li><a href="/pages/google-ads-course-nagpur" className="hover:text-white transition-colors">Google Ads Course in Nagpur</a></li>
+              <li><a href="/pages/ai-marketing-course-in-nagpur" className="hover:text-white transition-colors">AI Marketing Course in Nagpur</a></li>
+              <li><a href="/pages/commercial-ads-and-photography-course-in-nagpur" className="hover:text-white transition-colors">Commercial Ads &amp; Photography Course</a></li>
             </ul>
           </motion.div>
 

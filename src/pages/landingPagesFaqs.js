@@ -33,6 +33,14 @@ export const PAGE_FAQS = {
     { q: 'What is the fee and duration?', a: 'The course runs for 3 months and costs ₹25,000 + GST, with no-cost EMI available.' },
     { q: 'Can I visit before enrolling?', a: 'Yes. Book a free demo class with the trainer from this page or by calling +91-9307189776.' },
   ],
+  'commercial-ads-and-photography-course-in-nagpur': [
+    { q: 'What is the fee for the commercial ads and photography course in Nagpur?', a: 'The course fee is ₹48,000 + GST for the complete 90-day program.' },
+    { q: 'What will I learn in the commercial ads and photography course?', a: 'Camera and lighting, product and e-commerce photography, fashion, portrait, food and interiors shoots, ad film production, editing in Lightroom, Photoshop, Premiere Pro and DaVinci Resolve, AI tools, platform-ready ads, and the business of commercial work.' },
+    { q: 'Do I need my own camera?', a: 'No. You can start with a smartphone; the course covers DSLR and mirrorless cameras, and studio practice is done at the institute.' },
+    { q: 'Will I make a portfolio?', a: 'Yes. The course ends with a live brand project — a full product shoot and a 30-second commercial — which becomes your portfolio and showreel.' },
+    { q: 'Can I work as a freelancer after this course?', a: 'Yes. You learn to price shoots and ad films, write quotations, handle clients and agree usage rights, so you can take freelance work or join a studio or agency.' },
+    { q: 'Where are classes held?', a: 'At Telzon Academy, Chhatrapati Square, Nagpur. Call or WhatsApp +91-9307189776 to book a free demo class.' },
+  ],
   'ai-marketing-course-in-nagpur': [
     { q: 'What is the AI marketing course in Nagpur?', a: 'A 3-month classroom course at Telzon Academy, Chhatrapati Square, that teaches digital marketing with AI built in: AI for SEO and AI search, Meta and Google Ads, content and video, and marketing automation.' },
     { q: 'Which AI tools will I learn?', a: 'ChatGPT, Claude, Gemini, ElevenLabs, HeyGen, Canva AI and AI features inside Meta Ads Manager and Google Ads, always with a human reviewing output before it goes live.' },

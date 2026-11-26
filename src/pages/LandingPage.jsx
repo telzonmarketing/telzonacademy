@@ -225,7 +225,7 @@ function FAQSection({ faqs }) {
 }
 
 // ─── Upgrad-style syllabus ───────────────────────────────────────────────────
-function SyllabusSection() {
+function SyllabusSection({ modules = SYLLABUS, subtitle = '3 months · 10+ live projects · Google & Meta certification' }) {
   const [open, setOpen] = useState(0);
   return (
     <section className="py-24 px-4">
@@ -236,15 +236,15 @@ function SyllabusSection() {
             Course{' '}
             <span className="font-serif-display italic text-white/90">curriculum</span>
           </h2>
-          <p className="text-base text-white/60">3 months · 10+ live projects · Google &amp; Meta certification</p>
+          <p className="text-base text-white/60">{subtitle}</p>
         </div>
         <div className="space-y-2">
-          {SYLLABUS.map((mod, i) => (
+          {modules.map((mod, i) => (
             <div key={i} className="surface-card overflow-hidden">
               <button onClick={() => setOpen(open === i ? null : i)}
                 className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/[0.03] transition-colors">
                 <div className="flex items-center gap-4">
-                  <span className="text-[11px] text-indigo-300 font-semibold bg-indigo-400/10 border border-indigo-400/20 px-2.5 py-1 rounded-full uppercase tracking-[0.06em]">{mod.week}</span>
+                  {mod.week && <span className="text-[11px] text-indigo-300 font-semibold bg-indigo-400/10 border border-indigo-400/20 px-2.5 py-1 rounded-full uppercase tracking-[0.06em]">{mod.week}</span>}
                   <span className="font-semibold text-white">{mod.topic}</span>
                 </div>
                 <ChevronDown className={`w-4 h-4 text-indigo-300 transition-transform ${open === i ? 'rotate-180' : ''}`} />
@@ -416,12 +416,12 @@ function RelatedPagesSection({ currentSlug }) {
 }
 
 // ─── Quick stats bar (Upgrad-style) ──────────────────────────────────────────
-function StatsBar() {
+function StatsBar({ duration = '3 Months', fee = null }) {
   const stats = [
     { icon: Users, label: '1,000+', sub: 'Students Trained' },
-    { icon: Award, label: '95%', sub: 'Placement Rate' },
-    { icon: Clock, label: '3 Months', sub: 'Course Duration' },
-    { icon: IndianRupee, label: '3.5 LPA', sub: 'Avg. Salary' },
+    ...(fee ? [] : [{ icon: Award, label: '95%', sub: 'Placement Rate' }]),
+    { icon: Clock, label: duration, sub: 'Course Duration' },
+    fee ? { icon: IndianRupee, label: fee, sub: 'Course Fee' } : { icon: IndianRupee, label: '3.5 LPA', sub: 'Avg. Salary' },
     { icon: Star, label: '4.9 / 5', sub: 'Student Rating' },
   ];
   return (
@@ -502,16 +502,16 @@ const LandingPage = () => {
     educationalLevel: 'beginner',
     inLanguage: 'en',
     availableLanguage: ['English', 'Hindi', 'Marathi'],
-    timeRequired: 'P3M',
+    timeRequired: page.timeRequired || 'P3M',
     offers: {
       '@type': 'Offer',
-      price: '25000',
+      price: page.price || '25000',
       priceCurrency: 'INR',
       availability: 'https://schema.org/InStock',
       validFrom: '2026-01-01',
       priceSpecification: {
         '@type': 'PriceSpecification',
-        price: '25000',
+        price: page.price || '25000',
         priceCurrency: 'INR',
       },
     },
@@ -655,7 +655,7 @@ const LandingPage = () => {
                     ))}
                   </ul>
                   <div className="flex flex-wrap gap-2 mb-7">
-                    {[['Clock','3 months'],['IndianRupee','₹25K + GST'],['Users','1000+ alumni'],['Award','95% placed']].map(([, label]) => (
+                    {(page.chips || [['Clock','3 months'],['IndianRupee','₹25K + GST'],['Users','1000+ alumni'],['Award','95% placed']]).map(([, label]) => (
                       <span key={label} className="text-[11px] font-semibold text-white/70 bg-white/[0.04] border border-white/[0.08] px-3 py-1.5 rounded-full uppercase tracking-[0.06em]">{label}</span>
                     ))}
                   </div>
@@ -692,15 +692,17 @@ const LandingPage = () => {
           {page.careerOutcomes && <CareerOutcomesBlock outcomes={page.careerOutcomes} />}
 
           {/* ── STATS BAR (Upgrad-style) ── */}
-          <StatsBar />
+          <StatsBar duration={page.durationLabelShort || '3 Months'} fee={page.syllabus ? page.courseFacts?.fees : null} />
 
           {/* ── SYLLABUS (Upgrad-style) ── */}
-          <SyllabusSection />
+          {page.syllabus
+            ? <SyllabusSection modules={page.syllabus} subtitle={page.curriculumSubtitle} />
+            : <SyllabusSection />}
 
-          {/* ── REUSED CORE SECTIONS ── */}
-          <BestCourseSection />
+          {/* ── REUSED CORE SECTIONS ── (digital-marketing-specific ones hidden on other courses) */}
+          {!page.syllabus && <BestCourseSection />}
           <PracticalLearning />
-          <PlacementsAndCareers />
+          {!page.syllabus && <PlacementsAndCareers />}
 
           {/* ── REVIEWS (Zomato-style with local area) ── */}
           <ReviewSection />

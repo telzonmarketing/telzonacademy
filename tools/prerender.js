@@ -64,7 +64,7 @@ const escapeHtml = (s = '') => String(s)
 // review[] that gets injected into every prerendered landing route's <head>.
 // Non-JS crawlers (Bing, DuckDuckGo, Ubersuggest) now see the same rating
 // snippet inputs that JS-executing crawlers get from LandingPage.jsx Helmet.
-function buildCourseJsonLd({ title, description, canonical }) {
+function buildCourseJsonLd({ title, description, canonical, page = {} }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
@@ -89,10 +89,10 @@ function buildCourseJsonLd({ title, description, canonical }) {
     courseMode: ['onsite', 'online'],
     educationalLevel: 'beginner',
     inLanguage: 'en',
-    timeRequired: 'P4M',
+    timeRequired: page.timeRequired || 'P3M',
     offers: {
       '@type': 'Offer',
-      price: '25000',
+      price: page.price || '25000',
       priceCurrency: 'INR',
       availability: 'https://schema.org/InStock',
     },
@@ -160,7 +160,7 @@ function buildSpeakableJsonLd({ canonical }) {
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
 }
 
-function rewriteHead(html, { title, description, canonical, ogTitle, ogDescription }) {
+function rewriteHead(html, { title, description, canonical, ogTitle, ogDescription, page }) {
   let out = html;
 
   // Replace <title> (preserve the comment line above it)
@@ -196,9 +196,10 @@ function rewriteHead(html, { title, description, canonical, ogTitle, ogDescripti
     `<meta name="twitter:description" content="${escapeHtml(ogDescription || description)}" />`,
     `<meta name="twitter:image" content="${SITE}/telzon-logo-white-1024.png" />`,
     // Q-003 · Course schema with aggregateRating → ★ SERP snippets.
-    buildCourseJsonLd({ title, description, canonical }),
+    buildCourseJsonLd({ title, description, canonical, page: page || {} }),
     // Q-004 · HowTo schema for syllabus (step-by-step SERP expander).
-    buildHowToJsonLd({ title, description, canonical }),
+    // Pages with their own syllabus (non-digital-marketing courses) skip it.
+    ...(page && page.syllabus ? [] : [buildHowToJsonLd({ title, description, canonical })]),
     // Q-004 · Speakable spec — voice-assistant / AI-answer citation hints.
     buildSpeakableJsonLd({ canonical }),
   ].join('\n  ');
@@ -257,7 +258,11 @@ function landingPageContent(page) {
         <p>${escapeHtml(f.a)}</p>
       </article>`).join('');
 
-  const syllabusHtml = SYLLABUS.map(m => `
+  const syllabusHtml = page.syllabus ? page.syllabus.map(m => `
+      <li>
+        <strong>${escapeHtml(m.topic)}:</strong>
+        ${escapeHtml(m.items.join(', '))}.
+      </li>`).join('') : SYLLABUS.map(m => `
       <li>
         <strong>${escapeHtml(m.week)} — ${escapeHtml(m.topic)}:</strong>
         ${escapeHtml(m.items.join(', '))}.
@@ -347,13 +352,13 @@ function landingPageContent(page) {
       <ul>
         ${bulletsHtml}
       </ul>
-      <p>Telzon Academy is Nagpur's top-rated digital marketing institute with 1,000+ students trained, 95% placement assistance and a 4.9/5 rating from 200+ student reviews. Our course fees are ₹25,000 + GST with no-cost EMI options and merit-based scholarships. Programs run 3 months across weekday, weekend and fully online batches — pick whichever fits your schedule.</p>
+      ${page.aboutFallback ? `<p>${escapeHtml(page.aboutFallback)}</p>` : `<p>Telzon Academy is Nagpur's top-rated digital marketing institute with 1,000+ students trained, 95% placement assistance and a 4.9/5 rating from 200+ student reviews. Our course fees are ₹25,000 + GST with no-cost EMI options and merit-based scholarships. Programs run 3 months across weekday, weekend and fully online batches — pick whichever fits your schedule.</p>`}
     </section>
     <section>
-      <h2>What you'll learn — 3-month ${escapeHtml(keywordShort)} curriculum</h2>
+      <h2>What you'll learn — ${escapeHtml(page.durationLabel || '3-month')} ${escapeHtml(keywordShort)} curriculum</h2>
       <ol>${syllabusHtml}
       </ol>
-      <p>Every module ends with a graded assignment and a real campaign you can show in interviews. The course includes Google Ads, Google Analytics and Meta Blueprint certification preparation, access to all premium tools during training, and 1 year of placement assistance after course completion.</p>
+      ${page.curriculumNote ? `<p>${escapeHtml(page.curriculumNote)}</p>` : `<p>Every module ends with a graded assignment and a real campaign you can show in interviews. The course includes Google Ads, Google Analytics and Meta Blueprint certification preparation, access to all premium tools during training, and 1 year of placement assistance after course completion.</p>`}
     </section>
     <section>
       <h2>${escapeHtml(keywordShort)} — accessible from every part of Nagpur</h2>
@@ -434,8 +439,8 @@ function leadGenContent() {
     </section>`;
 }
 
-async function writeRoute(baseHtml, outRelative, { title, description, canonical, ogTitle, ogDescription, content }) {
-  const head = rewriteHead(baseHtml, { title, description, canonical, ogTitle, ogDescription });
+async function writeRoute(baseHtml, outRelative, { title, description, canonical, ogTitle, ogDescription, content, page }) {
+  const head = rewriteHead(baseHtml, { title, description, canonical, ogTitle, ogDescription, page });
   const full = rewriteRoot(head, content);
   const outPath = resolve(DIST, outRelative);
   await mkdir(dirname(outPath), { recursive: true });
@@ -456,6 +461,7 @@ async function main() {
       ogTitle: page.ogTitle,
       ogDescription: page.ogDescription,
       content: landingPageContent(page),
+      page,
     });
     count++;
   }
