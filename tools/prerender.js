@@ -79,6 +79,7 @@ function buildCourseJsonLd({ title, description, canonical }) {
       email: 'connect@telzonacademy.in',
       address: {
         '@type': 'PostalAddress',
+        streetAddress: 'Chhatrapati Square',
         addressLocality: 'Nagpur',
         addressRegion: 'Maharashtra',
         postalCode: '440001',

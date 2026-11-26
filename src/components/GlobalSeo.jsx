@@ -51,7 +51,7 @@ const GlobalSeo = () => {
     email: 'connect@telzonacademy.in',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Nagpur, Maharashtra',
+      streetAddress: 'Chhatrapati Square',
       addressLocality: 'Nagpur',
       addressRegion: 'Maharashtra',
       postalCode: '440001',

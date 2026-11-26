@@ -34,8 +34,41 @@ User-agent: Claude-Web
 Allow: /
 Disallow: /admin/
 
+# OpenAI search (ChatGPT search results)
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+
+# Anthropic search and user-requested fetches
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /admin/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /admin/
+
 # Perplexity
 User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /admin/
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /admin/
+
+# Amazon (Alexa / Rufus)
+User-agent: Amazonbot
+Allow: /
+Disallow: /admin/
+
+# DuckDuckGo AI answers
+User-agent: DuckAssistBot
 Allow: /
 Disallow: /admin/
 
