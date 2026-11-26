@@ -33,11 +33,11 @@ const NAGPUR_AREAS = [
 
 const SYLLABUS = [
   { week: 'Week 1–2', topic: 'Digital Marketing Fundamentals', items: ['What is digital marketing', 'Search engine basics', 'Buyer journey & funnel', 'Setting up Google Analytics'] },
-  { week: 'Week 3–5', topic: 'Search Engine Optimisation (SEO)', items: ['On-page SEO', 'Off-page & link building', 'Technical SEO audit', 'Local SEO for Nagpur businesses'] },
-  { week: 'Week 6–8', topic: 'Google Ads (PPC)', items: ['Search campaigns', 'Display & remarketing', 'Shopping ads', 'Conversion tracking'] },
-  { week: 'Week 9–11', topic: 'Social Media Marketing', items: ['Facebook & Instagram Ads', 'LinkedIn marketing', 'YouTube SEO & Ads', 'Organic growth strategies'] },
-  { week: 'Week 12–14', topic: 'Content & Email Marketing', items: ['Blog writing & SEO content', 'Email automation', 'WhatsApp marketing', 'Video content scripts'] },
-  { week: 'Week 15–16', topic: 'Live Projects & Placement', items: ['2 live client campaigns', 'Portfolio building', 'Resume & LinkedIn', 'Mock interviews'] },
+  { week: 'Week 3–4', topic: 'Search Engine Optimisation (SEO)', items: ['On-page SEO', 'Off-page & link building', 'Technical SEO audit', 'Local SEO for Nagpur businesses'] },
+  { week: 'Week 5–6', topic: 'Google Ads (PPC)', items: ['Search campaigns', 'Display & remarketing', 'Shopping ads', 'Conversion tracking'] },
+  { week: 'Week 7–8', topic: 'Social Media Marketing', items: ['Facebook & Instagram Ads', 'LinkedIn marketing', 'YouTube SEO & Ads', 'Organic growth strategies'] },
+  { week: 'Week 9–10', topic: 'Content & Email Marketing', items: ['Blog writing & SEO content', 'Email automation', 'WhatsApp marketing', 'Video content scripts'] },
+  { week: 'Week 11–12', topic: 'Live Projects & Placement', items: ['2 live client campaigns', 'Portfolio building', 'Resume & LinkedIn', 'Mock interviews'] },
 ];
 
 // ── Q-003a rollback (2026-09-12) ── Synthetic Review objects removed to
@@ -110,16 +110,16 @@ function buildCourseJsonLd({ title, description, canonical }) {
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
 }
 
-// Q-004 (2026-09-12) · HowTo schema for the 16-week syllabus. Google renders
+// Q-004 (2026-09-12) · HowTo schema for the 3-month syllabus. Google renders
 // a step-by-step expander in SERPs, and AI engines (Perplexity, Gemini) treat
 // HowTo as citable Q&A. One block per landing page, referencing shared SYLLABUS.
 function buildHowToJsonLd({ title, description, canonical }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
-    name: `How to Learn Digital Marketing in Nagpur — Telzon Academy's 16-Week Program`,
-    description: `A step-by-step 16-week practical program to become a job-ready digital marketer, taught at Telzon Academy in Nagpur.`,
-    totalTime: 'P16W',
+    name: `How to Learn Digital Marketing in Nagpur — Telzon Academy's 3-Month Program`,
+    description: `A step-by-step 3-month practical program to become a job-ready digital marketer, taught at Telzon Academy in Nagpur.`,
+    totalTime: 'P3M',
     estimatedCost: { '@type': 'MonetaryAmount', currency: 'INR', value: '25000' },
     supply: [
       { '@type': 'HowToSupply', name: 'Laptop or desktop with internet' },
@@ -329,7 +329,7 @@ function landingPageContent(page) {
 
   // ── Action B ── H1-adjacent intro paragraph (rendered when config provides it).
   // Falls back to a generic template using headline + keywordShort so every slug gets one.
-  const intro = page.intro || `The <strong>${escapeHtml(keywordShort)}</strong> at Telzon Academy is Nagpur's most practical, placement-focused program for anyone starting or accelerating a digital marketing career. Over 16 weeks you'll learn Search Engine Optimisation, Google Ads, Meta Ads, social media management, content marketing, analytics and AI marketing — through live client projects, real ad-account work and case-study workbooks. Fees range from ₹25,000 to ₹45,000 with no-cost EMI and merit-based scholarships. Course sessions include Google Ads, Google Analytics and Meta Blueprint certification preparation. Every student gets 95% placement assistance with 50+ hiring partners across Nagpur and India, and we track our graduates' first-offer timeline (usually 30–60 days after course completion). Book a free demo class to experience the teaching quality before you enrol.`;
+  const intro = page.intro || `The <strong>${escapeHtml(keywordShort)}</strong> at Telzon Academy is Nagpur's most practical, placement-focused program for anyone starting or accelerating a digital marketing career. Over 3 months you'll learn Search Engine Optimisation, Google Ads, Meta Ads, social media management, content marketing, analytics and AI marketing — through live client projects, real ad-account work and case-study workbooks. Fees are ₹25,000 + GST with no-cost EMI and merit-based scholarships. Course sessions include Google Ads, Google Analytics and Meta Blueprint certification preparation. Every student gets 95% placement assistance with 50+ hiring partners across Nagpur and India, and we track our graduates' first-offer timeline (usually 30–60 days after course completion). Book a free demo class to experience the teaching quality before you enrol.`;
 
   return `    <header>
       <h1>${escapeHtml(page.headline)}</h1>
@@ -346,10 +346,10 @@ function landingPageContent(page) {
       <ul>
         ${bulletsHtml}
       </ul>
-      <p>Telzon Academy is Nagpur's top-rated digital marketing institute with 1,000+ students trained, 95% placement assistance and a 4.9/5 rating from 200+ student reviews. Our course fees range from ₹25,000 to ₹45,000 with no-cost EMI options and merit-based scholarships. Programs run 3 to 6 months across weekday, weekend and fully online batches — pick whichever fits your schedule.</p>
+      <p>Telzon Academy is Nagpur's top-rated digital marketing institute with 1,000+ students trained, 95% placement assistance and a 4.9/5 rating from 200+ student reviews. Our course fees are ₹25,000 + GST with no-cost EMI options and merit-based scholarships. Programs run 3 months across weekday, weekend and fully online batches — pick whichever fits your schedule.</p>
     </section>
     <section>
-      <h2>What you'll learn — 16-week ${escapeHtml(keywordShort)} curriculum</h2>
+      <h2>What you'll learn — 3-month ${escapeHtml(keywordShort)} curriculum</h2>
       <ol>${syllabusHtml}
       </ol>
       <p>Every module ends with a graded assignment and a real campaign you can show in interviews. The course includes Google Ads, Google Analytics and Meta Blueprint certification preparation, access to all premium tools during training, and 1 year of placement assistance after course completion.</p>
@@ -402,7 +402,7 @@ function blogContent() {
     </section>
     <section>
       <h2>Want to learn digital marketing in Nagpur?</h2>
-      <p>Telzon Academy offers a 16-week practical digital marketing course with 95% placement assistance, live client projects, and Google Ads, Google Analytics and Meta Blueprint certification preparation. Course fees range from ₹25,000 to ₹45,000 with no-cost EMI options and merit-based scholarships. We run weekday morning, weekday evening and weekend batches — plus a fully online live batch for students outside Nagpur. Call <a href="tel:+919307189776">+91-9307189776</a> or email <a href="mailto:connect@telzonacademy.in">connect@telzonacademy.in</a> to book a free demo class.</p>
+      <p>Telzon Academy offers a 3-month practical digital marketing course with 95% placement assistance, live client projects, and Google Ads, Google Analytics and Meta Blueprint certification preparation. Course fees are ₹25,000 + GST with no-cost EMI options and merit-based scholarships. We run weekday morning, weekday evening and weekend batches — plus a fully online live batch for students outside Nagpur. Call <a href="tel:+919307189776">+91-9307189776</a> or email <a href="mailto:connect@telzonacademy.in">connect@telzonacademy.in</a> to book a free demo class.</p>
     </section>`;
 }
 

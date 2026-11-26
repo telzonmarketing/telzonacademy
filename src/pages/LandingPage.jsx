@@ -24,11 +24,11 @@ const NAGPUR_AREAS = [
 // ─── Upgrad-style syllabus modules ───────────────────────────────────────────
 const SYLLABUS = [
   { week: 'Week 1–2', topic: 'Digital Marketing Fundamentals', items: ['What is digital marketing', 'Search engine basics', 'Buyer journey & funnel', 'Setting up Google Analytics'] },
-  { week: 'Week 3–5', topic: 'Search Engine Optimisation (SEO)', items: ['On-page SEO', 'Off-page & link building', 'Technical SEO audit', 'Local SEO for Nagpur businesses'] },
-  { week: 'Week 6–8', topic: 'Google Ads (PPC)', items: ['Search campaigns', 'Display & remarketing', 'Shopping ads', 'Conversion tracking'] },
-  { week: 'Week 9–11', topic: 'Social Media Marketing', items: ['Facebook & Instagram Ads', 'LinkedIn marketing', 'YouTube SEO & Ads', 'Organic growth strategies'] },
-  { week: 'Week 12–14', topic: 'Content & Email Marketing', items: ['Blog writing & SEO content', 'Email automation', 'WhatsApp marketing', 'Video content scripts'] },
-  { week: 'Week 15–16', topic: 'Live Projects & Placement', items: ['2 live client campaigns', 'Portfolio building', 'Resume & LinkedIn', 'Mock interviews'] },
+  { week: 'Week 3–4', topic: 'Search Engine Optimisation (SEO)', items: ['On-page SEO', 'Off-page & link building', 'Technical SEO audit', 'Local SEO for Nagpur businesses'] },
+  { week: 'Week 5–6', topic: 'Google Ads (PPC)', items: ['Search campaigns', 'Display & remarketing', 'Shopping ads', 'Conversion tracking'] },
+  { week: 'Week 7–8', topic: 'Social Media Marketing', items: ['Facebook & Instagram Ads', 'LinkedIn marketing', 'YouTube SEO & Ads', 'Organic growth strategies'] },
+  { week: 'Week 9–10', topic: 'Content & Email Marketing', items: ['Blog writing & SEO content', 'Email automation', 'WhatsApp marketing', 'Video content scripts'] },
+  { week: 'Week 11–12', topic: 'Live Projects & Placement', items: ['2 live client campaigns', 'Portfolio building', 'Resume & LinkedIn', 'Mock interviews'] },
 ];
 
 // ─── FAQs per slug now live in landingPagesFaqs.js (shared with tools/prerender.js) ─
@@ -236,7 +236,7 @@ function SyllabusSection() {
             Course{' '}
             <span className="font-serif-display italic text-white/90">curriculum</span>
           </h2>
-          <p className="text-base text-white/60">16 weeks · 10+ live projects · Google &amp; Meta certification</p>
+          <p className="text-base text-white/60">3 months · 10+ live projects · Google &amp; Meta certification</p>
         </div>
         <div className="space-y-2">
           {SYLLABUS.map((mod, i) => (
@@ -512,7 +512,6 @@ const LandingPage = () => {
       priceSpecification: {
         '@type': 'PriceSpecification',
         price: '25000',
-        maxPrice: '45000',
         priceCurrency: 'INR',
       },
     },
@@ -656,7 +655,7 @@ const LandingPage = () => {
                     ))}
                   </ul>
                   <div className="flex flex-wrap gap-2 mb-7">
-                    {[['Clock','3–6 months'],['IndianRupee','₹25K–₹45K'],['Users','1000+ alumni'],['Award','95% placed']].map(([, label]) => (
+                    {[['Clock','3 months'],['IndianRupee','₹25K + GST'],['Users','1000+ alumni'],['Award','95% placed']].map(([, label]) => (
                       <span key={label} className="text-[11px] font-semibold text-white/70 bg-white/[0.04] border border-white/[0.08] px-3 py-1.5 rounded-full uppercase tracking-[0.06em]">{label}</span>
                     ))}
                   </div>
