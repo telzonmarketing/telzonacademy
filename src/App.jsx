@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
 import { motion } from 'framer-motion';
 
@@ -68,9 +68,19 @@ function HomePage() {
   );
 }
 
+// Black & white public theme: on for every public page, off for /admin.
+function ThemeScope() {
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    document.documentElement.classList.toggle('theme-mono', !pathname.startsWith('/admin'));
+  }, [pathname]);
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <ThemeScope />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<BlogList />} />

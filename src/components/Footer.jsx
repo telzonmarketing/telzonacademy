@@ -70,7 +70,7 @@ const Footer = () => {
                 <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5 text-rose-400" />
                 <address className="not-italic leading-relaxed text-white/60">
                   Telzon Academy<br />
-                  Digital Marketing Training Center<br />
+                  Chhatrapati Square<br />
                   Nagpur, Maharashtra — 440001
                 </address>
               </div>

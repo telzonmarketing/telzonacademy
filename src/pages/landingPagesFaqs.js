@@ -144,3 +144,11 @@ export const PAGE_FAQS = {
     { q: 'How do I book a free demo class for the digital marketing classes?', a: 'Submit the enquiry form on this page, call +91-9307189776, or WhatsApp us. We confirm a demo slot within 30 minutes during business hours. You can attend the demo in your preferred batch time (weekday morning, evening, weekend, or online) so you experience the exact class you\'d be joining.' },
   ],
 };
+
+// Pages that gained their own FAQs on 2026-11-26 keep the general FAQs too,
+// so no page loses content. Fee and duration are skipped because the
+// page-specific set already answers them (avoids duplicate FAQ entries).
+['performance-marketing-course-nagpur', 'content-marketing-course-nagpur', 'digital-marketing-course-near-me-nagpur'].forEach((slug) => {
+  const extra = PAGE_FAQS.default.filter((f) => !/duration|fees/i.test(f.q));
+  PAGE_FAQS[slug] = [...PAGE_FAQS[slug], ...extra];
+});

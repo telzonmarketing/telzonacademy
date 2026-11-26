@@ -420,7 +420,7 @@ function StatsBar() {
   const stats = [
     { icon: Users, label: '1,000+', sub: 'Students Trained' },
     { icon: Award, label: '95%', sub: 'Placement Rate' },
-    { icon: Clock, label: '3–6 Months', sub: 'Course Duration' },
+    { icon: Clock, label: '3 Months', sub: 'Course Duration' },
     { icon: IndianRupee, label: '3.5 LPA', sub: 'Avg. Salary' },
     { icon: Star, label: '4.9 / 5', sub: 'Student Rating' },
   ];

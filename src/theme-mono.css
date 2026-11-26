@@ -1,0 +1,245 @@
+/* Telzon mono (black & white) theme — public pages only.
+ * Generated from the colour classes used in src/components and src/pages.
+ * Applied when <html> has class "theme-mono" (removed on /admin routes).
+ * Changes presentation only: no markup, content or URLs. */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap');
+html.theme-mono{color-scheme:light;
+ --background:0 0% 100%;--surface-1:0 0% 100%;--surface-2:0 0% 98%;--surface-popover:0 0% 100%;
+ --foreground:0 0% 0%;--foreground-muted:0 0% 33%;--foreground-subtle:0 0% 42%;
+ --primary:0 0% 0%;--primary-foreground:0 0% 100%;--accent:0 0% 0%;--accent-foreground:0 0% 100%;
+ --success:0 0% 0%;--border:0 0% 90%;--border-soft:0 0% 93%;--input:0 0% 80%;--ring:0 0% 0%;
+ --card:0 0% 100%;--card-foreground:0 0% 0%;--popover:0 0% 100%;--popover-foreground:0 0% 0%;
+ --secondary:0 0% 96%;--secondary-foreground:0 0% 0%;--muted:0 0% 96%;--muted-foreground:0 0% 33%}
+html.theme-mono body{background:#fff !important;color:#000}
+html.theme-mono h1,html.theme-mono h2,html.theme-mono h3{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.03em}
+html.theme-mono .font-serif-display{font-family:"Space Grotesk",Inter,sans-serif;font-style:normal !important;font-weight:700;letter-spacing:-.03em}
+html.theme-mono [class*="blur-["]{display:none !important}
+html.theme-mono [style*="blur("],html.theme-mono [aria-hidden="true"][class*="pointer-events-none"][class*="-z-10"]{display:none !important}
+html.theme-mono [class*="from-transparent"][class*="to-black/"]{display:none !important}
+html.theme-mono h1,html.theme-mono h1 *{text-shadow:none !important}
+html.theme-mono a[class~="bg-white"],html.theme-mono button[class~="bg-white"]{border:1.5px solid #000}
+html.theme-mono img[class~="invert"]{filter:brightness(0) !important}
+html.theme-mono .prose-invert{--tw-prose-body:#222;--tw-prose-headings:#000;--tw-prose-lead:#333;--tw-prose-links:#000;--tw-prose-bold:#000;--tw-prose-counters:#555;--tw-prose-bullets:#555;--tw-prose-hr:#e5e5e5;--tw-prose-quotes:#222;--tw-prose-quote-borders:#000;--tw-prose-captions:#555;--tw-prose-code:#000;--tw-prose-pre-code:#f5f5f5;--tw-prose-pre-bg:#111;--tw-prose-th-borders:#ccc;--tw-prose-td-borders:#e5e5e5}
+html.theme-mono [class*="bg-gradient-to"]:not([class*="from-black"]):not([class*="via-black"]):not([class*="to-black"]):not([class*="from-transparent"]){background-image:none !important}
+html.theme-mono .bg-clip-text,html.theme-mono .text-transparent{background:none !important;-webkit-text-fill-color:#000;color:#000}
+html.theme-mono img[src*="logo-white"],html.theme-mono img[src*="mark-white"]{filter:invert(1)}
+html.theme-mono .grid-bg{background-image:linear-gradient(rgba(0,0,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.05) 1px,transparent 1px)}
+html.theme-mono .surface-card{background:#fff;border-color:#e3e3e3;box-shadow:none;backdrop-filter:none}
+html.theme-mono .surface-card-elevated{background:#fff;border:1.5px solid #000;box-shadow:none}
+html.theme-mono .surface-card-popular{background:#fff;color:#000;border:2px solid #000;box-shadow:8px 8px 0 #000}
+html.theme-mono .badge-tag{border-color:#000;background:#fff;color:#000}
+html.theme-mono .badge-tag-accent{border-color:#000;background:#000;color:#fff}
+html.theme-mono .btn-primary,html.theme-mono .btn-accent{background:#000;background-image:none;color:#fff;border-radius:999px;box-shadow:none}
+html.theme-mono .btn-primary:hover,html.theme-mono .btn-accent:hover{background:#262626}
+html.theme-mono .btn-secondary{background:#fff;color:#000;border:1.5px solid #000;border-radius:999px}
+html.theme-mono .btn-secondary:hover{background:#000;color:#fff}
+html.theme-mono .input-field{background:#fff;border-color:#bdbdbd;color:#000}
+html.theme-mono .input-field::placeholder{color:#767676}
+html.theme-mono .input-field:focus{border-color:#000;--tw-ring-color:rgba(0,0,0,.15)}
+html.theme-mono .glass-card-hover:hover{background:#fafafa;border-color:#000}
+html.theme-mono input,html.theme-mono textarea,html.theme-mono select{color:#000}
+html.theme-mono [class~="bg-[#030014]"]{background-color:#fff}
+html.theme-mono [class~="bg-[#0a0a0c]/85"]{background-color:#fff}
+html.theme-mono [class~="bg-black/10"]:not([class~="absolute"]){background-color:#fafafa}
+html.theme-mono [class~="bg-black/10"][class~="absolute"][class~="-z-10"]{background-color:transparent}
+html.theme-mono [class~="bg-black/20"]:not([class~="absolute"]){background-color:#fafafa}
+html.theme-mono [class~="bg-black/20"][class~="absolute"][class~="-z-10"]{background-color:transparent}
+html.theme-mono [class~="bg-black/30"]:not([class~="absolute"]){background-color:#fafafa}
+html.theme-mono [class~="bg-black/30"][class~="absolute"][class~="-z-10"]{background-color:transparent}
+html.theme-mono [class~="bg-black/40"]:not([class~="absolute"]){background-color:#fafafa}
+html.theme-mono [class~="bg-black/40"][class~="absolute"][class~="-z-10"]{background-color:transparent}
+html.theme-mono [class~="bg-black/50"]:not([class~="absolute"]){background-color:#fafafa}
+html.theme-mono [class~="bg-black/50"][class~="absolute"][class~="-z-10"]{background-color:transparent}
+html.theme-mono [class~="bg-black/65"]{background-color:rgba(255,255,255,.94)}
+html.theme-mono [class~="bg-blue-400/10"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-emerald-400"]{background-color:#000}
+html.theme-mono [class~="bg-emerald-400/10"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-emerald-400/15"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-gray-400"]{background-color:#f5f5f5}
+html.theme-mono [class~="bg-gray-50"]{background-color:#f5f5f5}
+html.theme-mono [class~="bg-gray-800"]{background-color:#fff}
+html.theme-mono [class~="bg-gray-800/30"]{background-color:#fff}
+html.theme-mono [class~="bg-gray-900"]{background-color:#fff}
+html.theme-mono [class~="bg-gray-900/50"]{background-color:#fff}
+html.theme-mono [class~="bg-gray-950"]{background-color:#fff}
+html.theme-mono [class~="bg-green-400"]{background-color:#000}
+html.theme-mono [class~="bg-green-400/10"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-green-500"]{background-color:#000}
+html.theme-mono [class~="bg-green-500/15"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-green-500/20"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-green-600"]{background-color:#000}
+html.theme-mono [class~="bg-indigo-400/10"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-indigo-400/[0.06]"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-indigo-500/12"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-indigo-500/15"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-orange-400"]{background-color:#000}
+html.theme-mono [class~="bg-orange-400/10"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-orange-500/10"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-orange-500/15"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-purple-500/10"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-purple-500/15"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-purple-600"]{background-color:#000}
+html.theme-mono [class~="bg-purple-900/40"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-red-400"]{background-color:#000}
+html.theme-mono [class~="bg-red-500"]{background-color:#000}
+html.theme-mono [class~="bg-red-500/10"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-violet-500/10"]{background-color:#f3f3f3}
+html.theme-mono [class~="bg-white"]{background-color:#fff}
+html.theme-mono [class~="bg-white/10"]{background-color:#f7f7f7}
+html.theme-mono [class~="bg-white/20"]{background-color:#efefef}
+html.theme-mono [class~="bg-white/5"]{background-color:#f7f7f7}
+html.theme-mono [class~="bg-white/[0.025]"]{background-color:#f7f7f7}
+html.theme-mono [class~="bg-white/[0.02]"]{background-color:#f7f7f7}
+html.theme-mono [class~="bg-white/[0.04]"]{background-color:#f7f7f7}
+html.theme-mono [class~="bg-white/[0.06]"]{background-color:#f7f7f7}
+html.theme-mono [class~="bg-yellow-400/10"]{background-color:#f3f3f3}
+html.theme-mono [class~="border-[#12082a]"]{border-color:#e6e6e6}
+html.theme-mono [class~="border-blue-400/20"]{border-color:#d6d6d6}
+html.theme-mono [class~="border-emerald-400/20"]{border-color:#d6d6d6}
+html.theme-mono [class~="border-emerald-400/30"]{border-color:#d6d6d6}
+html.theme-mono [class~="border-gray-100"]{border-color:#000}
+html.theme-mono [class~="border-gray-700"]{border-color:#e6e6e6}
+html.theme-mono [class~="border-gray-800"]{border-color:#e6e6e6}
+html.theme-mono [class~="border-green-400/20"]{border-color:#d6d6d6}
+html.theme-mono [class~="border-green-500/20"]{border-color:#d6d6d6}
+html.theme-mono [class~="border-indigo-400/20"]{border-color:#d6d6d6}
+html.theme-mono [class~="border-indigo-400/30"]{border-color:#d6d6d6}
+html.theme-mono [class~="border-orange-400/20"]{border-color:#d6d6d6}
+html.theme-mono [class~="border-orange-500/20"]{border-color:#d6d6d6}
+html.theme-mono [class~="border-orange-500/25"]{border-color:#d6d6d6}
+html.theme-mono [class~="border-pink-400/20"]{border-color:#d6d6d6}
+html.theme-mono [class~="border-purple-400/30"]{border-color:#d6d6d6}
+html.theme-mono [class~="border-purple-500"]{border-color:#000}
+html.theme-mono [class~="border-purple-500/20"]{border-color:#d6d6d6}
+html.theme-mono [class~="border-purple-500/30"]{border-color:#d6d6d6}
+html.theme-mono [class~="border-red-500/20"]{border-color:#d6d6d6}
+html.theme-mono [class~="border-white/10"]{border-color:#e6e6e6}
+html.theme-mono [class~="border-white/15"]{border-color:#cfcfcf}
+html.theme-mono [class~="border-white/20"]{border-color:#cfcfcf}
+html.theme-mono [class~="border-white/5"]{border-color:#e6e6e6}
+html.theme-mono [class~="border-white/[0.06]"]{border-color:#e6e6e6}
+html.theme-mono [class~="border-white/[0.07]"]{border-color:#e6e6e6}
+html.theme-mono [class~="border-white/[0.08]"]{border-color:#e6e6e6}
+html.theme-mono [class~="border-yellow-400/20"]{border-color:#d6d6d6}
+html.theme-mono [class~="decoration-indigo-400/40"]{text-decoration-color:#000}
+html.theme-mono [class~="decoration-indigo-400/50"]{text-decoration-color:#000}
+html.theme-mono [class~="decoration-white/15"]{text-decoration-color:#000}
+html.theme-mono [class~="fill-white"]{fill:#000}
+html.theme-mono [class~="fill-yellow-400"]{fill:#000}
+html.theme-mono [class~="focus:border-purple-500"]:focus{border-color:#000}
+html.theme-mono [class~="focus:ring-indigo-400/40"]:focus{--tw-ring-color:rgba(0,0,0,.25)}
+html.theme-mono [class~="focus:ring-purple-500"]:focus{--tw-ring-color:#000}
+html.theme-mono .group:hover [class~="group-hover:bg-purple-600/80"]{background-color:#f3f3f3}
+html.theme-mono .group:hover [class~="group-hover:text-indigo-200"]{color:#000}
+html.theme-mono .group:hover [class~="group-hover:text-purple-300"]{color:#000}
+html.theme-mono .group:hover [class~="group-hover:text-purple-400"]{color:#000}
+html.theme-mono [class~="hover:bg-emerald-400/20"]:hover{background-color:#f3f3f3}
+html.theme-mono [class~="hover:bg-gray-100"]:hover{background-color:#f5f5f5}
+html.theme-mono [class~="hover:bg-gray-700"]:hover{background-color:#fff}
+html.theme-mono [class~="hover:bg-green-600"]:hover{background-color:#000}
+html.theme-mono [class~="hover:bg-green-700"]:hover{background-color:#000}
+html.theme-mono [class~="hover:bg-indigo-500/15"]:hover{background-color:#f3f3f3}
+html.theme-mono [class~="hover:bg-white/10"]:hover{background-color:#f7f7f7}
+html.theme-mono [class~="hover:bg-white/5"]:hover{background-color:#f7f7f7}
+html.theme-mono [class~="hover:bg-white/90"]:hover{background-color:#efefef}
+html.theme-mono [class~="hover:bg-white/[0.03]"]:hover{background-color:#f7f7f7}
+html.theme-mono [class~="hover:bg-white/[0.08]"]:hover{background-color:#f7f7f7}
+html.theme-mono [class~="hover:border-blue-300/50"]:hover{border-color:#000}
+html.theme-mono [class~="hover:border-blue-500/50"]:hover{border-color:#000}
+html.theme-mono [class~="hover:border-emerald-400/40"]:hover{border-color:#000}
+html.theme-mono [class~="hover:border-gray-600"]:hover{border-color:#e6e6e6}
+html.theme-mono [class~="hover:border-indigo-400/30"]:hover{border-color:#d6d6d6}
+html.theme-mono [class~="hover:border-orange-500/50"]:hover{border-color:#000}
+html.theme-mono [class~="hover:border-pink-400/40"]:hover{border-color:#000}
+html.theme-mono [class~="hover:border-purple-500/50"]:hover{border-color:#000}
+html.theme-mono [class~="hover:border-white/15"]:hover{border-color:#cfcfcf}
+html.theme-mono [class~="hover:border-white/20"]:hover{border-color:#cfcfcf}
+html.theme-mono [class~="hover:border-yellow-500/50"]:hover{border-color:#000}
+html.theme-mono [class~="hover:decoration-indigo-300"]:hover{text-decoration-color:#000}
+html.theme-mono [class~="hover:shadow-purple-500/25"]:hover{--tw-shadow-color:transparent;--tw-shadow:none;box-shadow:none}
+html.theme-mono [class~="hover:text-blue-300"]:hover{color:#000}
+html.theme-mono [class~="hover:text-blue-800"]:hover{color:#000}
+html.theme-mono [class~="hover:text-indigo-200"]:hover{color:#000}
+html.theme-mono [class~="hover:text-purple-200"]:hover{color:#000}
+html.theme-mono [class~="hover:text-purple-300"]:hover{color:#000}
+html.theme-mono [class~="hover:text-white"]:hover{color:#000}
+html.theme-mono [class~="placeholder:text-gray-400"]::placeholder{color:#555}
+html.theme-mono [class~="placeholder:text-gray-500"]::placeholder{color:#555}
+html.theme-mono [class~="placeholder:text-gray-600"]::placeholder{color:#555}
+html.theme-mono [class~="shadow-purple-900/20"]{--tw-shadow-color:transparent;--tw-shadow:none;box-shadow:none}
+html.theme-mono [class~="text-blue-400"]{color:#000}
+html.theme-mono [class~="text-blue-600"]{color:#000}
+html.theme-mono [class~="text-emerald-100"]{color:#000}
+html.theme-mono [class~="text-emerald-300"]{color:#000}
+html.theme-mono [class~="text-emerald-400"]{color:#000}
+html.theme-mono [class~="text-gray-200"]{color:#000}
+html.theme-mono [class~="text-gray-300"]{color:#000}
+html.theme-mono [class~="text-gray-400"]{color:#555}
+html.theme-mono [class~="text-gray-500"]{color:#555}
+html.theme-mono [class~="text-gray-600"]{color:#555}
+html.theme-mono [class~="text-gray-900"]{color:#222}
+html.theme-mono [class~="text-green-200"]{color:#000}
+html.theme-mono [class~="text-green-300"]{color:#000}
+html.theme-mono [class~="text-green-400"]{color:#000}
+html.theme-mono [class~="text-green-500"]{color:#000}
+html.theme-mono [class~="text-indigo-100"]{color:#000}
+html.theme-mono [class~="text-indigo-300"]{color:#000}
+html.theme-mono [class~="text-neutral-900"]{color:#222}
+html.theme-mono [class~="text-orange-200"]{color:#000}
+html.theme-mono [class~="text-orange-300"]{color:#000}
+html.theme-mono [class~="text-orange-400"]{color:#000}
+html.theme-mono [class~="text-pink-200"]{color:#000}
+html.theme-mono [class~="text-purple-200"]{color:#000}
+html.theme-mono [class~="text-purple-300"]{color:#000}
+html.theme-mono [class~="text-purple-400"]{color:#000}
+html.theme-mono [class~="text-purple-500"]{color:#000}
+html.theme-mono [class~="text-purple-900"]{color:#000}
+html.theme-mono [class~="text-red-300"]{color:#b00020}
+html.theme-mono [class~="text-rose-400"]{color:#b00020}
+html.theme-mono [class~="text-white"]{color:#000}
+html.theme-mono [class~="text-white/20"]{color:#6b6b6b}
+html.theme-mono [class~="text-white/25"]{color:#6b6b6b}
+html.theme-mono [class~="text-white/35"]{color:#6b6b6b}
+html.theme-mono [class~="text-white/40"]{color:#555}
+html.theme-mono [class~="text-white/45"]{color:#555}
+html.theme-mono [class~="text-white/50"]{color:#555}
+html.theme-mono [class~="text-white/55"]{color:#333}
+html.theme-mono [class~="text-white/60"]{color:#333}
+html.theme-mono [class~="text-white/65"]{color:#333}
+html.theme-mono [class~="text-white/70"]{color:#333}
+html.theme-mono [class~="text-white/75"]{color:#000}
+html.theme-mono [class~="text-white/80"]{color:#000}
+html.theme-mono [class~="text-white/85"]{color:#000}
+html.theme-mono [class~="text-white/90"]{color:#000}
+html.theme-mono [class~="text-white/95"]{color:#000}
+html.theme-mono [class~="text-yellow-400"]{color:#000}
+html.theme-mono [class~="bg-emerald-400"],
+html.theme-mono [class~="bg-green-400"],
+html.theme-mono [class~="bg-green-500"],
+html.theme-mono [class~="bg-green-600"],
+html.theme-mono [class~="bg-orange-400"],
+html.theme-mono [class~="bg-purple-600"],
+html.theme-mono [class~="bg-red-400"],
+html.theme-mono [class~="bg-red-500"],
+html.theme-mono [class*="bg-gradient-to"][class~="from-indigo-500"],
+html.theme-mono [class*="bg-gradient-to"][class~="from-orange-600"],
+html.theme-mono [class*="bg-gradient-to"][class~="from-purple-600"],
+html.theme-mono [class*="bg-gradient-to"][class~="from-purple-700"],
+html.theme-mono [class~="hover:bg-green-600"]:hover,
+html.theme-mono [class~="hover:bg-green-700"]:hover,
+html.theme-mono [class*="bg-gradient-to"][class~="hover:from-purple-700"]{background-color:#000 !important;background-image:none !important}
+html.theme-mono [class~="bg-emerald-400"],html.theme-mono [class~="bg-emerald-400"] *,
+html.theme-mono [class~="bg-green-400"],html.theme-mono [class~="bg-green-400"] *,
+html.theme-mono [class~="bg-green-500"],html.theme-mono [class~="bg-green-500"] *,
+html.theme-mono [class~="bg-green-600"],html.theme-mono [class~="bg-green-600"] *,
+html.theme-mono [class~="bg-orange-400"],html.theme-mono [class~="bg-orange-400"] *,
+html.theme-mono [class~="bg-purple-600"],html.theme-mono [class~="bg-purple-600"] *,
+html.theme-mono [class~="bg-red-400"],html.theme-mono [class~="bg-red-400"] *,
+html.theme-mono [class~="bg-red-500"],html.theme-mono [class~="bg-red-500"] *,
+html.theme-mono [class*="bg-gradient-to"][class~="from-indigo-500"],html.theme-mono [class*="bg-gradient-to"][class~="from-indigo-500"] *,
+html.theme-mono [class*="bg-gradient-to"][class~="from-orange-600"],html.theme-mono [class*="bg-gradient-to"][class~="from-orange-600"] *,
+html.theme-mono [class*="bg-gradient-to"][class~="from-purple-600"],html.theme-mono [class*="bg-gradient-to"][class~="from-purple-600"] *,
+html.theme-mono [class*="bg-gradient-to"][class~="from-purple-700"],html.theme-mono [class*="bg-gradient-to"][class~="from-purple-700"] *,
+html.theme-mono [class~="hover:bg-green-600"]:hover,html.theme-mono [class~="hover:bg-green-600"]:hover *,
+html.theme-mono [class~="hover:bg-green-700"]:hover,html.theme-mono [class~="hover:bg-green-700"]:hover *,
+html.theme-mono [class*="bg-gradient-to"][class~="hover:from-purple-700"],html.theme-mono [class*="bg-gradient-to"][class~="hover:from-purple-700"] *{color:#fff !important;-webkit-text-fill-color:#fff}
