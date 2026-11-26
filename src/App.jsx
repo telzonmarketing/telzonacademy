@@ -25,6 +25,7 @@ import WelcomeMessage from '@/components/WelcomeMessage';
 import SeoSettingsDashboard from '@/components/SeoSettingsDashboard';
 import GlobalSeo from '@/components/GlobalSeo';
 import LandingPage from '@/pages/LandingPage';
+import NotFoundPage from '@/pages/NotFoundPage';
 import TrackingScripts from '@/components/TrackingScripts';
 import LeadGenerationPage from '@/pages/LeadGenerationPage';
 import WatchDemoPage from '@/pages/WatchDemoPage';
@@ -104,6 +105,7 @@ function App() {
         {/* Legacy URLs — redirect to the new auth-protected routes */}
         <Route path="/private-free-demo-leads-94f7c1a2d3" element={<Navigate to="/admin/leads" replace />} />
         <Route path="/seo-settings-dashboard-telzon-secret-2024" element={<Navigate to="/admin/seo" replace />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <TrackingScripts />
       <Toaster />

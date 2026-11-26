@@ -20,6 +20,7 @@ import { fileURLToPath } from 'node:url';
 import { landingPages } from '../src/pages/landingPagesConfig.js';
 import { PAGE_FAQS } from '../src/pages/landingPagesFaqs.js';
 import { SYLLABUS, COURSE_FORMAT } from '../src/data/syllabus.js';
+import { buildSitemapXml, fetchPublishedBlogs } from './sitemap.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -61,7 +62,7 @@ function buildCourseJsonLd({ title, description, canonical, page = {} }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
-    name: title,
+    name: page.headline || title,
     description,
     url: canonical,
     provider: {
@@ -85,10 +86,21 @@ function buildCourseJsonLd({ title, description, canonical, page = {} }) {
     timeRequired: page.timeRequired || 'P3M',
     offers: {
       '@type': 'Offer',
+      category: 'Paid',
       price: page.price || '25000',
       priceCurrency: 'INR',
       availability: 'https://schema.org/InStock',
+      url: canonical,
     },
+    // Course-info rich results need at least one CourseInstance.
+    hasCourseInstance: page.syllabus
+      ? [{ '@type': 'CourseInstance', courseMode: 'Onsite', location: 'Telzon Academy, Chhatrapati Square, Nagpur', courseWorkload: page.timeRequired || 'P90D' }]
+      : [
+          { '@type': 'CourseInstance', courseMode: 'Onsite', location: 'Telzon Academy, Chhatrapati Square, Nagpur',
+            courseSchedule: { '@type': 'Schedule', duration: 'PT2H30M', repeatFrequency: 'Daily', repeatCount: 72 } },
+          { '@type': 'CourseInstance', courseMode: 'Online',
+            courseSchedule: { '@type': 'Schedule', duration: 'PT2H30M', repeatFrequency: 'Daily', repeatCount: 72 } },
+        ],
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: AGGREGATE_RATING.value,
@@ -153,7 +165,7 @@ function buildSpeakableJsonLd({ canonical }) {
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
 }
 
-function rewriteHead(html, { title, description, canonical, ogTitle, ogDescription, page }) {
+function rewriteHead(html, { title, description, canonical, ogTitle, ogDescription, page, extraJsonLd, ogType, ogImage }) {
   let out = html;
 
   // Replace <title> (preserve the comment line above it)
@@ -175,24 +187,27 @@ function rewriteHead(html, { title, description, canonical, ogTitle, ogDescripti
     `<link rel="canonical" href="${escapeHtml(canonical)}" />`,
     `<meta property="og:title" content="${escapeHtml(ogTitle || title)}" />`,
     `<meta property="og:description" content="${escapeHtml(ogDescription || description)}" />`,
-    `<meta property="og:type" content="website" />`,
+    `<meta property="og:type" content="${ogType || 'website'}" />`,
     `<meta property="og:url" content="${escapeHtml(canonical)}" />`,
     `<meta property="og:locale" content="en_IN" />`,
     `<meta property="og:site_name" content="Telzon Academy" />`,
     // Q-005 · og:image + twitter:image — was missing on every route.
-    `<meta property="og:image" content="${SITE}/telzon-logo-white-1024.png" />`,
+    `<meta property="og:image" content="${escapeHtml(ogImage || `${SITE}/telzon-logo-white-1024.png`)}" />`,
     `<meta property="og:image:type" content="image/png" />`,
     `<meta property="og:image:width" content="1024" />`,
     `<meta property="og:image:height" content="1024" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${escapeHtml(ogTitle || title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(ogDescription || description)}" />`,
-    `<meta name="twitter:image" content="${SITE}/telzon-logo-white-1024.png" />`,
+    `<meta name="twitter:image" content="${escapeHtml(ogImage || `${SITE}/telzon-logo-white-1024.png`)}" />`,
     // Q-003 · Course schema with aggregateRating → ★ SERP snippets.
-    buildCourseJsonLd({ title, description, canonical, page: page || {} }),
+    // Only on course (landing) pages — not on the blog, blog posts or lead-gen page.
+    ...(page ? [buildCourseJsonLd({ title, description, canonical, page })] : []),
     // Q-004 · HowTo schema for syllabus (step-by-step SERP expander).
     // Pages with their own syllabus (non-digital-marketing courses) skip it.
-    ...(page && page.syllabus ? [] : [buildHowToJsonLd({ title, description, canonical })]),
+    ...(page && !page.syllabus ? [buildHowToJsonLd({ title, description, canonical })] : []),
+    // Blog posts: Article + BreadcrumbList.
+    ...(extraJsonLd || []).map((o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`),
     // Q-004 · Speakable spec — voice-assistant / AI-answer citation hints.
     buildSpeakableJsonLd({ canonical }),
   ].join('\n  ');
@@ -406,6 +421,24 @@ function blogContent() {
     </section>`;
 }
 
+function stripTags(html) {
+  return String(html).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ');
+}
+
+// Blog post body as the admin editor stores it (HTML, newlines → <br>), the
+// same transformation BlogPost.jsx applies in the browser.
+function blogPostContent(b) {
+  const body = String(b.content || '').replace(/<script[\s\S]*?<\/script>/gi, '').replace(/\n/g, '<br />');
+  return `
+    <article>
+      <p><a href="/">Home</a> / <a href="/blog">Blog</a></p>
+      <h1>${escapeHtml(b.title)}</h1>
+      ${b.excerpt ? `<p>${escapeHtml(b.excerpt)}</p>` : ''}
+      <div>${body}</div>
+      <p><a href="/pages/digital-marketing-course-in-nagpur">Digital marketing course in Nagpur</a> · <a href="/pages/ai-marketing-course-in-nagpur">AI marketing course</a> · <a href="/blog">More articles</a></p>
+    </article>`;
+}
+
 function leadGenContent() {
   return `    <header>
       <h1>Lead Generation Package for Nagpur Businesses — Telzon Academy</h1>
@@ -433,8 +466,8 @@ function leadGenContent() {
     </section>`;
 }
 
-async function writeRoute(baseHtml, outRelative, { title, description, canonical, ogTitle, ogDescription, content, page }) {
-  const head = rewriteHead(baseHtml, { title, description, canonical, ogTitle, ogDescription, page });
+async function writeRoute(baseHtml, outRelative, { title, description, canonical, ogTitle, ogDescription, content, page, extraJsonLd, ogType, ogImage }) {
+  const head = rewriteHead(baseHtml, { title, description, canonical, ogTitle, ogDescription, page, extraJsonLd, ogType, ogImage });
   const full = rewriteRoot(head, content);
   const outPath = resolve(DIST, outRelative);
   await mkdir(dirname(outPath), { recursive: true });
@@ -478,7 +511,56 @@ async function main() {
   });
   count++;
 
-  console.log(`[prerender] wrote ${count} static HTML files under dist/`);
+  // 4) /blog/<slug> — every published post from the admin blog editor, as
+  //    static HTML (crawlable without JavaScript) with Article schema.
+  const blogs = await fetchPublishedBlogs({ full: true });
+  for (const b of blogs) {
+    const canonical = `${SITE}/blog/${b.slug}`;
+    const description = (b.excerpt || stripTags(b.content || '').slice(0, 155)).trim();
+    const image = b.cover_image || `${SITE}/telzon-logo-white-1024.png`;
+    const published = b.publishedAt || b.published_at || b.created_at;
+    await writeRoute(baseHtml, `blog/${b.slug}/index.html`, {
+      title: `${b.title} | Telzon Academy Blog`,
+      description,
+      canonical,
+      ogTitle: b.title,
+      ogDescription: description,
+      ogType: 'article',
+      ogImage: image,
+      content: blogPostContent(b),
+      extraJsonLd: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: b.title,
+          description,
+          image: [image],
+          datePublished: published,
+          dateModified: b.updated_at || published,
+          author: { '@type': 'Organization', name: 'Telzon Academy', url: SITE },
+          publisher: { '@type': 'Organization', name: 'Telzon Academy', logo: { '@type': 'ImageObject', url: `${SITE}/telzon-logo-black-512.png` } },
+          mainEntityOfPage: canonical,
+          inLanguage: 'en-IN',
+        },
+        {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+            { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
+            { '@type': 'ListItem', position: 3, name: b.title, item: canonical },
+          ],
+        },
+      ],
+    });
+    count++;
+  }
+
+  // 5) sitemap.xml — every landing page (courses + all locality pages) and
+  //    every published blog post. Overwrites the copied public/sitemap.xml.
+  await writeFile(resolve(DIST, 'sitemap.xml'), buildSitemapXml(blogs));
+
+  console.log(`[prerender] wrote ${count} static HTML files under dist/ (${blogs.length} blog posts) + sitemap.xml`);
 }
 
 main().catch(err => {
