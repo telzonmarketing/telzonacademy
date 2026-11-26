@@ -785,6 +785,7 @@ export const landingPages = [
       mode: 'Classroom and studio shoots, Chhatrapati Square, Nagpur',
       nextIntake: 'Monthly batches',
     },
+    badge: 'New course at Telzon Academy, Nagpur',
     price: '48000',
     timeRequired: 'P90D',
     durationLabel: '90-day',

@@ -642,7 +642,7 @@ const LandingPage = () => {
                     <span className="text-white/50 text-sm">/ 5 · 200+ reviews</span>
                   </div>
                   <div className="badge-tag mb-5">
-                    <span>#1 Digital Marketing Institute in Nagpur</span>
+                    <span>{page.badge || '#1 Digital Marketing Institute in Nagpur'}</span>
                   </div>
                   <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-[1.05] tracking-tight">{page.headline}</h1>
                   <p className="text-lg text-white/65 mb-6 leading-relaxed max-w-xl">{page.subheadline}</p>
@@ -701,14 +701,14 @@ const LandingPage = () => {
 
           {/* ── REUSED CORE SECTIONS ── (digital-marketing-specific ones hidden on other courses) */}
           {!page.syllabus && <BestCourseSection />}
-          <PracticalLearning />
+          {!page.syllabus && <PracticalLearning />}
           {!page.syllabus && <PlacementsAndCareers />}
 
           {/* ── REVIEWS (Zomato-style with local area) ── */}
-          <ReviewSection />
+          {!page.syllabus && <ReviewSection />}
 
           {/* ── MENTORSHIP ── */}
-          <Mentorship />
+          {!page.syllabus && <Mentorship />}
 
           {/* ── FAQ with FAQPage schema (Zomato/Swiggy: unique per page) ── */}
           <FAQSection faqs={faqs} />
