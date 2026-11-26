@@ -1,82 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
+import { SYLLABUS, COURSE_FORMAT } from '@/data/syllabus';
 
 const Curriculum = () => {
-  const modules = [
-    {
-      title: "Digital Marketing Fundamentals",
-      topics: [
-        "Introduction to Digital Marketing",
-        "Consumer Behavior & Online Psychology",
-        "Marketing Strategy Development",
-        "Brand Building Online"
-      ]
-    },
-    {
-      title: "Search Engine Optimization (SEO)",
-      topics: [
-        "On-page & Off-page SEO",
-        "Keyword Research & Analysis",
-        "Technical SEO Fundamentals",
-        "Local SEO Strategies"
-      ]
-    },
-    {
-      title: "Social Media Marketing",
-      topics: [
-        "Facebook & Instagram Marketing",
-        "LinkedIn for B2B Marketing",
-        "Twitter & Pinterest Strategies",
-        "Social Media Analytics"
-      ]
-    },
-    {
-      title: "Content Marketing",
-      topics: [
-        "Content Strategy & Planning",
-        "Copywriting for Digital Platforms",
-        "Video Marketing & YouTube",
-        "Blog & Article Writing"
-      ]
-    },
-    {
-      title: "Paid Advertising",
-      topics: [
-        "Google Ads (Search & Display)",
-        "Facebook & Instagram Ads",
-        "PPC Campaign Management",
-        "Retargeting Strategies"
-      ]
-    },
-    {
-      title: "Email Marketing & Automation",
-      topics: [
-        "Email Campaign Design",
-        "List Building & Segmentation",
-        "Marketing Automation Tools",
-        "Drip Campaigns & Workflows"
-      ]
-    },
-    {
-      title: "Analytics & Reporting",
-      topics: [
-        "Google Analytics Mastery",
-        "Conversion Rate Optimization",
-        "A/B Testing & Experiments",
-        "Data-Driven Decision Making"
-      ]
-    },
-    {
-      title: "AI & Advanced Tools",
-      topics: [
-        "ChatGPT for Marketing",
-        "AI Content Generation",
-        "Marketing Automation Platforms",
-        "Growth Hacking Techniques"
-      ]
-    }
-  ];
+  // Detailed 12-week syllabus shared with the course pages (src/data/syllabus.js).
+  const modules = SYLLABUS.map((m) => ({ title: `${m.week} · ${m.topic}`, month: m.month, topics: m.items }));
 
   return (
     <section className="py-20 px-4 relative">
@@ -94,6 +23,7 @@ const Curriculum = () => {
           <p className="text-lg text-gray-300 max-w-2xl mx-auto font-light">
             A complete roadmap covering everything from basics to advanced AI-powered marketing strategies.
           </p>
+          <p className="text-sm text-gray-400 mt-3">3 months · {COURSE_FORMAT.summary} · live project + interview preparation</p>
         </motion.div>
         
         <div className="grid md:grid-cols-2 gap-6">
@@ -106,8 +36,10 @@ const Curriculum = () => {
               transition={{ duration: 0.5, delay: index * 0.05 }}
               className="glass-card glass-card-hover p-6 rounded-2xl border border-white/10"
             >
+              {(index === 0 || modules[index - 1].month !== module.month) && (
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-indigo-300 mb-2">{module.month}</p>
+              )}
               <h3 className="text-xl font-semibold text-white mb-4 flex items-start gap-2">
-                <span className="text-purple-400 font-bold">{String(index + 1).padStart(2, '0')}.</span>
                 {module.title}
               </h3>
               <ul className="space-y-2">

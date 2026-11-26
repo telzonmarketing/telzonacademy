@@ -19,6 +19,7 @@ import { fileURLToPath } from 'node:url';
 
 import { landingPages } from '../src/pages/landingPagesConfig.js';
 import { PAGE_FAQS } from '../src/pages/landingPagesFaqs.js';
+import { SYLLABUS, COURSE_FORMAT } from '../src/data/syllabus.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -31,14 +32,6 @@ const NAGPUR_AREAS = [
   'Hingna', 'Amravati Road', 'Wardha Road', 'Katol Road', 'Kamptee Road',
 ];
 
-const SYLLABUS = [
-  { week: 'Week 1–2', topic: 'Digital Marketing Fundamentals', items: ['What is digital marketing', 'Search engine basics', 'Buyer journey & funnel', 'Setting up Google Analytics'] },
-  { week: 'Week 3–4', topic: 'Search Engine Optimisation (SEO)', items: ['On-page SEO', 'Off-page & link building', 'Technical SEO audit', 'Local SEO for Nagpur businesses'] },
-  { week: 'Week 5–6', topic: 'Google Ads (PPC)', items: ['Search campaigns', 'Display & remarketing', 'Shopping ads', 'Conversion tracking'] },
-  { week: 'Week 7–8', topic: 'Social Media Marketing', items: ['Facebook & Instagram Ads', 'LinkedIn marketing', 'YouTube SEO & Ads', 'Organic growth strategies'] },
-  { week: 'Week 9–10', topic: 'Content & Email Marketing', items: ['Blog writing & SEO content', 'Email automation', 'WhatsApp marketing', 'Video content scripts'] },
-  { week: 'Week 11–12', topic: 'Live Projects & Placement', items: ['2 live client campaigns', 'Portfolio building', 'Resume & LinkedIn', 'Mock interviews'] },
-];
 
 // ── Q-003a rollback (2026-09-12) ── Synthetic Review objects removed to
 // comply with Google's Review-snippet policy (fake reviews risk a manual
@@ -358,7 +351,8 @@ function landingPageContent(page) {
       <h2>What you'll learn — ${escapeHtml(page.durationLabel || '3-month')} ${escapeHtml(keywordShort)} curriculum</h2>
       <ol>${syllabusHtml}
       </ol>
-      ${page.curriculumNote ? `<p>${escapeHtml(page.curriculumNote)}</p>` : `<p>Every module ends with a graded assignment and a real campaign you can show in interviews. The course includes Google Ads, Google Analytics and Meta Blueprint certification preparation, access to all premium tools during training, and 1 year of placement assistance after course completion.</p>`}
+      ${page.curriculumNote ? `<p>${escapeHtml(page.curriculumNote)}</p>` : `<p>Course format: ${escapeHtml(COURSE_FORMAT.summary)} — ${escapeHtml(COURSE_FORMAT.session)}. ${escapeHtml(COURSE_FORMAT.phases)}. ${escapeHtml(COURSE_FORMAT.tools)}.</p>
+      <p>Every module ends with a graded assignment and a real campaign you can show in interviews. The course includes Google Ads, Google Analytics and Meta Blueprint certification preparation, access to all premium tools during training, and 1 year of placement assistance after course completion.</p>`}
     </section>
     <section>
       <h2>${escapeHtml(keywordShort)} — accessible from every part of Nagpur</h2>

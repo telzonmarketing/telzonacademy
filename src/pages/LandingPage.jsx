@@ -13,6 +13,7 @@ import LeadGenForm from '@/components/LeadGenForm';
 import FinalCTA from '@/components/FinalCTA';
 import { landingPages } from './landingPagesConfig';
 import { PAGE_FAQS } from './landingPagesFaqs';
+import { SYLLABUS, COURSE_FORMAT } from '@/data/syllabus';
 
 // ─── Nagpur localities for IndiaMart-style hyper-local targeting ─────────────
 const NAGPUR_AREAS = [
@@ -22,14 +23,6 @@ const NAGPUR_AREAS = [
 ];
 
 // ─── Upgrad-style syllabus modules ───────────────────────────────────────────
-const SYLLABUS = [
-  { week: 'Week 1–2', topic: 'Digital Marketing Fundamentals', items: ['What is digital marketing', 'Search engine basics', 'Buyer journey & funnel', 'Setting up Google Analytics'] },
-  { week: 'Week 3–4', topic: 'Search Engine Optimisation (SEO)', items: ['On-page SEO', 'Off-page & link building', 'Technical SEO audit', 'Local SEO for Nagpur businesses'] },
-  { week: 'Week 5–6', topic: 'Google Ads (PPC)', items: ['Search campaigns', 'Display & remarketing', 'Shopping ads', 'Conversion tracking'] },
-  { week: 'Week 7–8', topic: 'Social Media Marketing', items: ['Facebook & Instagram Ads', 'LinkedIn marketing', 'YouTube SEO & Ads', 'Organic growth strategies'] },
-  { week: 'Week 9–10', topic: 'Content & Email Marketing', items: ['Blog writing & SEO content', 'Email automation', 'WhatsApp marketing', 'Video content scripts'] },
-  { week: 'Week 11–12', topic: 'Live Projects & Placement', items: ['2 live client campaigns', 'Portfolio building', 'Resume & LinkedIn', 'Mock interviews'] },
-];
 
 // ─── FAQs per slug now live in landingPagesFaqs.js (shared with tools/prerender.js) ─
 
@@ -225,7 +218,7 @@ function FAQSection({ faqs }) {
 }
 
 // ─── Upgrad-style syllabus ───────────────────────────────────────────────────
-function SyllabusSection({ modules = SYLLABUS, subtitle = '3 months · 10+ live projects · Google & Meta certification' }) {
+function SyllabusSection({ modules = SYLLABUS, subtitle = `3 months · ${COURSE_FORMAT.summary} · live project + interview prep` }) {
   const [open, setOpen] = useState(0);
   return (
     <section className="py-24 px-4">
@@ -240,7 +233,11 @@ function SyllabusSection({ modules = SYLLABUS, subtitle = '3 months · 10+ live 
         </div>
         <div className="space-y-2">
           {modules.map((mod, i) => (
-            <div key={i} className="surface-card overflow-hidden">
+            <React.Fragment key={i}>
+            {mod.month && (i === 0 || modules[i - 1].month !== mod.month) && (
+              <p className="pt-6 pb-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-indigo-300">{mod.month}</p>
+            )}
+            <div className="surface-card overflow-hidden">
               <button onClick={() => setOpen(open === i ? null : i)}
                 className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/[0.03] transition-colors">
                 <div className="flex items-center gap-4">
@@ -264,6 +261,7 @@ function SyllabusSection({ modules = SYLLABUS, subtitle = '3 months · 10+ live 
                 )}
               </AnimatePresence>
             </div>
+            </React.Fragment>
           ))}
         </div>
       </div>
