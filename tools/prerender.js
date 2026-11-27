@@ -346,7 +346,7 @@ function landingPageContent(page) {
 
   // ── Action B ── H1-adjacent intro paragraph (rendered when config provides it).
   // Falls back to a generic template using headline + keywordShort so every slug gets one.
-  const intro = page.intro || `The <strong>${escapeHtml(keywordShort)}</strong> at Telzon Academy is Nagpur's most practical, placement-focused program for anyone starting or accelerating a digital marketing career. Over 3 months you'll learn Search Engine Optimisation, Google Ads, Meta Ads, social media management, content marketing, analytics and AI marketing — through live client projects, real ad-account work and case-study workbooks. Fees are ₹25,000 + GST with no-cost EMI and merit-based scholarships. Course sessions include Google Ads, Google Analytics and Meta Blueprint certification preparation. Every student gets 95% placement assistance with 50+ hiring partners across Nagpur and India, and we track our graduates' first-offer timeline (usually 30–60 days after course completion). Book a free demo class to experience the teaching quality before you enrol.`;
+  const intro = page.intro || `The <strong>${escapeHtml(keywordShort)}</strong> at Telzon Academy is Nagpur's most practical, placement-focused program for anyone starting or accelerating a digital marketing career. Over 3 months you'll learn Search Engine Optimisation, Google Ads, Meta Ads, social media management, content marketing, analytics and AI marketing — through live client projects, real ad-account work and case-study workbooks. Fees are ₹25,000 + GST with no hidden charges. Course sessions include Google Ads, Google Analytics and Meta Blueprint certification preparation. Every student gets 95% placement assistance, and we track our graduates' first-offer timeline (usually 30–60 days after course completion). Book a free demo class to experience the teaching quality before you enrol.`;
 
   return `    <header>
       <h1>${escapeHtml(page.headline)}</h1>
@@ -363,14 +363,14 @@ function landingPageContent(page) {
       <ul>
         ${bulletsHtml}
       </ul>
-      ${page.aboutFallback ? `<p>${escapeHtml(page.aboutFallback)}</p>` : `<p>Telzon Academy is Nagpur's top-rated digital marketing institute with 1,000+ students trained, 95% placement assistance and a 4.9/5 rating from 200+ student reviews. Our course fees are ₹25,000 + GST with no-cost EMI options and merit-based scholarships. Programs run 3 months across weekday, weekend and fully online batches — pick whichever fits your schedule.</p>`}
+      ${page.aboutFallback ? `<p>${escapeHtml(page.aboutFallback)}</p>` : `<p>Telzon Academy is Nagpur's top-rated digital marketing institute with 1,000+ students trained, 95% placement assistance and a 4.9/5 rating from 200+ student reviews. Our course fees are ₹25,000 + GST. Programs run 3 months across weekday, weekend and fully online batches — pick whichever fits your schedule.</p>`}
     </section>
     <section>
       <h2>What you'll learn — ${escapeHtml(page.durationLabel || '3-month')} ${escapeHtml(keywordShort)} curriculum</h2>
       <ol>${syllabusHtml}
       </ol>
       ${page.curriculumNote ? `<p>${escapeHtml(page.curriculumNote)}</p>` : `<p>Course format: ${escapeHtml(COURSE_FORMAT.summary)} — ${escapeHtml(COURSE_FORMAT.session)}. ${escapeHtml(COURSE_FORMAT.phases)}. ${escapeHtml(COURSE_FORMAT.tools)}.</p>
-      <p>Every module ends with a graded assignment and a real campaign you can show in interviews. The course includes Google Ads, Google Analytics and Meta Blueprint certification preparation, access to all premium tools during training, and 1 year of placement assistance after course completion.</p>`}
+      <p>Every module ends with a graded assignment and a real campaign you can show in interviews. The course includes Google Ads, Google Analytics and Meta Blueprint certification preparation, access to all premium tools during training, and placement assistance after course completion.</p>`}
     </section>
     <section>
       <h2>${escapeHtml(keywordShort)} — accessible from every part of Nagpur</h2>
@@ -420,7 +420,7 @@ function blogContent() {
     </section>
     <section>
       <h2>Want to learn digital marketing in Nagpur?</h2>
-      <p>Telzon Academy offers a 3-month practical digital marketing course with 95% placement assistance, live client projects, and Google Ads, Google Analytics and Meta Blueprint certification preparation. Course fees are ₹25,000 + GST with no-cost EMI options and merit-based scholarships. We run weekday morning, weekday evening and weekend batches — plus a fully online live batch for students outside Nagpur. Call <a href="tel:+919307189776">+91-9307189776</a> or email <a href="mailto:connect@telzonacademy.in">connect@telzonacademy.in</a> to book a free demo class.</p>
+      <p>Telzon Academy offers a 3-month practical digital marketing course with 95% placement assistance, live client projects, and Google Ads, Google Analytics and Meta Blueprint certification preparation. Course fees are ₹25,000 + GST. We run weekday morning, weekday evening and weekend batches — plus a fully online live batch for students outside Nagpur. Call <a href="tel:+919307189776">+91-9307189776</a> or email <a href="mailto:connect@telzonacademy.in">connect@telzonacademy.in</a> to book a free demo class.</p>
     </section>`;
 }
 

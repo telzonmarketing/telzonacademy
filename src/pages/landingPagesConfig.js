@@ -22,20 +22,20 @@ export const landingPages = [
       'Practical, job-oriented curriculum: SEO, Google Ads, social media, content & AI marketing',
       '3-month intensive program with weekday, weekend and live online batches',
       'Live client projects and real ad-account work — no theory-only learning',
-      '95% placement assistance with 50+ hiring partners across Nagpur and India',
+      '95% placement assistance',
       'Google Ads, Google Analytics & Meta Blueprint certifications included',
-      'Course fees ₹25,000 + GST with no-cost EMI and merit-based scholarships',
+      'Course fees ₹25,000 + GST with no hidden charges',
       'Free demo class — experience the teaching before you enrol',
       'Centrally located in Nagpur — accessible from Dharampeth, Sitabuldi, Sadar and online',
     ],
     // Action B (2026-09-12) — H1-adjacent intro paragraph with target keyword bolded.
     // Renders right below the H1 in the noscript fallback (Action A extended prerender).
     // Pushes crawler-visible word count from ~2500 → ~4000 to match page-1 competitors.
-    intro: 'The <strong>digital marketing course in Nagpur</strong> at Telzon Academy is the region\'s most practical, placement-focused program — trusted by 1,000+ students since 2022 with a 95% placement rate and a 5.0/5 Google rating from 90+ verified reviews. Our 3-month curriculum covers every discipline a modern marketer needs: Search Engine Optimisation (on-page, off-page, technical, local), Google Ads (search, display, shopping, Performance Max), Meta Ads (Instagram + Facebook), social media marketing, content strategy, email and WhatsApp marketing, web analytics, and AI marketing with ChatGPT, Gemini, Canva AI and Midjourney. Every module ends with a graded assignment and a real campaign you can show in interviews. From week 6 onwards you work on live client campaigns — real ad budgets, real Google Search Console accounts, real Meta Business Manager setups — under senior-trainer mentorship. Fees are ₹25,000 + GST with no-cost EMI and merit-based scholarships up to 30%. Google Ads, Google Analytics and Meta Blueprint certification preparation is included, along with 1 year of placement assistance and direct connections to 50+ hiring partners (Swiggy, OLA, Nykaa, Le Meridien, Amul, Cloud Intellect and more). Most students land their first digital marketing role within 30–60 days of course completion, at an average starting salary of ₹3.5 LPA. Book a free demo class with the actual trainer — no sales pitch — to experience the teaching quality before you enrol.',
+    intro: 'The <strong>digital marketing course in Nagpur</strong> at Telzon Academy is the region\'s most practical, placement-focused program — trusted by 1,000+ students since 2022 with a 95% placement rate and a 5.0/5 Google rating from 90+ verified reviews. Our 3-month curriculum covers every discipline a modern marketer needs: Search Engine Optimisation (on-page, off-page, technical, local), Google Ads (search, display, shopping, Performance Max), Meta Ads (Instagram + Facebook), social media marketing, content strategy, email and WhatsApp marketing, web analytics, and AI marketing with ChatGPT, Gemini, Canva AI and Midjourney. Every module ends with a graded assignment and a real campaign you can show in interviews. From week 6 onwards you work on live client campaigns — real ad budgets, real Google Search Console accounts, real Meta Business Manager setups — under senior-trainer mentorship. Fees are ₹25,000 + GST with no hidden charges. Google Ads, Google Analytics and Meta Blueprint certification preparation is included, along with placement assistance. Most students land their first digital marketing role within 30–60 days of course completion, at an average starting salary of ₹3.5 LPA. Book a free demo class with the actual trainer — no sales pitch — to experience the teaching quality before you enrol.',
     // 40–80 word block designed for AI extraction (ChatGPT / Gemini / Perplexity / Google AI Overviews).
     // Per Tier 4 GEO requirement.
     directAnswer:
-      "Telzon Academy's digital marketing course in Nagpur is a 3-month practical program covering SEO, Google Ads, Meta Ads, social media marketing, content strategy, analytics and AI marketing. The course includes live client projects, Google + Meta certifications, and 95% placement assistance with 50+ hiring partners. Fees are ₹25,000 + GST with no-cost EMI and merit-based scholarships. Free demo class available.",
+      "Telzon Academy's digital marketing course in Nagpur is a 3-month practical program covering SEO, Google Ads, Meta Ads, social media marketing, content strategy, analytics and AI marketing. The course includes live client projects, Google + Meta certifications, and 95% placement assistance. Fees are ₹25,000 + GST with no hidden charges. Free demo class available.",
     // Structured facts block — surfaces concise course data for snippet + citation use.
     courseFacts: {
       duration: '3 months',
@@ -84,10 +84,10 @@ export const landingPages = [
       'Practical, project-based curriculum: SEO, Google Ads, social media, content, AI marketing',
       'Google Ads, Google Analytics and Meta Blueprint certifications included in the fee',
       'Weekday, weekend and live online batches — pick what fits your schedule',
-      'Course fees ₹25,000 + GST with no-cost EMI and merit-based scholarships up to 30%',
+      'Course fees ₹25,000 + GST with no hidden charges',
       'Free demo class with the actual trainer — no sales pitch, experience the teaching quality',
     ],
-    intro: 'Telzon Academy is <strong>Nagpur\'s leading digital marketing institute</strong> — a project-based, placement-focused training centre serving students, graduates and working professionals across Vidarbha and Maharashtra. Founded in 2022, we\'ve trained over 1,000 students with a 95% placement rate and a 5.0/5 rating from 90+ verified Google reviews. Our 3-month programs cover SEO, Google Ads, Meta Ads, social media marketing, content strategy, analytics and AI marketing — taught through live client projects and real ad-account work, not slide decks. Fees are ₹25,000 + GST (no-cost EMI + merit-based scholarships up to 30%). Every enrollment includes Google Ads, Google Analytics and Meta Blueprint certification preparation, 1 year of placement assistance and direct connections to 50+ hiring partners including Swiggy, OLA and Nykaa. Book a free demo class with the actual trainer to experience the teaching before you enrol.',
+    intro: 'Telzon Academy is <strong>Nagpur\'s leading digital marketing institute</strong> — a project-based, placement-focused training centre serving students, graduates and working professionals across Vidarbha and Maharashtra. Founded in 2022, we\'ve trained over 1,000 students with a 95% placement rate and a 5.0/5 rating from 90+ verified Google reviews. Our 3-month programs cover SEO, Google Ads, Meta Ads, social media marketing, content strategy, analytics and AI marketing — taught through live client projects and real ad-account work, not slide decks. Fees are ₹25,000 + GST. Every enrollment includes Google Ads, Google Analytics and Meta Blueprint certification preparation, placement assistance. Book a free demo class with the actual trainer to experience the teaching before you enrol.',
     directAnswer:
       "Telzon Academy is Nagpur's top-rated digital marketing institute, established in 2022 with a 5.0/5 Google rating from 90+ student reviews. We've trained 1,000+ students in SEO, Google Ads, social media marketing, content and AI marketing through 3-month practical programs with live client projects. 95% of graduates land digital marketing roles within 30–60 days of completion, at companies like Swiggy, OLA, Nykaa and 50+ Nagpur agencies. Course fees ₹25,000 + GST. Free demo class available.",
     courseFacts: {
@@ -173,14 +173,14 @@ export const landingPages = [
       '3-month structured learning path: fundamentals → SEO → Google Ads → social → content → AI marketing',
       'Live client projects from week 6 — real ad budgets, real portfolio work',
       'Google Ads, Google Analytics and Meta Blueprint certifications included in the fee',
-      '95% placement assistance with 50+ hiring partners (Swiggy, OLA, Nykaa, Le Meridien, Amul)',
+      '95% placement assistance',
       'Small batches (max 20) with individual mentorship and weekly 1:1 progress reviews',
       'Weekday, weekend and live online training modes — pick what fits your schedule',
-      'Course fees ₹25,000 + GST · no-cost EMI · merit-based scholarships up to 30%',
+      'Course fees ₹25,000 + GST · no hidden charges',
     ],
-    intro: 'Telzon Academy runs <strong>Nagpur\'s most comprehensive digital marketing training</strong> — a 3-month practical program trusted by 1,000+ students since 2022, rated 5.0/5 from 90+ verified Google reviews. Our training path takes you from fundamentals to advanced tactics across SEO, Google Ads, Meta Ads, social media marketing, content strategy, analytics and AI marketing (ChatGPT, Gemini, Canva AI, Midjourney integrated across every module). What differentiates our training from competitors: senior industry trainers with 8+ years experience each, live client campaigns from week 6 with real ad budgets, individual mentorship in max-20 batches, and included preparation for Google Ads, Google Analytics and Meta Blueprint certification exams. Fees are ₹25,000 + GST with no-cost EMI and merit-based scholarships. 95% of trainees land digital marketing roles within 30–60 days at an average starting salary of ₹3.5 LPA, with our alumni now at Swiggy, OLA, Nykaa, Le Meridien and 50+ Nagpur agencies. Book a free demo class with the actual trainer to experience the training before enrolment.',
+    intro: 'Telzon Academy runs <strong>Nagpur\'s most comprehensive digital marketing training</strong> — a 3-month practical program trusted by 1,000+ students since 2022, rated 5.0/5 from 90+ verified Google reviews. Our training path takes you from fundamentals to advanced tactics across SEO, Google Ads, Meta Ads, social media marketing, content strategy, analytics and AI marketing (ChatGPT, Gemini, Canva AI, Midjourney integrated across every module). What differentiates our training from competitors: senior industry trainers with 8+ years experience each, live client campaigns from week 6 with real ad budgets, individual mentorship in max-20 batches, and included preparation for Google Ads, Google Analytics and Meta Blueprint certification exams. Fees are ₹25,000 + GST with no hidden charges. 95% of trainees land digital marketing roles within 30–60 days at an average starting salary of ₹3.5 LPA, with our alumni now at Swiggy, OLA, Nykaa, Le Meridien and 50+ Nagpur agencies. Book a free demo class with the actual trainer to experience the training before enrolment.',
     directAnswer:
-      "Telzon Academy's digital marketing training in Nagpur is a 3-month practical program with a 5.0/5 rating from 90+ Google reviews and 95% placement rate. Training covers SEO, Google Ads, Meta Ads, social media, content strategy, analytics and AI marketing — through live client projects, real ad-account work and industry certification prep (Google Ads + Analytics + Meta Blueprint). Max 20 students per batch. Fees ₹25,000 + GST with no-cost EMI and scholarships up to 30%. Free demo class available.",
+      "Telzon Academy's digital marketing training in Nagpur is a 3-month practical program with a 5.0/5 rating from 90+ Google reviews and 95% placement rate. Training covers SEO, Google Ads, Meta Ads, social media, content strategy, analytics and AI marketing — through live client projects, real ad-account work and industry certification prep (Google Ads + Analytics + Meta Blueprint). Max 20 students per batch. Fees ₹25,000 + GST. Free demo class available.",
     courseFacts: {
       duration: '3 months',
       fees: '₹25,000 + GST',
@@ -244,17 +244,17 @@ export const landingPages = [
       'The highest-rated digital marketing course in Nagpur — practical training, live client projects, and guaranteed placement support.',
     bullets: [
       '5.0/5 star rating from 90+ verified Google reviews — highest in Nagpur',
-      '95% placement rate with 50+ hiring partners (Swiggy, OLA, Nykaa, Le Meridien, Amul)',
+      '95% placement rate',
       '3-month practical curriculum: SEO, Google Ads, Meta Ads, social media, content, AI marketing',
       'Live client projects from week 6 — real ad budgets, real campaigns, real portfolio',
       'Google Ads, Google Analytics and Meta Blueprint certifications included in the fee',
       'Small class sizes (max 20) — 1:1 attention from senior trainers with 8+ years experience',
-      'Fees ₹25,000 + GST with no-cost EMI and merit-based scholarships up to 30%',
+      'Fees ₹25,000 + GST with no hidden charges',
       'Free demo class — attend a full 90-minute live session with the actual trainer, no sales pitch',
     ],
-    intro: '<strong>Telzon Academy\'s digital marketing course</strong> is Nagpur\'s highest-rated program by every metric that matters: 5.0/5 from 90+ verified Google reviews, 95% placement rate, 1,000+ alumni working across Swiggy, OLA, Nykaa, Le Meridien and 50+ Nagpur-based agencies. Our 3-month curriculum covers SEO, Google Ads, Meta Ads, social media marketing, content strategy, analytics and AI marketing — taught through live client projects and real ad-account work, not slide decks. What sets us apart from other "best" claims in Nagpur: we publish our numbers, we cap classes at 20 for genuine 1:1 attention, and we integrate AI marketing (ChatGPT, Gemini, Canva AI, Midjourney) across every module instead of teaching it as a bolt-on. Fees are ₹25,000 + GST with no-cost EMI and merit-based scholarships up to 30%. Google Ads, Google Analytics and Meta Blueprint certification preparation is included, along with 1 year of placement assistance. Most students land their first digital marketing role at ₹3.5 LPA average within 30–60 days of course completion. Book a free demo class with the actual trainer to compare us to any other Nagpur institute before you enrol.',
+    intro: '<strong>Telzon Academy\'s digital marketing course</strong> is Nagpur\'s highest-rated program by every metric that matters: 5.0/5 from 90+ verified Google reviews, 95% placement rate, 1,000+ alumni working across Swiggy, OLA, Nykaa, Le Meridien and 50+ Nagpur-based agencies. Our 3-month curriculum covers SEO, Google Ads, Meta Ads, social media marketing, content strategy, analytics and AI marketing — taught through live client projects and real ad-account work, not slide decks. What sets us apart from other "best" claims in Nagpur: we publish our numbers, we cap classes at 20 for genuine 1:1 attention, and we integrate AI marketing (ChatGPT, Gemini, Canva AI, Midjourney) across every module instead of teaching it as a bolt-on. Fees are ₹25,000 + GST with no hidden charges. Google Ads, Google Analytics and Meta Blueprint certification preparation is included, along with placement assistance. Most students land their first digital marketing role at ₹3.5 LPA average within 30–60 days of course completion. Book a free demo class with the actual trainer to compare us to any other Nagpur institute before you enrol.',
     directAnswer:
-      "Telzon Academy is rated the best digital marketing course in Nagpur based on independent metrics: 5.0/5 star rating from 90+ verified Google reviews, 95% placement rate with 50+ hiring partners, 1,000+ alumni working at Swiggy, OLA, Nykaa and other top companies. The 3-month program covers SEO, Google Ads, Meta Ads, social media, content strategy, analytics and AI marketing through live client projects. Fees ₹25,000 + GST with no-cost EMI and scholarships. Free demo class available.",
+      "Telzon Academy is rated the best digital marketing course in Nagpur based on independent metrics: 5.0/5 star rating from 90+ verified Google reviews, 95% placement rate, 1,000+ alumni working at Swiggy, OLA, Nykaa and other top companies. The 3-month program covers SEO, Google Ads, Meta Ads, social media, content strategy, analytics and AI marketing through live client projects. Fees ₹25,000 + GST. Free demo class available.",
     courseFacts: {
       duration: '3 months',
       fees: '₹25,000 + GST',
@@ -285,36 +285,34 @@ export const landingPages = [
     // upfront ("₹25K + GST") to convert curiosity into clicks.
     metaTitle: 'Digital Marketing Course Fees in Nagpur — ₹25K + GST · EMI | Telzon',
     metaDescription:
-      "Digital marketing course fees in Nagpur — ₹25,000 + GST at Telzon Academy. No-cost EMI, merit scholarships up to 30%, no hidden charges.",
+      "Digital marketing course fees in Nagpur — ₹25,000 + GST at Telzon Academy. Weekday, weekend and live online batches. Free demo class.",
     metaKeywords:
       'digital marketing course fees in Nagpur, digital marketing course price Nagpur, digital marketing course cost Nagpur, digital marketing course fees near me',
     ogTitle:
-      'Digital Marketing Course Fees in Nagpur — ₹25K + GST · EMI · Scholarships | Telzon Academy',
+      'Digital Marketing Course Fees in Nagpur — ₹25K + GST | Telzon Academy',
     ogDescription:
-      "All-inclusive digital marketing course fees at Telzon Academy Nagpur — ₹25,000 + GST with no-cost EMI and merit scholarships. No hidden charges.",
+      "All-inclusive digital marketing course fees at Telzon Academy Nagpur — ₹25,000 + GST for the 3-month course. No hidden charges.",
     headline: 'Digital Marketing Course Fees in Nagpur — Transparent Pricing',
     subheadline:
-      'Get transparent pricing and value-packed training. Explore fee options, EMI plans and scholarships at Telzon Academy Nagpur.',
+      'Get transparent pricing and value-packed training. See exactly what the fee covers at Telzon Academy Nagpur.',
     bullets: [
       'Course fees are ₹25,000 + GST, no hidden charges',
-      'No-cost EMI available in 3-month or 6-month plans (no interest, no processing fee)',
-      'Merit-based scholarships up to 30% for students who clear the admission test',
-      'Early-bird discount of ₹5,000 for the next batch when you book in the first 7 days',
-      'Fee includes study materials, live-project access, tool subscriptions and certification prep',
-      '1 year of placement assistance + 50+ hiring partner connections included in the fee',
+      'Covers the full 3-month, 72-session course and the live project',
+      'Weekday, weekend and live online batches at the same fee',
+      'Free demo class before you pay',
       'Google Ads, Google Analytics and Meta Blueprint certifications included — no extra cost',
       'Structured 7-day refund policy if you find the course is not the right fit',
     ],
-    intro: 'The <strong>digital marketing course fees in Nagpur</strong> at Telzon Academy are <strong>₹25,000 + GST</strong> with no hidden charges. What you pay covers the full 3-month program, all study materials, live-project access, premium tool subscriptions during training, Google/Meta certification exam preparation, and 1 year of placement assistance. Most Nagpur institutes charge ₹15,000–₹20,000 for a stripped-down 6-week course with no live projects and no certification support — our fee is deliberately positioned as a career investment, not a commodity purchase. To make it accessible, we offer no-cost EMI plans (3-month and 6-month, no interest, no processing fee), merit-based scholarships up to 30% for students who clear the admission test, and an early-bird ₹5,000 discount for the first 7 seats of every batch. Payment is one clean invoice to Telzon Academy — no third-party finance company, no fine print, no surprise charges after enrolment. If you complete the first week and find the course is not the right fit, we have a structured 7-day refund policy. Book a free demo class to experience the teaching quality before you make the payment decision.',
+    intro: 'The <strong>digital marketing course fees in Nagpur</strong> at Telzon Academy are <strong>₹25,000 + GST</strong> with no hidden charges. What you pay covers the full 3-month program, the live project, Google and Meta certification preparation, and interview preparation. Most Nagpur institutes charge ₹15,000–₹20,000 for a stripped-down 6-week course with no live projects and no certification support — our fee is deliberately positioned as a career investment, not a commodity purchase. Payment is one clean invoice to Telzon Academy — no third-party finance company, no fine print, no surprise charges after enrolment. If you complete the first week and find the course is not the right fit, we have a structured 7-day refund policy. Book a free demo class to experience the teaching quality before you make the payment decision.',
     directAnswer:
-      "Digital marketing course fees at Telzon Academy Nagpur are ₹25,000 + GST with no hidden charges. Fees cover the full 3-month curriculum (SEO, Google Ads, social media, content, AI marketing), live client projects, Google + Meta certification prep, and 1 year of placement assistance. Payment options include no-cost EMI (3 or 6 months, no interest), merit scholarships up to 30%, and a ₹5,000 early-bird discount for the first 7 seats. Free demo class available before you decide.",
+      "Digital marketing course fees at Telzon Academy Nagpur are ₹25,000 + GST with no hidden charges. Fees cover the full 3-month curriculum (SEO, Google Ads, social media, content, AI marketing), live client projects, Google + Meta certification prep and interview preparation. Free demo class available before you decide.",
     courseFacts: {
       duration: '3 months',
       fees: '₹25,000 + GST',
       batches: ['Weekday morning', 'Weekday evening', 'Weekend', 'Live online'],
       certifications: ['Google Ads (included)', 'Google Analytics (included)', 'Meta Blueprint (included)'],
       mode: 'Offline + online live',
-      nextIntake: 'Monthly batches · early-bird ₹5,000 off first 7 seats',
+      nextIntake: 'Monthly batches',
     },
     careerOutcomes: {
       placementRate: '95%',
@@ -355,11 +353,11 @@ export const landingPages = [
       'Dedicated placement team + weekly interview preparation sessions in the final 4 weeks',
       'Resume + LinkedIn optimisation + 3 mock interviews per student included in the fee',
       'Live client projects from week 6 = portfolio-ready work you can show at interviews',
-      '1 year of placement assistance (not just at course completion — for a full year after)',
+      'Placement assistance: résumé, LinkedIn, portfolio and mock interviews',
     ],
-    intro: 'Telzon Academy runs Nagpur\'s highest-performing <strong>digital marketing course with placement</strong> — a 95% verified placement rate tracked across 1,000+ alumni since 2022. What placement actually means at Telzon Academy: a dedicated placement team, weekly interview prep sessions during the final 4 weeks of the course, resume + LinkedIn optimisation, 3 mock interviews per student, and direct connections to 50+ active hiring partners including Swiggy, OLA, Nykaa, Le Meridien, Amul and dozens of Nagpur-based digital agencies and D2C brands. Most students receive their first offer within 30–60 days of course completion, at an average starting salary of ₹3.5 LPA. The highest offer in our 2026 batch reached ₹8.5 LPA. What sets our placement model apart: (1) we track outcomes for a full year after course completion, not just at graduation; (2) placement support is included in the course fee — no extra "placement package" upsell; (3) roles our graduates land are real digital marketing roles (Digital Marketing Executive, SEO Analyst, Social Media Manager, Google Ads Specialist, Performance Marketing Manager), not generic BPO or telecalling jobs. Fees are ₹25,000 + GST with no-cost EMI and merit-based scholarships up to 30%. Book a free demo class to meet the placement team before enrolling.',
+    intro: 'Telzon Academy runs Nagpur\'s highest-performing <strong>digital marketing course with placement</strong> — a 95% verified placement rate tracked across 1,000+ alumni since 2022. What placement actually means at Telzon Academy: a dedicated placement team, weekly interview prep sessions during the final 4 weeks of the course, resume + LinkedIn optimisation, 3 mock interviews per student, and direct connections to 50+ active hiring partners including Swiggy, OLA, Nykaa, Le Meridien, Amul and dozens of Nagpur-based digital agencies and D2C brands. Most students receive their first offer within 30–60 days of course completion, at an average starting salary of ₹3.5 LPA. The highest offer in our 2026 batch reached ₹8.5 LPA. What sets our placement model apart: (1) we track outcomes for a full year after course completion, not just at graduation; (2) placement support is included in the course fee — no extra "placement package" upsell; (3) roles our graduates land are real digital marketing roles (Digital Marketing Executive, SEO Analyst, Social Media Manager, Google Ads Specialist, Performance Marketing Manager), not generic BPO or telecalling jobs. Fees are ₹25,000 + GST with no hidden charges. Book a free demo class to meet the placement team before enrolling.',
     directAnswer:
-      "Telzon Academy's digital marketing course in Nagpur has a 95% placement rate, tracked across 1,000+ alumni. Average starting salary is ₹3.5 LPA, highest in 2026 was ₹8.5 LPA. Most students receive their first offer within 30–60 days of course completion at 50+ hiring partners including Swiggy, OLA, Nykaa, Le Meridien and Amul. Placement support includes resume + LinkedIn help, 3 mock interviews, weekly prep sessions and 1 year of assistance post-course. Course fees ₹25,000 + GST with EMI and scholarships. Free demo class available.",
+      "Telzon Academy's digital marketing course in Nagpur has a 95% placement rate, tracked across 1,000+ alumni. Average starting salary is ₹3.5 LPA, highest in 2026 was ₹8.5 LPA. Most students receive their first offer within 30–60 days of course completion. Placement support includes resume + LinkedIn help, 3 mock interviews, weekly prep sessions and 1 year of assistance post-course. Course fees ₹25,000 + GST. Free demo class available.",
     courseFacts: {
       duration: '3 months + 1 year placement assistance',
       fees: '₹25,000 + GST (placement included, no extra fee)',
@@ -402,15 +400,15 @@ export const landingPages = [
       '5.0/5 star rating from 90+ verified Google reviews',
       'Google Ads, Google Analytics and Meta Blueprint certification tracks included',
       'State-of-the-art classrooms in central Nagpur + live online training',
-      'Access to premium tool subscriptions (SEMrush, Ahrefs basic, Canva Pro, ChatGPT Plus)',
-      '1,000+ alumni trained since 2022 — 95% placed at 50+ hiring partners',
+      'Hands-on practice with Semrush, Google Search Console, Meta Ads Manager, ChatGPT and Claude',
+      '1,000+ alumni trained since 2022',
       'Small batch sizes (max 20) with senior trainers (8+ years experience each)',
       'Weekday, weekend and live online training modes — flexible schedules',
-      'Fees ₹25,000 + GST · no-cost EMI · merit-based scholarships up to 30%',
+      'Fees ₹25,000 + GST · no hidden charges',
     ],
-    intro: 'Telzon Academy is <strong>Nagpur\'s leading digital marketing training institute</strong> — a Google Ads + Google Analytics + Meta Blueprint certified curriculum trusted by 1,000+ trainees since 2022, with a 5.0/5 rating from 90+ verified Google reviews and a 95% placement rate. Our institute in central Nagpur runs weekday morning, weekday evening, weekend and live online training modes, all with senior trainers averaging 8+ years of industry experience. Training covers SEO, Google Ads, Meta Ads, social media, content, analytics and AI marketing (ChatGPT, Gemini, Canva AI, Midjourney) integrated across every module. Every student gets premium tool access during training (SEMrush, Ahrefs basic, Canva Pro, ChatGPT Plus), live client project work from week 6, and 1 year of placement assistance after graduation. Fees are ₹25,000 + GST with no-cost EMI and merit-based scholarships up to 30%. Alumni now work at Swiggy, OLA, Nykaa, Le Meridien, Amul, Cloud Intellect and 50+ Nagpur-based digital agencies. Book a free demo class with the actual trainer to visit the institute and experience the training before enrolling.',
+    intro: 'Telzon Academy is <strong>Nagpur\'s leading digital marketing training institute</strong> — a Google Ads + Google Analytics + Meta Blueprint certified curriculum trusted by 1,000+ trainees since 2022, with a 5.0/5 rating from 90+ verified Google reviews and a 95% placement rate. Our institute in central Nagpur runs weekday morning, weekday evening, weekend and live online training modes, all with senior trainers averaging 8+ years of industry experience. Training covers SEO, Google Ads, Meta Ads, social media, content, analytics and AI marketing (ChatGPT, Gemini, Canva AI, Midjourney) integrated across every module. Every student gets premium tool access during training (SEMrush, Ahrefs basic, Canva Pro, ChatGPT Plus), live client project work from week 6, and placement assistance after graduation. Fees are ₹25,000 + GST with no hidden charges. Alumni now work at Swiggy, OLA, Nykaa, Le Meridien, Amul, Cloud Intellect and 50+ Nagpur-based digital agencies. Book a free demo class with the actual trainer to visit the institute and experience the training before enrolling.',
     directAnswer:
-      "Telzon Academy is Nagpur's top-rated digital marketing training institute, established 2022 with a 5.0/5 rating from 90+ Google reviews. The institute trains students in SEO, Google Ads, Meta Ads, social media, content, analytics and AI marketing through a 3-month curriculum with live client projects and Google + Meta certification prep. 1,000+ alumni trained, 95% placement rate, avg first offer ₹3.5 LPA within 30–60 days at 50+ hiring partners (Swiggy, OLA, Nykaa). Fees ₹25,000 + GST with EMI and scholarships. Free demo class available.",
+      "Telzon Academy is Nagpur's top-rated digital marketing training institute, established 2022 with a 5.0/5 rating from 90+ Google reviews. The institute trains students in SEO, Google Ads, Meta Ads, social media, content, analytics and AI marketing through a 3-month curriculum with live client projects and Google + Meta certification prep. 1,000+ alumni trained, 95% placement rate, avg first offer ₹3.5 LPA within 30–60 days. Fees ₹25,000 + GST. Free demo class available.",
     courseFacts: {
       duration: '3 months',
       fees: '₹25,000 + GST',
@@ -457,12 +455,12 @@ export const landingPages = [
       'Recorded lectures + tool access throughout — revise anytime, catch up if you miss a class',
       'Google Ads, Google Analytics and Meta Blueprint certifications included in the fee',
       'Live client projects from week 6 onwards — real ad accounts, real budgets',
-      '95% placement assistance with 50+ hiring partners across Nagpur and India',
-      'Course fees ₹25,000 + GST · no-cost EMI · merit-based scholarships up to 30%',
+      '95% placement assistance',
+      'Course fees ₹25,000 + GST · no hidden charges',
     ],
-    intro: 'Telzon Academy runs <strong>Nagpur\'s most flexible digital marketing classes</strong>, purpose-built for students, working professionals and career-switchers who need real training around a busy schedule. Choose from four batch types — weekday morning, weekday evening, weekend, or live online — all taught by the same senior trainers with the same 3-month curriculum. Small class sizes (max 20) mean genuine 1:1 attention, recorded lectures let you revise anytime, and tool access continues throughout the course. You\'ll learn SEO, Google Ads, Meta Ads, social media marketing, content strategy, analytics and AI marketing through live client projects and real ad-account work from week 6 onwards. Fees are ₹25,000 + GST with no-cost EMI and merit-based scholarships. Google Ads, Google Analytics and Meta Blueprint certification preparation is included. 95% of graduates land digital marketing roles within 30–60 days. Book a free demo class in your preferred batch time to try it out first.',
+    intro: 'Telzon Academy runs <strong>Nagpur\'s most flexible digital marketing classes</strong>, purpose-built for students, working professionals and career-switchers who need real training around a busy schedule. Choose from four batch types — weekday morning, weekday evening, weekend, or live online — all taught by the same senior trainers with the same 3-month curriculum. Small class sizes (max 20) mean genuine 1:1 attention, recorded lectures let you revise anytime, and tool access continues throughout the course. You\'ll learn SEO, Google Ads, Meta Ads, social media marketing, content strategy, analytics and AI marketing through live client projects and real ad-account work from week 6 onwards. Fees are ₹25,000 + GST with no hidden charges. Google Ads, Google Analytics and Meta Blueprint certification preparation is included. 95% of graduates land digital marketing roles within 30–60 days. Book a free demo class in your preferred batch time to try it out first.',
     directAnswer:
-      "Telzon Academy runs digital marketing classes in Nagpur across four flexible batch options — weekday morning, weekday evening, weekend and live online — all with the same 3-month curriculum covering SEO, Google Ads, social media, content and AI marketing. Small class sizes (max 20), live client projects from week 6, Google + Meta certifications included, 95% placement assistance. Course fees ₹25,000 + GST with no-cost EMI and scholarships up to 30%. Free demo class available in any batch time.",
+      "Telzon Academy runs digital marketing classes in Nagpur across four flexible batch options — weekday morning, weekday evening, weekend and live online — all with the same 3-month curriculum covering SEO, Google Ads, social media, content and AI marketing. Small class sizes (max 20), live client projects from week 6, Google + Meta certifications included, 95% placement assistance. Course fees ₹25,000 + GST. Free demo class available in any batch time.",
     courseFacts: {
       duration: '3 months',
       fees: '₹25,000 + GST',
@@ -628,7 +626,7 @@ export const landingPages = [
   {
     slug: 'digital-marketing-course-fees-and-duration-nagpur',
     metaTitle: 'Digital Marketing Course Fees & Duration in Nagpur | Telzon',
-    metaDescription: 'Transparent digital marketing course fees and duration at Telzon Academy Nagpur. Flexible payment plans, EMI options and scholarships available. Check fees now.',
+    metaDescription: 'Transparent digital marketing course fees and duration at Telzon Academy Nagpur. See what the ₹25,000 + GST fee covers. Check fees now.',
     metaKeywords: 'digital marketing course fees and duration Nagpur, digital marketing courses in Nagpur fees, 3 month digital marketing course fees, digital marketing course fee',
     ogTitle: 'Digital Marketing Course Fees & Duration — Telzon Academy Nagpur',
     ogDescription: 'Clear fee structure, flexible EMI and duration options for digital marketing courses at Telzon Academy Nagpur.',
@@ -637,7 +635,6 @@ export const landingPages = [
     bullets: [
       'Short-term intensive: 3 months | Long-term: 6–12 months',
       'Flexible EMI and instalment options',
-      'Merit-based scholarships available',
       'Full fee breakdown shared before enrollment — no surprises'
     ]
   },
@@ -659,12 +656,12 @@ export const landingPages = [
       'Recorded lectures + tool access throughout — revise anytime, catch up if you miss a class',
       '3-month practical curriculum: SEO, Google Ads, Meta Ads, social media, content, AI marketing',
       'Google Ads, Google Analytics and Meta Blueprint certifications included in the fee',
-      '95% placement assistance with 50+ hiring partners across Nagpur and India',
-      'Fees ₹25,000 + GST · no-cost EMI · merit-based scholarships up to 30%',
+      '95% placement assistance',
+      'Fees ₹25,000 + GST · no hidden charges',
     ],
-    intro: 'Telzon Academy runs the <strong>best digital marketing classes in Nagpur</strong> — measurable by every independent metric: 5.0/5 from 90+ verified Google reviews, 95% placement rate, and 1,000+ alumni working across Swiggy, OLA, Nykaa and 50+ Nagpur-based agencies. What makes our classes different: batches are capped at 20 students for genuine 1:1 attention (most competitors run batches of 40–60), lectures are all recorded so you can revise anytime, tool access continues throughout the 3-month program, and AI marketing (ChatGPT, Gemini, Canva AI, Midjourney) is integrated across every module. Choose from four batch options — weekday morning, weekday evening, weekend, or live online — all with the same senior trainers and the same curriculum. Fees are ₹25,000 + GST with no-cost EMI and merit-based scholarships up to 30%. Google Ads, Google Analytics and Meta Blueprint certification preparation is included, along with 1 year of placement assistance. Book a free demo class in your preferred batch time — a full 90-minute live session with the actual trainer, not a sales pitch.',
+    intro: 'Telzon Academy runs the <strong>best digital marketing classes in Nagpur</strong> — measurable by every independent metric: 5.0/5 from 90+ verified Google reviews, 95% placement rate, and 1,000+ alumni working across Swiggy, OLA, Nykaa and 50+ Nagpur-based agencies. What makes our classes different: batches are capped at 20 students for genuine 1:1 attention (most competitors run batches of 40–60), lectures are all recorded so you can revise anytime, tool access continues throughout the 3-month program, and AI marketing (ChatGPT, Gemini, Canva AI, Midjourney) is integrated across every module. Choose from four batch options — weekday morning, weekday evening, weekend, or live online — all with the same senior trainers and the same curriculum. Fees are ₹25,000 + GST with no hidden charges. Google Ads, Google Analytics and Meta Blueprint certification preparation is included, along with placement assistance. Book a free demo class in your preferred batch time — a full 90-minute live session with the actual trainer, not a sales pitch.',
     directAnswer:
-      "Telzon Academy runs the best digital marketing classes in Nagpur, rated 5.0/5 from 90+ verified Google reviews, with a 95% placement rate. Class sizes are capped at 20 students for 1:1 attention. Four batch options — weekday morning, weekday evening, weekend, live online — all with the same 3-month curriculum covering SEO, Google Ads, Meta Ads, social media, content, analytics and AI marketing. Live client projects from week 6. Google + Meta certifications included. Fees ₹25,000 + GST with EMI and scholarships. Free demo class available.",
+      "Telzon Academy runs the best digital marketing classes in Nagpur, rated 5.0/5 from 90+ verified Google reviews, with a 95% placement rate. Class sizes are capped at 20 students for 1:1 attention. Four batch options — weekday morning, weekday evening, weekend, live online — all with the same 3-month curriculum covering SEO, Google Ads, Meta Ads, social media, content, analytics and AI marketing. Live client projects from week 6. Google + Meta certifications included. Fees ₹25,000 + GST. Free demo class available.",
     courseFacts: {
       duration: '3 months',
       fees: '₹25,000 + GST',
