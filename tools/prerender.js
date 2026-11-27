@@ -192,14 +192,16 @@ function rewriteHead(html, { title, description, canonical, ogTitle, ogDescripti
     `<meta property="og:locale" content="en_IN" />`,
     `<meta property="og:site_name" content="Telzon Academy" />`,
     // Q-005 · og:image + twitter:image — was missing on every route.
-    `<meta property="og:image" content="${escapeHtml(ogImage || `${SITE}/telzon-logo-white-1024.png`)}" />`,
-    `<meta property="og:image:type" content="image/png" />`,
-    `<meta property="og:image:width" content="1024" />`,
-    `<meta property="og:image:height" content="1024" />`,
+    `<meta property="og:image" content="${escapeHtml(ogImage || `${SITE}/media/telzon-academy-nagpur-share.jpg`)}" />`,
+    ...(ogImage ? [] : [
+      `<meta property="og:image:type" content="image/jpeg" />`,
+      `<meta property="og:image:width" content="1200" />`,
+      `<meta property="og:image:height" content="630" />`,
+    ]),
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${escapeHtml(ogTitle || title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(ogDescription || description)}" />`,
-    `<meta name="twitter:image" content="${escapeHtml(ogImage || `${SITE}/telzon-logo-white-1024.png`)}" />`,
+    `<meta name="twitter:image" content="${escapeHtml(ogImage || `${SITE}/media/telzon-academy-nagpur-share.jpg`)}" />`,
     // Q-003 · Course schema with aggregateRating → ★ SERP snippets.
     // Only on course (landing) pages — not on the blog, blog posts or lead-gen page.
     ...(page ? [buildCourseJsonLd({ title, description, canonical, page })] : []),
@@ -517,7 +519,7 @@ async function main() {
   for (const b of blogs) {
     const canonical = `${SITE}/blog/${b.slug}`;
     const description = (b.excerpt || stripTags(b.content || '').slice(0, 155)).trim();
-    const image = b.cover_image || `${SITE}/telzon-logo-white-1024.png`;
+    const image = b.cover_image || `${SITE}/media/telzon-academy-nagpur-share.jpg`;
     const published = b.publishedAt || b.published_at || b.created_at;
     await writeRoute(baseHtml, `blog/${b.slug}/index.html`, {
       title: `${b.title} | Telzon Academy Blog`,

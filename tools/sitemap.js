@@ -21,7 +21,7 @@ export const SITE = 'https://telzonacademy.in';
 
 // Date the landing-page content last changed. Update it when page copy changes,
 // so <lastmod> stays truthful (Google ignores lastmod that changes every build).
-export const CONTENT_UPDATED = '2026-11-26';
+export const CONTENT_UPDATED = '2026-11-27';
 
 // Public anon key — the same one shipped in the browser bundle
 // (src/lib/customSupabaseClient.js). Row-level security limits it to
@@ -66,32 +66,45 @@ const PRIORITY = {
   'digital-marketing-course-fees-in-nagpur': '0.9',
 };
 
+// Real photos + the students' live-shoot video, listed so Google Images and
+// Google Videos can index them (video/image sitemap extensions).
+const MEDIA_PAGES = new Set(['digital-marketing-course-in-nagpur', 'commercial-ads-and-photography-course-in-nagpur']);
+const MEDIA_XML = [
+  `<image:image><image:loc>${SITE}/media/telzon-students-camera-setup.webp</image:loc></image:image>`,
+  `<image:image><image:loc>${SITE}/media/telzon-students-studio-lighting.webp</image:loc></image:image>`,
+  `<video:video><video:thumbnail_loc>${SITE}/media/telzon-live-shoot-poster.webp</video:thumbnail_loc>`
+    + '<video:title>Telzon Academy students on a live commercial shoot in Nagpur</video:title>'
+    + '<video:description>Behind the scenes: Telzon Academy students light, set up and shoot a live commercial for a local café in Nagpur.</video:description>'
+    + `<video:content_loc>${SITE}/media/telzon-live-shoot.mp4</video:content_loc><video:duration>29</video:duration>`
+    + '<video:publication_date>2026-11-27</video:publication_date></video:video>',
+].join('');
+
 const isoDate = (d) => (d ? String(d).slice(0, 10) : CONTENT_UPDATED);
 const xmlEscape = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 export function buildSitemapXml(blogs = []) {
   const urls = [];
-  const add = (path, lastmod, changefreq, priority) =>
-    urls.push(`  <url><loc>${xmlEscape(SITE + path)}</loc><lastmod>${lastmod}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`);
+  const add = (path, lastmod, changefreq, priority, extra = '') =>
+    urls.push(`  <url><loc>${xmlEscape(SITE + path)}</loc><lastmod>${lastmod}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority>${extra}</url>`);
 
   const newestBlog = blogs.reduce((max, b) => {
     const d = isoDate(b.updated_at || b.created_at);
     return d > max ? d : max;
   }, CONTENT_UPDATED);
 
-  add('/', CONTENT_UPDATED, 'weekly', '1.0');
+  add('/', CONTENT_UPDATED, 'weekly', '1.0', MEDIA_XML);
   add('/blog', newestBlog, 'daily', '0.9');
   add('/lead-generation-package', CONTENT_UPDATED, 'monthly', '0.8');
 
   for (const p of landingPages) {
-    add(`/pages/${p.slug}`, CONTENT_UPDATED, 'monthly', PRIORITY[p.slug] || '0.8');
+    add(`/pages/${p.slug}`, CONTENT_UPDATED, 'monthly', PRIORITY[p.slug] || '0.8', MEDIA_PAGES.has(p.slug) ? MEDIA_XML : '');
   }
   for (const b of blogs) {
     add(`/blog/${b.slug}`, isoDate(b.updated_at || b.created_at), 'monthly', '0.7');
   }
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 ${urls.join('\n')}
 </urlset>
 `;

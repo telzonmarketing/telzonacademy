@@ -38,7 +38,9 @@ export function TzHeader() {
         </a>
         <nav className="tz-nav" aria-label="Main">
           <a className="tz-link" href="/pages/digital-marketing-course-in-nagpur">Courses</a>
-          <a className="tz-link" href="/#curriculum">Curriculum</a>
+          <a className="tz-link" href="/pages/digital-marketing-course-fees-in-nagpur">Fees</a>
+          <a className="tz-link" href="/pages/commercial-ads-and-photography-course-in-nagpur">Photography</a>
+          <a className="tz-link" href="/pages/digital-marketing-course-nagpur-questions-answered">FAQ</a>
           <a className="tz-link" href="/blog">Blog</a>
           <button type="button" className="tz-link" onClick={openMap}>Location</button>
           <a className="tz-btn tz-btn-dark" style={{ minHeight: 44, padding: '0 20px' }} href="/lead-generation-package">Free demo</a>
@@ -63,6 +65,7 @@ const FOOTER_COURSES = [
   ['whatsapp-marketing-course-in-nagpur', 'WhatsApp Marketing Course'],
 ];
 const FOOTER_INSTITUTE = [
+  ['digital-marketing-course-nagpur-questions-answered', '20 Questions Answered'],
   ['digital-marketing-course-fees-in-nagpur', 'Course Fees in Nagpur'],
   ['digital-marketing-course-with-placement-nagpur', 'Course with Placement Assistance'],
   ['digital-marketing-course-for-beginners-nagpur', 'Course for Beginners'],
@@ -266,6 +269,7 @@ export function FaqBlock({ faqs, title = 'Questions, answered', id = 'faq' }) {
         <div>
           <h2 className="tz-h2">{title}</h2>
           <p className="tz-intro" style={{ marginBottom: 0 }}>Anything else? Call {PHONE}, Mon–Sat, 9 AM – 8 PM.</p>
+          <p style={{ marginTop: 16 }}><a href="/pages/digital-marketing-course-nagpur-questions-answered" style={{ fontWeight: 600 }}>20 more questions answered →</a></p>
         </div>
         <div>
           {faqs.map((f, i) => (

@@ -63,7 +63,7 @@ const GlobalSeo = () => {
       longitude: 79.0882
     },
     image: 'https://telzonacademy.in/media/telzon-academy-nagpur-share.jpg',
-    logo: 'https://telzonacademy.in/telzon-logo-white-1024.png',
+    logo: 'https://telzonacademy.in/telzon-logo-black-512.png',
     priceRange: '₹₹',
     openingHours: 'Mo-Sa 09:00-20:00',
     sameAs: ['https://www.instagram.com/telzonacademy/'],

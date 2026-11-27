@@ -117,8 +117,7 @@ export const landingPages = [
   {
     slug: 'digital-marketing-academy-in-nagpur',
     metaTitle: 'Digital Marketing Academy in Nagpur | Telzon Academy',
-    metaDescription:
-      'Looking for a digital marketing academy in Nagpur? Telzon Academy offers AI‑powered training in SEO, social media, Google Ads and more with placement support.',
+    metaDescription: 'Digital marketing academy at Chhatrapati Square, Nagpur. 3-month AI-first course: SEO, Google & Meta Ads, live projects. ₹25,000 + GST. Book a free demo class.',
     metaKeywords:
       'digital marketing academy Nagpur, AI powered marketing course, Nagpur digital marketing training, marketing academy in Nagpur',
     ogTitle:
@@ -138,8 +137,7 @@ export const landingPages = [
   {
     slug: 'marketing-school-in-nagpur',
     metaTitle: 'Modern Marketing School in Nagpur | Telzon Academy',
-    metaDescription:
-      'Telzon Academy is a modern marketing school in Nagpur teaching digital marketing, branding, market research and growth hacking through a project‑based curriculum.',
+    metaDescription: 'Marketing school in Nagpur for digital marketing, branding and AI. 3-month practical course with live client projects. ₹25,000 + GST. Book a free demo class.',
     metaKeywords:
       'marketing school Nagpur, marketing course Nagpur, branding course Nagpur, digital marketing school',
     ogTitle:
@@ -160,8 +158,7 @@ export const landingPages = [
     slug: 'digital-marketing-training-in-nagpur',
     // Q-004 · 2026-09-12 · pos 36.6 · applying Q-002 pattern.
     metaTitle: 'Digital Marketing Training in Nagpur — 4.9★ · 95% Placement | Telzon',
-    metaDescription:
-      "Digital marketing training in Nagpur — 4.9/5 from 200+ reviews, 3-month hands-on SEO, Google Ads, social media & AI marketing. 95% placement, ₹25K + GST + EMI.",
+    metaDescription: 'Digital marketing training in Nagpur, rated 4.9/5: 12 weeks of SEO, Google & Meta Ads, AI tools and a live project. ₹25,000 + GST. Free demo class.',
     metaKeywords:
       'digital marketing training in Nagpur, digital marketing training institute Nagpur, digital marketing training course Nagpur, digital marketing training with certification Nagpur',
     ogTitle:
@@ -391,8 +388,7 @@ export const landingPages = [
     slug: 'digital-marketing-training-institute-nagpur',
     // Q-004 · 2026-09-12 · pos 46.98 · 166 imps · applying Q-002 pattern.
     metaTitle: 'Digital Marketing Training Institute Nagpur — 4.9★ Certified | Telzon',
-    metaDescription:
-      "Nagpur's top digital marketing training institute — 4.9/5, Google Ads + Analytics + Meta Blueprint certified curriculum, 95% placement, live client projects.",
+    metaDescription: 'Digital marketing training institute in Nagpur, rated 4.9/5 by 200+ students. 3-month AI-first course, ₹25,000 + GST, live campaigns. Free demo class.',
     metaKeywords:
       'digital marketing training institute Nagpur, digital marketing training institute in Nagpur, digital marketing training center Nagpur, digital marketing training institute near me',
     ogTitle:
@@ -444,8 +440,7 @@ export const landingPages = [
     // Q-002 recovery · 2026-09-12 · pos 32.4 stuck, applying Q-001 pattern
     // with a scheduling / batch-flexibility angle (matches "classes" intent).
     metaTitle: 'Digital Marketing Classes Nagpur — Weekday/Weekend/Online | Telzon',
-    metaDescription:
-      'Digital marketing classes in Nagpur — weekday morning, evening, weekend and live online batches. 3-month program, 95% placement, ₹25K + GST with EMI.',
+    metaDescription: 'Digital marketing classes in Nagpur — weekday, weekend and live online batches. 3 months, ₹25,000 + GST, live projects and placement help. Free demo class.',
     metaKeywords:
       'digital marketing classes Nagpur, weekend digital marketing classes Nagpur, evening digital marketing classes Nagpur, online digital marketing classes Nagpur, digital marketing class near me',
     ogTitle:
@@ -713,7 +708,7 @@ export const landingPages = [
   {
     slug: 'digital-marketing-institute-nagpur',
     metaTitle: '#1 Digital Marketing Institute in Nagpur | Telzon Academy',
-    metaDescription: 'Telzon Academy is Nagpur\'s top-ranked digital marketing institute. Industry trainers, live projects, Google & Meta certifications and 95% placement success.',
+    metaDescription: 'Digital marketing institute in Nagpur at Chhatrapati Square. Learn SEO, Google Ads, Meta Ads and AI in 3 months. ₹25,000 + GST with EMI. Free demo class.',
     metaKeywords: 'digital marketing institute Nagpur, digital marketing institute in Nagpur with phone number, best institute for digital marketing in Nagpur, top digital marketing institute Nagpur',
     ogTitle: '#1 Digital Marketing Institute in Nagpur — Telzon Academy',
     ogDescription: 'Nagpur\'s top digital marketing institute with 95% placement. Google & Meta certified trainers. Enroll at Telzon Academy.',
@@ -807,6 +802,35 @@ export const landingPages = [
       { topic: 'Business of commercial work', items: ['Pricing shoots and ad films', 'Client handling and quotations', 'Contracts and usage rights', 'Portfolio, freelancing and agency work'] },
       { topic: 'Capstone: live brand project', items: ['Full product shoot for a real brand', '30-second commercial', 'Portfolio review', 'Showreel'] },
     ],
+  },
+  {
+    slug: 'digital-marketing-course-nagpur-questions-answered',
+    metaTitle: 'Digital Marketing Course in Nagpur: 20 Questions Answered (2026)',
+    metaDescription: 'Fees, duration, salary, AI, placements, best institute and more — straight answers about digital marketing courses in Nagpur in 2026, from Telzon Academy.',
+    metaKeywords: 'best digital marketing institute in Nagpur, digital marketing course fees Nagpur 2026, digital marketing salary Nagpur, can I learn digital marketing in 3 months, digital marketing course with AI Nagpur, digital marketing career Nagpur',
+    ogTitle: 'Digital Marketing Course in Nagpur — 20 Questions Answered',
+    ogDescription: 'Straight answers on fees, duration, salary, AI, placements and choosing an institute in Nagpur.',
+    headline: 'Digital Marketing Course in Nagpur: Your Questions Answered',
+    subheadline: 'Straight answers to the questions students and parents in Nagpur ask most — about fees, duration, salary, AI, placements and how to choose an institute.',
+    badge: 'Updated November 2026',
+    bullets: [
+      'Fees: ₹25,000 + GST for the 3-month Digital Marketing & AI course',
+      'Duration: 12 weeks, 72 sessions, including interview preparation',
+      'Freshers in Nagpur typically start around ₹2.5–3.5 LPA',
+      'AI, AEO and GEO are taught inside the course',
+      'Classroom at Chhatrapati Square, plus weekend and live online batches',
+      'Free demo class before you decide',
+    ],
+    intro: 'This page collects the questions people in Nagpur most often ask Google, ChatGPT and Gemini about learning <strong>digital marketing in Nagpur</strong> — and answers each one directly. The short version: a good course should be practical, include live campaigns with real tracking, teach the AI tools marketers now use every day, and prepare you for interviews. At Telzon Academy, Chhatrapati Square, that is a 3-month, 72-session Digital Marketing & AI course for ₹25,000 + GST, with weekday, weekend and live online batches and a free demo class. Where an answer depends on you — your background, your goals or the job market — we say so rather than promise outcomes no institute can guarantee.',
+    directAnswer: 'At Telzon Academy, Chhatrapati Square, the Digital Marketing & AI course is 3 months (72 sessions) for ₹25,000 + GST, with live projects, AI tools, Google and Meta Ads, and interview preparation. Book a free demo class before you decide.',
+    courseFacts: {
+      duration: '3 months (72 sessions)',
+      fees: '₹25,000 + GST',
+      batches: ['Weekday', 'Weekend', 'Live online'],
+      certifications: ['Google Ads', 'Google Analytics', 'Meta Blueprint'],
+      mode: 'Classroom at Chhatrapati Square + live online',
+      nextIntake: 'Monthly batches',
+    },
   },
   {
     slug: 'performance-marketing-course-nagpur',
@@ -1443,7 +1467,7 @@ export const landingPages = [
   {
     slug: 'digital-marketing-in-nagpur',
     metaTitle: 'Digital Marketing in Nagpur 2026 | Courses, Jobs, Agencies, Salary',
-    metaDescription: 'Complete guide to digital marketing in Nagpur — best courses, top agencies, job openings, salary trends and career roadmap for 2026.',
+    metaDescription: 'Learn digital marketing in Nagpur: courses, fees (₹25,000 + GST), salaries and jobs in 2026. 3-month AI-first course at Chhatrapati Square. Free demo class.',
     metaKeywords: 'digital marketing in Nagpur, digital marketing Nagpur, Nagpur digital marketing, digital marketing scope Nagpur',
     ogTitle: 'Digital Marketing in Nagpur 2026 — Complete Guide',
     ogDescription: 'Courses, jobs, agencies, salary, scope — everything about digital marketing in Nagpur.',
