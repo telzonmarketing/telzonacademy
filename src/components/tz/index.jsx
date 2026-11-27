@@ -336,6 +336,8 @@ function LazyVideo() {
     const io = new IntersectionObserver(([e]) => {
       if (e.isIntersecting) {
         if (!v.src) { v.src = MEDIA.video; }
+        v.loop = true;
+        v.muted = true;
         v.play().catch(() => {});
       } else {
         v.pause();
@@ -347,6 +349,7 @@ function LazyVideo() {
   return (
     <video
       ref={ref}
+      onEnded={(e) => { e.currentTarget.currentTime = 0; e.currentTarget.play().catch(() => {}); }}
       className="tz-media-video"
       poster={MEDIA.poster}
       muted
