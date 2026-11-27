@@ -51,7 +51,7 @@ function LatestPosts() {
         <p className="tz-intro">Guides on digital marketing, AI tools and careers in Nagpur.</p>
         <div className="tz-posts">
           {posts.map((p) => (
-            <Link key={p.slug} to={`/blog/${p.slug}`} className="tz-post">
+            <Link key={p.slug} to={`/blog/${p.slug}/`} className="tz-post">
               {p.cover_image && <img src={p.cover_image} alt="" loading="lazy" />}
               <div>
                 <h3>{p.title}</h3>
@@ -60,7 +60,7 @@ function LatestPosts() {
             </Link>
           ))}
         </div>
-        <p style={{ marginTop: 20 }}><Link to="/blog" className="tz-btn tz-btn-light">All articles</Link></p>
+        <p style={{ marginTop: 20 }}><Link to="/blog/" className="tz-btn tz-btn-light">All articles</Link></p>
       </div>
     </section>
   );
@@ -142,12 +142,12 @@ export default function HomePage() {
               <h2 className="tz-h2">Our courses</h2>
               <p className="tz-intro">Two programs, both with a free demo class. AI marketing is part of the Digital Marketing & AI course.</p>
               <div className="tz-cards tz-cards-2">
-                <a className="tz-card" href="/pages/digital-marketing-course-in-nagpur">
+                <a className="tz-card" href="/pages/digital-marketing-course-in-nagpur/">
                   <h3>Digital Marketing & AI</h3>
                   <p>Marketing, branding, content, SEO, AEO/GEO, Google Ads, Meta Ads, a live project and interview preparation — with AI marketing built in: ChatGPT, Claude, ElevenLabs, HeyGen, AI search and automation.</p>
                   <div className="tz-meta"><span>3 months</span><span>₹25,000 + GST</span></div>
                 </a>
-                <a className="tz-card" href="/pages/commercial-ads-and-photography-course-in-nagpur">
+                <a className="tz-card" href="/pages/commercial-ads-and-photography-course-in-nagpur/">
                   <h3>Commercial Ads & Photography</h3>
                   <p>Product, fashion and food shoots, ad film production, editing in Lightroom, Photoshop, Premiere and DaVinci, and AI tools.</p>
                   <div className="tz-meta"><span>90 days</span><span>₹48,000 + GST</span><span>New</span></div>

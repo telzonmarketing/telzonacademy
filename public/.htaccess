@@ -1,6 +1,17 @@
+ErrorDocument 404 /index.html
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # ── SEO: one host. www.telzonacademy.in served the same pages with 200,
+  # creating a duplicate copy of the whole site. 301 it to the bare domain.
+  RewriteCond %{HTTP_HOST} ^www\.telzonacademy\.in$ [NC]
+  RewriteRule ^(.*)$ https://telzonacademy.in/$1 [R=301,L]
+
+  # ── Folder roots that have no page of their own (would 403 otherwise)
+  RewriteRule ^careers/?$ https://telzonacademy.in/careers/best-career-options-2027/ [R=301,L]
+  RewriteRule ^pages/?$ https://telzonacademy.in/pages/digital-marketing-course-in-nagpur/ [R=301,L]
 
   # ── SEO: 301 redirect /index.html → / so Google consolidates signals ──
   # GSC currently shows /index.html as a separate URL with 66 impressions,
@@ -15,6 +26,15 @@
   # Block SQL injection attempts in query strings
   RewriteCond %{QUERY_STRING} (union.*select|select.*from|insert.*into|drop.*table|--\s|;\s*drop) [NC]
   RewriteRule ^ - [F,L]
+
+  # ── SEO: real 404s. Every course, locality and career page is prerendered
+  # as a folder, so a missing one under these paths is a genuine 404 (it used
+  # to return 200 — a "soft 404"). The app still renders its not-found page.
+  # /blog/ is excluded: posts published after the last deploy are served by
+  # the SPA fallback until the next build.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(pages|careers|media|assets)/ - [R=404,L]
 
   # SPA fallback — serve index.html for all non-file routes
   RewriteCond %{REQUEST_FILENAME} !-f
@@ -56,10 +76,10 @@
   # header exactly like <link rel="canonical">. This sets each request's URL
   # path (query string stripped) as its own canonical.
   # SetEnvIf captures only the path portion (before any '?') into CANON_PATH.
-  SetEnvIf Request_URI "^([^?]*)" CANON_PATH=$1
-  <If "%{REQUEST_URI} !~ m#^/(seo-reports|assets|.*\.(css|js|json|png|jpg|svg|ico|xml|txt))#">
-    Header always set Link '<https://telzonacademy.in%{CANON_PATH}e>; rel="canonical"'
-  </If>
+  # REMOVED 2026-11-27: the header canonical always echoed the request path,
+  # so /pages/x/ (header) and /pages/x (HTML) disagreed. Every page now has a
+  # single canonical in its HTML (with trailing slash, matching the URL the
+  # server actually serves), and www now 301s, so the header is not needed.
 
   # ── Caching ────────────────────────────────────────────────────────────────
 
@@ -70,6 +90,11 @@
     Header set CDN-Cache-Control "no-cache"
     Header set Pragma "no-cache"
     Header set Expires "0"
+  </FilesMatch>
+
+  # Cache images, video and fonts for 30 days (repeat visits + Core Web Vitals)
+  <FilesMatch "\.(webp|jpg|jpeg|png|svg|ico|mp4|woff2?)$">
+    Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>
 
   # Cache hashed assets (JS/CSS) for 1 year — safe because filenames change on each build

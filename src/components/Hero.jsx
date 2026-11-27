@@ -99,7 +99,7 @@ const Hero = () => {
               {/* Q-001 internal link · 2026-06-07: feeds authority into the cluster
                   canonical page; anchor uses the target keyword. */}
               <Link
-                to="/pages/digital-marketing-course-in-nagpur"
+                to="/pages/digital-marketing-course-in-nagpur/"
                 className="text-white font-semibold underline decoration-indigo-400/50 underline-offset-4 hover:decoration-indigo-300 transition-colors"
               >
                 digital marketing course in Nagpur

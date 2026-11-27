@@ -17,12 +17,12 @@ import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
 import PlacementsAndCareers from '@/components/PlacementsAndCareers';
 import BestCourseSection from '@/components/BestCourseSection';
-import AdminBlogs from '@/components/AdminBlogs';
+const AdminBlogs = React.lazy(() => import('@/components/AdminBlogs'));
 import BlogList from '@/components/BlogList';
 import BlogPost from '@/components/BlogPost';
 import LatestBlogsHome from '@/components/LatestBlogsHome';
 import WelcomeMessage from '@/components/WelcomeMessage';
-import SeoSettingsDashboard from '@/components/SeoSettingsDashboard';
+const SeoSettingsDashboard = React.lazy(() => import('@/components/SeoSettingsDashboard'));
 import GlobalSeo from '@/components/GlobalSeo';
 import LandingPage from '@/pages/LandingPage';
 import HomePage from '@/pages/HomePage';
@@ -30,15 +30,15 @@ import NotFoundPage from '@/pages/NotFoundPage';
 import CareersPage from '@/pages/CareersPage';
 import TrackingScripts from '@/components/TrackingScripts';
 import LeadGenerationPage from '@/pages/LeadGenerationPage';
-import WatchDemoPage from '@/pages/WatchDemoPage';
+const WatchDemoPage = React.lazy(() => import('@/pages/WatchDemoPage'));
 
 // Admin
-import AdminGuard from '@/components/admin/AdminGuard';
-import AdminLogin from '@/pages/admin/AdminLogin';
-import AdminOverview from '@/pages/admin/AdminOverview';
-import AdminLeads from '@/pages/admin/AdminLeads';
-import AdminMetaAds from '@/pages/admin/AdminMetaAds';
-import AdminVideos from '@/pages/admin/AdminVideos';
+const AdminGuard = React.lazy(() => import('@/components/admin/AdminGuard'));
+const AdminLogin = React.lazy(() => import('@/pages/admin/AdminLogin'));
+const AdminOverview = React.lazy(() => import('@/pages/admin/AdminOverview'));
+const AdminLeads = React.lazy(() => import('@/pages/admin/AdminLeads'));
+const AdminMetaAds = React.lazy(() => import('@/pages/admin/AdminMetaAds'));
+const AdminVideos = React.lazy(() => import('@/pages/admin/AdminVideos'));
 
 // Black & white public theme: on for every public page, off for /admin.
 function ThemeScope() {
@@ -53,6 +53,7 @@ function App() {
   return (
     <Router>
       <ThemeScope />
+      <React.Suspense fallback={null}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<BlogList />} />
@@ -80,6 +81,7 @@ function App() {
         <Route path="/seo-settings-dashboard-telzon-secret-2024" element={<Navigate to="/admin/seo" replace />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      </React.Suspense>
       <TrackingScripts />
       <Toaster />
     </Router>

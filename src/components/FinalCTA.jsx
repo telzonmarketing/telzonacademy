@@ -55,7 +55,7 @@ const FinalCTA = () => {
             <p className="text-sm text-white/55 mt-6">
               Want the full curriculum, fees and batch details?{' '}
               <Link
-                to="/pages/digital-marketing-course-in-nagpur"
+                to="/pages/digital-marketing-course-in-nagpur/"
                 className="text-indigo-300 hover:text-indigo-200 underline decoration-indigo-400/40 underline-offset-4 transition-colors"
               >
                 View the digital marketing course in Nagpur →

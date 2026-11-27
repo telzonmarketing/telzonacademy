@@ -94,14 +94,14 @@ export function buildSitemapXml(blogs = []) {
   }, CONTENT_UPDATED);
 
   add('/', CONTENT_UPDATED, 'weekly', '1.0', MEDIA_XML);
-  add('/blog', newestBlog, 'daily', '0.9');
-  add('/lead-generation-package', CONTENT_UPDATED, 'monthly', '0.8');
+  add('/blog/', newestBlog, 'daily', '0.9');
+  add('/lead-generation-package/', CONTENT_UPDATED, 'monthly', '0.8');
 
   for (const p of landingPages) {
-    add(`/pages/${p.slug}`, CONTENT_UPDATED, 'monthly', PRIORITY[p.slug] || '0.8', MEDIA_PAGES.has(p.slug) ? MEDIA_XML : '');
+    add(`/pages/${p.slug}/`, CONTENT_UPDATED, 'monthly', PRIORITY[p.slug] || '0.8', MEDIA_PAGES.has(p.slug) ? MEDIA_XML : '');
   }
   for (const b of blogs) {
-    add(`/blog/${b.slug}`, isoDate(b.updated_at || b.created_at), 'monthly', '0.7');
+    add(`/blog/${b.slug}/`, isoDate(b.updated_at || b.created_at), 'monthly', '0.7');
   }
 
   return `<?xml version="1.0" encoding="UTF-8"?>

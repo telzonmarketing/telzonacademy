@@ -307,7 +307,7 @@ function landingPageContent(page) {
     ? rotated.slice(0, 12)
     : [canonicalEntry, ...rotated].filter(Boolean).slice(0, 12);
   const relatedHtml = relatedPool.map(p => `
-        <li><a href="/pages/${escapeHtml(p.slug)}">${escapeHtml(p.headline)}</a></li>`).join('');
+        <li><a href="/pages/${escapeHtml(p.slug)}/">${escapeHtml(p.headline)}</a></li>`).join('');
 
   // ── Q-006 (Action A) ── Conditional GEO blocks that mirror what
   // LandingPage.jsx renders in React. Non-JS crawlers now see the same
@@ -391,8 +391,8 @@ function landingPageContent(page) {
       <h2>Explore Telzon Academy</h2>
       <ul>
         <li><a href="/">Telzon Academy homepage — Nagpur's digital marketing institute</a></li>
-        <li><a href="/blog">Digital marketing blog &amp; resources</a></li>
-        <li><a href="/lead-generation-package">Lead generation package for Nagpur businesses</a></li>
+        <li><a href="/blog/">Digital marketing blog &amp; resources</a></li>
+        <li><a href="/lead-generation-package/">Lead generation package for Nagpur businesses</a></li>
       </ul>
     </section>
     <section>
@@ -437,7 +437,7 @@ const demoHtml = (text) => `
       <h2>Learn these skills at Telzon Academy</h2>
       <p>${escapeHtml(text)}</p>
       <p>The 3-month Digital Marketing &amp; AI course runs at Chhatrapati Square, Nagpur, with weekday, weekend and live online batches. Fee: ₹25,000 + GST, with no-cost EMI. <a href="${COURSE_URL}">See the digital marketing course in Nagpur</a>.</p>
-      <p><a href="/lead-generation-package">Book a Free Demo Class</a> or call <a href="tel:+919307189776">+91-9307189776</a>.</p>
+      <p><a href="/lead-generation-package/">Book a Free Demo Class</a> or call <a href="tel:+919307189776">+91-9307189776</a>.</p>
     </section>`;
 
 function careerGuideContent() {
@@ -532,11 +532,11 @@ function blogPostContent(b) {
   const body = String(b.content || '').replace(/<script[\s\S]*?<\/script>/gi, '').replace(/\n/g, '<br />');
   return `
     <article>
-      <p><a href="/">Home</a> / <a href="/blog">Blog</a></p>
+      <p><a href="/">Home</a> / <a href="/blog/">Blog</a></p>
       <h1>${escapeHtml(b.title)}</h1>
       ${b.excerpt ? `<p>${escapeHtml(b.excerpt)}</p>` : ''}
       <div>${body}</div>
-      <p><a href="/pages/digital-marketing-course-in-nagpur">Digital marketing course in Nagpur</a> · <a href="/pages/ai-marketing-course-in-nagpur">AI marketing course</a> · <a href="/blog">More articles</a></p>
+      <p><a href="/pages/digital-marketing-course-in-nagpur/">Digital marketing course in Nagpur</a> · <a href="/pages/ai-marketing-course-in-nagpur/">AI marketing course</a> · <a href="/blog/">More articles</a></p>
     </article>`;
 }
 
@@ -567,9 +567,20 @@ function leadGenContent() {
     </section>`;
 }
 
+// The site-wide BreadcrumbList in index.html only lists "Home"; drop it on inner pages.
+function dropHomeOnlyBreadcrumb(html) {
+  return html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>\s*/g, (all, json) => {
+    try {
+      const o = JSON.parse(json);
+      if (o['@type'] === 'BreadcrumbList' && (o.itemListElement || []).length < 2) return '';
+    } catch { /* keep */ }
+    return all;
+  });
+}
+
 async function writeRoute(baseHtml, outRelative, { title, description, canonical, ogTitle, ogDescription, content, page, extraJsonLd, ogType, ogImage }) {
   const head = rewriteHead(baseHtml, { title, description, canonical, ogTitle, ogDescription, page, extraJsonLd, ogType, ogImage });
-  const full = rewriteRoot(head, content);
+  const full = dropHomeOnlyBreadcrumb(rewriteRoot(head, content));
   const outPath = resolve(DIST, outRelative);
   await mkdir(dirname(outPath), { recursive: true });
   await writeFile(outPath, full, 'utf8');
@@ -585,7 +596,7 @@ async function main() {
     await writeRoute(baseHtml, `pages/${page.slug}/index.html`, {
       title: page.metaTitle,
       description: page.metaDescription,
-      canonical: `${SITE}/pages/${page.slug}`,
+      canonical: `${SITE}/pages/${page.slug}/`,
       ogTitle: page.ogTitle,
       ogDescription: page.ogDescription,
       content: landingPageContent(page),
@@ -598,7 +609,7 @@ async function main() {
   await writeRoute(baseHtml, 'blog/index.html', {
     title: 'Digital Marketing Blog & Resources | Telzon Academy Nagpur',
     description: 'Read the latest articles, guides, and insights on digital marketing trends, SEO, social media, and more from Telzon Academy in Nagpur.',
-    canonical: `${SITE}/blog`,
+    canonical: `${SITE}/blog/`,
     content: blogContent(),
   });
   count++;
@@ -607,7 +618,7 @@ async function main() {
   await writeRoute(baseHtml, 'lead-generation-package/index.html', {
     title: 'Lead Generation Package for Nagpur Businesses | Telzon Academy',
     description: 'Telzon Academy lead generation package for Nagpur businesses — Meta Ads, Google Ads, landing page and WhatsApp funnel handled end-to-end. Book a free strategy call.',
-    canonical: `${SITE}/lead-generation-package`,
+    canonical: `${SITE}/lead-generation-package/`,
     content: leadGenContent(),
   });
   count++;
@@ -616,7 +627,7 @@ async function main() {
   //    static HTML (crawlable without JavaScript) with Article schema.
   const blogs = await fetchPublishedBlogs({ full: true });
   for (const b of blogs) {
-    const canonical = `${SITE}/blog/${b.slug}`;
+    const canonical = `${SITE}/blog/${b.slug}/`;
     const description = (b.excerpt || stripTags(b.content || '').slice(0, 155)).trim();
     const image = b.cover_image || `${SITE}/media/telzon-academy-nagpur-share.jpg`;
     const published = b.publishedAt || b.published_at || b.created_at;
@@ -648,7 +659,7 @@ async function main() {
           '@type': 'BreadcrumbList',
           itemListElement: [
             { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
-            { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
+            { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog/` },
             { '@type': 'ListItem', position: 3, name: b.title, item: canonical },
           ],
         },

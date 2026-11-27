@@ -7,7 +7,7 @@
 export const CAREERS_UPDATED = '2026-11-27';
 export const GUIDE_SLUG = 'best-career-options-2027';
 export const careerPath = (slug) => `/careers/${slug}/`;
-export const COURSE_URL = '/pages/digital-marketing-course-in-nagpur';
+export const COURSE_URL = '/pages/digital-marketing-course-in-nagpur/';
 
 const li = (title) => `https://in.linkedin.com/jobs/search?keywords=${encodeURIComponent(title)}&location=India`;
 

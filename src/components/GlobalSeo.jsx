@@ -93,7 +93,7 @@ const GlobalSeo = () => {
     <Helmet>
       <title>{seoData.meta_title}</title>
       <meta name="description" content={seoData.meta_description} />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       <link rel="canonical" href={canonicalUrl} />
       <meta property="og:title" content={seoData.og_title} />

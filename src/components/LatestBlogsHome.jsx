@@ -84,7 +84,7 @@ const LatestBlogsHome = () => {
                 </p>
                 
                 <Link 
-                  to={`/blog/${blog.slug}`}
+                  to={`/blog/${blog.slug}/`}
                   className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors"
                 >
                   Read Article <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -95,7 +95,7 @@ const LatestBlogsHome = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Link to="/blog">
+          <Link to="/blog/">
             <button className="px-8 py-3 rounded-full bg-gray-800 hover:bg-gray-700 text-white font-semibold transition-all border border-gray-700 hover:border-gray-600">
               View All Articles
             </button>

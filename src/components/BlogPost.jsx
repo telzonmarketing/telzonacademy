@@ -52,7 +52,7 @@ const BlogPost = () => {
         <main className="flex-grow flex flex-col items-center justify-center text-center px-4">
           <h1 className="text-4xl font-bold mb-4">Blog post not found</h1>
           <p className="text-gray-400 mb-8">The article you are looking for does not exist or has been removed.</p>
-          <Link to="/blog">
+          <Link to="/blog/">
             <Button>Return to Blog</Button>
           </Link>
         </main>
@@ -67,7 +67,7 @@ const BlogPost = () => {
       {(() => {
         // Compute canonical URL using the slug.  If your production domain changes,
         // update the base URL accordingly.
-        const canonicalUrl = `https://telzonacademy.in/blog/${blog.slug}`;
+        const canonicalUrl = `https://telzonacademy.in/blog/${blog.slug}/`;
         // Choose a cover image for social sharing.  If your table includes a
         // 'cover_image' column, use it; otherwise fall back to a default.
         const coverImage = blog.cover_image || 'https://telzonacademy.in/media/telzon-academy-nagpur-share.jpg';
@@ -127,7 +127,7 @@ const BlogPost = () => {
         <Header />
         <main className="flex-grow pt-32 pb-20 px-4">
           <article className="container mx-auto max-w-3xl">
-            <Link to="/blog" className="inline-block mb-8">
+            <Link to="/blog/" className="inline-block mb-8">
               <Button variant="ghost" className="text-gray-400 hover:text-white pl-0 hover:bg-transparent">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to all articles

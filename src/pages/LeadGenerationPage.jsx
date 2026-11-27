@@ -59,7 +59,7 @@ const faqs = [
 ];
 
 const LeadGenerationPage = () => {
-  const canonicalUrl = 'https://telzonacademy.in/lead-generation-package';
+  const canonicalUrl = 'https://telzonacademy.in/lead-generation-package/';
 
   const schema = {
     '@context': 'https://schema.org',
@@ -92,7 +92,7 @@ const LeadGenerationPage = () => {
       <Helmet>
         <title>Free Digital Marketing Career Call | Telzon Academy Nagpur</title>
         <meta name="description" content="Book a free Telzon Academy counselling call. Get course guidance, fees, batch details, demo class access and a digital marketing placement roadmap." />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content="Free Digital Marketing Career Call | Telzon Academy" />
         <meta property="og:description" content="Get a free roadmap for digital marketing, SEO, Google Ads and social media careers in Nagpur." />

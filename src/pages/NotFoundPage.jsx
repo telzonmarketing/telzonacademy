@@ -21,8 +21,8 @@ export default function NotFoundPage() {
           <p className="text-gray-400 mb-8">The page you're looking for doesn't exist or has moved.</p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link to="/" className="btn-primary px-6 py-3">Home</Link>
-            <Link to="/pages/digital-marketing-course-in-nagpur" className="btn-secondary px-6 py-3">Digital marketing course</Link>
-            <Link to="/blog" className="btn-secondary px-6 py-3">Blog</Link>
+            <Link to="/pages/digital-marketing-course-in-nagpur/" className="btn-secondary px-6 py-3">Digital marketing course</Link>
+            <Link to="/blog/" className="btn-secondary px-6 py-3">Blog</Link>
           </div>
         </div>
       </main>

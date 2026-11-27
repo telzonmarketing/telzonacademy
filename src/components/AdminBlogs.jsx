@@ -556,7 +556,7 @@ Respond ONLY with raw JSON (no markdown, no explanation):
                     <TB title="LI" onClick={() => insertTag('<li>', '</li>')}><Minus className="w-4 h-4" /></TB>
                     <TB title="Link" onClick={() => insertTag('<a href="">', '</a>')}><Link2 className="w-4 h-4" /></TB>
                     <div className="w-px h-4 bg-white/10 mx-1" />
-                    <button type="button" onClick={() => insertTag('<a href="/pages/digital-marketing-course-in-nagpur">', '</a>')}
+                    <button type="button" onClick={() => insertTag('<a href="/pages/digital-marketing-course-in-nagpur/">', '</a>')}
                       className="text-xs px-2 py-1 rounded bg-violet-500/15 text-violet-400 hover:bg-violet-500/25 transition-colors font-semibold">
                       + Internal Link
                     </button>

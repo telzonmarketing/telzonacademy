@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import NotFoundPage from '@/pages/NotFoundPage';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, CheckCircle, Star, MapPin, Clock, IndianRupee, Users, Award, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
@@ -43,7 +44,7 @@ function Stars({ count = 5, filled = 5 }) {
 function Breadcrumb({ slug, headline }) {
   const crumbs = [
     { label: 'Home', href: '/' },
-    { label: 'Courses', href: '/pages/digital-marketing-course-in-nagpur' },
+    { label: 'Courses', href: '/pages/digital-marketing-course-in-nagpur/' },
     { label: headline, href: null },
   ];
   return (
@@ -359,7 +360,7 @@ function LocalAreasSection({ keyword }) {
             const slug = AREA_SLUG_MAP[area];
             const className = "text-sm text-white/70 bg-white/[0.04] border border-white/[0.08] px-4 py-2 rounded-full hover:bg-indigo-500/15 hover:border-indigo-400/30 hover:text-white transition-all";
             return slug ? (
-              <Link key={area} to={`/pages/${slug}`} className={className}>
+              <Link key={area} to={`/pages/${slug}/`} className={className}>
                 {keyword} — {area}
               </Link>
             ) : (
@@ -403,7 +404,7 @@ function RelatedPagesSection({ currentSlug }) {
         </div>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
           {related.map(p => (
-            <Link key={p.slug} to={`/pages/${p.slug}`}
+            <Link key={p.slug} to={`/pages/${p.slug}/`}
               className="group surface-card px-4 py-3.5 hover:border-indigo-400/30 transition-all">
               <p className="text-sm font-semibold text-white group-hover:text-indigo-200 line-clamp-2 leading-snug">{p.headline}</p>
               <p className="text-[11px] text-white/40 mt-1.5 line-clamp-1 font-mono">/pages/{p.slug}</p>
@@ -464,23 +465,9 @@ const LandingPage = () => {
   const { slug } = useParams();
   const page = landingPages.find(p => p.slug === slug);
 
-  if (!page) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-[#030014] text-white p-10">
-        <Helmet>
-          <title>Page Not Found | Telzon Academy</title>
-          <meta name="robots" content="noindex, nofollow" />
-        </Helmet>
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">404 – Page Not Found</h1>
-          <p className="text-gray-400 mb-6">The page you're looking for does not exist.</p>
-          <Link to="/" className="text-purple-300 hover:text-white transition-colors">← Back to Home</Link>
-        </div>
-      </div>
-    );
-  }
+  if (!page) return <NotFoundPage />;
 
-  const canonicalUrl = `https://telzonacademy.in/pages/${page.slug}`;
+  const canonicalUrl = `https://telzonacademy.in/pages/${page.slug}/`;
   const faqs = PAGE_FAQS[page.slug] || PAGE_FAQS.default;
   const keywordShort = page.headline.replace(' in Nagpur', '').replace(' — Telzon Academy', '');
 
@@ -570,7 +557,7 @@ const LandingPage = () => {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://telzonacademy.in' },
-      { '@type': 'ListItem', position: 2, name: 'Courses', item: 'https://telzonacademy.in/pages/digital-marketing-course-in-nagpur' },
+      { '@type': 'ListItem', position: 2, name: 'Courses', item: 'https://telzonacademy.in/pages/digital-marketing-course-in-nagpur/' },
       { '@type': 'ListItem', position: 3, name: page.headline, item: canonicalUrl },
     ],
   };
@@ -620,7 +607,7 @@ const LandingPage = () => {
       <Helmet>
         <title>{page.metaTitle}</title>
         <meta name="description" content={page.metaDescription} />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content={page.ogTitle} />
         <meta property="og:description" content={page.ogDescription} />
@@ -648,7 +635,7 @@ const LandingPage = () => {
           <section className="tz-wrap tz-hero">
             <div>
               <nav className="tz-crumb" aria-label="Breadcrumb">
-                <Link to="/">Home</Link> / <Link to="/pages/digital-marketing-course-in-nagpur">Courses</Link> / <span>{page.headline}</span>
+                <Link to="/">Home</Link> / <Link to="/pages/digital-marketing-course-in-nagpur/">Courses</Link> / <span>{page.headline}</span>
               </nav>
               <span className="tz-badge">{page.badge || 'No. 1 digital marketing institute in Nagpur'}</span>
               <h1>{page.headline}</h1>
@@ -824,7 +811,7 @@ const LandingPage = () => {
               <p className="tz-intro">Explore other courses, locality pages and services from Telzon Academy.</p>
               <div className="tz-related">
                 {relatedPages(page.slug).map((p) => (
-                  <Link key={p.slug} to={`/pages/${p.slug}`}>{p.headline}</Link>
+                  <Link key={p.slug} to={`/pages/${p.slug}/`}>{p.headline}</Link>
                 ))}
               </div>
             </div>

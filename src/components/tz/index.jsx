@@ -38,14 +38,14 @@ export function TzHeader() {
           <img src="/telzon-logo-black-512.png" alt="Telzon Academy" width="112" height="34" loading="eager" />
         </a>
         <nav className="tz-nav" aria-label="Main">
-          <a className="tz-link" href="/pages/digital-marketing-course-in-nagpur">Courses</a>
-          <a className="tz-link" href="/pages/digital-marketing-course-fees-in-nagpur">Fees</a>
-          <a className="tz-link" href="/pages/commercial-ads-and-photography-course-in-nagpur">Photography</a>
+          <a className="tz-link" href="/pages/digital-marketing-course-in-nagpur/">Courses</a>
+          <a className="tz-link" href="/pages/digital-marketing-course-fees-in-nagpur/">Fees</a>
+          <a className="tz-link" href="/pages/commercial-ads-and-photography-course-in-nagpur/">Photography</a>
           <a className="tz-link" href="/careers/best-career-options-2027/">Career Guide</a>
-          <a className="tz-link" href="/pages/digital-marketing-course-nagpur-questions-answered">FAQ</a>
-          <a className="tz-link" href="/blog">Blog</a>
+          <a className="tz-link" href="/pages/digital-marketing-course-nagpur-questions-answered/">FAQ</a>
+          <a className="tz-link" href="/blog/">Blog</a>
           <button type="button" className="tz-link" onClick={openMap}>Location</button>
-          <a className="tz-btn tz-btn-dark" style={{ minHeight: 44, padding: '0 20px' }} href="/lead-generation-package">Free demo</a>
+          <a className="tz-btn tz-btn-dark" style={{ minHeight: 44, padding: '0 20px' }} href="/lead-generation-package/">Free demo</a>
         </nav>
       </div>
     </header>
@@ -101,27 +101,27 @@ export function TzFooter() {
           <nav aria-label="Courses">
             <h4>Courses</h4>
             {FOOTER_COURSES.filter(([s]) => SLUGS.has(s)).map(([s, label]) => (
-              <a key={s} href={`/pages/${s}`}>{label}</a>
+              <a key={s} href={`/pages/${s}/`}>{label}</a>
             ))}
           </nav>
           <nav aria-label="Areas in Nagpur">
             <h4>Classes near you in Nagpur</h4>
             {NAGPUR_AREAS.map((a) => {
               const s = areaSlug(a);
-              return s ? <a key={a} href={`/pages/${s}`}>{a}</a> : null;
+              return s ? <a key={a} href={`/pages/${s}/`}>{a}</a> : null;
             })}
           </nav>
           <nav aria-label="Institute">
             <h4>Institute</h4>
             {FOOTER_INSTITUTE.filter(([s]) => SLUGS.has(s)).map(([s, label]) => (
-              <a key={s} href={`/pages/${s}`}>{label}</a>
+              <a key={s} href={`/pages/${s}/`}>{label}</a>
             ))}
-            <a href="/blog">Blog</a>
+            <a href="/blog/">Blog</a>
             <a href="/careers/best-career-options-2027/">Career Guide 2027</a>
             <a href="/careers/ai-creative-strategist/">AI Creative Strategist career</a>
             <a href="/careers/ai-search-visibility-specialist/">GEO / AI search career</a>
             <a href="/careers/ai-marketing-automation-specialist/">Marketing automation career</a>
-            <a href="/lead-generation-package">Book a free demo</a>
+            <a href="/lead-generation-package/">Book a free demo</a>
             <a href="https://www.telzonmarketing.in/telzon-best-digital-marketing-agency-nagpur.html" target="_blank" rel="noopener">Telzon Marketing — agency</a>
           </nav>
         </div>
@@ -286,7 +286,7 @@ export function FaqBlock({ faqs, title = 'Questions, answered', id = 'faq' }) {
         <div>
           <h2 className="tz-h2">{title}</h2>
           <p className="tz-intro" style={{ marginBottom: 0 }}>Anything else? Call {PHONE}, Mon–Sat, 9 AM – 8 PM.</p>
-          <p style={{ marginTop: 16 }}><a href="/pages/digital-marketing-course-nagpur-questions-answered" style={{ fontWeight: 600 }}>20 more questions answered →</a></p>
+          <p style={{ marginTop: 16 }}><a href="/pages/digital-marketing-course-nagpur-questions-answered/" style={{ fontWeight: 600 }}>20 more questions answered →</a></p>
         </div>
         <div>
           {faqs.map((f, i) => (
@@ -311,7 +311,7 @@ export function AreasBlock({ keyword = 'Digital marketing course' }) {
         <div className="tz-pills">
           {NAGPUR_AREAS.map((a) => {
             const s = areaSlug(a);
-            return s ? <a key={a} href={`/pages/${s}`}>{a}</a> : null;
+            return s ? <a key={a} href={`/pages/${s}/`}>{a}</a> : null;
           })}
         </div>
       </div>
@@ -331,7 +331,7 @@ export function CtaBand({ title = 'Seats for the next batch are limited.', text 
           <a className="tz-btn tz-btn-ghost" href={`${WHATSAPP}?text=${encodeURIComponent('Hello Telzon Academy, I want to enquire about the course')}`} target="_blank" rel="noopener">WhatsApp us</a>
         </div>
         <small>Limited seats · Placement assistance · Industry certification</small>
-        {link && <small><Link to="/pages/digital-marketing-course-in-nagpur" style={{ color: '#fff' }}>View the digital marketing course in Nagpur — full curriculum, fees and batches →</Link></small>}
+        {link && <small><Link to="/pages/digital-marketing-course-in-nagpur/" style={{ color: '#fff' }}>View the digital marketing course in Nagpur — full curriculum, fees and batches →</Link></small>}
       </div>
     </section>
   );
