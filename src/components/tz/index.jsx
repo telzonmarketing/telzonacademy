@@ -12,6 +12,10 @@ export const PHONE_TEL = '+919307189776';
 export const EMAIL = 'connect@telzonacademy.in';
 export const WHATSAPP = 'https://wa.me/919307189776';
 export const MAP_URL = 'https://share.google/84JWzWeKpyNvvUnG2';
+// Google Business Profile listing (from the profile's own embed code).
+export const GBP_EMBED = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.047218740955!2d79.07035257525892!3d21.11068358055924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bff695513483%3A0xc4eabfbbefd8d6d0!2sTelzon%20Academy!5e0!3m2!1sen!2sin!4v1795769898781!5m2!1sen!2sin';
+export const GBP_CID_URL = 'https://maps.google.com/?cid=14189364389887923920';
+export const GEO = { latitude: 21.1107, longitude: 79.0704 };
 
 export const NAGPUR_AREAS = [
   'Dharampeth', 'Sitabuldi', 'Ramdaspeth', 'Sadar', 'Civil Lines',
@@ -301,6 +305,30 @@ export function FaqBlock({ faqs, title = 'Questions, answered', id = 'faq' }) {
   );
 }
 
+// ─── Google Business Profile map ───────────────────────────────────────────
+export function MapBlock() {
+  return (
+    <div className="tz-map" id="location">
+      <div className="tz-map-text">
+        <h3>Visit Telzon Academy</h3>
+        <p>Chhatrapati Square, Nagpur, Maharashtra — next to Chhatrapati Square metro station (Orange Line).</p>
+        <p>Open Monday to Saturday, 9 AM – 8 PM.</p>
+        <div className="tz-btns">
+          <a className="tz-btn tz-btn-dark" href={GBP_CID_URL} target="_blank" rel="noopener">Get directions</a>
+          <a className="tz-btn" href={`tel:${PHONE_TEL}`}>Call {PHONE}</a>
+        </div>
+      </div>
+      <iframe
+        title="Telzon Academy on Google Maps — Chhatrapati Square, Nagpur"
+        src={GBP_EMBED}
+        loading="lazy"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+      />
+    </div>
+  );
+}
+
 // ─── Nagpur areas ──────────────────────────────────────────────────────────
 export function AreasBlock({ keyword = 'Digital marketing course' }) {
   return (
@@ -314,6 +342,7 @@ export function AreasBlock({ keyword = 'Digital marketing course' }) {
             return s ? <a key={a} href={`/pages/${s}/`}>{a}</a> : null;
           })}
         </div>
+        <MapBlock />
       </div>
     </section>
   );

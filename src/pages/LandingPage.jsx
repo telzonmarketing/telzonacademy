@@ -588,7 +588,7 @@ const LandingPage = () => {
       postalCode: '440001',
       addressCountry: 'IN',
     },
-    geo: { '@type': 'GeoCoordinates', latitude: 21.1458, longitude: 79.0882 },
+    geo: { '@type': 'GeoCoordinates', latitude: 21.1107, longitude: 79.0704 },
     openingHoursSpecification: [
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '09:00', closes: '20:00' },
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday'], opens: '09:00', closes: '18:00' },
@@ -596,7 +596,7 @@ const LandingPage = () => {
     aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', bestRating: '5', ratingCount: '200' },
     sameAs: ['https://www.instagram.com/telzonacademy/'],
     areaServed: NAGPUR_AREAS.map(area => ({ '@type': 'Place', name: `${area}, Nagpur` })),
-    hasMap: 'https://maps.google.com/?q=Telzon+Academy+Nagpur',
+    hasMap: 'https://maps.google.com/?cid=14189364389887923920',
     priceRange: '₹₹',
     currenciesAccepted: 'INR',
     paymentAccepted: 'Cash, Credit Card, Online Transfer, EMI',

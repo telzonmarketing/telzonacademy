@@ -294,6 +294,11 @@ export default defineConfig({
 			'.app-preview.io',
 		],
 	},
+	// `vite preview` copies server.headers by default; the live site (Hostinger)
+	// sends no COEP header, so preview without it to match (it blocks the map embed).
+	preview: {
+		headers: {},
+	},
 	resolve: {
 		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json', ],
 		alias: {
