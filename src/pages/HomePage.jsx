@@ -90,7 +90,7 @@ export default function HomePage() {
                 Nagpur's most practical <strong>digital marketing course in Nagpur</strong>. Learn SEO, Google Ads, Meta Ads,
                 social media and content — with AI built into every module, live projects, expert mentors and placement support.
               </p>
-              <p className="tz-rating"><span aria-hidden="true">★★★★★</span>5.0 on Google · 90+ reviews</p>
+              <p className="tz-rating"><span aria-hidden="true">★★★★★</span>4.9 · 200+ student reviews</p>
               <div className="tz-chips">
                 <span>3 months</span><span>₹25,000 + GST</span><span>Free demo class</span><span>Classroom + live online</span>
               </div>

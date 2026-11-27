@@ -494,11 +494,11 @@ const LandingPage = () => {
       },
       aggregateRating: {
         '@type': 'AggregateRating',
-        ratingValue: '5.0',
+        ratingValue: '4.9',
         bestRating: '5',
         worstRating: '1',
-        ratingCount: '92',
-        reviewCount: '92',
+        ratingCount: '212',
+        reviewCount: '212',
       },
     },
     courseMode: ['onsite', 'online'],
@@ -538,11 +538,11 @@ const LandingPage = () => {
     // objects with real reviewer names + review body — 5 pinned below.
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '5.0',
+      ratingValue: '4.9',
       bestRating: '5',
       worstRating: '1',
-      ratingCount: '92',
-      reviewCount: '92',
+      ratingCount: '212',
+      reviewCount: '212',
     },
     // Q-003a rollback (2026-09-12): removed synthetic review[] objects to
     // comply with Google's Review-snippet policy (reviews must be real, not
@@ -593,7 +593,7 @@ const LandingPage = () => {
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '09:00', closes: '20:00' },
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday'], opens: '09:00', closes: '18:00' },
     ],
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', bestRating: '5', ratingCount: '92' },
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', bestRating: '5', ratingCount: '212' },
     sameAs: ['https://www.instagram.com/telzonacademy/'],
     areaServed: NAGPUR_AREAS.map(area => ({ '@type': 'Place', name: `${area}, Nagpur` })),
     hasMap: 'https://maps.google.com/?cid=14189364389887923920',
@@ -640,7 +640,7 @@ const LandingPage = () => {
               <span className="tz-badge">{page.badge || 'No. 1 digital marketing institute in Nagpur'}</span>
               <h1>{page.headline}</h1>
               <p className="tz-lead">{page.subheadline}</p>
-              <p className="tz-rating"><span aria-hidden="true">★★★★★</span>5.0 on Google · 90+ reviews</p>
+              <p className="tz-rating"><span aria-hidden="true">★★★★★</span>4.9 · 200+ student reviews</p>
               <ul className="tz-bullets">
                 {page.bullets.map((item) => <li key={item}>{item}</li>)}
               </ul>
@@ -683,7 +683,7 @@ const LandingPage = () => {
             <div className="tz-wrap tz-grid">
               <div><b>{page.courseFacts?.duration || '3 months'}</b><small>Course duration</small></div>
               <div><b>{(page.courseFacts?.fees || '₹25,000 + GST').replace(' + GST', '')}</b><small>Course fee + GST</small></div>
-              <div><b>5.0 / 5</b><small>90+ Google reviews</small></div>
+              <div><b>4.9 / 5</b><small>200+ student reviews</small></div>
               <div><b>{page.syllabus ? 'Live shoot' : '1,000+'}</b><small>{page.syllabus ? 'Real brand project' : 'Students trained'}</small></div>
             </div>
           </section>
@@ -768,7 +768,7 @@ const LandingPage = () => {
             <section className="tz-band">
               <div className="tz-wrap">
                 <h2 className="tz-h2">Student stories</h2>
-                <p className="tz-intro">5.0 / 5 from 90+ Google reviews in Nagpur.</p>
+                <p className="tz-intro">4.9 / 5 from 200+ student reviews in Nagpur.</p>
                 <div className="tz-reviews">
                   {REVIEWS.map((r) => (
                     <article className="tz-review" key={r.name}>
