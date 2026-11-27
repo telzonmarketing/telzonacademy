@@ -1,5 +1,12 @@
 [
   {
+    "timestamp": "2026-11-27T12:32:22.399Z",
+    "type": "heartbeat",
+    "icon": "💚",
+    "title": "Heartbeat: site healthy (9/9 checks · 275ms avg)",
+    "details": ""
+  },
+  {
     "timestamp": "2026-11-27T10:43:51.182Z",
     "type": "done",
     "icon": "✓",
@@ -1391,12 +1398,5 @@
     "icon": "🚨",
     "title": "ESCALATED: \"No sitemap.xml found\" needs human attention",
     "details": "Auto-fix failed after 28 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-11-22T09:38:59.481Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"1 pages missing meta description\" needs human attention",
-    "details": "Auto-fix failed after 30 attempts — manual intervention required"
   }
 ]
