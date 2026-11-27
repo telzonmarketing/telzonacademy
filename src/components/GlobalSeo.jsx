@@ -62,7 +62,7 @@ const GlobalSeo = () => {
       latitude: 21.1458,
       longitude: 79.0882
     },
-    image: 'https://images.unsplash.com/photo-1695133139074-d0ab15d6d7da',
+    image: 'https://telzonacademy.in/media/telzon-academy-nagpur-share.jpg',
     logo: 'https://telzonacademy.in/telzon-logo-white-1024.png',
     priceRange: '₹₹',
     openingHours: 'Mo-Sa 09:00-20:00',
@@ -100,13 +100,13 @@ const GlobalSeo = () => {
       <meta property="og:description" content={seoData.og_description} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:image" content="https://images.unsplash.com/photo-1695133139074-d0ab15d6d7da" />
+      <meta property="og:image" content="https://telzonacademy.in/media/telzon-academy-nagpur-share.jpg" />
       <meta property="og:locale" content="en_IN" />
       <meta property="og:site_name" content="Telzon Academy" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seoData.og_title} />
       <meta name="twitter:description" content={seoData.og_description} />
-      <meta name="twitter:image" content="https://images.unsplash.com/photo-1695133139074-d0ab15d6d7da" />
+      <meta name="twitter:image" content="https://telzonacademy.in/media/telzon-academy-nagpur-share.jpg" />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
   );

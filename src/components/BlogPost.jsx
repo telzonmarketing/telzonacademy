@@ -70,7 +70,7 @@ const BlogPost = () => {
         const canonicalUrl = `https://telzonacademy.in/blog/${blog.slug}`;
         // Choose a cover image for social sharing.  If your table includes a
         // 'cover_image' column, use it; otherwise fall back to a default.
-        const coverImage = blog.cover_image || 'https://images.unsplash.com/photo-1695133139074-d0ab15d6d7da';
+        const coverImage = blog.cover_image || 'https://telzonacademy.in/media/telzon-academy-nagpur-share.jpg';
         // Build structured data for the blog post following the Schema.org
         // BlogPosting specification.  This helps search engines understand the
         // article content and improves eligibility for rich results.

@@ -25,6 +25,7 @@ import WelcomeMessage from '@/components/WelcomeMessage';
 import SeoSettingsDashboard from '@/components/SeoSettingsDashboard';
 import GlobalSeo from '@/components/GlobalSeo';
 import LandingPage from '@/pages/LandingPage';
+import HomePage from '@/pages/HomePage';
 import NotFoundPage from '@/pages/NotFoundPage';
 import TrackingScripts from '@/components/TrackingScripts';
 import LeadGenerationPage from '@/pages/LeadGenerationPage';
@@ -37,37 +38,6 @@ import AdminOverview from '@/pages/admin/AdminOverview';
 import AdminLeads from '@/pages/admin/AdminLeads';
 import AdminMetaAds from '@/pages/admin/AdminMetaAds';
 import AdminVideos from '@/pages/admin/AdminVideos';
-
-function HomePage() {
-  return (
-    <>
-      <GlobalSeo />
-      <div className="min-h-screen text-white overflow-x-hidden font-sans" style={{ scrollBehavior: 'smooth' }}>
-        <Header />
-        <main>
-          <ScrollReveal><Hero /></ScrollReveal>
-          <ScrollReveal><BestCourseSection /></ScrollReveal>
-          <ScrollReveal><FreeDemoRegistration /></ScrollReveal>
-          <ScrollReveal><PlacementsAndCareers /></ScrollReveal>
-
-          {/* Logo Slider placed strategically for high-end feel */}
-          <WelcomeMessage />
-
-          <ScrollReveal><PracticalLearning /></ScrollReveal>
-          <ScrollReveal><ComparisonTable /></ScrollReveal>
-          <ScrollReveal><AIMarketing /></ScrollReveal>
-          <ScrollReveal><Curriculum /></ScrollReveal>
-          <ScrollReveal><LatestBlogsHome /></ScrollReveal>
-          <ScrollReveal><Mentorship /></ScrollReveal>
-          <ScrollReveal><FAQ /></ScrollReveal>
-          <ScrollReveal><ContactForm /></ScrollReveal>
-          <ScrollReveal><FinalCTA /></ScrollReveal>
-        </main>
-        <Footer />
-      </div>
-    </>
-  );
-}
 
 // Black & white public theme: on for every public page, off for /admin.
 function ThemeScope() {

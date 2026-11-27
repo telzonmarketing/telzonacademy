@@ -14,6 +14,7 @@ import FinalCTA from '@/components/FinalCTA';
 import { landingPages } from './landingPagesConfig';
 import { PAGE_FAQS } from './landingPagesFaqs';
 import { SYLLABUS, COURSE_FORMAT } from '@/data/syllabus';
+import { TzHeader, TzFooter, AdmissionForm, AskBox, CurriculumList, FaqBlock, AreasBlock, CtaBand, MediaBlock, VIDEO_SCHEMA } from '@/components/tz';
 
 // ─── Nagpur localities for IndiaMart-style hyper-local targeting ─────────────
 const NAGPUR_AREAS = [
@@ -413,6 +414,15 @@ function RelatedPagesSection({ currentSlug }) {
   );
 }
 
+// Related pages: the cluster canonical first, then a deterministic slice
+// (same order as the prerendered HTML) — dense internal linking.
+function relatedPages(currentSlug) {
+  const CANON = 'digital-marketing-course-in-nagpur';
+  const canonicalEntry = landingPages.find((p) => p.slug === CANON);
+  const others = landingPages.filter((p) => p.slug !== currentSlug && p.slug !== CANON);
+  return currentSlug === CANON ? others.slice(0, 9) : [canonicalEntry, ...others].filter(Boolean).slice(0, 9);
+}
+
 // ─── Quick stats bar (Upgrad-style) ──────────────────────────────────────────
 function StatsBar({ duration = '3 Months', fee = null }) {
   const stats = [
@@ -470,7 +480,7 @@ const LandingPage = () => {
   const courseSchema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
-    name: page.metaTitle,
+    name: page.headline,
     description: page.metaDescription,
     url: canonicalUrl,
     provider: {
@@ -481,7 +491,7 @@ const LandingPage = () => {
       email: 'connect@telzonacademy.in',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Nagpur',
+        streetAddress: 'Chhatrapati Square',
         addressLocality: 'Nagpur',
         addressRegion: 'Maharashtra',
         postalCode: '440001',
@@ -577,7 +587,7 @@ const LandingPage = () => {
     email: 'connect@telzonacademy.in',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Nagpur, Maharashtra',
+      streetAddress: 'Chhatrapati Square',
       addressLocality: 'Nagpur',
       addressRegion: 'Maharashtra',
       postalCode: '440001',
@@ -608,125 +618,197 @@ const LandingPage = () => {
         <meta property="og:description" content={page.ogDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1695133139074-d0ab15d6d7da" />
+        <meta property="og:image" content="https://telzonacademy.in/media/telzon-academy-nagpur-share.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta property="og:site_name" content="Telzon Academy" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={page.ogTitle} />
         <meta name="twitter:description" content={page.ogDescription} />
-        <meta name="twitter:image" content="https://images.unsplash.com/photo-1695133139074-d0ab15d6d7da" />
+        <meta name="twitter:image" content="https://telzonacademy.in/media/telzon-academy-nagpur-share.jpg" />
         {/* 4 separate JSON-LD schemas per page — the Upgrad approach */}
         <script type="application/ld+json">{JSON.stringify(courseSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(VIDEO_SCHEMA)}</script>
       </Helmet>
 
-      <div className="min-h-screen text-white overflow-x-hidden font-sans">
-        <Header />
+      <div className="tz">
+        <TzHeader />
         <main>
+          {/* ── HERO + admission form ── */}
+          <section className="tz-wrap tz-hero">
+            <div>
+              <nav className="tz-crumb" aria-label="Breadcrumb">
+                <Link to="/">Home</Link> / <Link to="/pages/digital-marketing-course-in-nagpur">Courses</Link> / <span>{page.headline}</span>
+              </nav>
+              <span className="tz-badge">{page.badge || 'No. 1 digital marketing institute in Nagpur'}</span>
+              <h1>{page.headline}</h1>
+              <p className="tz-lead">{page.subheadline}</p>
+              <p className="tz-rating"><span aria-hidden="true">★★★★★</span>4.9 on Google · 200+ reviews</p>
+              <ul className="tz-bullets">
+                {page.bullets.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+              <div className="tz-chips">
+                {(page.chips || [['', '3 months'], ['', '₹25,000 + GST'], ['', '1,000+ alumni'], ['', 'Free demo class']]).map(([, label]) => (
+                  <span key={label}>{label}</span>
+                ))}
+              </div>
+              <AskBox />
+            </div>
+            <AdmissionForm
+              id={`lead-gen-${page.slug}`}
+              source={page.slug}
+              title="Book a free demo class"
+              sub="Fill in your details. Our admissions team calls you back within 30 minutes."
+            />
+          </section>
 
-          {/* ── HERO ── */}
-          <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/15 rounded-full blur-[140px] -z-10" />
-            <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-violet-500/10 rounded-full blur-[140px] -z-10" />
-            <div className="container mx-auto max-w-6xl">
-              <Breadcrumb slug={slug} headline={page.headline} />
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <Stars filled={5} />
-                    <span className="text-yellow-400 font-semibold text-sm">4.9</span>
-                    <span className="text-white/50 text-sm">/ 5 · 200+ reviews</span>
+          {/* ── Quick answer + about ── */}
+          {(page.directAnswer || page.intro) && (
+            <section className="tz-band-sm tz-soft">
+              <div className="tz-wrap">
+                {page.directAnswer && (
+                  <>
+                    <p className="tz-kicker">Quick answer</p>
+                    <p style={{ fontSize: 'clamp(18px,2vw,22px)', lineHeight: 1.5, maxWidth: '46em', color: '#111' }}>{page.directAnswer}</p>
+                  </>
+                )}
+                {page.intro && (
+                  <div className="tz-prose" style={{ marginTop: page.directAnswer ? 28 : 0 }}>
+                    <p dangerouslySetInnerHTML={{ __html: page.intro }} />
                   </div>
-                  <div className="badge-tag mb-5">
-                    <span>{page.badge || '#1 Digital Marketing Institute in Nagpur'}</span>
-                  </div>
-                  <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-[1.05] tracking-tight">{page.headline}</h1>
-                  <p className="text-lg text-white/65 mb-6 leading-relaxed max-w-xl">{page.subheadline}</p>
-                  <ul className="space-y-2.5 mb-7">
-                    {page.bullets.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-[15px] text-white/80">
-                        <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-1" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="flex flex-wrap gap-2 mb-7">
-                    {(page.chips || [['Clock','3 months'],['IndianRupee','₹25K + GST'],['Users','1000+ alumni'],['Award','95% placed']]).map(([, label]) => (
-                      <span key={label} className="text-[11px] font-semibold text-white/70 bg-white/[0.04] border border-white/[0.08] px-3 py-1.5 rounded-full uppercase tracking-[0.06em]">{label}</span>
-                    ))}
-                  </div>
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <a href={`#lead-gen-${page.slug}`} className="btn-primary text-base px-7 py-4">
-                      Book Free Demo Class <ArrowRight className="w-4 h-4" />
-                    </a>
-                    <a href={`#lead-gen-${page.slug}`} className="btn-secondary text-base px-7 py-4">
-                      Get Course Details
-                    </a>
+                )}
+              </div>
+            </section>
+          )}
+
+          {/* ── Course facts ── */}
+          <section className="tz-facts" aria-label="Course at a glance">
+            <div className="tz-wrap tz-grid">
+              <div><b>{page.courseFacts?.duration || '3 months'}</b><small>Course duration</small></div>
+              <div><b>{(page.courseFacts?.fees || '₹25,000 + GST').replace(' + GST', '')}</b><small>Course fee + GST</small></div>
+              <div><b>4.9 / 5</b><small>200+ Google reviews</small></div>
+              <div><b>{page.syllabus ? 'Live shoot' : '1,000+'}</b><small>{page.syllabus ? 'Real brand project' : 'Students trained'}</small></div>
+            </div>
+          </section>
+
+          <MediaBlock
+            title={page.syllabus ? 'See a live commercial shoot' : 'Inside Telzon Academy'}
+            text={page.syllabus
+              ? 'Students light the set, frame the product and shoot a commercial for a local café in Nagpur — exactly what you do in this course.'
+              : 'Real classes, real shoots. Students plan, light and shoot a live commercial for a local café — the hands-on work you do on every project.'}
+          />
+
+          {page.courseFacts && (
+            <section className="tz-band tz-black">
+              <div className="tz-wrap">
+                <h2 className="tz-h2">Everything you need to know</h2>
+                <p className="tz-intro">Key facts about this course at Telzon Academy, Chhatrapati Square, Nagpur.</p>
+                <div className="tz-stats tz-stats-3">
+                  {[
+                    ['Duration', page.courseFacts.duration],
+                    ['Course fees', page.courseFacts.fees],
+                    ['Mode', page.courseFacts.mode],
+                    ['Next intake', page.courseFacts.nextIntake],
+                    ['Batches', (page.courseFacts.batches || []).join(' · ')],
+                    ['Certifications', (page.courseFacts.certifications || []).join(' · ')],
+                  ].filter(([, v]) => v).map(([k, v]) => (
+                    <div key={k}><small style={{ marginTop: 0, marginBottom: 8 }}>{k}</small><span style={{ fontSize: 19, fontWeight: 600 }}>{v}</span></div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* ── Career outcomes ── */}
+          {page.careerOutcomes && (
+            <section className="tz-band">
+              <div className="tz-wrap">
+                <h2 className="tz-h2">Where our students go next</h2>
+                <p className="tz-intro">Placement results from the digital marketing course at Telzon Academy.</p>
+                <div className="tz-facts" style={{ marginBottom: 24 }}>
+                  <div className="tz-grid">
+                    <div><b>{page.careerOutcomes.placementRate}</b><small>Placement rate</small></div>
+                    <div><b>{page.careerOutcomes.averageSalary}</b><small>Average salary</small></div>
+                    <div><b>{page.careerOutcomes.highestSalary}</b><small>Highest salary</small></div>
+                    <div><b style={{ fontSize: 'clamp(20px,2.4vw,26px)', whiteSpace: 'normal' }}>{page.careerOutcomes.timeToFirstOffer}</b><small>Time to first offer</small></div>
                   </div>
                 </div>
-                <div className="relative">
-                  <div className="surface-card-elevated relative overflow-hidden p-2">
-                    <img alt={`${page.headline} — Telzon Academy Nagpur`}
-                      src="https://images.unsplash.com/photo-1695133139074-d0ab15d6d7da"
-                      className="w-full h-full object-cover rounded-[1rem]" loading="lazy" width="600" height="400" />
-                    <div className="absolute inset-2 rounded-[1rem] bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
-                    <div className="absolute top-5 right-5 inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-400/15 backdrop-blur-md px-3 py-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="text-[11px] font-semibold text-emerald-100 uppercase tracking-[0.06em]">Free Demo</span>
-                    </div>
-                  </div>
+                <p style={{ color: '#333' }}><b>Hiring partners:</b> {page.careerOutcomes.hiringPartners.join(' · ')}</p>
+                {page.careerOutcomes.roleTypes && <p style={{ color: '#333', marginTop: 8 }}><b>Common roles:</b> {page.careerOutcomes.roleTypes.join(' · ')}</p>}
+              </div>
+            </section>
+          )}
+
+          {/* ── Curriculum ── */}
+          <section className="tz-band" id="curriculum" style={page.careerOutcomes ? { paddingTop: 0 } : undefined}>
+            <div className="tz-wrap">
+              <h2 className="tz-h2">Course curriculum</h2>
+              <p className="tz-intro">{page.syllabus ? page.curriculumSubtitle : `3 months · ${COURSE_FORMAT.summary} · live project + interview preparation`}</p>
+              <CurriculumList modules={page.syllabus || SYLLABUS} />
+            </div>
+          </section>
+
+          {/* ── Why Telzon (digital marketing courses) ── */}
+          {!page.syllabus && (
+            <section className="tz-band tz-soft">
+              <div className="tz-wrap">
+                <h2 className="tz-h2">Practical, AI-first and job-ready</h2>
+                <p className="tz-intro">Learning by doing, from day one.</p>
+                <div className="tz-mods">
+                  <article><h3>Hands-on projects</h3><p>Real campaigns and a portfolio that shows employers what you can do.</p></article>
+                  <article><h3>AI in every module</h3><p>ChatGPT, Claude, ElevenLabs and HeyGen for content, video, ads, SEO and automation.</p></article>
+                  <article><h3>100+ tools</h3><p>Google Ads, Meta Ads Manager, GA4, Search Console, Semrush, Canva and more.</p></article>
+                  <article><h3>Certification</h3><p>Telzon Academy certificate plus Google Ads, Analytics and Meta certification prep.</p></article>
+                  <article><h3>Placement assistance</h3><p>Average package ₹3.5 LPA, highest ₹8.5 LPA, with 3 weeks of interview preparation.</p></article>
+                  <article><h3>Expert mentor</h3><p>10+ years in marketing and 150+ brands — learn the methods used with real clients.</p></article>
                 </div>
+              </div>
+            </section>
+          )}
+
+          {/* ── Reviews (digital marketing courses) ── */}
+          {!page.syllabus && (
+            <section className="tz-band">
+              <div className="tz-wrap">
+                <h2 className="tz-h2">Student stories</h2>
+                <p className="tz-intro">4.9 / 5 from 200+ reviews in Nagpur.</p>
+                <div className="tz-reviews">
+                  {REVIEWS.map((r) => (
+                    <article className="tz-review" key={r.name}>
+                      <span aria-label="5 out of 5 stars">★★★★★</span>
+                      <p>"{r.text}"</p>
+                      <b>{r.name}</b><br /><small>{r.area} · {r.role}</small>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* ── FAQ (FAQPage schema is in the head above) ── */}
+          <FaqBlock faqs={faqs} title="Frequently asked questions" />
+
+          {/* ── Local areas ── */}
+          <AreasBlock keyword={keywordShort} />
+
+          {/* ── Related pages (internal linking) ── */}
+          <section className="tz-band-sm">
+            <div className="tz-wrap">
+              <h2 className="tz-h2" style={{ fontSize: 'clamp(26px,3.4vw,36px)' }}>Related courses &amp; services</h2>
+              <p className="tz-intro">Explore other courses, locality pages and services from Telzon Academy.</p>
+              <div className="tz-related">
+                {relatedPages(page.slug).map((p) => (
+                  <Link key={p.slug} to={`/pages/${p.slug}`}>{p.headline}</Link>
+                ))}
               </div>
             </div>
           </section>
 
-          {/* ── GEO BLOCKS · Q-001 cannibalization fix · 2026-06-07 ──
-              Renders only when the slug has these fields in landingPagesConfig.js.
-              All other slugs render unchanged.                                    */}
-          {page.directAnswer && <DirectAnswerBlock answer={page.directAnswer} />}
-          {page.courseFacts && <CourseFactsBlock facts={page.courseFacts} />}
-          {page.careerOutcomes && <CareerOutcomesBlock outcomes={page.careerOutcomes} />}
-
-          {/* ── STATS BAR (Upgrad-style) ── */}
-          <StatsBar duration={page.durationLabelShort || '3 Months'} fee={page.syllabus ? page.courseFacts?.fees : null} />
-
-          {/* ── SYLLABUS (Upgrad-style) ── */}
-          {page.syllabus
-            ? <SyllabusSection modules={page.syllabus} subtitle={page.curriculumSubtitle} />
-            : <SyllabusSection />}
-
-          {/* ── REUSED CORE SECTIONS ── (digital-marketing-specific ones hidden on other courses) */}
-          {!page.syllabus && <BestCourseSection />}
-          {!page.syllabus && <PracticalLearning />}
-          {!page.syllabus && <PlacementsAndCareers />}
-
-          {/* ── REVIEWS (Zomato-style with local area) ── */}
-          {!page.syllabus && <ReviewSection />}
-
-          {/* ── MENTORSHIP ── */}
-          {!page.syllabus && <Mentorship />}
-
-          {/* ── FAQ with FAQPage schema (Zomato/Swiggy: unique per page) ── */}
-          <FAQSection faqs={faqs} />
-
-          {/* ── LOCAL AREAS (IndiaMart-style, now real internal links) ── */}
-          <LocalAreasSection keyword={keywordShort} />
-
-          {/* ── RELATED PAGES (Practo/Zomato dense internal linking) ── */}
-          <RelatedPagesSection currentSlug={page.slug} />
-
-          {/* ── LEAD FORM ── */}
-          <LeadGenForm
-            heading="Enquire Now — Free Demo Class"
-            subheading="Fill in your details. Our admissions team calls you back within 30 minutes."
-            source={page.slug}
-          />
-
-          <FinalCTA />
+          <CtaBand />
         </main>
-        <Footer />
+        <TzFooter />
       </div>
     </>
   );

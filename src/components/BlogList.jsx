@@ -44,12 +44,12 @@ const BlogList = () => {
       <meta property="og:description" content="Explore expert articles on SEO, social media, PPC, content marketing and more from Telzon Academy, Nagpur's leading digital marketing institute." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://telzonacademy.in/blog" />
-      <meta property="og:image" content="https://images.unsplash.com/photo-1695133139074-d0ab15d6d7da" />
+      <meta property="og:image" content="https://telzonacademy.in/media/telzon-academy-nagpur-share.jpg" />
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Digital Marketing Blog & Resources | Telzon Academy Nagpur" />
       <meta name="twitter:description" content="Explore expert articles on SEO, social media, PPC, content marketing and more from Telzon Academy, Nagpur's leading digital marketing institute." />
-      <meta name="twitter:image" content="https://images.unsplash.com/photo-1695133139074-d0ab15d6d7da" />
+      <meta name="twitter:image" content="https://telzonacademy.in/media/telzon-academy-nagpur-share.jpg" />
       {/* Canonical */}
       <link rel="canonical" href="https://telzonacademy.in/blog" />
     </Helmet>
