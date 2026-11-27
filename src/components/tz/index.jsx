@@ -17,6 +17,7 @@ export const NAGPUR_AREAS = [
   'Dharampeth', 'Sitabuldi', 'Ramdaspeth', 'Sadar', 'Civil Lines',
   'Pratap Nagar', 'Itwari', 'Gandhibagh', 'Wardhaman Nagar', 'Manewada',
   'Hingna', 'Amravati Road', 'Wardha Road', 'Katol Road', 'Kamptee Road',
+  'Narendra Nagar', 'Deo Nagar', 'Dhantoli', 'Jaitala', 'Ayodhya Nagar', 'Dighori',
 ];
 const SLUGS = new Set(landingPages.map((p) => p.slug));
 export const areaSlug = (area) => {
@@ -55,6 +56,11 @@ const FOOTER_COURSES = [
   ['digital-marketing-course-in-nagpur', 'Digital Marketing Course in Nagpur'],
   ['ai-marketing-course-in-nagpur', 'AI Marketing (part of Digital Marketing & AI)'],
   ['commercial-ads-and-photography-course-in-nagpur', 'Commercial Ads & Photography Course'],
+  ['photography-course-in-nagpur', 'Photography Course'],
+  ['product-photography-course-in-nagpur', 'Product Photography Course'],
+  ['videography-and-ad-film-making-course-in-nagpur', 'Videography & Ad Film Making'],
+  ['video-editing-course-in-nagpur', 'Video Editing Course'],
+  ['content-creator-course-in-nagpur', 'Content Creator Course'],
   ['best-digital-marketing-course-in-nagpur', 'Best Digital Marketing Course in Nagpur'],
   ['digital-marketing-institute-in-nagpur', 'Digital Marketing Institute in Nagpur'],
   ['seo-course-in-nagpur', 'SEO Course in Nagpur'],
@@ -66,6 +72,12 @@ const FOOTER_COURSES = [
 ];
 const FOOTER_INSTITUTE = [
   ['digital-marketing-course-nagpur-questions-answered', '20 Questions Answered'],
+  ['local-seo-and-google-business-profile-course-in-nagpur', 'Local SEO & Google Business Profile'],
+  ['aeo-geo-ai-search-optimisation-course-in-nagpur', 'AEO & GEO (AI search)'],
+  ['branding-and-advertising-course-in-nagpur', 'Branding & Advertising'],
+  ['influencer-marketing-course-in-nagpur', 'Influencer Marketing'],
+  ['freelancing-digital-marketing-course-in-nagpur', 'Freelancing Skills'],
+  ['digital-marketing-course-for-business-owners-in-nagpur', 'For Business Owners'],
   ['digital-marketing-course-fees-in-nagpur', 'Course Fees in Nagpur'],
   ['digital-marketing-course-with-placement-nagpur', 'Course with Placement Assistance'],
   ['digital-marketing-course-for-beginners-nagpur', 'Course for Beginners'],

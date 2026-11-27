@@ -833,6 +833,904 @@ export const landingPages = [
     },
   },
   {
+    "slug": "photography-course-in-nagpur",
+    "metaTitle": "Photography Course in Nagpur — Commercial & Product | Telzon Academy",
+    "metaDescription": "Photography course in Nagpur at Chhatrapati Square: camera, lighting, product, fashion and food shoots, Lightroom and Photoshop. 90 days, ₹48,000 + GST.",
+    "metaKeywords": "photography course in Nagpur, photography classes Nagpur, DSLR course Nagpur, professional photography course Nagpur, photography institute Nagpur",
+    "ogTitle": "Photography Course in Nagpur — Telzon Academy",
+    "ogDescription": "Photography course in Nagpur at Chhatrapati Square: camera, lighting, product, fashion and food shoots, Lightroom and Photoshop. 90 days, ₹48,000 + GST.",
+    "headline": "Photography Course in Nagpur",
+    "subheadline": "Learn photography the way brands and businesses use it — camera, light, composition and editing — on real shoots at Chhatrapati Square.",
+    "bullets": [
+      "Camera fundamentals on DSLR, mirrorless and smartphone",
+      "Natural, studio and three-point lighting",
+      "Product, fashion, portrait, food and interiors shoots",
+      "Retouching in Lightroom and Photoshop",
+      "Pricing your work and dealing with clients",
+      "Live brand shoot for your portfolio",
+      "90 days · ₹48,000 + GST · free demo class"
+    ],
+    "intro": "The <strong>photography course in Nagpur</strong> at Telzon Academy is built around commercial work — the photos businesses actually pay for. You start with how a camera works: aperture, shutter speed, ISO, focus and lenses, on a DSLR, a mirrorless camera or your phone. Then you learn to control light, from window light and reflectors to studio strobes, softboxes and three-point setups that work on a small budget. Each skill is practised on real subjects: products on white and lifestyle backgrounds, fashion and portrait sessions, food and café shoots, and interiors for local businesses. You edit everything yourself in Lightroom and Photoshop, and learn how to price a shoot, handle a client brief and agree usage rights. The course ends with a live brand shoot that becomes the centre of your portfolio. Classes run at our Chhatrapati Square studio, next to the metro station, in weekday and weekend batches.",
+    "directAnswer": "Telzon Academy's photography course in Nagpur is part of the 90-day Commercial Ads & Photography course at Chhatrapati Square. It covers camera fundamentals, lighting, product, fashion, food and interiors photography, editing in Lightroom and Photoshop, and pricing client work, ending with a live brand shoot. The fee is ₹48,000 + GST.",
+    "courseFacts": {
+      "duration": "90 days",
+      "fees": "₹48,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend"
+      ],
+      "certifications": [
+        "Telzon Academy certificate",
+        "Portfolio + showreel"
+      ],
+      "mode": "Classroom and studio shoots, Chhatrapati Square, Nagpur",
+      "nextIntake": "Monthly batches"
+    },
+    "badge": "Commercial Ads & Photography course",
+    "price": "48000",
+    "timeRequired": "P90D",
+    "durationLabel": "90-day",
+    "durationLabelShort": "90 Days",
+    "chips": [
+      [
+        "",
+        "90 days"
+      ],
+      [
+        "",
+        "₹48K + GST"
+      ],
+      [
+        "",
+        "Live brand shoot"
+      ],
+      [
+        "",
+        "Portfolio + showreel"
+      ]
+    ],
+    "aboutFallback": "Telzon Academy is a Nagpur training institute at Chhatrapati Square, rated 4.9/5 by 200+ students. This skill is taught in the 90-day Commercial Ads & Photography course (₹48,000 + GST), with weekday and weekend batches and a free demo class.",
+    "curriculumNote": "Every module is practical: you shoot, edit and present real work, ending with a live brand project — a product shoot and a 30-second commercial — for your portfolio and showreel.",
+    "curriculumSubtitle": "90 days · camera, light, shoots, editing · live brand project",
+    "syllabus": [
+      {
+        "topic": "Camera fundamentals",
+        "items": [
+          "DSLR, mirrorless and smartphone controls",
+          "Aperture, shutter speed and ISO",
+          "Focus modes and lens choice",
+          "Composition and framing"
+        ]
+      },
+      {
+        "topic": "Lighting",
+        "items": [
+          "Window light and reflectors",
+          "Studio strobes and continuous light",
+          "Three-point and softbox setups",
+          "Low-budget lighting kits"
+        ]
+      },
+      {
+        "topic": "Commercial shoots",
+        "items": [
+          "Product on white and lifestyle",
+          "Fashion, portrait and founder shoots",
+          "Food and café photography",
+          "Interiors for local businesses"
+        ]
+      },
+      {
+        "topic": "Editing",
+        "items": [
+          "Lightroom colour and exposure",
+          "Photoshop retouching",
+          "AI background removal and Generative Fill",
+          "Exporting for web, print and marketplaces"
+        ]
+      },
+      {
+        "topic": "Working with clients",
+        "items": [
+          "Reading a brief and mood boards",
+          "Pricing and quotations",
+          "Usage rights",
+          "Portfolio and live brand shoot"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "product-photography-course-in-nagpur",
+    "metaTitle": "Product Photography Course in Nagpur — E-commerce Shoots | Telzon",
+    "metaDescription": "Product photography course in Nagpur: white-background and lifestyle shots for Amazon, Flipkart, Meesho and Instagram shops. ₹48,000 + GST, 90 days.",
+    "metaKeywords": "product photography course in Nagpur, e-commerce photography course, Amazon product photography training, catalogue photography Nagpur",
+    "ogTitle": "Product Photography Course in Nagpur — Telzon Academy",
+    "ogDescription": "Product photography course in Nagpur: white-background and lifestyle shots for Amazon, Flipkart, Meesho and Instagram shops. ₹48,000 + GST, 90 days.",
+    "headline": "Product Photography Course in Nagpur",
+    "subheadline": "Shoot the product photos online sellers need — clean white-background images, lifestyle scenes and flat lays — and learn to price catalogue work.",
+    "bullets": [
+      "White-background main images for Amazon, Flipkart and Meesho",
+      "Lifestyle and in-use product scenes",
+      "Lighting jewellery, glass, cosmetics and packaging",
+      "Flat lays for Instagram shops",
+      "Retouching and background removal",
+      "Pricing per product and catalogue shoots",
+      "90 days · ₹48,000 + GST"
+    ],
+    "intro": "The <strong>product photography course in Nagpur</strong> at Telzon Academy focuses on the images that sell products online. Marketplaces such as Amazon, Flipkart and Meesho expect a clean main image on a pure white background, followed by detail, scale and lifestyle shots — and Instagram shops need styled flat lays and in-use scenes. You learn to light the hardest subjects: reflective jewellery, glass bottles, glossy cosmetics and printed packaging, using softboxes, diffusion and reflectors to control highlights. You practise tabletop setups that fit a small studio or a home, then retouch, clean up dust and remove backgrounds in Photoshop, using AI tools carefully where they save time. Finally, you learn how product shoots are priced — per product, per angle or per catalogue — so you can quote local sellers and brands. Taught in the 90-day Commercial Ads & Photography course at Chhatrapati Square.",
+    "directAnswer": "Telzon Academy teaches product photography in Nagpur inside its 90-day Commercial Ads & Photography course (₹48,000 + GST). You learn white-background marketplace images, lifestyle and flat-lay shots, lighting for jewellery, glass and cosmetics, retouching and background removal, and how to price catalogue work.",
+    "courseFacts": {
+      "duration": "90 days",
+      "fees": "₹48,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend"
+      ],
+      "certifications": [
+        "Telzon Academy certificate",
+        "Portfolio + showreel"
+      ],
+      "mode": "Classroom and studio shoots, Chhatrapati Square, Nagpur",
+      "nextIntake": "Monthly batches"
+    },
+    "badge": "Commercial Ads & Photography course",
+    "price": "48000",
+    "timeRequired": "P90D",
+    "durationLabel": "90-day",
+    "durationLabelShort": "90 Days",
+    "chips": [
+      [
+        "",
+        "90 days"
+      ],
+      [
+        "",
+        "₹48K + GST"
+      ],
+      [
+        "",
+        "Live brand shoot"
+      ],
+      [
+        "",
+        "Portfolio + showreel"
+      ]
+    ],
+    "aboutFallback": "Telzon Academy is a Nagpur training institute at Chhatrapati Square, rated 4.9/5 by 200+ students. This skill is taught in the 90-day Commercial Ads & Photography course (₹48,000 + GST), with weekday and weekend batches and a free demo class.",
+    "curriculumNote": "Every module is practical: you shoot, edit and present real work, ending with a live brand project — a product shoot and a 30-second commercial — for your portfolio and showreel.",
+    "curriculumSubtitle": "90 days · e-commerce and catalogue photography · live brand project",
+    "syllabus": [
+      {
+        "topic": "Marketplace images",
+        "items": [
+          "Pure-white main images",
+          "Detail, scale and angle shots",
+          "Consistent catalogue lighting",
+          "Exports for Amazon, Flipkart and Meesho"
+        ]
+      },
+      {
+        "topic": "Lighting difficult products",
+        "items": [
+          "Jewellery and metal",
+          "Glass and liquids",
+          "Glossy cosmetics",
+          "Printed packaging"
+        ]
+      },
+      {
+        "topic": "Styling",
+        "items": [
+          "Flat lays for Instagram shops",
+          "Lifestyle and in-use scenes",
+          "Props and colour palettes",
+          "Shooting sets for ads"
+        ]
+      },
+      {
+        "topic": "Post-production",
+        "items": [
+          "Dust and blemish cleanup",
+          "Background removal",
+          "Colour matching across a catalogue",
+          "AI tools, checked by hand"
+        ]
+      },
+      {
+        "topic": "Selling the work",
+        "items": [
+          "Per-product and catalogue pricing",
+          "Briefs from sellers",
+          "Usage rights",
+          "Live product shoot for your portfolio"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "videography-and-ad-film-making-course-in-nagpur",
+    "metaTitle": "Videography & Ad Film Making Course in Nagpur | Telzon Academy",
+    "metaDescription": "Videography and ad film making course in Nagpur: script, storyboard, shooting, lighting, sound, directing and editing. Shoot a real commercial. ₹48,000 + GST.",
+    "metaKeywords": "videography course in Nagpur, ad film making course Nagpur, video production course Nagpur, filmmaking course Nagpur, commercial video course",
+    "ogTitle": "Videography & Ad Film Making Course in Nagpur — Telzon Academy",
+    "ogDescription": "Videography and ad film making course in Nagpur: script, storyboard, shooting, lighting, sound, directing and editing. Shoot a real commercial. ₹48,000 + GST.",
+    "headline": "Videography & Ad Film Making Course in Nagpur",
+    "subheadline": "Plan, shoot and edit short ad films for brands — from the script and storyboard to the final 30-second commercial.",
+    "bullets": [
+      "Scripts, storyboards and shot lists",
+      "Camera movement with gimbal and slider",
+      "Lighting and clean audio for video",
+      "Directing talent, props, location and crew",
+      "Editing, grading and sound",
+      "Formats for Reels, YouTube and Meta Ads",
+      "Shoot a real 30-second commercial"
+    ],
+    "intro": "The <strong>videography and ad film making course in Nagpur</strong> at Telzon Academy teaches you to produce the short commercials brands now run on Instagram, YouTube and Meta Ads. Pre-production comes first: turning a brief into a concept, writing the script, drawing a storyboard, and preparing a shot list and call sheet. On set you learn framing, camera movement with a gimbal and slider, lighting for video, and recording clean audio — the detail that separates professional ads from phone clips. You also practise directing talent and managing props, locations and a small crew. In post-production you edit, colour grade, design sound and add captions, then deliver versions for each platform. The video on our homepage shows students on exactly this kind of shoot at a local café. Taught in the 90-day Commercial Ads & Photography course at Chhatrapati Square.",
+    "directAnswer": "Telzon Academy's videography and ad film making training in Nagpur is part of the 90-day Commercial Ads & Photography course (₹48,000 + GST). It covers scripting, storyboards, shooting with gimbal and slider, lighting and audio, directing, editing, grading and platform formats, and ends with a real 30-second commercial.",
+    "courseFacts": {
+      "duration": "90 days",
+      "fees": "₹48,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend"
+      ],
+      "certifications": [
+        "Telzon Academy certificate",
+        "Portfolio + showreel"
+      ],
+      "mode": "Classroom and studio shoots, Chhatrapati Square, Nagpur",
+      "nextIntake": "Monthly batches"
+    },
+    "badge": "Commercial Ads & Photography course",
+    "price": "48000",
+    "timeRequired": "P90D",
+    "durationLabel": "90-day",
+    "durationLabelShort": "90 Days",
+    "chips": [
+      [
+        "",
+        "90 days"
+      ],
+      [
+        "",
+        "₹48K + GST"
+      ],
+      [
+        "",
+        "Live brand shoot"
+      ],
+      [
+        "",
+        "Portfolio + showreel"
+      ]
+    ],
+    "aboutFallback": "Telzon Academy is a Nagpur training institute at Chhatrapati Square, rated 4.9/5 by 200+ students. This skill is taught in the 90-day Commercial Ads & Photography course (₹48,000 + GST), with weekday and weekend batches and a free demo class.",
+    "curriculumNote": "Every module is practical: you shoot, edit and present real work, ending with a live brand project — a product shoot and a 30-second commercial — for your portfolio and showreel.",
+    "curriculumSubtitle": "90 days · pre-production, shooting, post · real commercial",
+    "syllabus": [
+      {
+        "topic": "Pre-production",
+        "items": [
+          "Brief to concept",
+          "Script and storyboard",
+          "Shot list and call sheet",
+          "Locations, props and talent"
+        ]
+      },
+      {
+        "topic": "Shooting",
+        "items": [
+          "Framing and lenses for video",
+          "Gimbal and slider movement",
+          "Lighting for video",
+          "Recording clean audio"
+        ]
+      },
+      {
+        "topic": "Directing on set",
+        "items": [
+          "Working with talent",
+          "Running a small crew",
+          "Continuity",
+          "Shooting product inserts and B-roll"
+        ]
+      },
+      {
+        "topic": "Post-production",
+        "items": [
+          "Editing in Premiere Pro and DaVinci Resolve",
+          "Colour grading",
+          "Sound design and music",
+          "Captions and titles"
+        ]
+      },
+      {
+        "topic": "Delivery",
+        "items": [
+          "Versions for Reels, YouTube and Meta Ads",
+          "3-second hooks",
+          "Export specs",
+          "30-second commercial for your showreel"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "video-editing-course-in-nagpur",
+    "metaTitle": "Video Editing Course in Nagpur — Premiere Pro & DaVinci | Telzon",
+    "metaDescription": "Video editing course in Nagpur: Premiere Pro, DaVinci Resolve, colour grading, sound, captions and AI-assisted editing for Reels, YouTube and ads.",
+    "metaKeywords": "video editing course in Nagpur, Premiere Pro course Nagpur, DaVinci Resolve course, reel editing course, video editing classes Nagpur",
+    "ogTitle": "Video Editing Course in Nagpur — Telzon Academy",
+    "ogDescription": "Video editing course in Nagpur: Premiere Pro, DaVinci Resolve, colour grading, sound, captions and AI-assisted editing for Reels, YouTube and ads.",
+    "headline": "Video Editing Course in Nagpur",
+    "subheadline": "Edit Reels, YouTube videos and ads that hold attention — cutting, pacing, colour, sound and captions in Premiere Pro and DaVinci Resolve.",
+    "bullets": [
+      "Story, pacing and cutting on rhythm",
+      "Premiere Pro and DaVinci Resolve workflows",
+      "Colour correction and grading",
+      "Sound design, music and captions",
+      "Titles and basic motion graphics",
+      "AI-assisted edits from transcripts",
+      "Exports for Reels, YouTube and ads"
+    ],
+    "intro": "The <strong>video editing course in Nagpur</strong> at Telzon Academy teaches editing as storytelling: choosing the strongest moments, cutting on rhythm, and pacing a Reel or ad so viewers keep watching. You work in Premiere Pro and DaVinci Resolve, learning project organisation, multicam and proxy workflows, colour correction and grading, and audio — cleaning dialogue, adding music and sound effects, and mixing levels. You add captions and titles, build simple motion graphics, and export correctly for Instagram Reels, YouTube and Meta Ads. AI is used where it genuinely saves time: turning a timestamped transcript into a cut list with Claude, then making and checking the edit yourself. All practice uses footage from real shoots, including commercials students film during the course. Editing is taught in the 90-day Commercial Ads & Photography course at Chhatrapati Square.",
+    "directAnswer": "Telzon Academy teaches video editing in Nagpur within the 90-day Commercial Ads & Photography course (₹48,000 + GST): Premiere Pro and DaVinci Resolve, pacing, colour grading, sound, captions, motion titles, AI-assisted edits from transcripts, and exports for Reels, YouTube and ads — using footage from real shoots.",
+    "courseFacts": {
+      "duration": "90 days",
+      "fees": "₹48,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend"
+      ],
+      "certifications": [
+        "Telzon Academy certificate",
+        "Portfolio + showreel"
+      ],
+      "mode": "Classroom and studio shoots, Chhatrapati Square, Nagpur",
+      "nextIntake": "Monthly batches"
+    },
+    "badge": "Commercial Ads & Photography course",
+    "price": "48000",
+    "timeRequired": "P90D",
+    "durationLabel": "90-day",
+    "durationLabelShort": "90 Days",
+    "chips": [
+      [
+        "",
+        "90 days"
+      ],
+      [
+        "",
+        "₹48K + GST"
+      ],
+      [
+        "",
+        "Live brand shoot"
+      ],
+      [
+        "",
+        "Portfolio + showreel"
+      ]
+    ],
+    "aboutFallback": "Telzon Academy is a Nagpur training institute at Chhatrapati Square, rated 4.9/5 by 200+ students. This skill is taught in the 90-day Commercial Ads & Photography course (₹48,000 + GST), with weekday and weekend batches and a free demo class.",
+    "curriculumNote": "Every module is practical: you shoot, edit and present real work, ending with a live brand project — a product shoot and a 30-second commercial — for your portfolio and showreel.",
+    "curriculumSubtitle": "90 days · editing, colour, sound · real footage",
+    "syllabus": [
+      {
+        "topic": "Editing fundamentals",
+        "items": [
+          "Story and structure",
+          "Cutting on rhythm",
+          "Pacing for retention",
+          "Hooks in the first 3 seconds"
+        ]
+      },
+      {
+        "topic": "Software workflows",
+        "items": [
+          "Premiere Pro projects",
+          "DaVinci Resolve edit page",
+          "Proxies and multicam",
+          "Organising footage"
+        ]
+      },
+      {
+        "topic": "Colour and sound",
+        "items": [
+          "Correction and grading",
+          "Dialogue cleanup",
+          "Music and sound effects",
+          "Mixing levels"
+        ]
+      },
+      {
+        "topic": "Finishing",
+        "items": [
+          "Captions and titles",
+          "Basic motion graphics",
+          "AI-assisted cut lists, checked by hand",
+          "Exports for Reels, YouTube and ads"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "content-creator-course-in-nagpur",
+    "metaTitle": "Content Creator Course in Nagpur — Reels, Scripts & AI | Telzon",
+    "metaDescription": "Content creator course in Nagpur: content strategy, hooks, scripting, phone shooting, Reel editing, AI tools and brand collaborations. 3 months, ₹25,000 + GST.",
+    "metaKeywords": "content creator course in Nagpur, digital creator course near me, content creation classes Nagpur, reels course Nagpur, influencer course Nagpur",
+    "ogTitle": "Content Creator Course in Nagpur — Telzon Academy",
+    "ogDescription": "Content creator course in Nagpur: content strategy, hooks, scripting, phone shooting, Reel editing, AI tools and brand collaborations. 3 months, ₹25,000 + GST.",
+    "headline": "Content Creator Course in Nagpur",
+    "subheadline": "Plan, shoot and edit content that grows an audience — and learn how creators work with brands — inside the Digital Marketing & AI course.",
+    "bullets": [
+      "Content pillars, research and calendars",
+      "Hooks, captions and scripts for Reels",
+      "Smartphone shooting: framing, light and audio",
+      "Editing with a Claude-assisted cut list",
+      "AI voice-overs and video with ElevenLabs and HeyGen",
+      "Creator collaborations and UGC",
+      "3 months · ₹25,000 + GST"
+    ],
+    "intro": "The <strong>content creator course in Nagpur</strong> at Telzon Academy is taught inside the 3-month Digital Marketing & AI course, so you learn to create content and to market it. You start with audience research, content pillars and a realistic content calendar, then write hooks, captions and scripts for Reels, educational posts and promotions. Shooting is done on a smartphone — framing, light, audio, shot lists and B-roll — and editing covers cuts, pacing, captions and export, using Claude to turn a transcript into a cut list before you make the edit. You also learn to scale output with AI: one brief turned into scripted, voiced drafts with ChatGPT, ElevenLabs and HeyGen, always with a review step before publishing. Creator collaborations, user-generated content and social search are covered too, along with the analytics that show what is working. If you want studio-level production, the Commercial Ads & Photography course goes further.",
+    "directAnswer": "At Telzon Academy, content creation is taught inside the 3-month Digital Marketing & AI course (₹25,000 + GST) at Chhatrapati Square: content strategy, hooks and scripts, phone shooting, Reel editing, AI tools such as ChatGPT, ElevenLabs and HeyGen, creator collaborations and analytics.",
+    "courseFacts": {
+      "duration": "3 months (72 sessions)",
+      "fees": "₹25,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend",
+        "Live online"
+      ],
+      "certifications": [
+        "Google Ads",
+        "Google Analytics",
+        "Meta Blueprint"
+      ],
+      "mode": "Classroom at Chhatrapati Square + live online",
+      "nextIntake": "Monthly batches"
+    }
+  },
+  {
+    "slug": "freelancing-digital-marketing-course-in-nagpur",
+    "metaTitle": "Freelancing Course in Nagpur — Digital Marketing Skills | Telzon",
+    "metaDescription": "Learn freelance digital marketing skills in Nagpur: SEO audits, Google & Meta Ads, content and AI, with a client-ready portfolio. 3 months, ₹25,000 + GST.",
+    "metaKeywords": "freelancing course in Nagpur, freelancing classes near me, freelance digital marketing course, learn freelancing Nagpur, digital marketing freelancer training",
+    "ogTitle": "Freelancing Course in Nagpur: Digital Marketing Skills — Telzon Academy",
+    "ogDescription": "Learn freelance digital marketing skills in Nagpur: SEO audits, Google & Meta Ads, content and AI, with a client-ready portfolio. 3 months, ₹25,000 + GST.",
+    "headline": "Freelancing Course in Nagpur: Digital Marketing Skills",
+    "subheadline": "Build the skills clients pay freelancers for — SEO, ads, content and AI workflows — and a portfolio that proves you can deliver.",
+    "bullets": [
+      "Skills clients hire for: SEO, Google Ads, Meta Ads, content",
+      "SEO and competitor audits you can sell",
+      "Landing pages, tracking and lead follow-up",
+      "AI workflows that let you deliver faster",
+      "Client-ready reports and a portfolio case study",
+      "Client presentations in career weeks",
+      "3 months · ₹25,000 + GST"
+    ],
+    "intro": "If you want to freelance, the <strong>Digital Marketing & AI course in Nagpur</strong> at Telzon Academy teaches the services local businesses most often buy from freelancers. You learn to run SEO and competitor audits with Semrush and Search Console, set up and optimise Google Search and Meta Ads campaigns with proper conversion tracking, build landing pages that turn clicks into enquiries, and connect enquiries to a CRM with automatic follow-ups. AI workflows with ChatGPT and Claude help you research, write and report faster, while you check the facts. The live project in month 3 ends with a client-ready report and a portfolio case study — exactly what a prospective client wants to see — and the career weeks include client and campaign presentations. There is no separate freelancing course: you build freelance-ready skills in the 3-month course at Chhatrapati Square.",
+    "directAnswer": "Telzon Academy doesn't run a separate freelancing course; its 3-month Digital Marketing & AI course (₹25,000 + GST) teaches the services clients hire freelancers for — SEO audits, Google and Meta Ads, landing pages, tracking, content and AI workflows — and ends with a client-ready report and portfolio case study.",
+    "courseFacts": {
+      "duration": "3 months (72 sessions)",
+      "fees": "₹25,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend",
+        "Live online"
+      ],
+      "certifications": [
+        "Google Ads",
+        "Google Analytics",
+        "Meta Blueprint"
+      ],
+      "mode": "Classroom at Chhatrapati Square + live online",
+      "nextIntake": "Monthly batches"
+    }
+  },
+  {
+    "slug": "branding-and-advertising-course-in-nagpur",
+    "metaTitle": "Branding & Advertising Course in Nagpur | Telzon Academy",
+    "metaDescription": "Branding and advertising course in Nagpur: brand identity, positioning, voice, traditional and digital advertising, buyer psychology. 3 months, ₹25,000 + GST.",
+    "metaKeywords": "branding and advertising course Nagpur, branding course in Nagpur, advertising course Nagpur, brand management classes near me, marketing and branding course",
+    "ogTitle": "Branding & Advertising Course in Nagpur — Telzon Academy",
+    "ogDescription": "Branding and advertising course in Nagpur: brand identity, positioning, voice, traditional and digital advertising, buyer psychology. 3 months, ₹25,000 + GST.",
+    "headline": "Branding & Advertising Course in Nagpur",
+    "subheadline": "Understand how brands are built and advertised — positioning, identity and voice, traditional and digital channels — before you run a single campaign.",
+    "bullets": [
+      "Marketing fundamentals: STP, marketing mix, customer journey",
+      "Brand identity, positioning, promise and voice",
+      "Branding vs. marketing vs. advertising",
+      "Print, outdoor, radio, TV and events",
+      "Buyer psychology, used ethically",
+      "Integrated campaign brief for a local business",
+      "3 months · ₹25,000 + GST"
+    ],
+    "intro": "The <strong>branding and advertising course in Nagpur</strong> at Telzon Academy starts where good marketing starts: with the brand. In the first two weeks of the Digital Marketing & AI course you learn segmentation, targeting and positioning, the marketing mix and the customer journey; brand identity, promise, voice and consistency; and how branding, marketing, promotion and advertising differ and support each other. You study traditional channels — print, outdoor, radio, TV, events, direct mail and in-store — and how to plan message, reach, frequency, budget and response tracking. Buyer psychology covers motivation, trust, social proof, urgency and price anchoring, and how to use them ethically. You then write an integrated campaign brief for a real local business that combines traditional and digital channels. The rest of the 3-month course turns that brand thinking into content, search, ads and a live project.",
+    "directAnswer": "Telzon Academy teaches branding and advertising in Nagpur in the first two weeks of its 3-month Digital Marketing & AI course (₹25,000 + GST): positioning, brand identity and voice, traditional and digital advertising, buyer psychology and an integrated campaign brief, followed by digital channels and a live project.",
+    "courseFacts": {
+      "duration": "3 months (72 sessions)",
+      "fees": "₹25,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend",
+        "Live online"
+      ],
+      "certifications": [
+        "Google Ads",
+        "Google Analytics",
+        "Meta Blueprint"
+      ],
+      "mode": "Classroom at Chhatrapati Square + live online",
+      "nextIntake": "Monthly batches"
+    }
+  },
+  {
+    "slug": "influencer-marketing-course-in-nagpur",
+    "metaTitle": "Influencer Marketing Course in Nagpur — Creators & UGC | Telzon",
+    "metaDescription": "Influencer marketing course in Nagpur: creator collaborations, UGC, social search and briefs, plus the content and ads skills behind them. ₹25,000 + GST.",
+    "metaKeywords": "influencer marketing course Nagpur, influencer marketing classes near me, UGC course, creator marketing course Nagpur, social media influencer training",
+    "ogTitle": "Influencer Marketing Course in Nagpur — Telzon Academy",
+    "ogDescription": "Influencer marketing course in Nagpur: creator collaborations, UGC, social search and briefs, plus the content and ads skills behind them. ₹25,000 + GST.",
+    "headline": "Influencer Marketing Course in Nagpur",
+    "subheadline": "Learn how brands work with creators — choosing partners, briefing UGC and measuring results — alongside the content and ad skills that make it pay off.",
+    "bullets": [
+      "Creator collaborations and user-generated content",
+      "Social search and first-party data",
+      "Briefs creators can deliver against",
+      "Turning UGC into ads",
+      "Content pillars, hooks and Reels",
+      "Measuring reach, leads and cost per lead",
+      "3 months · ₹25,000 + GST"
+    ],
+    "intro": "The <strong>influencer marketing course in Nagpur</strong> at Telzon Academy covers the creator side of modern marketing inside the 3-month Digital Marketing & AI course. In week 6 you study creator collaborations, user-generated content, social search and first-party data — how brands find suitable creators, write briefs they can deliver against, agree what will be posted, and reuse UGC in their own content and ads. Because influencer campaigns only work when the rest of the funnel does, the course also teaches content pillars, hooks and Reels production, landing pages, tracking, and Meta Ads, so you can see whether a creator partnership produced reach, enquiries or sales. You practise on a live project for a real business and present the results in a client-ready report.",
+    "directAnswer": "Telzon Academy teaches influencer marketing in Nagpur within its 3-month Digital Marketing & AI course (₹25,000 + GST): creator collaborations, UGC, social search and creator briefs, plus the content, tracking and Meta Ads skills needed to measure results on a live project.",
+    "courseFacts": {
+      "duration": "3 months (72 sessions)",
+      "fees": "₹25,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend",
+        "Live online"
+      ],
+      "certifications": [
+        "Google Ads",
+        "Google Analytics",
+        "Meta Blueprint"
+      ],
+      "mode": "Classroom at Chhatrapati Square + live online",
+      "nextIntake": "Monthly batches"
+    }
+  },
+  {
+    "slug": "digital-marketing-course-for-business-owners-in-nagpur",
+    "metaTitle": "Digital Marketing Course for Business Owners in Nagpur | Telzon",
+    "metaDescription": "Digital marketing for business owners in Nagpur: Google Business Profile, ads, WhatsApp follow-up and content — using your own business as the live project.",
+    "metaKeywords": "digital marketing course for business owners Nagpur, digital marketing for small business Nagpur, learn marketing for my business, business marketing course Nagpur",
+    "ogTitle": "Digital Marketing Course for Business Owners in Nagpur — Telzon Academy",
+    "ogDescription": "Digital marketing for business owners in Nagpur: Google Business Profile, ads, WhatsApp follow-up and content — using your own business as the live project.",
+    "headline": "Digital Marketing Course for Business Owners in Nagpur",
+    "subheadline": "Learn to bring in enquiries for your own business — local search, ads, WhatsApp follow-up and content — with your business as the live project.",
+    "bullets": [
+      "Google Business Profile, Maps and reviews",
+      "Google Search and Meta Ads you can manage",
+      "Landing pages and enquiry forms",
+      "WhatsApp, email and CRM follow-up",
+      "Content you can produce in-house with AI",
+      "Your business as the live project",
+      "Weekend and live online batches"
+    ],
+    "intro": "The <strong>digital marketing course for business owners in Nagpur</strong> at Telzon Academy is the same 3-month Digital Marketing & AI course, applied to your own business. You learn to appear in local search and Google Maps with a well-managed Google Business Profile and reviews, run Google Search and Meta Ads with conversion tracking so you know what each enquiry costs, and build a landing page and enquiry form that convert. Enquiries flow into a Sheet or CRM with WhatsApp and email follow-ups, so fewer leads go cold. AI tools help you write posts, scripts and replies in-house, with you checking tone and facts. Your business becomes the live project in month 3, so the campaigns, tracking and reports you build are yours to keep using. Weekend and live online batches fit around running a business.",
+    "directAnswer": "Business owners in Nagpur can take Telzon Academy's 3-month Digital Marketing & AI course (₹25,000 + GST) using their own business as the live project: Google Business Profile and reviews, Google and Meta Ads with tracking, landing pages, WhatsApp and CRM follow-up, and AI-assisted content.",
+    "courseFacts": {
+      "duration": "3 months (72 sessions)",
+      "fees": "₹25,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend",
+        "Live online"
+      ],
+      "certifications": [
+        "Google Ads",
+        "Google Analytics",
+        "Meta Blueprint"
+      ],
+      "mode": "Classroom at Chhatrapati Square + live online",
+      "nextIntake": "Monthly batches"
+    }
+  },
+  {
+    "slug": "local-seo-and-google-business-profile-course-in-nagpur",
+    "metaTitle": "Local SEO & Google Business Profile Course in Nagpur | Telzon",
+    "metaDescription": "Local SEO course in Nagpur: Google Business Profile, Maps rankings, reviews, citations and local landing pages, plus technical and on-page SEO. ₹25,000 + GST.",
+    "metaKeywords": "local SEO course Nagpur, Google Business Profile course, Google My Business training Nagpur, Google Maps ranking course, local SEO Nagpur",
+    "ogTitle": "Local SEO & Google Business Profile Course in Nagpur — Telzon Academy",
+    "ogDescription": "Local SEO course in Nagpur: Google Business Profile, Maps rankings, reviews, citations and local landing pages, plus technical and on-page SEO. ₹25,000 + GST.",
+    "headline": "Local SEO & Google Business Profile Course in Nagpur",
+    "subheadline": "Get local businesses found on Google Maps and 'near me' searches — Google Business Profile, reviews, citations and local landing pages.",
+    "bullets": [
+      "Google Business Profile setup and optimisation",
+      "Maps visibility and 'near me' searches",
+      "Reviews: getting and replying to them",
+      "Citations and directory listings",
+      "Local landing pages that convert",
+      "On-page, technical and off-page SEO",
+      "Live SEO and competitor audit"
+    ],
+    "intro": "The <strong>local SEO and Google Business Profile course in Nagpur</strong> at Telzon Academy teaches how businesses appear in Google Maps and 'near me' results. You learn to set up and optimise a Google Business Profile — categories, services, photos, posts and Q&A — and to build a steady flow of genuine reviews and replies. You add consistent citations on directories, create local landing pages for the areas a business serves, and connect it all to on-page SEO, technical SEO (sitemaps, indexing, speed and mobile) and off-page SEO. You finish with a full SEO and competitor audit using Semrush, Google Search Console and a site crawler. Local SEO is taught in week 5 of the 3-month Digital Marketing & AI course, alongside AEO and GEO for AI search in week 6.",
+    "directAnswer": "Telzon Academy teaches local SEO and Google Business Profile in Nagpur in week 5 of its 3-month Digital Marketing & AI course (₹25,000 + GST): profile optimisation, Maps visibility, reviews, citations, local landing pages and technical SEO, finishing with a live SEO and competitor audit.",
+    "courseFacts": {
+      "duration": "3 months (72 sessions)",
+      "fees": "₹25,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend",
+        "Live online"
+      ],
+      "certifications": [
+        "Google Ads",
+        "Google Analytics",
+        "Meta Blueprint"
+      ],
+      "mode": "Classroom at Chhatrapati Square + live online",
+      "nextIntake": "Monthly batches"
+    }
+  },
+  {
+    "slug": "aeo-geo-ai-search-optimisation-course-in-nagpur",
+    "metaTitle": "AEO & GEO Course in Nagpur — Rank in AI Search | Telzon Academy",
+    "metaDescription": "Learn AEO and GEO in Nagpur: get found in Google AI Overviews, ChatGPT, Gemini and Perplexity with direct answers and original evidence. ₹25,000 + GST.",
+    "metaKeywords": "AEO course, GEO course, AI search optimisation course Nagpur, answer engine optimisation, generative engine optimisation, ChatGPT SEO course",
+    "ogTitle": "AEO & GEO Course in Nagpur: Rank in AI Search — Telzon Academy",
+    "ogDescription": "Learn AEO and GEO in Nagpur: get found in Google AI Overviews, ChatGPT, Gemini and Perplexity with direct answers and original evidence. ₹25,000 + GST.",
+    "headline": "AEO & GEO Course in Nagpur: Rank in AI Search",
+    "subheadline": "Learn how AI assistants and Google's AI features choose what to cite — and how to make your pages the answer.",
+    "bullets": [
+      "AEO: finding real questions and writing direct answers",
+      "GEO: how AI assistants choose and cite sources",
+      "Original evidence that earns citations",
+      "Structured data and llms.txt basics",
+      "Testing answers in ChatGPT, Gemini and Perplexity",
+      "Built on SEO fundamentals and local SEO",
+      "3 months · ₹25,000 + GST"
+    ],
+    "intro": "The <strong>AEO and GEO course in Nagpur</strong> at Telzon Academy teaches search for the AI era. AEO (Answer Engine Optimisation) is about identifying the real questions people ask, writing direct, well-structured answers and checking how search engines surface them. GEO (Generative Engine Optimisation) looks at how AI assistants such as ChatGPT, Gemini and Perplexity, and Google's AI features, choose and cite sources — comparing AI answers, checking which sources are cited, and improving your content with original evidence such as first-hand data, examples and clear facts. You also cover structured data and machine-readable summaries such as llms.txt. Because AI search builds on classic search, these week-6 topics sit on top of keyword research, on-page, technical and local SEO taught in week 5 of the 3-month Digital Marketing & AI course.",
+    "directAnswer": "Telzon Academy teaches AEO and GEO in Nagpur in week 6 of its 3-month Digital Marketing & AI course (₹25,000 + GST): finding real questions, writing direct answers, how ChatGPT, Gemini, Perplexity and Google's AI features cite sources, and adding original evidence — built on the SEO skills taught in week 5.",
+    "courseFacts": {
+      "duration": "3 months (72 sessions)",
+      "fees": "₹25,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend",
+        "Live online"
+      ],
+      "certifications": [
+        "Google Ads",
+        "Google Analytics",
+        "Meta Blueprint"
+      ],
+      "mode": "Classroom at Chhatrapati Square + live online",
+      "nextIntake": "Monthly batches"
+    }
+  },
+  {
+    "slug": "digital-marketing-course-in-narendra-nagar-nagpur",
+    "metaTitle": "Digital Marketing Course in Narendra Nagar, Nagpur | Telzon Academy",
+    "metaDescription": "Digital marketing course near Narendra Nagar, Nagpur at Chhatrapati Square. 3-month AI-first course, ₹25,000 + GST. Free demo — call +91 93071 89776.",
+    "metaKeywords": "digital marketing course in Narendra Nagar, digital marketing institute in Narendra Nagar Nagpur, digital marketing classes near Narendra Nagar, digital marketing course near Narendra Nagar",
+    "ogTitle": "Digital Marketing Course in Narendra Nagar, Nagpur — Telzon Academy",
+    "ogDescription": "Digital marketing course near Narendra Nagar, Nagpur at Chhatrapati Square. 3-month AI-first course, ₹25,000 + GST. Free demo — call +91 93071 89776.",
+    "headline": "Digital Marketing Course in Narendra Nagar, Nagpur",
+    "subheadline": "For students and professionals in Narendra Nagar: Telzon Academy is at Chhatrapati Square, right beside Narendra Nagar on Wardha Road.",
+    "bullets": [
+      "Chhatrapati Square metro station on the Orange Line serves Narendra Nagar directly, and the square has a bus station next to the metro.",
+      "3-month Digital Marketing & AI course — ₹25,000 + GST",
+      "Weekday, weekend and live online batches",
+      "SEO, Google Ads, Meta Ads, AI tools and a live project",
+      "Free demo class — call or WhatsApp +91 93071 89776"
+    ],
+    "intro": "If you live or work in <strong>Narendra Nagar, Nagpur</strong>, the nearest Telzon Academy classroom is at Chhatrapati Square, right beside Narendra Nagar on Wardha Road. Chhatrapati Square metro station on the Orange Line serves Narendra Nagar directly, and the square has a bus station next to the metro. Most students from Narendra Nagar walk, cycle or take a short ride. The course is the same 3-month Digital Marketing & AI program taught to every batch: 72 sessions covering marketing and branding, content, SEO and local SEO, AEO and GEO for AI search, AI workflows with ChatGPT and Claude, Google Ads, Meta Ads, a live project and three weeks of interview preparation. The fee is ₹25,000 + GST with no-cost EMI. If travelling every day is difficult, the live online batch follows the same syllabus. Call or WhatsApp +91 93071 89776 to book a free demo class.",
+    "directAnswer": "Students from Narendra Nagar attend Telzon Academy at Chhatrapati Square, Nagpur. Chhatrapati Square metro station on the Orange Line serves Narendra Nagar directly, and the square has a bus station next to the metro. The 3-month Digital Marketing & AI course costs ₹25,000 + GST, with weekday, weekend and live online batches and a free demo class.",
+    "courseFacts": {
+      "duration": "3 months (72 sessions)",
+      "fees": "₹25,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend",
+        "Live online"
+      ],
+      "certifications": [
+        "Google Ads",
+        "Google Analytics",
+        "Meta Blueprint"
+      ],
+      "mode": "Classroom at Chhatrapati Square + live online",
+      "nextIntake": "Monthly batches"
+    },
+    "badge": "Near you in Nagpur"
+  },
+  {
+    "slug": "digital-marketing-course-in-deo-nagar-nagpur",
+    "metaTitle": "Digital Marketing Course in Deo Nagar, Nagpur | Telzon Academy",
+    "metaDescription": "Digital marketing course near Deo Nagar, Nagpur at Chhatrapati Square. 3-month AI-first course, ₹25,000 + GST. Free demo — call +91 93071 89776.",
+    "metaKeywords": "digital marketing course in Deo Nagar, digital marketing institute in Deo Nagar Nagpur, digital marketing classes near Deo Nagar, digital marketing course near Deo Nagar",
+    "ogTitle": "Digital Marketing Course in Deo Nagar, Nagpur — Telzon Academy",
+    "ogDescription": "Digital marketing course near Deo Nagar, Nagpur at Chhatrapati Square. 3-month AI-first course, ₹25,000 + GST. Free demo — call +91 93071 89776.",
+    "headline": "Digital Marketing Course in Deo Nagar, Nagpur",
+    "subheadline": "For students and professionals in Deo Nagar: Telzon Academy is at Chhatrapati Square, about half a kilometre from Deo Nagar.",
+    "bullets": [
+      "Chhatrapati Square is roughly 0.6 km from Deo Nagar, a few minutes by road.",
+      "3-month Digital Marketing & AI course — ₹25,000 + GST",
+      "Weekday, weekend and live online batches",
+      "SEO, Google Ads, Meta Ads, AI tools and a live project",
+      "Free demo class — call or WhatsApp +91 93071 89776"
+    ],
+    "intro": "If you live or work in <strong>Deo Nagar, Nagpur</strong>, the nearest Telzon Academy classroom is at Chhatrapati Square, about half a kilometre from Deo Nagar. Chhatrapati Square is roughly 0.6 km from Deo Nagar, a few minutes by road. Ajni Square and Chhatrapati Square metro stations are both close by on the Orange Line. The course is the same 3-month Digital Marketing & AI program taught to every batch: 72 sessions covering marketing and branding, content, SEO and local SEO, AEO and GEO for AI search, AI workflows with ChatGPT and Claude, Google Ads, Meta Ads, a live project and three weeks of interview preparation. The fee is ₹25,000 + GST with no-cost EMI. If travelling every day is difficult, the live online batch follows the same syllabus. Call or WhatsApp +91 93071 89776 to book a free demo class.",
+    "directAnswer": "Students from Deo Nagar attend Telzon Academy at Chhatrapati Square, Nagpur. Chhatrapati Square is roughly 0.6 km from Deo Nagar, a few minutes by road. The 3-month Digital Marketing & AI course costs ₹25,000 + GST, with weekday, weekend and live online batches and a free demo class.",
+    "courseFacts": {
+      "duration": "3 months (72 sessions)",
+      "fees": "₹25,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend",
+        "Live online"
+      ],
+      "certifications": [
+        "Google Ads",
+        "Google Analytics",
+        "Meta Blueprint"
+      ],
+      "mode": "Classroom at Chhatrapati Square + live online",
+      "nextIntake": "Monthly batches"
+    },
+    "badge": "Near you in Nagpur"
+  },
+  {
+    "slug": "digital-marketing-course-in-dhantoli-nagpur",
+    "metaTitle": "Digital Marketing Course in Dhantoli, Nagpur | Telzon Academy",
+    "metaDescription": "Digital marketing course near Dhantoli, Nagpur at Chhatrapati Square. 3-month AI-first course, ₹25,000 + GST. Free demo — call +91 93071 89776.",
+    "metaKeywords": "digital marketing course in Dhantoli, digital marketing institute in Dhantoli Nagpur, digital marketing classes near Dhantoli, digital marketing institute in Dhantoli Nagpur with phone number",
+    "ogTitle": "Digital Marketing Course in Dhantoli, Nagpur — Telzon Academy",
+    "ogDescription": "Digital marketing course near Dhantoli, Nagpur at Chhatrapati Square. 3-month AI-first course, ₹25,000 + GST. Free demo — call +91 93071 89776.",
+    "headline": "Digital Marketing Course in Dhantoli, Nagpur",
+    "subheadline": "For students and professionals in Dhantoli: Telzon Academy is at Chhatrapati Square, two metro stops from Dhantoli on the Orange Line.",
+    "bullets": [
+      "From Dhantoli, Rahate Colony metro station is about a 5-minute walk; ride two stops south via Ajni Square to Chhatrapati Square.",
+      "3-month Digital Marketing & AI course — ₹25,000 + GST",
+      "Weekday, weekend and live online batches",
+      "SEO, Google Ads, Meta Ads, AI tools and a live project",
+      "Free demo class — call or WhatsApp +91 93071 89776"
+    ],
+    "intro": "If you live or work in <strong>Dhantoli, Nagpur</strong>, the nearest Telzon Academy classroom is at Chhatrapati Square, two metro stops from Dhantoli on the Orange Line. From Dhantoli, Rahate Colony metro station is about a 5-minute walk; ride two stops south via Ajni Square to Chhatrapati Square. Dhantoli is also connected to Chhatrapati Square directly along Wardha Road. The course is the same 3-month Digital Marketing & AI program taught to every batch: 72 sessions covering marketing and branding, content, SEO and local SEO, AEO and GEO for AI search, AI workflows with ChatGPT and Claude, Google Ads, Meta Ads, a live project and three weeks of interview preparation. The fee is ₹25,000 + GST with no-cost EMI. If travelling every day is difficult, the live online batch follows the same syllabus. Call or WhatsApp +91 93071 89776 to book a free demo class.",
+    "directAnswer": "Students from Dhantoli attend Telzon Academy at Chhatrapati Square, Nagpur. From Dhantoli, Rahate Colony metro station is about a 5-minute walk; ride two stops south via Ajni Square to Chhatrapati Square. The 3-month Digital Marketing & AI course costs ₹25,000 + GST, with weekday, weekend and live online batches and a free demo class.",
+    "courseFacts": {
+      "duration": "3 months (72 sessions)",
+      "fees": "₹25,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend",
+        "Live online"
+      ],
+      "certifications": [
+        "Google Ads",
+        "Google Analytics",
+        "Meta Blueprint"
+      ],
+      "mode": "Classroom at Chhatrapati Square + live online",
+      "nextIntake": "Monthly batches"
+    },
+    "badge": "Near you in Nagpur"
+  },
+  {
+    "slug": "digital-marketing-course-in-jaitala-nagpur",
+    "metaTitle": "Digital Marketing Course in Jaitala, Nagpur | Telzon Academy",
+    "metaDescription": "Digital marketing course near Jaitala, Nagpur at Chhatrapati Square. 3-month AI-first course, ₹25,000 + GST. Free demo — call +91 93071 89776.",
+    "metaKeywords": "digital marketing course in Jaitala, digital marketing institute in Jaitala Nagpur, digital marketing classes near Jaitala, digital marketing institute in Jaitala Nagpur with phone number",
+    "ogTitle": "Digital Marketing Course in Jaitala, Nagpur — Telzon Academy",
+    "ogDescription": "Digital marketing course near Jaitala, Nagpur at Chhatrapati Square. 3-month AI-first course, ₹25,000 + GST. Free demo — call +91 93071 89776.",
+    "headline": "Digital Marketing Course in Jaitala, Nagpur",
+    "subheadline": "For students and professionals in Jaitala: Telzon Academy is at Chhatrapati Square, a short ride from Jaitala via Ring Road.",
+    "bullets": [
+      "Jaitala connects to Chhatrapati Square by road via Ring Road and Wardha Road; Bansi Nagar is the nearest metro station to Jaitala.",
+      "3-month Digital Marketing & AI course — ₹25,000 + GST",
+      "Weekday, weekend and live online batches",
+      "SEO, Google Ads, Meta Ads, AI tools and a live project",
+      "Free demo class — call or WhatsApp +91 93071 89776"
+    ],
+    "intro": "If you live or work in <strong>Jaitala, Nagpur</strong>, the nearest Telzon Academy classroom is at Chhatrapati Square, a short ride from Jaitala via Ring Road. Jaitala connects to Chhatrapati Square by road via Ring Road and Wardha Road; Bansi Nagar is the nearest metro station to Jaitala. Many Jaitala students also choose the weekend or live online batch. The course is the same 3-month Digital Marketing & AI program taught to every batch: 72 sessions covering marketing and branding, content, SEO and local SEO, AEO and GEO for AI search, AI workflows with ChatGPT and Claude, Google Ads, Meta Ads, a live project and three weeks of interview preparation. The fee is ₹25,000 + GST with no-cost EMI. If travelling every day is difficult, the live online batch follows the same syllabus. Call or WhatsApp +91 93071 89776 to book a free demo class.",
+    "directAnswer": "Students from Jaitala attend Telzon Academy at Chhatrapati Square, Nagpur. Jaitala connects to Chhatrapati Square by road via Ring Road and Wardha Road; Bansi Nagar is the nearest metro station to Jaitala. The 3-month Digital Marketing & AI course costs ₹25,000 + GST, with weekday, weekend and live online batches and a free demo class.",
+    "courseFacts": {
+      "duration": "3 months (72 sessions)",
+      "fees": "₹25,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend",
+        "Live online"
+      ],
+      "certifications": [
+        "Google Ads",
+        "Google Analytics",
+        "Meta Blueprint"
+      ],
+      "mode": "Classroom at Chhatrapati Square + live online",
+      "nextIntake": "Monthly batches"
+    },
+    "badge": "Near you in Nagpur"
+  },
+  {
+    "slug": "digital-marketing-course-in-ayodhya-nagar-nagpur",
+    "metaTitle": "Digital Marketing Course in Ayodhya Nagar, Nagpur | Telzon Academy",
+    "metaDescription": "Digital marketing course near Ayodhya Nagar, Nagpur at Chhatrapati Square. 3-month AI-first course, ₹25,000 + GST. Free demo — call +91 93071 89776.",
+    "metaKeywords": "digital marketing course in Ayodhya Nagar, digital marketing institute in Ayodhya Nagar Nagpur, digital marketing classes near Ayodhya Nagar, digital marketing institute in Ayodhya Nagar Nagpur with phone number",
+    "ogTitle": "Digital Marketing Course in Ayodhya Nagar, Nagpur — Telzon Academy",
+    "ogDescription": "Digital marketing course near Ayodhya Nagar, Nagpur at Chhatrapati Square. 3-month AI-first course, ₹25,000 + GST. Free demo — call +91 93071 89776.",
+    "headline": "Digital Marketing Course in Ayodhya Nagar, Nagpur",
+    "subheadline": "For students and professionals in Ayodhya Nagar: Telzon Academy is at Chhatrapati Square, reachable from Ayodhya Nagar in south-east Nagpur.",
+    "bullets": [
+      "Ayodhya Nagar (PIN 440024) is in south-east Nagpur near Manewada and Dighori; students reach Chhatrapati Square by road towards Wardha Road.",
+      "3-month Digital Marketing & AI course — ₹25,000 + GST",
+      "Weekday, weekend and live online batches",
+      "SEO, Google Ads, Meta Ads, AI tools and a live project",
+      "Free demo class — call or WhatsApp +91 93071 89776"
+    ],
+    "intro": "If you live or work in <strong>Ayodhya Nagar, Nagpur</strong>, the nearest Telzon Academy classroom is at Chhatrapati Square, reachable from Ayodhya Nagar in south-east Nagpur. Ayodhya Nagar (PIN 440024) is in south-east Nagpur near Manewada and Dighori; students reach Chhatrapati Square by road towards Wardha Road. The weekend and live online batches suit students who prefer fewer trips across the city. The course is the same 3-month Digital Marketing & AI program taught to every batch: 72 sessions covering marketing and branding, content, SEO and local SEO, AEO and GEO for AI search, AI workflows with ChatGPT and Claude, Google Ads, Meta Ads, a live project and three weeks of interview preparation. The fee is ₹25,000 + GST with no-cost EMI. If travelling every day is difficult, the live online batch follows the same syllabus. Call or WhatsApp +91 93071 89776 to book a free demo class.",
+    "directAnswer": "Students from Ayodhya Nagar attend Telzon Academy at Chhatrapati Square, Nagpur. Ayodhya Nagar (PIN 440024) is in south-east Nagpur near Manewada and Dighori; students reach Chhatrapati Square by road towards Wardha Road. The 3-month Digital Marketing & AI course costs ₹25,000 + GST, with weekday, weekend and live online batches and a free demo class.",
+    "courseFacts": {
+      "duration": "3 months (72 sessions)",
+      "fees": "₹25,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend",
+        "Live online"
+      ],
+      "certifications": [
+        "Google Ads",
+        "Google Analytics",
+        "Meta Blueprint"
+      ],
+      "mode": "Classroom at Chhatrapati Square + live online",
+      "nextIntake": "Monthly batches"
+    },
+    "badge": "Near you in Nagpur"
+  },
+  {
+    "slug": "digital-marketing-course-in-dighori-nagpur",
+    "metaTitle": "Digital Marketing Course in Dighori, Nagpur | Telzon Academy",
+    "metaDescription": "Digital marketing course near Dighori, Nagpur at Chhatrapati Square. 3-month AI-first course, ₹25,000 + GST. Free demo — call +91 93071 89776.",
+    "metaKeywords": "digital marketing course in Dighori, digital marketing institute in Dighori Nagpur, digital marketing classes near Dighori, digital marketing institute in Dighori Nagpur with phone number",
+    "ogTitle": "Digital Marketing Course in Dighori, Nagpur — Telzon Academy",
+    "ogDescription": "Digital marketing course near Dighori, Nagpur at Chhatrapati Square. 3-month AI-first course, ₹25,000 + GST. Free demo — call +91 93071 89776.",
+    "headline": "Digital Marketing Course in Dighori, Nagpur",
+    "subheadline": "For students and professionals in Dighori: Telzon Academy is at Chhatrapati Square, reachable from Dighori via Ring Road.",
+    "bullets": [
+      "Dighori sits on the Ring Road and the Nagpur–Chandrapur road in south-east Nagpur; students reach Chhatrapati Square by road along the Ring Road towards Wardha Road.",
+      "3-month Digital Marketing & AI course — ₹25,000 + GST",
+      "Weekday, weekend and live online batches",
+      "SEO, Google Ads, Meta Ads, AI tools and a live project",
+      "Free demo class — call or WhatsApp +91 93071 89776"
+    ],
+    "intro": "If you live or work in <strong>Dighori, Nagpur</strong>, the nearest Telzon Academy classroom is at Chhatrapati Square, reachable from Dighori via Ring Road. Dighori sits on the Ring Road and the Nagpur–Chandrapur road in south-east Nagpur; students reach Chhatrapati Square by road along the Ring Road towards Wardha Road. The weekend and live online batches suit students who prefer fewer trips across the city. The course is the same 3-month Digital Marketing & AI program taught to every batch: 72 sessions covering marketing and branding, content, SEO and local SEO, AEO and GEO for AI search, AI workflows with ChatGPT and Claude, Google Ads, Meta Ads, a live project and three weeks of interview preparation. The fee is ₹25,000 + GST with no-cost EMI. If travelling every day is difficult, the live online batch follows the same syllabus. Call or WhatsApp +91 93071 89776 to book a free demo class.",
+    "directAnswer": "Students from Dighori attend Telzon Academy at Chhatrapati Square, Nagpur. Dighori sits on the Ring Road and the Nagpur–Chandrapur road in south-east Nagpur; students reach Chhatrapati Square by road along the Ring Road towards Wardha Road. The 3-month Digital Marketing & AI course costs ₹25,000 + GST, with weekday, weekend and live online batches and a free demo class.",
+    "courseFacts": {
+      "duration": "3 months (72 sessions)",
+      "fees": "₹25,000 + GST",
+      "batches": [
+        "Weekday",
+        "Weekend",
+        "Live online"
+      ],
+      "certifications": [
+        "Google Ads",
+        "Google Analytics",
+        "Meta Blueprint"
+      ],
+      "mode": "Classroom at Chhatrapati Square + live online",
+      "nextIntake": "Monthly batches"
+    },
+    "badge": "Near you in Nagpur"
+  },
+  {
     slug: 'performance-marketing-course-nagpur',
     metaTitle: 'Performance Marketing Course in Nagpur | Telzon Academy',
     metaDescription: 'Learn performance marketing in Nagpur at Telzon Academy. Master paid ads, ROI tracking, Meta Ads and Google Ads with real campaigns.',

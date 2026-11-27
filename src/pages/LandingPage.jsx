@@ -20,7 +20,8 @@ import { TzHeader, TzFooter, AdmissionForm, AskBox, CurriculumList, FaqBlock, Ar
 const NAGPUR_AREAS = [
   'Dharampeth','Sitabuldi','Ramdaspeth','Sadar','Civil Lines',
   'Pratap Nagar','Itwari','Gandhibagh','Wardhaman Nagar','Manewada',
-  'Hingna','Amravati Road','Wardha Road','Katol Road','Kamptee Road'
+  'Hingna','Amravati Road','Wardha Road','Katol Road','Kamptee Road',
+  'Narendra Nagar','Deo Nagar','Dhantoli','Jaitala','Ayodhya Nagar','Dighori'
 ];
 
 // ─── Upgrad-style syllabus modules ───────────────────────────────────────────
@@ -417,9 +418,16 @@ function RelatedPagesSection({ currentSlug }) {
 // Related pages: the cluster canonical first, then a deterministic slice
 // (same order as the prerendered HTML) — dense internal linking.
 function relatedPages(currentSlug) {
+  const current = landingPages.find((p) => p.slug === currentSlug) || {};
+  // Photography-cluster pages (own syllabus) link to each other first.
+  if (current.syllabus) {
+    const cluster = landingPages.filter((p) => p.syllabus && p.slug !== currentSlug);
+    const rest = landingPages.filter((p) => !p.syllabus && p.slug !== currentSlug);
+    return [...cluster, ...rest].slice(0, 9);
+  }
   const CANON = 'digital-marketing-course-in-nagpur';
   const canonicalEntry = landingPages.find((p) => p.slug === CANON);
-  const others = landingPages.filter((p) => p.slug !== currentSlug && p.slug !== CANON);
+  const others = landingPages.filter((p) => p.slug !== currentSlug && p.slug !== CANON && !p.syllabus);
   return currentSlug === CANON ? others.slice(0, 9) : [canonicalEntry, ...others].filter(Boolean).slice(0, 9);
 }
 
