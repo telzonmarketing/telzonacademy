@@ -41,7 +41,7 @@ const NAGPUR_AREAS = [
 // real Google Business Profile reviews at ~4.9 avg, so the aggregate is
 // claimed real data. TODO: repopulate REVIEWS[] with real GBP review
 // names + dates + text so Google renders ★★★★★ SERP snippets legitimately.
-const AGGREGATE_RATING = { value: '4.9', count: 212 };
+const AGGREGATE_RATING = { value: '5.0', count: 92 }; // matches the Google Business Profile (27 Nov 2026)
 
 const escapeHtml = (s = '') => String(s)
   .replace(/&/g, '&amp;')

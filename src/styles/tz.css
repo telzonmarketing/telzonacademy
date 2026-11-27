@@ -282,11 +282,31 @@
 .tz-art-sec li::marker{font-weight:700}
 .tz-art-sec .tz-fit,.tz-art-sec .tz-pills-list{list-style:none}
 
-/* Google Business Profile map */
-.tz-map{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:24px;margin-top:40px;border:1.5px solid #000;border-radius:18px;overflow:hidden;background:#fff}
-.tz-map-text{padding:24px}
-.tz-map-text h3{font-size:22px;font-weight:700;margin-bottom:10px !important}
-.tz-map-text p{color:#333;font-size:16px;margin-bottom:8px !important}
-.tz-map-text .tz-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.tz-map iframe{width:100%;height:100%;min-height:320px;border:0;filter:grayscale(1)}
-@media(max-width:720px){.tz-map{grid-template-columns:minmax(0,1fr)}.tz-map iframe{min-height:260px}}
+/* Location: compact map + collapsed area list */
+.tz-loc{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px;align-items:start}
+.tz-map{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);border:1.5px solid #000;border-radius:16px;overflow:hidden;background:#fff}
+.tz-map-text{padding:18px 20px}
+.tz-map-text h3{font-size:18px;font-weight:700;margin-bottom:6px !important}
+.tz-map-text p{color:#333;font-size:14px;margin-bottom:4px !important}
+.tz-map-text .tz-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tz-map-text .tz-btn{min-height:40px;padding:0 16px;font-size:14px}
+.tz-map iframe{display:block;width:100%;height:100%;min-height:190px;border:0;filter:grayscale(1)}
+.tz-areas{border:1.5px solid #000;border-radius:16px;padding:14px 18px}
+.tz-areas summary{cursor:pointer;font-weight:600;font-size:15px;display:flex;justify-content:space-between;gap:12px;list-style:none}
+.tz-areas summary::-webkit-details-marker{display:none}
+.tz-areas summary::after{content:"+";font-weight:700}
+.tz-areas[open] summary::after{content:"–"}
+.tz-areas summary span{color:#666;font-weight:500;margin-left:auto}
+.tz-areas p{font-size:14px;color:#555;margin:10px 0 6px !important}
+.tz-areas ul{list-style:none;padding:0;margin:0;columns:3;column-gap:16px;font-size:14px}
+.tz-areas li{padding:3px 0;break-inside:avoid}
+.tz-areas a{color:#000}
+.tz-fareas summary{cursor:pointer;color:inherit;font-size:14px;margin-bottom:6px}
+@media(max-width:900px){.tz-loc{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){
+  .tz-map{grid-template-columns:minmax(0,1fr)}
+  .tz-map iframe{min-height:170px;height:170px}
+  .tz-areas ul{columns:2}
+}
+.tz-areas{margin:0}
+.tz-areas summary{color:#000}

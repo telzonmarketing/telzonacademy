@@ -110,10 +110,13 @@ export function TzFooter() {
           </nav>
           <nav aria-label="Areas in Nagpur">
             <h4>Classes near you in Nagpur</h4>
-            {NAGPUR_AREAS.map((a) => {
-              const s = areaSlug(a);
-              return s ? <a key={a} href={`/pages/${s}/`}>{a}</a> : null;
-            })}
+            <details className="tz-fareas">
+              <summary>Areas we serve</summary>
+              {NAGPUR_AREAS.map((a) => {
+                const s = areaSlug(a);
+                return s ? <a key={a} href={`/pages/${s}/`}>{a}</a> : null;
+              })}
+            </details>
           </nav>
           <nav aria-label="Institute">
             <h4>Institute</h4>
@@ -311,8 +314,8 @@ export function MapBlock() {
     <div className="tz-map" id="location">
       <div className="tz-map-text">
         <h3>Visit Telzon Academy</h3>
-        <p>Chhatrapati Square, Nagpur, Maharashtra — next to Chhatrapati Square metro station (Orange Line).</p>
-        <p>Open Monday to Saturday, 9 AM – 8 PM.</p>
+        <p>Chhatrapati Square, Nagpur — beside the Orange Line metro station.</p>
+        <p>Mon–Sat, 9 AM – 8 PM</p>
         <div className="tz-btns">
           <a className="tz-btn tz-btn-dark" href={GBP_CID_URL} target="_blank" rel="noopener">Get directions</a>
           <a className="tz-btn" href={`tel:${PHONE_TEL}`}>Call {PHONE}</a>
@@ -331,18 +334,27 @@ export function MapBlock() {
 
 // ─── Nagpur areas ──────────────────────────────────────────────────────────
 export function AreasBlock({ keyword = 'Digital marketing course' }) {
+  const photo = /photo|video|film|editing|commercial/i.test(keyword);
+  const areaLinks = NAGPUR_AREAS.map((a) => [a, areaSlug(a)]).filter(([, s]) => s);
   return (
     <section className="tz-band-sm" style={{ borderTop: '1.5px solid #000' }}>
       <div className="tz-wrap">
         <h2 className="tz-h2" style={{ fontSize: 'clamp(26px,3.4vw,36px)' }}>{keyword} near you in Nagpur</h2>
-        <p className="tz-intro">Searching for a digital marketing course near me in Nagpur? Classes run at Chhatrapati Square, easy to reach from every part of the city, with weekday, weekend and live online batches. Pick your area for local details.</p>
-        <div className="tz-pills">
-          {NAGPUR_AREAS.map((a) => {
-            const s = areaSlug(a);
-            return s ? <a key={a} href={`/pages/${s}/`}>{a}</a> : null;
-          })}
+        <p className="tz-intro">
+          {photo
+            ? 'Looking for a photography or ad film making course near me in Nagpur? Classes and studio shoots run at Chhatrapati Square, easy to reach from every part of the city, with weekday and weekend batches.'
+            : 'Searching for a digital marketing course near me in Nagpur? Classes run at Chhatrapati Square, easy to reach from every part of the city, with weekday, weekend and live online batches.'}
+        </p>
+        <div className="tz-loc">
+          <MapBlock />
+          <details className="tz-areas">
+            <summary>Areas we serve in Nagpur <span>{areaLinks.length} areas</span></summary>
+            <p>Digital marketing and photography students join from across Nagpur, including:</p>
+            <ul>
+              {areaLinks.map(([a, s]) => <li key={a}><a href={`/pages/${s}/`}>{a}</a></li>)}
+            </ul>
+          </details>
         </div>
-        <MapBlock />
       </div>
     </section>
   );
