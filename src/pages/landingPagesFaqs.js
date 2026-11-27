@@ -43,10 +43,10 @@ export const PAGE_FAQS = {
     { q: 'Where are classes held?', a: 'At Telzon Academy, Chhatrapati Square, Nagpur. Call or WhatsApp +91-9307189776 to book a free demo class.' },
   ],
   'ai-marketing-course-in-nagpur': [
-    { q: 'What is the AI marketing course in Nagpur?', a: 'A 3-month classroom course at Telzon Academy, Chhatrapati Square, that teaches digital marketing with AI built in: AI for SEO and AI search, Meta and Google Ads, content and video, and marketing automation.' },
+    { q: 'Is AI marketing a separate course?', a: 'No. AI marketing is part of the 3-month Digital Marketing & AI course at Telzon Academy, Chhatrapati Square, which teaches digital marketing with AI built in: AI for SEO and AI search, Meta and Google Ads, content and video, and marketing automation.' },
     { q: 'Which AI tools will I learn?', a: 'ChatGPT, Claude, Gemini, ElevenLabs, HeyGen, Canva AI and AI features inside Meta Ads Manager and Google Ads, always with a human reviewing output before it goes live.' },
     { q: 'Do I need coding or technical knowledge?', a: 'No. The course is designed for students, graduates, working professionals and business owners with no coding background.' },
-    { q: 'What is the fee for the AI marketing course?', a: '₹25,000 + GST for the full 3-month program, with no-cost EMI available.' },
+    { q: 'What is the fee to learn AI marketing?', a: 'AI marketing is included in the Digital Marketing & AI course: ₹25,000 + GST for the full 3-month program, with no-cost EMI available.' },
     { q: 'How is AI marketing different from a regular digital marketing course?', a: 'Every module uses AI on real tasks — writing, video, ad testing, reporting and automation — so you learn to produce more work, faster, while checking quality and accuracy yourself.' },
     { q: 'How do I join?', a: 'Book a free demo class from this page or call/WhatsApp +91-9307189776.' },
   ],

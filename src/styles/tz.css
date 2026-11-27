@@ -100,6 +100,7 @@
 .tz-mods h3{font:600 19px/1.3 Inter,sans-serif;letter-spacing:-.01em;margin-bottom:8px}
 .tz-mods p{color:var(--muted);font-size:15px}
 .tz-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tz-cards-2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .tz-card{border:1.5px solid #000;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;background:#fff;color:#000}
 .tz-card:hover{background:#fafafa}
 .tz-card h3{font-size:22px}
@@ -220,6 +221,7 @@
   .tz-compare .tz-row .tz-them::before{content:"Other institutes: ";font-weight:600}
 }
 @media(max-width:560px){
+  .tz-cards-2{grid-template-columns:minmax(0,1fr)}
   .tz-mods,.tz-cards,.tz-posts,.tz-related,.tz-fgrid{grid-template-columns:minmax(0,1fr)}
   .tz-facts b{font-size:26px}
 }

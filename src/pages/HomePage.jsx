@@ -140,16 +140,11 @@ export default function HomePage() {
           <section className="tz-band tz-soft" id="courses">
             <div className="tz-wrap">
               <h2 className="tz-h2">Our courses</h2>
-              <p className="tz-intro">Choose the program that fits your goal. Every course includes a free demo class.</p>
-              <div className="tz-cards">
+              <p className="tz-intro">Two programs, both with a free demo class. AI marketing is part of the Digital Marketing & AI course.</p>
+              <div className="tz-cards tz-cards-2">
                 <a className="tz-card" href="/pages/digital-marketing-course-in-nagpur">
                   <h3>Digital Marketing & AI</h3>
-                  <p>Marketing, branding, content, SEO, AEO/GEO, AI workflows, Google Ads, Meta Ads, a live project and interview preparation.</p>
-                  <div className="tz-meta"><span>3 months</span><span>₹25,000 + GST</span></div>
-                </a>
-                <a className="tz-card" href="/pages/ai-marketing-course-in-nagpur">
-                  <h3>AI Marketing</h3>
-                  <p>Digital marketing with AI in every step: ChatGPT, Claude, ElevenLabs, HeyGen, AI search and marketing automation.</p>
+                  <p>Marketing, branding, content, SEO, AEO/GEO, Google Ads, Meta Ads, a live project and interview preparation — with AI marketing built in: ChatGPT, Claude, ElevenLabs, HeyGen, AI search and automation.</p>
                   <div className="tz-meta"><span>3 months</span><span>₹25,000 + GST</span></div>
                 </a>
                 <a className="tz-card" href="/pages/commercial-ads-and-photography-course-in-nagpur">

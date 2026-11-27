@@ -51,7 +51,7 @@ export function TzHeader() {
 // ─── Footer (all course + every locality page linked) ──────────────────────
 const FOOTER_COURSES = [
   ['digital-marketing-course-in-nagpur', 'Digital Marketing Course in Nagpur'],
-  ['ai-marketing-course-in-nagpur', 'AI Marketing Course in Nagpur'],
+  ['ai-marketing-course-in-nagpur', 'AI Marketing (part of Digital Marketing & AI)'],
   ['commercial-ads-and-photography-course-in-nagpur', 'Commercial Ads & Photography Course'],
   ['best-digital-marketing-course-in-nagpur', 'Best Digital Marketing Course in Nagpur'],
   ['digital-marketing-institute-in-nagpur', 'Digital Marketing Institute in Nagpur'],
