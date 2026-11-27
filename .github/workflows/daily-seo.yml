@@ -71,6 +71,8 @@ jobs:
           host = site_url.replace("https://", "").replace("http://", "").split("/")[0]
           key = os.environ["INDEXNOW_KEY"]
           sitemap = open("public/sitemap.xml", encoding="utf-8").read()
+          if os.path.exists("public/sitemap-careers.xml"):
+              sitemap += open("public/sitemap-careers.xml", encoding="utf-8").read()
           urls = re.findall(r"<loc>\s*([^<]+)\s*</loc>", sitemap)
 
           payload = {

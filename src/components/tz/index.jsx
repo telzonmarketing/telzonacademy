@@ -41,6 +41,7 @@ export function TzHeader() {
           <a className="tz-link" href="/pages/digital-marketing-course-in-nagpur">Courses</a>
           <a className="tz-link" href="/pages/digital-marketing-course-fees-in-nagpur">Fees</a>
           <a className="tz-link" href="/pages/commercial-ads-and-photography-course-in-nagpur">Photography</a>
+          <a className="tz-link" href="/careers/best-career-options-2027/">Career Guide</a>
           <a className="tz-link" href="/pages/digital-marketing-course-nagpur-questions-answered">FAQ</a>
           <a className="tz-link" href="/blog">Blog</a>
           <button type="button" className="tz-link" onClick={openMap}>Location</button>
@@ -116,6 +117,10 @@ export function TzFooter() {
               <a key={s} href={`/pages/${s}`}>{label}</a>
             ))}
             <a href="/blog">Blog</a>
+            <a href="/careers/best-career-options-2027/">Career Guide 2027</a>
+            <a href="/careers/ai-creative-strategist/">AI Creative Strategist career</a>
+            <a href="/careers/ai-search-visibility-specialist/">GEO / AI search career</a>
+            <a href="/careers/ai-marketing-automation-specialist/">Marketing automation career</a>
             <a href="/lead-generation-package">Book a free demo</a>
             <a href="https://www.telzonmarketing.in/telzon-best-digital-marketing-agency-nagpur.html" target="_blank" rel="noopener">Telzon Marketing — agency</a>
           </nav>

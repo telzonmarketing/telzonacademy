@@ -27,6 +27,7 @@ import GlobalSeo from '@/components/GlobalSeo';
 import LandingPage from '@/pages/LandingPage';
 import HomePage from '@/pages/HomePage';
 import NotFoundPage from '@/pages/NotFoundPage';
+import CareersPage from '@/pages/CareersPage';
 import TrackingScripts from '@/components/TrackingScripts';
 import LeadGenerationPage from '@/pages/LeadGenerationPage';
 import WatchDemoPage from '@/pages/WatchDemoPage';
@@ -62,6 +63,8 @@ function App() {
         <Route path="/watch-demo" element={<WatchDemoPage />} />
         {/* Dynamic landing pages for keyword-targeted content */}
         <Route path="/pages/:slug" element={<LandingPage />} />
+        <Route path="/careers" element={<Navigate to="/careers/best-career-options-2027/" replace />} />
+        <Route path="/careers/:slug" element={<CareersPage />} />
 
         {/* Admin */}
         <Route path="/admin/login" element={<AdminLogin />} />

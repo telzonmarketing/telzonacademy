@@ -795,6 +795,22 @@ const LandingPage = () => {
             </section>
           )}
 
+          {/* ── Career guide links (digital marketing pages only) ── */}
+          {!page.syllabus && (
+            <section className="tz-band-sm" style={{ borderTop: '1.5px solid #000' }}>
+              <div className="tz-wrap">
+                <h2 className="tz-h2" style={{ fontSize: 'clamp(26px,3.4vw,36px)' }}>Where this course can take you in 2027</h2>
+                <p className="tz-intro">AI is creating new specialisations inside digital marketing. Compare six career options, the skills each needs and a first portfolio project.</p>
+                <div className="tz-pills">
+                  <a href="/careers/best-career-options-2027/">Best career options in 2027</a>
+                  <a href="/careers/ai-creative-strategist/">AI Creative Strategist</a>
+                  <a href="/careers/ai-search-visibility-specialist/">AI Search Visibility (GEO) Specialist</a>
+                  <a href="/careers/ai-marketing-automation-specialist/">AI Marketing Automation Specialist</a>
+                </div>
+              </div>
+            </section>
+          )}
+
           {/* ── FAQ (FAQPage schema is in the head above) ── */}
           <FaqBlock faqs={faqs} title="Frequently asked questions" />
 

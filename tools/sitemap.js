@@ -16,6 +16,7 @@
 import { writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { landingPages } from '../src/pages/landingPagesConfig.js';
+import { GUIDE_SLUG, CAREERS, CAREERS_UPDATED, careerPath } from '../src/data/careers.js';
 
 export const SITE = 'https://telzonacademy.in';
 
@@ -110,11 +111,37 @@ ${urls.join('\n')}
 `;
 }
 
+// Separate sitemap for the career guide + career pages (/careers/<slug>/).
+// Listed in robots.txt next to sitemap.xml; submit it in Search Console too.
+export function buildCareersSitemapXml() {
+  const rows = [[GUIDE_SLUG, '0.9'], ...CAREERS.map((c) => [c.slug, c.status === 'listed' ? '0.8' : '0.7'])];
+  const urls = rows.map(([slug, pr]) =>
+    `  <url><loc>${xmlEscape(SITE + careerPath(slug))}</loc><lastmod>${CAREERS_UPDATED}</lastmod><changefreq>monthly</changefreq><priority>${pr}</priority></url>`);
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.join('\n')}
+</urlset>
+`;
+}
+
+// Sitemap index pointing at both files (optional single submission in Search Console).
+export function buildSitemapIndexXml() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>${SITE}/sitemap.xml</loc><lastmod>${CONTENT_UPDATED}</lastmod></sitemap>
+  <sitemap><loc>${SITE}/sitemap-careers.xml</loc><lastmod>${CAREERS_UPDATED}</lastmod></sitemap>
+</sitemapindex>
+`;
+}
+
 // CLI: node tools/sitemap.js <output path>
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const out = process.argv[2] || 'public/sitemap.xml';
   const blogs = await fetchPublishedBlogs();
   const xml = buildSitemapXml(blogs);
   await writeFile(out, xml);
+  const dir = out.replace(/[^/]*$/, '');
+  await writeFile(`${dir}sitemap-careers.xml`, buildCareersSitemapXml());
+  await writeFile(`${dir}sitemap-index.xml`, buildSitemapIndexXml());
   console.log(`[sitemap] wrote ${out}: ${landingPages.length} landing pages, ${blogs.length} blog posts`);
 }

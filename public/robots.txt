@@ -104,6 +104,7 @@ Disallow: /admin/
 
 # ── Sitemaps ────────────────────────────────────────────────────────────────
 Sitemap: https://telzonacademy.in/sitemap.xml
+Sitemap: https://telzonacademy.in/sitemap-careers.xml
 
 # ── LLM-friendly briefing ───────────────────────────────────────────────────
 # Site content also available as: https://telzonacademy.in/llms.txt

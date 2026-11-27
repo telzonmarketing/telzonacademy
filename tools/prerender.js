@@ -20,7 +20,8 @@ import { fileURLToPath } from 'node:url';
 import { landingPages } from '../src/pages/landingPagesConfig.js';
 import { PAGE_FAQS } from '../src/pages/landingPagesFaqs.js';
 import { SYLLABUS, COURSE_FORMAT } from '../src/data/syllabus.js';
-import { buildSitemapXml, fetchPublishedBlogs } from './sitemap.js';
+import { buildSitemapXml, buildCareersSitemapXml, buildSitemapIndexXml, fetchPublishedBlogs } from './sitemap.js';
+import { GUIDE, GUIDE_SLUG, CAREERS, STATUS_LABEL, careerBySlug, careerPath, careerSchemas, COURSE_URL } from '../src/data/careers.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -423,6 +424,104 @@ function blogContent() {
     </section>`;
 }
 
+// ── Career guide + career pages: full article copy in the static HTML ──
+const faqHtml = (faqs) => `
+    <section>
+      <h2>Frequently asked questions</h2>${faqs.map((f) => `
+      <h3>${escapeHtml(f.q)}</h3>
+      <p>${escapeHtml(f.a)}</p>`).join('')}
+    </section>`;
+const crumbHtml = (role) => `<p><a href="/">Home</a> / ${role ? `<a href="${careerPath(GUIDE_SLUG)}">Career Guide</a> / ${escapeHtml(role)}` : 'Career Guide'}</p>`;
+const demoHtml = (text) => `
+    <section>
+      <h2>Learn these skills at Telzon Academy</h2>
+      <p>${escapeHtml(text)}</p>
+      <p>The 3-month Digital Marketing &amp; AI course runs at Chhatrapati Square, Nagpur, with weekday, weekend and live online batches. Fee: ₹25,000 + GST, with no-cost EMI. <a href="${COURSE_URL}">See the digital marketing course in Nagpur</a>.</p>
+      <p><a href="/lead-generation-package">Book a Free Demo Class</a> or call <a href="tel:+919307189776">+91-9307189776</a>.</p>
+    </section>`;
+
+function careerGuideContent() {
+  const g = GUIDE;
+  return `
+    <article>
+      ${crumbHtml()}
+      <h1>${escapeHtml(g.h1)}</h1>
+      <p>${escapeHtml(g.opening)}</p>
+      <section>
+        <h2>Compare six AI and marketing careers</h2>
+        <table>
+          <thead><tr><th>Career</th><th>Who it suits</th><th>Core skill</th><th>Status</th></tr></thead>
+          <tbody>${CAREERS.map((c) => `
+            <tr><td><a href="${careerPath(c.slug)}">${escapeHtml(c.role)}</a></td><td>${escapeHtml(c.suits)}</td><td>${escapeHtml(c.coreSkill)}</td><td>${escapeHtml(STATUS_LABEL[c.status])}</td></tr>`).join('')}
+          </tbody>
+        </table>
+      </section>
+      <section>
+        <h2>Which career fits your strengths?</h2>
+        <ul>${g.fit.map(([k, why, slug]) => `
+          <li><strong>${escapeHtml(k)}</strong> → <a href="${careerPath(slug)}">${escapeHtml(careerBySlug(slug).role)}</a>. ${escapeHtml(why)}</li>`).join('')}
+        </ul>
+      </section>
+      <section>
+        <h2>What should beginners learn first?</h2>
+        <p>Every career on this page sits on the same marketing foundation. Learn these five first — AI makes each one faster, but it can’t choose for you.</p>
+        <ol>${g.foundation.map(([k, v]) => `<li><strong>${escapeHtml(k)}.</strong> ${escapeHtml(v)}</li>`).join('')}</ol>
+        <ul>${CAREERS.map((c) => `<li><a href="${careerPath(c.slug)}#roadmap">${escapeHtml(c.role)} — beginner roadmap</a></li>`).join('')}</ul>
+      </section>
+      <section>
+        <h2>Are there any AI-proof careers in 2027?</h2>
+        <p>${escapeHtml(g.resilientAnswer)}</p>
+      </section>${faqHtml(g.faqs)}${demoHtml('The first month of the course covers the shared foundation — marketing, branding, copywriting, landing pages and measurement. Month two adds SEO, AEO and GEO, AI workflows with ChatGPT and Claude, no-code automation, and Google and Meta Ads. Month three is a live project and interview preparation.')}
+    </article>`;
+}
+
+function careerContent(c) {
+  const pairs = (rows) => `<dl>${rows.map(([k, v]) => `<dt>${escapeHtml(k)}</dt><dd>${escapeHtml(v)}</dd>`).join('')}</dl>`;
+  const links = [...c.searchLinks, ...c.hiring].map((l) => `<li><a href="${escapeHtml(l.url)}" rel="noopener nofollow">${escapeHtml(l.label)}</a></li>`).join('');
+  return `
+    <article>
+      ${crumbHtml(c.role)}
+      <p>${escapeHtml(STATUS_LABEL[c.status])}</p>
+      <h1>${escapeHtml(c.h1)}</h1>
+      <p>${escapeHtml(c.answer)}</p>
+      <section>
+        <h2>What you do on the job</h2>
+        <ul>${c.tasks.map(([k, v]) => `<li><strong>${escapeHtml(k)}.</strong> ${escapeHtml(v)}</li>`).join('')}</ul>
+      </section>
+      <section>
+        <h2>Skills and tools</h2>
+        ${pairs(c.tools)}
+        ${c.googleNote ? `<p>${escapeHtml(c.googleNote)} Source: <a href="${c.googleSource.url}">${escapeHtml(c.googleSource.label)}</a>.</p>` : ''}
+      </section>
+      <section id="roadmap">
+        <h2>Beginner roadmap</h2>
+        <ol>
+          <li><strong>Learn the marketing foundation.</strong> ${escapeHtml(c.roadmap.foundation)}</li>
+          <li><strong>Do a guided exercise.</strong> ${escapeHtml(c.roadmap.guided)}</li>
+          <li><strong>Build an independent portfolio project.</strong> ${escapeHtml(c.roadmap.project)}</li>
+        </ol>
+      </section>
+      <section>
+        <h2>${escapeHtml(c.example.title)}</h2>
+        ${pairs(c.example.rows)}
+        <p>${escapeHtml(c.example.note)}</p>
+      </section>
+      <section>
+        <h2>Where to look for work</h2>
+        <p>${c.status === 'emerging' ? `${escapeHtml(c.role)} is an emerging specialization. Today the work usually sits inside these job titles:` : 'Search for these related job titles:'} ${escapeHtml(c.titles.join(', '))}.</p>
+        <ul>${links}</ul>
+      </section>${faqHtml(c.faqs)}
+      <section>
+        <h2>Next step</h2>
+        <ul>
+          <li><a href="${careerPath(GUIDE_SLUG)}">Compare all six careers in the 2027 career guide</a></li>${c.related.map(careerBySlug).map((o) => `
+          <li><a href="${careerPath(o.slug)}">${escapeHtml(o.h1)}</a></li>`).join('')}
+          <li><a href="${COURSE_URL}">Digital marketing course in Nagpur — Telzon Academy</a></li>
+        </ul>
+      </section>${demoHtml(c.telzon)}
+    </article>`;
+}
+
 function stripTags(html) {
   return String(html).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ');
 }
@@ -558,11 +657,27 @@ async function main() {
     count++;
   }
 
+  // 5) /careers/<slug>/ — career guide + six career pages (trailing-slash canonical:
+  //    Apache serves the folder's index.html and 301s the no-slash form to it).
+  for (const slug of [GUIDE_SLUG, ...CAREERS.map((c) => c.slug)]) {
+    const c = careerBySlug(slug);
+    const title = c ? c.title : GUIDE.title;
+    const description = c ? c.metaDescription : GUIDE.metaDescription;
+    await writeRoute(baseHtml, `careers/${slug}/index.html`, {
+      title, description, canonical: `${SITE}${careerPath(slug)}`,
+      ogType: 'article', content: c ? careerContent(c) : careerGuideContent(),
+      extraJsonLd: careerSchemas(slug),
+    });
+    count++;
+  }
+  await writeFile(resolve(DIST, 'sitemap-careers.xml'), buildCareersSitemapXml());
+  await writeFile(resolve(DIST, 'sitemap-index.xml'), buildSitemapIndexXml());
+
   // 5) sitemap.xml — every landing page (courses + all locality pages) and
   //    every published blog post. Overwrites the copied public/sitemap.xml.
   await writeFile(resolve(DIST, 'sitemap.xml'), buildSitemapXml(blogs));
 
-  console.log(`[prerender] wrote ${count} static HTML files under dist/ (${blogs.length} blog posts) + sitemap.xml`);
+  console.log(`[prerender] wrote ${count} static HTML files under dist/ (${blogs.length} blog posts) + sitemap.xml, sitemap-careers.xml, sitemap-index.xml`);
 }
 
 main().catch(err => {
