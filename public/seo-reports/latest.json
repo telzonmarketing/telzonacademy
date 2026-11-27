@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-11-27T08:48:14.975Z",
+  "timestamp": "2026-11-27T09:18:49.026Z",
   "summary": {
     "pagesFound": 1,
-    "issuesFound": 4,
+    "issuesFound": 5,
     "critical": 2,
-    "important": 1,
+    "important": 2,
     "low": 1,
-    "issuesFixed": 4,
+    "issuesFixed": 5,
     "pagesSubmitted": 0,
     "avgPosition": null,
     "totalKeywords": 0
@@ -47,6 +47,16 @@
       "fix": "ADD_META_DESCRIPTIONS"
     },
     {
+      "type": "MISSING_CANONICAL",
+      "severity": "important",
+      "title": "1 pages missing canonical URL",
+      "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
+      "affectedUrls": [
+        "https://telzonacademy.in/"
+      ],
+      "fix": "ADD_CANONICAL_TAGS"
+    },
+    {
       "type": "ERROR_PAGES",
       "severity": "critical",
       "title": "1 pages return error status codes",
@@ -75,6 +85,12 @@
       "issue": "1 pages missing meta description",
       "description": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
       "instruction": "Manual fix required for: MISSING_META_DESCRIPTION. See audit report for details."
+    },
+    {
+      "issue": "1 pages missing canonical URL",
+      "description": "Add canonical tags to all pages via Next.js metadata",
+      "code": "// app/layout.tsx — add canonical to root layout\nexport const metadata = {\n  alternates: {\n    canonical: '/',  // relative canonicals work in Next.js 13+\n  },\n}\n\n// app/blog/[slug]/page.tsx — dynamic canonical\nexport async function generateMetadata({ params }) {\n  return {\n    alternates: {\n      canonical: `https://yoursite.com/blog/${params.slug}`,\n    },\n  }\n}",
+      "fileChange": null
     },
     {
       "issue": "1 pages return error status codes",
@@ -106,15 +122,15 @@
   "contentBriefs": [],
   "healthCheck": null,
   "indexNow": {
-    "submitted": 64,
+    "submitted": 89,
     "failed": 0,
     "statusCode": 200,
     "keyLocation": "https://telzonacademy.in/c218d7307cc58cf886898bc873656853.txt",
-    "note": "Notified Bing/Yandex/Naver of 64 URLs"
+    "note": "Notified Bing/Yandex/Naver of 89 URLs"
   },
   "bingSubmissions": {
-    "submitted": 35,
-    "failed": 29
+    "submitted": 0,
+    "failed": 89
   },
   "issueTracker": {
     "issues": {
@@ -1870,9 +1886,9 @@
         "severity": "important",
         "title": "1 pages missing canonical URL",
         "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
-        "status": "resolved",
+        "status": "escalated",
         "detectedAt": "2026-05-15T19:50:51.103Z",
-        "lastSeenAt": "2026-09-19T07:19:32.280Z",
+        "lastSeenAt": "2026-11-27T09:18:49.024Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:50:51.103Z",
@@ -1908,14 +1924,19 @@
             "timestamp": "2026-09-19T07:19:32.280Z",
             "strategy": "Add canonical tags to all pages via Next.js metadata",
             "file": null
+          },
+          {
+            "timestamp": "2026-11-27T09:18:49.024Z",
+            "strategy": "Add canonical tags to all pages via Next.js metadata",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:50:51.103Z",
         "resolvedAt": "2026-09-20T05:57:42.273Z",
         "daysToResolve": 127,
-        "regressedAt": "2026-09-19T07:19:32.280Z",
-        "escalatedAt": "2026-09-19T07:19:32.280Z",
-        "escalationReason": "Issue persists after 7 auto-fix attempts. Needs human intervention."
+        "regressedAt": "2026-11-27T09:18:49.024Z",
+        "escalatedAt": "2026-11-27T09:18:49.024Z",
+        "escalationReason": "Issue persists after 8 auto-fix attempts. Needs human intervention."
       },
       "382282935c57": {
         "id": "382282935c57",
@@ -1971,7 +1992,7 @@
         "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
         "status": "escalated",
         "detectedAt": "2026-05-15T19:50:51.103Z",
-        "lastSeenAt": "2026-11-27T08:48:14.973Z",
+        "lastSeenAt": "2026-11-27T09:18:49.024Z",
         "attempts": [
           {
             "timestamp": "2026-05-15T19:50:51.103Z",
@@ -2147,14 +2168,19 @@
             "timestamp": "2026-11-27T08:48:14.973Z",
             "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
             "file": null
+          },
+          {
+            "timestamp": "2026-11-27T09:18:49.024Z",
+            "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-15T19:50:51.103Z",
         "resolvedAt": "2026-11-01T09:02:59.503Z",
         "daysToResolve": 170,
         "regressedAt": "2026-11-02T09:15:26.173Z",
-        "escalatedAt": "2026-11-27T08:48:14.973Z",
-        "escalationReason": "Issue persists after 35 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-11-27T09:18:49.024Z",
+        "escalationReason": "Issue persists after 36 auto-fix attempts. Needs human intervention."
       },
       "7d874f3ebe0c": {
         "id": "7d874f3ebe0c",
@@ -3309,7 +3335,7 @@
         "description": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
         "status": "escalated",
         "detectedAt": "2026-06-07T08:24:13.649Z",
-        "lastSeenAt": "2026-11-27T08:48:14.973Z",
+        "lastSeenAt": "2026-11-27T09:18:49.024Z",
         "attempts": [
           {
             "timestamp": "2026-06-07T08:24:13.649Z",
@@ -3490,14 +3516,19 @@
             "timestamp": "2026-11-27T08:48:14.973Z",
             "strategy": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
             "file": null
+          },
+          {
+            "timestamp": "2026-11-27T09:18:49.024Z",
+            "strategy": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-06-07T08:24:13.649Z",
         "resolvedAt": "2026-11-01T09:02:59.503Z",
         "daysToResolve": 147,
         "regressedAt": "2026-11-02T09:15:26.173Z",
-        "escalatedAt": "2026-11-27T08:48:14.973Z",
-        "escalationReason": "Issue persists after 36 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-11-27T09:18:49.024Z",
+        "escalationReason": "Issue persists after 37 auto-fix attempts. Needs human intervention."
       },
       "c4cfda4cc35c": {
         "id": "c4cfda4cc35c",
@@ -3570,7 +3601,7 @@
         "description": "Google cannot discover your pages without a sitemap. This is mandatory for sites with 100+ pages.",
         "status": "escalated",
         "detectedAt": "2026-07-08T05:31:20.831Z",
-        "lastSeenAt": "2026-11-27T08:48:14.973Z",
+        "lastSeenAt": "2026-11-27T09:18:49.024Z",
         "attempts": [
           {
             "timestamp": "2026-07-08T05:31:20.831Z",
@@ -3741,14 +3772,19 @@
             "timestamp": "2026-11-27T08:48:14.973Z",
             "strategy": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
             "file": null
+          },
+          {
+            "timestamp": "2026-11-27T09:18:49.024Z",
+            "strategy": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-07-08T05:31:20.831Z",
         "resolvedAt": "2026-07-09T06:15:06.638Z",
         "daysToResolve": 1,
         "regressedAt": "2026-10-27T07:38:22.952Z",
-        "escalatedAt": "2026-11-27T08:48:14.973Z",
-        "escalationReason": "Issue persists after 34 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-11-27T09:18:49.024Z",
+        "escalationReason": "Issue persists after 35 auto-fix attempts. Needs human intervention."
       },
       "c842bc749ac8": {
         "id": "c842bc749ac8",
@@ -3784,7 +3820,7 @@
         "description": "A robots.txt file is missing. Without it, crawlers have no guidance and crawl budget may be wasted on non-content pages.",
         "status": "escalated",
         "detectedAt": "2026-10-27T07:38:22.952Z",
-        "lastSeenAt": "2026-11-27T08:48:14.973Z",
+        "lastSeenAt": "2026-11-27T09:18:49.024Z",
         "attempts": [
           {
             "timestamp": "2026-10-27T07:38:22.952Z",
@@ -3940,11 +3976,16 @@
             "timestamp": "2026-11-27T08:48:14.973Z",
             "strategy": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch.",
             "file": null
+          },
+          {
+            "timestamp": "2026-11-27T09:18:49.024Z",
+            "strategy": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-10-27T07:38:22.952Z",
-        "escalatedAt": "2026-11-27T08:48:14.973Z",
-        "escalationReason": "Issue persists after 31 auto-fix attempts. Needs human intervention.",
+        "escalatedAt": "2026-11-27T09:18:49.024Z",
+        "escalationReason": "Issue persists after 32 auto-fix attempts. Needs human intervention.",
         "resolvedAt": "2026-11-07T08:39:33.890Z",
         "daysToResolve": 11,
         "regressedAt": "2026-11-08T08:53:16.505Z"
@@ -3993,60 +4034,77 @@
     "stats": {
       "open": 0,
       "fixing": 0,
-      "resolved": 26,
-      "escalated": 4,
+      "resolved": 25,
+      "escalated": 5,
       "regressed": 0
     },
-    "lastReconciled": "2026-11-27T08:48:14.973Z"
+    "lastReconciled": "2026-11-27T09:18:49.024Z"
   },
   "issueActions": [
     {
+      "id": "daa3e6f34fda",
+      "type": "regressed",
+      "title": "1 pages missing canonical URL"
+    },
+    {
       "id": "b2a6442343a6",
       "type": "fix-attempted",
       "title": "robots.txt not found",
-      "attempt": 31
+      "attempt": 32
     },
     {
       "id": "855fe6d4e9d2",
       "type": "fix-attempted",
       "title": "No sitemap.xml found",
-      "attempt": 34
-    },
-    {
-      "id": "4f684ed51e73",
-      "type": "fix-attempted",
-      "title": "1 pages missing meta description",
-      "attempt": 36
-    },
-    {
-      "id": "c2bcb0cbe37f",
-      "type": "fix-attempted",
-      "title": "1 pages return error status codes",
       "attempt": 35
     },
     {
+      "id": "4f684ed51e73",
+      "type": "fix-attempted",
+      "title": "1 pages missing meta description",
+      "attempt": 37
+    },
+    {
+      "id": "daa3e6f34fda",
+      "type": "fix-attempted",
+      "title": "1 pages missing canonical URL",
+      "attempt": 8
+    },
+    {
+      "id": "c2bcb0cbe37f",
+      "type": "fix-attempted",
+      "title": "1 pages return error status codes",
+      "attempt": 36
+    },
+    {
+      "id": "daa3e6f34fda",
+      "type": "escalated",
+      "title": "1 pages missing canonical URL",
+      "attempts": 8
+    },
+    {
       "id": "c2bcb0cbe37f",
       "type": "escalated",
       "title": "1 pages return error status codes",
-      "attempts": 35
+      "attempts": 36
     },
     {
       "id": "4f684ed51e73",
       "type": "escalated",
       "title": "1 pages missing meta description",
-      "attempts": 36
+      "attempts": 37
     },
     {
       "id": "855fe6d4e9d2",
       "type": "escalated",
       "title": "No sitemap.xml found",
-      "attempts": 34
+      "attempts": 35
     },
     {
       "id": "b2a6442343a6",
       "type": "escalated",
       "title": "robots.txt not found",
-      "attempts": 31
+      "attempts": 32
     }
   ],
   "solverEnrichments": [],
