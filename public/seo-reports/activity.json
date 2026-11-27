@@ -1,5 +1,26 @@
 [
   {
+    "timestamp": "2026-11-27T14:31:52.849Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (low): Few pages have question-style headings",
+    "details": "AI engines like Perplexity prefer Q&A-structured content. Adds direct answer-engine eligibility."
+  },
+  {
+    "timestamp": "2026-11-27T14:31:52.849Z",
+    "type": "fix",
+    "icon": "🤖",
+    "title": "AEO issue (important): No FAQPage schema detected anywhere",
+    "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often."
+  },
+  {
+    "timestamp": "2026-11-27T14:31:52.849Z",
+    "type": "aeo",
+    "icon": "🤖",
+    "title": "AEO scan complete · Score 82/100 (B)",
+    "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
+  },
+  {
     "timestamp": "2026-11-27T12:32:22.399Z",
     "type": "heartbeat",
     "icon": "💚",
@@ -1377,26 +1398,5 @@
     "icon": "🤖",
     "title": "AEO scan complete · Score 82/100 (B)",
     "details": "10 AI crawlers allowed · 0 FAQ schemas suggested · 0/3 engines citing site"
-  },
-  {
-    "timestamp": "2026-11-22T09:38:59.597Z",
-    "type": "done",
-    "icon": "✓",
-    "title": "Run completed",
-    "details": "Total: 1 pages · 4 fixes · 0 submitted"
-  },
-  {
-    "timestamp": "2026-11-22T09:38:59.481Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"robots.txt not found\" needs human attention",
-    "details": "Auto-fix failed after 25 attempts — manual intervention required"
-  },
-  {
-    "timestamp": "2026-11-22T09:38:59.481Z",
-    "type": "error",
-    "icon": "🚨",
-    "title": "ESCALATED: \"No sitemap.xml found\" needs human attention",
-    "details": "Auto-fix failed after 28 attempts — manual intervention required"
   }
 ]
