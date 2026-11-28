@@ -363,3 +363,74 @@
 .tz-callout{border:1.5px solid #000;border-radius:12px;padding:12px 16px;margin-top:14px !important;font-size:15px !important}
 .tzd .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .tz-art .tz-note{text-align:left}
+
+/* ── Dashboard: compact phone layout — whole box fits one screen ── */
+@media (max-width:600px){
+  .tzd{padding:14px 14px 12px;border-radius:14px;box-shadow:4px 4px #111}
+  .tzd header{font-size:9px}
+  .tzd .tzd-h{font-size:23px;letter-spacing:-.8px;margin:10px 0 4px !important}
+  .tzd .tzd-h br{display:none}
+  .tzd>p:first-of-type{font-size:12px;line-height:1.4;margin:0 0 8px !important}
+  .tzd-ticker{padding:6px 0;margin:8px 0}
+  .tzd-track{font-size:10px}
+  .tzd small{font-size:9px;letter-spacing:1px}
+  .tzd .tzd-insight{font-size:13px;line-height:1.35;min-height:36px;margin:2px 0 6px !important}
+  .tzd-section{padding-top:8px;margin:8px 0}
+  .tzd-career{min-height:0;padding:10px 12px;margin-top:6px;border-radius:8px}
+  .tzd h3{font-size:17px;margin:2px 0 !important}
+  .tzd-career strong{font-size:13px}
+  .tzd-career p{font-size:12px;line-height:1.4;margin:2px 0 6px !important}
+  .tzd-skills{gap:4px;margin-top:4px}
+  .tzd-skills span{padding:3px 6px;font-size:10px}
+  .tzd-more{margin-top:6px;font-size:12px}
+  .tzd-progress{margin:8px 0 6px}
+  .tzd-controls{margin-bottom:6px}
+  .tzd button,.tzd select{padding:6px 12px;font-size:13px}
+  /* career evolution on one line: old role → new role */
+  .tzd-evo{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 6px}
+  .tzd-evo small{display:none}
+  .tzd-evo p{margin:0 !important;font-size:12px}
+  .tzd-evo .tzd-role{font-size:13px}
+  .tzd-evo p:first-of-type::after{content:" \2192";color:#111}
+  .tzd-radar{margin-top:4px}
+  .tzd-statement{padding:8px 10px;margin:8px 0;border-radius:6px}
+  .tzd-statement p{font-size:12px}
+  .tzd .tzd-cta{padding:11px;font-size:14px}
+  .tzd .tzd-link{padding:4px 0;font-size:12px}
+  .tzd .tzd-footer{font-size:10px;margin-top:4px !important;line-height:1.4}
+}
+@media (max-width:600px){
+  /* labels that repeat what the content already says are hidden on phones */
+  .tzd>p:first-of-type,.tzd>small:first-of-type,.tzd-statement small,.tzd-radar-label{display:none}
+  .tzd-insight{min-height:0 !important;height:2.7em;overflow:hidden}
+  .tzd-career{height:150px;overflow:hidden}
+  .tzd-career p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.8em}
+  .tzd-skills{flex-wrap:nowrap;overflow:hidden;mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .tzd-skills span{flex:0 0 auto}
+  .tzd-section.tzd-sectionhead{margin-top:4px}
+  .tzd-statement{padding:6px 10px}
+  .tzd .tzd-footer .tzd-tagline{display:none}
+}
+@media (max-width:600px){
+  .tzd .tzd-h{font-size:21px}
+  .tzd-career{height:auto;overflow:visible}
+  .tzd-career h3,.tzd-career strong,.tzd-more{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .tzd-career p{min-height:2.8em}
+  .tzd-more{margin-top:6px}
+  .tzd-controls button{padding:4px 14px}
+  .tzd-progress{margin:6px 0 5px}
+  .tzd-evo{flex-wrap:nowrap;white-space:nowrap;overflow:hidden}
+  .tzd-evo p{flex:0 1 auto;overflow:hidden;text-overflow:ellipsis}
+  .tzd-evo p:first-of-type{flex-shrink:2}
+  .tzd-ticker{margin:6px 0}
+  .tzd-statement{margin:6px 0}
+  .tzd-section{margin:6px 0;padding-top:6px}
+}
+@media (max-width:600px){
+  .tzd-evo{display:block;white-space:normal;overflow:visible}
+  .tzd-evo p{overflow:visible;line-height:1.3}
+  .tzd-evo p:first-of-type{font-size:11px;color:#666}
+  .tzd-career p{margin:2px 0 2px !important}
+  .tzd-career>small:nth-of-type(2){display:block;margin-top:2px}
+  .tzd .tzd-insight{font-size:12.5px;height:2.6em;margin:0 0 4px !important}
+}

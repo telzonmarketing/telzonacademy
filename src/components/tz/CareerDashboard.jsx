@@ -99,7 +99,7 @@ export default function CareerDashboard() {
   return (
     <section className={`tzd${playing ? '' : ' paused'}`} id="career-dashboard" ref={root} onFocus={onFocusIn} aria-label="Career Intelligence — 2027 outlook">
       <header><span>{D.label}</span><span>{D.outlook}</span></header>
-      <h2 className="tzd-h">{D.headline[0]}<br />{D.headline[1]}</h2>
+      <h2 className="tzd-h">{D.headline[0]}{' '}<br />{D.headline[1]}</h2>
       <p>{D.intro}</p>
       <div className="tzd-ticker">
         <span className="sr-only">Fields: {D.ticker.join(', ')}</span>
@@ -138,7 +138,7 @@ export default function CareerDashboard() {
         <button type="button" onClick={() => move(1)}>Next</button>
       </div>
 
-      <div className="tzd-section">
+      <div className="tzd-section tzd-evo">
         <small>CAREER EVOLUTION</small>
         <p>{c.traditional_role}</p>
         <small>EVOLVING TOWARDS</small>
@@ -146,7 +146,7 @@ export default function CareerDashboard() {
       </div>
 
       <div className="tzd-section">
-        <small>TECHNOLOGY RADAR</small>
+        <small className="tzd-radar-label">TECHNOLOGY RADAR</small>
         <div className="tzd-radar">
           <span className="sr-only">Technologies: {D.technologies.join(', ')}</span>
           <div className="tzd-track" aria-hidden="true">
@@ -201,7 +201,7 @@ export default function CareerDashboard() {
       </div>
 
       <p className="tzd-footer">
-        {D.footer}<br />
+        <span className="tzd-tagline">{D.footer}<br /></span>
         <a href={HUB_PATH} onClick={() => track('career_click', { career: 'hub', from: 'dashboard_footer' })}>Explore all {CAREERS.length} careers</a>
       </p>
     </section>
