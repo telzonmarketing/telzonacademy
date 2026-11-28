@@ -48,7 +48,7 @@ class AEOAgent {
     //    BFS crawl for a React SPA), then fetch each in parallel.
     const sitemapUrls = await this._fetchSitemapUrls(this.siteUrl);
     console.log(`  Found ${sitemapUrls.length} URLs in sitemap`);
-    const pages = await this._fetchAll(sitemapUrls.slice(0, 100));
+    const pages = await this._fetchAll(sitemapUrls.slice(0, 160));
     console.log(`  Fetched ${pages.length} pages`);
 
     // 2. Refresh llms.txt + llms-full.txt — only if we actually got pages,
@@ -106,17 +106,21 @@ class AEOAgent {
 
   async _fetchSitemapUrls(siteUrl) {
     const base = siteUrl.replace(/\/$/, '');
-    try {
-      const res = await axios.get(`${base}/sitemap.xml`, {
-        timeout: 15000,
-        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AEO-Auditor/1.0; +https://telzonacademy.in)' },
-      });
-      const matches = [...(res.data || '').matchAll(/<loc>([^<]+)<\/loc>/g)];
-      return matches.map(m => m[1]);
-    } catch (e) {
-      console.log(`  ⚠ Sitemap fetch failed: ${e.message}`);
-      return [siteUrl];
+    // Main sitemap + the separate careers sitemap (career hub and career pages).
+    const urls = [];
+    for (const file of ['sitemap.xml', 'sitemap-careers.xml']) {
+      try {
+        const res = await axios.get(`${base}/${file}`, {
+          timeout: 15000,
+          headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AEO-Auditor/1.0; +https://telzonacademy.in)' },
+        });
+        const matches = [...(res.data || '').matchAll(/<loc>([^<]+)<\/loc>/g)];
+        for (const m of matches) if (!urls.includes(m[1])) urls.push(m[1]);
+      } catch (e) {
+        console.log(`  ⚠ ${file} fetch failed: ${e.message}`);
+      }
     }
+    return urls.length ? urls : [siteUrl];
   }
 
   async _fetchAll(urls) {

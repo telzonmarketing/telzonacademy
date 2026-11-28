@@ -7,8 +7,9 @@ import { Link } from 'react-router-dom';
 import GlobalSeo from '@/components/GlobalSeo';
 import { supabase } from '@/lib/customSupabaseClient';
 import { COURSE_FORMAT } from '@/data/syllabus';
+import CareerDashboard from '@/components/tz/CareerDashboard';
 import {
-  TzHeader, TzFooter, AdmissionForm, AskBox, CurriculumList, FaqBlock, AreasBlock, CtaBand, MediaBlock, VIDEO_SCHEMA, PHONE,
+  TzHeader, TzFooter, AskBox, CurriculumList, FaqBlock, AreasBlock, CtaBand, MediaBlock, VIDEO_SCHEMA, PHONE,
 } from '@/components/tz';
 
 const HOME_FAQS = [
@@ -97,7 +98,7 @@ export default function HomePage() {
               <AskBox />
               <p className="tz-areas">Serving students across Nagpur — Dharampeth, Sitabuldi, Ramdaspeth, Sadar, Civil Lines, Pratap Nagar and online.</p>
             </div>
-            <AdmissionForm source="homepage-free-demo" />
+            <CareerDashboard />
           </section>
 
           {/* Highlights */}

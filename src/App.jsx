@@ -64,7 +64,7 @@ function App() {
         <Route path="/watch-demo" element={<WatchDemoPage />} />
         {/* Dynamic landing pages for keyword-targeted content */}
         <Route path="/pages/:slug" element={<LandingPage />} />
-        <Route path="/careers" element={<Navigate to="/careers/best-career-options-2027/" replace />} />
+        <Route path="/careers" element={<CareersPage />} />
         <Route path="/careers/:slug" element={<CareersPage />} />
 
         {/* Admin */}

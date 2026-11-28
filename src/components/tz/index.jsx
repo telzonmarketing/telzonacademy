@@ -45,7 +45,7 @@ export function TzHeader() {
           <a className="tz-link" href="/pages/digital-marketing-course-in-nagpur/">Courses</a>
           <a className="tz-link" href="/pages/digital-marketing-course-fees-in-nagpur/">Fees</a>
           <a className="tz-link" href="/pages/commercial-ads-and-photography-course-in-nagpur/">Photography</a>
-          <a className="tz-link" href="/careers/best-career-options-2027/">Career Guide</a>
+          <a className="tz-link" href="/careers/">Careers</a>
           <a className="tz-link" href="/pages/digital-marketing-course-nagpur-questions-answered/">FAQ</a>
           <a className="tz-link" href="/blog/">Blog</a>
           <button type="button" className="tz-link" onClick={openMap}>Location</button>
@@ -124,6 +124,7 @@ export function TzFooter() {
               <a key={s} href={`/pages/${s}/`}>{label}</a>
             ))}
             <a href="/blog/">Blog</a>
+            <a href="/careers/">AI careers hub</a>
             <a href="/careers/best-career-options-2027/">Career Guide 2027</a>
             <a href="/careers/ai-creative-strategist/">AI Creative Strategist career</a>
             <a href="/careers/ai-search-visibility-specialist/">GEO / AI search career</a>
@@ -142,7 +143,7 @@ export function TzFooter() {
 }
 
 // ─── Admission form → existing submit-lead backend ─────────────────────────
-export function AdmissionForm({ source = 'website', title = 'Apply for admission', sub = "Book a free demo class. We'll call you back.", headingLevel = 'h2', id = 'apply' }) {
+export function AdmissionForm({ source = 'website', title = 'Apply for admission', sub = "Book a free demo class. We'll call you back.", headingLevel = 'h2', id = 'apply', context, onSuccess }) {
   const { toast } = useToast();
   const [f, setF] = useState({ name: '', email: '', phone: '', area: '', website: '' });
   const [err, setErr] = useState('');
@@ -164,7 +165,7 @@ export function AdmissionForm({ source = 'website', title = 'Apply for admission
       full_name: f.name.trim(),
       email: f.email.trim(),
       phone,
-      message: f.area.trim() ? `Area: ${f.area.trim()}, Nagpur` : undefined,
+      message: [f.area.trim() ? `Area: ${f.area.trim()}, Nagpur` : '', context || ''].filter(Boolean).join(' · ') || undefined,
       source,
       website: f.website,
     });
@@ -174,6 +175,7 @@ export function AdmissionForm({ source = 'website', title = 'Apply for admission
       return;
     }
     setDone(true);
+    try { onSuccess && onSuccess(); } catch { /* noop */ }
   };
 
   if (done) {
@@ -347,7 +349,7 @@ export function AreasBlock({ keyword = 'Digital marketing course' }) {
         </p>
         <div className="tz-loc">
           <MapBlock />
-          <details className="tz-areas">
+          <details className="tz-arealist">
             <summary>Areas we serve in Nagpur <span>{areaLinks.length} areas</span></summary>
             <p>Digital marketing and photography students join from across Nagpur, including:</p>
             <ul>

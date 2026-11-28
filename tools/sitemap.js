@@ -114,7 +114,7 @@ ${urls.join('\n')}
 // Separate sitemap for the career guide + career pages (/careers/<slug>/).
 // Listed in robots.txt next to sitemap.xml; submit it in Search Console too.
 export function buildCareersSitemapXml() {
-  const rows = [[GUIDE_SLUG, '0.9'], ...CAREERS.map((c) => [c.slug, c.status === 'listed' ? '0.8' : '0.7'])];
+  const rows = [['', '0.9'], [GUIDE_SLUG, '0.9'], ...CAREERS.map((c) => [c.slug, c.status === 'listed' ? '0.8' : '0.7'])];
   const urls = rows.map(([slug, pr]) =>
     `  <url><loc>${xmlEscape(SITE + careerPath(slug))}</loc><lastmod>${CAREERS_UPDATED}</lastmod><changefreq>monthly</changefreq><priority>${pr}</priority></url>`);
   return `<?xml version="1.0" encoding="UTF-8"?>

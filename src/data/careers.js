@@ -4,12 +4,17 @@
 // URLs are evergreen: update the copy each year, keep the slugs.
 // Plain text only — no HTML in strings.
 
-export const CAREERS_UPDATED = '2026-11-27';
+export const CAREERS_UPDATED = '2026-11-28';
+export const HUB_PATH = '/careers/';
 export const GUIDE_SLUG = 'best-career-options-2027';
-export const careerPath = (slug) => `/careers/${slug}/`;
+export const careerPath = (slug) => (slug ? `/careers/${slug}/` : '/careers/');
+export const AUTHOR = 'Telzon Academy training team';
 export const COURSE_URL = '/pages/digital-marketing-course-in-nagpur/';
 
 const li = (title) => `https://in.linkedin.com/jobs/search?keywords=${encodeURIComponent(title)}&location=India`;
+
+// The 2027 guide compares the original six roles from the guide brief.
+export const GUIDE_SIX = ['ai-creative-strategist', 'ai-search-visibility-specialist', 'ai-marketing-automation-specialist', 'ai-video-localization-producer', 'whatsapp-conversation-designer', 'ai-content-operations-specialist'];
 
 export const GUIDE = {
   slug: GUIDE_SLUG,
@@ -43,7 +48,7 @@ export const GUIDE = {
   ],
 };
 
-export const CAREERS = [
+const BASE_CAREERS = [
   {
     slug: 'ai-creative-strategist',
     status: 'listed',
@@ -359,8 +364,812 @@ export const CAREERS = [
     telzon: 'Telzon Academy covers this path in the Digital Marketing & AI course: content pillars and calendars (week 4), ChatGPT for scripts and captions checked for facts, tone and brand fit (week 6), and “content on autopilot” — brief, content calendar, production steps and an approval queue (week 7).',
     related: ['ai-search-visibility-specialist', 'ai-creative-strategist'],
   },
-].map((c) => ({
+];
+
+// ── Emerging career pages (added 28 Nov 2026) ────────────────────────────────
+// Each entry renders as /careers/<slug>/. Fields beyond the original six pages:
+// evolvesFrom, whyEmerging, prerequisites, skills, industries, entryRoutes,
+// technical (+ trainingNote) and references. No salaries, hiring numbers or
+// search volumes — only what can be checked.
+const REF = {
+  wef: { label: 'World Economic Forum — The Future of Jobs Report 2025', url: 'https://www.weforum.org/publications/the-future-of-jobs-report-2025/' },
+  agents: { label: 'Anthropic — Building effective agents', url: 'https://www.anthropic.com/engineering/building-effective-agents' },
+  context: { label: 'Anthropic — Effective context engineering for AI agents', url: 'https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents' },
+  n8nAgent: { label: 'n8n Docs — AI Agent node', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/' },
+  googleAi: { label: 'Google Search Central — AI features and your website', url: 'https://developers.google.com/search/docs/appearance/ai-features' },
+  productSd: { label: 'Google Search Central — Product structured data', url: 'https://developers.google.com/search/docs/appearance/structured-data/product' },
+  merchant: { label: 'Google Merchant Center Help — Product data specification', url: 'https://support.google.com/merchants/answer/7052112' },
+  nist: { label: 'NIST — AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework' },
+  ga4: { label: 'Google Analytics Help — Introducing Google Analytics 4', url: 'https://support.google.com/analytics/answer/10089681' },
+  looker: { label: 'Looker Studio Help Center', url: 'https://support.google.com/looker-studio' },
+  skillshop: { label: 'Google Skillshop — Google Ads and Analytics training', url: 'https://skillshop.withgoogle.com/' },
+  blueprint: { label: 'Meta Blueprint — Meta advertising training', url: 'https://www.facebook.com/business/learn' },
+  elevenlabs: { label: 'ElevenLabs Documentation', url: 'https://elevenlabs.io/docs' },
+  whatsapp: { label: 'Meta for Developers — WhatsApp Business Platform', url: 'https://developers.facebook.com/docs/whatsapp' },
+  helpful: { label: 'Google Search Central — Creating helpful, reliable, people-first content', url: 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content' },
+  claudeCode: { label: 'Claude Code documentation', url: 'https://docs.claude.com/en/docs/claude-code/overview' },
+  webdev: { label: 'web.dev — Learn web development', url: 'https://web.dev/learn' },
+  veo: { label: 'Google DeepMind — Veo', url: 'https://deepmind.google/models/veo/' },
+};
+
+const EMERGING = [
+  {
+    slug: 'ai-agent-specialist',
+    status: 'emerging',
+    technical: true,
+    role: 'AI Agent Specialist',
+    evolvesFrom: 'Digital Marketing Executive',
+    h1: 'How to Become an AI Agent Specialist in Marketing',
+    title: 'AI Agent Specialist Career: Skills & Roadmap',
+    metaDescription: 'What an AI agent specialist does in marketing, the skills behind it (Claude, n8n, APIs, workflow design) and a safe first agent project for your portfolio.',
+    suits: 'Marketers who like systems and problem-solving',
+    coreSkill: 'Designing AI agents that do marketing tasks safely, with a human in the loop',
+    answer: 'An AI Agent Specialist designs and runs AI agents — systems where a language model decides which tools to use to finish a task — for marketing work. For example, an agent might read a new enquiry, look up the course it mentions, draft a reply for a counsellor to approve and log everything in the CRM.',
+    whyEmerging: 'Businesses that already use AI assistants now want them to take actions: update a sheet, check a campaign, draft and route a reply. Anthropic draws a useful line between workflows, where steps are fixed in advance, and agents, where the model directs its own tool use. Knowing when a simple workflow is enough is part of the job.',
+    tasks: [
+      ['Choose the right pattern', 'Decide whether a task needs a fixed workflow or a true agent — most marketing tasks start as workflows.'],
+      ['Connect tools', 'Give the agent only the tools it needs: a sheet, a CRM search, a web page reader.'],
+      ['Write instructions and guardrails', 'Describe the goal, the limits and when the agent must stop and ask a person.'],
+      ['Test with real examples', 'Run the agent on past enquiries or briefs and check every output before going live.'],
+      ['Monitor and improve', 'Review logs, failed runs and costs each week, and tighten instructions where it went wrong.'],
+    ],
+    prerequisites: ['Comfort with marketing funnels and lead journeys', 'Logical thinking: if-this-then-that steps', 'Basic spreadsheet skills', 'Willingness to learn APIs and JSON — the agent’s language for tools'],
+    skills: ['Claude', 'AI Agents', 'n8n', 'APIs', 'Workflow Design'],
+    tools: [
+      ['Claude', 'The language model that reasons through the task and drafts outputs'],
+      ['n8n', 'Connects the agent to forms, sheets and CRMs (its AI Agent node calls tools you attach)'],
+      ['Google Sheets or a CRM', 'Where the agent reads and writes lead data'],
+      ['API documentation', 'Tells you what each connected app can and cannot do'],
+    ],
+    industries: ['Education and coaching', 'Real estate', 'Hospitality and restaurants', 'D2C and e-commerce brands', 'Marketing agencies'],
+    entryRoutes: ['Start as a digital marketing or marketing operations executive and automate your own team’s tasks', 'Join an agency that builds automations for clients', 'Freelance small, well-tested agents for local businesses — always with a human approval step'],
+    roadmap: {
+      foundation: 'Funnels and lead journeys, then no-code automation: a trigger, a few steps and a check for failures.',
+      guided: 'Build a workflow (not yet an agent) that reads a form submission, classifies the course interest with Claude and writes it to a sheet.',
+      project: 'Turn it into a supervised agent: it drafts a reply and suggests a counsellor, but a person approves before anything is sent. Document three test cases where it should stop and ask.',
+    },
+    example: {
+      title: 'Supervised enquiry agent (Telzon format, test data only)',
+      rows: [
+        ['Goal', 'Draft a first reply to demo-class enquiries within minutes'],
+        ['Tools allowed', 'Read the course list; search the CRM by phone number; write a draft'],
+        ['Not allowed', 'Sending messages; quoting discounts; changing CRM stages'],
+        ['Stop and ask when', 'The enquiry mentions a complaint, a refund or anything not in the course list'],
+        ['Human step', 'A counsellor approves or edits every draft'],
+        ['Check', 'Weekly review of 20 drafts against the course facts'],
+      ],
+      note: 'A sample design students build and test with fake enquiries.',
+    },
+    titles: ['Marketing Automation Specialist', 'AI Automation Executive', 'Marketing Operations Executive', 'No-code Automation Developer', 'CRM Executive'],
+    faqs: [
+      { q: 'Is AI agent specialist a real job title?', a: 'It is an emerging specialisation. Today the work usually sits inside marketing automation, marketing operations or AI automation roles — search those titles.' },
+      { q: 'Do I need to code?', a: 'You can start with no-code tools such as n8n, but connecting to APIs, reading JSON and debugging failed runs are part of the job, so expect to learn some technical basics.' },
+      { q: 'What is the difference between an AI workflow and an AI agent?', a: 'A workflow follows steps you define in advance. An agent decides which tool to use next. Many marketing tasks work better, and more predictably, as workflows.' },
+      { q: 'Can an AI agent send messages to customers on its own?', a: 'It can be built to, but a responsible first version keeps a person approving anything customer-facing, especially prices, promises and complaints.' },
+    ],
+    telzon: 'The Digital Marketing & AI course covers the marketing foundation and the first steps: Claude workflows for briefs and audits, and a no-code automation lab — enquiry to CRM or Sheet, follow-up trigger, duplicate and failure checks (week 7). Building full AI agents with APIs goes beyond the course and needs additional training.',
+    trainingNote: 'Agent building beyond no-code workflows (APIs, JSON, tool design and monitoring) requires additional technical training after the course.',
+    references: [REF.agents, REF.n8nAgent, REF.context],
+    related: ['ai-marketing-automation-specialist', 'ai-context-engineer'],
+  },
+  {
+    slug: 'ai-creative-technologist',
+    status: 'emerging',
+    role: 'AI Creative Technologist',
+    evolvesFrom: 'Video Editor',
+    h1: 'How to Become an AI Creative Technologist',
+    title: 'AI Creative Technologist: Generative Media Career',
+    metaDescription: 'AI creative technologist career guide: make campaign images, video and voice with Veo, HeyGen and ElevenLabs — with creative direction, rights and checks.',
+    suits: 'Video editors, designers and storytellers who like new tools',
+    coreSkill: 'Directing AI image, video and voice tools to produce on-brand campaign assets',
+    answer: 'An AI Creative Technologist produces campaign assets — images, short videos and voice-overs — with generative AI tools, and directs them so the result looks and sounds like the brand. For example, they might turn one product brief into a storyboard, generate scenes and a voice-over, then edit the final 15-second ad by hand.',
+    whyEmerging: 'Generative video, avatar and voice tools have made it practical to produce draft creative in hours instead of days. Brands still need someone who can write the brief, choose what works, fix what doesn’t and make sure the final ad is accurate and allowed to be used.',
+    tasks: [
+      ['Turn briefs into storyboards', 'Break a campaign idea into scenes, shots, lines and timing.'],
+      ['Generate and select', 'Produce many options with AI, then pick the few that fit the brand.'],
+      ['Edit and finish', 'Combine AI clips with real footage, fix timing, add captions and music.'],
+      ['Check rights and accuracy', 'Confirm product details, likeness permissions and platform rules before publishing.'],
+      ['Keep a prompt and style library', 'Record what worked so the next campaign is faster and consistent.'],
+    ],
+    prerequisites: ['A portfolio sense: framing, pacing and storytelling', 'Basic video editing', 'Good written briefs', 'Patience to iterate'],
+    skills: ['Veo', 'HeyGen', 'ElevenLabs', 'Creative Direction'],
+    tools: [
+      ['Veo', 'Generate short video scenes from a written prompt'],
+      ['HeyGen', 'Create avatar and translated presenter videos'],
+      ['ElevenLabs', 'Produce and fine-tune voice-overs'],
+      ['A video editor (Premiere Pro, DaVinci Resolve or CapCut)', 'Assemble, time, caption and export the final ad'],
+    ],
+    industries: ['Advertising and creative agencies', 'D2C and e-commerce brands', 'Education', 'Real estate', 'Media and entertainment'],
+    entryRoutes: ['Video editor or motion designer adding AI tools to their workflow', 'Social media content producer at an agency', 'Freelance short-form ad production for local brands'],
+    roadmap: {
+      foundation: 'Scripting, storyboarding, shooting and editing basics — AI drafts are only as good as the brief and the edit.',
+      guided: 'Take one 15-second Reel you made and recreate one scene with an AI video tool. Compare the two and list what the AI got wrong.',
+      project: 'Produce a 15-second product ad with an AI voice-over and at least one AI-generated scene, plus a one-page note on prompts used, edits made and rights checked.',
+    },
+    example: {
+      title: 'Generative ad production sheet (Telzon format)',
+      rows: [
+        ['Brief', 'Café weekday lunch offer, 15 seconds, vertical'],
+        ['Scenes', '1 real counter shot · 2 AI-generated food close-ups · 1 real customer moment'],
+        ['Voice', 'AI voice-over in English, reviewed for pronunciation of the café name'],
+        ['Checks', 'Prices match the menu; no real person generated without consent; platform AI-content labels applied where required'],
+        ['Edit notes', 'What was regenerated, what was shot again, final timing'],
+      ],
+      note: 'A sample production sheet students complete.',
+    },
+    titles: ['Video Editor', 'Motion Graphics Designer', 'Creative Producer', 'AI Video Producer', 'Content Producer'],
+    faqs: [
+      { q: 'Will AI replace video editors?', a: 'AI changes how editors work, but brands still need someone to direct, select, edit and check what goes out. Those decisions are the core of this role.' },
+      { q: 'Do I need to code?', a: 'No. The work happens in AI media tools and a video editor.' },
+      { q: 'What should my portfolio show?', a: 'Before-and-after examples: the brief, the AI drafts, what you rejected and the final edit. That proves judgement, not just tool access.' },
+      { q: 'Can I use AI-generated people in ads?', a: 'Follow each platform’s rules and get consent for any real person’s likeness or voice. When in doubt, use real footage.' },
+    ],
+    telzon: 'The Digital Marketing & AI course covers scripting, storyboarding, smartphone shooting and editing (week 4), a video workflow with ChatGPT scripts, ElevenLabs voice-overs and HeyGen with a review step (week 6), and a Claude-assisted editing lab (week 7). The Commercial Ads & Photography course goes deeper into ad film production. AI video generators such as Veo are not part of the current syllabus.',
+    references: [REF.veo, REF.elevenlabs, REF.wef],
+    related: ['ai-creative-strategist', 'ai-video-localization-producer'],
+  },
+  {
+    slug: 'ai-growth-engineer',
+    status: 'emerging',
+    technical: true,
+    role: 'AI Growth Engineer',
+    evolvesFrom: 'Growth Marketer',
+    h1: 'How to Become an AI Growth Engineer',
+    title: 'AI Growth Engineer Career: CRO, Testing & Automation',
+    metaDescription: 'What an AI growth engineer does: combine CRO, A/B testing, analytics and automation to grow sign-ups — with the skills, a test project and a learning path.',
+    suits: 'Analytical marketers who enjoy building and testing',
+    coreSkill: 'Running controlled experiments on pages and funnels, and building the tools to run them faster',
+    answer: 'An AI Growth Engineer improves how many visitors become leads or customers by running experiments on landing pages, forms and follow-ups, and by building small tools that speed those experiments up. For example, they might test two versions of a demo-class page, measure enquiries in GA4, and automate the weekly test report.',
+    whyEmerging: 'Growth teams have always mixed marketing and engineering. AI makes it faster to write variations, analyse results and build internal tools, so companies increasingly want marketers who can also build — and engineers who understand customers.',
+    tasks: [
+      ['Find the leak', 'Use analytics to see where visitors drop off between ad, page, form and call.'],
+      ['Design experiments', 'Write a hypothesis, change one thing and agree the metric before the test starts.'],
+      ['Build and ship variations', 'Create page or form versions, with AI helping draft copy that you then check.'],
+      ['Measure honestly', 'Wait for enough data, check tracking, and record tests that didn’t work too.'],
+      ['Automate the routine', 'Build reports and alerts so the team sees results without manual work.'],
+    ],
+    prerequisites: ['Funnels and conversion tracking', 'Basic statistics: averages, rates and sample size', 'Spreadsheet confidence', 'HTML/CSS basics help'],
+    skills: ['CRO', 'A/B Testing', 'Analytics', 'Automation'],
+    tools: [
+      ['GA4', 'Track events, conversions and funnel drop-offs'],
+      ['A landing-page builder or website editor', 'Ship page and form variations'],
+      ['Claude or ChatGPT', 'Draft headline and offer variations to test'],
+      ['n8n or Make', 'Automate weekly reports and alerts'],
+    ],
+    industries: ['SaaS and apps', 'EdTech', 'D2C and e-commerce', 'Fintech', 'Growth and performance agencies'],
+    entryRoutes: ['Performance marketing or CRO executive who adds technical skills', 'Junior web developer who moves into growth', 'Marketing analyst who starts running experiments'],
+    roadmap: {
+      foundation: 'Landing pages, CRO and measurement: GA4, UTM links and conversion events.',
+      guided: 'Audit one landing page with GA4 data and list three hypotheses, each with the metric that would prove it.',
+      project: 'Run (or fully plan) an A/B test on a real or practice page: hypothesis, variations, tracking set-up, a pre-agreed stopping rule and a results write-up — including if it failed.',
+    },
+    example: {
+      title: 'Experiment card (Telzon format)',
+      rows: [
+        ['Hypothesis', 'Showing the batch start date above the form will increase demo bookings'],
+        ['Change', 'One element only: batch date banner above the form'],
+        ['Primary metric', 'Form submissions per landing-page visitor'],
+        ['Guardrail metric', 'Share of submissions that are qualified leads'],
+        ['Stopping rule', 'Decided before launch: run time and minimum conversions'],
+        ['Result log', 'Win, loss or inconclusive — all recorded'],
+      ],
+      note: 'A template students fill in; results only from real tests.',
+    },
+    titles: ['Growth Marketer', 'CRO Specialist', 'Growth Analyst', 'Marketing Technologist', 'Product Growth Associate'],
+    faqs: [
+      { q: 'Is an AI growth engineer a developer?', a: 'Partly. The role sits between marketing and engineering. Many start from marketing and learn enough HTML, JavaScript and analytics to build and measure tests themselves.' },
+      { q: 'Do I need coding?', a: 'Some. Basic HTML, CSS and tracking set-up are expected; scripting helps with automation. This is more technical than most marketing roles.' },
+      { q: 'What makes a good A/B test?', a: 'One change, one primary metric decided in advance, enough traffic, and a result you record even when it disappoints.' },
+      { q: 'Where does AI help most?', a: 'Drafting variations, summarising results and building small internal tools — with a person checking claims and data.' },
+    ],
+    telzon: 'The Digital Marketing & AI course covers the marketing side: landing pages, copywriting and CRO with page tests, and GA4, UTM links and conversion events (week 3), plus no-code automation (week 7) and an analytics and reporting exercise (week 11). Statistics for experiments and the engineering side need additional training.',
+    trainingNote: 'Experiment statistics, front-end basics and scripting require additional training beyond the course.',
+    references: [REF.ga4, REF.skillshop, REF.helpful],
+    related: ['ai-performance-marketer', 'ai-marketing-analyst'],
+  },
+  {
+    slug: 'ai-performance-marketer',
+    status: 'emerging',
+    role: 'AI Performance Marketer',
+    evolvesFrom: 'Ads Manager',
+    h1: 'How to Become an AI Performance Marketer',
+    title: 'AI Performance Marketer: Meta, Google Ads & GA4',
+    metaDescription: 'AI performance marketing career guide: run Meta and Google Ads, test creative, read GA4 and use Claude to analyse results — skills, roadmap and a project.',
+    suits: 'People who like numbers, ads and quick decisions',
+    coreSkill: 'Running paid campaigns where AI speeds up analysis and testing, and people own budget decisions',
+    answer: 'An AI Performance Marketer runs paid campaigns on Meta and Google, uses AI to analyse results and produce test ideas faster, and decides where the budget goes next. For example, they might export a week of campaign data, ask Claude to summarise which ad sets are getting qualified leads, verify the numbers, then shift budget and launch a new creative test.',
+    whyEmerging: 'Ad platforms automate more of the bidding and targeting every year, so the human work shifts to inputs — creative, offers, tracking and lead quality — and to interpreting results correctly. Performance marketing is an established job; using AI well inside it is the newer skill.',
+    tasks: [
+      ['Plan campaigns', 'Set objectives, budgets, audiences and the conversion that matters — not just clicks.'],
+      ['Feed the algorithm well', 'Supply strong creative variations and accurate conversion tracking.'],
+      ['Analyse with AI, verify by hand', 'Use AI to summarise exports and spot patterns; check every number it quotes.'],
+      ['Judge lead quality', 'Work with sales to see which campaigns bring people who actually enrol or buy.'],
+      ['Report clearly', 'Explain spend, results and next steps in plain language.'],
+    ],
+    prerequisites: ['Marketing foundations and buyer psychology', 'Comfort with spreadsheets and percentages', 'Clear writing for ad copy and reports'],
+    skills: ['Meta Ads', 'Google Ads', 'Claude', 'GA4'],
+    tools: [
+      ['Meta Ads Manager', 'Run and optimise Facebook and Instagram campaigns'],
+      ['Google Ads', 'Run Search and other campaign types'],
+      ['GA4', 'Check what visitors do after the click'],
+      ['Claude', 'Summarise campaign exports and draft test ideas for review'],
+    ],
+    industries: ['Education', 'Real estate', 'D2C and e-commerce', 'Healthcare clinics', 'Performance marketing agencies'],
+    entryRoutes: ['Paid ads executive at an agency', 'In-house performance marketing executive', 'Freelance campaign management for local businesses after a solid portfolio'],
+    roadmap: {
+      foundation: 'Marketing foundations, landing pages and conversion tracking.',
+      guided: 'Build a Google Search campaign structure and a Meta ad set test plan for a practice business, with one variable per test.',
+      project: 'Run or fully plan a small campaign with tracking, then write a report where AI helped analyse the data — and show where you corrected it.',
+    },
+    example: {
+      title: 'Weekly campaign review (Telzon format)',
+      rows: [
+        ['Data', 'Ads Manager and Google Ads exports for 7 days'],
+        ['AI step', 'Claude summarises spend, leads and cost per lead by ad set'],
+        ['Human check', 'Totals reconciled against the platform before any decision'],
+        ['Lead quality', 'Sales feedback: which leads were reachable and interested'],
+        ['Decision', 'Pause, scale or test — with the reason written down'],
+      ],
+      note: 'A sample review format; figures come from real accounts only.',
+    },
+    titles: ['Performance Marketing Executive', 'Paid Media Specialist', 'PPC Executive', 'Meta Ads Specialist', 'Google Ads Specialist'],
+    faqs: [
+      { q: 'Is performance marketing still a good career with AI?', a: 'It is an established career. AI automates more of the bidding, so value moves to creative, tracking, lead quality and judgement.' },
+      { q: 'Which certifications help?', a: 'Google’s Skillshop and Meta Blueprint offer platform training and certifications that employers recognise.' },
+      { q: 'Do I need coding?', a: 'No. Tracking set-up is technical, but it is learned without programming.' },
+      { q: 'Can I trust AI with campaign numbers?', a: 'Use it to speed up analysis, but always reconcile totals with the platform before changing budgets.' },
+    ],
+    telzon: 'This path is a core part of the Digital Marketing & AI course: conversion tracking and GA4 (week 3), Google Ads Search campaigns and Meta Ads test plans (week 8), Meta tracking, lead quality and a creative-fatigue lab (week 9), a live project, and Google Ads and Meta Ads tests in interview preparation (week 11).',
+    references: [REF.skillshop, REF.blueprint, REF.ga4],
+    related: ['ai-creative-strategist', 'ai-growth-engineer'],
+  },
+  {
+    slug: 'ai-commerce-specialist',
+    status: 'emerging',
+    role: 'AI Commerce Specialist',
+    evolvesFrom: 'E-commerce Executive',
+    h1: 'How to Become an AI Commerce Specialist',
+    title: 'AI Commerce Specialist: Conversational Shopping Career',
+    metaDescription: 'AI commerce specialist career guide: design conversational shopping journeys with chatbots, CRM and product feeds — skills, tools and a beginner project.',
+    suits: 'E-commerce and customer-service people who think in journeys',
+    coreSkill: 'Designing shopping conversations that help customers choose, buy and get help',
+    answer: 'An AI Commerce Specialist designs the conversations and data behind AI-assisted shopping — chatbots, WhatsApp catalogues and product feeds — so customers can ask questions, compare options and buy. For example, they might map a WhatsApp journey where a customer asks for a gift under ₹1,500, gets three accurate product suggestions and can reach a person at any point.',
+    whyEmerging: 'Customers increasingly ask questions in chat apps and AI assistants instead of browsing category pages. That only works when product data is accurate and conversations are designed carefully, which creates work for people who understand both commerce and conversation.',
+    tasks: [
+      ['Map shopping questions', 'List what customers ask before buying: size, price, delivery, returns, gifting.'],
+      ['Design conversation flows', 'Write the bot’s questions, answers and the hand-off to a person.'],
+      ['Keep product data clean', 'Make sure titles, prices, stock and images match across the site, feed and chat.'],
+      ['Connect the CRM', 'Record conversations and purchases so follow-ups are relevant.'],
+      ['Review transcripts', 'Read real conversations weekly and fix where customers got stuck.'],
+    ],
+    prerequisites: ['E-commerce basics: catalogues, orders and returns', 'Clear, friendly writing', 'Spreadsheet skills for product data'],
+    skills: ['CRM', 'Chatbots', 'Product Feeds', 'Conversation Design'],
+    tools: [
+      ['WhatsApp Business', 'Catalogues, quick replies and customer chats'],
+      ['A chatbot builder', 'Build and test conversation flows'],
+      ['Google Merchant Center', 'Manage the product feed Google uses for listings'],
+      ['A CRM', 'Track conversations, orders and follow-ups'],
+    ],
+    industries: ['D2C and e-commerce brands', 'Retail', 'Food and grocery delivery', 'Fashion and beauty', 'Electronics'],
+    entryRoutes: ['E-commerce executive managing listings and orders', 'Customer support executive who moves into chat design', 'WhatsApp or CRM marketing executive'],
+    roadmap: {
+      foundation: 'Customer research, copywriting and the customer journey.',
+      guided: 'Message three online stores with the same pre-purchase question and rewrite the weakest reply as a short flow.',
+      project: 'Design a WhatsApp shopping flow for a small brand: greeting, three qualifying questions, product suggestions from a sample feed, checkout link and a hand-off to staff. Test it with five scripted customers.',
+    },
+    example: {
+      title: 'Gift-finder conversation (Telzon format)',
+      rows: [
+        ['Opening', 'Ask who the gift is for and the budget'],
+        ['Data used', 'Sample product feed: title, price, stock, image'],
+        ['Suggestions', 'Three in-stock products under the budget, with images'],
+        ['Rules', 'Never invent a discount or delivery date; check stock before suggesting'],
+        ['Hand-off', '“Talk to a person” always available'],
+      ],
+      note: 'A sample flow students design with test data.',
+    },
+    titles: ['E-commerce Executive', 'Conversational Commerce Executive', 'WhatsApp Marketing Executive', 'Chatbot Designer', 'CRM Executive'],
+    faqs: [
+      { q: 'Is AI commerce specialist a real job?', a: 'It is an emerging specialisation. The work appears today in e-commerce, CRM and conversational marketing roles.' },
+      { q: 'Do I need coding?', a: 'Not to design flows. Advanced bots on the WhatsApp Business Platform may need developers or a no-code builder.' },
+      { q: 'Why does product data matter for AI shopping?', a: 'Assistants and listings can only recommend what the data describes correctly. Wrong prices or stock break trust fast.' },
+      { q: 'What about consent?', a: 'Message people who contacted you or agreed to hear from you, and make opting out easy.' },
+    ],
+    telzon: 'The Digital Marketing & AI course covers the customer journey and buyer psychology (weeks 1–2), copywriting (week 3), and email, WhatsApp and CRM with consent and follow-up (week 6). Product feeds and chatbot builders are not part of the current syllabus.',
+    references: [REF.whatsapp, REF.merchant],
+    related: ['whatsapp-conversation-designer', 'ai-product-discovery-specialist'],
+  },
+  {
+    slug: 'ai-marketing-analyst',
+    status: 'emerging',
+    role: 'AI Marketing Analyst',
+    evolvesFrom: 'Marketing Analyst',
+    h1: 'How to Become an AI Marketing Analyst',
+    title: 'AI Marketing Analyst: GA4, Looker Studio & Reporting',
+    metaDescription: 'AI marketing analyst career guide: turn GA4 and campaign data into decisions with Looker Studio and AI-assisted reporting — skills, roadmap and project.',
+    suits: 'Curious people who like finding the story in numbers',
+    coreSkill: 'Turning marketing data into clear, verified recommendations',
+    answer: 'An AI Marketing Analyst collects marketing data, checks it, and explains what it means for the next decision — using AI to speed up analysis and draft summaries. For example, they might combine GA4, ad spend and CRM data in Looker Studio, find that one campaign brings cheaper but lower-quality leads, and recommend a change.',
+    whyEmerging: 'Marketing analyst is an established role. What is changing is the speed: AI can summarise data and draft reports quickly, which makes the analyst’s real job — knowing whether the data is right and what to do about it — more important.',
+    tasks: [
+      ['Check tracking', 'Make sure events, conversions and UTM links record what they claim to.'],
+      ['Build dashboards', 'Bring ads, website and CRM data into one view.'],
+      ['Analyse and explain', 'Find patterns and explain them in plain language with a recommendation.'],
+      ['Use AI carefully', 'Let AI draft summaries and spot anomalies; verify every figure.'],
+      ['Answer questions', 'Help teams decide with data instead of opinions.'],
+    ],
+    prerequisites: ['Comfort with spreadsheets and percentages', 'Curiosity about why numbers change', 'Clear writing'],
+    skills: ['GA4', 'Looker Studio', 'AI Reporting', 'Data Analysis'],
+    tools: [
+      ['GA4', 'Website and app behaviour, events and conversions'],
+      ['Looker Studio', 'Dashboards combining several data sources'],
+      ['Google Sheets', 'Cleaning and joining data'],
+      ['Claude or ChatGPT', 'Draft summaries of exports for you to verify'],
+    ],
+    industries: ['Agencies', 'E-commerce', 'EdTech', 'Media', 'Any business with a marketing team'],
+    entryRoutes: ['Marketing or reporting executive', 'Junior data analyst who specialises in marketing', 'Performance marketer who becomes the team’s data person'],
+    roadmap: {
+      foundation: 'Measurement basics: GA4, UTM links, conversion events and reporting.',
+      guided: 'Take one month of GA4 demo data and write five plain-language findings, each with the chart that proves it.',
+      project: 'Build a Looker Studio dashboard joining ad spend and leads, then a one-page report where AI drafted the summary and you documented each correction.',
+    },
+    example: {
+      title: 'Monthly insight report (Telzon format)',
+      rows: [
+        ['Question', 'Which channel brings enquiries that become admissions?'],
+        ['Data', 'GA4 conversions, ad spend export, CRM outcomes'],
+        ['AI step', 'Draft summary of trends'],
+        ['Verification', 'Each figure checked against the source; tracking gaps noted'],
+        ['Recommendation', 'One clear action, with the expected effect and how it will be measured'],
+      ],
+      note: 'A sample report format students complete.',
+    },
+    titles: ['Marketing Analyst', 'Digital Analyst', 'Reporting Analyst', 'Marketing Data Analyst', 'Web Analytics Executive'],
+    faqs: [
+      { q: 'Do I need coding to be a marketing analyst?', a: 'You can start with GA4, Looker Studio and spreadsheets. SQL becomes useful as data grows, and many roles ask for it later.' },
+      { q: 'Will AI replace analysts?', a: 'AI drafts summaries quickly, but it can misread data. Analysts who verify, explain and recommend remain essential.' },
+      { q: 'What should my portfolio show?', a: 'A dashboard, a short report with a clear recommendation, and notes on data problems you found and fixed.' },
+      { q: 'Which certifications help?', a: 'Google’s Skillshop offers Google Analytics training and certification.' },
+    ],
+    telzon: 'The Digital Marketing & AI course covers GA4, UTM links, conversion events and reporting (week 3), campaign measurement in Google and Meta Ads (weeks 8–9), a client-ready report on the live project (week 9) and an analytics and reporting exercise (week 11). Looker Studio and SQL are not part of the current syllabus.',
+    references: [REF.ga4, REF.looker, REF.skillshop],
+    related: ['ai-growth-engineer', 'ai-performance-marketer'],
+  },
+  {
+    slug: 'ai-customer-experience-specialist',
+    status: 'emerging',
+    role: 'AI Customer Experience Specialist',
+    evolvesFrom: 'CRM Executive',
+    h1: 'How to Become an AI Customer Experience Specialist',
+    title: 'AI Customer Experience Career: CRM & Personalisation',
+    metaDescription: 'AI customer experience specialist guide: build adaptive customer journeys with CRM segmentation, analytics and AI — skills, consent rules and a project.',
+    suits: 'People who care how customers feel at every step',
+    coreSkill: 'Designing customer journeys that adapt to what each customer needs',
+    answer: 'An AI Customer Experience Specialist designs journeys — emails, WhatsApp messages, reminders and offers — that change based on what a customer has done, using CRM data and AI. For example, a student who attended a demo but didn’t enrol gets a helpful follow-up with batch dates, while one who only downloaded a syllabus gets a different message.',
+    whyEmerging: 'CRMs have long supported segments and automated messages. AI makes it easier to tailor timing and wording, which raises the importance of good segments, clean data and respecting consent.',
+    tasks: [
+      ['Map journeys', 'Draw the steps from first contact to customer and beyond.'],
+      ['Build segments', 'Group customers by behaviour and stage, not guesses.'],
+      ['Write adaptive messages', 'Use AI to draft variations, then check tone and facts.'],
+      ['Respect consent', 'Only message people who opted in, and honour opt-outs immediately.'],
+      ['Measure', 'Track replies, conversions and unsubscribes by segment.'],
+    ],
+    prerequisites: ['Customer journey thinking', 'Writing for email and messaging', 'Spreadsheet and CRM basics'],
+    skills: ['CRM', 'Segmentation', 'Analytics', 'Customer Journeys'],
+    tools: [
+      ['A CRM (HubSpot, Zoho or similar)', 'Store contacts, stages and automated journeys'],
+      ['WhatsApp Business and email tools', 'Deliver messages customers agreed to receive'],
+      ['GA4', 'See how customers behave on the website'],
+      ['Claude or ChatGPT', 'Draft message variations to review'],
+    ],
+    industries: ['Education', 'Healthcare', 'Banking and insurance', 'Hospitality', 'E-commerce'],
+    entryRoutes: ['CRM or email marketing executive', 'Customer success or support associate', 'Marketing automation executive'],
+    roadmap: {
+      foundation: 'Segmentation, the customer journey, and email, WhatsApp and CRM consent.',
+      guided: 'Map the journey for one local business and mark three points where a timely message would help the customer.',
+      project: 'Design a three-segment nurture journey in a CRM with test contacts: triggers, messages, consent checks and the metric for each step.',
+    },
+    example: {
+      title: 'Post-demo journey (Telzon format, test contacts)',
+      rows: [
+        ['Segment A', 'Attended demo, no payment: batch dates and a counsellor call offer'],
+        ['Segment B', 'Asked about fees: what the fee covers, with a call option'],
+        ['Segment C', 'No reply in 7 days: one reminder, then stop'],
+        ['Consent', 'Only contacts who agreed to messages; opt-out in every message'],
+        ['Metric', 'Counselling calls booked per segment'],
+      ],
+      note: 'A sample journey students build with test data.',
+    },
+    titles: ['CRM Executive', 'Customer Experience Executive', 'Lifecycle Marketing Executive', 'Email Marketing Specialist', 'Customer Success Associate'],
+    faqs: [
+      { q: 'Is personalisation the same as using customers’ names?', a: 'No. Useful personalisation changes what you send and when, based on what the customer actually did.' },
+      { q: 'Do I need coding?', a: 'No for most CRM work. Advanced data integration may involve technical teams.' },
+      { q: 'What are the consent rules?', a: 'Message people who opted in, make opting out easy and keep records. Rules differ by channel and country, so check your platform’s policies.' },
+      { q: 'What should my portfolio show?', a: 'A journey map, segment logic, sample messages and how you would measure each step.' },
+    ],
+    telzon: 'The Digital Marketing & AI course covers segmentation and the customer journey (week 1), email, WhatsApp and CRM — consent, lead follow-up, segmentation and nurture sequences (week 6), and a no-code automation lab connecting enquiries to a CRM or Sheet (week 7).',
+    references: [REF.whatsapp, REF.ga4],
+    related: ['ai-marketing-automation-specialist', 'whatsapp-conversation-designer'],
+  },
+  {
+    slug: 'ai-product-discovery-specialist',
+    status: 'emerging',
+    role: 'AI Product Discovery Specialist',
+    evolvesFrom: 'E-commerce SEO Executive',
+    h1: 'How to Become an AI Product Discovery Specialist',
+    title: 'AI Product Discovery Career: Product SEO, Feeds & GEO',
+    metaDescription: 'AI product discovery specialist guide: make products findable in Google, Shopping and AI assistants with product SEO, schema, merchant feeds and GEO.',
+    suits: 'Detail-oriented people who like search and e-commerce',
+    coreSkill: 'Making product information accurate and complete so search engines and AI assistants can recommend it',
+    answer: 'An AI Product Discovery Specialist makes sure products can be found and correctly described wherever people search — Google Search, Shopping listings and AI assistants. For example, they might fix missing sizes and prices in a product feed, add product structured data that matches the page, and check how AI assistants describe the brand’s best-sellers.',
+    whyEmerging: 'Google describes product data as a foundational input for matching products to searches, including in its AI-powered experiences. As shopping questions move into AI answers, clean product data and content become a specialised skill.',
+    tasks: [
+      ['Audit product data', 'Check titles, descriptions, prices, stock, images and identifiers for gaps and conflicts.'],
+      ['Optimise product pages', 'Write useful descriptions and keep structured data matching what the page shows.'],
+      ['Manage feeds', 'Fix Merchant Center errors and keep the feed in sync with the website.'],
+      ['Check AI answers', 'Record how assistants describe products for key shopping questions, with dates.'],
+      ['Fix the gaps', 'Add missing facts, comparisons and FAQs customers actually need.'],
+    ],
+    prerequisites: ['SEO basics', 'Attention to detail', 'Spreadsheet skills for product data'],
+    skills: ['Product SEO', 'Schema', 'Merchant Feeds', 'GEO'],
+    tools: [
+      ['Google Merchant Center', 'Submit and fix product data for listings'],
+      ['Google Search Console', 'See product page performance and structured data issues'],
+      ['Schema.org Product markup', 'Describe products in a machine-readable way'],
+      ['ChatGPT, Perplexity, Gemini', 'Check how assistants answer shopping questions'],
+    ],
+    industries: ['E-commerce and D2C', 'Retail chains', 'Marketplaces sellers', 'Consumer electronics', 'Fashion and beauty'],
+    entryRoutes: ['SEO executive at an e-commerce brand', 'Catalogue or listings executive', 'Shopping ads executive'],
+    roadmap: {
+      foundation: 'SEO fundamentals — crawling, indexing, on-page and technical SEO — then AEO and GEO.',
+      guided: 'Audit ten product pages of a small online store: list missing facts, mismatched prices and structured data errors.',
+      project: 'Produce a product-data audit for one store: feed errors, page fixes, structured data checks and a dated log of how AI assistants answer three shopping questions.',
+    },
+    example: {
+      title: 'Product data audit row (Telzon format)',
+      rows: [
+        ['Product', 'Name and URL'],
+        ['Data issues', 'Missing size, price mismatch between page and feed, no GTIN'],
+        ['Page issues', 'Thin description, no care or return information'],
+        ['AI check', 'Date, assistant, question, whether the product was mentioned'],
+        ['Fix and owner', 'What changes, who does it, when it will be re-checked'],
+      ],
+      note: 'A template students fill in from real observations.',
+    },
+    titles: ['E-commerce SEO Executive', 'Product Listing Executive', 'Catalogue Executive', 'Shopping Ads Specialist', 'SEO Specialist'],
+    faqs: [
+      { q: 'How is this different from a GEO specialist?', a: 'A GEO specialist works on a brand’s visibility in AI answers generally; product discovery focuses on product data, feeds and product pages.' },
+      { q: 'Can I guarantee products appear in AI answers?', a: 'No. You can make data accurate and complete and record what assistants show on a given date.' },
+      { q: 'Do I need coding?', a: 'No, but understanding structured data (JSON-LD) and feed files is essential.' },
+      { q: 'What should my portfolio show?', a: 'A real product-data audit with before-and-after fixes and dated observations.' },
+    ],
+    telzon: 'The Digital Marketing & AI course covers SEO, technical SEO and local SEO with Semrush and Google Search Console (week 5) and AEO and GEO (week 6). Merchant Center feeds and product structured data are not part of the current syllabus and need additional practice.',
+    references: [REF.merchant, REF.productSd, REF.googleAi],
+    related: ['ai-search-visibility-specialist', 'ai-commerce-specialist'],
+  },
+  {
+    slug: 'ai-context-engineer',
+    status: 'emerging',
+    technical: true,
+    role: 'AI Context Engineer',
+    evolvesFrom: 'Research Specialist',
+    h1: 'What Does an AI Context Engineer Do?',
+    title: 'AI Context Engineer: RAG, Knowledge Bases & Evaluation',
+    metaDescription: 'What an AI context engineer does: design knowledge bases, retrieval (RAG) and instructions so AI gives reliable answers — skills, roadmap and a project.',
+    suits: 'Researchers and organisers who like precise information',
+    coreSkill: 'Deciding what information an AI system sees, so its answers are accurate and relevant',
+    answer: 'An AI Context Engineer designs the information an AI system works from — instructions, documents, examples and retrieved knowledge — so it answers reliably. For example, they might organise an institute’s course facts, fees and policies into a clean knowledge base, decide what the assistant retrieves for each question, and test that it never invents a discount.',
+    whyEmerging: 'Anthropic describes context engineering as the natural progression of prompt engineering: curating everything that goes into a model’s limited context, not just the prompt. As businesses deploy assistants on their own documents, someone has to own that information.',
+    tasks: [
+      ['Organise knowledge', 'Turn scattered documents into clean, current, non-contradictory sources.'],
+      ['Design retrieval', 'Decide how the right passages are found for each question (RAG).'],
+      ['Write instructions', 'Give the AI clear goals, limits and examples.'],
+      ['Evaluate answers', 'Build test questions with expected answers and check results regularly.'],
+      ['Maintain', 'Update sources when facts change and retire outdated ones.'],
+    ],
+    prerequisites: ['Strong reading and research skills', 'Structured thinking', 'Comfort learning technical concepts such as embeddings and APIs'],
+    skills: ['RAG', 'Knowledge Bases', 'AI Evaluation', 'Context Design'],
+    tools: [
+      ['Claude', 'The model that answers using the supplied context'],
+      ['A document store or knowledge base', 'Holds the approved source material'],
+      ['A retrieval set-up (RAG)', 'Finds relevant passages for each question'],
+      ['A test sheet', 'Questions, expected answers and results over time'],
+    ],
+    industries: ['Customer support', 'Education', 'Legal and compliance', 'Healthcare information', 'SaaS'],
+    entryRoutes: ['Research or knowledge management associate', 'Content operations specialist who moves into AI systems', 'Junior AI or automation developer'],
+    roadmap: {
+      foundation: 'Clear writing, research and fact-checking; then how language models use context.',
+      guided: 'Write a one-page fact sheet for a local business and test whether an AI assistant answers ten questions correctly from it alone.',
+      project: 'Build a small knowledge base with source documents, retrieval instructions and a 25-question evaluation set, and report accuracy before and after improving the context.',
+    },
+    example: {
+      title: 'Evaluation set (Telzon format)',
+      rows: [
+        ['Question', '“What is the fee for the photography course?”'],
+        ['Expected answer', '₹48,000 + GST, from the approved fee sheet'],
+        ['Must not', 'Invent discounts, dates or guarantees'],
+        ['Result', 'Correct / partly correct / wrong, with the retrieved source'],
+        ['Fix', 'Which source or instruction changes'],
+      ],
+      note: 'A template students build and run.',
+    },
+    titles: ['AI Engineer (junior)', 'Knowledge Management Specialist', 'Conversational AI Specialist', 'AI Solutions Associate', 'Prompt Engineer'],
+    faqs: [
+      { q: 'Is context engineering the same as prompt engineering?', a: 'It includes prompts but goes further: it covers all the information the model sees, such as documents, tool results and conversation history.' },
+      { q: 'Do I need coding?', a: 'Usually yes for production systems. You can learn the principles with no-code tools first, but retrieval and evaluation pipelines are technical.' },
+      { q: 'What is RAG?', a: 'Retrieval-augmented generation: the system finds relevant passages from your documents and gives them to the model before it answers.' },
+      { q: 'Is this a marketing job?', a: 'It is a technical AI role that marketers with strong research and content skills can grow into with additional training.' },
+    ],
+    telzon: 'The Digital Marketing & AI course builds the starting skills — research, fact-checked AI outputs and Claude workflows (weeks 6–7) — but RAG, knowledge bases and AI evaluation are not part of the syllabus. This path requires additional technical training.',
+    trainingNote: 'RAG, knowledge base design and evaluation pipelines require additional technical training beyond the course.',
+    references: [REF.context, REF.agents, REF.nist],
+    related: ['ai-evaluation-specialist', 'ai-agent-specialist'],
+  },
+  {
+    slug: 'ai-product-builder',
+    status: 'emerging',
+    technical: true,
+    role: 'AI Product Builder',
+    evolvesFrom: 'Digital Product Executive',
+    h1: 'How to Become an AI Product Builder',
+    title: 'AI Product Builder: Claude Code, Lovable & Web Basics',
+    metaDescription: 'AI product builder career guide: build web apps and tools with AI-assisted development (Claude Code, Lovable) plus the UI/UX and web basics you still need.',
+    suits: 'Makers who want to turn ideas into working products',
+    coreSkill: 'Building and shipping small digital products with AI-assisted development tools',
+    answer: 'An AI Product Builder uses AI-assisted development tools to design, build and ship digital products — landing pages, calculators, internal tools and simple apps — faster than traditional coding alone. For example, they might build a course-fee EMI calculator with Lovable, refine it with Claude Code, test it on mobile and publish it.',
+    whyEmerging: 'AI coding tools have lowered the barrier to building working software. That creates room for people who understand users and products to build, but it does not remove the need to understand how the web works, test properly and keep data safe.',
+    tasks: [
+      ['Define the problem', 'Write who the product is for and what it must do.'],
+      ['Design the interface', 'Sketch screens and flows before building.'],
+      ['Build with AI', 'Use AI tools to generate and edit code, reviewing every change.'],
+      ['Test', 'Check mobile layouts, accessibility, errors and edge cases.'],
+      ['Ship and maintain', 'Publish, watch for problems and improve from feedback.'],
+    ],
+    prerequisites: ['Web fundamentals: HTML, CSS and how websites are hosted', 'Basic UI/UX thinking', 'Patience for debugging'],
+    skills: ['Claude Code', 'Lovable', 'UI/UX', 'Web Fundamentals'],
+    tools: [
+      ['Claude Code', 'Write, explain and change code in a project with an AI assistant'],
+      ['Lovable', 'Generate web apps from descriptions'],
+      ['Figma or paper sketches', 'Plan screens and flows'],
+      ['Browser developer tools', 'Debug layout and errors'],
+    ],
+    industries: ['Startups', 'Agencies', 'EdTech', 'Internal tools teams', 'Freelance product work'],
+    entryRoutes: ['Website or landing-page executive who starts building tools', 'Junior front-end developer using AI tools', 'Founder or freelancer building small products'],
+    roadmap: {
+      foundation: 'How the internet works: browsers, websites, domains and hosting; then HTML and CSS basics.',
+      guided: 'Build a one-page tool (for example a fee calculator) with an AI builder, then explain every part of the code it produced.',
+      project: 'Ship a small working product with a clear user, a tested mobile layout, basic accessibility checks and a short write-up of what the AI got wrong and how you fixed it.',
+    },
+    example: {
+      title: 'Product build log (Telzon format)',
+      rows: [
+        ['User problem', 'Students want to compare batch timings quickly'],
+        ['Build', 'Lovable first draft; edits with Claude Code'],
+        ['Tests', 'Mobile, keyboard navigation, empty and error states'],
+        ['Bugs found', 'Listed with the fix'],
+        ['Shipped', 'Link, date and what you would build next'],
+      ],
+      note: 'A sample log students keep.',
+    },
+    titles: ['Junior Web Developer', 'Front-end Developer', 'No-code Developer', 'Product Associate', 'Web Executive'],
+    faqs: [
+      { q: 'Can I build apps without learning to code?', a: 'You can build simple prototypes, but shipping reliable products needs web fundamentals, testing and the ability to read what the AI wrote.' },
+      { q: 'Is this a marketing role?', a: 'It is a technical product role. Marketers who build landing pages and tools often grow into it with additional training.' },
+      { q: 'What should my portfolio show?', a: 'Working products with links, the problem each solves and an honest build log.' },
+      { q: 'What about security?', a: 'Never put passwords or keys in code you publish, and get experienced review before handling real user data or payments.' },
+    ],
+    telzon: 'The Digital Marketing & AI course covers how the internet works and website and landing-page basics with WordPress or no-code tools (week 3). AI-assisted software development with Claude Code or Lovable is not part of the syllabus and requires additional technical training.',
+    trainingNote: 'AI-assisted software development, web fundamentals beyond landing pages and testing require additional technical training.',
+    references: [REF.claudeCode, REF.webdev],
+    related: ['ai-growth-engineer', 'ai-agent-specialist'],
+  },
+  {
+    slug: 'voice-ai-specialist',
+    status: 'emerging',
+    technical: true,
+    role: 'Voice AI Specialist',
+    evolvesFrom: 'Customer Support Executive',
+    h1: 'How to Become a Voice AI Specialist',
+    title: 'Voice AI Specialist Career: Voice Agents & ElevenLabs',
+    metaDescription: 'Voice AI specialist career guide: design and test voice assistants for customer calls with ElevenLabs, conversation design and APIs — plus a starter project.',
+    suits: 'People with customer-service experience who like technology',
+    coreSkill: 'Designing voice conversations that help callers quickly and hand over to people when needed',
+    answer: 'A Voice AI Specialist designs, builds and tests voice assistants that answer or make customer calls — booking appointments, answering common questions and passing complex calls to staff. For example, they might build a voice agent that answers “What are your timings?” and “Where are you located?” and transfers fee negotiations to a counsellor.',
+    whyEmerging: 'Natural-sounding AI voices and voice-agent platforms have made phone automation far more capable than old menu-based systems. Businesses still need people who know how callers talk, where calls go wrong and when a human must take over.',
+    tasks: [
+      ['Map call reasons', 'List why people call and which calls are simple enough to automate.'],
+      ['Design the conversation', 'Write greetings, questions, confirmations and hand-offs for speech, not text.'],
+      ['Configure the voice agent', 'Choose voice, connect knowledge and tools, set limits.'],
+      ['Test with real accents and noise', 'Check how it handles Hindi-English mixing, interruptions and silence.'],
+      ['Review calls', 'Listen to recordings (with consent) and fix failure points.'],
+    ],
+    prerequisites: ['Customer service experience or empathy for callers', 'Clear spoken-language writing', 'Willingness to learn APIs and integrations'],
+    skills: ['ElevenLabs', 'Voice Agents', 'APIs', 'Conversation Design'],
+    tools: [
+      ['ElevenLabs', 'Voices and voice-agent building'],
+      ['A telephony integration', 'Connects the agent to phone numbers'],
+      ['A CRM or booking system', 'Where the agent records calls and appointments'],
+      ['A call review sheet', 'Tracks failures and fixes'],
+    ],
+    industries: ['Clinics and healthcare', 'Education', 'Real estate', 'Hospitality', 'Banking and insurance support'],
+    entryRoutes: ['Customer support or tele-calling executive', 'Conversation designer for chatbots', 'Automation executive'],
+    roadmap: {
+      foundation: 'Customer journeys and writing for conversation; then how APIs connect tools.',
+      guided: 'Transcribe ten real or role-played enquiry calls and group them by reason. Mark which could be automated safely.',
+      project: 'Build a demo voice agent for a local business that answers three common questions, books a callback and hands over to a person, then report test results with different accents.',
+    },
+    example: {
+      title: 'Voice agent test plan (Telzon format)',
+      rows: [
+        ['Handles', 'Timings, location, course list, callback booking'],
+        ['Hands over', 'Fees negotiation, complaints, anything uncertain'],
+        ['Disclosure', 'Says it is an AI assistant at the start'],
+        ['Tests', 'Hindi-English mix, background noise, interruptions, silence'],
+        ['Pass rule', 'Correct answer or correct hand-off on every test call'],
+      ],
+      note: 'A sample plan students run with role-played calls.',
+    },
+    titles: ['Conversational AI Specialist', 'Voice Bot Developer', 'Customer Experience Executive', 'Automation Executive', 'Chatbot Designer'],
+    faqs: [
+      { q: 'Is voice AI specialist a real job?', a: 'It is an emerging specialisation. Today you’ll find it in conversational AI, voice bot and customer experience roles.' },
+      { q: 'Do I need coding?', a: 'Basic voice agents can be configured without code, but phone and CRM integrations usually need API skills.' },
+      { q: 'Should callers know they are talking to AI?', a: 'Yes. Disclosing it is good practice, and some regions require it.' },
+      { q: 'What should my portfolio show?', a: 'A recorded demo, the conversation design and test results — including failures you fixed.' },
+    ],
+    telzon: 'The Digital Marketing & AI course covers customer journeys (week 1), copywriting (week 3), and ElevenLabs voice-overs in a supervised video workflow (week 6). Building voice agents and phone integrations is not part of the syllabus and requires additional technical training.',
+    trainingNote: 'Voice agent configuration, telephony and API integrations require additional technical training.',
+    references: [REF.elevenlabs, REF.agents],
+    related: ['whatsapp-conversation-designer', 'ai-agent-specialist'],
+  },
+  {
+    slug: 'ai-evaluation-specialist',
+    status: 'emerging',
+    role: 'AI Evaluation Specialist',
+    evolvesFrom: 'Quality Assurance Executive',
+    h1: 'What Does an AI Evaluation Specialist Do?',
+    title: 'AI Evaluation Specialist: Testing AI Outputs Career',
+    metaDescription: 'What an AI evaluation specialist does: test AI outputs for accuracy, relevance and reliability with clear criteria, fact-checks and evaluation sets.',
+    suits: 'Careful, sceptical people who enjoy checking details',
+    coreSkill: 'Designing tests that show whether an AI system is accurate and reliable enough to use',
+    answer: 'An AI Evaluation Specialist tests AI outputs — answers, drafts, summaries or actions — against clear criteria to find where they are accurate, where they fail and whether they are safe to use. For example, they might score 100 AI-drafted course answers for factual accuracy and tone, find that it misstates batch timings, and send the problem back with examples.',
+    whyEmerging: 'As organisations put AI into customer-facing work, they need systematic ways to measure quality and risk. Frameworks such as NIST’s AI Risk Management Framework treat measuring AI performance and trustworthiness as a core activity.',
+    tasks: [
+      ['Define what good means', 'Write criteria: accuracy, relevance, tone, safety, completeness.'],
+      ['Build test sets', 'Collect realistic inputs with expected outputs or scoring rules.'],
+      ['Score outputs', 'Rate results consistently and note examples of each failure.'],
+      ['Fact-check', 'Verify claims against trusted sources.'],
+      ['Report and re-test', 'Explain patterns, suggest fixes and check whether changes worked.'],
+    ],
+    prerequisites: ['Attention to detail', 'Clear writing', 'Basic spreadsheet skills', 'Domain knowledge for the outputs you test'],
+    skills: ['AI Testing', 'Fact Checking', 'Data Quality', 'Evaluation Design'],
+    tools: [
+      ['Spreadsheets', 'Test sets, scores and results over time'],
+      ['Claude or ChatGPT', 'The systems under test'],
+      ['Trusted source documents', 'The reference for fact-checking'],
+      ['A scoring rubric', 'Keeps ratings consistent between reviewers'],
+    ],
+    industries: ['AI product companies', 'Customer support operations', 'Content and media', 'Education', 'Data labelling and annotation firms'],
+    entryRoutes: ['Quality analyst or content reviewer', 'Fact-checker or editor', 'Data annotation or AI training roles'],
+    roadmap: {
+      foundation: 'Research, fact-checking and clear criteria; then how AI outputs fail (invented facts, outdated information, wrong tone).',
+      guided: 'Ask an AI assistant 20 factual questions about one topic you know well and score each answer against a simple rubric.',
+      project: 'Build an evaluation set of 50 realistic prompts for one use case, a scoring rubric, results from two AI tools and a report with recommendations.',
+    },
+    example: {
+      title: 'Scoring rubric (Telzon format)',
+      rows: [
+        ['Accuracy', '2 = correct, 1 = minor error, 0 = wrong or invented'],
+        ['Relevance', 'Answers the actual question'],
+        ['Tone', 'Matches the brand and audience'],
+        ['Safety', 'No promises, prices or claims outside approved facts'],
+        ['Evidence', 'Example output saved for every 0 score'],
+      ],
+      note: 'A sample rubric students apply.',
+    },
+    titles: ['AI Quality Analyst', 'Content Reviewer', 'AI Trainer', 'Data Quality Analyst', 'QA Executive'],
+    faqs: [
+      { q: 'Do I need coding to evaluate AI?', a: 'Not to start: spreadsheets and clear rubrics go a long way. Automated evaluation at scale uses scripting.' },
+      { q: 'Is this the same as software QA?', a: 'It overlaps, but AI outputs vary from run to run, so evaluation relies more on criteria, samples and scoring than on fixed pass/fail tests.' },
+      { q: 'What should my portfolio show?', a: 'An evaluation set, a rubric, scored results and a clear report of failure patterns.' },
+      { q: 'Why does this matter for marketing?', a: 'AI-drafted content can include wrong prices, claims or facts. Someone has to catch them before customers do.' },
+    ],
+    telzon: 'The Digital Marketing & AI course trains the habit this role depends on: AI outputs checked for facts, tone and brand fit (week 6), and a tool lab comparing outputs, access, cost and manual alternatives (week 7). Formal evaluation design is not part of the syllabus and needs additional training.',
+    trainingNote: 'Formal evaluation design and automated evaluation require additional training beyond the course.',
+    references: [REF.nist, REF.context],
+    related: ['ai-context-engineer', 'ai-content-operations-specialist'],
+  },
+];
+
+// ── Career Intelligence dashboard (homepage) ─────────────────────────────────
+// Add a career: append to DASHBOARD.careers. `page` links the card to
+// /careers/<page>/ — leave it null until that page exists (links are only
+// rendered for pages that exist in CAREERS).
+export const DASHBOARD = {
+  label: 'CAREER INTELLIGENCE',
+  outlook: '2027 OUTLOOK',
+  headline: ['The future of work', 'is being rewritten.'],
+  intro: 'New technologies. Emerging careers. Evolving skills. Discover where the industry is heading.',
+  ticker: ['AGENTIC AI', 'GENERATIVE SEARCH', 'AI COMMERCE', 'GENERATIVE MEDIA', 'MARKETING AUTOMATION'],
+  technologies: ['Claude', 'ChatGPT', 'Gemini', 'n8n', 'Veo', 'HeyGen', 'ElevenLabs', 'Semrush', 'Lovable', 'Make', 'GA4'],
+  statement: 'Marketing + Creativity + AI + Automation + Data',
+  footer: 'Understand the shift. Build the skills. Shape your future.',
+  rotateMs: 8000,
+  careers: [
+    { field: 'AI Agent Marketing', role: 'AI Agent Specialist', traditional_role: 'Digital Marketing Executive', description: 'Build agents that assist marketing tasks and connect business workflows.', skills: ['Claude', 'AI Agents', 'n8n', 'APIs', 'Workflow Design'], insight: 'Marketing is evolving from manual execution to intelligent AI-assisted workflows.', page: 'ai-agent-specialist' },
+    { field: 'Generative Search', role: 'GEO & AEO Specialist', traditional_role: 'SEO Executive', description: 'Help brands become discoverable in AI-generated answers.', skills: ['GEO', 'AEO', 'Technical SEO', 'Schema', 'Entity SEO'], insight: 'Search visibility is expanding beyond traditional rankings.', page: 'ai-search-visibility-specialist' },
+    { field: 'AI Workflow Automation', role: 'AI Automation Specialist', traditional_role: 'Marketing Executive', description: 'Connect applications and automate repetitive business processes.', skills: ['n8n', 'Make', 'Webhooks', 'APIs', 'CRM'], insight: 'Marketing operations are becoming more connected and automated.', page: 'ai-marketing-automation-specialist' },
+    { field: 'Generative Media', role: 'AI Creative Technologist', traditional_role: 'Video Editor', description: 'Create campaigns using AI-generated images, video and voice.', skills: ['Veo', 'HeyGen', 'ElevenLabs', 'Creative Direction'], insight: 'Generative AI is transforming creative production.', page: 'ai-creative-technologist' },
+    { field: 'AI Growth Engineering', role: 'AI Growth Engineer', traditional_role: 'Growth Marketer', description: 'Combine experimentation, technology and marketing to drive growth.', skills: ['CRO', 'A/B Testing', 'Analytics', 'Automation'], insight: 'Marketing and engineering are increasingly intersecting.', page: 'ai-growth-engineer' },
+    { field: 'AI Advertising', role: 'AI Performance Marketer', traditional_role: 'Ads Manager', description: 'Analyse, test and optimise advertising using AI.', skills: ['Meta Ads', 'Google Ads', 'Claude', 'GA4'], insight: 'Advertising is becoming more data-driven and AI-assisted.', page: 'ai-performance-marketer' },
+    { field: 'Conversational Commerce', role: 'AI Commerce Specialist', traditional_role: 'E-commerce Executive', description: 'Design AI-assisted shopping and customer experiences.', skills: ['CRM', 'Chatbots', 'Product Feeds', 'Conversation Design'], insight: 'Product discovery is expanding into conversational AI.', page: 'ai-commerce-specialist' },
+    { field: 'AI Content Operations', role: 'AI Content Systems Designer', traditional_role: 'Content Creator', description: 'Build integrated research, scripting, production and distribution workflows.', skills: ['ChatGPT', 'Claude', 'Automation', 'Content Strategy'], insight: 'Content creation is evolving into connected systems.', page: 'ai-content-operations-specialist' },
+    { field: 'AI Brand Intelligence', role: 'AI Visibility Specialist', traditional_role: 'Brand Executive', description: 'Understand how AI platforms represent and recommend brands.', skills: ['GEO', 'Digital PR', 'Brand Monitoring', 'Research'], insight: 'Brand reputation now extends into AI-generated answers.', page: 'ai-search-visibility-specialist' },
+    { field: 'Marketing Intelligence', role: 'AI Marketing Analyst', traditional_role: 'Marketing Analyst', description: 'Convert business data into actionable insights.', skills: ['GA4', 'Looker Studio', 'AI Reporting', 'Data Analysis'], insight: 'Businesses need professionals who can interpret data effectively.', page: 'ai-marketing-analyst' },
+    { field: 'AI Personalisation', role: 'AI Customer Experience Specialist', traditional_role: 'CRM Executive', description: 'Create adaptive customer journeys using AI.', skills: ['CRM', 'Segmentation', 'Analytics', 'Customer Journeys'], insight: 'AI enables more adaptive customer experiences.', page: 'ai-customer-experience-specialist' },
+    { field: 'AI Product Discovery', role: 'AI Product Discovery Specialist', traditional_role: 'E-commerce SEO Executive', description: 'Optimise product information for AI recommendation platforms.', skills: ['Product SEO', 'Schema', 'Merchant Feeds', 'GEO'], insight: 'Product visibility is expanding into AI recommendation systems.', page: 'ai-product-discovery-specialist' },
+    { field: 'AI Context Engineering', role: 'AI Context Engineer', traditional_role: 'Research Specialist', description: 'Design knowledge systems and context for reliable AI outputs.', skills: ['RAG', 'Knowledge Bases', 'AI Evaluation', 'Context Design'], insight: 'Effective AI systems need relevant context and reliable information.', page: 'ai-context-engineer' },
+    { field: 'AI Product Development', role: 'AI Product Builder', traditional_role: 'Digital Product Executive', description: 'Build digital products using AI-assisted development tools.', skills: ['Claude Code', 'Lovable', 'UI/UX', 'Web Fundamentals'], insight: 'AI-assisted development is lowering barriers to product creation.', page: 'ai-product-builder' },
+    { field: 'Voice AI Systems', role: 'Voice AI Specialist', traditional_role: 'Customer Support Executive', description: 'Build voice assistants for customer communication.', skills: ['ElevenLabs', 'Voice Agents', 'APIs', 'Conversation Design'], insight: 'Voice AI is creating new business communication opportunities.', page: 'voice-ai-specialist' },
+    { field: 'AI Evaluation and Quality', role: 'AI Evaluation Specialist', traditional_role: 'Quality Assurance Executive', description: 'Test AI outputs for accuracy, relevance and reliability.', skills: ['AI Testing', 'Fact Checking', 'Data Quality', 'Evaluation Design'], insight: 'AI adoption creates a need for systematic quality evaluation.', page: 'ai-evaluation-specialist' },
+  ],
+  // "Discover My Future Career": interest -> card index in `careers` (as approved).
+  assessment: [
+    { label: 'AI and Automation', card: 0 },
+    { label: 'Creative Media', card: 3 },
+    { label: 'Search and Brand Visibility', card: 1 },
+    { label: 'Advertising and Growth', card: 4 },
+    { label: 'Building AI Products', card: 13 },
+  ],
+};
+
+// ── Career hub (/careers/) ───────────────────────────────────────────────────
+export const HUB = {
+  slug: '',
+  h1: 'Emerging AI Careers in India: Marketing, Search, Automation and Media',
+  title: 'Emerging AI Careers in India for 2027 | Telzon Academy',
+  metaDescription: 'Explore 18 emerging AI careers in marketing, search, automation, media and data: what each role does, skills, tools, fresher entry routes and roadmaps.',
+  intro: 'AI is not only creating new jobs; it is reshaping existing ones. An SEO executive now also tracks how a brand appears in AI answers, a video editor directs generative tools, and a marketing executive builds automations. This hub explains 18 career paths at the meeting point of marketing and AI — what the work involves, which skills and tools it needs, how freshers can start, and which roles need extra technical training.',
+  groups: [
+    { name: 'Search and brand visibility', text: 'Being found in Google and in AI-generated answers.', slugs: ['ai-search-visibility-specialist', 'ai-product-discovery-specialist'] },
+    { name: 'Automation and AI agents', text: 'Connecting tools so work moves without manual copying.', slugs: ['ai-marketing-automation-specialist', 'ai-agent-specialist', 'voice-ai-specialist', 'whatsapp-conversation-designer'] },
+    { name: 'Creative and content', text: 'Producing ideas, video and content with AI — and judging what is good.', slugs: ['ai-creative-strategist', 'ai-creative-technologist', 'ai-video-localization-producer', 'ai-content-operations-specialist'] },
+    { name: 'Advertising, growth and data', text: 'Spending money wisely and proving what worked.', slugs: ['ai-performance-marketer', 'ai-growth-engineer', 'ai-marketing-analyst'] },
+    { name: 'Commerce and customer experience', text: 'Helping customers choose, buy and stay.', slugs: ['ai-commerce-specialist', 'ai-customer-experience-specialist'] },
+    { name: 'AI systems and quality', text: 'More technical roles that make AI reliable — expect additional training.', slugs: ['ai-context-engineer', 'ai-evaluation-specialist', 'ai-product-builder'] },
+  ],
+  future: [
+    'The World Economic Forum’s Future of Jobs Report 2025, based on a survey of more than 1,000 employers, expects AI and big data to be among the fastest-growing skills to 2030 — and expects human skills such as analytical thinking, creativity and resilience to stay essential alongside them.',
+    'For digital marketing, that means the routine parts of the job — first drafts, simple reports, repetitive data entry — are increasingly assisted by AI, while the decisions are not: what to test, what is true, what fits the brand and when a customer needs a person. The careers on this page are built around those decisions.',
+  ],
+  freshers: [
+    ['Marketing foundations', 'Customer research, positioning, copywriting, funnels and measurement. Every role here builds on them.'],
+    ['AI fluency', 'Using assistants such as Claude, ChatGPT and Gemini for research and drafts — and checking their output.'],
+    ['One technical habit', 'GA4 and tracking, no-code automation, or structured data — pick the one closest to the career you want.'],
+    ['A portfolio, not just certificates', 'Small, real projects with your reasoning written down.'],
+  ],
+  faqs: [
+    { q: 'What are the emerging AI careers in India for 2027?', a: 'In marketing, emerging paths include AI agent specialist, GEO and AEO specialist, AI automation specialist, AI creative technologist, AI performance marketer, AI commerce specialist, AI marketing analyst and AI evaluation specialist. Some, like performance marketing and analytics, are established jobs where AI skills are the new requirement.' },
+    { q: 'Which AI careers can freshers start without coding?', a: 'GEO and AEO, AI performance marketing, AI creative technology, content operations, customer experience and AI evaluation can all be started without coding. Agent building, voice AI, context engineering, growth engineering and product building need technical training.' },
+    { q: 'Is digital marketing still a good career with AI?', a: 'Digital marketing is changing rather than disappearing. Routine execution is increasingly AI-assisted, so the value moves to strategy, judgement, measurement and the ability to direct AI tools well.' },
+    { q: 'Which careers are more resilient to AI disruption?', a: 'No career is guaranteed to be AI-proof. Roles built on decisions people still need to own — what to test, what is accurate, what is safe to publish, when a customer needs a person — are more resilient.' },
+    { q: 'Do these careers guarantee a job?', a: 'No. Job titles vary between companies and some roles are still emerging. Each career page lists related titles you can search for today and a portfolio project you can build.' },
+  ],
+};
+
+
+// References for the original six pages (new pages carry their own).
+const BASE_REFS = {
+  'ai-creative-strategist': [REF.blueprint, REF.wef],
+  'ai-search-visibility-specialist': [REF.googleAi, REF.helpful],
+  'ai-marketing-automation-specialist': [REF.n8nAgent, REF.agents],
+  'ai-video-localization-producer': [REF.elevenlabs],
+  'whatsapp-conversation-designer': [REF.whatsapp],
+  'ai-content-operations-specialist': [REF.helpful, REF.context],
+};
+
+export const CAREERS = [...BASE_CAREERS, ...EMERGING].map((c) => ({
   ...c,
+  references: c.references || BASE_REFS[c.slug] || [],
   searchLinks: c.titles.slice(0, 3).map((t) => ({ label: `${t} jobs in India`, url: li(t) })),
 }));
 
@@ -374,31 +1183,44 @@ export const STATUS_LABEL = {
 // ── Structured data (used by React and by the static prerender) ──────────
 const SITE = 'https://telzonacademy.in';
 export function careerSchemas(slug) {
+  const isHub = !slug;
   const isGuide = slug === GUIDE_SLUG;
-  const c = isGuide ? null : careerBySlug(slug);
-  if (!isGuide && !c) return [];
+  const c = isHub || isGuide ? null : careerBySlug(slug);
+  if (!isHub && !isGuide && !c) return [];
   const url = `${SITE}${careerPath(slug)}`;
-  const h1 = isGuide ? GUIDE.h1 : c.h1;
-  const faqs = isGuide ? GUIDE.faqs : c.faqs;
+  const org = { '@type': 'Organization', name: 'Telzon Academy', url: SITE, logo: { '@type': 'ImageObject', url: `${SITE}/telzon-logo-black-512.png` } };
+  const author = { '@type': 'Organization', name: AUTHOR, url: `${SITE}/`, parentOrganization: { '@type': 'Organization', name: 'Telzon Academy' } };
   const crumbs = [
     { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
-    { '@type': 'ListItem', position: 2, name: 'Career Guide', item: `${SITE}${careerPath(GUIDE_SLUG)}` },
+    { '@type': 'ListItem', position: 2, name: 'Careers', item: `${SITE}${HUB_PATH}` },
   ];
-  if (!isGuide) crumbs.push({ '@type': 'ListItem', position: 3, name: c.role, item: url });
-  const org = { '@type': 'Organization', name: 'Telzon Academy', url: SITE, logo: { '@type': 'ImageObject', url: `${SITE}/telzon-logo-black-512.png` } };
-  const out = [
-    {
-      '@context': 'https://schema.org', '@type': 'Article', headline: h1,
+  if (isGuide) crumbs.push({ '@type': 'ListItem', position: 3, name: 'Best Career Options in 2027', item: url });
+  if (c) crumbs.push({ '@type': 'ListItem', position: 3, name: c.role, item: url });
+  const faqs = isHub ? HUB.faqs : isGuide ? GUIDE.faqs : c.faqs;
+  const out = [];
+  if (isHub) {
+    out.push({
+      '@context': 'https://schema.org', '@type': 'CollectionPage', name: HUB.h1, description: HUB.metaDescription, url,
+      inLanguage: 'en-IN', dateModified: CAREERS_UPDATED, publisher: org, author,
+      mainEntity: { '@type': 'ItemList', itemListElement: CAREERS.map((x, i) => ({ '@type': 'ListItem', position: i + 1, name: x.role, url: `${SITE}${careerPath(x.slug)}` })) },
+    });
+  } else {
+    out.push({
+      '@context': 'https://schema.org', '@type': 'Article', headline: isGuide ? GUIDE.h1 : c.h1,
       description: isGuide ? GUIDE.metaDescription : c.metaDescription,
       image: [`${SITE}/media/telzon-academy-nagpur-share.jpg`],
-      datePublished: CAREERS_UPDATED, dateModified: CAREERS_UPDATED,
-      author: org, publisher: org, mainEntityOfPage: url, inLanguage: 'en-IN',
-      ...(isGuide ? {} : { about: { '@type': 'Occupation', name: c.role, occupationLocation: { '@type': 'Country', name: 'India' }, skills: c.tools.map(([t]) => t).join(', ') } }),
-    },
-    { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: crumbs },
-    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
-  ];
-  if (isGuide) out.push({ '@context': 'https://schema.org', '@type': 'ItemList', name: 'AI and digital marketing careers for 2027',
-    itemListElement: CAREERS.map((x, i) => ({ '@type': 'ListItem', position: i + 1, name: x.role, url: `${SITE}${careerPath(x.slug)}` })) });
+      datePublished: c && EMERGING.includes(BASE_OR_NEW(c)) ? '2026-11-28' : '2026-11-27', dateModified: CAREERS_UPDATED,
+      author, publisher: org, mainEntityOfPage: url, inLanguage: 'en-IN',
+      ...(c ? {
+        about: { '@type': 'Occupation', name: c.role, occupationLocation: { '@type': 'Country', name: 'India' }, skills: (c.skills || c.tools.map(([t]) => t)).join(', ') },
+        citation: (c.references || []).map((r) => ({ '@type': 'CreativeWork', name: r.label, url: r.url })),
+      } : {}),
+    });
+    if (isGuide) out.push({ '@context': 'https://schema.org', '@type': 'ItemList', name: 'AI and digital marketing careers for 2027',
+      itemListElement: GUIDE_SIX.map((sl, i) => ({ '@type': 'ListItem', position: i + 1, name: careerBySlug(sl).role, url: `${SITE}${careerPath(sl)}` })) });
+  }
+  out.push({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: crumbs });
+  out.push({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) });
   return out;
 }
+const BASE_OR_NEW = (c) => EMERGING.find((e) => e.slug === c.slug);

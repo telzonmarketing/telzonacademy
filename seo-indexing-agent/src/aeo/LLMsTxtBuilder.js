@@ -48,6 +48,7 @@ class LLMsTxtBuilder {
     const groups = {
       'Core pages':    [],
       'Course pages':  [],
+      'Career pages':  [],
       'Blog articles': [],
       'Other':         [],
     };
@@ -62,6 +63,8 @@ class LLMsTxtBuilder {
         groups['Core pages'].push(line);
       } else if (pathname.startsWith('/pages/')) {
         groups['Course pages'].push(line);
+      } else if (pathname.startsWith('/careers/')) {
+        groups['Career pages'].push(line);
       } else if (pathname.startsWith('/blog/')) {
         groups['Blog articles'].push(line);
       } else if (!pathname.startsWith('/admin')) {

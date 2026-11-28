@@ -26,6 +26,29 @@
 - [Social Media Marketing Course in Nagpur | Telzon Academy](/pages/social-media-marketing-course-nagpur/): Join Telzon Academy's social media marketing course in Nagpur. Learn Facebook, Instagram, LinkedIn and YouTube campaigns with projects.
 - [Practical Google Ads Course in Nagpur | Telzon Academy](/pages/google-ads-course-nagpur/): Learn Google Ads from scratch with Telzon Academy's Google Ads course in Nagpur. Covers search, display, shopping and video campaigns with live account manageme
 
+## Career pages
+
+- [Emerging AI Careers in India for 2027 | Telzon Academy](/careers/): Explore 18 emerging AI careers in marketing, search, automation, media and data: what each role does, skills, tools, fresher entry routes and roadmaps.
+- [Best Career Options in 2027: AI & Digital Marketing](/careers/best-career-options-2027/): Explore six AI and digital marketing career options for 2027. Compare skills, tools and beginner projects to find a path that fits your strengths.
+- [AI Creative Strategist Career: Skills & Roadmap](/careers/ai-creative-strategist/): What an AI Creative Strategist does, the skills and tools to learn, and a beginner portfolio project: turn customer reviews into tested ad concepts.
+- [GEO Specialist Career: AI Search, AEO & SEO Skills](/careers/ai-search-visibility-specialist/): How to become a GEO / AI search visibility specialist: track how brands appear in ChatGPT, Perplexity and Google AI features, and fix content gaps.
+- [AI Marketing Automation Career: Skills & Roadmap](/careers/ai-marketing-automation-specialist/): What an AI marketing automation specialist does: map lead journeys, qualify enquiries, update a CRM and alert sales. Skills, tools and a beginner project.
+- [AI Video Localization Career: Tools & Portfolio](/careers/ai-video-localization-producer/): AI video localization explained: adapt ads into Marathi, Hindi and English with AI voices and avatars, then check pronunciation, captions and pacing.
+- [WhatsApp Conversation Design: Skills & Career Guide](/careers/whatsapp-conversation-designer/): WhatsApp conversation design explained: opening messages, qualifying questions, booking steps and handoff to staff — plus skills, tools and a project.
+- [AI Content Operations Career: Skills & Workflows](/careers/ai-content-operations-specialist/): AI content operations explained: turn one client brief into a repeatable content workflow with fact checks, approvals and revision records.
+- [AI Agent Specialist Career: Skills & Roadmap](/careers/ai-agent-specialist/): What an AI agent specialist does in marketing, the skills behind it (Claude, n8n, APIs, workflow design) and a safe first agent project for your portfolio.
+- [AI Creative Technologist: Generative Media Career](/careers/ai-creative-technologist/): AI creative technologist career guide: make campaign images, video and voice with Veo, HeyGen and ElevenLabs — with creative direction, rights and checks.
+- [AI Growth Engineer Career: CRO, Testing & Automation](/careers/ai-growth-engineer/): What an AI growth engineer does: combine CRO, A/B testing, analytics and automation to grow sign-ups — with the skills, a test project and a learning path.
+- [AI Performance Marketer: Meta, Google Ads & GA4](/careers/ai-performance-marketer/): AI performance marketing career guide: run Meta and Google Ads, test creative, read GA4 and use Claude to analyse results — skills, roadmap and a project.
+- [AI Commerce Specialist: Conversational Shopping Career](/careers/ai-commerce-specialist/): AI commerce specialist career guide: design conversational shopping journeys with chatbots, CRM and product feeds — skills, tools and a beginner project.
+- [AI Marketing Analyst: GA4, Looker Studio & Reporting](/careers/ai-marketing-analyst/): AI marketing analyst career guide: turn GA4 and campaign data into decisions with Looker Studio and AI-assisted reporting — skills, roadmap and project.
+- [AI Customer Experience Career: CRM & Personalisation](/careers/ai-customer-experience-specialist/): AI customer experience specialist guide: build adaptive customer journeys with CRM segmentation, analytics and AI — skills, consent rules and a project.
+- [AI Product Discovery Career: Product SEO, Feeds & GEO](/careers/ai-product-discovery-specialist/): AI product discovery specialist guide: make products findable in Google, Shopping and AI assistants with product SEO, schema, merchant feeds and GEO.
+- [AI Context Engineer: RAG, Knowledge Bases & Evaluation](/careers/ai-context-engineer/): What an AI context engineer does: design knowledge bases, retrieval (RAG) and instructions so AI gives reliable answers — skills, roadmap and a project.
+- [AI Product Builder: Claude Code, Lovable & Web Basics](/careers/ai-product-builder/): AI product builder career guide: build web apps and tools with AI-assisted development (Claude Code, Lovable) plus the UI/UX and web basics you still need.
+- [Voice AI Specialist Career: Voice Agents & ElevenLabs](/careers/voice-ai-specialist/): Voice AI specialist career guide: design and test voice assistants for customer calls with ElevenLabs, conversation design and APIs — plus a starter project.
+- [AI Evaluation Specialist: Testing AI Outputs Career](/careers/ai-evaluation-specialist/): What an AI evaluation specialist does: test AI outputs for accuracy, relevance and reliability with clear criteria, fact-checks and evaluation sets.
+
 ## Blog articles
 
 - [Digital Marketing Blog & Resources | Telzon Academy Nagpur](/blog/): Read the latest articles, guides, and insights on digital marketing trends, SEO, social media, and more from Telzon Academy in Nagpur.

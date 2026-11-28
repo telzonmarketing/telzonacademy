@@ -10,7 +10,6 @@ ErrorDocument 404 /index.html
   RewriteRule ^(.*)$ https://telzonacademy.in/$1 [R=301,L]
 
   # ── Folder roots that have no page of their own (would 403 otherwise)
-  RewriteRule ^careers/?$ https://telzonacademy.in/careers/best-career-options-2027/ [R=301,L]
   RewriteRule ^pages/?$ https://telzonacademy.in/pages/digital-marketing-course-in-nagpur/ [R=301,L]
 
   # ── SEO: 301 redirect /index.html → / so Google consolidates signals ──
