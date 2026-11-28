@@ -1,0 +1,101 @@
+name: SEO Competitor Backlinks
+
+# Weekly competitor link-gap finder — discovers citation/directory backlinks that
+# competitors have but Telzon doesn't (via Brave Search API), ranked by how many
+# competitors share each source. Competitors are configured in
+# seo-indexing-agent/config/competitors.json.
+
+on:
+  schedule:
+    - cron: '30 6 * * 1'   # Mondays 06:30 UTC = 12:00 IST (30 min after backlink agent)
+  workflow_dispatch:
+
+jobs:
+  competitor-backlinks:
+    name: Competitor Link-Gap Finder
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    if: "!contains(github.event.head_commit.message, 'chore(seo):')"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN || github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: seo-indexing-agent
+        run: npm install --omit=optional
+
+      - name: Run competitor backlink finder
+        working-directory: seo-indexing-agent
+        env:
+          BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
+        run: node src/index.js competitor-backlinks || true
+
+      - name: Log results to activity feed
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          script: |
+            const fs = require('fs');
+            try {
+              const reportPath = 'public/seo-reports/competitor-backlinks.json';
+              if (!fs.existsSync(reportPath)) return;
+              const r = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
+              if (!r.enabled) { console.log('Discovery disabled (no Brave key) — skipping activity log'); return; }
+
+              const actPath = 'public/seo-reports/activity.json';
+              const acts = fs.existsSync(actPath) ? JSON.parse(fs.readFileSync(actPath, 'utf8')) : [];
+
+              acts.unshift({
+                timestamp: r.generatedAt,
+                type: 'backlink',
+                icon: '🧭',
+                title: `Competitor link-gap scan · ${r.stats.gapTotal} opportunities found`,
+                details: `${r.stats.gapDirectories} directories · ${r.stats.sharedByAll} cited by ALL competitors`,
+              });
+
+              // Top 3 quick wins
+              for (const g of (r.gap || []).slice(0, 3)) {
+                acts.unshift({
+                  timestamp: r.generatedAt,
+                  type: 'backlink',
+                  icon: '🧭',
+                  title: `Get listed: ${g.host} [${g.type}]`,
+                  details: `Cited by ${g.competitorCount} competitor(s): ${g.citedBy.join(', ')}`,
+                });
+              }
+
+              fs.writeFileSync(actPath, JSON.stringify(acts.slice(0, 200), null, 2));
+
+              const { execSync } = require('child_process');
+              execSync('git config user.name "SEO Bot"');
+              execSync('git config user.email "seo-bot@telzonacademy.in"');
+              execSync('git add public/seo-reports/');
+              try {
+                execSync('git diff --cached --quiet || git commit -m "chore(seo): competitor link-gap scan"');
+                execSync('git push');
+              } catch (e) { console.log('Push:', e.message); }
+            } catch (e) { console.log('Activity log error:', e.message); }
+
+      - name: Deploy to Hostinger
+        if: always()
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host:     ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port:     65002
+          source:   "public/seo-reports/competitor-backlinks.json"
+          target:   ${{ secrets.FTP_SERVER_DIR }}/seo-reports/
+          strip_components: 2
+          timeout:  30s
+        continue-on-error: true
