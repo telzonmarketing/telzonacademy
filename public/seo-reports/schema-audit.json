@@ -1,10 +1,19 @@
 {
-  "timestamp": "2026-11-27T10:44:08.296Z",
+  "timestamp": "2026-11-28T07:45:39.200Z",
   "siteUrl": "https://telzonacademy.in",
   "pagesAudited": 60,
-  "pagesWithIssues": 0,
+  "pagesWithIssues": 1,
   "duplicateFaqPages": 0,
-  "totalIssues": 0,
-  "issuesByKind": {},
-  "examples": []
+  "totalIssues": 1,
+  "issuesByKind": {
+    "fetch-error": 1
+  },
+  "examples": [
+    {
+      "kind": "fetch-error",
+      "severity": "low",
+      "message": "Could not fetch (404)",
+      "url": "https://telzonacademy.in/pages/local-seo-and-google-business-profile-course-in-nagpur/"
+    }
+  ]
 }
