@@ -1,9 +1,15 @@
 {
-  "timestamp": "2026-11-27T23:05:42.256Z",
-  "pagesAudited": 89,
-  "score": 82,
-  "grade": "B",
+  "timestamp": "2026-11-28T05:41:03.817Z",
+  "pagesAudited": 20,
+  "score": 72,
+  "grade": "C",
   "issues": [
+    {
+      "severity": "important",
+      "title": "llms.txt missing or unreachable",
+      "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking.",
+      "fix": "AEO agent will generate it on next run"
+    },
     {
       "severity": "important",
       "title": "No FAQPage schema detected anywhere",
@@ -19,13 +25,12 @@
   ],
   "strengths": [
     "All 10 major AI crawlers explicitly allowed",
-    "llms.txt present at site root",
-    "89/89 pages have structured data",
-    "89 pages declare Organization schema"
+    "20/20 pages have structured data",
+    "20 pages declare Organization schema"
   ],
   "llms": {
-    "compactBytes": 24096,
-    "fullBytes": 160501
+    "compactBytes": 5625,
+    "fullBytes": 36010
   },
   "faqSuggestions": [],
   "visibility": {
