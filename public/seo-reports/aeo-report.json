@@ -1,21 +1,9 @@
 {
-  "timestamp": "2026-11-28T05:41:03.817Z",
-  "pagesAudited": 20,
-  "score": 72,
-  "grade": "C",
+  "timestamp": "2026-11-28T14:48:51.709Z",
+  "pagesAudited": 109,
+  "score": 92,
+  "grade": "A",
   "issues": [
-    {
-      "severity": "important",
-      "title": "llms.txt missing or unreachable",
-      "details": "LLM-friendly site briefing file at /llms.txt is the proposed standard for AI-search ranking.",
-      "fix": "AEO agent will generate it on next run"
-    },
-    {
-      "severity": "important",
-      "title": "No FAQPage schema detected anywhere",
-      "details": "FAQ schema is one of the strongest signals for AI-engine citation. Pages with FAQPage get cited 3-5× more often.",
-      "fix": "Add FAQPage JSON-LD to landing pages with question/answer pairs"
-    },
     {
       "severity": "low",
       "title": "Few pages have question-style headings",
@@ -25,12 +13,14 @@
   ],
   "strengths": [
     "All 10 major AI crawlers explicitly allowed",
-    "20/20 pages have structured data",
-    "20 pages declare Organization schema"
+    "llms.txt present at site root",
+    "109/109 pages have structured data",
+    "20 pages have FAQPage schema",
+    "109 pages declare Organization schema"
   ],
   "llms": {
-    "compactBytes": 5625,
-    "fullBytes": 36010
+    "compactBytes": 28996,
+    "fullBytes": 196104
   },
   "faqSuggestions": [],
   "visibility": {
