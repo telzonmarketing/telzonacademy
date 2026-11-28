@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-27T10:19:12.153Z",
+  "timestamp": "2026-11-28T09:37:30.911Z",
   "summary": {
     "pagesFound": 1,
     "issuesFound": 6,
@@ -147,8 +147,8 @@
     "note": "Notified Bing/Yandex/Naver of 1 URLs"
   },
   "bingSubmissions": {
-    "submitted": 0,
-    "failed": 1
+    "submitted": 1,
+    "failed": 0
   },
   "issueTracker": {
     "issues": {
@@ -160,7 +160,7 @@
         "description": "Long redirect chains waste crawl budget and dilute link equity.",
         "status": "escalated",
         "detectedAt": "2026-05-21T05:16:33.491Z",
-        "lastSeenAt": "2026-11-27T10:19:12.152Z",
+        "lastSeenAt": "2026-11-28T09:37:30.910Z",
         "attempts": [
           {
             "timestamp": "2026-10-27T07:06:22.889Z",
@@ -311,14 +311,19 @@
             "timestamp": "2026-11-27T10:19:12.152Z",
             "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
             "file": null
+          },
+          {
+            "timestamp": "2026-11-28T09:37:30.910Z",
+            "strategy": "Long redirect chains waste crawl budget and dilute link equity.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-05-21T05:16:33.491Z",
         "resolvedAt": "2026-06-07T06:19:10.365Z",
         "daysToResolve": 17,
         "regressedAt": "2026-10-27T07:06:22.889Z",
-        "escalatedAt": "2026-11-27T10:19:12.152Z",
-        "escalationReason": "Issue persists after 30 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-11-28T09:37:30.910Z",
+        "escalationReason": "Issue persists after 31 auto-fix attempts. Needs human intervention."
       },
       "622b6d80b02a": {
         "id": "622b6d80b02a",
@@ -2198,7 +2203,7 @@
         "description": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
         "status": "escalated",
         "detectedAt": "2026-07-10T05:59:51.202Z",
-        "lastSeenAt": "2026-11-27T10:19:12.152Z",
+        "lastSeenAt": "2026-11-28T09:37:30.910Z",
         "attempts": [
           {
             "timestamp": "2026-07-10T05:59:51.202Z",
@@ -2354,14 +2359,19 @@
             "timestamp": "2026-11-27T10:19:12.152Z",
             "strategy": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
             "file": null
+          },
+          {
+            "timestamp": "2026-11-28T09:37:30.910Z",
+            "strategy": "Meta descriptions improve click-through rates from search results, which signals quality to Google.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-07-10T05:59:51.202Z",
         "resolvedAt": "2026-07-12T05:22:52.589Z",
         "daysToResolve": 2,
         "regressedAt": "2026-10-27T07:06:22.889Z",
-        "escalatedAt": "2026-11-27T10:19:12.152Z",
-        "escalationReason": "Issue persists after 31 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-11-28T09:37:30.910Z",
+        "escalationReason": "Issue persists after 32 auto-fix attempts. Needs human intervention."
       },
       "daa3e6f34fda": {
         "id": "daa3e6f34fda",
@@ -2371,7 +2381,7 @@
         "description": "Without canonicals, URL parameters (?utm=, ?ref=) create duplicate page versions that split indexing signals.",
         "status": "fixing",
         "detectedAt": "2026-07-10T05:59:51.202Z",
-        "lastSeenAt": "2026-11-27T10:19:12.152Z",
+        "lastSeenAt": "2026-11-28T09:37:30.910Z",
         "attempts": [
           {
             "timestamp": "2026-07-10T05:59:51.202Z",
@@ -2380,6 +2390,11 @@
           },
           {
             "timestamp": "2026-11-27T10:19:12.152Z",
+            "strategy": "Add canonical tags to all pages via Next.js metadata",
+            "file": null
+          },
+          {
+            "timestamp": "2026-11-28T09:37:30.910Z",
             "strategy": "Add canonical tags to all pages via Next.js metadata",
             "file": null
           }
@@ -2437,7 +2452,7 @@
         "description": "A robots.txt file is missing. Without it, crawlers have no guidance and crawl budget may be wasted on non-content pages.",
         "status": "escalated",
         "detectedAt": "2026-07-20T05:36:00.284Z",
-        "lastSeenAt": "2026-11-27T10:19:12.152Z",
+        "lastSeenAt": "2026-11-28T09:37:30.910Z",
         "attempts": [
           {
             "timestamp": "2026-07-20T05:36:00.284Z",
@@ -2583,14 +2598,19 @@
             "timestamp": "2026-11-27T10:19:12.152Z",
             "strategy": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch.",
             "file": null
+          },
+          {
+            "timestamp": "2026-11-28T09:37:30.910Z",
+            "strategy": "False positive — robots.txt exists on live site. Likely a UA-blocked audit fetch.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-07-20T05:36:00.284Z",
         "resolvedAt": "2026-11-24T11:50:25.634Z",
         "daysToResolve": 127,
         "regressedAt": "2026-11-26T10:13:43.037Z",
-        "escalatedAt": "2026-11-27T10:19:12.152Z",
-        "escalationReason": "Issue persists after 29 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-11-28T09:37:30.910Z",
+        "escalationReason": "Issue persists after 30 auto-fix attempts. Needs human intervention."
       },
       "0c1293f1f543": {
         "id": "0c1293f1f543",
@@ -2720,7 +2740,7 @@
         "description": "Google cannot discover your pages without a sitemap. This is mandatory for sites with 100+ pages.",
         "status": "escalated",
         "detectedAt": "2026-10-27T07:06:22.889Z",
-        "lastSeenAt": "2026-11-27T10:19:12.152Z",
+        "lastSeenAt": "2026-11-28T09:37:30.910Z",
         "attempts": [
           {
             "timestamp": "2026-10-27T07:06:22.889Z",
@@ -2871,11 +2891,16 @@
             "timestamp": "2026-11-27T10:19:12.152Z",
             "strategy": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
             "file": null
+          },
+          {
+            "timestamp": "2026-11-28T09:37:30.910Z",
+            "strategy": "False positive — sitemap.xml exists on live site. Likely a UA-blocked audit fetch.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-10-27T07:06:22.889Z",
-        "escalatedAt": "2026-11-27T10:19:12.152Z",
-        "escalationReason": "Issue persists after 30 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-11-28T09:37:30.910Z",
+        "escalationReason": "Issue persists after 31 auto-fix attempts. Needs human intervention."
       },
       "c2bcb0cbe37f": {
         "id": "c2bcb0cbe37f",
@@ -2885,7 +2910,7 @@
         "description": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
         "status": "escalated",
         "detectedAt": "2026-10-27T07:06:22.889Z",
-        "lastSeenAt": "2026-11-27T10:19:12.152Z",
+        "lastSeenAt": "2026-11-28T09:37:30.910Z",
         "attempts": [
           {
             "timestamp": "2026-10-27T07:06:22.889Z",
@@ -3036,11 +3061,16 @@
             "timestamp": "2026-11-27T10:19:12.152Z",
             "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
             "file": null
+          },
+          {
+            "timestamp": "2026-11-28T09:37:30.910Z",
+            "strategy": "Pages returning 4xx/5xx cannot be indexed and waste crawl budget.",
+            "file": null
           }
         ],
         "firstSeenRun": "2026-10-27T07:06:22.889Z",
-        "escalatedAt": "2026-11-27T10:19:12.152Z",
-        "escalationReason": "Issue persists after 30 auto-fix attempts. Needs human intervention."
+        "escalatedAt": "2026-11-28T09:37:30.910Z",
+        "escalationReason": "Issue persists after 31 auto-fix attempts. Needs human intervention."
       }
     },
     "stats": {
@@ -3050,79 +3080,74 @@
       "escalated": 5,
       "regressed": 0
     },
-    "lastReconciled": "2026-11-27T10:19:12.152Z"
+    "lastReconciled": "2026-11-28T09:37:30.910Z"
   },
   "issueActions": [
-    {
-      "id": "daa3e6f34fda",
-      "type": "regressed",
-      "title": "1 pages missing canonical URL"
-    },
     {
       "id": "b2a6442343a6",
       "type": "fix-attempted",
       "title": "robots.txt not found",
-      "attempt": 29
+      "attempt": 30
     },
     {
       "id": "855fe6d4e9d2",
       "type": "fix-attempted",
       "title": "No sitemap.xml found",
-      "attempt": 30
+      "attempt": 31
     },
     {
       "id": "4f684ed51e73",
       "type": "fix-attempted",
       "title": "1 pages missing meta description",
-      "attempt": 31
+      "attempt": 32
     },
     {
       "id": "daa3e6f34fda",
       "type": "fix-attempted",
       "title": "1 pages missing canonical URL",
-      "attempt": 2
+      "attempt": 3
     },
     {
       "id": "c2bcb0cbe37f",
       "type": "fix-attempted",
       "title": "1 pages return error status codes",
-      "attempt": 30
+      "attempt": 31
     },
     {
       "id": "2a6a2bffeffd",
       "type": "fix-attempted",
       "title": "1 pages have redirect chains",
-      "attempt": 30
+      "attempt": 31
     },
     {
       "id": "2a6a2bffeffd",
       "type": "escalated",
       "title": "1 pages have redirect chains",
-      "attempts": 30
+      "attempts": 31
     },
     {
       "id": "4f684ed51e73",
       "type": "escalated",
       "title": "1 pages missing meta description",
-      "attempts": 31
+      "attempts": 32
     },
     {
       "id": "b2a6442343a6",
       "type": "escalated",
       "title": "robots.txt not found",
-      "attempts": 29
+      "attempts": 30
     },
     {
       "id": "855fe6d4e9d2",
       "type": "escalated",
       "title": "No sitemap.xml found",
-      "attempts": 30
+      "attempts": 31
     },
     {
       "id": "c2bcb0cbe37f",
       "type": "escalated",
       "title": "1 pages return error status codes",
-      "attempts": 30
+      "attempts": 31
     }
   ],
   "solverEnrichments": [],
